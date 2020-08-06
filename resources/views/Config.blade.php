@@ -1,0 +1,437 @@
+@extends('layouts.base')
+@section('content')
+<script src="/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+<script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
+"></script>
+
+<link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+   />
+
+   <script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
+<link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css' />
+   <style>
+
+*:focus {
+outline: none;
+}
+* {
+font-family: sans-serif;
+}
+:root {
+    --color1:hsl(1, 100%, 50%);
+    --color2:hsl(1, 100%, 50%);
+    --color3:hsl(1, 100%, 50%);
+}
+#div1 {
+position: absolute;
+width: 300.1499938964844px;
+height: 450px;
+background: white;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+/* border: solid 2px silver; */
+border-radius: 20px;
+resize: none;
+}
+#view {
+position: absolute;
+top: 0;
+width: 100%;
+height: 40%;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+}
+#colors {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 60%;
+}
+.inp {
+width: 90%;
+height: 8px;
+border-radius: 20px;
+margin: 13px 0;
+-webkit-transition: 0.3s;
+}
+#inp1, #inp2, #inp3 {
+-webkit-appearance: none;
+-moz-appearance: none;
+/* position: absolute; */
+/* top: 50%;
+left: 50%;
+transform: translate(-50%, 50%); */
+background: linear-gradient();
+}
+#inp1::-webkit-slider-thumb {
+    background: var(--color1);
+}
+#inp2::-webkit-slider-thumb {
+    background: var(--color2);
+}
+#inp3::-webkit-slider-thumb {
+    background: var(--color3);
+}
+
+.inp::-webkit-slider-thumb {
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: solid 2px white;
+background: #f2f2f2;
+/* box-shadow: inset 0 0 2px silver; */
+border-radius: 50%;
+}
+input[type="range"]::-moz-range-thumb {
+-moz-appearance: none;
+width: 25px;
+height: 25px;
+border: solid 1px #f2f2f2;
+background: #f2f2f2;
+box-shadow: inset 0 0 2px silver;
+border-radius: 50%;
+}
+#txt {
+    margin:13px 0;
+    padding: 8px;
+    border: solid 1px silver;
+    border-radius: 5px;
+    text-align: center;
+    background: #ffffff;
+}
+#copy {
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: solid 1px silver;
+    background: #ffffff;
+    cursor: pointer;
+    margin:13px 0;
+    -webkit-transition: 0.3s;
+}
+#copy:hover {
+    background: #f1f1f1;
+}
+@media only screen and (max-width: 700px) {
+#copy {
+    cursor: default;
+}
+}
+
+.label-info {
+    background-color: #00b0e4;
+    height: 20px;
+    font-size: 20px;
+}
+       input, button, select, textarea {
+    height: 40px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+       /* Esconde o input */
+input[type='file'] {
+  display: none
+}
+
+/* Aparência que terá o seletor de arquivo */
+#kk {
+  background-color: #3498db;
+  border-radius: 5px;
+  color: #fff !important;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 20px
+}
+      .dataTables_wrapper .dataTables_filter {
+float: right;
+text-align: right;
+visibility: hidden;
+}
+.custom-input-class::-webkit-input-placeholder {
+  color: #f00 !important;
+  opacity: 1 !important;
+}
+   </style>
+<script src="../binjs/helpersvers.js"></script>
+<style>
+</style>
+<script src="../binjs/clientes.js"></script>
+<script src="../helpers.js"></script>
+<div class="row clearfix">
+   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+         <div class="header">
+            <h2 style="margin:10px 10px 10px 10px; " >
+               Configurações loja - Todas essas Configurações serão exibidas para os clientes
+            </h2>
+            
+
+
+
+          
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" data-toggle="tab" aria-expanded="true"> <i class="large material-icons">build</i>Configurações de loja</a></li>
+                    <li role="presentation" class=""><a href="#profile" data-toggle="tab" aria-expanded="false">  <i class="large material-icons">brush</i>
+                        Designer</a></li>
+
+                        <li role="presentation" class=""><a href="#bandeiras" data-toggle="tab" aria-expanded="false">  <i class="large material-icons">card_membership</i>
+                            Bandeiras</a></li>
+
+
+                        
+                </ul>
+
+
+
+
+
+                
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="home">
+                        <form method="GET" action="{{route('configsave')}}">
+                        <input style="display: none" type="text" value="{{$iduser}}"  id="ID_USER" name="ID_USER" class="form-control">
+                        <div class="form-line">
+                            <label class="form-label">Nome empreendimento:</label>
+                            <input name="nome_estabelecimento" value="{{$usercf->nome_estabelecimento ?? ''}}" id="nome_estabelecimento" type="text" class="form-control">
+                           
+                        </div>
+                        <p>
+
+                            <div class="form-line">
+                                <label class="form-label">Nome representante:</label>
+                                <input value="{{$usercf->nome_repre ?? ''}}" name="nome_repre" id="nome_repre" type="text" class="form-control">
+                               
+                            </div>
+                            <p>
+
+                        <div class="form-line">
+                            <label class="form-label">Telefone 1:</label>
+                            <input  value="{{$usercf->telefone1 ?? ''}}" name="telefone1"  name="telefone1" type="text" class="form-control">
+                           
+                        </div>
+                        <p>
+                        <div class="form-line">
+                            <label class="form-label">Telefone 2:</label>
+                            <input value="{{$usercf->telefone2 ?? ''}}" name="telefone2"  name="telefone2" type="text" class="form-control">
+                        </div>
+                    <br>
+
+
+                    <div class="demo-checkbox">
+                        <h3>Configurações de abertura por padrão ela é manual </h3>
+                        <br>
+                        <input name="tipo_op" value="1" style="padding: 30px" type="radio" id="md_checkbox_1" class="chk-col-red">
+                        <label for="md_checkbox_1">Loja aberta 24 horas por dia</label>
+                        
+                        <input name="tipo_op" value="2" style="padding:30px" type="radio" id="md_checkbox_2" class="chk-col-red" >
+                        <label for="md_checkbox_2">Definir horario de abertura e fechamento</label>
+                        
+                       
+                        <br>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                    <div class="col-xs-4 col-lg-6 col-md-4 col-sm-4">
+                    <h3>Entrega gratis, a partir de</h3>
+                    <input onfocus="masc(this)"  class="form-control" name="MINIMOPRECOENTREGAGRATIS" id="MINIMOPRECOENTREGAGRATIS" value="{{$usercf->MINIMOPRECOENTREGAGRATIS ?? ''}}"  type="text" />
+                    </div>
+
+                    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+                        <h3>Preço da entrega</h3>
+                        <input onfocus="masc(this)" class="form-control" name="PRECOENTREGA" id="PRECOENTREGA" value="{{$usercf->PRECOENTREGA ?? ''}}" type="text" />
+                    </div>
+                    
+                      
+                    
+                    
+                
+                    
+                    </div>
+                      
+                    <br>
+                    <br>
+                    <br>
+                    <input class="btn bg-blue waves-effect" type="submit" value="Salvar">
+
+                    </form>
+            
+        </div>
+
+                      
+                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                    
+                      
+                 
+                
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                             IMAGEM DA LOJA
+                                <small>utilize uma imagem com boa resulução</small>
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        
+                        <div class="body">
+                            <div class="button-demo">
+                                <center >
+
+                                    <form action="{{route('updateimage')}}" method="post">
+
+                                        @csrf
+
+                                    <input style="display: none" type="text" value="{{$iduser}}"  id="ID_USER" name="ID_USER" class="form-control">
+
+                                    <input id="selecao-arquivo"  type='file' accept='image/*' onchange='openFile(event)'><br>
+
+                                    <input style="display: none"  id='imagem_loja' name="imagem_loja" type="text">
+                                    <div class="col-xs-12 col-lg-4 col-md-4 col-sm-6">
+                                    <img src="{{$usercf->imagem_loja ?? ''}}" id='output' style="height:300px; width:300px;">
+                                    <br>
+                                    <label for='selecao-arquivo' id="kk">Selecionar imagem para a loja</label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="col-xs-12 col-lg-4 col-md-4 col-sm-6">
+                                    <br>
+                                    <input style="padding: 500px" type='text' id="customhead" name="customhead" />
+                                    <br>
+                                    <h3 for='selecao-arquivo' id="kk">Cor cabeçalho</h3>
+
+                                    
+                                    </div>
+
+                                    <div class="col-xs-12 col-lg-4 col-md-4 col-sm-6">
+
+                                  
+                                    <br>
+                                    <input style="padding: 500px" type='text' id="custombody" name="custombody"/>
+                                    <br>
+                                    <h3 for='selecao-arquivo' id="kk">Cor corpo</h3>
+                                    <br>
+
+                                    </div>
+                                    <br>
+
+
+                                    <input id="save" class="btn bg-blue waves-effect" type="submit" value="Salvar">
+
+
+
+                                </form>
+                                </center>
+            
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                
+                </div>
+
+
+                    
+            
+                    <div role="tabpanel" class="tab-pane fade" id="bandeiras">
+                        <b>Escreva as bandeiras aceitas em seu estabelecimento</b>
+                        <p>
+                            
+                            <div class="form-group demo-tagsinput-area">
+                                <div class="form-line focused">
+                                    <div class="bootstrap-tagsinput">    
+                                        
+                                       <input id="dew" type="text" class="form-control" data-role="tagsinput" value="Visa,MasterCard,Maestro,Hipercard,American,Express,Diners Club,Elo," >
+                                </div>
+                            </div></div>
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="settings">
+                        <b>Settings Content</b>
+                        <p>
+                            Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
+                            Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid
+                            pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren
+                            sadipscing mel.
+                        </p>
+                    </div>
+                </div>
+
+            <
+        
+</section>
+
+
+<script>
+
+
+var openFile = function(file) {
+   document.getElementById('save').disabled = true;
+    var input = file.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+      var output = document.getElementById('output');
+      output.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+    setTimeout(function(){
+        document.getElementById('imagem_loja').value = document.getElementById('output').src
+        document.getElementById('save').disabled = false;
+    },1000)
+  
+
+  };
+   
+
+
+  $("#customhead").spectrum({
+    preferredFormat: "hex",
+    flat: true,
+    showInput: true,
+    allowEmpty:true
+ });
+
+ $("#custombody").spectrum({
+    preferredFormat: "hex",
+    flat: true,
+    showInput: true,
+    allowEmpty:true
+ });
+ 
+ 
+ 
+ function masc(val) {
+   $(val).maskMoney({
+      prefix: "",
+      decimal: ".",
+      thousands: ","
+   });
+   }
+
+  
+
+       
+</script>
+@stop

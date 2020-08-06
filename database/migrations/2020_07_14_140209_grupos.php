@@ -18,7 +18,7 @@ class Grupos extends Migration
             $table->string('NOME_GRUPO')->nullable();
             $table->string('DESCR_GRUPO')->nullable();
             $table->integer('ID_USER')->nullable();
-           
+            $table->longText('IMG')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

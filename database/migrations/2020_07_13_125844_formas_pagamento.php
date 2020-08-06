@@ -13,10 +13,15 @@ class FormasPagamento extends Migration
      */
     public function up()
     {
-        Schema::create('formas_pagemento', function (Blueprint $table) {
+        Schema::create('formas', function (Blueprint $table) {
             $table->id();
-            $table->string('DESCR')->nullable();
-         
+            $table->string('DESCR_FRM')->nullable();
+            $table->string('ID_USER')->nullable();
+            $table->string('NOME_FRM')->nullable();
+            $table->string('STATUS')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+            
         });
     }
 

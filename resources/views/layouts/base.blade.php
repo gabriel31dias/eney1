@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
    <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" ></script>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=Edge">
       <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -39,6 +40,17 @@
           
       }
 
+.select2-selection__rendered {
+   background-color:#96DDEA; !important
+  border: none;
+  color: white;
+ 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height:30px;
+}
 
        
   .form-control {
@@ -89,8 +101,7 @@ input[type="placeholder"] {
 }
 
       .nav-tabs > li > a {
-         color: #111 !important;
-         font-size:16px;
+         
 
       }
 
@@ -106,10 +117,7 @@ input[type="placeholder"] {
 
      
      .nav-tabs {
-       border-bottom: 1px solid border-bottom: 1px solid #2E9AFE;
-       border-bottom: 2px solid #2E9AFE;
-       color:black;
-
+       
        }   
 
        .menuitens{
@@ -210,8 +218,7 @@ input[type="placeholder"] {
 
 
 .nav-tabs {
-    border-bottom:  1px solid border-bottom: 1px solid #2E9AFE;
-    border-bottom: 2px solid #2E9AFE;
+   
 }
 
 .modal .modal-header .modal-title {
@@ -548,15 +555,29 @@ select {
                      <ul class="ml-menu">
                         <li>
                            <a href="{{route("grupos")}}" class="menuit menu-toggle">
-                           <i class="material-icons" >folder_shared</i>
+                           <i class="material-icons" >create_new_folder</i>
                            <span style="margin-top:10px;">Grupos</span>
                            </a>
             
                         </li>
                         <li>
                            <a href="{{route("produtos")}}" class="menuit menu-toggle">
-                           <i class="material-icons" >folder_shared</i>
+                           <i class="material-icons" >create_new_folder</i>
                            <span style="margin-top:10px;">Produtos</span>
+                           </a>
+            
+                        </li>
+                        <li>
+                           <a href="{{route("adicionais")}}" class="menuit menu-toggle">
+                           <i class="material-icons" >create_new_folder</i>
+                           <span style="margin-top:10px;">Adicionais</span>
+                           </a>
+            
+                        </li>
+                        <li>
+                           <a href="{{route("formaspg")}}" class="menuit menu-toggle">
+                           <i class="material-icons" >create_new_folder</i>
+                           <span style="margin-top:10px;">Formas de pagamento</span>
                            </a>
             
                         </li>
@@ -567,7 +588,7 @@ select {
                   <li>
                      <a  href="javascript:void(0);" class="menuit menu-toggle">
                      <i class="material-icons">create_new_folder</i>
-                     <span>Cadastros</span>
+                     <span>Relatorios</span>
                      </a>
                      <ul class="ml-menu">
                         <li>
@@ -581,7 +602,52 @@ select {
                         
                        
                   </li>
+
+                  
                </ul>
+
+               <li>
+                  <a href="{{route("vendas")}}" class="menuit menu-toggle">
+                  <i class="material-icons" >assistant_photo</i>
+                  <span style="margin-top:10px;">Vendas</span>
+                  </a>
+   
+               </li>
+
+               
+               <li>
+                  <a href="{{route("config")}}" class="menuit menu-toggle">
+                  <i class="material-icons" >build</i>
+                  <span style="margin-top:10px;">Configurações</span>
+                  </a>
+   
+               </li>
+               <br>
+              <center>
+               @if($tipo_op == '1')
+
+
+             
+               <button type="button" class="btn btn-primary btn-block waves-effect" data-trigger="focus" data-container="body" data-toggle="popover" data-placement="right" title="" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="Popover Title">
+                 ABRIR E FECHAR LOJA
+              </button>
+             
+              <br>
+              <br>
+
+             
+            
+               <button id="abreloja" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
+                  <i class="material-icons">queue_play_next</i>
+              </button>
+
+              <button   id="fechaloja" type="button" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
+               <i class="material-icons">remove_from_queue</i>
+             </button>
+
+           @endif
+
+           
             </div>
             <!-- #Menu -->
             <!-- Footer -->
@@ -738,6 +804,68 @@ select {
                </div>
             </div>
          </aside>
+
+         <script>
+async function novavenda(){
+               
+Swal.fire({
+  title: 'Uma nova venda foi realizada via app',
+  text: '',
+  imageUrl: 'https://png.pngtree.com/png-vector/20190725/ourlarge/pngtree-box-icon-png-image_1606515.jpg',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Custom image',
+  confirmButtonText: 'Mais detalhes',
+
+  
+})
+
+}
+
+            $('#abreloja').click(function(){
+                
+               let getid = '{{$iduser}}'
+               location.href = '{{route("abreloja")}}' + '/' + getid
+
+            });
+
+            $('#fechaloja').click(function(){
+                
+                let getid = '{{$iduser}}'
+                location.href = '{{route("fechaloja")}}' + '/' + getid
+ 
+
+             });
+
+var socket = io('http://localhost:3000/')
+
+
+setTimeout(function(){ //Aguarda para criar a room 
+	socket_createroom()
+},3000)
+
+
+async function socket_createroom(){
+    socket.emit('createroom', {{ App\Http\Controllers\AppController::getlojacode($iduser)}} )
+}
+
+socket.on('receive',function(data){
+  
+  if (data.tipo == 'novavenda'){
+     novavenda()
+     var audio = new Audio('http://127.0.0.1:8000/audio.mp3');
+     audio.play();
+     var audio1 = new Audio('http://127.0.0.1:8000/audio.mp3');
+     audio1.play();
+     var audio = new Audio('http://127.0.0.1:8000/audio.mp3');
+     audio.play();
+    // https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3
+     
+  }
+
+})
+
+         </script>
          <!-- #END# Right Sidebar -->
       </section>
       <section class="content">
@@ -770,5 +898,6 @@ select {
       <script src="../loader.js"></script>
       <!-- Demo Js -->
       <script src="../js/demo.js"></script>
+      <script src="../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
    </body>
 </html>

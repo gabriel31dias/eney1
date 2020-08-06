@@ -24,7 +24,7 @@ class ClienteController extends Controller
     public function index(){
         $user = Auth::user()->email;
         $username = Auth::user()->name;
-        return view('clientes',['user'=>$user , 'username'=>$username ]);
+        return view('clientes',['user'=>$user , 'username'=>$username ,'tipo_op'=> $tipo_op]);
     }
 
 
@@ -86,6 +86,4 @@ class ClienteController extends Controller
         return response()->json($cliente);
     }
     
-
-
 }

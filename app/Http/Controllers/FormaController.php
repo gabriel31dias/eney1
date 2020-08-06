@@ -16,8 +16,11 @@ class FormaController extends Controller
     public $email;
     public $categoria_formas = [];
     public $codigos_nfe;
+    
+    private $formas;
+   
 
-    public function __construct(){
+    public function __construct(Forma $formas){
         //Formas padrão config----------------------
         $this->categoria_formas = ['k1'=>'Dinheiro','k2'=>'Prazo','k3'=>'Carta frete','k4'=>'Cartão de crédito','k5'=>'Ticket'];
         $this->codigos_nfe = ['k1'=>'01-Dinheiro','k2'=>'02-Cheque','k3'=>'03-Cartão Crédito',
@@ -25,6 +28,8 @@ class FormaController extends Controller
         'k7'=>'10-Vale Alimentação','k8'=>'11-Vale refeição','k9'=>'12-Vale presente','k10'=>'13-Vale combustivel',
         'k11'=>'14-Duplicata mercantil' ,'k13'=>'90-Sem pagamentos','k14'=>'99-Outros'
         ];
+
+        $this->formas =  $formas;
 
     }
 
@@ -35,22 +40,38 @@ class FormaController extends Controller
      */
     public function index()
     {
+        
+        $tipo_op = Auth::user()->tipo_op;
+        $user = Auth::user()->email;
+        $username = Auth::user()->name;
+        $iduser = Auth::user()->id;
+        $formas =  $this->formas->all();
        
-     $user = Auth::user()->email;
-     $username = Auth::user()->name;
-     var_dump($this->categoria_formas);
-    
-     return view('formasdepagemento',['user'=>$user , 'username'=>$username ,'categoria_formas'=>$this->categoria_formas,'codigos_nfe'=>$this->codigos_nfe]);
+        return view('formasdepagamento',['user'=>$user , 'username' => $username,'iduser' => $iduser,'codigosnfe'=> $this->codigos_nfe,'formas'=> $formas,'tipo_op'=> $tipo_op]);
     }
+
+
+    public function list($iduser){
+       $formas = $this->formas->where('ID_USER',$iduser)->get();
+       return response()->json( $formas );
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        $req = $req->all();
+        $formas = $this->formas;
+        $formas = $formas->create($req);
+
+        if($formas){
+            return redirect()->route('formaspg',['s'=>'true']);
+        }
     }
 
     /**
@@ -107,8 +128,35 @@ class FormaController extends Controller
      * @param  \App\Forma  $forma
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Forma $forma)
+    public function destroy($id)
     {
-        //
+      $formas = $this->formas->where('id',$id);
+      $formas = $formas->delete();
+      return redirect()->route('formaspg',['ex'=>'true']);
     }
+
+    public function inativa($id){
+      $formas = $this->formas->where('id',$id);
+      $formas = $formas->update(['STATUS'=>'false']);
+
+    }
+
+    public function ativa($id){
+        $formas = $this->formas->where('id',$id);
+        $formas = $formas->update(['STATUS'=>'true']);
+    }
+
+    
+    public function inativado_ou_ativado($id){
+        $formas = $this->formas->where('id',$id)->first();
+        $formas = $formas->STATUS;
+        return response()->json($formas);
+    }
+
+
+    
+  
+     
+
+    
 }

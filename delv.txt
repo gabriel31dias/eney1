@@ -1,0 +1,150 @@
+
+   ///vue vmodel forms 
+async function cad_produto() {
+   var datag = ''
+   await $.get("{{route('produtoslistformat')}}", function(data, status){ ///Busca o registro no servidor
+            datag = data
+       }).then(function (params) {
+       // alert(JSON.stringify(datag))
+       })
+
+
+setTimeout(() => {
+ 
+$("#ADICIONAL").select2({
+   dropdownParent: $('.swal2-container'),
+   data: datag 
+})
+
+}, 1000);
+
+
+  
+
+const frm = await Swal.fire({
+    width: 800,
+    title: 'Cadastro de Adicionais',
+    html:
+
+        `<br>
+
+        
+                        <br>
+                            <br>
+                           
+                            
+<form id="f1" action="{{route('adicionaissave')}}" method="POST">
+
+@csrf
+<div class="row clearfix">
+<input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
+                            <div class="col-sm-12">
+                            
+                                  
+                              <label  class="">Selecione o produto</label>
+                              <select  class="form-control"  id="ADICIONAL" name="ADICIONAL"  ></select>
+
+                        
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            
+                        <div class="center-align col-sm-6">
+                             <div class="center-align form-group form-float">
+                                    <div class="form-line">
+                                      <label  class="">Preço</label>
+                                      <center>
+                                        <input value="" id="PRECO"  name="PRECO" onfocus="masc(this)"  type="text" class="form-control">
+                                        </center>
+                                    </div>
+                                </div>
+                        </div>
+
+                        
+
+            </form>
+                        `,
+
+    confirmButtonText: 'SALVAR PRODUTO',
+    showCancelButton: true,
+    cancelButtonText: 'CANCELAR',
+    focusConfirm: false,
+    preConfirm: () => {
+      
+    }
+}).then(function (params) {
+
+   if (!document.getElementById('ADICIONAL').value) {
+      
+     
+
+        Swal.fire({
+             icon: 'error',
+             title: '',
+             html: '<h3>Digite o nome do adicional.</h3>',
+            footer: ''
+          })
+   
+   return 
+   }
+
+   if (!document.getElementById('PRECO').value) {
+   
+
+        Swal.fire({
+             icon: 'error',
+             title: '',
+             html: '<h3>Digite o preço adicional.</h3>',
+            footer: ''
+          })
+   
+   return 
+   }
+///--------------------------------------------Salva
+
+var request;
+var $form = $('#f1');
+var serializedData = $form.serialize();
+//alert(serializedData)
+request = $.ajax({
+    url: "{{route('adicionaissave')}}",
+    type: "post",
+    data: serializedData
+});
+
+request.done(function(response, textStatus, jqXHR) {
+   Swal.fire(
+  '',
+  '<h3>Adicional cadastrado com sucesso !</h3>',
+  'success'
+   )
+   consulta()
+});
+
+request.fail(function(jqXHR, textStatus, errorThrown) { 
+ Swal.fire({
+ icon: 'error',
+ title: '',
+ text: '<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
+ footer: ''
+})
+
+
+});
+
+
+request.always(function() {
+    // Reenable the inputs
+    
+});
+
+
+   
+})
+
+
+}

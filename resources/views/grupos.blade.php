@@ -93,6 +93,7 @@ visibility: hidden;
                         <th>id</th>
                         <th>Nome grupo</th>
                         <th>Descrição grupo</th>
+                        <th>Ações</th>
                         
                      </tr>
                   </thead>
@@ -115,83 +116,126 @@ visibility: hidden;
 
 <script>
 
-
 var dom_values_estate = {
-      nomegrupo:'',
-      descr_grupo:'',
-   }
+	nomegrupo: '',
+	descr_grupo: '',
+}
+
+function consulta(params)
+{
+	$.ajax(
+	{
+		url: `{{ route('gruposlist') }}`,
+		type: 'GET',
+		success: function (data)
+		{
+			var table = $('#tb').DataTable(
+			{
+				"language":
+				{
+					"lengthMenu": "Mostrar _MENU_ cadastros por pagina",
+					"zeroRecords": "Nenhum registro foi encontrado",
+					"info": "Showing page _PAGE_ of _PAGES_",
+					"infoEmpty": "Nenhum registro foi encontrado",
+					"infoFiltered": "(filtered from _MAX_ total records)",
+					"search": "Consulta: ",
+					"oPaginate":
+					{
+						"sFirst": "Avançar", // This is the link to the first page
+						"sPrevious": "Voltar", // This is the link to the previous page
+						"sNext": "Avançar", // This is the link to the next page
+						"sLast": "Voltar" // This is the link to the last page
+					}
+				},
+				"pageLength": 20,
+				data: data,
+				destroy: true,
+				'order': [
+					[0, 'dec']
+				],
+
+				columns: [
+					{
+						"data": "id"
+					},
 
 
+					{
+						"data": "NOME_GRUPO"
 
 
-   function consulta(params) {
-          
-          $.ajax({
-               url: `{{ route('gruposlist') }}`,
-               type: 'GET',
-               success: function(data) {
-                   var table = $('#tb').DataTable({
-                      
-                       "language": {
-                           "lengthMenu": "Mostrar _MENU_ cadastros por pagina",
-                           "zeroRecords": "Nenhum registro foi encontrado",
-                           "info": "Showing page _PAGE_ of _PAGES_",
-                           "infoEmpty": "Nenhum registro foi encontrado",
-                           "infoFiltered": "(filtered from _MAX_ total records)",
-                           "search": "Consulta: ",
-                           "oPaginate": {
-                           "sFirst": "Avançar", // This is the link to the first page
-                           "sPrevious": "Voltar", // This is the link to the previous page
-                           "sNext": "Avançar", // This is the link to the next page
-                           "sLast": "Voltar" // This is the link to the last page
-          }
-                       },
-                       "pageLength": 20,
-                       data: data,
-                       destroy: true,
-                       'order': [[0, 'dec']],
-              
-                       columns: [{
-                               "data": "id"
-                           },
-                           
-                           
-                           {
-                               "data": "NOME_GRUPO"
-          
-                               
-                           },
-          
-                           
-                           {
-                               "data": "DESCR_GRUPO"
-                           },
-                          
-              
-                           
-                           
-                       ],
-                       responsive: true,
-                   });
-                   $('#datatable-json').on('click', 'button', function(e) {
-                       e.preventDefault;
-                       var rows = table.row($(this).parents('tr')).data(); //Get Data Of The Selected Row
-                       console.log(rows)
-                   });
-               }
-              });
-             }
-          
-          
-             consulta() ///executa consulta
-    
-   ///vue vmodel forms 
-async function cad_grupo(){
+					},
 
-const frm = await Swal.fire({
-   width: 800,
-   title: 'Cadastro de grupos de produtos',
-   html:`<br>
+
+					{
+						"data": "DESCR_GRUPO"
+					},
+
+					{
+						"data": "id",
+						"name": "id",
+						fnCreatedCell: function (nTd, sData, oData, iRow, iCol)
+						{
+							if (oData.id)
+							{
+
+								$(nTd).html("<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue'onclick=updateX("+oData.id+")><i class='material-icons'>edit</i></a>" + "<a style='margin:10px' class='waves-effect waves-light  btn bg-red waves-effect' href='{{route('deletegrupo')}}/" + oData.id + "'><i class='material-icons'>delete_forever</i></a>");
+							}
+							//] image
+
+						}
+					},
+
+				],
+				responsive: true,
+			});
+			$('#datatable-json').on('click', 'button', function (e)
+			{
+				e.preventDefault;
+				var rows = table.row($(this).parents('tr')).data(); //Get Data Of The Selected Row
+				console.log(rows)
+			});
+		}
+	});
+}
+
+
+consulta() ///executa consulta
+
+///vue vmodel forms 
+async function cad_grupo()
+{
+
+	const frm = await Swal.fire(
+	{
+		width: 800,
+		title: 'Cadastro de grupos de produtos'+`<div style="display:none" id="carregandoimg">  
+        
+        <br>
+        <br>
+          <center>
+
+                       <h1>Aguarder carregando imagem....</h1>
+         </center>
+               </div>
+                 `,
+		html: `<br>
+   <form action="/" id="foto" id="f2" class="dropzone dz-clickable" method="post" enctype="multipart/form-data">
+                              <div class="dz-message">
+                                 <div class="align-center drag-icon-cph">
+                                       <i id="dedo" class="material-icons">touch_app</i>
+                                    <center>
+                                       <img id="myimage" height="200">
+
+                                    <br>
+                                       <input class="" onchange="onFileSelected(event)" type="file" name="fileToUpload" id="fileToUpload" size="1" />
+                                       </center>
+                                 </div>
+                                 <h3>Selecione a foto do grupo</h3>
+                                 <em></em>
+                              </div>
+                              
+                           </form>
                         <br>
                             <br>
                                   
@@ -201,16 +245,17 @@ const frm = await Swal.fire({
 <div class="r"ow clearfix">
 <input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
                             <div class="col-sm-12">
+                           
                              <div class="form-group form-float">
                                     <div class="form-line">
                                       <label class="">Nome do grupo</label>
-                                        <input id="NOME_GRUPO"  value="${dom_values_estate.nomegrupo}"  name="NOME_GRUPO" type="text" class="form-control">
+                                        <input id="NOME_GRUPO" onkeyup="this.value = this.value.toUpperCase();"  value="${dom_values_estate.nomegrupo}"  name="NOME_GRUPO" type="text" class="form-control">
                                        
                                     </div>
                                 </div>
                              
                             </div>
-                           
+                            <input style="display:none" type="text" id="IMG" name="IMG">
                         <div class="col-sm-12">
                              <div class="form-group form-float">
                                     <div class="form-line">
@@ -220,92 +265,312 @@ const frm = await Swal.fire({
                                     </div>
                                 </div>
                         </div>
-
                         
             </form>
                         `,
- confirmButtonText: 'SALVAR GRUPO',
- showCancelButton: true,
- cancelButtonText: 'CANCELAR',
- focusConfirm: false
-}).then(function (params) {
+		confirmButtonText: 'SALVAR GRUPO',
+		showCancelButton: true,
+		cancelButtonText: 'CANCELAR',
+		focusConfirm: false
+	}).then(function (params)
+	{
 
-   if(!document.getElementById('NOME_GRUPO').value){
-    dom_values_estate.descr_grupo = document.getElementById('DESCR_GRUPO').value
+		if (!document.getElementById('NOME_GRUPO').value)
+		{
+			dom_values_estate.descr_grupo = document.getElementById('DESCR_GRUPO').value
 
-    Swal.fire({
-             icon: 'error',
-             title: '',
-             html: '<h3>Digite o nome do produto.</h3>',
-            footer: ''
-          })
-          
-      return
-   }
+			Swal.fire(
+			{
+				icon: 'error',
+				title: '',
+				html: '<h3>Digite o nome do produto.</h3>',
+				footer: ''
+			})
 
-   if(!document.getElementById('DESCR_GRUPO').value){
-    dom_values_estate.nomegrupo = document.getElementById('NOME_GRUPO').value
-    Swal.fire({
-             icon: 'error',
-             title: '',
-             html: '<h3>Digite a descrição do grupo.</h3>',
-            footer: ''
-          })
+			return
+		}
 
-          return
-          
-   }
+		if (!document.getElementById('DESCR_GRUPO').value)
+		{
+			dom_values_estate.nomegrupo = document.getElementById('NOME_GRUPO').value
+			Swal.fire(
+			{
+				icon: 'error',
+				title: '',
+				html: '<h3>Digite a descrição do grupo.</h3>',
+				footer: ''
+			})
 
-   save_grupo()
+			return
 
-   
-})
+		}
+
+		save_grupo()
+
+
+	})
 
 
 }
 
 
 
-function save_grupo(){
+function save_grupo()
+{
+
+	var request;
+	var $form = $('#f1');
+	var serializedData = $form.serialize();
+
+	request = $.ajax(
+	{
+		url: "{{route('grupossave')}}",
+		type: "post",
+		data: serializedData
+	});
+
+	request.done(function (response, textStatus, jqXHR)
+	{
+		Swal.fire(
+			'',
+			'<h3>Grupo cadastrado com sucesso !</h3>',
+			'success'
+		)
+		consulta()
+	});
+
+	request.fail(function (jqXHR, textStatus, errorThrown)
+	{
+		Swal.fire(
+			'',
+			'<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
+			'error'
+		)
+	});
+
+	request.always(function ()
+	{
+		// Reenable the inputs
+
+	});
+
+}
+
+
+
+function onFileSelected(event) {
+   var selectedFile = event.target.files[0];
+   var reader = new FileReader();
+
+   var imgtag = document.getElementById("myimage");
+   imgtag.title = selectedFile.name;
+
+   reader.onload = function(event) {
+      imgtag.src = event.target.result;
+   };
+
+   reader.readAsDataURL(selectedFile);
+   document.getElementById('dedo').style.display = 'none'
+ 
+   document.getElementById('carregandoimg').style.display = 'block'
+   document.getElementById('swal2-content').style.display = 'none'
+   
+
+         setTimeout(function (params) {
+         //  alert(document.getElementById('myimage').src)
+            document.getElementById('IMG').value = document.getElementById('myimage').src
+            document.getElementById('swal2-content').style.display = 'block'
+            document.getElementById('carregandoimg').style.display = 'none'
+         },2000)
+         
+
+   }
+
+
+
+
+
+
+ 
+async function  updateX(idgrupos) {
+//alert(idproduto)
+
+
+await $.get("{{route('grupoitem')}}/"+idgrupos, function(data, status){ ///Busca o registro no servidor para editar
+  
+   
+       data_dom = data
+          
+       }).then(function (params) {
+        
+       })
+
+
+
+const frm = await Swal.fire({
+    width: 800,
+    closeOnClickOutside: false,
+    allowOutsideClick: false,
+    title: 'Cadastro de Grupo de produto'+`  <div style="display:none" id="carregandoimg">    
+                       <h1>Aguarder carregando imagem....</h1>
+               </div>
+                 `,
+    html:
+        `
+        <br>
+   <form action="/" id="foto" id="f2" class="dropzone dz-clickable" method="post" enctype="multipart/form-data">
+                              <div class="dz-message">
+                                 <div class="align-center drag-icon-cph">
+                                       
+                                    <center>
+                                       <img id="myimage" src="${data_dom.IMG}" height="200">
+
+                                    <br>
+                                       <input class="" onchange="onFileSelected(event)" type="file" name="fileToUpload" id="fileToUpload" size="1" />
+                                       </center>
+                                 </div>
+                                 <h3>Selecione a foto do grupo</h3>
+                                 <em></em>
+                              </div>
+                              
+                           </form>
+                        <br>
+                            <br>
+                                  
+<form id="f1" action="{{route('grupossave')}}" method="POST">
+
+@csrf
+<div class="r"ow clearfix">
+<input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
+                            <div class="col-sm-12">
+                              <input style="display:none" type="text" id="IMG" name="IMG" value='${data_dom.IMG}'>
+                             <div class="form-group form-float">
+                                    <div class="form-line">
+                                      <label class="">Nome do grupo</label>
+                                        <input id="NOME_GRUPO"  value="${data_dom.NOME_GRUPO}"  name="NOME_GRUPO" type="text" class="form-control">
+                                       
+                                    </div>
+                                </div>
+                             
+                            </div>
+                            <input style="display:none" type="text" id="IMG" name="IMG">
+                        <div class="col-sm-12">
+                             <div class="form-group form-float">
+                                    <div class="form-line">
+                                      <label  class="">Descrição grupo</label>
+                                        <textarea id="DESCR_GRUPO"    name="DESCR_GRUPO"  type="text" class="form-control">${data_dom.DESCR_GRUPO}</textarea>
+                                     
+                                    </div>
+                                </div>
+                        </div>
+                        
+            </form>
+
+            
+                        `,
+
+    confirmButtonText: 'SALVAR PRODUTO',
+    showCancelButton: true,
+    cancelButtonText: 'CANCELAR',
+    focusConfirm: false,
+    preConfirm: () => {
+      
+    }
+}).then(function (params) {
+
+  
+
+   if (!document.getElementById('NOME_PRODUTO').value) {
+      
+     
+
+        Swal.fire({
+             icon: 'error',
+             title: '',
+             html: '<h3>Digite o nome do produto.</h3>',
+            footer: ''
+          })
+   
+   return 
+   }
+
+   if (!document.getElementById('DESCR').value) {
+   
+
+        Swal.fire({
+             icon: 'error',
+             title: '',
+             html: '<h3>Digite a desrcrição do produto.</h3>',
+            footer: ''
+          })
+   
+   return 
+   }
+
+
+
+   if (!document.getElementById('PRECO_UNIT').value) {
+   
+
+   Swal.fire({
+        icon: 'error',
+        title: '',
+        html: '<h3>Digite o preço do produto.</h3>',
+       footer: ''
+     })
+
+return 
+}
+
+
+   
+///--------------------------------------------Salva
 
 var request;
 var $form = $('#f1');
 var serializedData = $form.serialize();
-
+//alert(serializedData)
 request = $.ajax({
-  url: "{{route('grupossave')}}",
-  type: "post",
-  data: serializedData
+    url: "{{route('produtosupdate')}}",
+    type: "post",
+    data: serializedData
 });
 
 request.done(function(response, textStatus, jqXHR) {
- Swal.fire(
+   Swal.fire(
   '',
-  '<h3>Grupo cadastrado com sucesso !</h3>',
+  '<h3>Adicional cadastrado com sucesso !</h3>',
   'success'
    )
    consulta()
 });
 
-request.fail(function(jqXHR, textStatus, errorThrown) {
-  Swal.fire(
-  '',
-  '<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
-  'error'
-   )
+request.fail(function(jqXHR, textStatus, errorThrown) { 
+ Swal.fire({
+ icon: 'error',
+ title: '',
+ text: '<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
+ footer: ''
+})
+
+
 });
+
 
 request.always(function() {
     // Reenable the inputs
     
 });
 
+
+   
+})
+
+   
 }
 
 
-
-
-
+   
 
 
 

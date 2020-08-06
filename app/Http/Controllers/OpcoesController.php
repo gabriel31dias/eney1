@@ -30,6 +30,7 @@ class OpcoesController extends Controller
    public function list(){
       $opcoes = $this->opcoes->all();
       
+      return  $opcoes;
 
 
    }

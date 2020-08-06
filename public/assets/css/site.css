@@ -1,0 +1,184 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif; 
+}
+/*Body*/
+body {
+	background: url(../img/food1.jpg),
+				linear-gradient(50deg,#81BEF7,#58ACFA);
+	background-attachment: fixed;
+	background-position: center;
+	font-family: Helvetica,Arial,sans-serif;
+	opacity: 0.9;
+}
+/*Container*/
+#container
+{
+	position: relative;
+}
+/*Box Empres
+a*/
+.title-empresa
+{
+	height: 80px;
+	width: 100%;
+	line-height: 80px;
+}
+.title-empresa h2 
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #FFF;
+	text-align: center;
+	background-color: #2E9AFE;
+	z-index: 999;
+	border-bottom: 4px solid #FFF;
+}
+/*Principal*/
+.principal 
+{
+	max-width: 920px;
+	width: 100%;
+	margin: auto;
+	border: 1px solid #111;
+}
+/*Box Image*/
+.box-image
+{
+	width: 49%;
+	float: left;
+	border: 1px solid #111;
+}
+.box-image img 
+{
+	width: 100%;
+}
+.box-image figcaption
+{
+	border: 1px solid #111;
+	background-color: tomato;
+	text-align: center;
+	color: #FFF;
+}
+/*Box Info*/
+.box-info
+{
+	width: 49%;
+	float: right;
+	border: 1px solid #111;
+}
+/*Clear*/
+.clear
+{
+	clear: both;
+}
+/*footer*/
+footer
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #FFF;
+	text-align: center;
+	background-color: #2E9AFE;
+	z-index: 999;
+	border-bottom: 4px solid #FFF;
+	margin-top: 80px;
+}
+/*Forms*/
+form
+{
+	max-width: 420px;
+	width: 100%;
+	margin: auto;
+}
+fieldset
+{
+	border: 3px solid #2e9afe;
+	border-radius: 5%;
+	width: 410px;
+	height: 730px;
+	margin: auto;
+	background-color: #FFF;
+}
+legend
+{
+	height: 170px;
+	line-height: 170px;
+	width: 250px;
+	margin: auto;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.icon-user
+{
+	margin-top: 20px;
+	font-size:120px;
+	color:#2e9afe;
+	border: 3px solid #2e9afe;
+	height: 170px;
+	width: 170px;
+	padding: 10px;
+	border-radius: 50%;
+	background-color: #FFF; 
+}
+
+label
+{
+	display: block;
+	width: 90%;
+	margin: auto;
+	margin-top: 3px;
+
+}
+
+input
+{
+	box-sizing: border-box;
+	display: block;
+	width: 90%;
+	margin: auto;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 6px;
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid #333;
+	font-size: 16px;
+}
+
+input:focus
+{
+	border: 1px solid #2e9afe;
+}
+
+input[type="submit"]
+{
+	background-color: #2e9afe;
+	color: #FFF;
+	border: 3px solid #2e9afe;
+	cursor: pointer;
+	transition: .5s;
+	font-size: 17px;
+	margin-top: 15px;
+}
+
+input[type="submit"]:hover
+{
+	background-color: #FFF;
+	color: #111;
+	border: 3px solid #2e9afe;
+	cursor: pointer;
+	font-size: 17px;
+}
+
+picture
+{
+	display: block;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}

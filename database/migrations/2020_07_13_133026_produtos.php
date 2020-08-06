@@ -21,16 +21,17 @@ class Produtos extends Migration
             $table->string('QUANTIDADE_ESTOQUE')->nullable();
             $table->string('CFOP')->nullable();
             $table->string('ICMS')->nullable();
+            $table->string('NOME_GRUPO')->nullable();
             $table->longText('IMG')->nullable();
             $table->longText('IMG2')->nullable();
             $table->longText('IMG3')->nullable();
             $table->longText('IMG4')->nullable();
             $table->string('TIPO_PRODUTO')->nullable();
-            $table->string('PRECO_UNIT')->nullable();
+            $table->decimal('PRECO_UNIT', 10, 2)->nullable();
             $table->string('DESCONTO')->nullable();
-            $table->string('PRECO_CUSTO')->nullable();
+            $table->string('CST')->nullable();
+            $table->string('NCM')->nullable();
             $table->string('CODIGO_ESTABELECIMENTO')->nullable();
-        
             $table->rememberToken();
             $table->timestamps();
         });
