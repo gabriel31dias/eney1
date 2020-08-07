@@ -424,10 +424,13 @@
    
    }).done(function(){
      
-     
-   //$getlojacode = '/{{$lojacod}}'
-	 // $('html').html('');
-    //$('body').load('{{route('carrinho')}}'+$getlojacode);
+     setTimeout(function(){
+       $getlojacode = '/{{$lojacod}}'
+	     $('html').html('');
+       $('body').load('{{route('carrinho')}}'+$getlojacode);
+
+     })
+
 
    })
 
