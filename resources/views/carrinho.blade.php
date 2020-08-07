@@ -421,6 +421,8 @@
   function removerdocarrinho(id){
 
    $.get('{{route('removeproduct')}}/'+id,function(data){
+    document.location.reload(true);
+
    
    }).done(function(){
      
