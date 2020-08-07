@@ -424,7 +424,8 @@
    
    }).done(function(){
      
-     
+    document.location.reload(true);
+
    ///$getlojacode = '/{{$lojacod}}'
 	//  $('html').html('');
    // $('body').load('{{route('carrinho')}}'+$getlojacode);
