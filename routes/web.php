@@ -19,7 +19,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/openloja', 'HomeController@openloja')->name('openloja');
+
+
 Route::get('/home', 'HomeController@index')->name('home2');
+
+
 
 Route::get('/abreloja/{code?}', 'AberturaFechamentoController@abreloja')->name('abreloja');
 Route::get('/fechaloja/{code?}', 'AberturaFechamentoController@fechaloja')->name('fechaloja');

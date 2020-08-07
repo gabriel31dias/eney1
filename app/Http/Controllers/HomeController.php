@@ -30,4 +30,11 @@ class HomeController extends Controller
         $tipo_op = Auth::user()->tipo_op;
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op]);
     }
+
+    public function openloja(){
+       $getcodeloja = Auth::user()->codigo_estabelecimento;
+        
+       echo $getcodeloja;
+
+    }
 }
