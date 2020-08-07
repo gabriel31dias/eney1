@@ -422,11 +422,15 @@
 
    $.get('{{route('removeproduct')}}/'+id,function(data){
    
-   })
-
+   }).done(function(){
+     
+     
    $getlojacode = '/{{$lojacod}}'
 	  $('html').html('');
     $('body').load('{{route('carrinho')}}'+$getlojacode);
+
+   })
+
 
   }
 
