@@ -231,18 +231,7 @@
                 </div>
         
                 
-                <div class="actionx col-xs-3 col-lg-4 col-md-4 col-sm-6">
-                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
-                        <p  style="text-align: center;margin-top:15px">
-                            
-                            <i  style="" class="material-icons">star</i>
-							<br>
-							
-                            Mias vendidos
-                        </p>
-                    </a>
-                </div>
+               
 
                   
                 <div class="actionx col-xs-3 col-lg-4 col-md-4 col-sm-6">
