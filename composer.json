@@ -14,7 +14,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "wisembly/elephant.io": "~3.0"
+        "wisembly/elephant.io": "~3.0",
 		 "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
         "laravel/ui": "^2.1",
