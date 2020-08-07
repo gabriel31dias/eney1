@@ -647,6 +647,8 @@ select {
 
            @endif
 
+           <button type="button" class="btn bg-blue waves-effect">Acessar minha loja</button>
+
            
             </div>
             <!-- #Menu -->
