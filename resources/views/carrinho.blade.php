@@ -429,7 +429,7 @@
 	     $('html').html('');
        $('body').load('{{route('carrinho')}}'+$getlojacode);
 
-     })
+     },2000)
 
 
    })
