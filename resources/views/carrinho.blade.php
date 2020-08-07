@@ -425,9 +425,9 @@
    }).done(function(){
      
      
-   $getlojacode = '/{{$lojacod}}'
-	  $('html').html('');
-    $('body').load('{{route('carrinho')}}'+$getlojacode);
+   ///$getlojacode = '/{{$lojacod}}'
+	//  $('html').html('');
+   // $('body').load('{{route('carrinho')}}'+$getlojacode);
 
    })
 
