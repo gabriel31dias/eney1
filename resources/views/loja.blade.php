@@ -462,7 +462,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	cach_produto = [id,nomeproduto,preco,descr,img]
 //alert(preco_old)
  const { value: formValues } = await swalWithBootstrapButtons.fire({
-  title: '<h1>'+ nomeproduto+ ' ' + '<a style="color:green">'+tags_adicionais +  '</a>' + ' ' + '</h1>' , 
+  title: '<h1>'+ nomeproduto+ ' ' + '<a style="color:green">'+ '' +  '</a>' + ' ' + '</h1>' , 
   width:500,showConfirmButton: false,
    closeOnClickOutside: false,
     allowOutsideClick: false,
