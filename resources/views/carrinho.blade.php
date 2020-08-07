@@ -420,19 +420,14 @@
 
   function removerdocarrinho(id){
 
-
-     location.href = "{{route('removeproduct')}}/"+id
-   //$.get('{{route('removeproduct')}}/'+id,function(data){
-   // document.location.reload(true);
-        ///alert('{{route('removeproduct')}}/'+id)
+   $.get('{{route('removeproduct')}}/'+id,function(data){
    
-   ///}).done(function(){
+   }).done(function(){
      
-    //document.location.reload(true);
-
-   ///$getlojacode = '/{{$lojacod}}'
-	//  $('html').html('');
-   // $('body').load('{{route('carrinho')}}'+$getlojacode);
+     
+   $getlojacode = '/{{$lojacod}}'
+	  $('html').html('');
+    $('body').load('{{route('carrinho')}}'+$getlojacode);
 
    })
 
