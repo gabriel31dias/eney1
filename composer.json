@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "wisembly/elephant.io": "~3.0"
+		"sven/artisan-view": "^3.3"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
