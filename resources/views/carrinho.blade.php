@@ -408,19 +408,21 @@
 
   function removerdocarrinho(id){
 
-   $.get('{{route('removeproduct')}}/'+id,function(data){
+    location.href = "{{route('removeproduct')}}"+id
+
+  // $.get('{{route('removeproduct')}}/'+id,function(data){
    
-   }).done(function(){
+  /// }).done(function(){
      
-     setTimeout(function(){
-       $getlojacode = '/{{$lojacod}}'
-	     $('html').html('');
-       $('body').load('{{route('carrinho')}}'+$getlojacode);
+     //setTimeout(function(){
+     //  $getlojacode = '/{{$lojacod}}'
+	    // $('html').html('');
+     //  $('body').load('{{route('carrinho')}}'+$getlojacode);
 
-     },2000)
+    // },2000)
 
 
-   })
+  // })
 
 
   }
