@@ -371,6 +371,14 @@ async function produtos(idproduto) {
    </tbody>
 
  </table>
+
+ <tr v-for="item in items" :key="item.message">
+   
+   <td> {{ item.obs }}</td>
+   
+
+ </tr>
+
 </ul>
 </div>
 </center>
