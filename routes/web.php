@@ -91,9 +91,9 @@ Route::get('/grupos/item/{id?}','GruposController@item')->middleware('auth')->na
 
 ///----Rotas do app que vai pra loja do estabelecimento
 
-Route::get('/app','AppController@index')->middleware('auth')->name("lojas");//??
+Route::get('/app','AppController@index')->name("lojas");//??
 Route::get('/app/loja/{codigo_estab?}/{grupo?}','AppController@getloja')->name("get_loja");//??
-Route::get('/app/produtos/{cod_estab?}','EstabelecimentosController@allproducts')->middleware('auth')->name("products_loja");
+Route::get('/app/produtos/{cod_estab?}','EstabelecimentosController@allproducts')->name("products_loja");
 Route::get('/app/carrinho/{lojacode?}','CarrinhoController@index')->name("carrinho");
 Route::post('/app/addproduto','CarrinhoController@add_produto')->name("add_produto");
 Route::get('/app/add_adicional/{idproduto?}/{idadicional?}/{qtdadicional?}','CarrinhoController@add_adicional')->name("add_adicional");
