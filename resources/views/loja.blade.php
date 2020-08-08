@@ -254,8 +254,8 @@
                             
                             <i  style="" class="material-icons">add_shopping_cart
 							</i>
-                           
-						    Meu Carrinho 
+                            <br>
+						    Carrinho 
 						 <label style="background-color: #FBB448 ; color:white; padding:5px" id="painelt">0.00</label>
                         </p>
                     </a>
