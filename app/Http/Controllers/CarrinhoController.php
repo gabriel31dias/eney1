@@ -103,7 +103,7 @@ class CarrinhoController extends Controller
         }
         $aux = Session::get('totaladicionais');
         Session::put('totaladicionais', $getpreco_adicionais + $aux); ///Salva valor total dos
-        $idproduto_gerado = $this->generate_code_ident_product();
+        $idproduto_gerado =  rand(10, 500000);
 
         $getpreco = $getpreco->PRECO_UNIT;
         $getimg = $getimg->IMG;
@@ -268,14 +268,17 @@ class CarrinhoController extends Controller
             }
 
         }
-       Session::put('carrinho', $produtos_salvos);
 
-       $gg = Session::get('carrinho');
+        var_dump($produtos_salvos );
 
-       var_dump($gg);
+        
+     ///  Session::put('carrinho', $produtos_salvos);
 
-        $this->set_total();
-        $this->set_total_adicionais();
+     //  $gg = Session::get('carrinho');
+
+       
+      //  $this->set_total();
+       // $this->set_total_adicionais();
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
         
