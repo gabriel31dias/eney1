@@ -189,7 +189,7 @@ class CarrinhoController extends Controller
         /// Session::put('totaladicionais',$getpreco_adicionais);
         Session::put('totalprodutos', $contador_valor);
         /// return  $get_total = Session::get('totalprodutos');
-        var_dump($getlojacode);
+        
 
         $getentrega = DB::table('users')->where('codigo_estabelecimento', $getlojacode)->first();
 
@@ -275,11 +275,12 @@ class CarrinhoController extends Controller
 
         $this->set_total();
         $this->set_total_adicionais();
+
+        header("Refresh:0");
+
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
         
-
-
 
     }
 
