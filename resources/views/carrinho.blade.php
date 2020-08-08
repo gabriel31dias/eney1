@@ -314,7 +314,7 @@
                             <p>
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
-
+                            {{$item['id']}}
                             
                            
                             <button id="idtrigeremover" type="button" onclick="removerdocarrinho('{{$item['id']}}')" class="btn btn-danger">  <i style="margin-top:1px;"  class="large material-icons">close</i>remover</button>
