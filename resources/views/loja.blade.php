@@ -704,7 +704,7 @@ html:
 		
 	   </td>
 
-	   <td> <input style="width:15px" type="text" class="header-title" :id="'itemx' + item.ID_ADICIONAL" @input="() => {}">
+	   <td> <input style="width:25px" type="text" class="header-title" :id="'itemx' + item.ID_ADICIONAL" @input="() => {}">
 		
 	</td>
 	 
