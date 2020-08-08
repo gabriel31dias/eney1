@@ -281,6 +281,8 @@ class CarrinhoController extends Controller
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
        header("Refresh:0");
+       header("Refresh:0");
+       header("Refresh:0");
        return redirect()->back();
 
     }
