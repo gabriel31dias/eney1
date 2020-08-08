@@ -408,7 +408,7 @@
 
   function removerdocarrinho(id){
 
-    location.href = "{{route('removeproduct')}}/"+id
+    location.href = "{{route('removeproduct')}}/"+id+"/"+lojacode
 
   // $.get('{{route('removeproduct')}}/'+id,function(data){
    

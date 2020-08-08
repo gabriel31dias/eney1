@@ -256,7 +256,7 @@ class CarrinhoController extends Controller
 
     }
 
-    public function removeproduct($codeid)
+    public function removeproduct($codeid,$codeloja)
     {
 
         $produtos_salvos = Session::get('carrinho');
