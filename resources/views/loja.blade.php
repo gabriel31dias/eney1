@@ -449,8 +449,9 @@ const swalWithBootstrapButtons = Swal.mixin({
 			$getlojacode = '/{{$lojacod}}'
 			//alert($getlojacode+grupo)
 			
-		 $('html').html('');
-         $('body').load($geturl+$getlojacode+resultado);
+		// $('html').html('');
+        // $('body').load($geturl+$getlojacode+resultado);
+		location.href = $geturl+$getlojacode+resultado
 		}
 			 
 async function open_product(id,nomeproduto,preco,descr,img){
