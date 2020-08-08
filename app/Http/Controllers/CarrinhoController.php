@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-use Redirect;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -257,11 +256,9 @@ class CarrinhoController extends Controller
 
     }
 
-    public function removeproduct($codeid,$codeloja)
+    public function removeproduct($codeid)
     {
-
         $produtos_salvos = Session::get('carrinho');
-
         foreach ($produtos_salvos as $key => $value)
         {
 
@@ -271,21 +268,9 @@ class CarrinhoController extends Controller
             }
 
         }
-
         Session::put('carrinho', $produtos_salvos);
-
         $this->set_total();
         $this->set_total_adicionais();
-
-        header("Refresh:0");
-
-        
-
-       
-
-        return redirect()->away('http://versatil14185.herokuapp.com/app/carrinho/'.$codeloja);
-
-
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
         
