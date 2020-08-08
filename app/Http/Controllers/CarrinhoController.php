@@ -285,6 +285,12 @@ class CarrinhoController extends Controller
 
     }
 
+    public function listteste(){
+        $gg = Session::get('carrinho');
+
+        var_dump( $gg);
+    }
+
     public function generate_code_ident_product()
     {
 

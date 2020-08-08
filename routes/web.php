@@ -109,6 +109,7 @@ Route::get('/app/setretiradalocal/{valor?}','CarrinhoController@setretiradalocal
 Route::post('/app/savevenda/{valor?}','CarrinhoController@savevenda')->name("savevenda");
 
 Route::get('/app/verificacarrinho','CarrinhoController@verificasetemprodutos_nocarrinho')->name("verificacarrinho");
+Route::get('/app/listteste','CarrinhoController@listteste')->name("listteste");
 
 
 
