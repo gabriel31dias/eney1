@@ -364,6 +364,7 @@ async function produtos(idproduto) {
 	   <td> {{ item.idproduto }}</td>
 	   <td> {{ item.nomeproduto }} <a style="color:red">{{ item.tags_adicionais }}</a></td>
 	   <td> {{ item.precoproduto }}</td>
+      <td> {{ item.obs }}</td>
 
 	 </tr>
 	 
@@ -372,13 +373,7 @@ async function produtos(idproduto) {
 
  </table>
 
- <tr v-for="item in items" :key="item.message">
-   
-   <td> {{ item.obs }}</td>
-   
-
- </tr>
-
+ 
 </ul>
 </div>
 </center>
