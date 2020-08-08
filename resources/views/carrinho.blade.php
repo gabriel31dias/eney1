@@ -552,14 +552,22 @@ const temaapp = Swal.mixin({
   buttonsStyling: false
 })
      
-    function setgrupo(grupo)
+function setgrupo(grupo)
         {
+
+			let resultado = grupo.replace(" ", "-");
+			resultado = resultado.replace(" ", "-");
+			resultado = resultado.replace(" ", "-");
+			resultado = resultado.replace(" ", "-");
+			
+
 			$geturl = '{{route('get_loja')}}'
 			$getlojacode = '/{{$lojacod}}'
 			//alert($getlojacode+grupo)
 			
-		 $('html').html('');
-          $('body').load($geturl+$getlojacode+grupo);
+		// $('html').html('');
+        // $('body').load($geturl+$getlojacode+resultado);
+		location.href = $geturl+$getlojacode+resultado
 		}
 			 
 async function open_product(nomeproduto,preco,descr,img,id){
