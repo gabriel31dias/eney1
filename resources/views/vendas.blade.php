@@ -354,7 +354,7 @@ async function produtos(idproduto) {
 	   <th scope="col">#</th>
 	   <th scope="col">Nome produto + adicionais</th>
 	   <th scope="col">Valor (adicionais + produtos)</th>
-	   <th scope="col"></th>
+	   <th scope="col">Observações</th>
 	  
 	 </tr>
    </thead>
