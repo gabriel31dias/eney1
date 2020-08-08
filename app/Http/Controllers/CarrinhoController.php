@@ -272,7 +272,7 @@ class CarrinhoController extends Controller
 
        $gg = Session::get('carrinho');
 
-       return   $gg;
+       var_dump($gg);
 
         $this->set_total();
         $this->set_total_adicionais();
