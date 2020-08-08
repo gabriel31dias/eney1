@@ -277,7 +277,7 @@ class CarrinhoController extends Controller
         $this->set_total_adicionais();
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
-        return redirect()->away('http://versatil14185.herokuapp.com/app/carrinho/36858');
+        
 
 
 
