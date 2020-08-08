@@ -268,7 +268,9 @@ class CarrinhoController extends Controller
             }
 
         }
-       $gg  = Session::put('carrinho', $produtos_salvos);
+       Session::put('carrinho', $produtos_salvos);
+
+       $gg = Session::get('carrinho');
 
        return   $gg;
 
