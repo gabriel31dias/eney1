@@ -278,6 +278,11 @@ class CarrinhoController extends Controller
 
         header("Refresh:0");
 
+        
+
+        return Redirect::to('http://versatil14185.herokuapp.com/app/carrinho/'.$codeloja);
+
+
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
         

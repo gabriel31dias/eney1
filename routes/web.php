@@ -99,7 +99,7 @@ Route::post('/app/addproduto','CarrinhoController@add_produto')->name("add_produ
 Route::get('/app/add_adicional/{idproduto?}/{idadicional?}/{qtdadicional?}','CarrinhoController@add_adicional')->name("add_adicional");
 //---teste
 Route::get('/app/settotal','CarrinhoController@set_total')->name("set_total");
-Route::get('/app/removeitemcarrinho/{code?}','CarrinhoController@removeproduct')->name("removeproduct");
+Route::get('/app/removeitemcarrinho/{code?}/{codeloja?}','CarrinhoController@removeproduct')->name("removeproduct");
 Route::get('/app/searchproduto/{lojacode?}/{nomeproduto?}','AppController@searchproduto')->name("searchproduto");
 
 Route::get('/app/gettotal/','CarrinhoController@gettotal')->name("gettotal");
