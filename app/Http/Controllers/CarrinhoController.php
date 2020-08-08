@@ -274,10 +274,10 @@ class CarrinhoController extends Controller
         Session::put('carrinho', $produtos_salvos);
 
         $this->set_total();
-        $this->set_total_adicionais();
+        
+        
 
-
-        return  redirect(url()->previous());
+        return $this->set_total_adicionais();
 
 
 
