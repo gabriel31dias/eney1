@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use Redirect;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
