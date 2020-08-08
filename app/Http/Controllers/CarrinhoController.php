@@ -277,9 +277,9 @@ class CarrinhoController extends Controller
      //  $gg = Session::get('carrinho');
 
        
-      //  $this->set_total();
-       // $this->set_total_adicionais();
-       // $getcodeloja = DB::table('users')->where('id', $value)->first();
+        $this->set_total();
+        $this->set_total_adicionais();
+        $getcodeloja = DB::table('users')->where('id', $value)->first();
 
         
 
