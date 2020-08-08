@@ -268,7 +268,10 @@ class CarrinhoController extends Controller
             }
 
         }
-        Session::put('carrinho', $produtos_salvos);
+       $gg  = Session::put('carrinho', $produtos_salvos);
+
+       return   $gg;
+
         $this->set_total();
         $this->set_total_adicionais();
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
