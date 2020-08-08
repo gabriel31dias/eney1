@@ -272,7 +272,7 @@ class CarrinhoController extends Controller
         var_dump($produtos_salvos );
 
         
-     ///  Session::put('carrinho', $produtos_salvos);
+     Session::put('carrinho', $produtos_salvos);
 
      //  $gg = Session::get('carrinho');
 
