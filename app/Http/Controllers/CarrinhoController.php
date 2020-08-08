@@ -276,7 +276,10 @@ class CarrinhoController extends Controller
         $this->set_total();
         $this->set_total_adicionais();
 
-        return $this->set_total();
+
+        return  redirect(url()->previous());
+
+
 
     }
 
