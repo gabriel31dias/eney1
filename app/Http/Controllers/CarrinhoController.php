@@ -264,7 +264,7 @@ class CarrinhoController extends Controller
 
             if ($value['id'] == $codeid)
             {
-               $produtos_salvos[$key] = [];
+                unset($produtos_salvos[$key]);
             }
 
         }
