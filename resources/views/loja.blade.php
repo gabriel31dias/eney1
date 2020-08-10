@@ -565,11 +565,11 @@ async function adicionar_carrinho(id,nomeproduto){
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				//alert(JSON.stringify(data))
+				alert(JSON.stringify(data))
             },
 
 			error: function (data) {
-				//alert(JSON.stringify(data))
+				alert(JSON.stringify(data))
             },
 
             data: JSON.stringify(produto)

@@ -111,7 +111,7 @@ Route::post('/app/savevenda/{valor?}','CarrinhoController@savevenda')->name("sav
 Route::get('/app/verificacarrinho','CarrinhoController@verificasetemprodutos_nocarrinho')->name("verificacarrinho");
 Route::get('/app/listteste','CarrinhoController@listteste')->name("listteste");
 
-Route::get('/app/getformasdepagamento','CarrinhoController@getformasdepagamento')->name("getformasdepagamento");
+Route::get('/app/getformasdepagamento/{iduser?}','CarrinhoController@getformasdepagamento')->name("getformasdepagamento");
 
 
 

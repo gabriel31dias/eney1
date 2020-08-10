@@ -2,8 +2,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+ 
+
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-       
+       <!-- production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<!-- jQuery -->
 	<script src="/lojavers/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -55,7 +58,8 @@
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
         <![endif]-->
-        
+        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
+"></script>
         <style>
 		       .actionx:hover {
               background-color:darkgrey;
@@ -292,7 +296,7 @@
         
 		 </div>
 		<div  class="col-xs-12">
-		  <button type="button" onclick="finaliza_tela_1()" class="animated infinite pulse  btn btn-success"> <i class="large material-icons">check_circle</i><br>Finalizar compra <br>R${{ number_format($totalemprodutos   , 2) }} </button>
+		  <button type="button" onclick="formas_pagamento()" class="animated infinite pulse  btn btn-success"> <i class="large material-icons">check_circle</i><br>Finalizar compra <br>R${{ number_format($totalemprodutos   , 2) }} </button>
 		</div>
 			  </div>
   		  </center>
@@ -314,7 +318,7 @@
                             <p>
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
-                            {{$item['id']}}
+                          
                             
                            
                             <button id="idtrigeremover" type="button" onclick="removerdocarrinho('{{$item['id']}}')" class="btn btn-danger">  <i style="margin-top:1px;"  class="large material-icons">close</i>remover</button>
@@ -397,6 +401,9 @@
 
 
 <script>
+
+  var obj_venda = {}
+
 
   var lojacode = '{{$lojacod}}'
 
@@ -703,7 +710,7 @@ obj_venda.telefone = document.getElementById('telefone').value
 
    let retirada = $('#retirada:checked').val()
 
-   alert(retirada)
+  // alert(retirada)
 
    if(retirada){
      
@@ -817,10 +824,31 @@ finaliza_tela_endereco()
 
 
 
-
+var getx = ''
 async function formas_pagamento(){
 
-  
+  $.get('{{route("getformasdepagamento")}}/' + '{{$lojacod}}'   ,function(data){
+     
+  }).done(function(data){
+
+    setTimeout(function(){
+         ///O comando verbatin escapa o blade para evitar erro na view
+         @verbatim
+            var example1 = new Vue({
+             el: '#formaspg',
+             data: {
+             items:data
+              }
+             })
+           $('#formaspg').show()
+
+
+           
+
+     },500)
+   
+
+  })
  
  const { value: formValues } = await temaapp.fire({
   closeOnClickOutside: false,
@@ -828,51 +856,113 @@ async function formas_pagamento(){
    title: 'Formas de pagamento',
    width:600,
    confirmButtonText: 'Avançar',
-   showConfirmButton:false,
+   showConfirmButton:true,
 
    html:
 	 `
+   
+   <div  id="formaspg">
      <form>
 
       <div class="form-row">
 
      <div class="form-group col-md-6 ">
       <br>
+      <br>
+      
     
       <center>
       <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Selecione a forma de pagamento</h3>
       </center>
      
      
-      <select style="width:200px;height:30px" name="select">
+      <select id="formapg" name="formapg" style="width:100%;height:30px" >
 
       
-        <option value="valor1">dwad</option> 
+        <option  v-for="item in items" :key="item"  v-bind:value="item.id">{{item.NOME_FRM}}</option> 
      
+
        
       </select>
+        
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Precisa de troco ?</h3>
+     
+      <div class="form-group col-xs-6  col-md-6">
+      <label for="inputZip">Sim</label>
+	  <input onclick="trocoval()" type="radio" value="retirada" class="form-control"  id="retirada" name="tipodel" placeholder="">
+
+    </div>
 
 
-     </div>
+    <div class="form-group col-xs-6  col-md-6">
+      <label for="inputZip">Não</label>
+	  <input onclick="trocavalhide()" type="radio" class="form-control"  value="entrega" id="entrega" name="tipodel" placeholder="" checked>
 
+    </div>
 
+   <br>
+   <br>
+    <div id="trocoval" style="display:none" class="form-group col-xs-12  col-md-12">
+      <br>
+      <br>
+      <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Troco pra quantos ?</h3>
 
+	  <input onfocus="masc(this)" type="text" class="form-control"  id="trocovalor" name="trocovalor" placeholder="">
 
+    </div>
+ 
+    <br>
+    <br>
+
+      </div>
+      </div>
       </div>
 
      </form>
+
+     @endverbatim
+
+
+     
 
 
       ` ,
 	 
    
  }).then(function(){
-
-
-
+  obj_venda.forma = document.getElementById('formapg').value
+  obj_venda.troco = document.getElementById('trocovalor').value
+  finaliza_tela_1()
  })
 
 
+
+}
+
+
+
+function masc(val) {
+   $(val).maskMoney({
+      prefix: "",
+      decimal: ".",
+      thousands: ","
+   });
+   }
+
+
+function trocoval(){
+
+    $('#trocoval').show();
+
+}
+
+function trocavalhide(){
+
+    $('#trocoval').hide();
 
 }
 
@@ -1001,7 +1091,6 @@ async function socket_createroom(){
     socket.emit('createroom', lojacode)
 }
 
-var obj_venda = {}
 
 var datax = null;
 function enviavenda(){
@@ -1032,11 +1121,13 @@ function enviavenda(){
 
 		   	error: function (data) {
 				  
-         // alert(JSON.stringify(data))
+         alert(JSON.stringify(data))
            
           },
 
             data: JSON.stringify(obj_venda)
+
+            
         })
 		
 

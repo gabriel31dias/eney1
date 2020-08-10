@@ -110,7 +110,7 @@ class CarrinhoController extends Controller
 
         $getpreco = $getpreco->PRECO_UNIT;
         $getimg = $getimg->IMG;
-        var_dump($getimg);
+        
         $produtos_salvos = Session::get('carrinho');
 
         if (!$produtos_salvos)
@@ -124,7 +124,9 @@ class CarrinhoController extends Controller
 
         $this->set_total($getlojacode);
 
-        return response()->json($produtos_salvos);
+        $testexxx = Session::get('carrinho');
+
+        return response()->json($testexxx);
 
     }
 
@@ -293,7 +295,7 @@ class CarrinhoController extends Controller
     public function listteste(){
         $gg = Session::get('carrinho');
 
-        var_dump( $gg);
+        return $gg;
     }
 
     public function generate_code_ident_product()
@@ -379,6 +381,8 @@ class CarrinhoController extends Controller
         $venda->bairro = $req->bairro;
         $venda->cidade = $req->cidade;
         $venda->uf = $req->uf;
+        $venda->troco = $req->troco;
+        $venda->forma = $req->forma;  //Forma pagamento
 
         $venda = $venda->save();
 
@@ -408,11 +412,11 @@ class CarrinhoController extends Controller
 
     }
 
-    public function getformasdepagamento(){
-       
-        $getformas = $this->formas
-
-
+    public function getformasdepagamento($codeloja){
+        $iduser = $this->users->where('codigo_estabelecimento',$codeloja)->first();
+        $iduser = $iduser->id;   
+        $getformas = $this->formas->where('ID_USER',$iduser)->get();
+        return  response()->json($getformas);
     }
 
 }
