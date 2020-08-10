@@ -13,6 +13,7 @@ use App\Grupo;
 use Session;
 use DB;
 use App\Venda;
+use App\Forma;
 
 use ElephantIO\Client as Elephant;
 
@@ -28,14 +29,16 @@ class CarrinhoController extends Controller
     private $configs;
     private $grupos;
     private $vendas;
+    private $formas;
 
-    public function __construct(User $apps, Produto $produtos, Config $con, Grupo $grupos, Venda $vendas)
+    public function __construct(User $apps, Produto $produtos, Config $con, Grupo $grupos, Venda $vendas,Forma $formas)
     {
         $this->users = $apps;
         $this->produtos = $produtos;
         $this->configs = $con;
         $this->grupos = $grupos;
         $this->vendas = $vendas;
+        $this->formas = $formas;
     }
 
     public function index($codigo = '')
@@ -402,6 +405,13 @@ class CarrinhoController extends Controller
         {
             return 0;
         }
+
+    }
+
+    public function getformasdepagamento(){
+       
+        $getformas = $this->formas
+
 
     }
 

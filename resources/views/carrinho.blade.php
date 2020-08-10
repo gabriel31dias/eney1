@@ -818,8 +818,63 @@ finaliza_tela_endereco()
 
 
 
+async function formas_pagamento(){
+
+  
+ 
+ const { value: formValues } = await temaapp.fire({
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
+   title: 'Formas de pagamento',
+   width:600,
+   confirmButtonText: 'Avançar',
+   showConfirmButton:false,
+
+   html:
+	 `
+     <form>
+
+      <div class="form-row">
+
+     <div class="form-group col-md-6 ">
+      <br>
+    
+      <center>
+      <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Selecione a forma de pagamento</h3>
+      </center>
+     
+     
+      <select style="width:200px;height:30px" name="select">
+
+      
+        <option value="valor1">dwad</option> 
+     
+       
+      </select>
 
 
+     </div>
+
+
+
+
+      </div>
+
+     </form>
+
+
+      ` ,
+	 
+   
+ }).then(function(){
+
+
+
+ })
+
+
+
+}
 
   
  async function finaliza_tela_endereco(){
