@@ -518,7 +518,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
       
 	    </div>
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
-		<input type="text"   style="height:30px"  /> 
+		<input type="text"   style="height:30px;width:50px"  /> 
 	    </div>
 
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
