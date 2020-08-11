@@ -520,10 +520,14 @@ async function open_product(id,nomeproduto,preco,descr,img){
 		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:80px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
 	    </div>
        
-		<br>
-		 <br>
+		
 		 
 	</div>
+
+	<br>
+		 <br>
+		 <br>
+		 <br>
 </center>
 
 	
