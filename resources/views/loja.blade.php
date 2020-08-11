@@ -390,7 +390,7 @@
 
 
 <script>
-
+var cont_quantidade = 0
 var socket = io('http://localhost:3000/')
 var lojacode = '{{$lojacod}}'
 	gettotal()
@@ -514,15 +514,16 @@ async function open_product(id,nomeproduto,preco,descr,img){
          <br>
 		 <br>
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
+
+		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="addquantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
       
 	    </div>
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
-		<input type="text"   style="height:30px;width:50px"  /> 
+		<input type="text" id="quantidade" name="quantidade" style="height:30px;width:60px"  /> 
 	    </div>
 
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
+		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="removequantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
 	    </div>
        
 		
@@ -570,6 +571,23 @@ if (formValues) {
 	cash_tags = new Map()
 
 	cash_obs  = null
+ }
+
+
+ function addquantidade(){
+    cont_quantidade = cont_quantidade + 1
+	document.getElementById('quantidade').value =  cont_quantidade + 'unidades'
+
+     
+ }
+
+
+ function removequantidade(){
+	cont_quantidade = cont_quantidade - 1
+	document.getElementById('quantidade').value =  cont_quantidade + 'unidades'
+
+
+
  }
 
 
