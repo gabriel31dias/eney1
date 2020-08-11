@@ -390,7 +390,7 @@
 
 
 <script>
-var cont_quantidade = 0
+var cont_quantidade = 1
 var socket = io('http://localhost:3000/')
 var lojacode = '{{$lojacod}}'
 	gettotal()
@@ -570,7 +570,7 @@ if (formValues) {
 	cach_produto  = ''
 	cash_tags = null
 	cash_tags = new Map()
-
+	cont_quantidade = 1
 	cash_obs  = null
  }
 
@@ -587,10 +587,7 @@ if (formValues) {
     }else{
 	  cont_quantidade = cont_quantidade - 1
 	  document.getElementById('quantidade').value =  cont_quantidade
-   
     }
-
-	
  }
 
  function updatequantidade(){
@@ -610,7 +607,8 @@ async function adicionar_carrinho(id,nomeproduto){
             idproduto: id,
             adicionais:arrayadd,
 			tagsadicionais:new_cash_tags,
-			obs:cash_obs
+			obs:cash_obs,
+			quantidade:cont_quantidade
         }
 
 		if(status_loja=='1'){

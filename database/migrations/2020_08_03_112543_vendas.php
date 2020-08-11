@@ -37,9 +37,11 @@ class Vendas extends Migration
             $table->string('cidade')->nullable();
             $table->string('uf')->nullable();
             $table->boolean('entregagratis')->nullable();
+            $table->integer('quantidade')->nullable();
 
             $table->decimal('troco', 10, 2)->nullable();
             $table->string('forma')->nullable();  //Forma pagamento
+
 
 
             $table->boolean('statuspvenda')->nullable(); //true entregue //false pendente
