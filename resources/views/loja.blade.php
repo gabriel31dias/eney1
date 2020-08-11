@@ -582,7 +582,7 @@ if (formValues) {
 
 
  function removequantidade(){
-	if (cont_quantidade == 0){
+	if (cont_quantidade == 1){
 
     }else{
 	  cont_quantidade = cont_quantidade - 1
