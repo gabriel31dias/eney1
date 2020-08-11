@@ -471,6 +471,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
     allowOutsideClick: false,
 	onBeforeOpen () {
      update_tags()
+	 updatequantidade()
    },
 
 
@@ -582,15 +583,17 @@ if (formValues) {
 	    document.getElementById('quantidade').value =   cont_quantidade
 	 }
     
-
-     
+ 
  }
 
 
  function removequantidade(){
 	cont_quantidade = cont_quantidade - 1
 	document.getElementById('quantidade').value =  cont_quantidade
+ }
 
+ function updatequantidade(){
+	document.getElementById('quantidade').value =  cont_quantidade
  }
 
 
