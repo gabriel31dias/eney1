@@ -497,7 +497,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	  <button type="button" style="width: 78px !important;"   onclick="set_obs(${id})" class="btn btn-primary btn-small">  <i   class="large material-icons">assignment</i>OBSERVAÇÕES</button>
     </div>
 	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-    	<button type="button" style="width: 78px !important;"  onclick="add_adicionais(${id})" class="btn btn-primary  btn-small">  <i style="margin-top:3px;"  class="large material-icons">local_mall</i> ADICIONAIS</button>
+    	<button type="button" style="width: 78px !important;"  onclick="add_adicionais(${id})" class="btn btn-primary  btn-small">  <i   class="large material-icons">local_mall</i> ADICIONAIS</button>
 	</div>
 	
 	
