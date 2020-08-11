@@ -782,6 +782,7 @@ var status_loja = '{{$status_loja}}'
 var arrayadd = []
 
 async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicional){
+	update_tags()
 	cach_produto[2] = parseFloat(cach_produto[2])	+ parseFloat(preco)
 	cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
 	
@@ -810,7 +811,7 @@ async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicio
 		  cash_tags.push(valx)
 
 
-		  update_tags()
+		
 	
 }
 
@@ -855,7 +856,7 @@ function removeadicional(idadicional,preco){
 }
 
  function removeattscreen(idadicional){
-
+	update_tags()
 	let quantidadeemmemoria = null
 	let leng = arrayadd.length
 	for(let i = 0; i<leng ;i++){
