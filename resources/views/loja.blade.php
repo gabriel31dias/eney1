@@ -469,6 +469,9 @@ async function open_product(id,nomeproduto,preco,descr,img){
   width:500,showConfirmButton: false,
    closeOnClickOutside: false,
     allowOutsideClick: false,
+	onBeforeOpen () {
+     update_tags()
+   },
 
 
   confirmButtonText: 'Adicionar ao carrinho',
