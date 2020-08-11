@@ -494,7 +494,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	<br>
 	<center>
 	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   onclick="set_obs(${id})" >  <i style="margin-top:3px;"  class="large material-icons">assignment</i>OBSERVAÇÕES</button>
+		<button type="button"  style="background-color:#FBB448"  onclick="set_obs(${id})" >  <i style="margin-top:3px;"  class="large material-icons">assignment</i>OBSERVAÇÕES</button>
 
 	</div>
 
