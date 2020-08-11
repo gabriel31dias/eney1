@@ -514,10 +514,10 @@ async function open_product(id,nomeproduto,preco,descr,img){
          <br>
 		 <br>
 		<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
+		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:80px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
         </div>
 		<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
+		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:80px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
 	    </div>
 
 	</div>
