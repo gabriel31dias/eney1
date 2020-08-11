@@ -679,13 +679,13 @@ const { value: formValues } = await temaapp.fire({
     </div>
 
 
-    <div class="form-group col-xs-6  col-md-6">
+    <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Digite seu telefone ?</label>
 	  <input type="text" class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
 
     </div>
 
-<div class="form-group col-xs-6  col-md-6">
+<div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Retirada no local</label>
 	  <input type="radio" value="retirada" class="form-control"  id="retirada" name="tipodel" placeholder="">
 
