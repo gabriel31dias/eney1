@@ -396,6 +396,7 @@ var lojacode = '{{$lojacod}}'
 	gettotal()
 var preco_old = ''
 var cash_tags = []
+var new_cash_tags = []
 var cash_obs = ''
 const temaapp = Swal.mixin({
   customClass: {
@@ -973,6 +974,19 @@ socket.on('receive',function(data){
   }
 
 })
+
+async function update_tags(){
+
+	obj_tags = new Object();
+	obj_tags.tags = arrayadd;
+
+   $.get('{{route("updatetags")}}', obj_tags).done(function(data){
+	  new_cash_tags = JSON.parse(data);
+      alert(data)
+
+    })
+
+}
 
 	</script>
 

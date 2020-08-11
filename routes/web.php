@@ -113,6 +113,8 @@ Route::get('/app/listteste','CarrinhoController@listteste')->name("listteste");
 
 Route::get('/app/getformasdepagamento/{iduser?}','CarrinhoController@getformasdepagamento')->name("getformasdepagamento");
 
+Route::post('/app/updatetags','CarrinhoController@process_tags')->name("updatetags");
+
 
 
 

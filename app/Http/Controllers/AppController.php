@@ -140,6 +140,21 @@ class AppController extends Controller
 
     }
 
+   
+    public function process_tags(Request $req){
+          //processa as tags do front end
+          $tags = $req->tags;
+          $arrayresult = [];
+            
+          foreach($tags as $val){
+             $getname_adcional = DB::table('adicionais')->where('id',$val)->first();
+             $getname_adcional = '+ '.$getname_adcional->ADICIONAL;
+             array_push($arrayresult, $getname_adcional);
+          }
+
+          return response()->json($arrayresult);
+    }
+
     
 
 
