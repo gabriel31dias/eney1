@@ -997,11 +997,11 @@ async function update_tags(){
             contentType: 'application/json',
             success: function (data) {
 				new_cash_tags = data;
-                alert(JSON.stringify(data))
+                //alert(JSON.stringify(data))
             },
 
 			error: function (data) {
-				alert(JSON.stringify(data))
+				//alert(JSON.stringify(data))
             },
 
             data: JSON.stringify(obj_tags)
