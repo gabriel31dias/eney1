@@ -777,6 +777,7 @@ var cach_inputs_adicionados_chave = new Map() // cach dos ids dos adicionados ch
 var status_loja = '{{$status_loja}}'
 
 var arrayadd = []
+
 async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicional){
 	cach_produto[2] = parseFloat(cach_produto[2])	+ parseFloat(preco)
 	cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
@@ -804,11 +805,15 @@ async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicio
 		  //  })
            let valx = ' +' + nomeproduto+ '  '
 		  cash_tags.push(valx)
+
+
+		  update_tags()
 	
 }
 
 
 function removeadicional(idadicional,preco){
+	
   let lgt = arrayadd.length
   let geraid = 'itemx' + idadicional
   let getvalue = document.getElementById(geraid).value
@@ -842,7 +847,7 @@ function removeadicional(idadicional,preco){
   }
 
 
-
+  update_tags()
 
 }
 
