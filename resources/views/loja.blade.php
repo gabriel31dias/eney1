@@ -576,7 +576,7 @@ if (formValues) {
 
  function addquantidade(){
     cont_quantidade = cont_quantidade + 1
-	document.getElementById('quantidade').value =  cont_quantidade + 'unidades'
+	document.getElementById('quantidade').value =   cont_quantidade
 
      
  }
@@ -584,7 +584,7 @@ if (formValues) {
 
  function removequantidade(){
 	cont_quantidade = cont_quantidade - 1
-	document.getElementById('quantidade').value =  cont_quantidade + 'unidades'
+	document.getElementById('quantidade').value =  cont_quantidade
 
 
 
