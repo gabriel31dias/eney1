@@ -513,11 +513,16 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	<div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
          <br>
 		 <br>
-		<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
-        </div>
-		<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
+		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
+		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
+      
+	    </div>
+		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
+		<button type="text"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
+	    </div>
+
+		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
+		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
 	    </div>
        
 		
