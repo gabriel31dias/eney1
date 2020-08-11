@@ -14,7 +14,8 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         "/opcoes/save",
         "/app/addproduto",
-        "/app/savevenda/"
+        "/app/savevenda/",
+        "/app/updatetags"
 
         
     ];
