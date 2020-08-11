@@ -672,7 +672,7 @@ const { value: formValues } = await temaapp.fire({
    <br>
    <br>
 
-   <div class="form-group col-xs-6  col-md-6">
+   <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Qual seu nome ?</label>
 	  <input type="text" value="" class="form-control"  id="nome" name="nome" placeholder="">
 
@@ -685,7 +685,7 @@ const { value: formValues } = await temaapp.fire({
 
     </div>
 
-<div class="form-group col-xs-12  col-md-6">
+<div class="form-group col-xs-6  col-md-6">
       <label for="inputZip">Retirada no local</label>
 	  <input type="radio" value="retirada" class="form-control"  id="retirada" name="tipodel" placeholder="">
 
