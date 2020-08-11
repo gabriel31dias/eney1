@@ -494,14 +494,16 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	<br>
 	<center>
 	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"  style="background-color:#FBB448"  onclick="set_obs(${id})" >  <i style="margin-top:3px;"  class="large material-icons">assignment</i>OBSERVAÇÕES</button>
+		<button type="button"  style="background-color:#FBB448;color:white"  onclick="set_obs(${id})" >  <i style="margin-top:3px;"  class="large material-icons">assignment</i>OBSERVAÇÕES</button>
 
 	</div>
 
 	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i>ADICIONAIS</button>
+		<button type="button"   style="background-color:#FBB448;color:white" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i><br>ADICIONAIS</button>
 	</div>
 
+	<br>
+	<br>
 	<br>
 
 	</center>
