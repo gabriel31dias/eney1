@@ -488,7 +488,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
         <br> ` +
 	
     `<h3 style="font-size:16px;"> ${descr}</h3>`+
-	` <img style="height:100px;width:80%" src="${img}" >
+	` <img style="height:150px;width:80%" src="${img}" >
 	</div>
 	<br>
 	<br>
