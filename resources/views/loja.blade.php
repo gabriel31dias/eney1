@@ -558,7 +558,7 @@ async function adicionar_carrinho(id,nomeproduto){
             nomeproduto:nomeproduto,
             idproduto: id,
             adicionais:arrayadd,
-			tagsadicionais:cash_tags,
+			tagsadicionais:new_cash_tags,
 			obs:cash_obs
         }
 
