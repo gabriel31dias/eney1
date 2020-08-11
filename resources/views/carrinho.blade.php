@@ -626,7 +626,7 @@ if (formValues) {
  async function adicionar_carrinho(id,nomeproduto){
 
   await $.get(`{{route("add_produto")}}${id}/${nomeproduto}`,function(data){
-        alert(data)
+        //alert(data)
   })
 
   Swal.fire(
@@ -727,14 +727,14 @@ obj_venda.telefone = document.getElementById('telefone').value
    }
 
 
-   alert('entrou')
+  // alert('entrou')
        if(document.getElementById('nome').value && document.getElementById('telefone').value){
           
         enviavenda()
       
 
        }else{
-         alert('digite todos os campos')
+        // alert('digite todos os campos')
        }
          
 
@@ -1115,7 +1115,7 @@ function enviavenda(){
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				     alert(JSON.stringify(data))
+				    // alert(JSON.stringify(data))
               emitsk()
             },
 
