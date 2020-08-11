@@ -509,7 +509,8 @@ async function open_product(id,nomeproduto,preco,descr,img){
 
 	</center>
 
-	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+<center>
+	<div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
          <br>
 		 <br>
 		<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
@@ -520,6 +521,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	    </div>
 
 	</div>
+</center>
 
 	
 	<br>
