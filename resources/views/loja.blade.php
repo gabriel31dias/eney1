@@ -980,7 +980,7 @@ async function update_tags(){
 	obj_tags = new Object();
 	obj_tags.tags = arrayadd;
 
-   $.post('{{route("updatetags")}}', obj_tags).done(function(data){
+   $.ajax('{{route("updatetags")}}', obj_tags).done(function(data){
 	  new_cash_tags = JSON.parse(data);
       alert(data)
 
