@@ -518,7 +518,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
       
 	    </div>
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
-		<input type="text"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="add_adicionais(${id})" > </input>
+		<input type="text"     /> 
 	    </div>
 
 		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
