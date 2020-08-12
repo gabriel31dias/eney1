@@ -579,6 +579,9 @@ if (formValues) {
  function addquantidade(){
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
+
+	 preco = preco * cont_quantidade
+
  }
 
 
@@ -589,6 +592,8 @@ if (formValues) {
 	  cont_quantidade = cont_quantidade - 1
 	  document.getElementById('quantidade').value =  cont_quantidade
     }
+
+	preco = preco * cont_quantidade
  }
 
  function updatequantidade(){
