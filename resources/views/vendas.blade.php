@@ -167,7 +167,7 @@ function consulta(params) {
                         fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                         if(oData.nomecliente) {
                         
-                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>flag</i>Local entrega</a>`+`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="produtos('${oData.id}')"><i class='material-icons'>add_shopping_cart</i>Produtos</a>`);
+                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>flag</i>Local entrega</a>`+`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="produtos('${oData.id}')"><i class='material-icons'>add_shopping_cart</i>Produtos</a><a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`);
                         }
                         //] image
                         
