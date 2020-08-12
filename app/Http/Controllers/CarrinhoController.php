@@ -88,6 +88,7 @@ class CarrinhoController extends Controller
         $adicionais = $req->adicionais;
         $obs = $req->obs;
         $getlojacode = $req->lojacode;
+        $quantidade = $req->quantidade;
 
         $tags_adicionais = $req->tagsadicionais;
         $tags_adicionais = implode(", ", $tags_adicionais);
@@ -118,16 +119,11 @@ class CarrinhoController extends Controller
             $produtos_salvos = [];
         }
 
-        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => $getpreco + $getpreco_adicionais, 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais]);
-
+        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => $getpreco + $getpreco_adicionais, 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais, 'quantidade'=> $quantidade]);
         Session::put('carrinho', $produtos_salvos);
-
         $this->set_total($getlojacode);
-
         $testexxx = Session::get('carrinho');
-
         return response()->json($testexxx);
-
     }
 
     public function get_total_adicionais()

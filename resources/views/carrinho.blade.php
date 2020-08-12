@@ -318,6 +318,9 @@
                             <p>
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
+                            <p>
+                              <span class="price cursive-font"> Quantidade {{$item['quantidade']}} </span>
+                          </p>
                           
                             
                            
