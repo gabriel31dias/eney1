@@ -390,6 +390,9 @@
 
 
 <script>
+var cash_produto_adicionais = null
+var total_adicionais = null
+
 var cont_quantidade = 1
 var socket = io('http://localhost:3000/')
 var lojacode = '{{$lojacod}}'
@@ -580,11 +583,12 @@ if (formValues) {
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
 
+
+      
 	 cach_produto[2] =  cach_produto[2] * cont_quantidade
 	 cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
 
-	 
-
+    
  }
 
 
@@ -843,6 +847,7 @@ var status_loja = '{{$status_loja}}'
 var arrayadd = []
 
 async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicional){
+	total_adicionais = parseFloat(total_adicionais) + parseFloat(preco)
 	update_tags()
 	cach_produto[2] = parseFloat(cach_produto[2])	+ parseFloat(preco)
 	cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
