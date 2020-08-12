@@ -399,7 +399,7 @@ async function  precos(valortotalprodutos,valortotalentrega,valortotaladicionais
    Swal.fire({
      title: '',
      width:500,
-     html: `<center><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total (produtos+adicionais): R$ ${valortotalprodutos}</h2><br><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total adicionais: R$ ${valortotalprodutos}</h2><br><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total produtos: R$ ${soproduto}</h2><br><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total entrega: R$ ${valortotalentrega}</h2></center>` ,
+     html: `<center><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total (produtos+adicionais): R$ ${valortotalprodutos}</h2><br><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total adicionais: R$ ${valortotaladicionais}</h2><br><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total produtos: R$ ${soproduto}</h2><br><h2 class="swal2-title" id="swal2-title" style="display: flex;">Total entrega: R$ ${valortotalentrega}</h2></center>` ,
      imageUrl: 'https://img.pngio.com/pricing-pricing-png-500_500.png',
      imageWidth: 250,
      imageHeight: 250,
