@@ -582,6 +582,8 @@ if (formValues) {
 
 	 preco = preco * cont_quantidade
 
+	 alert(preco)
+
  }
 
 
