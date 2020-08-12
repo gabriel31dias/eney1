@@ -582,7 +582,7 @@ if (formValues) {
 
 	 cach_produto[2] =  cach_produto[2] * cont_quantidade
 
-	 alert(preco)
+	 
 
  }
 
