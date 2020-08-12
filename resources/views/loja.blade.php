@@ -848,6 +848,7 @@ var arrayadd = []
 
 async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicional){
 	total_adicionais = parseFloat(total_adicionais) + parseFloat(preco)
+	total_adicionais = total_adicionais.toFixed(2)
 	update_tags()
 	cach_produto[2] = parseFloat(cach_produto[2])	+ parseFloat(preco)
 	cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
