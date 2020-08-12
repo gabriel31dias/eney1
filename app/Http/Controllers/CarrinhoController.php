@@ -106,6 +106,7 @@ class CarrinhoController extends Controller
 
         }
         $aux = Session::get('totaladicionais');
+        $getpreco_adicionais = $getpreco_adicionais * $quantidade;
         Session::put('totaladicionais', $getpreco_adicionais + $aux); ///Salva valor total dos
         $idproduto_gerado =  rand(10, 500000);
 
@@ -119,7 +120,7 @@ class CarrinhoController extends Controller
             $produtos_salvos = [];
         }
 
-        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais, 'quantidade'=> $quantidade]);
+        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
         Session::put('carrinho', $produtos_salvos);
         $this->set_total($getlojacode);
         $testexxx = Session::get('carrinho');
