@@ -580,7 +580,7 @@ if (formValues) {
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
 
-	 preco = preco * cont_quantidade
+	 cach_produto[2] =  cach_produto[2] * cont_quantidade
 
 	 alert(preco)
 
@@ -595,7 +595,7 @@ if (formValues) {
 	  document.getElementById('quantidade').value =  cont_quantidade
     }
 
-	preco = preco * cont_quantidade
+	cach_produto[2] =  cach_produto[2] * cont_quantidade
  }
 
  function updatequantidade(){
