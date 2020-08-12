@@ -319,7 +319,7 @@
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
                             <p>
-                              <span class="fh5co-text"> Quantidade {{$item['quantidade']}} </span>
+                              <h2 class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
                           </p>
                           
                             
