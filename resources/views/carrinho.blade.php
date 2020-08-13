@@ -407,8 +407,9 @@
 <script>
 
   var socket = io('https://servidorsocket3636.herokuapp.com/')
-
   var obj_venda = {}
+  var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
+  var tipo_retirada = null
 
 
   var lojacode = '{{$lojacod}}'
@@ -663,7 +664,7 @@ if (formValues) {
     bairro:document.getElementById('BAIRRO').value,
     cidade:document.getElementById('CIDADE').value,
     uf:document.getElementById('ESTADO').value,
-
+    valortotalprodutos:valor_total_venda
 	}
    ///Selecao do tipo de retirada
 
@@ -712,6 +713,7 @@ const { value: formValues } = await temaapp.fire({
 
 obj_venda.nome = document.getElementById('nome').value 
 obj_venda.telefone = document.getElementById('telefone').value 
+obj_venda.tiporetirada = tipo_retirada
 
 
    let retirada = $('#retirada:checked').val()
@@ -722,11 +724,15 @@ obj_venda.telefone = document.getElementById('telefone').value
      
    $.get('{{route('setretirada')}}/1',function(data){  //Seta como retirada
      }).done(function(){
+        
+        tipo_retirada = 'Retirada'
       })
 
    }else{
    
    $.get('{{route('setretirada')}}/2',function(data){    //Seta como entrega
+
+    tipo_retirada = 'Entrega'
      }).done(function(){
     })
 

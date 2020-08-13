@@ -808,11 +808,17 @@ select {
          </aside>
 
          <script>
-async function novavenda(){
+async function novavenda(venda){
                
 Swal.fire({
   title: 'Uma nova venda foi realizada via app',
-  text: '',
+  text: `Nome Cliente: ${venda.nome}<br>
+         Valor compra: ${venda.valortotalprodutos}<br>
+         Telefone: ${venda.telefone}<br>
+         Forma pagamento: ${venda.forma}<br>
+         Troco: ${venda.troco}<br>
+         Tipo retirada:  ${venda.tiporetirada}<br>
+  `,
   imageUrl: 'https://png.pngtree.com/png-vector/20190725/ourlarge/pngtree-box-icon-png-image_1606515.jpg',
   imageWidth: 400,
   imageHeight: 200,
@@ -852,7 +858,7 @@ async function socket_createroom(){
 socket.on('receive',function(data){
   
   if (data.tipo == 'novavenda'){
-     novavenda()
+     novavenda(data)
      var audio = new Audio('http://127.0.0.1:8000/audio.mp3');
      audio.play();
      var audio1 = new Audio('http://127.0.0.1:8000/audio.mp3');
