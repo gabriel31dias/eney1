@@ -1086,7 +1086,7 @@ function trocavalhide(){
     swalWithBootstrapButtons.close()
   }
 
-  var socket = io('http://localhost:3000/')
+  var socket = io('https://servidorsocket3636.herokuapp.com/')
   
 setTimeout(function(){ //Aguarda para criar a room 
 	socket_createroom()
