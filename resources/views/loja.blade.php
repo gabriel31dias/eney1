@@ -884,6 +884,9 @@ async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicio
 
 
 function removeadicional(idadicional,preco){
+
+  total_adicionais = parseFloat(total_adicionais) - parseFloat(preco)
+  total_adicionais = total_adicionais.toFixed(2)
 	
   let lgt = arrayadd.length
   let geraid = 'itemx' + idadicional
