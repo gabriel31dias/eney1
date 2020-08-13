@@ -430,10 +430,10 @@ async function  openstatus(idvenda,statusvenda) {
       
       getnewstatus = document.getElementById('statuse').value
       if(getnewstatus == '1'){
-         getnewstatus = true
+         getnewstatus = false
       }
       if(getnewstatus == '2'){
-         getnewstatus = false
+         getnewstatus = true
       }
 
       $.get(`{{route("setUpdate_statusvenda")}}/${idvenda}/${getnewstatus}`,(data)=>{
