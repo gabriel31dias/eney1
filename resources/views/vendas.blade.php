@@ -419,10 +419,10 @@ async function  openstatus() {
    Swal.fire({
      title: '',
      width:500,
-     html: `<select style="width:500px;">
+     html: `<select style="width:300px;height:50px;">
               <option>Entrega pendente</option>
               <option>Entregue</option>
-
+s
      </select>` ,
      imageUrl: 'https://img.pngio.com/pricing-pricing-png-500_500.png',
      imageWidth: 250,
