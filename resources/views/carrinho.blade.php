@@ -894,7 +894,7 @@ async function formas_pagamento(){
       <select id="formapg" name="formapg" style="width:100%;height:30px" >
 
       
-        <option  v-for="item in items" :key="item"  v-bind:value="item.id">{{item.NOME_FRM}}</option> 
+        <option  v-for="item in items" :key="item"  v-bind:value="item.NOME_FRM">{{item.NOME_FRM}}</option> 
      
 
        
