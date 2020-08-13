@@ -2,7 +2,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
 
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
        <!-- production version, optimized for size and speed -->
@@ -404,6 +405,8 @@
 
 
 <script>
+
+  var socket = io('https://servidorsocket3636.herokuapp.com/')
 
   var obj_venda = {}
 
@@ -1086,11 +1089,11 @@ function trocavalhide(){
     swalWithBootstrapButtons.close()
   }
 
-  var socket = io('https://servidorsocket3636.herokuapp.com/')
+  
   
 setTimeout(function(){ //Aguarda para criar a room 
 	socket_createroom()
-},3000)
+},4000)
 
 
 async function socket_createroom(){
