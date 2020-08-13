@@ -89,6 +89,7 @@ visibility: hidden;
                         <th>Preço total (Adicionais+Produto+Entrega)</th>
                         <th>Tipo de retirada</th>
                         <th>Data e hora</th>
+                        <th>Status</th>
                         <th>Ver +</th>
                      </tr>
                   </thead>
@@ -160,6 +161,9 @@ function consulta(params) {
                
                            {
                                  "data": "created_at"
+                           },
+                           {
+                              "data":"statuspvenda"
                            },
                            
          
@@ -237,8 +241,10 @@ function consulta(params) {
                            {
                                  "data": "created_at"
                            },
+                           {
+                              "data":"statuspvenda"
+                           },
                            
-         
                            { "data": "id", "name": "id",
                         fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                         if(oData.nomecliente) {

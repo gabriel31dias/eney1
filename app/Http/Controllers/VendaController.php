@@ -45,6 +45,12 @@ class VendaController extends Controller
      
      
         $filtrad_vendas = array_map(function($value){ 
+
+          if($value['statuspvenda']){
+             $value['statuspvenda'] = "<p style='color:#1de9b6;width:50%;padding:10px'>Entregue</p>";
+          }else{
+             $value['statuspvenda'] = "<p style='color:#1de9b6;width:50%;padding:10px'>Pendente</p>";
+          }
           
           $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
 
