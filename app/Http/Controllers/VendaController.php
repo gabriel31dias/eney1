@@ -79,6 +79,12 @@ class VendaController extends Controller
       $cliente = $this->vendas->where('ID_USER', $iduser)->where('nomecliente','like', '%'.  $param .'%' )->get();
 
       $filtrad_vendas = array_map(function($value){  
+
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+        }
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
 
@@ -108,6 +114,12 @@ class VendaController extends Controller
       
       $filtrad_vendas = array_map(function($value){  
 
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+        }
+
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
         $value['valor_total'] = "<a onclick='precos(".number_format($value['preco_total_produto'], 2).",".number_format($value['preco_total_entrega'], 2).")'>".$value['valor_total']."</a>";
@@ -133,6 +145,11 @@ class VendaController extends Controller
       $cliente = $this->vendas->where('statuspvenda', false)->where('ID_USER', $iduser)->where('nomecliente','like', '%'.  $param .'%' )->get();
       
       $filtrad_vendas = array_map(function($value){ 
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+        }
         
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
@@ -160,6 +177,12 @@ class VendaController extends Controller
       $cliente = $this->vendas->where('ID_USER', $iduser)->where('numerotelefone', $param )->get();
       
       $filtrad_vendas = array_map(function($value){ 
+
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+        }
         
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
@@ -186,6 +209,12 @@ class VendaController extends Controller
       $cliente = $this->vendas->where('ID_USER', $iduser)->where('bairro','like', '%'.  $param .'%' )->get();
       
       $filtrad_vendas = array_map(function($value){  
+
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+        }
 
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
@@ -214,6 +243,12 @@ class VendaController extends Controller
       
       $filtrad_vendas = array_map(function($value){  
 
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+         }
+
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
         $value['valor_total'] = "<a onclick='precos(".number_format($value['preco_total_produto'], 2).",".number_format($value['preco_total_entrega'], 2).")'>".$value['valor_total']."</a>";
@@ -239,7 +274,13 @@ class VendaController extends Controller
       $iduser = Session::get('ID_USER');
       $cliente = $this->vendas->where('ID_USER', $iduser)->where('endereco','like', '%'.  $param .'%' )->get();
       
-      $filtrad_vendas = array_map(function($value){  
+      $filtrad_vendas = array_map(function($value){ 
+        
+        if($value['statuspvenda']){
+          $value['statuspvenda'] = "<p style='color:green;width:50%;padding:10px'>Entregue</p>";
+        }else{
+          $value['statuspvenda'] = "<p style='color:red;width:50%;padding:10px'>Pendente</p>";
+        }
 
           
         $value['created_at']=date('Y-m-d H:i:s', strtotime($value['created_at']));
