@@ -582,11 +582,12 @@ if (formValues) {
  function addquantidade(){
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
+     alert(preco_old)
+	 cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
+	 cach_produto[2] =   cach_produto[2].toFixed(2)
 
-
-      
-	 cach_produto[2] =  cach_produto[2] * cont_quantidade
-	 cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
+	 //cach_produto[2] =  cach_produto[2] * cont_quantidade
+	 //cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
 
     
  }
@@ -598,10 +599,11 @@ if (formValues) {
     }else{
 	  cont_quantidade = cont_quantidade - 1
 	  document.getElementById('quantidade').value =  cont_quantidade
+	  cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
+	  cach_produto[2] =   cach_produto[2].toFixed(2)
     }
 
-	cach_produto[2] =  cach_produto[2] * cont_quantidade 
-	cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
+
 
 	
  }
@@ -894,7 +896,6 @@ function removeadicional(idadicional,preco){
   if(getvalue>0){
 	cach_produto[2] = parseFloat(cach_produto[2])	- parseFloat(preco)
     cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-
   }
 
   
@@ -1059,7 +1060,6 @@ async function update_tags(){
 	obj_tags = new Object();
 	obj_tags.tags = arrayadd;
 
- 
 	$.ajax({
             url: '{{route("updatetags")}}',
             type: 'post',
@@ -1076,8 +1076,6 @@ async function update_tags(){
 
             data: JSON.stringify(obj_tags)
         })
-
-
 
 }
 
