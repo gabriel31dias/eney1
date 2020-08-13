@@ -403,7 +403,7 @@ class VendaController extends Controller
 
     public function setUpdate_statusvenda($idvenda,$status){
        $venda = $this->vendas->where('id',$idvenda)->first();
-       $venda = $vendas->update(['statuspvenda'=>$status]);
+       $venda = $venda->update(['statuspvenda'=>$status]);
        return $venda;
     }
 
