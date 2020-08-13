@@ -588,7 +588,7 @@ if (formValues) {
 	 cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
 	 //cach_produto[2] =  cach_produto[2] * cont_quantidade
 	 //cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-	 open_product(...cash_produto)
+	 open_product(...cach_produto)
 
  }
 
@@ -602,7 +602,7 @@ if (formValues) {
 	  document.getElementById('quantidade').value =  cont_quantidade
 	  cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
 	  cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-	  open_product(...cash_produto)
+	  open_product(...cach_produto)
     }
 
  }
