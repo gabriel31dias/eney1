@@ -818,8 +818,6 @@ Swal.fire({
   imageHeight: 200,
   imageAlt: 'Custom image',
   confirmButtonText: 'Mais detalhes',
-
-  
 })
 
 }
@@ -839,7 +837,7 @@ Swal.fire({
 
              });
 
-var socket = io('http://localhost:3000/')
+var socket = io('https://servidorsocket3636.herokuapp.com/')
 
 
 setTimeout(function(){ //Aguarda para criar a room 
