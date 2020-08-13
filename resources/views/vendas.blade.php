@@ -412,13 +412,13 @@ async function  precos(valortotalprodutos,valortotalentrega,valortotaladicionais
 
 }
 
-async function  openstatus() {
+async function  openstatus(idvenda,statusvenda) {
 
   
    Swal.fire({
      title: '',
      width:500,
-     html: `<select style="width:300px;height:30px;">
+     html: `<select id="statuse" style="width:300px;height:30px;">
               <option value="1"  style="width:300px;height:50px;">Entrega pendente</option>
               <option value="2" style="width:300px;height:50px;">Entregue</option>
      </select>` ,
@@ -428,7 +428,15 @@ async function  openstatus() {
      imageAlt: 'Custom image',
     }).then(function(){
       
-      $.get(`{{route("setUpdate_statusvenda")}}/${}/${}`,(data)=>{
+      getnewstatus = document.getElementById('statuse').value
+      if(getnewstatus == '1'){
+         getnewstatus = true
+      }
+      if(getnewstatus == '2'){
+         getnewstatus = false
+      }
+
+      $.get(`{{route("setUpdate_statusvenda")}}/${idvenda}/${getnewstatus}`,(data)=>{
 
          alert(data)
       })
