@@ -860,6 +860,11 @@ socket.on('receive',function(data){
      var audio = new Audio('http://127.0.0.1:8000/audio.mp3');
      audio.play();
     // https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3
+
+    if(isset(consulta())){
+
+       consulta()
+    }
      
   }
 
