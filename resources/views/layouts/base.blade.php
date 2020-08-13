@@ -861,10 +861,10 @@ socket.on('receive',function(data){
      audio.play();
     // https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3
 
-    if(isset(consulta())){
+   
 
        consulta()
-    }
+   
      
   }
 
