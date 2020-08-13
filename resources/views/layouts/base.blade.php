@@ -816,7 +816,7 @@ Swal.fire({
   <p class="swal2-title" id="swal2-title">Valor compra: ${venda.valortotalprodutos}</p><br>
   <p class="swal2-title" id="swal2-title">Telefone: ${venda.telefone}</p><br>
   <p class="swal2-title" id="swal2-title">Forma pagamento: ${venda.forma}</p><br>
-  <p class="swal2-title" id="swal2-title">Troco:</p> ${venda.troco}</p><br>
+  <p class="swal2-title" id="swal2-title">Troco: ${venda.troco}</p><br>
   <p class="swal2-title" id="swal2-title">Tipo retirada:  ${venda.tiporetirada}</p><br>
   `,
   imageUrl: 'https://png.pngtree.com/png-vector/20190725/ourlarge/pngtree-box-icon-png-image_1606515.jpg',

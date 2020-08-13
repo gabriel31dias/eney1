@@ -949,6 +949,7 @@ async function formas_pagamento(){
 	 
    
  }).then(function(){
+   alert(document.getElementById('formapg').value)
   obj_venda.forma = document.getElementById('formapg').value
   obj_venda.troco = document.getElementById('trocovalor').value
   finaliza_tela_1()
