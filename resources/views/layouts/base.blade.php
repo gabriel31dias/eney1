@@ -812,12 +812,12 @@ async function novavenda(venda){
                
 Swal.fire({
   title: 'Uma nova venda foi realizada via app',
-  html: `<h3>Nome Cliente:</h3> ${venda.nome}<br>
-  <h3>Valor compra:</h3> ${venda.valortotalprodutos}<br>
-  <h3>Telefone:</h3> ${venda.telefone}<br>
-  <h3>Forma pagamento:</h3> ${venda.forma}<br>
-  <h3>Troco:</h3> ${venda.troco}<br>
-  <h3>Tipo retirada:</h3>  ${venda.tiporetirada}<br>
+  html: `<p>Nome Cliente:</p> ${venda.nome}<br>
+  <p class="swal2-title" id="swal2-title">Valor compra: ${venda.valortotalprodutos}</p><br>
+  <p class="swal2-title" id="swal2-title">Telefone: ${venda.telefone}</p><br>
+  <p class="swal2-title" id="swal2-title">Forma pagamento: ${venda.forma}</p><br>
+  <p class="swal2-title" id="swal2-title">Troco:</p> ${venda.troco}</p><br>
+  <p class="swal2-title" id="swal2-title">Tipo retirada:  ${venda.tiporetirada}</p><br>
   `,
   imageUrl: 'https://png.pngtree.com/png-vector/20190725/ourlarge/pngtree-box-icon-png-image_1606515.jpg',
   imageWidth: 400,
