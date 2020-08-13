@@ -419,7 +419,7 @@ async function  openstatus() {
    Swal.fire({
      title: '',
      width:500,
-     html: `<select>
+     html: `<select style="width:100px;">
      
       <option>Entrega pendente</option>
       <option>Entregue</option>
