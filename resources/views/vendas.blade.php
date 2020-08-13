@@ -89,7 +89,7 @@ visibility: hidden;
                         <th>Preço total (Adicionais+Produto+Entrega)</th>
                         <th>Tipo de retirada</th>
                         <th>Data e hora</th>
-                        <th>Status</th>
+                        <th>Status entrega</th>
                         <th>Ver +</th>
                      </tr>
                   </thead>
@@ -171,7 +171,7 @@ function consulta(params) {
                         fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                         if(oData.nomecliente) {
                         
-                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>flag</i>Local entrega</a>`+`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="produtos('${oData.id}')"><i class='material-icons'>add_shopping_cart</i>Produtos</a><a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-green' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`);
+                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>flag</i>Local </a>`+`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="produtos('${oData.id}')"><i class='material-icons'>add_shopping_cart</i>Produtos</a><a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-green' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`);
                         }
                         //] image
                         
@@ -249,7 +249,7 @@ function consulta(params) {
                         fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                         if(oData.nomecliente) {
                         
-                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>flag</i>Local entrega</a>`+`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="produtos('${oData.id}')"><i class='material-icons'>add_shopping_cart</i>Produtos</a><a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-green' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`);
+                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>flag</i>Local</a>`+`<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue' onclick="produtos('${oData.id}')"><i class='material-icons'>add_shopping_cart</i>Produtos</a><a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-green' onclick="openstatus('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`);
                         }
                         
                         //] image
@@ -409,6 +409,31 @@ async function  precos(valortotalprodutos,valortotalentrega,valortotaladicionais
      imageHeight: 250,
      imageAlt: 'Custom image',
     })
+
+}
+
+async function  openstatus() {
+
+  
+   
+   Swal.fire({
+     title: '',
+     width:500,
+     html: `<select>
+     
+      <option>
+      fesfsfsf
+      </option>
+     
+     
+     </select>` ,
+     imageUrl: 'https://img.pngio.com/pricing-pricing-png-500_500.png',
+     imageWidth: 250,
+     imageHeight: 250,
+     imageAlt: 'Custom image',
+    })
+   
+
 
 }
 
