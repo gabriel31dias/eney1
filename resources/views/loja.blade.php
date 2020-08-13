@@ -580,6 +580,7 @@ if (formValues) {
 
 
  function addquantidade(){
+	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
      alert(preco_old)
@@ -587,6 +588,7 @@ if (formValues) {
 	 cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
 	 //cach_produto[2] =  cach_produto[2] * cont_quantidade
 	 //cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
+	 open_product(...cash_produto)
 
  }
 
@@ -595,15 +597,14 @@ if (formValues) {
 	if (cont_quantidade == 1){
 
     }else{
+	  swalWithBootstrapButtons.close()
 	  cont_quantidade = cont_quantidade - 1
 	  document.getElementById('quantidade').value =  cont_quantidade
 	  cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
 	  cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
+	  open_product(...cash_produto)
     }
 
-
-
-	
  }
 
  function updatequantidade(){
