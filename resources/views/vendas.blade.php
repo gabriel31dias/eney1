@@ -247,7 +247,7 @@ function consulta(params) {
                         }
 
                         if(oData.statuspvenda = null){
-                           $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-yellow' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`)
+                           $(nTd).html(`xxxx<a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-yellow' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`)
                         }else{
                            $(nTd).html(`<a style='margin:10px' class='waves-effect waves-light btn btn-large  btn bg-green' onclick="localentrega('${oData.endereco}','${oData.bairro}','${oData.cidade}','${oData.cep}','${oData.numero}')"><i class='material-icons'>assignment_turned_in</i></a>`)
 
