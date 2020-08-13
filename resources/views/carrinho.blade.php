@@ -652,20 +652,43 @@ if (formValues) {
  async function tipodelv(){
 
    
-  obj_venda = {
-		room:lojacode,
-    ID_USER:'{{$iduser}}',
-		tipo:'novavenda',
-    cep:document.getElementById('CEP').value,
-    endereco:document.getElementById('ENDERECO').value,
-    numero:document.getElementById('NUMERO').value,
-    complemento:document.getElementById('COMPLEMENTO').value,
-    pontoreferencia:document.getElementById('REFERENCIA').value,
-    bairro:document.getElementById('BAIRRO').value,
-    cidade:document.getElementById('CIDADE').value,
-    uf:document.getElementById('ESTADO').value,
-    valortotalprodutos:valor_total_venda
-	}
+ // obj_venda = {
+	//	room:lojacode,
+   // ID_USER:'{{$iduser}}',
+		//tipo:'novavenda',
+    //cep:document.getElementById('CEP').value,
+    //endereco:document.getElementById('ENDERECO').value,
+    //numero:document.getElementById('NUMERO').value,
+   // complemento:document.getElementById('COMPLEMENTO').value,
+    //pontoreferencia:document.getElementById('REFERENCIA').value,
+    //bairro:document.getElementById('BAIRRO').value,
+    //cidade:document.getElementById('CIDADE').value,
+    //uf:document.getElementById('ESTADO').value,
+   // valortotalprodutos:valor_total_venda
+	//}
+
+  obj_venda.room = lojacode
+  obj_venda.ID_USER = '{{$iduser}}'
+  obj_venda.tipo = 'novavenda'
+  obj_venda.cep =  document.getElementById('CEP').value
+  obj_venda.endereco =  document.getElementById('ENDERECO').value
+  obj_venda.numero = document.getElementById('NUMERO').value
+  obj_venda.complemento = document.getElementById('COMPLEMENTO').value
+  obj_venda.pontoreferencia = document.getElementById('REFERENCIA').value
+  obj_venda.bairro = document.getElementById('BAIRRO').value
+  obj_venda.cidade = document.getElementById('CIDADE').value
+  obj_venda.uf = document.getElementById('ESTADO').value
+  obj_venda.valortotalprodutos = valor_total_venda
+
+
+
+
+
+
+
+
+
+
    ///Selecao do tipo de retirada
 
 const { value: formValues } = await temaapp.fire({
