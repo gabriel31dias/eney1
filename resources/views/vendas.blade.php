@@ -300,9 +300,6 @@ function consulta(params) {
            break;
 
            
-
-
-           
       
          }
      }
