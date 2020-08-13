@@ -438,7 +438,7 @@ async function  openstatus(idvenda,statusvenda) {
 
       $.get(`{{route("setUpdate_statusvenda")}}/${idvenda}/${getnewstatus}`,(data)=>{
 
-         alert(data)
+         alert(getnewstatus)
       })
 
     })
