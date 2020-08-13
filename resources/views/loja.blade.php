@@ -584,7 +584,7 @@ if (formValues) {
 	 document.getElementById('quantidade').value =   cont_quantidade
      alert(preco_old)
 	 cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
-	 cach_produto[2] =   cach_produto[2].toFixed(2)
+	
 
 	 //cach_produto[2] =  cach_produto[2] * cont_quantidade
 	 //cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
@@ -600,7 +600,7 @@ if (formValues) {
 	  cont_quantidade = cont_quantidade - 1
 	  document.getElementById('quantidade').value =  cont_quantidade
 	  cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
-	  cach_produto[2] =   cach_produto[2].toFixed(2)
+	 
     }
 
 
