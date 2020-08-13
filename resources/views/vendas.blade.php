@@ -420,8 +420,8 @@ async function  openstatus() {
      title: '',
      width:500,
      html: `<select style="width:300px;height:50px;">
-              <option>Entrega pendente</option>
-              <option>Entregue</option>
+              <option  style="width:300px;height:50px;">Entrega pendente</option>
+              <option  style="width:300px;height:50px;">Entregue</option>
 s
      </select>` ,
      imageUrl: 'https://images.vexels.com/media/users/3/146458/isolated/preview/47a93816a6be8e203665b31985e5d84b-caixa-de-papel--o-quadrado-aberto-by-vexels.png',
