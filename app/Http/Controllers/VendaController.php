@@ -400,5 +400,12 @@ class VendaController extends Controller
             ->json($product);
     }
 
+
+    public function setUpdate_statusvenda($idvenda,$status){
+       $venda = $this->vendas->where('id',$idvenda)->first();
+       $venda = $vendas->update(['statuspvenda'=>$status]);
+       return $venda;
+    }
+
 }
 

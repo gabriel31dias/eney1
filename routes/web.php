@@ -104,16 +104,14 @@ Route::get('/app/searchproduto/{lojacode?}/{nomeproduto?}','AppController@search
 
 Route::get('/app/gettotal/','CarrinhoController@gettotal')->name("gettotal");
 Route::get('/app/removefotosall','CarrinhoController@removefotosall()')->name("removefotosall()");
-
 Route::get('/app/setretiradalocal/{valor?}','CarrinhoController@setretiradalocal')->name("setretirada");
 Route::post('/app/savevenda/{valor?}','CarrinhoController@savevenda')->name("savevenda");
-
 Route::get('/app/verificacarrinho','CarrinhoController@verificasetemprodutos_nocarrinho')->name("verificacarrinho");
 Route::get('/app/listteste','CarrinhoController@listteste')->name("listteste");
-
 Route::get('/app/getformasdepagamento/{iduser?}','CarrinhoController@getformasdepagamento')->name("getformasdepagamento");
-
 Route::post('/app/updatetags','AppController@process_tags')->name("updatetags");
+Route::get('/app/updatestatusvenda/{idvenda?}/{status?}','VendaController@setUpdate_statusvenda')->name("setUpdate_statusvenda");
+
 
 
 
