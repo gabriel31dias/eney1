@@ -415,22 +415,26 @@ async function  precos(valortotalprodutos,valortotalentrega,valortotaladicionais
 async function  openstatus() {
 
   
-   
    Swal.fire({
      title: '',
      width:500,
      html: `<select style="width:300px;height:30px;">
-              <option  style="width:300px;height:50px;">Entrega pendente</option>
-              <option  style="width:300px;height:50px;">Entregue</option>
-s
+              <option value="1"  style="width:300px;height:50px;">Entrega pendente</option>
+              <option value="2" style="width:300px;height:50px;">Entregue</option>
      </select>` ,
      imageUrl: 'https://images.vexels.com/media/users/3/146458/isolated/preview/47a93816a6be8e203665b31985e5d84b-caixa-de-papel--o-quadrado-aberto-by-vexels.png',
      imageWidth: 250,
      imageHeight: 250,
      imageAlt: 'Custom image',
+    }).then(function(){
+      
+      $.get(`{{route("setUpdate_statusvenda")}}/${}/${}`,(data)=>{
+
+         alert(data)
+      })
+
     })
    
-
 
 }
 
