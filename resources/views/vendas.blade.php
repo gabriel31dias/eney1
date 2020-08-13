@@ -421,9 +421,8 @@ async function  openstatus() {
      width:500,
      html: `<select>
      
-      <option>
-      fesfsfsf
-      </option>
+      <option>Entrega pendente</option>
+      <option>Entregue</option>
      
      
      </select>` ,
