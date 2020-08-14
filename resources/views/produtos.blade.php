@@ -271,7 +271,7 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
 
-                                       <label class="">Código no sistemas</label>
+                                       <label class="">Código no sistema</label>
                                           <input  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
          
                                        </div>
@@ -835,7 +835,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
 
-                                       <label class="">Código no sistemas</label>
+                                       <label class="">Código no sistema</label>
                                           <input  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
          
                                        </div>
