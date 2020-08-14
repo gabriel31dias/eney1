@@ -817,9 +817,25 @@ const frm = await Swal.fire({
       <input style="display:none" type="text" name="id" id="id" value="${data_dom.id}">
    <input style="display:none" type="text" name="ID_USER" id="ID_USER" value="${data_dom.ID_USER}">
     <input style="display:none" type="text" id="IMG" name="IMG" value='${data_dom.IMG}'>
-                              <div class="col-sm-6">
+    <div class="col-sm-6">
+                              
                               <div class="form-group form-float">
                                        <div class="form-line">
+
+                                       <label class="">Código no sistemas</label>
+                                          <input value="${data_dom.CODIGO_SISTEMA}" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
+         
+                                       </div>
+                                 </div>
+                              
+                              </div>
+                            
+                            
+                              <div class="col-sm-6">
+                              
+                              <div class="form-group form-float">
+                                       <div class="form-line">
+
                                        <label class="">Nome do produto</label>
                                           <input value="${data_dom.NOME_PRODUTO}" id="NOME_PRODUTO" name="NOME_PRODUTO" type="text" class="form-control">
                                           

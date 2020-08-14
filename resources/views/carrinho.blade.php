@@ -682,8 +682,6 @@ if (formValues) {
 
 
 
-
-
    ///Selecao do tipo de retirada
 
 const { value: formValues } = await temaapp.fire({
