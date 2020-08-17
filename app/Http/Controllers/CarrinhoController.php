@@ -43,7 +43,7 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
-
+        $produtosjson = json_encode($this->removefotosall(Session::get('carrinho')));
         $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
         $iduser = $iduser->id;
         $teste = Session::get('idloja');
@@ -52,10 +52,7 @@ class CarrinhoController extends Controller
         $status_loja = true;
         $totalemprodutos = Session::get('totalprodutos');
         $adicionaissalvos = Session::get('adicionais');
-        $getloja = $this
-            ->users
-            ->where('codigo_estabelecimento', $codigo)->first();
-
+        $getloja = $this->users->where('codigo_estabelecimento', $codigo)->first();
         $getidloja = '';
         if (isset($getloja->id))
         {
@@ -77,7 +74,7 @@ class CarrinhoController extends Controller
             ->grupos
             ->where('ID_USER', $getidloja)->paginate(10);
 
-        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser]);
+        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson]);
     }
 
     public function add_produto(Request $req)

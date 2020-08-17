@@ -38,8 +38,7 @@ class VendaController extends Controller
         $tipo_op = Auth::user()->tipo_op;
 
         $getvendas = $this->vendas;
-        $getvendas = $getvendas->where('ID_USER', $iduser)->orderBy('id', 'ASC')
-            ->get();
+        $getvendas = $getvendas->where('ID_USER', $iduser)->orderBy('id', 'ASC')->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -74,8 +73,7 @@ class VendaController extends Controller
         }
         , $getvendas->toArray());
 
-        return response()
-            ->json($filtrad_vendas);
+        return response()->json($filtrad_vendas);
 
     }
 

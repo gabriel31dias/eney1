@@ -408,6 +408,9 @@
 
   var socket = io('https://servidorsocket3636.herokuapp.com/')
   var obj_venda = {}
+
+  obj_venda.produtosjson = "{{$produtosjson}}"
+
   var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
   var tipo_retirada = 'Entrega'
 
