@@ -70,9 +70,7 @@ class CarrinhoController extends Controller
             $style = ['color1' => $getloja->COR1, 'color2' => $getloja->COR2];
         }
 
-        $getgrupos = $this
-            ->grupos
-            ->where('ID_USER', $getidloja)->paginate(10);
+        $getgrupos = $this->grupos->where('ID_USER', $getidloja)->paginate(10);
 
         return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson]);
     }
