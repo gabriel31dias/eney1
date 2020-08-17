@@ -43,7 +43,7 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
-        $produtosjson = json_encode(Session::get('carrinho'));
+        $produtosjson = Session::get('carrinho');
         $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
         $iduser = $iduser->id;
         $teste = Session::get('idloja');
