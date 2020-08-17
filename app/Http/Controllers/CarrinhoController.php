@@ -93,6 +93,9 @@ class CarrinhoController extends Controller
         $getimg = DB::table('produtos')->where('id', $idproduto)->first();
         $getpreco = DB::table('produtos')->where('id', $idproduto)->first();
         $getpreco_adicionais = null;
+        //Codigo interno do sistema
+        $getcodigoproduto = DB::table('produtos')->where('id', $idproduto)->first();
+        $getcodigoproduto = $getcodigoproduto->CODIGO_SISTEMA;
 
         foreach ($adicionais as $value)
         {
@@ -117,7 +120,7 @@ class CarrinhoController extends Controller
             $produtos_salvos = [];
         }
 
-        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
+        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
         Session::put('carrinho', $produtos_salvos);
         $this->set_total($getlojacode);
         $testexxx = Session::get('carrinho');
