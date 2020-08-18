@@ -411,6 +411,11 @@
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
 
+  obj_venda.produtosjson.substr(1)
+  
+
+
+
   var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
   var tipo_retirada = 'Entrega'
 
