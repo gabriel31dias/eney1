@@ -411,8 +411,8 @@
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
 
-  obj_venda.produtosjson.substr(1)
-  
+  obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
+
 
 
 
