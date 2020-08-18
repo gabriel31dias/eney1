@@ -43,6 +43,7 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
+        
         $produtosjson = json_encode(['produtos'=>$this->removefotosall(Session::get('carrinho'))]);
         $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
         $iduser = $iduser->id;
