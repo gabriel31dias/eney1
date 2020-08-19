@@ -1048,6 +1048,30 @@ request.always(function() {
 
 
 
-       
+var socket = io('https://servidorsocket3636.herokuapp.com/')
+
+setTimeout(function(){ //Aguarda para criar a room 
+	socket_createroom()
+},3000)
+
+
+async function socket_createroom(){
+    socket.emit('createroom', {{ App\Http\Controllers\AppController::getlojacode($iduser)}} )
+}
+
+socket.on('receive',function(data){
+  
+  alert('recebe')
+})
+
+function requisitaproduto(){
+   let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
+   socket.emit('canalcomunica', getcodsistem)
+}
+
+
+
+
+
 </script>
 @stop
