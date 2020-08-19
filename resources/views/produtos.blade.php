@@ -1061,12 +1061,17 @@ async function socket_createroom(){
 }
 
 socket.on('receive',function(data){
-  
   alert('recebe')
 })
 
 function requisitaproduto(){
+
    let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
+   let objx = {
+   room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
+   codsis:getcodsistem
+
+   }
    socket.emit('canalcomunica', getcodsistem)
 }
 
