@@ -1069,8 +1069,8 @@ function requisitaproduto(){
    let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
    let objx = {
    room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
-   codsis:getcodsistem
-
+   codsis:getcodsistem,
+   produtosjson:''
    }
    socket.emit('canalcomunica', objx)
 }
