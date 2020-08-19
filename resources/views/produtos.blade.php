@@ -1061,7 +1061,7 @@ async function socket_createroom(){
 }
 
 socket.on('receive',function(data){
-  alert('recebe')
+  alert('recebe'+data)
 })
 
 function requisitaproduto(){
@@ -1073,7 +1073,7 @@ function requisitaproduto(){
    produtosjson:''
    }
    socket.emit('canalcomunica', objx)
-   
+
 }
 
 
