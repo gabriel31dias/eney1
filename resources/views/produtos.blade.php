@@ -1052,6 +1052,7 @@ var socket = io('https://servidorsocket3636.herokuapp.com/')
 
 setTimeout(function(){ //Aguarda para criar a room 
 	socket_createroom()
+   alert('criado')
 },3000)
 
 
