@@ -1072,7 +1072,7 @@ function requisitaproduto(){
    codsis:getcodsistem
 
    }
-   socket.emit('canalcomunica', getcodsistem)
+   socket.emit('canalcomunica', objx)
 }
 
 
