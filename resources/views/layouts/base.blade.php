@@ -874,6 +874,8 @@ socket.on('receive',function(data){
      
   }
 
+  alert(JSON.stringify(data))
+
 })
 
          </script>

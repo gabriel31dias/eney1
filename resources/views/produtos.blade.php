@@ -1061,7 +1061,7 @@ async function socket_createroom(){
 }
 
 socket.on('receive',function(data){
-  alert('recebe'+data)
+  alert('recebe')
 })
 
 function requisitaproduto(){
