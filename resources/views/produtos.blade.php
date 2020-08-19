@@ -1073,6 +1073,7 @@ function requisitaproduto(){
    produtosjson:''
    }
    socket.emit('canalcomunica', objx)
+   
 }
 
 
