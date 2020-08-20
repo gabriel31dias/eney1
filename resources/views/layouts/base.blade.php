@@ -870,11 +870,16 @@ socket.on('receive',function(data){
    
 
        consulta()
+
+
    
-     
   }
 
-  alert(JSON.stringify(data))
+  if(data.produtosjson == 'volta'){
+     alert(JSON.stringify(data))
+  }
+
+ 
 
 })
 
