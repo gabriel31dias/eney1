@@ -877,6 +877,12 @@ socket.on('receive',function(data){
 
   if(data.produtosjson == 'volta'){
      alert(JSON.stringify(data))
+     document.getElementById('NOME_PRODUTO').value = data.nomeproduto
+     document.getElementById('PRECO_UNIT').value = data.valorunitario
+     document.getElementById('CFOP').value = data.cfop
+     document.getElementById('CST').value = data.cst
+     document.getElementById('NCM').value = data.ncm
+
   }
 
  
