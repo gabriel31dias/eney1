@@ -272,7 +272,7 @@ visibility: hidden;
                                        <div class="form-line">
 
                                        <label class="">Código no sistema</label>
-                                          <input  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
+                                          <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
          
                                        </div>
                                  </div>
@@ -836,7 +836,7 @@ const frm = await Swal.fire({
                                        <div class="form-line">
 
                                        <label class="">Código no sistema</label>
-                                          <input  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
+                                          <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
          
                                        </div>
                                  </div>
