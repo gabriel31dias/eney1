@@ -883,6 +883,7 @@ socket.on('receive',function(data){
      document.getElementById('CST').value = data.cst
      document.getElementById('NCM').value = data.ncm
 
+alert(JSON.stringify(data))
   }
 
  
