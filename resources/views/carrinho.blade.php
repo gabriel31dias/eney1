@@ -417,6 +417,7 @@
 
   obj_venda.produtosjson = obj_venda.produtosjson.substring(0,  obj_venda.produtosjson.length - 1)
 
+  obj_venda.totalentrega = valor_total_frete
   
 
 
