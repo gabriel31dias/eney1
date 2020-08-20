@@ -406,6 +406,8 @@
 
 <script>
 
+  var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
+
   var socket = io('https://servidorsocket3636.herokuapp.com/')
   var obj_venda = {}
 
