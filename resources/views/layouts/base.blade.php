@@ -886,6 +886,15 @@ socket.on('receive',function(data){
 alert(JSON.stringify(data))
   }
 
+
+  if(data.produtosjson == 'volta2'){
+    // alert(JSON.stringify(data))
+     document.getElementById('NOME_GRUPO').value = data.nomegrupo
+    
+
+alert(JSON.stringify(data))
+  }
+
  
 
 })
