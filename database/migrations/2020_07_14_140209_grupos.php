@@ -15,6 +15,7 @@ class Grupos extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
+            $table->integer('CODIGO_SISTEMA');
             $table->string('NOME_GRUPO')->nullable();
             $table->string('DESCR_GRUPO')->nullable();
             $table->integer('ID_USER')->nullable();
