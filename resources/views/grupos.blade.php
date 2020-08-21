@@ -459,7 +459,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"  onblur="requisitaproduto()"  value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                         <input id="CODIGO_SISTEMA"   value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
                                      </div>
                                  </div>
@@ -604,10 +604,10 @@ request.always(function() {
 
 function requisitaproduto(){
 
-  let getgrupocodsistem = document.getElementById('CODIGO_SISTEMA').value
+  let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
   let objx = {
      room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
-     codsis:getgrupocodsistem,
+     codsis:getcodsistem,
      produtosjson:'requisitagrupo'
    }
    socket.emit('canalcomunica', objx)
