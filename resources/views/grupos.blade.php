@@ -244,6 +244,17 @@ async function cad_grupo()
 @csrf
 <div class="r"ow clearfix">
 <input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
+<div class="col-sm-12">
+                              
+                              <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Nome do grupo</label>
+                                         <input id="CODIGO_SISTEMA"  value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                        
+                                     </div>
+                                 </div>
+                              
+                             </div>
                             <div class="col-sm-12">
                            
                              <div class="form-group form-float">
@@ -256,17 +267,7 @@ async function cad_grupo()
                              
                             </div>
                             
-                            <div class="col-sm-12">
-                              
-                              <div class="form-group form-float">
-                                     <div class="form-line">
-                                       <label class="">Nome do grupo</label>
-                                         <input id="CODIGO_SISTEMA"  value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
-                                        
-                                     </div>
-                                 </div>
-                              
-                             </div>
+                            
                             <input style="display:none" type="text" id="IMG" name="IMG">
                         <div class="col-sm-12">
                              <div class="form-group form-float">
@@ -452,6 +453,21 @@ const frm = await Swal.fire({
 <form id="f1" action="{{route('grupossave')}}" method="POST">
 
 @csrf
+
+<div class="col-sm-12">
+                              
+                              <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Nome do grupo</label>
+                                         <input id="CODIGO_SISTEMA"  value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                        
+                                     </div>
+                                 </div>
+                              
+                             </div>
+
+
+
 <div class="r"ow clearfix">
 <input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
                             <div class="col-sm-12">
@@ -466,17 +482,7 @@ const frm = await Swal.fire({
                              
                             </div>
 
-                            <div class="col-sm-12">
-                              
-                             <div class="form-group form-float">
-                                    <div class="form-line">
-                                      <label class="">Nome do grupo</label>
-                                        <input id="CODIGO_SISTEMA"  value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
-                                       
-                                    </div>
-                                </div>
-                             
-                            </div>
+                          
 
                             <input style="display:none" type="text" id="IMG" name="IMG">
                         <div class="col-sm-12">
