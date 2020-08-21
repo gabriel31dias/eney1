@@ -604,10 +604,10 @@ request.always(function() {
 
 function requisitaproduto(){
 
-  let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
+  let getgrupocodsistem = document.getElementById('CODIGO_SISTEMA').value
   let objx = {
      room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
-     codsis:getcodsistem,
+     gruposis:getgrupocodsistem,
      produtosjson:'requisitagrupo'
    }
    socket.emit('canalcomunica', objx)
