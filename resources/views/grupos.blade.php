@@ -458,7 +458,7 @@ const frm = await Swal.fire({
                               
                               <div class="form-group form-float">
                                      <div class="form-line">
-                                       <label class="">Nome do grupo</label>
+                                       <label class="">Codigo sistema</label>
                                          <input id="CODIGO_SISTEMA"  value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
                                      </div>
