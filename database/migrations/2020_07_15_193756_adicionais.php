@@ -15,6 +15,7 @@ class Adicionais extends Migration
     {
         Schema::create('adicionais', function (Blueprint $table) {
             $table->id();
+            $table->integer('CODIGO_SISTEMA');
             $table->string('ADICIONAL')->nullable();//PRODUTOS ADICIONADO EM FORMATO JSON
             $table->integer('CODIGOADICIONAL')->nullable();//Codigo adicional no sistema
             $table->integer('ID_USER')->nullable();

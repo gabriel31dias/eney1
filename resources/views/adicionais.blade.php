@@ -227,6 +227,15 @@ const frm = await Swal.fire({
 @csrf
 <div class="row clearfix">
 <input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
+
+                    <div class="col-sm-12">
+                            
+                                  
+                            <label  class="">Código sistema</label>
+                            <input  class="form-control" onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA"  ></input>
+
+                      
+                          </div>
                             <div class="col-sm-12">
                             
                                   
@@ -404,6 +413,14 @@ const frm = await Swal.fire({
 
 @csrf
 <div class="row clearfix">
+   <div class="col-sm-12">
+                            
+                                  
+                            <label  class="">Código sistema</label>
+                            <input  class="form-control" onblur="requisitaproduto()"  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA"  ></input>
+
+                      
+                          </div>
 <input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
 <input style="display:none" type="text" name="ID_PRODUTO" id="ID_PRODUTO" value="${idproduto}">
 
@@ -553,6 +570,22 @@ $('#ADICIONAL').select2({
                 cache: true
             }
         });
+}
+
+
+
+
+
+function requisitaproduto(){
+
+let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
+let objx = {
+   room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
+   codsis:getcodsistem,
+   produtosjson:'requisitaadicionais'
+ }
+ socket.emit('canalcomunica', objx)
+
 }
 
 
