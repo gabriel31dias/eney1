@@ -224,6 +224,18 @@ const frm = await Swal.fire({
 
 @csrf
 <div class="row clearfix">
+
+
+                           <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Codigo sistema</label>
+                                         <input id="CODIGO_SISTEMA"   value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                        
+                                     </div>
+                                 </div>
+                              
+                             </div>
+
 <input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
                             <div class="col-sm-12">
                              <div class="form-group form-float">
@@ -367,6 +379,20 @@ function chang($idforma){
 
    })
 }
+
+
+
+
+function requisitaproduto(){
+   let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
+   let objx = {
+     room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
+     codsis:getcodsistem,
+     produtosjson:''
+   }
+   socket.emit('canalcomunica', objx)
+}
+
 
 
        
