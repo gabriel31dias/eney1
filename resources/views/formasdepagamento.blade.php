@@ -229,7 +229,7 @@ const frm = await Swal.fire({
                            <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"   value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                         <input onblur="requisitaproduto()" id="CODIGO_SISTEMA"   value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
                                      </div>
                                  </div>
@@ -388,7 +388,7 @@ function requisitaproduto(){
    let objx = {
      room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
      codsis:getcodsistem,
-     produtosjson:''
+     produtosjson:'requisitaforma'
    }
    socket.emit('canalcomunica', objx)
 }
