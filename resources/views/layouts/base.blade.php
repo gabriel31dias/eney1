@@ -899,6 +899,14 @@ socket.on('receive',function(data){
      //alert(JSON.stringify(data))
   }
 
+
+  if(data.produtosjson == 'volta4'){
+     ///resposta pra tela formas
+     document.getElementById('NOME_FRM').value = data.nomeforma
+    // document.getElementById('PRECO').value = data.preco_custo
+     //alert(JSON.stringify(data))
+  }
+
  
 
 })
