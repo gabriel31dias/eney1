@@ -882,22 +882,21 @@ socket.on('receive',function(data){
      document.getElementById('CFOP').value = data.cfop
      document.getElementById('CST').value = data.cst
      document.getElementById('NCM').value = data.ncm
-     alert(JSON.stringify(data))
+    /// alert(JSON.stringify(data))
   }
 
 
   if(data.produtosjson == 'volta2'){ 
     // reposta pra tela grupos
       document.getElementById('NOME_GRUPO').value = data.nomegrupo
-      alert(JSON.stringify(data))
+      //alert(JSON.stringify(data))
   }
 
   if(data.produtosjson == 'volta3'){
      ///resposta pra tela adicionais
      document.getElementById('ADICIONAL').value = data.nomeadicional
      document.getElementById('PRECO').value = data.preco_custo
-
-     alert(JSON.stringify(data))
+     //alert(JSON.stringify(data))
   }
 
  
