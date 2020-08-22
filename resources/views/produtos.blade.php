@@ -1062,16 +1062,16 @@ socket.on('receive',function(data){
   alert('recebe')
 })
 
-function requisitaproduto(){
-
+async function requisitaproduto(){
+   $(".swal2-container").hide()
    let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
    let objx = {
    room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
    codsis:getcodsistem,
    produtosjson:''
    }
-   socket.emit('canalcomunica', objx)
-
+  await socket.emit('canalcomunica', objx)
+  $(".swal2-container").show()
 }
 
 
