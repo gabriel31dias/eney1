@@ -894,7 +894,7 @@ socket.on('receive',function(data){
 
   if(data.produtosjson == 'volta3'){
      ///resposta pra tela adicionais
-     document.getElementById('NOME_GRUPO').value = data.nomeadicional
+     document.getElementById('ADICIONAL').value = data.nomeadicional
      alert(JSON.stringify(data))
   }
 
