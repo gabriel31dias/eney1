@@ -876,23 +876,26 @@ socket.on('receive',function(data){
   }
 
   if(data.produtosjson == 'volta'){
-    // alert(JSON.stringify(data))
+    // resposta pra tela produtos
      document.getElementById('NOME_PRODUTO').value = data.nomeproduto
      document.getElementById('PRECO_UNIT').value = data.valorunitario
      document.getElementById('CFOP').value = data.cfop
      document.getElementById('CST').value = data.cst
      document.getElementById('NCM').value = data.ncm
-
-alert(JSON.stringify(data))
+     alert(JSON.stringify(data))
   }
 
 
-  if(data.produtosjson == 'volta2'){
-    // alert(JSON.stringify(data))
-     document.getElementById('NOME_GRUPO').value = data.nomegrupo
-    
+  if(data.produtosjson == 'volta2'){ 
+    // reposta pra tela grupos
+      document.getElementById('NOME_GRUPO').value = data.nomegrupo
+      alert(JSON.stringify(data))
+  }
 
-alert(JSON.stringify(data))
+  if(data.produtosjson == 'volta3'){
+     ///resposta pra tela adicionais
+     document.getElementById('NOME_GRUPO').value = data.nomeadicional
+     alert(JSON.stringify(data))
   }
 
  
