@@ -95,8 +95,8 @@ class CarrinhoController extends Controller
        
         $getpreco_adicionais = null;
         //Codigo interno do sistema
-       
-        $getcodigoproduto = $ $getpro->CODIGO_SISTEMA;
+        $getcodigoproduto = DB::table('produtos')->where('id', $idproduto)->first();
+        $getcodigoproduto = $getcodigoproduto->CODIGO_SISTEMA;
 
         foreach ($adicionais as $value)
         {
