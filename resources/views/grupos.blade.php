@@ -259,11 +259,9 @@ async function cad_grupo()
                              <div class="col-sm-4">
                               
                               <div class="form-group form-float">
-                                     <div class="form-line">
-                                       <label class="">Codigo sistema</label>
-                                      <button onclick="requisitaproduto()">Buscar</button>                                        
-                                     </div>
-                                 </div>
+                                    
+                                      <a onclick="requisitaproduto()">Buscar</a>                                        
+                                    
                               
                              </div>
 
@@ -482,11 +480,11 @@ const frm = await Swal.fire({
 
                              <div class="col-sm-4">
                               
-                              <div class="form-group form-float">
-                                     <div class="form-line">
-                                      <button onclick="requisitaproduto()">Buscar</button>                                        
-                                     </div>
-                                 </div>
+                              
+                                     
+                                      <a onclick="requisitaproduto()">Buscar</a>                                        
+                                     
+                               
                               
                              </div>
 
