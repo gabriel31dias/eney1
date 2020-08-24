@@ -93,9 +93,9 @@ class CarrinhoController extends Controller
 
         $get_cod_sist_grupo = DB::table('adicionais')->where('ADICIONAL',  $getpro->NOME_GRUPO)->first() ;
 
-        
+        if($get_cod_sist_grupo){ 
             $get_cod_sist_grupo =   $get_cod_sist_grupo->CODIGO_SISTEMA;
-        
+        }
        
 
         $tags_adicionais = $req->tagsadicionais;
