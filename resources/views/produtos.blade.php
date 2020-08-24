@@ -1065,7 +1065,7 @@ socket.on('receive',function(data){
 async function requisitaproduto(){
   
     $(".swal2-container").hide()
-   setTimeout(function(){
+  setTimeout(function(){
      
      let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
      let objx = {
@@ -1073,7 +1073,7 @@ async function requisitaproduto(){
        codsis:getcodsistem,
        produtosjson:''
      }
-    await socket.emit('canalcomunica', objx)
+     socket.emit('canalcomunica', objx)
     $(".swal2-container").show()
   },2000)
 
