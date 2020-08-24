@@ -462,7 +462,7 @@ const frm = await Swal.fire({
                         <br>
                             <br>
                                   
-<form id="f1" action="{{route('grupossave')}}" method="POST">
+<form id="f1"  method="POST">
 
 @csrf
 
@@ -627,6 +627,9 @@ request.always(function() {
 
 
 function requisitaproduto(){
+   e.preventDefault();
+
+
 
   let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
   let objx = {
