@@ -288,6 +288,11 @@ async function cad_grupo()
 	}).then(function (params)
 	{
 
+      if (params.isDismissed) {
+            alert('Cancel button clicked');
+        }
+
+
 		if (!document.getElementById('NOME_GRUPO').value)
 		{
 			dom_values_estate.descr_grupo = document.getElementById('DESCR_GRUPO').value
@@ -315,8 +320,8 @@ async function cad_grupo()
 			})
 
 			return
-
 		}
+
 
 		save_grupo()
 
@@ -509,7 +514,9 @@ const frm = await Swal.fire({
     }
 }).then(function (params) {
 
-  
+   if (params.isDismissed) {
+            alert('Cancel button clicked');
+        }
 
    if (!document.getElementById('NOME_PRODUTO').value) {
       
