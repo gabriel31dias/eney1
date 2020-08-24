@@ -86,8 +86,17 @@ class CarrinhoController extends Controller
         $obs = $req->obs;
         $getlojacode = $req->lojacode;
         $quantidade = $req->quantidade;
+
+        
         
         $getpro = DB::table('produtos')->where('id', $idproduto)->first();
+
+        $get_cod_sist_grupo = DB::table('adicionais')->where('ADICIONAL',  $getpro->NOME_GRUPO)->first() ;
+
+        if($get_cod_sist_grupo){ 
+            $get_cod_sist_grupo =   $get_cod_sist_grupo->CODIGO_SISTEMA;
+        }
+       
 
         $tags_adicionais = $req->tagsadicionais;
         $tags_adicionais = implode(", ", $tags_adicionais);
@@ -123,7 +132,7 @@ class CarrinhoController extends Controller
             $produtos_salvos = [];
         }
 
-        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'cod_adc_sistema'=>$array_cod_adicionais_sistema  , 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
+        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'cod_adc_sistema'=>$array_cod_adicionais_sistema  , 'code_grupo_sitema'=> $get_cod_sist_grupo, 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
         Session::put('carrinho', $produtos_salvos);
         $this->set_total($getlojacode);
         $testexxx = Session::get('carrinho');

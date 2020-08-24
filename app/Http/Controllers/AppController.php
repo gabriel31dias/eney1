@@ -87,9 +87,9 @@ class AppController extends Controller
       
 
      if($grupoitem){
-      $getproducts = $this->produtos->where('NOME_GRUPO',$grupoitem)->paginate(10);
+         $getproducts = $this->produtos->where('NOME_GRUPO',$grupoitem)->paginate(10);
      }else{
-      $getproducts = $this->produtos->where('ID_USER',$getidloja)->paginate(10);
+         $getproducts = $this->produtos->where('ID_USER',$getidloja)->paginate(10);
      }
      
 
