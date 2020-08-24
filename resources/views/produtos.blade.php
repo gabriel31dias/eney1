@@ -384,6 +384,12 @@ visibility: hidden;
       }
    }).then(function (params) {
 
+      if (params.isDismissed) {
+         location.href = "/produtos"
+       
+       return
+      }
+
       if (!document.getElementById('NOME_PRODUTO').value) {
          dom_values_estate.precounitario = document.getElementById('PRECO_UNIT').value
         // dom_values_estate.precedecusto = document.getElementById('PRECO_CUSTO').value
@@ -954,7 +960,11 @@ const frm = await Swal.fire({
     }
 }).then(function (params) {
 
-  
+   if (params.isDismissed) {
+         location.href = "/produtos"
+       
+       return
+      }
 
    if (!document.getElementById('NOME_PRODUTO').value) {
       

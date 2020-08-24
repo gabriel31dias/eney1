@@ -276,6 +276,12 @@ const frm = await Swal.fire({
     }
 }).then(function (params) {
 
+   if (params.isDismissed) {
+         location.href = "/adicionais"
+       
+       return
+      }
+
    if (!document.getElementById('ADICIONAL').value) {
       
      
@@ -460,6 +466,12 @@ const frm = await Swal.fire({
       
     }
 }).then(function (params) {
+
+   if (params.isDismissed) {
+         location.href = "/adicionais"
+       
+       return
+      }
 
    if (!document.getElementById('ADICIONAL').value) {
       
