@@ -904,7 +904,9 @@ socket.on('receive',function(data){
      ///resposta pra tela formas
      document.getElementById('NOME_FRM').value = data.nomeforma
     // document.getElementById('PRECO').value = data.preco_custo
-     //alert(JSON.stringify(data))
+     alert(JSON.stringify(data))
+
+     
   }
 
  
