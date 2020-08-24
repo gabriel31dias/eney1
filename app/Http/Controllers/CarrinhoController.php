@@ -86,12 +86,13 @@ class CarrinhoController extends Controller
         $obs = $req->obs;
         $getlojacode = $req->lojacode;
         $quantidade = $req->quantidade;
+        
+        $getpro = DB::table('produtos')->where('id', $idproduto)->first();
 
         $tags_adicionais = $req->tagsadicionais;
         $tags_adicionais = implode(", ", $tags_adicionais);
 
-        $getimg = DB::table('produtos')->where('id', $idproduto)->first();
-        $getpreco = DB::table('produtos')->where('id', $idproduto)->first();
+       
         $getpreco_adicionais = null;
         //Codigo interno do sistema
         $getcodigoproduto = DB::table('produtos')->where('id', $idproduto)->first();
@@ -112,8 +113,8 @@ class CarrinhoController extends Controller
         Session::put('totaladicionais', $getpreco_adicionais + $aux); ///Salva valor total dos
         $idproduto_gerado =  rand(10, 500000);
 
-        $getpreco = $getpreco->PRECO_UNIT;
-        $getimg = $getimg->IMG;
+        $getpreco = $getpro->PRECO_UNIT;
+        $getimg = $getpro->IMG;
         
         $produtos_salvos = Session::get('carrinho');
 
