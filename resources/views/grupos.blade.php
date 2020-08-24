@@ -515,8 +515,8 @@ const frm = await Swal.fire({
 }).then(function (params) {
 
    if (params.isDismissed) {
-            alert('Cancel button clicked');
-        }
+         location.href = "/grupos"
+      }
 
    if (!document.getElementById('NOME_PRODUTO').value) {
       
