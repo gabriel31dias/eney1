@@ -612,7 +612,13 @@ function requisitaproduto(){
    }
    socket.emit('canalcomunica', objx)
 
+$(".swal2-container").hide()
+  setTimeout(function(){
+    $(".swal2-container").show()
+ },1000)
+
 }
+
 
 
 
