@@ -1063,7 +1063,7 @@ socket.on('receive',function(data){
 })
 
 async function requisitaproduto(){
-   $(".swal2-container").hide()
+  
    let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
    let objx = {
    room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
@@ -1071,8 +1071,12 @@ async function requisitaproduto(){
    produtosjson:''
    }
   await socket.emit('canalcomunica', objx)
-  $(".swal2-container").show()
+    $(".swal2-container").hide()
+  setTimeout(function(){
+   $(".swal2-container").show()
+  },1000)
 }
+
 
 
 
