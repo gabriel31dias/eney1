@@ -78,7 +78,7 @@ class CarrinhoController extends Controller
 
     public function add_produto(Request $req)
     {
-       $array_cod_adicionais_sistema = []; // array dos codigos do adicionais no sistema
+     ///  $array_cod_adicionais_sistema = []; // array dos codigos do adicionais no sistema
 
         $idproduto = $req->idproduto;
         $nomeproduto = $req->nomeproduto;
@@ -122,7 +122,7 @@ class CarrinhoController extends Controller
             $produtos_salvos = [];
         }
 
-        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'cod_adc_sistema'=>$array_cod_adicionais_sistema  , 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
+        array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'cod_adc_sistema'=>'' , 'idproduto' => $idproduto, 'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade , 'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, 'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
         Session::put('carrinho', $produtos_salvos);
         $this->set_total($getlojacode);
         $testexxx = Session::get('carrinho');
