@@ -484,7 +484,6 @@ const frm = await Swal.fire({
                               
                               <div class="form-group form-float">
                                      <div class="form-line">
-                                       <label class="">Codigo sistema</label>
                                       <button onclick="requisitaproduto()">Buscar</button>                                        
                                      </div>
                                  </div>
