@@ -244,17 +244,29 @@ async function cad_grupo()
 @csrf
 <div class="r"ow clearfix">
 <input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
-<div class="col-sm-12">
+<div class="col-sm-8">
                               
                               <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"  onblur="requisitaproduto()"  value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                         <input id="CODIGO_SISTEMA"  onblur=""  value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
                                      </div>
                                  </div>
                               
                              </div>
+
+                             <div class="col-sm-4">
+                              
+                              <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Codigo sistema</label>
+                                      <button onclick="requisitaproduto()">Buscar</button>                                        
+                                     </div>
+                                 </div>
+                              
+                             </div>
+
                             <div class="col-sm-12">
                            
                              <div class="form-group form-float">
