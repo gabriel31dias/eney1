@@ -109,7 +109,7 @@ class CarrinhoController extends Controller
 
         $getcodigoproduto = $getpro->CODIGO_SISTEMA;
 
-        if( $getcodigoproduto){
+        if( !$getcodigoproduto){
             $getcodigoproduto = 0 ;
         }
 
