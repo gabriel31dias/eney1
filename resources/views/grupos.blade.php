@@ -289,7 +289,7 @@ async function cad_grupo()
 	{
 
       if (params.isDismissed) {
-            alert('Cancel button clicked');
+           location.href = "/grupos"
         }
 
 
@@ -516,6 +516,7 @@ const frm = await Swal.fire({
 
    if (params.isDismissed) {
          location.href = "/grupos"
+
       }
 
    if (!document.getElementById('NOME_PRODUTO').value) {
