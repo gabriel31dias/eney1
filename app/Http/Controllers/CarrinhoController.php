@@ -100,11 +100,11 @@ class CarrinhoController extends Controller
         foreach ($adicionais as $value)
         {
 
-            $getprc = DB::table('adicionais')->where('id', $value)->first();
-            $getprc = $getprc->PRECO;
+            $getad = DB::table('adicionais')->where('id', $value)->first();
+            $getprc =  $getad->PRECO;
             $getpreco_adicionais = $getpreco_adicionais + $getprc;
 
-            array_push($array_cod_adicionais_sistema,$getprc->CODIGO_SISTEMA);
+            array_push($array_cod_adicionais_sistema, $getad->CODIGO_SISTEMA);
 
         }
         $aux = Session::get('totaladicionais');
