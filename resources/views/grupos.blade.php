@@ -244,27 +244,17 @@ async function cad_grupo()
 @csrf
 <div class="r"ow clearfix">
 <input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
-<div class="col-sm-8">
+<div class="col-sm-12">
                               
                               <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"  onblur=""  value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                         <input id="CODIGO_SISTEMA"  onblur="requisitaproduto()"  value=""  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
                                      </div>
                                  </div>
                               
                              </div>
-
-                             <div class="col-sm-4">
-                              
-                              <div class="form-group form-float">
-                                    
-                                      <a onclick="requisitaproduto()">Buscar</a>                                        
-                                    
-                              
-                             </div>
-
                             <div class="col-sm-12">
                            
                              <div class="form-group form-float">
@@ -460,31 +450,19 @@ const frm = await Swal.fire({
                         <br>
                             <br>
                                   
-<form id="f1"  method="POST">
+<form id="f1" action="{{route('grupossave')}}" method="POST">
 
 @csrf
 
-
-
-                             <div class="col-sm-8">
+<div class="col-sm-12">
                               
                               <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"  onblur=""    value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                         <input id="CODIGO_SISTEMA"   value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
                                      </div>
                                  </div>
-                              
-                             </div>
-
-                             <div class="col-sm-4">
-                              
-                              
-                                     
-                                      <a onclick="requisitaproduto()">Buscar</a>                                        
-                                     
-                               
                               
                              </div>
 
@@ -625,22 +603,22 @@ request.always(function() {
 
 
 function requisitaproduto(){
-   e.preventDefault();
 
 
+$(".swal2-container").hide()
+  setTimeout(function(){
 
-  let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
-  let objx = {
+
+   let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
+   let objx = {
      room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
      codsis:getcodsistem,
      produtosjson:'requisitagrupo'
    }
    socket.emit('canalcomunica', objx)
-
-$(".swal2-container").hide()
-  setTimeout(function(){
     $(".swal2-container").show()
- },2000)
+
+  },2000)
 
 }
 
