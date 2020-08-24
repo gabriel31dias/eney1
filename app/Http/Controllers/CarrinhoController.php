@@ -105,7 +105,15 @@ class CarrinhoController extends Controller
         $getpreco_adicionais = null;
         //Codigo interno do sistema
        
-        $getcodigoproduto =   $getpro->CODIGO_SISTEMA;
+
+
+    
+
+        if( $getcodigoproduto){
+            $getcodigoproduto =   $getpro->CODIGO_SISTEMA;
+        }else{
+            $getcodigoproduto = 0;
+        }
 
         foreach ($adicionais as $value)
         {
