@@ -15,7 +15,7 @@ class FormasPagamento extends Migration
     {
         Schema::create('formas', function (Blueprint $table) {
             $table->id();
-            $table->integer('CODIGO_SISTEMA');
+            $table->integer('CODIGO_SISTEMA')->nullable();
             $table->string('DESCR_FRM')->nullable();
             $table->string('ID_USER')->nullable();
             $table->string('NOME_FRM')->nullable();

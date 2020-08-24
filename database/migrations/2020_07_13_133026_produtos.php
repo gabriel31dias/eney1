@@ -15,7 +15,7 @@ class Produtos extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->integer('CODIGO_SISTEMA');
+            $table->integer('CODIGO_SISTEMA')->nullable();
             $table->integer('ID_USER');//PRODUTOS ADICIONADO EM FORMATO JSON
             $table->string('NOME_PRODUTO')->nullable();//PRODUTOS ADICIONADO EM FORMATO JSON
             $table->string('DESCR')->nullable(); //Descrição no app
