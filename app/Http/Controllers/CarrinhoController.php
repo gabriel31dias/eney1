@@ -91,11 +91,11 @@ class CarrinhoController extends Controller
         
         $getpro = DB::table('produtos')->where('id', $idproduto)->first();
         $get_cod_sist_grupo =  $getpro->NOME_GRUPO;
-      ///  $get_cod_sist_grupo = DB::table('adicionais')->where('ADICIONAL',  $getpro->NOME_GRUPO)->first() ;
+        $get_cod_sist_grupo = DB::table('grupos')->where('NOME_GRUPO',  $getpro->NOME_GRUPO)->first() ;
 
-        //if($get_cod_sist_grupo){ 
-          //  $get_cod_sist_grupo =   $get_cod_sist_grupo->CODIGO_SISTEMA;
-       // }
+        if($get_cod_sist_grupo){ 
+             $get_cod_sist_grupo =   $get_cod_sist_grupo->CODIGO_SISTEMA;
+         }
        
 
         $tags_adicionais = $req->tagsadicionais;
