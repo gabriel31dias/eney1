@@ -466,13 +466,26 @@ const frm = await Swal.fire({
 
 @csrf
 
-<div class="col-sm-12">
+
+
+                             <div class="col-sm-8">
                               
                               <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"   value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
+                                         <input id="CODIGO_SISTEMA"  onblur=""    value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
                                         
+                                     </div>
+                                 </div>
+                              
+                             </div>
+
+                             <div class="col-sm-4">
+                              
+                              <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Codigo sistema</label>
+                                      <button onclick="requisitaproduto()">Buscar</button>                                        
                                      </div>
                                  </div>
                               
