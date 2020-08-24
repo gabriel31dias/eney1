@@ -615,7 +615,7 @@ function requisitaproduto(){
 $(".swal2-container").hide()
   setTimeout(function(){
     $(".swal2-container").show()
- },1000)
+ },2000)
 
 }
 
