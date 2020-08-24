@@ -1085,7 +1085,7 @@ async function requisitaproduto(){
      }
      socket.emit('canalcomunica', objx)
     $(".swal2-container").show()
-  },2000)
+  },1000)
 
 }
 

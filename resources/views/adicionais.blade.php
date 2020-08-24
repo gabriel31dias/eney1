@@ -589,6 +589,8 @@ $('#ADICIONAL').select2({
 
 
 function requisitaproduto(){
+   $(".swal2-container").hide()
+  setTimeout(function(){
 
 let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
 let objx = {
@@ -597,6 +599,8 @@ let objx = {
    produtosjson:'requisitaadicionais'
  }
  socket.emit('canalcomunica', objx)
+ $(".swal2-container").show()
+},1000)
 
 }
 
