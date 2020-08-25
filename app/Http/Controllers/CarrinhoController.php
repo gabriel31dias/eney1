@@ -83,7 +83,7 @@ class CarrinhoController extends Controller
        
         $idproduto = $req->idproduto;
         $nomeproduto = $req->nomeproduto;
-        $adicionais = $req->adicionais;
+        $adicionais = "'".$req->adicionais."'";
         $obs = $req->obs;
         $getlojacode = $req->lojacode;
         $quantidade = $req->quantidade;
@@ -149,7 +149,7 @@ class CarrinhoController extends Controller
         array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'cod_adc_sistema'=>$array_cod_adicionais_sistema  ,
          'cfop'=> $getcfop, 'code_grupo_sitema'=> $get_cod_sist_grupo, 'idproduto' => $idproduto,
          'nomeproduto' => $nomeproduto, 'precoproduto' => ($getpreco + $getpreco_adicionais) * $quantidade ,
-         'img' => $getimg, 'adicionais' => $adicionais, 'tags_adicionais' => $tags_adicionais, 'obs' => $obs, 'soproduto' => $getpreco, //soproduto é o preço do produto sem adicionaç
+         'img' => $getimg, 'adicionais'=>$adicionais, 'tags_adicionais'=>$tags_adicionais, 'obs'=>$obs, 'soproduto'=>$getpreco, //soproduto é o preço do produto sem adicionaç
         'precoadicionais' => $getpreco_adicionais * $quantidade, 'quantidade'=> $quantidade]);
 
 
