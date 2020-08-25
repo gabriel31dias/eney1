@@ -83,7 +83,7 @@ class CarrinhoController extends Controller
        
         $idproduto = $req->idproduto;
         $nomeproduto = $req->nomeproduto;
-        $adicionais = "'".$req->adicionais."'";
+        $adicionais = strval($req->adicionais);
         $obs = $req->obs;
         $getlojacode = $req->lojacode;
         $quantidade = $req->quantidade;
