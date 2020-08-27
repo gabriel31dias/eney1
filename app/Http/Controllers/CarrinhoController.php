@@ -402,7 +402,13 @@ class CarrinhoController extends Controller
 
         $newproducts = array_map(function ($value)
         {
-            $value['img'] = '';
+
+            if(isset( $value['img'])){
+
+                $value['img'] = '';
+            }
+
+        
             return $value;
         }
         , $produtos);
