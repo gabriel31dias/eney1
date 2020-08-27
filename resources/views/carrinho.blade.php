@@ -134,7 +134,7 @@
 				<a onclick="setgrupo('/{{$item->NOME_GRUPO}}')" style="padding: 10px" class="grupos actionx col-xs-3 col-lg-3 col-md-3 col-sm-3">
 					
 						<center>
-							<img style="height:80px;width:100%"  alt="Image" class="img-responsive">
+							<img style="height:80px;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
 	
 						
 						
@@ -308,7 +308,7 @@
                 <div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                     <a class="fh5co-card-item image-popup">
                         
-                            <img  style="height:100%;width:100%"  alt="Image" class="img-responsive">
+                            <img  style="height:100%;width:100%" src="{{$item['img']}}" alt="Image" class="img-responsive">
     
                         <br>
                         <br>
