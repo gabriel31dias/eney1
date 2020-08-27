@@ -1073,6 +1073,11 @@ socket.on('receive',function(data){
 })
 
 async function requisitaproduto(){
+
+   if (!document.getElementById('CODIGO_SISTEMA').value){
+   
+      return
+   }
   
     $(".swal2-container").hide()
   setTimeout(function(){
