@@ -315,7 +315,7 @@ class CarrinhoController extends Controller
          Session::put('carrinho', null);
          ///Session::put('carrinho',$novocarrinho );
 
-
+         Session::put('carrinho', $novocarrinho);
          $gg = Session::get('carrinho');
          var_dump( $gg);
 
