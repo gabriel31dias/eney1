@@ -306,7 +306,8 @@ class CarrinhoController extends Controller
                 return $value;
              }
 
-              echo $value['id'];
+              echo $value['id']."fesfsf";
+              echo  $this->coderemove;
 
          },$produtos_salvos);
          var_dump($novocarrinho);
