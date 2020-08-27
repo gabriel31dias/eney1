@@ -50,7 +50,7 @@ visibility: hidden;
                      <div class="form-line">
                         <label style="margin-top:10px;"  for="cars">Filtro:</label>
                         <select name="tiposeach" id="tiposeach">
-                           <option value="Busca Versatil">Busca Versatil</option>
+                           <option value="Nome grupo">Nome grupo</option>
                            <option value="Nome">Nome</option>
                            <option value="Razão social">Razão social</option>
                            <option value="Código">Código</option>
@@ -129,8 +129,8 @@ var dom_values_estate = {
       //  alert(getval_tiposearch)
          let get_search = $('#busca').val();
         switch(getval_tiposearch){
-           case 'Nome produto':
-            setSearch('{{ route('searchbyname') }}',get_search)
+           case 'Nome grupo':
+            setSearch('{{ route('searchbynamegrupo') }}',get_search)
            break;
            case 'Entregue':
             setSearch('{{ route('searchentregue') }}',get_search)
@@ -208,7 +208,7 @@ $.ajax({
 					},
 
 				],
-            
+
             responsive: true,
         });
         $('#datatable-json').on('click', 'button', function(e) {
