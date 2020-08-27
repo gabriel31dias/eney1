@@ -296,8 +296,10 @@ class CarrinhoController extends Controller
 
       $novocarrinho = array_map(function($value){
 
-        if ($value['id'] == $codeid){
+        if (!$value['id'] == $codeid){
 
+          
+            return $value;
         }
 
       },$produtos_salvos);
