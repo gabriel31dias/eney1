@@ -300,6 +300,7 @@ class CarrinhoController extends Controller
 
           
             return $value;
+            //fesf
         }
 
       },$produtos_salvos);
