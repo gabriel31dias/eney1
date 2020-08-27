@@ -133,6 +133,37 @@ visibility: hidden;
 
       var dom_opcoes = ''
 
+      
+            
+    ///Evento keypress do documento
+    $(document).on('keypress', function(e) {
+     if (e.which == 13) {
+         var getval_tiposearch = $('#tiposeach').val();
+         alert(getval_tiposearch)
+         let get_search = $('#busca').val();
+        switch(getval_tiposearch){
+           case 'Nome produto':
+            setSearch('{{ route('searchbyname') }}',get_search)
+           break;
+           case 'Entregue':
+            setSearch('{{ route('searchentregue') }}',get_search)
+           break;
+           case 'Pendente':
+            setSearch('{{ route('searchnaoentregue') }}',get_search)
+           break;
+           case 'Telefone':
+            setSearch('{{ route('searchtelefone') }}',get_search)
+           break;
+           case 'Bairro':
+            setSearch('{{ route('searchbairro') }}',get_search)
+           break;
+           case 'Rua':
+            setSearch('{{ route('searchrua') }}',get_search)
+           break; 
+         }
+     }
+    });
+
 
       function consulta(params) {
             
@@ -1172,35 +1203,6 @@ async function requisitaproduto(){
 
 
 
-            
-    ///Evento keypress do documento
-    $(document).on('keypress', function(e) {
-     if (e.which == 13) {
-         var getval_tiposearch = $('#tiposeach').val();
-         alert(getval_tiposearch)
-         let get_search = $('#busca').val();
-        switch(getval_tiposearch){
-           case 'Nome produto':
-            setSearch('{{ route('searchbyname') }}',get_search)
-           break;
-           case 'Entregue':
-            setSearch('{{ route('searchentregue') }}',get_search)
-           break;
-           case 'Pendente':
-            setSearch('{{ route('searchnaoentregue') }}',get_search)
-           break;
-           case 'Telefone':
-            setSearch('{{ route('searchtelefone') }}',get_search)
-           break;
-           case 'Bairro':
-            setSearch('{{ route('searchbairro') }}',get_search)
-           break;
-           case 'Rua':
-            setSearch('{{ route('searchrua') }}',get_search)
-           break; 
-         }
-     }
-    });
 
 
 
