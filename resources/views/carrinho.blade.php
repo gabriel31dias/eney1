@@ -978,11 +978,13 @@ async function formas_pagamento(){
 
       ` ,
 	 
-   
+      
  }).then(function(){
    alert(document.getElementById('formapg').value)
-   obj_venda.forma =  document.getElementById('formapg').value
-   obj_venda.forma  =  obj_venda.forma.replace(/([^\d])+/gim, '');
+
+   let formapg = document.getElementById('formapg').value
+   obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
+
    obj_venda.troco = document.getElementById('trocovalor').value
    finaliza_tela_1()
  })
