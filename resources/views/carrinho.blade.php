@@ -128,9 +128,7 @@
 			@isset($grupos)
 			@foreach ($grupos as $item)
 			
-				@isset($item->NOME_GRUPO)
-            
-      
+				
 				 
 
 				<a onclick="setgrupo('/{{$item->NOME_GRUPO}}')" style="padding: 10px" class="grupos actionx col-xs-3 col-lg-3 col-md-3 col-sm-3">
@@ -152,9 +150,7 @@
 					</center>
 					</a>
 				</a>
-        @endisset
-
-        
+				
 			@endforeach
 		@endisset
 	
@@ -312,9 +308,6 @@
                 <div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                     <a class="fh5co-card-item image-popup">
                         
-                      @isset($item['img'])
-                          
-                      
                             <img  style="height:100%;width:100%" src="{{$item['img']}}" alt="Image" class="img-responsive">
     
                         <br>
@@ -346,7 +339,6 @@
                 </center>
                 </div>
                 </div>
-                @endisset
             @endisset
 
 
@@ -989,8 +981,10 @@ async function formas_pagamento(){
       
  }).then(function(){
    alert(document.getElementById('formapg').value)
+
    let formapg = document.getElementById('formapg').value
    obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
+
    obj_venda.troco = document.getElementById('trocovalor').value
    finaliza_tela_1()
  })
