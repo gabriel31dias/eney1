@@ -134,7 +134,7 @@
 				<a onclick="setgrupo('/{{$item->NOME_GRUPO}}')" style="padding: 10px" class="grupos actionx col-xs-3 col-lg-3 col-md-3 col-sm-3">
 					
 						<center>
-							<img style="height:80px;width:100%" src="{{$item->IMG ?? ''}}" alt="Image" class="img-responsive">
+							<img style="height:80px;width:100%"  alt="Image" class="img-responsive">
 	
 						
 						
