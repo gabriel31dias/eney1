@@ -30,6 +30,7 @@ class CarrinhoController extends Controller
     private $grupos;
     private $vendas;
     private $formas;
+    private $coderemove;
 
     public function __construct(User $apps, Produto $produtos, Config $con, Grupo $grupos, Venda $vendas,Forma $formas)
     {
@@ -293,15 +294,18 @@ class CarrinhoController extends Controller
     public function removeproduct($code)
     {
         $produtos_salvos = Session::get('carrinho');
+        $this->coderemove = $code;
 
-      $novocarrinho = array_map(function($value,$code){
+        $novocarrinho = array_map(function($value){
 
-        if (!$value['id'] == $code){
+      
+
+            if (!$value['id'] ==  $this->coderemove){
 
           
-            return $value;
+                return $value;
             //fesf
-        }
+             }
 
       },$produtos_salvos);
 
