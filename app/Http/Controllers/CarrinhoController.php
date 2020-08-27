@@ -297,6 +297,7 @@ class CarrinhoController extends Controller
         $this->coderemove = $code;
 
         $novocarrinho =   array_filter($produtos_salvos,function($value){
+
             if ($value['id'] ==  $this->coderemove){
                 echo "nao fas nada";
             //fesf
@@ -316,7 +317,7 @@ class CarrinhoController extends Controller
 
        
 
-
+         return redirect()->back();
    
         //   foreach ($produtos_salvos as $key => $value)
      //   {
