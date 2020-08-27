@@ -298,25 +298,17 @@ class CarrinhoController extends Controller
 
         $novocarrinho = array_map(function($value){
 
-      
-
             if ($value['id'] ==  $this->coderemove){
 
-          
-               
-                
             //fesf
              }else{
 
                 return $value;
              }
 
-      },$produtos_salvos);
+         },$produtos_salvos);
 
-
-      var_dump($novocarrinho); 
-   
-   
+         Session::put('carrinho', $novocarrinho);
    
         //   foreach ($produtos_salvos as $key => $value)
      //   {
