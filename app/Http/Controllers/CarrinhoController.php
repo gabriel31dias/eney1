@@ -290,13 +290,13 @@ class CarrinhoController extends Controller
 
     }
 
-    public function removeproduct($codeid)
+    public function removeproduct($code)
     {
         $produtos_salvos = Session::get('carrinho');
 
       $novocarrinho = array_map(function($value){
 
-        if (!$value['id'] == $codeid){
+        if (!$value['id'] == $code){
 
           
             return $value;
