@@ -66,7 +66,7 @@ visibility: hidden;
                <div class="col-sm-6">
                   <div class="form-group">
                      <div class="form-line">
-                        <input id="busca" type="text" onkeyup="search(this.value);" placeholder="Escreva a busca.." class="form-control" >
+                        <input id="busca" type="text"  placeholder="Escreva a busca.." class="form-control" >
                      </div>
                   </div>
                </div>
@@ -119,6 +119,106 @@ visibility: hidden;
 var dom_values_estate = {
 	nomegrupo: '',
 	descr_grupo: '',
+}
+
+      
+    ///Evento keypress do documento
+    $(document).on('keypress', function(e) {
+     if (e.which == 13) {
+         var getval_tiposearch = $('#tiposeach').val();
+      //  alert(getval_tiposearch)
+         let get_search = $('#busca').val();
+        switch(getval_tiposearch){
+           case 'Nome produto':
+            setSearch('{{ route('searchbyname') }}',get_search)
+           break;
+           case 'Entregue':
+            setSearch('{{ route('searchentregue') }}',get_search)
+           break;
+           case 'Pendente':
+            setSearch('{{ route('searchnaoentregue') }}',get_search)
+           break;
+           case 'Telefone':
+            setSearch('{{ route('searchtelefone') }}',get_search)
+           break;
+           case 'Bairro':
+            setSearch('{{ route('searchbairro') }}',get_search)
+           break;
+           case 'Rua':
+            setSearch('{{ route('searchrua') }}',get_search)
+           break; 
+         }
+     }
+    });
+
+
+
+
+    
+function setSearch(rota,parametro){
+
+$.ajax({
+    url: rota +'/'+ parametro,
+    type: 'GET',
+    success: function(data) {
+        var table = $('#tb').DataTable({
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ cadastros por pagina",
+                "zeroRecords": "Nenhum registro foi encontrado",
+                "info": "Showing page _PAGE_ of _PAGES_",
+                "infoEmpty": "Nenhum registro foi encontrado",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "search": "Consulta: "
+            },
+            data: data,
+            "pageLength": 40,
+            
+            destroy: true,
+
+            columns: [
+					{
+						"data": "id"
+					},
+
+
+					{
+						"data": "NOME_GRUPO"
+
+
+					},
+
+
+					{
+						"data": "DESCR_GRUPO"
+					},
+
+					{
+						"data": "id",
+						"name": "id",
+						fnCreatedCell: function (nTd, sData, oData, iRow, iCol)
+						{
+							if (oData.id)
+							{
+
+								$(nTd).html("<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue'onclick=updateX("+oData.id+")><i class='material-icons'>edit</i></a>" + "<a style='margin:10px' class='waves-effect waves-light  btn bg-red waves-effect' href='{{route('deletegrupo')}}/" + oData.id + "'><i class='material-icons'>delete_forever</i></a>");
+							}
+							//] image
+
+						}
+					},
+
+				],
+            
+            responsive: true,
+        });
+        $('#datatable-json').on('click', 'button', function(e) {
+            e.preventDefault;
+            var rows = table.row($(this).parents('tr')).data(); //Get Data Of The Selected Row
+            console.log(rows)
+        });
+    }
+});
+
 }
 
 function consulta(params)

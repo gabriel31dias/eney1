@@ -54,6 +54,12 @@ class GruposController extends Controller
       return response()->json($grupos);
     }
 
+    public function searchbynamegrupo($nomegrupo){
+      $iduser = Auth::user()->id;
+      $getgrupo = $this->grupos->where('ID_USER',$iduser)->where('NOME_GRUPO', 'like', '%' . $nomegrupo . '%')->get();
+      return response()->json($getgrupo);
+    }
+
     
 
 

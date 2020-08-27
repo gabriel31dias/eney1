@@ -103,7 +103,8 @@ class ProdutosController extends Controller
     }
 
     public function searchbyname($nomeproduto){
-        $getproduto = $this->produtos->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->get();
+        $iduser = Auth::user()->id;
+        $getproduto = $this->produtos->where('ID_USER',$iduser)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->get();
         return response()->json($getproduto);
     }
 

@@ -86,6 +86,9 @@ Route::get('/grupos/list','GruposController@list')->middleware('auth')->name("gr
 Route::get('/grupos/delete/{id?}','GruposController@delete')->middleware('auth')->name("deletegrupo");
 Route::get('/grupos/edit/{id?}','GruposController@delete')->middleware('auth')->name("deletegrupo");
 Route::get('/grupos/item/{id?}','GruposController@item')->middleware('auth')->name("grupoitem");
+Route::get('/searchbynamegrupo/{nomegrupo?}','GruposController@searchbynamegrupo')->middleware('auth')->name("searchbynamegrupo");
+
+
 
 
 
