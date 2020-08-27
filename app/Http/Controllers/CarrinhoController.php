@@ -306,6 +306,8 @@ class CarrinhoController extends Controller
                 return $value;
              }
 
+              echo $value['id'];
+
          },$produtos_salvos);
          var_dump($novocarrinho);
 
