@@ -293,31 +293,43 @@ class CarrinhoController extends Controller
     public function removeproduct($codeid)
     {
         $produtos_salvos = Session::get('carrinho');
-        foreach ($produtos_salvos as $key => $value)
-        {
 
-            if ($value['id'] == $codeid)
-            {
-                unset($produtos_salvos[$key]);
-            }
+      $novocarrinho = array_map(function($value){
+
+        if ($value['id'] == $codeid){
 
         }
 
-        var_dump($produtos_salvos );
+      },$produtos_salvos);
 
-     Session::put('carrinho', $produtos_salvos);
+
+      var_dump($novocarrinho); 
+   
+   
+   
+        //   foreach ($produtos_salvos as $key => $value)
+     //   {
+
+       //     if ($value['id'] == $codeid)
+     //       {
+     //           unset($produtos_salvos[$key]);
+      //      }
+
+     //   }
+
+       /// var_dump($produtos_salvos );
+
+  //   Session::put('carrinho', $produtos_salvos);
 
      //  $gg = Session::get('carrinho');
 
        
-        $this->set_total();
-        $this->set_total_adicionais();
+    //    $this->set_total();
+     //   $this->set_total_adicionais();
        // $getcodeloja = DB::table('users')->where('id', $value)->first();
 
-       header("Refresh:0");
-       header("Refresh:0");
-       header("Refresh:0");
-       return redirect()->back();
+       
+     ///  return redirect()->back();
 
     }
 
