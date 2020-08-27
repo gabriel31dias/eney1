@@ -93,6 +93,7 @@ class ProdutosController extends Controller
         return response()->json($produto);
 
     }
+
     public function update(Request $req){
        $getproduto = $this->produtos->find($req->id);
 
@@ -100,6 +101,13 @@ class ProdutosController extends Controller
        return response()->json($getproduto);
   
     }
+
+    public function searchbyname($nomeproduto){
+       
+    }
+
+    
+
 
 
 }

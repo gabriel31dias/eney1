@@ -1178,10 +1178,9 @@ async function requisitaproduto(){
      if (e.which == 13) {
          var getval_tiposearch = $('#tiposeach').val();
          let get_search = $('#busca').val();
-        
         switch(getval_tiposearch){
            case 'Nome produto':
-            setSearch('{{ route('produtoslist') }}',get_search)
+            setSearch('{{ route('searchbyname') }}',get_search)
            break;
            case 'Entregue':
             setSearch('{{ route('searchentregue') }}',get_search)

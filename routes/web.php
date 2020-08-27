@@ -67,6 +67,8 @@ Route::get('/produtoslist','ProdutosController@list')->middleware('auth')->name(
 Route::get('/produtosdelete/{id?}','ProdutosController@delete')->middleware('auth')->name("produtosdelete");
 Route::get('/produtoslistformat','ProdutosController@listformatada')->middleware('auth')->name("produtoslistformat");
 Route::post('/produtosupdate','ProdutosController@update')->middleware('auth')->name("produtosupdate");
+Route::get('/searchpornomeproduto/{nomeproduto?}','ProdutosController@searchbyname')->middleware('auth')->name("searchbyname");
+
 
 
 
