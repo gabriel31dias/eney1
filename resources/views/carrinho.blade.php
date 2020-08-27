@@ -985,6 +985,7 @@ async function formas_pagamento(){
    obj_venda.forma  =  obj_venda.forma.replace(/([^\d])+/gim, '');
    obj_venda.troco = document.getElementById('trocovalor').value
    finaliza_tela_1()
+   //y7t
  })
 
 
