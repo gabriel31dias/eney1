@@ -296,20 +296,15 @@ class CarrinhoController extends Controller
         $produtos_salvos = Session::get('carrinho');
         $this->coderemove = $code;
 
-        $novocarrinho = array_map(function($value){
-
+        $novocarrinho =   array_filter($produtos_salvos,function($value){
             if ($value['id'] ==  $this->coderemove){
-               
                 echo "nao fas nada";
             //fesf
              }else{
-
                 return $value;
              }
 
-            
-
-         },$produtos_salvos);
+         });
         
 
          Session::put('carrinho', null);
@@ -318,6 +313,8 @@ class CarrinhoController extends Controller
          Session::put('carrinho', $novocarrinho);
          $gg = Session::get('carrinho');
          var_dump( $gg);
+
+       
 
 
    
