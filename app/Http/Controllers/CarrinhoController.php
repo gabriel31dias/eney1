@@ -294,7 +294,7 @@ class CarrinhoController extends Controller
     {
         $produtos_salvos = Session::get('carrinho');
 
-      $novocarrinho = array_map(function($value){
+      $novocarrinho = array_map(function($value,$code){
 
         if (!$value['id'] == $code){
 
