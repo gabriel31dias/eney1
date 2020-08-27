@@ -50,7 +50,7 @@ visibility: hidden;
                      <div class="form-line">
                         <label style="margin-top:10px;"  for="cars">Filtro:</label>
                         <select name="tiposeach" id="tiposeach">
-                           <option value="Busca Versatil">Busca Versatil</option>
+                           <option value="Busca Versatil">Nome produto</option>
                            <option value="Nome">Nome</option>
                            <option value="Razão social">Razão social</option>
                            <option value="Código">Código</option>
