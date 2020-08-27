@@ -1177,6 +1177,7 @@ async function requisitaproduto(){
     $(document).on('keypress', function(e) {
      if (e.which == 13) {
          var getval_tiposearch = $('#tiposeach').val();
+         alert(getval_tiposearch)
          let get_search = $('#busca').val();
         switch(getval_tiposearch){
            case 'Nome produto':
