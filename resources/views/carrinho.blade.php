@@ -981,9 +981,10 @@ async function formas_pagamento(){
    
  }).then(function(){
    alert(document.getElementById('formapg').value)
-  obj_venda.forma = document.getElementById('formapg').value
-  obj_venda.troco = document.getElementById('trocovalor').value
-  finaliza_tela_1()
+   obj_venda.forma =  document.getElementById('formapg').value
+   obj_venda.forma  =  obj_venda.forma.replace(/([^\d])+/gim, '');
+   obj_venda.troco = document.getElementById('trocovalor').value
+   finaliza_tela_1()
  })
 
 
