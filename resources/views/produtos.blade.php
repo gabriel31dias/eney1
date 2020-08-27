@@ -1075,7 +1075,6 @@ socket.on('receive',function(data){
 async function requisitaproduto(){
 
    if (!document.getElementById('CODIGO_SISTEMA').value || document.getElementById('CODIGO_SISTEMA').value == 0){
-   
       return
    }
   

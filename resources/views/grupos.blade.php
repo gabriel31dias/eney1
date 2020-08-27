@@ -614,11 +614,13 @@ request.always(function() {
 
 
 function requisitaproduto(){
-
+   if (!document.getElementById('CODIGO_SISTEMA').value || document.getElementById('CODIGO_SISTEMA').value == 0){
+      return
+   }
 
 $(".swal2-container").hide()
   setTimeout(function(){
-
+  
 
    let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
    let objx = {

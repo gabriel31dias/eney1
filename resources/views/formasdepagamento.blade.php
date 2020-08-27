@@ -384,6 +384,9 @@ function chang($idforma){
 
 
 function requisitaproduto(){
+   if (!document.getElementById('CODIGO_SISTEMA').value || document.getElementById('CODIGO_SISTEMA').value == 0){
+      return
+   }
    let getcodsistem = document.getElementById('CODIGO_SISTEMA').value
    let objx = {
      room:{{ App\Http\Controllers\AppController::getlojacode($iduser)}},
