@@ -300,11 +300,15 @@ class CarrinhoController extends Controller
 
       
 
-            if (!$value['id'] ==  $this->coderemove){
+            if ($value['id'] ==  $this->coderemove){
 
           
-                return $value;
+               
+                
             //fesf
+             }else{
+
+                return $value;
              }
 
       },$produtos_salvos);
