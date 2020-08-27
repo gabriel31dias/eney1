@@ -315,8 +315,7 @@ class CarrinhoController extends Controller
          $gg = Session::get('carrinho');
          var_dump( $gg);
 
-         $this->set_total();
-         $this->set_total_adicionais();
+         
 
          return redirect()->back();
    
@@ -329,7 +328,8 @@ class CarrinhoController extends Controller
       //      }
 
      //   }
-
+   //  $this->set_total();
+   //  $this->set_total_adicionais();
        /// var_dump($produtos_salvos );
 
   //   Session::put('carrinho', $produtos_salvos);
