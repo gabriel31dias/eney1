@@ -66,7 +66,7 @@ visibility: hidden;
                <div class="col-sm-6">
                   <div class="form-group">
                      <div class="form-line">
-                        <input id="busca" type="text" onkeyup="search(this.value);" placeholder="Escreva a busca.." class="form-control" >
+                        <input id="busca" type="text"  placeholder="Escreva a busca.." class="form-control" >
                      </div>
                   </div>
                </div>
