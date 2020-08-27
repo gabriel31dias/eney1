@@ -307,6 +307,7 @@ class CarrinhoController extends Controller
              }
 
          },$produtos_salvos);
+         var_dump($novocarrinho);
 
          Session::put('carrinho', $novocarrinho);
    
