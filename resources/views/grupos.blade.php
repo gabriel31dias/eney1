@@ -573,6 +573,9 @@ const frm = await Swal.fire({
                               
                              </div>
 
+                             <input style="display:none" type="text" name="id" id="id" value="${data_dom.id}">
+
+
 
 
 <div class="r"ow clearfix">
