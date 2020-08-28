@@ -622,47 +622,20 @@ const frm = await Swal.fire({
        return
       }
 
-   if (!document.getElementById('NOME_PRODUTO').value) {
+   if (!document.getElementById('NOME_GRUPO').value) {
       
      
 
         Swal.fire({
              icon: 'error',
              title: '',
-             html: '<h3>Digite o nome do produto.</h3>',
+             html: '<h3>Digite o nome do GRUPO.</h3>',
             footer: ''
           })
    
    return 
    }
 
-   if (!document.getElementById('DESCR').value) {
-   
-
-        Swal.fire({
-             icon: 'error',
-             title: '',
-             html: '<h3>Digite a desrcrição do produto.</h3>',
-            footer: ''
-          })
-   
-   return 
-   }
-
-
-
-   if (!document.getElementById('PRECO_UNIT').value) {
-   
-
-   Swal.fire({
-        icon: 'error',
-        title: '',
-        html: '<h3>Digite o preço do produto.</h3>',
-       footer: ''
-     })
-
-return 
-}
 
 
    
@@ -673,17 +646,17 @@ var $form = $('#f1');
 var serializedData = $form.serialize();
 //alert(serializedData)
 request = $.ajax({
-    url: "{{route('produtosupdate')}}",
+    url: "{{route('grupoupdate')}}",
     type: "post",
     data: serializedData
 });
 
 request.done(function(response, textStatus, jqXHR) {
    Swal.fire(
-  '',
-  '<h3>Adicional cadastrado com sucesso !</h3>',
-  'success'
-   )
+    '',
+    '<h3>Grupo atualizado com sucesso !</h3>',
+    'success'
+     )
    consulta()
 });
 

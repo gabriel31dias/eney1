@@ -388,7 +388,7 @@ var dom_update = {
    CODIGO_SISTEMA:''
 }
 async function  updateX(idproduto) {
-alert(idproduto)
+
 var datag = ''
 
 

@@ -60,6 +60,12 @@ class GruposController extends Controller
       return response()->json($getgrupo);
     }
 
+    public function update(Request $req){
+      $getgrupo = $this->grupos->find($req->id);
+      $getgrupo =  $getgrupo->update($req->all());
+      return response()->json($getgrupo);
+    }
+
     
 
 
