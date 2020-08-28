@@ -557,7 +557,7 @@ const frm = await Swal.fire({
                         <br>
                             <br>
                                   
-<form id="f1" action="{{route('grupossave')}}" method="POST">
+<form id="f1" action="{{route('grupoupdate')}}" method="POST">
 
 @csrf
 
