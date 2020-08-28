@@ -385,6 +385,7 @@ function onFileSelected(event) {
 var dom_update = {
    id_produto:'',
    preco:''
+   CODIGO_SISTEMA:''
 }
 async function  updateX(idproduto) {
 alert(idproduto)
@@ -395,6 +396,7 @@ await $.get("{{route('adicionaisitem')}}/"+idproduto, function(data, status){ //
             datax = data
             dom_update.id_produto =  datax.ADICIONAL
             dom_update.preco = datax.PRECO
+            dom_update.CODIGO_SISTEMA = datax.CODIGO_SISTEMA
             //alert(datax.PRECO)
        }).then(function (params) {
         //alert(JSON.stringify(datax))
@@ -423,7 +425,7 @@ const frm = await Swal.fire({
                             
                                   
                             <label  class="">Código sistema</label>
-                            <input  class="form-control" onblur="requisitaproduto()"  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA"  ></input>
+                            <input  class="form-control" onblur="requisitaproduto()" value="${dom_update.CODIGO_SISTEMA}"  id="CODIGO_SISTEMA" name="CODIGO_SISTEMA"  ></input>
 
                       
                           </div>
