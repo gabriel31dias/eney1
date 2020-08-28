@@ -384,7 +384,7 @@ function onFileSelected(event) {
 
 var dom_update = {
    id_produto:'',
-   preco:''
+   preco:'',
    CODIGO_SISTEMA:''
 }
 async function  updateX(idproduto) {
