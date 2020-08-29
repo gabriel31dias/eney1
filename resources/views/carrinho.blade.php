@@ -416,12 +416,10 @@
   var obj_venda = {}
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
-
   obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
-
   obj_venda.produtosjson = obj_venda.produtosjson.substring(0,  obj_venda.produtosjson.length - 1)
-
   obj_venda.totalentrega = valor_total_frete
+  obj_venda.valortotalprodutos = '{{ number_format($totalemprodutos + $valorentrega  , 2) }}'
   
 
 
