@@ -672,8 +672,8 @@ async function adicionar_carrinho(id,nomeproduto){
 		
 let timerInterval
 await Swal.fire({
-  title: 'Auto close alert!',
-  html: 'I will close in <b></b> milliseconds.',
+  title: 'Aguarde....',
+  html: 'Adicionando produto ao seu carrinho.',
   timer: 2000,
   timerProgressBar: true,
   onBeforeOpen: () => {
