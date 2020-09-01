@@ -248,7 +248,7 @@
 				
 
 				<div class="actionx col-xs-4 col-lg-4 col-md-4 col-sm-6">
-                    <a onclick="open_car()" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a onclick="open_car()" role="button" id="carrinhobtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
                         <p  style="text-align: center;margin-top:15px">
                             
@@ -672,8 +672,10 @@ async function adicionar_carrinho(id,nomeproduto){
 		
 let timerInterval
 await Swal.fire({
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
   title: 'Aguarde....',
-  html: 'Adicionando produto ao seu carrinho.',
+  html: '<h2>Adicionando produto ao seu carrinho.</h2>',
   timer: 2000,
   timerProgressBar: true,
   onBeforeOpen: () => {
@@ -708,8 +710,8 @@ Swal.fire(
 
 
 temaapp.fire({
-	closeOnClickOutside: false,
-    allowOutsideClick: false,
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
   title: 'Adicionado ao carrinho !',
   text: '',
   icon: 'success',
