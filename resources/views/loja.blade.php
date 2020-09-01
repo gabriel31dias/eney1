@@ -690,6 +690,8 @@ await Swal.fire({
       }
     }, 100)
   },
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
   onClose: () => {
     clearInterval(timerInterval)
   }
