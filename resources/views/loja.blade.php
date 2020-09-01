@@ -642,6 +642,8 @@ async function adicionar_carrinho(id,nomeproduto){
 			return
 		}
 
+
+
       
 
         $.ajax({
@@ -660,10 +662,43 @@ async function adicionar_carrinho(id,nomeproduto){
             data: JSON.stringify(produto)
         })
 		
+
 		arrayadd = []
 
 		$( '.mfp-close' ).click();
 		swalWithBootstrapButtons.close()
+
+
+		
+let timerInterval
+await Swal.fire({
+  title: 'Auto close alert!',
+  html: 'I will close in <b></b> milliseconds.',
+  timer: 2000,
+  timerProgressBar: true,
+  onBeforeOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 100)
+  },
+  onClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+
+
 
 Swal.fire(
   'Adicionado ao carrinho !',
