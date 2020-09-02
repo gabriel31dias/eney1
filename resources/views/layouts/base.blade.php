@@ -328,7 +328,7 @@ select {
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                      <i class="material-icons">notifications</i>
-                     <span class="label-count"><i id="ulnotifica"></i>0</span>
+                     <span class="label-count"><span id="ulnotifica">0</span></span>
                      </a>
                      <ul class="dropdown-menu">
                         <li class="header">NOTIFICATIONS</li>
@@ -764,7 +764,7 @@ async function notificacao(venda){
 }
 
 async function novavenda(venda){
-   notificacao(venda)              
+   notificacao(venda.nome)              
 Swal.fire({
   title: 'Uma nova venda foi realizada via app',
   html: `<p class="swal2-title" id="swal2-title">Nome Cliente: ${venda.nome}</p>
