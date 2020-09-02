@@ -1023,13 +1023,6 @@ function trocavalhide(){
 var obj_user = new Object
 
 
-function atualiza_obj_user(){
-  
-   obj_user.nome = document.getElementById('nome').value 
-   obj_user.cep = document.getElementById('CEP').value 
-   obj_user.celular = document.getElementById('telefone').value 
-   obj_user.numero = document.getElementById('NUMERO').value
-}
 
 
 function lembrar(){
@@ -1278,6 +1271,38 @@ function enviavenda(){
 
 
 }
+
+
+
+function atualiza_obj_user(){
+  try {
+    obj_user.nome = document.getElementById('nome').value 
+  }
+  catch (e) {
+  }
+
+  try {
+    obj_user.cep = document.getElementById('CEP').value 
+  }
+   catch (e) {
+   }
+   try {
+    obj_user.celular = document.getElementById('telefone').value  
+   }
+   catch (e) {
+   }
+  
+  try {
+      
+      obj_user.numero = document.getElementById('NUMERO').value
+  }
+  catch (e) {
+  }
+  
+  
+  
+}
+
 
 
 
