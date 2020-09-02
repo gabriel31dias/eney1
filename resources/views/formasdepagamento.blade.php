@@ -224,8 +224,8 @@ const frm = await Swal.fire({
 
 @csrf
 <div class="row clearfix">
-
-
+      <div class="row">
+                      <div class="col-sm-6">
                            <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
@@ -235,9 +235,10 @@ const frm = await Swal.fire({
                                  </div>
                               
                              </div>
+                           </div>
 
 <input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
-                            <div class="col-sm-12">
+                            <div class="col-sm-6">
                              <div class="form-group form-float">
                                     <div class="form-line">
                                       <label class="">Nome da forma de pagamento</label>
@@ -251,7 +252,7 @@ const frm = await Swal.fire({
                              
                             </div>
                             
-                            <div class="col-sm-12">
+                            <div class="col-sm-6">
                              <div class="form-group form-float">
                                     <div class="form-line">
                                       <label  class="">Descriçaõ forma de pagamento</label>
@@ -263,6 +264,7 @@ const frm = await Swal.fire({
                            
                       
 
+</div>
                         
             </form>
                         `,
