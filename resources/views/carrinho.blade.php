@@ -1027,6 +1027,12 @@ var obj_user = new Object
 
 function lembrar(){
 
+  setInterval(function(){
+
+     atualiza_obj_user()
+
+   },2000)
+
   atualiza_obj_user()
       
   $.ajax({
@@ -1052,11 +1058,11 @@ function lembrar(){
      
 }
 
- setInterval(function(){
 
-   atualiza_obj_user()
-   
- },2000)
+
+ 
+
+
 
   
  async function finaliza_tela_endereco(){
@@ -1216,6 +1222,10 @@ function enviavenda(){
 
             data: JSON.stringify(obj_venda)
 
+            
+        }).then(function(){
+
+            lembrar()
             
         })
 		
