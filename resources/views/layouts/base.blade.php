@@ -328,13 +328,15 @@ select {
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                      <i class="material-icons">notifications</i>
-                     <span class="label-count">7</span>
+                     <span id="ulnotifica" class="label-count">7</span>
                      </a>
                      <ul class="dropdown-menu">
                         <li class="header">NOTIFICATIONS</li>
                         <li class="body">
                            <ul id="ulnotifica" class="menu">
 
+                              
+                              
                               <li>
                                  <a href="javascript:void(0);">
                                     <div class="icon-circle bg-light-green">
@@ -737,9 +739,10 @@ select {
 
          <script>
 
-
+var contnf = 0
 async function notificacao(venda){
-    alert("insertado")
+   contnf = contnf + 1
+   ("#ulnotifica").val()
     let lihtml = `
                               <li>
                                  <a href="javascript:void(0);">
