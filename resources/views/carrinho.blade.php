@@ -984,7 +984,7 @@ async function formas_pagamento(){
 	 
       
  }).then(function(){
-   alert(document.getElementById('formapg').value)
+   //alert(document.getElementById('formapg').value)
 
    let formapg = document.getElementById('formapg').value
    obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
@@ -1018,6 +1018,11 @@ function trocavalhide(){
 
     $('#trocoval').hide();
 
+}
+
+function lembrar(){
+
+  alert("funcao lembra")
 }
 
   
@@ -1088,7 +1093,7 @@ function trocavalhide(){
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <input onchang="lembrar()" class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Lembrar do meu endereço
       </label>
@@ -1175,7 +1180,7 @@ function enviavenda(){
 
 		   	error: function (data) {
 				  
-         alert(JSON.stringify(data))
+         //alert(JSON.stringify(data))
            
           },
 
