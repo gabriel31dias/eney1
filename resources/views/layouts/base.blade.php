@@ -742,7 +742,7 @@ select {
 var contnf = 0
 async function notificacao(venda){
    contnf = contnf + 1
-   $("#ppp").val(contnf)
+   $("#ppp").html(contnf)
     let lihtml = `
                               <li>
                                  <a href="javascript:void(0);">
