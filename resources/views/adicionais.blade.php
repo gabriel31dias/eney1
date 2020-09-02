@@ -236,7 +236,7 @@ const frm = await Swal.fire({
 
                       
                           </div>
-                            <div class="col-sm-12">
+                            <div class="col-sm-6">
                             
                                   
                               <label  class="">Nome adicional</label>
