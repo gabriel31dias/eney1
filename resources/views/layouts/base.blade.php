@@ -334,8 +334,6 @@ select {
                         <li class="header">NOTIFICATIONS</li>
                         <li class="body">
                            <ul class="menu">
-
-                              <div id="listnotifi">
                               <li>
                                  <a href="javascript:void(0);">
                                     <div class="icon-circle bg-light-green">
@@ -349,8 +347,13 @@ select {
                                     </div>
                                  </a>
                               </li>
-                           </div>
+                              
                             
+                            
+                          
+            
+                           </ul>
+                        </li>
                         <li class="footer">
                            <a href="javascript:void(0);">Ver todas as vendas</a>
                         </li>
