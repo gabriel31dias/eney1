@@ -44,7 +44,8 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
-        
+        $this->set_total();
+        $this->set_total_adicionais();
         $produtosjson = json_encode(['produtos'=>$this->removefotosall(Session::get('carrinho'))]);
         $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
         $iduser = $iduser->id;
@@ -315,8 +316,7 @@ class CarrinhoController extends Controller
          $gg = Session::get('carrinho');
          var_dump( $gg);
 
-         $this->set_total();
-         $this->set_total_adicionais();
+       
 
          return redirect()->back();
    
