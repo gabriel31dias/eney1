@@ -328,7 +328,7 @@ select {
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                      <i class="material-icons">notifications</i>
-                     <span id="ulnotifica" class="label-count">7</span>
+                     <span class="label-count"><p id="ulnotifica"></p>0</span>
                      </a>
                      <ul class="dropdown-menu">
                         <li class="header">NOTIFICATIONS</li>
@@ -742,7 +742,9 @@ select {
 var contnf = 0
 async function notificacao(venda){
    contnf = contnf + 1
-   $("#ulnotifica").val(contnf)
+   $("#ulnotifica").val(1)
+
+
     let lihtml = `
                               <li>
                                  <a href="javascript:void(0);">
