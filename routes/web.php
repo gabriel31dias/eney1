@@ -90,11 +90,6 @@ Route::get('/searchbynamegrupo/{nomegrupo?}','GruposController@searchbynamegrupo
 Route::post('/grupos/update/','GruposController@update')->middleware('auth')->name("grupoupdate");
 
 
-Route::post('/grupos/saveuser/','CarrinhoController@save_user')->name("save_user");
-
-
-
-
 
 
 
@@ -120,6 +115,10 @@ Route::get('/app/listteste','CarrinhoController@listteste')->name("listteste");
 Route::get('/app/getformasdepagamento/{iduser?}','CarrinhoController@getformasdepagamento')->name("getformasdepagamento");
 Route::post('/app/updatetags','AppController@process_tags')->name("updatetags");
 Route::get('/app/updatestatusvenda/{idvenda?}/{status?}','VendaController@setUpdate_statusvenda')->name("setUpdate_statusvenda");
+
+Route::post('/carrinho/saveuser/','CarrinhoController@save_user')->name("save_user");
+Route::get('/carrinho/listusersave/','CarrinhoController@listusersave')->name("listusersave");
+
 
 
 

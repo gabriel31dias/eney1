@@ -89,6 +89,12 @@ class CarrinhoController extends Controller
        Session::put("user_web_app",$getuser);
     }
 
+    public function listusersave(){
+     
+        var_dump(Session::get("user_web_app"));
+
+    }
+
     public function add_produto(Request $req)
     {
         $array_cod_adicionais_sistema = []; // array dos codigos do adicionais no sistema
