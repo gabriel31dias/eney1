@@ -1036,7 +1036,7 @@ function lembrar(){
             contentType: 'application/json',
             success: function (data) {
 				    // alert(JSON.stringify(data))
-              emitsk()
+              
             },
 
 		   	error: function (data) {
@@ -1051,6 +1051,12 @@ function lembrar(){
     })
      
 }
+
+ setInterval(function(){
+
+   atualiza_obj_user()
+   
+ },2000)
 
   
  async function finaliza_tela_endereco(){
