@@ -1045,7 +1045,7 @@ function lembrar(){
            
           },
 
-            data: JSON.stringify(obj_venda)
+            data: JSON.stringify(obj_user)
 
             
     })

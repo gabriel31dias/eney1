@@ -86,7 +86,9 @@ class CarrinhoController extends Controller
         "cep"=>$req->cep,
         "numero" => $req->numero,
        );
+
        Session::put("user_web_app",$getuser);
+       return  response()->json($getuser);
     }
 
     public function listusersave(){
