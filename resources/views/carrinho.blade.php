@@ -1081,7 +1081,7 @@ function lembrar(){
   <div  id="hidpartini">
     <div class="form-group col-md-6 ">
       <label for="inputEmail4">Digite seu Cep</label>
-      <input type="text" class="form-control" onblur="pesquisacep(this.value);" id="CEP" name="CEP" placeholder="Cep">
+      <input type="text" value="{{$userapp}}" class="form-control" onblur="pesquisacep(this.value);" id="CEP" name="CEP" placeholder="Cep">
     </div>
     <div class="form-group col-md-6">
       <label for="ENDERECO">Endereço (Rua, avenida, praça, travessa)</label>
@@ -1226,7 +1226,7 @@ function enviavenda(){
         }).then(function(){
 
             lembrar()
-            
+
         })
 		
 
