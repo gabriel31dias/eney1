@@ -739,6 +739,7 @@ select {
 
 
 async function notificacao(venda){
+    alert("insertado")
     let lihtml = "<li>${venda.nome}</li>"
     $("#ulnotifica").append(lihtml)
 }
