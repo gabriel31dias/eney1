@@ -1024,6 +1024,7 @@ var obj_user = new Object
 
 
 function atualiza_obj_user(){
+  
    obj_user.nome = document.getElementById('nome').value 
    obj_user.cep = document.getElementById('CEP').value 
    obj_user.celular = document.getElementById('telefone').value 
