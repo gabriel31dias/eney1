@@ -246,7 +246,36 @@ const frm = await Swal.fire({
                                  </div> 
                              </div>
 
+                                               
 
+<input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
+                            <div class="col-sm-6">
+                             <div class="form-group form-float">
+                                    <div class="form-line">
+                                      <label class="">Nome da forma de pagamento</label>
+                                        <input  id="NOME_FRM" name="NOME_FRM" type="text" class="form-control"> 
+                                    </div>
+                                </div>
+
+                                
+                                <input style="display:none" id="STATUS" name="STATUS" type="text" value="true" class="form-control"> 
+
+                             
+                            </div>
+
+                            <div class="col-sm-6">
+                             <div class="form-group form-float">
+                                    <div class="form-line">
+                                      <label  class="">Descriçaõ forma de pagamento</label>
+                                      <input   class="form-control" id="DESCR_FRM" name="DESCR_FRM"> </input>
+                                    </div>
+                                </div>
+                        </div>
+
+                           
+                      
+
+                        </div>
                            
 
 
