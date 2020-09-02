@@ -714,14 +714,19 @@ const { value: formValues } = await temaapp.fire({
 
    <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Qual seu nome ?</label>
-	  <input type="text" value="" class="form-control"  id="nome" name="nome" placeholder="">
+	  <input type="text" value=" 
+    @isset($userapp['nome'])
+      {{$userapp['nome']}}
+      @endisset" class="form-control"  id="nome" name="nome" placeholder="">
 
     </div>
 
 
     <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Digite seu telefone ?</label>
-	  <input type="text" class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
+	  <input type="text" value=" @isset($userapp['celular'])
+      {{$userapp['celular']}}
+      @endisset" class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
 
     </div>
 
