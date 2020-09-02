@@ -907,7 +907,7 @@ socket.on('receive',function(data){
 
 
     // document.getElementById('PRECO').value = data.preco_custo
-     alert(JSON.stringify(data))
+    // alert(JSON.stringify(data))
 
   }
 
