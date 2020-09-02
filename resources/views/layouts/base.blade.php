@@ -744,6 +744,7 @@ async function notificacao(venda){
    contnf = contnf + 1
    $("#ppp").html(contnf)
     let lihtml = `
+    
                               <li>
                                  <a href="javascript:void(0);">
                                     <div class="icon-circle bg-light-green">
