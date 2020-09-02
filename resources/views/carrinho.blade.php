@@ -1027,7 +1027,7 @@ var obj_user = new Object
 
 function lembrar(){
 
- 
+  atualiza_obj_user()
       
   $.ajax({
             url: '{{route("save_user")}}',
@@ -1275,6 +1275,7 @@ function enviavenda(){
 
 
 function atualiza_obj_user(){
+
    try {
     obj_user.nome = document.getElementById('nome').value 
    }
@@ -1291,16 +1292,12 @@ function atualiza_obj_user(){
    }
    catch (e) {
    }
-  
    try {
-      
       obj_user.numero = document.getElementById('NUMERO').value
    }
    catch (e) {
    }
-  
-  
-  
+
 }
 
 
