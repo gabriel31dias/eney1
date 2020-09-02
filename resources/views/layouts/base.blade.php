@@ -328,7 +328,7 @@ select {
                   <li class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                      <i class="material-icons">notifications</i>
-                     <span class="label-count"><p id="ulnotifica"></p>0</span>
+                     <span class="label-count"><i id="ulnotifica"></i>0</span>
                      </a>
                      <ul class="dropdown-menu">
                         <li class="header">NOTIFICATIONS</li>
