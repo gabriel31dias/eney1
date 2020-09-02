@@ -1093,7 +1093,7 @@ function lembrar(){
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input onchang="lembrar()" class="form-check-input" type="checkbox" id="gridCheck">
+      <input onchange="lembrar()" class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Lembrar do meu endereço
       </label>
