@@ -243,8 +243,7 @@ const frm = await Swal.fire({
                                          <input onblur="requisitaproduto()" id="CATEGORIAFORMA"   value=""  name="CATEGORIAFORMA" type="text" class="form-control">
                                         
                                      </div>
-                                 </div>
-                              
+                                 </div> 
                              </div>
 
 
