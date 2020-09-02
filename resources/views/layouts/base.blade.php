@@ -903,10 +903,12 @@ socket.on('receive',function(data){
   if(data.produtosjson == 'volta4'){
      ///resposta pra tela formas
      document.getElementById('NOME_FRM').value = data.nomeforma
+     document.getElementById('CATEGORIAFORMA').value = data.categoria
+
+
     // document.getElementById('PRECO').value = data.preco_custo
      alert(JSON.stringify(data))
 
-     
   }
 
  
