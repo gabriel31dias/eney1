@@ -747,7 +747,7 @@ async function notificacao(venda){
                                        <i class="material-icons">person_add</i>
                                     </div>
                                     <div class="menu-info">
-                                       <h4>${venda.nome}</h4>
+                                       <h4>Nova venda ${venda.nome}</h4>
                                        <p>
                                           <i class="material-icons">access_time</i> 14 mins ago
                                        </p>
