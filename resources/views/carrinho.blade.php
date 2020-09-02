@@ -1275,15 +1275,15 @@ function enviavenda(){
 
 
 function atualiza_obj_user(){
-  try {
+   try {
     obj_user.nome = document.getElementById('nome').value 
-  }
-  catch (e) {
-  }
+   }
+    catch (e) {
+   }
 
-  try {
+   try {
     obj_user.cep = document.getElementById('CEP').value 
-  }
+   }
    catch (e) {
    }
    try {
@@ -1292,12 +1292,12 @@ function atualiza_obj_user(){
    catch (e) {
    }
   
-  try {
+   try {
       
       obj_user.numero = document.getElementById('NUMERO').value
-  }
-  catch (e) {
-  }
+   }
+   catch (e) {
+   }
   
   
   
