@@ -762,7 +762,7 @@ async function notificacao(venda){
 }
 
 async function novavenda(venda){
-   notificacao(venda.nome)              
+   notificacao(venda)              
 Swal.fire({
   title: 'Uma nova venda foi realizada via app',
   html: `<p class="swal2-title" id="swal2-title">Nome Cliente: ${venda.nome}</p>
