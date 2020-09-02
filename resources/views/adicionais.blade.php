@@ -227,7 +227,7 @@ const frm = await Swal.fire({
 @csrf
 <div class="row clearfix">
 <input style="display:none" type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
-
+  <div class="row">
                     <div class="col-sm-6">
                             
                                   
@@ -235,7 +235,7 @@ const frm = await Swal.fire({
                             <input  class="form-control" onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA"  ></input>
 
                       
-                          </div>
+                     </div>
                             <div class="col-sm-6">
                             
                                   
@@ -263,7 +263,7 @@ const frm = await Swal.fire({
                         </div>
 
                         
-
+</div>
             </form>
                         `,
 
@@ -421,6 +421,8 @@ const frm = await Swal.fire({
 
 @csrf
 <div class="row clearfix">
+   <div class="row">
+
    <div class="col-sm-6">
                             
                                   
@@ -457,6 +459,7 @@ const frm = await Swal.fire({
                                     </div>
                                 </div>
                         </div>
+                     </div>
             </form>
                         `,
 
