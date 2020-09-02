@@ -1099,7 +1099,9 @@ function lembrar(){
   </div>
   <div class="form-group col-md-6">
     <label for="inputAddress">Numero residencia</label>
-    <input type="text" class="form-control"  id="NUMERO" name="NUMERO" placeholder="Numero ">
+    <input type="text" class="form-control" value=" @isset($userapp['numero'])
+      {{$userapp['numero']}}
+      @endisset"  id="NUMERO" name="NUMERO" placeholder="Numero ">
   </div>
   <div class="form-group col-md-6">
     <label for="inputAddress2">Complemento</label>
