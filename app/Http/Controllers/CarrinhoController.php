@@ -78,9 +78,20 @@ class CarrinhoController extends Controller
         return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson]);
     }
 
+
+    public function save_user(Request $req){
+       $getuser = array(
+        "nome"=>$req->nome,
+        "celular"=>$req->celular,
+        "cep"=>$req->cep,
+        "numero" => $req->numero,
+       );
+       Session::put("user_web_app",$getuser);
+    }
+
     public function add_produto(Request $req)
     {
-     $array_cod_adicionais_sistema = []; // array dos codigos do adicionais no sistema
+        $array_cod_adicionais_sistema = []; // array dos codigos do adicionais no sistema
 
        
         $idproduto = $req->idproduto;

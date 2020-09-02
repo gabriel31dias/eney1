@@ -1020,9 +1020,42 @@ function trocavalhide(){
 
 }
 
+var obj_user = new Object
+
+
+function atualiza_obj_user(){
+   obj_user.nome = document.getElementById('nome').value 
+   obj_user.cep = document.getElementById('CEP').value 
+   obj_user.celular = document.getElementById('telefone').value 
+   obj_user.numero = document.getElementById('NUMERO').value
+}
+
+
 function lembrar(){
 
-  alert("funcao lembra")
+ 
+      
+  $.ajax({
+            url: '{{route("save_user")}}',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+				    // alert(JSON.stringify(data))
+              emitsk()
+            },
+
+		   	error: function (data) {
+				  
+         //alert(JSON.stringify(data))
+           
+          },
+
+            data: JSON.stringify(obj_venda)
+
+            
+    })
+     
 }
 
   
@@ -1086,7 +1119,6 @@ function lembrar(){
 <br>
  
 
-    
   </div>
   <div class="form-group">
     <div class="form-check">
@@ -1134,6 +1166,7 @@ function lembrar(){
   function cancelar(){
 
     swalWithBootstrapButtons.close()
+
   }
 
   
