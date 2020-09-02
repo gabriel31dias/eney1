@@ -740,11 +740,11 @@ select {
 
 async function notificacao(venda){
     let lihtml = "<li>${venda.nome}</li>"
-    $("#ulnotifica"). append(lihtml)
+    $("#ulnotifica").append(lihtml)
 }
 
 async function novavenda(venda){
-   notificacao()              
+   notificacao(venda)              
 Swal.fire({
   title: 'Uma nova venda foi realizada via app',
   html: `<p class="swal2-title" id="swal2-title">Nome Cliente: ${venda.nome}</p>
