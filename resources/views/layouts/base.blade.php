@@ -333,7 +333,8 @@ select {
                      <ul class="dropdown-menu">
                         <li class="header">NOTIFICATIONS</li>
                         <li class="body">
-                           <ul class="menu">
+                           <ul id="ulnotifica" class="menu">
+
                               <li>
                                  <a href="javascript:void(0);">
                                     <div class="icon-circle bg-light-green">
@@ -735,8 +736,15 @@ select {
          </aside>
 
          <script>
+
+
+async function notificacao(venda){
+    let lihtml = "<li>${venda.nome}</li>"
+    $("#ulnotifica"). append(lihtml)
+}
+
 async function novavenda(venda){
-               
+   notificacao()              
 Swal.fire({
   title: 'Uma nova venda foi realizada via app',
   html: `<p class="swal2-title" id="swal2-title">Nome Cliente: ${venda.nome}</p>
@@ -786,20 +794,19 @@ socket.on('receive',function(data){
   
   if (data.tipo == 'novavenda'){
      novavenda(data)
-     var audio = new Audio('http://127.0.0.1:8000/audio.mp3');
+     var audio = new Audio('/audio.mp3');
      audio.play();
-     var audio1 = new Audio('http://127.0.0.1:8000/audio.mp3');
+     var audio1 = new Audio('/audio.mp3');
      audio1.play();
-     var audio = new Audio('http://127.0.0.1:8000/audio.mp3');
+     var audio = new Audio('/audio.mp3');
      audio.play();
     // https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3
 
-   
+     
 
        consulta()
 
 
-   
   }
 
   if(data.produtosjson == 'volta'){
