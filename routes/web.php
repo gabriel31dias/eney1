@@ -89,7 +89,7 @@ Route::get('/grupos/item/{id?}','GruposController@item')->middleware('auth')->na
 Route::get('/searchbynamegrupo/{nomegrupo?}','GruposController@searchbynamegrupo')->middleware('auth')->name("searchbynamegrupo");
 Route::post('/grupos/update/','GruposController@update')->middleware('auth')->name("grupoupdate");
 
-Route::post('/grupos/saveuser/','GruposController@save_user')->middleware('auth')->name("save_user");
+Route::post('/grupos/saveuser/','GruposController@save_user')->name("save_user");
 
 
 
