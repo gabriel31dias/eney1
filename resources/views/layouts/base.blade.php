@@ -740,7 +740,21 @@ select {
 
 async function notificacao(venda){
     alert("insertado")
-    let lihtml = `<li>${venda.nome}</li>`
+    let lihtml = `
+                              <li>
+                                 <a href="javascript:void(0);">
+                                    <div class="icon-circle bg-light-green">
+                                       <i class="material-icons">person_add</i>
+                                    </div>
+                                    <div class="menu-info">
+                                       <h4>${venda.nome}</h4>
+                                       <p>
+                                          <i class="material-icons">access_time</i> 14 mins ago
+                                       </p>
+                                    </div>
+                                 </a>
+                              </li>
+                              `
     $("#ulnotifica").append(lihtml)
 }
 
