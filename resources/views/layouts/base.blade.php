@@ -322,7 +322,7 @@ select {
             <div class="collapse navbar-collapse" id="navbar-collapse">
                <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown">
-                     <a href="{{route("get_loja")}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+                     <a id="eye" href="{{route("get_loja")}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
                      <i class="material-icons">visibility</i>
                      </a>
                     
@@ -729,6 +729,13 @@ select {
          </aside>
 
          <script>
+
+ $("#eye").click(function(){
+
+   alert('dfefesf')
+
+
+ })
 
 var contnf = 0
 async function notificacao(venda){
