@@ -51,7 +51,7 @@ visibility: hidden;
                            <i class="material-icons">face</i>
                        </div>
                        <div class="content">
-                           <div class="text">TOTAL CLIENTES PROSPECTADOS</div>
+                           <div class="text">TOTAL CLIENTES</div>
                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">257</div>
                        </div>
                    </div>
