@@ -38,7 +38,6 @@ class HomeController extends Controller
 
     public function sair(){
         Auth::logout();
-        Session::flush();
         return redirect("/login");
     }
 }
