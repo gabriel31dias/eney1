@@ -730,10 +730,21 @@ select {
 
          <script>
 
+async function getcodloja() {
+
+   $.get('{{route("openloja")}}',function(
+
+
+   )).done(function(data){
+
+      alert(data)
+   })
+   
+}
+
  $("#eye").click(function(){
 
    location.href = "{{route('get_loja')}}"
-
 
  })
 
