@@ -730,13 +730,14 @@ select {
 
          <script>
 
-async function getcodloja() {
+let getdata = ""
+
+async function getcodloja(){
 
    $.get('{{route("openloja")}}',function(){
 
    }).done(function(data){
-
-      alert(data)
+      getdata = data
    })
 
 }
