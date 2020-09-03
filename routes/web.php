@@ -20,8 +20,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/openloja', 'HomeController@openloja')->name('openloja');
-
-
+Route::get('/sair', 'HomeController@sair')->name('sairapp');
 Route::get('/home', 'HomeController@index')->name('home2');
 
 

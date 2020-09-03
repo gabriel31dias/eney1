@@ -35,4 +35,10 @@ class HomeController extends Controller
         $getcodeloja = Auth::user()->codigo_estabelecimento;
         return response()->json($getcodeloja);
     }
+
+    public function sair(){
+        Auth::logout();
+        Session::flush();
+        return redirect("/login");
+    }
 }
