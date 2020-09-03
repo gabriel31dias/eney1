@@ -568,7 +568,7 @@ select {
 
            @endif
 
-           <a type="button" href="{{route('openloja')}}" class="btn bg-blue waves-effect">Acessar minha loja</a>
+          
 
            
             </div>
