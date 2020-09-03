@@ -33,8 +33,6 @@ class HomeController extends Controller
 
     public function openloja(){
        $getcodeloja = Auth::user()->codigo_estabelecimento;
-        
-       echo $getcodeloja;
-
+       return response()->json($getcodeloja);
     }
 }
