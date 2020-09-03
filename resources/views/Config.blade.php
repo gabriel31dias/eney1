@@ -223,6 +223,20 @@ visibility: hidden;
                         </div>
                     <br>
 
+                    
+                    
+                    <div class="demo-checkbox">
+                        <h3>Configução de exportação</h3>
+                        <br>
+                        <input name="tipo_op" value="1" style="padding: 30px" type="radio" id="md_checkbox_1" class="chk-col-red">
+                        <label for="md_checkbox_1">Exportar do erp, mais manter a edição dos campos</label>
+                        
+                        <input name="tipo_op" value="2" style="padding:30px" type="radio" id="md_checkbox_2" class="chk-col-red" >
+                        <label for="md_checkbox_2">Exportar do erp, e bloquear a edição dos campos <h3>(configuração recomenda para evitar problemas como imparcialidade ou redundância de informações)</h3> </label>
+                        
+                       
+                        <br>
+                    </div>
 
                     <div class="demo-checkbox">
                         <h3>Configurações de abertura por padrão ela é manual </h3>
@@ -236,6 +250,9 @@ visibility: hidden;
                        
                         <br>
                     </div>
+
+                    
+
 
                     <br>
                     <div class="row">
