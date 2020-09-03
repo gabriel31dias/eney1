@@ -232,7 +232,7 @@ visibility: hidden;
                         <label for="md_checkbox_1">Exportar do erp, mais manter a edição dos campos</label>
                         
                         <input name="tipo_op" value="2" style="padding:30px" type="radio" id="md_checkbox_2" class="chk-col-red" >
-                        <label for="md_checkbox_2">Exportar do erp, e bloquear a edição dos campos <h3>(configuração recomenda para evitar problemas como imparcialidade ou redundância de informações)</h3> </label>
+                        <label for="md_checkbox_2">Exportar do erp, e bloquear a edição dos campos (configuração recomenda para evitar problemas como imparcialidade ou redundância de informações) </label>
                         
                        
                         <br>
