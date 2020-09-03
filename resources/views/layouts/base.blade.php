@@ -732,14 +732,13 @@ select {
 
 async function getcodloja() {
 
-   $.get('{{route("openloja")}}',function(
+   $.get('{{route("openloja")}}',function(){
 
-
-   )).done(function(data){
+   }).done(function(data){
 
       alert(data)
    })
-   
+
 }
 
  $("#eye").click(function(){
