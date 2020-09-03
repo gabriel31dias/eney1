@@ -732,7 +732,7 @@ select {
 
  $("#eye").click(function(){
 
-   alert('dfefesf')
+   location.href = "{{route('get_loja')}}"
 
 
  })
