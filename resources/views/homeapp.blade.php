@@ -40,7 +40,7 @@ visibility: hidden;
                            <i class="material-icons">shopping_cart</i>
                        </div>
                        <div class="content">
-                           <div class="text">NEW ORDERS</div>
+                           <div class="text">TOTAL VENDAS</div>
                            <div class="number count-to" data-from="0" data-to="125" data-speed="1000" data-fresh-interval="20">125</div>
                        </div>
                    </div>
@@ -51,7 +51,7 @@ visibility: hidden;
                            <i class="material-icons">face</i>
                        </div>
                        <div class="content">
-                           <div class="text">NEW MEMBERS</div>
+                           <div class="text">TOTAL CLIENTES PROSPECTADOS</div>
                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">257</div>
                        </div>
                    </div>
@@ -62,7 +62,7 @@ visibility: hidden;
                            <i class="material-icons">bookmark</i>
                        </div>
                        <div class="content">
-                           <div class="text">BOOKMARKS</div>
+                           <div class="text">TOTAL VISUALIZAÇÕES</div>
                            <div class="number count-to" data-from="0" data-to="117" data-speed="1000" data-fresh-interval="20">117</div>
                        </div>
                    </div>
