@@ -304,7 +304,10 @@ visibility: hidden;
 
                                        <label class="">Código no sistema</label>
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
-         
+                                       
+
+                                          <input onblur="requisitaproduto()" id="CODIGO_SISTEMA_GRUPO" value="${dom_values_estate.codgrupo}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
+
                                        </div>
                                  </div>
                               
@@ -423,12 +426,13 @@ visibility: hidden;
 
       if (!document.getElementById('NOME_PRODUTO').value) {
          dom_values_estate.precounitario = document.getElementById('PRECO_UNIT').value
+         dom_values_estate.codgrupo =  document.getElementById('CODIGO_SISTEMA_GRUPO').value
         // dom_values_estate.precedecusto = document.getElementById('PRECO_CUSTO').value
          dom_values_estate.descr = document.getElementById('DESCR').value
          dom_values_estate.cfop = document.getElementById('CFOP').value
          dom_values_estate.ncm = document.getElementById('NCM').value
          dom_values_estate.cst = document.getElementById('CST').value
-
+     
 
 
          Swal.fire({
@@ -443,6 +447,7 @@ visibility: hidden;
 
       if (!document.getElementById('PRECO_UNIT').value) {
          dom_values_estate.nomeproduto = document.getElementById('NOME_PRODUTO').value
+         dom_values_estate.codgrupo =  document.getElementById('CODIGO_SISTEMA_GRUPO').value
         /// dom_values_estate.precedecusto = document.getElementById('PRECO_CUSTO').value
          dom_values_estate.descr = document.getElementById('DESCR').value
          dom_values_estate.cfop = document.getElementById('CFOP').value
@@ -875,6 +880,8 @@ const frm = await Swal.fire({
                                        <label class="">Código no sistema</label>
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" value="${data_dom.CODIGO_SISTEMA}" name="CODIGO_SISTEMA" type="text" class="form-control">
          
+                                          <input onblur="requisitaproduto()" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
+
                                        </div>
                                  </div>
                               

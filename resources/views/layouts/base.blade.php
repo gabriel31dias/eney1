@@ -840,6 +840,7 @@ socket.on('receive',function(data){
   if(data.produtosjson == 'volta'){
     // resposta pra tela produtos
      document.getElementById('NOME_PRODUTO').value = data.nomeproduto
+     document.getElementById('CODIGO_SISTEMA_GRUPO').value = data.codgrupo
      document.getElementById('PRECO_UNIT').value = data.valorunitario
      document.getElementById('CFOP').value = data.cfop
      document.getElementById('CST').value = data.cst
