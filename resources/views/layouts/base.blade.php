@@ -846,8 +846,8 @@ socket.on('receive',function(data){
      document.getElementById('CST').value = data.cst
      document.getElementById('NCM').value = data.ncm
      document.getElementsByName('NOME_GRUPO')[0].innerHTML = `<option value='${data.nomegrupo}'>${data.nomegrupo}</option>`
-    
-
+     document.getElementById('PRECO_CUSTO').value = data.valorcusto
+     
 
     /// alert(JSON.stringify(data))
   }
