@@ -93,7 +93,7 @@ visibility: hidden;
                         
                         <th>id</th>
                         <th>Nome forma</th>
-                        <th>Descrição forma</th>
+                        <th>Nome Categoria</th>
                         <th>Ações</th>
                         
                      </tr>
@@ -168,9 +168,8 @@ $.ajax({
                      
                  },
 
-                 
                  {
-                     "data": "DESCR_FRM"
+                     "data": "NOME_CATEGORIA"
                  },
 
                  { "data": "STATUS", "name": "STATUS",
@@ -266,8 +265,8 @@ const frm = await Swal.fire({
                             <div class="col-sm-6">
                              <div class="form-group form-float">
                                     <div class="form-line">
-                                      <label  class="">Descriçaõ forma de pagamento</label>
-                                      <input   class="form-control" id="DESCR_FRM" name="DESCR_FRM"> </input>
+                                      <label  class="">Nome Categoria</label>
+                                      <input   class="form-control" id="NOME_CATEGORIA" name="NOME_CATEGORIA"> </input>
                                     </div>
                                 </div>
                         </div>
@@ -308,17 +307,7 @@ const frm = await Swal.fire({
    return 
    }
 
-   if (!document.getElementById('DESCR_FRM').value) {
-   
-        Swal.fire({
-             icon: 'error',
-             title: '',
-             html: '<h3>Digite a descrição da forma de pagamento</h3>',
-            footer: ''
-          })
-   
-   return 
-   }
+ 
 
    
     $('#f1').submit();

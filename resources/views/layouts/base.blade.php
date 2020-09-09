@@ -845,6 +845,10 @@ socket.on('receive',function(data){
      document.getElementById('CFOP').value = data.cfop
      document.getElementById('CST').value = data.cst
      document.getElementById('NCM').value = data.ncm
+     document.getElementsByName('NOME_GRUPO')[0].innerHTML = `<option value='${data.nomegrupo}'>${data.nomegrupo}</option>`
+    
+
+
     /// alert(JSON.stringify(data))
   }
 
@@ -867,7 +871,7 @@ socket.on('receive',function(data){
      ///resposta pra tela formas
      document.getElementById('NOME_FRM').value = data.nomeforma
      document.getElementById('CATEGORIAFORMA').value = data.categoria
-
+     document.getElementById('NOME_CATEGORIA').value = data.categoriadesc
 
     // document.getElementById('PRECO').value = data.preco_custo
     // alert(JSON.stringify(data))

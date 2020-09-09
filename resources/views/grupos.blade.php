@@ -51,14 +51,7 @@ visibility: hidden;
                         <label style="margin-top:10px;"  for="cars">Filtro:</label>
                         <select name="tiposeach" id="tiposeach">
                            <option value="Nome grupo">Nome grupo</option>
-                           <option value="Nome">Nome</option>
-                           <option value="Razão social">Razão social</option>
-                           <option value="Código">Código</option>
-                           <option value="Cpf/Cnpj">Cpf/Cnpj</option>
-                           <option value="Cidade">Cidade</option>
-                           <option value="Endereço">Endereço</option>
-                           <option value="Telefone">Telefone</option>
-                           <option value="audi">Numero residencia</option>
+                          
                         </select>
                      </div>
                   </div>
@@ -90,9 +83,8 @@ visibility: hidden;
                   <thead>
                      <tr>
                      <tr>  
-                        <th>id</th>
+                        <th>Código sistema</th>
                         <th>Nome grupo</th>
-                        <th>Descrição grupo</th>
                         <th>Ações</th>
                         
                      </tr>
@@ -118,7 +110,6 @@ visibility: hidden;
 
 var dom_values_estate = {
 	nomegrupo: '',
-	descr_grupo: '',
 }
 
       
@@ -177,7 +168,7 @@ $.ajax({
 
             columns: [
 					{
-						"data": "id"
+						"data": "CODIGO_SISTEMA"
 					},
 
 
@@ -187,10 +178,6 @@ $.ajax({
 
 					},
 
-
-					{
-						"data": "DESCR_GRUPO"
-					},
 
 					{
 						"data": "id",
@@ -256,7 +243,7 @@ function consulta(params)
 
 				columns: [
 					{
-						"data": "id"
+						"data": "CODIGO_SISTEMA"
 					},
 
 
@@ -267,9 +254,7 @@ function consulta(params)
 					},
 
 
-					{
-						"data": "DESCR_GRUPO"
-					},
+				
 
 					{
 						"data": "id",
@@ -369,15 +354,7 @@ async function cad_grupo()
                             
                             
                             <input style="display:none" type="text" id="IMG" name="IMG">
-                        <div class="col-sm-12">
-                             <div class="form-group form-float">
-                                    <div class="form-line">
-                                      <label  class="">Descrição grupo</label>
-                                        <textarea id="DESCR_GRUPO" value="${dom_values_estate.descr_grupo}"   name="DESCR_GRUPO"  type="text" class="form-control"></textarea>
-                                     
-                                    </div>
-                                </div>
-                        </div>
+                        
                         
             </form>
                         `,
@@ -397,7 +374,7 @@ async function cad_grupo()
 
 		if (!document.getElementById('NOME_GRUPO').value)
 		{
-			dom_values_estate.descr_grupo = document.getElementById('DESCR_GRUPO').value
+			//dom_values_estate.descr_grupo = document.getElementById('DESCR_GRUPO').value
 
 			Swal.fire(
 			{
@@ -410,19 +387,7 @@ async function cad_grupo()
 			return
 		}
 
-		if (!document.getElementById('DESCR_GRUPO').value)
-		{
-			dom_values_estate.nomegrupo = document.getElementById('NOME_GRUPO').value
-			Swal.fire(
-			{
-				icon: 'error',
-				title: '',
-				html: '<h3>Digite a descrição do grupo.</h3>',
-				footer: ''
-			})
-
-			return
-		}
+		
 
 
 		save_grupo()
@@ -478,33 +443,6 @@ function save_grupo()
 
 
 
-function onFileSelected(event) {
-   var selectedFile = event.target.files[0];
-   var reader = new FileReader();
-
-   var imgtag = document.getElementById("myimage");
-   imgtag.title = selectedFile.name;
-
-   reader.onload = function(event) {
-      imgtag.src = event.target.result;
-   };
-
-   reader.readAsDataURL(selectedFile);
-   document.getElementById('dedo').style.display = 'none'
- 
-   document.getElementById('carregandoimg').style.display = 'block'
-   document.getElementById('swal2-content').style.display = 'none'
-   
-
-         setTimeout(function (params) {
-         //  alert(document.getElementById('myimage').src)
-            document.getElementById('IMG').value = document.getElementById('myimage').src
-            document.getElementById('swal2-content').style.display = 'block'
-            document.getElementById('carregandoimg').style.display = 'none'
-         },2000)
-         
-
-   }
 
 
 
@@ -545,6 +483,8 @@ const frm = await Swal.fire({
                                     <center>
                                        <img id="myimage" src="${data_dom.IMG}" height="200">
 
+                                    <br>
+                                    <br>
                                     <br>
                                        <input class="" onchange="onFileSelected(event)" type="file" name="fileToUpload" id="fileToUpload" size="1" />
                                        </center>
@@ -594,16 +534,8 @@ const frm = await Swal.fire({
 
                           
 
-                            <input style="display:none" type="text" id="IMG" name="IMG">
-                        <div class="col-sm-12">
-                             <div class="form-group form-float">
-                                    <div class="form-line">
-                                      <label  class="">Descrição grupo</label>
-                                        <textarea id="DESCR_GRUPO"    name="DESCR_GRUPO"  type="text" class="form-control">${data_dom.DESCR_GRUPO}</textarea>
-                                     
-                                    </div>
-                                </div>
-                        </div>
+                            <input   type="text" id="IMGedit" name="IMG">
+                       
                         
                         <input type="submit"></input>
             </form>
@@ -715,6 +647,45 @@ $(".swal2-container").hide()
 
 
 
+function onFileSelected(event) {
+  /// alert('')
+   var selectedFile = event.target.files[0];
+   var reader = new FileReader();
+
+   var imgtag = document.getElementById("myimage");
+   imgtag.title = selectedFile.name;
+
+   reader.onload = function(event) {
+      imgtag.src = event.target.result;
+   };
+
+   reader.readAsDataURL(selectedFile);
+   try {
+      document.getElementById('dedo').style.display = 'none'
+
+   } catch (e) {
+   
+   }
+ 
+   document.getElementById('carregandoimg').style.display = 'block'
+   document.getElementById('swal2-content').style.display = 'none'
+   
+
+         setTimeout(function (params) {
+         //  alert(document.getElementById('myimage').src)
+            document.getElementById('IMG').value = document.getElementById('myimage').src
+           
+            try {
+               document.getElementById('IMGedit').value = document.getElementById('myimage').src
+            
+            } catch (e) {
+            }
+            document.getElementById('swal2-content').style.display = 'block'
+            document.getElementById('carregandoimg').style.display = 'none'
+         },2000)
+         
+
+   }
    
 
 

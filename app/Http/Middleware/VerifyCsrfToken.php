@@ -17,7 +17,8 @@ class VerifyCsrfToken extends Middleware
         "/app/savevenda/",
         "/app/updatetags",
         "/grupos/update/",
-        "/carrinho/saveuser/"
+        "/carrinho/saveuser/",
+        "/produtossave"
 
     ];
 }

@@ -17,6 +17,7 @@ class FormasPagamento extends Migration
             $table->id();
             $table->integer('CODIGO_SISTEMA')->nullable();
             $table->integer('CATEGORIAFORMA')->nullable();
+            $table->string('NOME_CATEGORIA')->nullable();
             $table->string('DESCR_FRM')->nullable();
             $table->string('ID_USER')->nullable();
             $table->string('NOME_FRM')->nullable();

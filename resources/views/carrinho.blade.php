@@ -3,7 +3,7 @@
 <html>
 	<head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-
+    
 
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
        <!-- production version, optimized for size and speed -->
@@ -13,7 +13,8 @@
 	<!-- jQuery Easing -->
 	<script src="/lojavers/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="/lojavers/js/bootstrap.min.js"></script>
+  <script src="/lojavers/js/bootstrap.min.js"></script>
+  
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Serviços - Restaurante Saboroso!</title>
@@ -61,6 +62,9 @@
         <![endif]-->
         <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
 "></script>
+
+<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+
         <style>
 		       .actionx:hover {
               background-color:darkgrey;
@@ -714,19 +718,15 @@ const { value: formValues } = await temaapp.fire({
 
    <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Qual seu nome ?</label>
-	  <input type="text" value=" 
-    @isset($userapp['nome'])
-      {{$userapp['nome']}}
-      @endisset" class="form-control"  id="nome" name="nome" placeholder="">
+	  <input type="text" value="{{$userapp['nome'] ?? ''}}" class="form-control"  id="nome" name="nome" placeholder="">
 
     </div>
 
 
     <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Digite seu telefone ?</label>
-	  <input type="text" value=" @isset($userapp['celular'])
-      {{$userapp['celular']}}
-      @endisset" class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
+	  <input onfocus="masctel(this)" type="text" value="{{$userapp['celular'] ?? ''}}
+      " class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
 
     </div>
 
@@ -921,7 +921,7 @@ async function formas_pagamento(){
 
       <div class="form-row">
 
-     <div class="form-group col-md-6 ">
+     <div class="form-group col-md-12 ">
       <br>
       <br>
       
@@ -1326,7 +1326,24 @@ function atualiza_obj_user(){
 
 }
 
+function masc(val) {
+   $(val).maskMoney({
+      prefix: "",
+      decimal: ".",
+      thousands: ","
+   });
+   }
 
+
+    function masctel(){
+      $("#telefone").inputmask({
+        mask: ["(99) 99999-9999" ],
+        keepStatic: true
+      });
+    }
+     
+    
+ 
 
 
 

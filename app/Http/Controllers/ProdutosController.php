@@ -8,6 +8,7 @@ use App\Produto;
 use App\Grupo;
 use App\adicionado;
 use App\Adicional;
+use Grupos;
 
 class ProdutosController extends Controller
 {
@@ -17,12 +18,14 @@ class ProdutosController extends Controller
     private $produtos;
     private $adicionados;
     private $adicionais;
+    private $grupos;
 
     
-    public function __construct(Produto $produtos,adicionado $adicionados,Adicional $adicionais){
+    public function __construct(Produto $produtos,adicionado $adicionados,Adicional $adicionais,Grupo $grupos){
         $this->produtos = $produtos;
         $this->adicionados = $adicionados;
         $this->adicionais = $adicionais;
+        $this->grupos = $grupos;
     }
 
     public function index(){
@@ -36,9 +39,16 @@ class ProdutosController extends Controller
     }
 
     public function save(Request $req){
+    
+        $getgrupo = $this->grupos->where('CODIGO_SISTEMA', $req->CODIGO_SISTEMA_GRUPO)->first();
+
+        if(!Isset($getgrupo->id)){
+            $grupo = $this->grupos->create(['NOME_GRUPO'=>$req->NOME_GRUPO, 'CODIGO_SISTEMA'=>$req->CODIGO_SISTEMA_GRUPO,'ID_USER'=>$req->ID_USER]);
+         }
+
         $req = $req->all();
         $produtos = $this->produtos->create($req);
-        return $produtos;
+        return  $produtos;
     }
 
     public function list(){

@@ -51,14 +51,7 @@ visibility: hidden;
                         <label style="margin-top:10px;"  for="cars">Filtro:</label>
                         <select name="tiposeach" id="tiposeach">
                            <option value="Nome produto">Nome produto</option>
-                           <option value="Nome">Nome</option>
-                           <option value="Razão social">Razão social</option>
-                           <option value="Código">Código</option>
-                           <option value="Cpf/Cnpj">Cpf/Cnpj</option>
-                           <option value="Cidade">Cidade</option>
-                           <option value="Endereço">Endereço</option>
-                           <option value="Telefone">Telefone</option>
-                           <option value="audi">Numero residencia</option>
+                          
                         </select>
                      </div>
                   </div>
@@ -91,7 +84,7 @@ visibility: hidden;
                      <tr>
                      <tr>
                         
-                        <th>id</th>
+                        <th>Código sistema</th>
                         <th>Nome produto</th>
                         <th>Valor unitario</th>
                         <th>Cfop</th>
@@ -193,7 +186,7 @@ visibility: hidden;
                'order': [[0, 'dec']],
       
                columns: [{
-                        "data": "id"
+                        "data": "CODIGO_SISTEMA"
                   },
                   
                   
@@ -305,13 +298,17 @@ visibility: hidden;
                                        <label class="">Código no sistema</label>
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
                                        
+                                          
 
-                                          <input onblur="requisitaproduto()" id="CODIGO_SISTEMA_GRUPO" value="${dom_values_estate.codgrupo}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
+
+                                          <input style="display:none" onblur="requisitaproduto()" id="CODIGO_SISTEMA_GRUPO" value="${dom_values_estate.codgrupo}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
 
                                        </div>
                                  </div>
                               
                               </div>
+
+                              
                               
                               <div class="col-sm-6">
                               <div class="form-group form-float">
@@ -337,7 +334,7 @@ visibility: hidden;
 
                            <div class="col-sm-12">
                               <div class="form-group form-float">
-                                 <div class="btn-group bootstrap-select form-control show-tick"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">-- Please select --</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">10</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">20</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">30</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">40</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">50</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select name="NOME_GRUPO" class="form-control show-tick" tabindex="-98">
+                                 <div class="btn-group bootstrap-select form-control show-tick"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">-- Please select --</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">10</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">20</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">30</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">40</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">50</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select name="NOME_GRUPO" id="NOME_GRUPO" class="form-control show-tick" tabindex="-98">
                                           <option value="">-- Selecione o grupo --</option>
                                           
                                           
@@ -366,7 +363,7 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CFOP</label>
-                                          <input  value="${dom_values_estate.cfop}"  id="CFOP"  name="CFOP" type="text" class="form-control">
+                                          <input  value="${dom_values_estate.cfop}"  id="CFOP"  name="CFOP" type="text" class="form-control" disabled>
                                        
                                        </div>
                                  </div>
@@ -376,7 +373,7 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CST</label>
-                                          <input   value="${dom_values_estate.cst}"  id="CST" name="CST"    type="text" class="form-control">
+                                          <input   value="${dom_values_estate.cst}"  id="CST" name="CST"    type="text" class="form-control" disabled>
                                        
                                        </div>
                                  </div>
@@ -386,21 +383,13 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">NCM</label>
-                                          <input   value="${dom_values_estate.ncm}"  id="NCM" name="NCM"    type="text" class="form-control">
+                                          <input   value="${dom_values_estate.ncm}"  id="NCM" name="NCM"    type="text" class="form-control" disabled>
                                        
                                        </div>
                                  </div>
                            </div>
 
-                           <div class="col-sm-6">
-                              <div class="form-group form-float">
-                                       <div class="form-line">
-                                       <label  class="">Quantidade em estoque</label>
-                                          <input id="QUANTIDADE_ESTOQUE" name="QUANTIDADE_ESTOQUE"  type="text" class="form-control">
-                                    
-                                       </div>
-                                 </div>
-                           </div>
+                           
 
                          
                            </div>
@@ -880,7 +869,7 @@ const frm = await Swal.fire({
                                        <label class="">Código no sistema</label>
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" value="${data_dom.CODIGO_SISTEMA}" name="CODIGO_SISTEMA" type="text" class="form-control">
          
-                                          <input onblur="requisitaproduto()" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
+                                          <input style="display:none" onblur="requisitaproduto()" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
 
                                        </div>
                                  </div>
@@ -894,7 +883,7 @@ const frm = await Swal.fire({
                                        <div class="form-line">
 
                                        <label class="">Nome do produto</label>
-                                          <input value="${data_dom.NOME_PRODUTO}" id="NOME_PRODUTO" name="NOME_PRODUTO" type="text" class="form-control">
+                                          <input value="${data_dom.NOME_PRODUTO}" id="NOME_PRODUTO" name="NOME_PRODUTO" type="text" class="form-control" >
                                           
                                        </div>
                                  </div>
@@ -905,7 +894,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">Valor unitário</label>
-                                          <input value="${data_dom.PRECO_UNIT}" id="PRECO_UNIT"  name="PRECO_UNIT" onfocus="masc(this)"  type="text" class="form-control">
+                                          <input value="${data_dom.PRECO_UNIT}" id="PRECO_UNIT"  name="PRECO_UNIT" onfocus="masc(this)"  type="text" class="form-control" >
                                        
                                        </div>
                                  </div>
@@ -932,7 +921,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">Descrição produto</label>
-                                          <textarea id="DESCR" name="DESCR"  type="text"      class="form-control">${data_dom.DESCR}</textarea>
+                                          <textarea id="DESCR" name="DESCR"  type="text"      class="form-control">${data_dom.DESCR}</textarea >
                                        
                                        </div>
                                  </div>
@@ -945,7 +934,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CFOP</label>
-                                          <input  value="${data_dom.CFOP}"  id="CFOP"  name="CFOP" type="text" class="form-control">
+                                          <input  value="${data_dom.CFOP}"  id="CFOP"  name="CFOP" type="text" class="form-control" disabled>
                                        
                                        </div>
                                  </div>
@@ -955,7 +944,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CST</label>
-                                          <input   value="${data_dom.CST}"  id="CST" name="CST"    type="text" class="form-control">
+                                          <input   value="${data_dom.CST}"  id="CST" name="CST"    type="text" class="form-control" disabled>
                                        
                                        </div>
                                  </div>
@@ -965,21 +954,13 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">NCM</label>
-                                          <input   value="${data_dom.NCM}"  id="NCM" name="NCM"    type="text" class="form-control">
+                                          <input   value="${data_dom.NCM}"  id="NCM" name="NCM"    type="text" class="form-control" disabled>
                                        
                                        </div>
                                  </div>
                            </div>
 
-                           <div class="col-sm-6">
-                              <div class="form-group form-float">
-                                       <div class="form-line">
-                                       <label  class="">Quantidade em estoque</label>
-                                          <input id="QUANTIDADE_ESTOQUE" name="QUANTIDADE_ESTOQUE"  type="text" class="form-control">
-                                    
-                                       </div>
-                                 </div>
-                           </div>
+                          
 
                            
                      </div>
@@ -1133,7 +1114,7 @@ $.ajax({
             destroy: true,
 
             columns: [{
-                        "data": "id"
+                        "data": "CODIGO_SISTEMA"
                   },
                   
                   
