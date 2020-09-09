@@ -1029,7 +1029,6 @@ return
 
 if (!document.getElementById('CFOP').value) {
    
-
    Swal.fire({
         icon: 'error',
         title: '',
