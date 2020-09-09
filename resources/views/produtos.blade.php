@@ -1027,6 +1027,21 @@ const frm = await Swal.fire({
 return 
 }
 
+if (!document.getElementById('CFOP').value) {
+   
+
+   Swal.fire({
+        icon: 'error',
+        title: '',
+        html: '<h3>Cfop não foi cadastrado no sistema, verifique e tente novamente.</h3>',
+       footer: ''
+     })
+
+return 
+}
+
+
+
 
    
 ///--------------------------------------------Salva

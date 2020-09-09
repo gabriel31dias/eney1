@@ -30,6 +30,7 @@ class Produtos extends Migration
             $table->longText('IMG4')->nullable();
             $table->string('TIPO_PRODUTO')->nullable();
             $table->decimal('PRECO_UNIT', 10, 2)->nullable();
+            $table->decimal('PRECO_CUSTO', 10, 2)->nullable();
             $table->string('DESCONTO')->nullable();
             $table->string('CST')->nullable();
             $table->string('NCM')->nullable();
