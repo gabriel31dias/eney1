@@ -659,7 +659,7 @@ return
    var $form = $('#f1');
    var serializedData = $form.serialize();
 
- alert(serializedData.PRECO_CUSTO)
+ ///alert(serializedData.PRECO_CUSTO)
 
    request = $.ajax({
       url: "{{route('produtossave')}}",
@@ -1072,7 +1072,7 @@ var request;
 var $form = $('#f1');
 var serializedData = $form.serialize();
 
-alert(JSON.stringify(serializedData.PRECO_CUSTO))
+//alert(JSON.stringify(serializedData.PRECO_CUSTO))
 
 //alert(serializedData)
 request = $.ajax({
