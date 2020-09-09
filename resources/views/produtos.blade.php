@@ -659,7 +659,7 @@ return
    var $form = $('#f1');
    var serializedData = $form.serialize();
 
-
+ alert(serializedData)
 
    request = $.ajax({
       url: "{{route('produtossave')}}",
@@ -946,6 +946,8 @@ const frm = await Swal.fire({
                                        </div>
                                  </div>
                            </div>
+
+                           
 
                           
 
