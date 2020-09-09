@@ -476,7 +476,7 @@ const frm = await Swal.fire({
          location.href = "/adicionais"
        
        return
-      }
+      }//dfefes
 
    if (!document.getElementById('ADICIONAL').value) {
       
