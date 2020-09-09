@@ -886,10 +886,10 @@ const frm = await Swal.fire({
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" value="${data_dom.CODIGO_SISTEMA}" name="CODIGO_SISTEMA" type="text" class="form-control">
          
                                          
-                                          <input onblur="" id="PRECO_CUSTO" name="PRECO_CUSTO" type="text" class="form-control">
+                                          <input  onblur="" id="PRECO_CUSTO" name="PRECO_CUSTO" type="text" class="form-control">
                                        
                                        
-                                          <input style="display:none" onblur="" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
+                                          <input  style="display:none" onblur="" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
 
                                        </div>
                                  </div>
@@ -1068,6 +1068,9 @@ return
 var request;
 var $form = $('#f1');
 var serializedData = $form.serialize();
+
+alert(JSON.stringify(serializedData))
+
 //alert(serializedData)
 request = $.ajax({
     url: "{{route('produtosupdate')}}",
