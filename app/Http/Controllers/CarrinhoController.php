@@ -125,7 +125,7 @@ class CarrinhoController extends Controller
             $get_cod_sist_grupo =  '0';
          }
 
-         $getvalorcusto = $getpro->CODIGO_SISTEMA_GRUPO;
+         $getvalorcusto = $getpro->PRECO_CUSTO;
          $getcfop = $getpro->CFOP;
        
         $tags_adicionais = $req->tagsadicionais;
