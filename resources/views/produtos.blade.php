@@ -832,6 +832,8 @@ await $.get("{{route('produtositem')}}/"+idproduto, function(data, status){ ///B
   
 
        data_dom = data
+
+       alert(JSON.stringify(data_dom))
           
        }).then(function (params) {
         
