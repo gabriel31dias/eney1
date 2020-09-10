@@ -299,7 +299,7 @@ visibility: hidden;
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
 
 
-                                          <input  style="display:none" onblur="" id="PRECO_CUSTO" name="PRECO_CUSTO" type="text" class="form-control">
+                                          <input   onblur="" id="PRECO_CUSTO" name="PRECO_CUSTO" type="text" class="form-control">
                                        
                                           
 
