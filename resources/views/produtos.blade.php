@@ -299,7 +299,7 @@ visibility: hidden;
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" name="CODIGO_SISTEMA" type="text" class="form-control">
 
 
-                                          <input   onblur="" id="PRECO_CUSTO" name="PRECO_CUSTO" type="text" class="form-control">
+                                          <input style="display:none"  onblur="" id="PRECO_CUSTO" name="PRECO_CUSTO" type="text" class="form-control">
                                        
                                           
 
@@ -366,8 +366,8 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CFOP</label>
-                                          <input  value="${dom_values_estate.cfop}"  id="CFOP"  name="CFOP" type="text" class="form-control" disabled>
-                                       
+                                          <input  value="${dom_values_estate.cfop}"  id="CFOP"  name="CFOP" type="text" class="form-control" readonly=“true” >
+                                         
                                        </div>
                                  </div>
                            </div>
@@ -376,7 +376,7 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CST</label>
-                                          <input   value="${dom_values_estate.cst}"  id="CST" name="CST"    type="text" class="form-control" disabled>
+                                          <input   value="${dom_values_estate.cst}"  id="CST" name="CST"    type="text" class="form-control" readonly=“true”>
                                        
                                        </div>
                                  </div>
@@ -386,7 +386,7 @@ visibility: hidden;
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">NCM</label>
-                                          <input   value="${dom_values_estate.ncm}"  id="NCM" name="NCM"    type="text" class="form-control" disabled>
+                                          <input   value="${dom_values_estate.ncm}"  id="NCM" name="NCM"    type="text" class="form-control" readonly=“true”>
                                        
                                        </div>
                                  </div>
@@ -833,7 +833,7 @@ await $.get("{{route('produtositem')}}/"+idproduto, function(data, status){ ///B
 
        data_dom = data
 
-       alert(JSON.stringify(data_dom))
+      
           
        }).then(function (params) {
         
@@ -889,7 +889,7 @@ const frm = await Swal.fire({
                                           <input onblur="requisitaproduto()" id="CODIGO_SISTEMA" value="${data_dom.CODIGO_SISTEMA}" name="CODIGO_SISTEMA" type="text" class="form-control">
          
                                          
-                                          <input   onblur="" id="PRECO_CUSTO" value="${data_dom.PRECO_CUSTO}" name="PRECO_CUSTO" type="text" class="form-control">
+                                          <input style="display:none"  onblur="" id="PRECO_CUSTO" value="${data_dom.PRECO_CUSTO}" name="PRECO_CUSTO" type="text" class="form-control">
                                        
                                        
                                           <input  style="display:none" onblur="" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
@@ -959,7 +959,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CFOP</label>
-                                          <input  value="${data_dom.CFOP}"  id="CFOP"  name="CFOP" type="text" class="form-control" disabled>
+                                          <input  value="${data_dom.CFOP}"  id="CFOP"  name="CFOP" type="text" class="form-control" readonly=“true”>
                                        
                                        </div>
                                  </div>
@@ -969,7 +969,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">CST</label>
-                                          <input   value="${data_dom.CST}"  id="CST" name="CST"    type="text" class="form-control" disabled>
+                                          <input   value="${data_dom.CST}"  id="CST" name="CST"    type="text" class="form-control" readonly=“true”>
                                        
                                        </div>
                                  </div>
@@ -979,7 +979,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                        <div class="form-line">
                                        <label  class="">NCM</label>
-                                          <input   value="${data_dom.NCM}"  id="NCM" name="NCM"    type="text" class="form-control" disabled>
+                                          <input   value="${data_dom.NCM}"  id="NCM" name="NCM"    type="text" class="form-control" readonly=“true”>
                                        
                                        </div>
                                  </div>
@@ -1073,8 +1073,7 @@ return
 var request;
 var $form = $('#f1');
 var serializedData = $form.serialize();
-
-//alert(JSON.stringify(serializedData.PRECO_CUSTO))
+console.log(JSON.stringify(serializedData.PRECO_CUSTO))
 
 //alert(serializedData)
 request = $.ajax({

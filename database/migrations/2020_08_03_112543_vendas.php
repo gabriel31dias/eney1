@@ -23,7 +23,7 @@ class Vendas extends Migration
             $table->decimal('preco_total_entrega', 10, 2)->nullable();
             $table->decimal('valor_total', 10, 2)->nullable();
             $table->string('tiporetirada')->nullable(); //array
-
+            $table->string('cod_venda_web')->nullable();
             //--------Endereco e contatos
             $table->string('numerotelefone')->nullable(); 
             $table->string('ID_USER')->nullable();

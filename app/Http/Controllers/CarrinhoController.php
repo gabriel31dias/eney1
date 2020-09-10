@@ -444,7 +444,7 @@ class CarrinhoController extends Controller
 
         $venda = $this->vendas;
         $venda->produtos_array = json_encode($this->removefotosall(Session::get('carrinho')));
-
+        $venda->cod_venda_web = $req->cod_venda_web;
         $venda->tiporetirada = Session::get('retirada');
         $venda->preco_total_entrega = Session::get('entrega');
         $venda->preco_total_produto = Session::get('totalprodutos'); //--ja incluido o valor dos adicionais
