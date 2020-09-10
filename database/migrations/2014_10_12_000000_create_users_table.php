@@ -36,7 +36,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->decimal('MINIMOPRECOENTREGAGRATIS', 10, 2)->nullable();
             $table->decimal('PRECOENTREGA', 10, 2)->nullable();
-
+            ///REDES SOCIAIS
+            $table->string('TWITTER')->nullable();//aberta ou fechada
+            $table->string('FACEBOOK')->nullable();//aberta ou fechada
+            $table->string('YOUTUBE')->nullable();//aberta ou fechada
 
             $table->rememberToken();
             $table->timestamps();
