@@ -412,7 +412,8 @@ class VendaController extends Controller
         $cielo = new CieloCheckoutlink();
         $cielo = $cielo->addMerchantId('1111');
         $cielo = $cielo->Writemercantid();
-
+        $cielo =  $cielo->executa();
+        
          return response()->json($cielo);
        // $cielo->AddProductList();
     }

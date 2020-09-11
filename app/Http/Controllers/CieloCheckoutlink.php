@@ -7,6 +7,7 @@ class CieloCheckoutlink extends Controller
 {
 
     private $Mercantid;
+    private $Producs;
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
   
     public function addMerchantId($mercantid){
@@ -34,24 +35,25 @@ class CieloCheckoutlink extends Controller
          ));
        $response = curl_exec($curlx);
        curl_close($curlx);
-       echo $response;
+       return $response;
     }
 
  
 
 
     public function AddProductList($products){
-      
-        
+    
 
-       return $this;
+        $this->Producs = $products;
+        return $this;
     }
 
     public function Writemercantid(){
 
         return $this->Mercantid;
-
     }
+
+    
     
     
  
