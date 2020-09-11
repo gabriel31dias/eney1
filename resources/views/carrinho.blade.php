@@ -1344,6 +1344,34 @@ function masc(val) {
         keepStatic: true
       });
     }
+
+
+    async function executapagamento(apipg){
+      $.ajax({
+            url: '{{route("cielopagamento")}}',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+				    
+              alert(JSON.stringify(data))
+               
+            },
+
+		      	error: function (data) {
+				  
+           
+            },
+
+            data: JSON.stringify(obj_venda)
+
+            
+         }).then(function(){
+
+            lembrar()
+
+         })
+    }
      
     
  
