@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Venda;
 use Session;
+use App\Http\Controllers\CieloCheckoutlink;
+
 
 class VendaController extends Controller
 {
@@ -403,6 +405,16 @@ class VendaController extends Controller
        $venda = $this->vendas->where('id',$idvenda)->first();
        $venda = $venda->update(['statuspvenda'=>$status]);
        return $venda;
+    }
+
+
+    public function cielopagamento(){
+        $cielo = new CieloCheckoutlink();
+        $cielo = $cielo->addMerchantId('1111');
+        
+
+         return response()->json($cielo);
+       // $cielo->AddProductList();
     }
 
 }

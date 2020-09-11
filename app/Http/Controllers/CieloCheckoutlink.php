@@ -7,16 +7,14 @@ class CieloCheckoutlink extends Controller
 {
 
     private $Mercantid;
-
-    
-    
-
+   ///https://www.youtube.com/watch?v=Emsh-hIadx0
+  
     public function addMerchantId($mercantid){
       $this->Mercantid = $mercantid;
+      return $this;
     }
 
     public function executa(){
-
         $curlx = curl_init();
         curl_setopt_array($curlx, array(
            CURLOPT_URL => "https://cieloecommerce.cielo.com.br/api/public/v1/orders",
@@ -37,22 +35,16 @@ class CieloCheckoutlink extends Controller
        $response = curl_exec($curlx);
        curl_close($curlx);
        echo $response;
-  
     }
 
-    
+ 
 
-    public function addMerchantId(){
+
+    public function AddProductList($products){
       
         
 
-    }
-
-
-    public function addMerchantId(){
-      
-        
-
+       return $this;
     }
     
     
