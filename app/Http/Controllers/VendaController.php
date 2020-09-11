@@ -416,7 +416,7 @@ class VendaController extends Controller
 
        //var_dump($cielo);
 
-         return response()->json($cielo->settings->checkoutUrl);
+         return response()->json($cielo);
        // $cielo->AddProductList();
     }
 
