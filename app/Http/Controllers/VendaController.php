@@ -410,13 +410,11 @@ class VendaController extends Controller
 
     public function cielopagamento(){
         $cielo = new CieloCheckoutlink();
-        $cielo = $cielo->addMerchantId('1111');
+        $cielo = $cielo->addMerchantId('35c778b2-f9b1-478c-bc7a-2667f6027652');
+        $cielo = $cielo->AddProductList('1111');
+  
         $cielo =  $cielo->executa();
-     
-
-       var_dump($cielo);
-
-         return response()->json($cielo);
+        return response()->json($cielo);
        // $cielo->AddProductList();
     }
 
