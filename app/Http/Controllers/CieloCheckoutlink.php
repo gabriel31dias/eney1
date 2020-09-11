@@ -35,7 +35,8 @@ class CieloCheckoutlink extends Controller
          ));
        $response = curl_exec($curlx);
        curl_close($curlx);
-       return $response;
+       $response = json_decode( $response);
+       return $response->settings->checkoutUrl;
     }
 
  
