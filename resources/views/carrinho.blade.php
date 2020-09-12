@@ -1403,26 +1403,6 @@ function masc(val) {
     }
 
 
-    async function select_forma_pagamento(){
-      const { value: formValues } = await Swal.fire({
-        title: 'Multiple inputs',
-        html:
-        '<img  style="weigth:40px;height:40px" src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-9.png"></br></br></br>' +
-        '<img  style="weigth:40px;height:40px" src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-9.png">',
-          focusConfirm: false,
-         preConfirm: () => {
-         return [
-            document.getElementById('swal-input1').value,
-            document.getElementById('swal-input2').value
-          ]
-          }
-         })
-
-         if (formValues) {
-            Swal.fire(JSON.stringify(formValues))
-         }
-
-    }
      
     
  
