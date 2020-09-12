@@ -1407,8 +1407,8 @@ function masc(val) {
       const { value: formValues } = await Swal.fire({
         title: 'Multiple inputs',
         html:
-        '<img  style="weigth:10px;height:10px" src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-9.png">' +
-        '<img  style="weigth:10px;height:10px" src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-9.png">',
+        '<img  style="weigth:40px;height:40px" src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-9.png"></br>' +
+        '<img  style="weigth:40px;height:40px" src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-9.png">',
           focusConfirm: false,
          preConfirm: () => {
          return [
