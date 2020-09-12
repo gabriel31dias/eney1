@@ -1394,7 +1394,7 @@ function masc(val) {
             },
 
 		      	error: function (data) {
-				      console.log('error transactional')
+				      console.log(data)
             },
 
             data: JSON.stringify(obj_final) 
