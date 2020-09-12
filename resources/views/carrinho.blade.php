@@ -1253,7 +1253,7 @@ function enviavenda(){
 
       executapagamento()
     
-    },2000)
+    },200)
 
 
   }
