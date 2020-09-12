@@ -1349,7 +1349,9 @@ function masc(val) {
       let produtos = JSON.parse(obj_venda.produtosjson)  
       produtos = produtos.produtos
       for(let i of produtos){
-        alert(i.precoproduto)
+        let precoformatado = i.precoproduto
+        precoformatado =  precoformatado.toFixed(2);
+        alert(precoformatado)
          add_produto_array(i.nomeproduto, i.nomeproduto , i.precoproduto , i.quantidade , "Asset", "ABC001" , 100)
          
       }
