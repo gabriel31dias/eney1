@@ -1347,8 +1347,8 @@ function masc(val) {
 
     async function processarcarrinho(){
 
-      let produtos = JSON.parse(obj_venda.produtosjson.produtos)  
-
+      let produtos = JSON.parse(obj_venda.produtosjson)  
+      produtos = produtos.produtos
       for(let i of produtos){
 
         alert(i.idproduto)
