@@ -1345,16 +1345,28 @@ function masc(val) {
       });
     }
 
+    async function processarcarrinho(){
 
-    async function add_produto_array(){
+      let produtos = JSON.parse(obj_venda.produtosjson)  
+
+      for(let i of produtos){
+
+        alert(i.idproduto)
+      }
+
+    }
+
+    obj_venda.produtosjson 
+
+    async function add_produto_array(nomeproduto, descricao , unitpreco , qtd , type="Asset", Sku="ABC001" , weight=100){
       obj_produtos = {
-         Name:"Produto01",
-         Description:"ProdutoExemplo01",
-         UnitPrice:100,
-         Quantity:1,
-         Type:"Asset",
+         Name:nomeproduto,
+         Description:descricao,
+         UnitPrice:unitpreco,
+         Quantity:qtd,
+         Type:type,
          Sku:"ABC001",
-         Weight:500
+         Weight:weight
        }
       array_produtos_venda.push(obj_produtos)
     }
