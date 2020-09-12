@@ -1379,6 +1379,7 @@ function masc(val) {
 		      	error: function (data) {
 				      
               alert(JSON.stringify(data))
+              console.log(JSON.stringify(data))
            
             },
 
