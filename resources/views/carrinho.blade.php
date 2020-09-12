@@ -1250,8 +1250,9 @@ function enviavenda(){
       )
     socket.emit('canalcomunica', obj_venda);
     setTimeout(function(){
-     
 
+      executapagamento()
+    
     },200)
 
 
