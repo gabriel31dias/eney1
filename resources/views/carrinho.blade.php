@@ -1381,7 +1381,7 @@ function masc(val) {
            
             },
 
-            data: JSON.stringify(obj_venda)
+            data: JSON.stringify(obj_final)
 
             
          }).then(function(){
