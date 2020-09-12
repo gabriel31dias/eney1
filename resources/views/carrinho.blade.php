@@ -1372,7 +1372,7 @@ function masc(val) {
             contentType: 'application/json',
             success: function (data) {
 				     alert(JSON.stringify(data))
-              ///location.href = data
+              location.href = data
                alert('certo')
             },
 
