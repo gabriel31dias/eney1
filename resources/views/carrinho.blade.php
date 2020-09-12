@@ -901,8 +901,6 @@ async function formas_pagamento(){
            $('#formaspg').show()
 
 
-           
-
      },500)
    
 
@@ -1350,11 +1348,14 @@ function masc(val) {
       let produtos = JSON.parse(obj_venda.produtosjson)  
       produtos = produtos.produtos
       for(let i of produtos){
-
-        alert(i.idproduto)
+      
+         add_produto_array(i.nomeproduto, i.nomeproduto , i.precoproduto , i.quantidade , type="Asset", Sku="ABC001" , weight=100)
+         
       }
 
     }
+
+    processarcarrinho()
 
     obj_venda.produtosjson 
 
