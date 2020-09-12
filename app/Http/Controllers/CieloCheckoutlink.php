@@ -46,7 +46,6 @@ class CieloCheckoutlink extends Controller
 
     public function AddProductList($products){
     
-
         $this->Producs = $products;
         return $this;
     }

@@ -1351,8 +1351,8 @@ function masc(val) {
       for(let i of produtos){
         let precoformatado = i.precoproduto
         precoformatado =  precoformatado.toFixed(2);
-        alert(precoformatado)
-         add_produto_array(i.nomeproduto, i.nomeproduto , 0 , i.quantidade , "Asset", "ABC001" , 100)
+       
+         add_produto_array(i.nomeproduto, i.nomeproduto , precoformatado , i.quantidade , "Asset", "ABC001" , 100)
          
       }
 
@@ -1366,7 +1366,7 @@ function masc(val) {
       obj_produtos = {
          Name:nomeproduto,
          Description:descricao,
-         UnitPrice:unitpreco,
+         UnitPrice: toString(unitpreco) ,
          Quantity:qtd,
          Type:type,
          Sku:"ABC001",
