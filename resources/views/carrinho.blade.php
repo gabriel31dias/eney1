@@ -1349,7 +1349,7 @@ function masc(val) {
       let produtos = JSON.parse(obj_venda.produtosjson)  
       produtos = produtos.produtos
       for(let i of produtos){
-      
+        alert(i.precoproduto)
          add_produto_array(i.nomeproduto, i.nomeproduto , i.precoproduto , i.quantidade , "Asset", "ABC001" , 100)
          
       }
@@ -1378,6 +1378,8 @@ function masc(val) {
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
       obj_final.id_loja = obj_produtos
+
+
     
       $.ajax({
             url: '{{route("cielopagamento")}}',
