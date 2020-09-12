@@ -1371,16 +1371,12 @@ function masc(val) {
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				     alert(JSON.stringify(data))
-              location.href = data
-               alert('certo')
+				      
+              location.href=data
             },
 
 		      	error: function (data) {
-				      
-              alert(JSON.stringify(data))
-              console.log(JSON.stringify(data))
-              alert('error')
+				      console.log('error transactional')
             },
 
             data: JSON.stringify(obj_final) 
