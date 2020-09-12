@@ -414,6 +414,7 @@ class VendaController extends Controller
         $cielo = $cielo->AddProductList($req->produtos);
         
         
+        
 
         $cielo =  $cielo->executa();
         return response()->json($cielo);

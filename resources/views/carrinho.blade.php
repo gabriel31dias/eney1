@@ -1383,7 +1383,7 @@ function masc(val) {
            
             },
 
-            data: JSON.stringify(obj_final)
+            data: obj_final
 
             
          }).then(function(){
