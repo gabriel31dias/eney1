@@ -1349,7 +1349,7 @@ function masc(val) {
       produtos = produtos.produtos
       for(let i of produtos){
       
-         add_produto_array(i.nomeproduto, i.nomeproduto , i.precoproduto , i.quantidade , type="Asset", Sku="ABC001" , weight=100)
+         add_produto_array(i.nomeproduto, i.nomeproduto , i.precoproduto , i.quantidade , "Asset", "ABC001" , 100)
          
       }
 
