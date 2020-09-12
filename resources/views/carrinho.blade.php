@@ -1352,7 +1352,7 @@ function masc(val) {
         let precoformatado = i.precoproduto
         precoformatado =  precoformatado.toFixed(2);
         alert(precoformatado)
-         add_produto_array(i.nomeproduto, i.nomeproduto , precoformatado , i.quantidade , "Asset", "ABC001" , 100)
+         add_produto_array(i.nomeproduto, i.nomeproduto , 0 , i.quantidade , "Asset", "ABC001" , 100)
          
       }
 
