@@ -413,11 +413,17 @@
 
 
 <script>
-
+  
+  let obj_final = new Object()
+  let obj_produtos = new Object()
+  let array_produtos_venda = []
   var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
 
   var socket = io('https://servidorsocket3636.herokuapp.com/')
   var obj_venda = {}
+  var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
+  var tipo_retirada = 'Entrega'
+  var lojacode = '{{$lojacod}}'
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
   obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
@@ -427,19 +433,11 @@
   obj_venda.cod_venda_web =   Math.floor(Math.random() * 655360);
 
   
-
-
-
-  var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
-  var tipo_retirada = 'Entrega'
-
-
-  var lojacode = '{{$lojacod}}'
+ 
 
    $('.fh5co-text').click(function(){
       
-    
-      
+
    })
 
   function removerdocarrinho(id){
@@ -701,6 +699,8 @@ if (formValues) {
   obj_venda.cidade = document.getElementById('CIDADE').value
   obj_venda.uf = document.getElementById('ESTADO').value
   obj_venda.valortotalprodutos = valor_total_venda
+  
+   
 
 
 
@@ -1346,7 +1346,25 @@ function masc(val) {
     }
 
 
+    async function add_produto_array(){
+      obj_produtos = {
+         Name:"Produto01",
+         Description:"ProdutoExemplo01",
+         UnitPrice:100,
+         Quantity:1,
+         Type:"Asset",
+         Sku:"ABC001",
+         Weight:500
+       }
+      array_produtos_venda.push(obj_produtos)
+    }
+
+
     async function executapagamento(apipg){
+      array_produtos_json = JSON.stringify(array_produtos_venda)
+      obj_final.produtos =  array_produtos_json
+      obj_final.id_loja = obj_produtos
+    
       $.ajax({
             url: '{{route("cielopagamento")}}',
             type: 'post',
