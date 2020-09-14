@@ -421,8 +421,7 @@ class VendaController extends Controller
         $cielo = $cielo->setComplemento($req->complemento);
         $cielo = $cielo->setCidade($req->cidade);
         $cielo = $cielo->setEstado($req->estado);
-        
-
+        $cielo = $cielo->setEmail($req->email);
         $cielo = $cielo->setName($req->nomecompleto);
         $cielo = $cielo->setTelefone($req->telefone);
         $cielo = $cielo->executa();
