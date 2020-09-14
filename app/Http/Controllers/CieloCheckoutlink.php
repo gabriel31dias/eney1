@@ -16,6 +16,8 @@ class CieloCheckoutlink extends Controller
     private $Complemento;
     private $Cidade;
     private $Estado;
+    private $Name;
+
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
   
@@ -37,7 +39,7 @@ class CieloCheckoutlink extends Controller
            CURLOPT_CUSTOMREQUEST => "POST",
            CURLOPT_POSTFIELDS =>"{  \n   \"OrderNumber\":\"Pedido013232\",\n   \"SoftDescriptor\":\"Exemplo\",\n   \"Cart\":{  \n      \"Discount\":{  \n  
                    \"Type\":\"Percent\",\n         \"Value\":00\n      },\n      \"Items\":   ".$this->Producs."\n     },\n   \"Shipping\":{  \n      \"SourceZipCode\":\"".$this->Cep."\",\n      \"TargetZipCode\":\"".$this->Cep."\",\n      \"Type\":\"FixedAmount\",\n      \"Services\":[  \n     
-                                        {  \n            \"Name\":\"Motoboy\",\n            \"Price\":1,\n            \"Deadline\":15,\n            \"Carrier\":null\n         },\n         {  \n            \"Name\":\"UPS Express\",\n            \"Price\":1,\n            \"Deadline\":2,\n            \"Carrier\":null\n         }\n      ],\n      \"Address\":{  \n         \"Street\":\"Rua Cambui\",\n         \"Number\":\"92\",\n         \"Complement\":\"Apto 201\",\n         \"District\":\"Freguesia\",\n         \"City\":\"Rio de Janeiro\",\n         \"State\":\"RJ\"\n      }\n   },\n   \"Payment\":{  \n      \"BoletoDiscount\":15,\n      \"DebitDiscount\":10,\n      \"Installments\":null,\n      \"MaxNumberOfInstallments\": null\n   },\n   \"Customer\":{  \n      \"Identity\":\"84261300206\",\n      \"FullName\":\"Test de Test\",\n      \"Email\":\"test@cielo.com.br\",\n      \"Phone\":\"21987654321\"\n   },\n   \"Options\":{  \n     \"AntifraudEnabled\":true,\n     \"ReturnUrl\": \"http://www.cielo.com.br\"\n   },\n   \"Settings\":null\n}\n",
+                                        {  \n            \"Name\":\"Motoboy\",\n            \"Price\":1,\n            \"Deadline\":15,\n            \"Carrier\":null\n         },\n         {  \n            \"Name\":\"UPS Express\",\n            \"Price\":1,\n            \"Deadline\":2,\n            \"Carrier\":null\n         }\n      ],\n      \"Address\":{  \n         \"Street\":\"".$this->Address."\",\n         \"Number\":\"".$this->Number."\",\n         \"Complement\":\"".$this->Complemento."\",\n         \"District\":\"".$this->Bairro."\",\n         \"City\":\"".$this->Cidade."\",\n         \"State\":\"".$this->Estado."\"\n      }\n   },\n   \"Payment\":{  \n      \"BoletoDiscount\":15,\n      \"DebitDiscount\":10,\n      \"Installments\":null,\n      \"MaxNumberOfInstallments\": null\n   },\n   \"Customer\":{  \n      \"Identity\":\"84261300206\",\n      \"FullName\":\"Test de Test\",\n      \"Email\":\"test@cielo.com.br\",\n      \"Phone\":\"21987654321\"\n   },\n   \"Options\":{  \n     \"AntifraudEnabled\":true,\n     \"ReturnUrl\": \"http://www.cielo.com.br\"\n   },\n   \"Settings\":null\n}\n",
            CURLOPT_HTTPHEADER => array(
         "MerchantId: ".$this->Mercantid,
         "Content-type: application/json",
@@ -86,8 +88,13 @@ class CieloCheckoutlink extends Controller
         return $this;
     }
 
-    public function setEstado(){
+    public function setEstado($value){
         $this->Estado = $value;
+        return $this;
+    }
+
+    public function setName($value){
+        $this->Name = $value;
         return $this;
     }
 
