@@ -410,6 +410,7 @@ class VendaController extends Controller
 
     public function cielopagamento(Request $req){
         $cielo = new CieloCheckoutlink();
+        $cielo = $cielo->setNumber($req->numero);
         $GG = $cielo->Writenumber();
         return response()->json($GG);
 
