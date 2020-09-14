@@ -1328,13 +1328,13 @@ function atualiza_obj_user(){
 
 }
 
-function masc(val) {
-   $(val).maskMoney({
-      prefix: "",
-      decimal: ".",
-      thousands: ","
-   });
-   }
+     function masc(val) {
+        $(val).maskMoney({
+         prefix: "",
+         decimal: ".",
+         thousands: ","
+        });
+     }
 
 
     function masctel(){
@@ -1380,7 +1380,15 @@ function masc(val) {
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
       obj_final.id_loja = obj_produtos
-
+      obj_final.cep = obj_venda.cep
+      obj_final.endreco = obj_venda.endereco
+      obj_final.bairro = obj_venda.bairro
+      obj_final.numero = obj_venda.numero
+      obj_final.complemento = obj_venda.complemento
+      obj_final.cidade = obj_venda.cidade
+      obj_final.estado = obj_venda.estado
+      obj_final.nomecompleto = obj_venda.nome
+      obj_final.telefone = obj_venda.telefone
 
     
       $.ajax({
