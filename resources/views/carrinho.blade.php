@@ -1389,7 +1389,9 @@ function atualiza_obj_user(){
       obj_final.estado = obj_venda.estado
       obj_final.nomecompleto = obj_venda.nome
       obj_final.telefone = obj_venda.telefone
+  
 
+      alert('numero' + obj_final.numero)
     
       $.ajax({
             url: '{{route("cielopagamento")}}',
