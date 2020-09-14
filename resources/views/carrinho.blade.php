@@ -1366,7 +1366,7 @@ function atualiza_obj_user(){
       obj_produtos = {
          Name:nomeproduto,
          Description:descricao,
-         UnitPrice: unitpreco ,
+         UnitPrice: unitpreco * 100 ,
          Quantity:qtd,
          Type:type,
          Sku:"ABC001",
