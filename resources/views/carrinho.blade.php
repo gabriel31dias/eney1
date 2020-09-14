@@ -1361,7 +1361,7 @@ function atualiza_obj_user(){
       for(let i of produtos){
         let precoformatado = i.precoproduto
         precoformatado =  precoformatado.toFixed(2);
-        alert(precoformatado)
+      //  alert(precoformatado)
          add_produto_array(i.nomeproduto, i.nomeproduto , i.precoproduto  , i.quantidade , "Asset", "ABC001" , 100)
          
       }
@@ -1403,7 +1403,7 @@ function atualiza_obj_user(){
 
   
 
-      alert('numero' + obj_final.numero)
+     // alert('numero' + obj_final.numero)
     
       $.ajax({
             url: '{{route("cielopagamento")}}',
@@ -1411,7 +1411,7 @@ function atualiza_obj_user(){
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				      alert(JSON.stringify(data))
+				    //  alert(JSON.stringify(data))
               location.href=data
             },
 
