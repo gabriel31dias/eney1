@@ -87,6 +87,7 @@ class CarrinhoController extends Controller
         "celular"=>$req->celular,
         "cep"=>$req->cep,
         "numero" => $req->numero,
+        "email" => $req->email,
        );
 
        Session::put("user_web_app",$getuser);

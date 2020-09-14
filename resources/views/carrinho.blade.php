@@ -725,9 +725,16 @@ const { value: formValues } = await temaapp.fire({
 
 
     <div class="form-group col-xs-12  col-md-6">
-      <label for="inputZip">Digite seu telefone ?</label>
+      <label for="inputZip">Digite seu telefone</label>
 	  <input onfocus="masctel(this)" type="text" value="{{$userapp['celular'] ?? ''}}
       " class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
+
+    </div>
+
+     <div class="form-group col-xs-12  col-md-12">
+      <label for="inputZip">Digite seu Email</label>
+	  <input onfocus="masctel(this)" type="text" value="{{$userapp['celular'] ?? ''}}
+      " class="form-control"  value="" id="email" name="email" placeholder="" >
 
     </div>
 
@@ -752,6 +759,7 @@ const { value: formValues } = await temaapp.fire({
 
 obj_venda.nome = document.getElementById('nome').value 
 obj_venda.telefone = document.getElementById('telefone').value 
+obj_venda.email = document.getElementById('email').value 
 obj_venda.tiporetirada = tipo_retirada
 
 
@@ -1324,6 +1332,11 @@ function atualiza_obj_user(){
       obj_user.numero = document.getElementById('NUMERO').value
    }
    catch (e) {
+   }
+   try {
+    obj_user.email = document.getElementById('email').value 
+   }
+    catch (e) {
    }
 
 }
