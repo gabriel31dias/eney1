@@ -17,6 +17,7 @@ class CieloCheckoutlink extends Controller
     private $Cidade;
     private $Estado;
     private $Name;
+    private $Telefone;
 
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
@@ -96,6 +97,11 @@ class CieloCheckoutlink extends Controller
     public function setName($value){
         $this->Name = $value;
         return $this;
+    }
+
+    public function setTelefone($value){
+       $this->Telefone = $value;
+       return $this;
     }
 
 
