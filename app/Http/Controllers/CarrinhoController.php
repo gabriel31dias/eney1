@@ -465,7 +465,7 @@ class CarrinhoController extends Controller
         $venda->uf = $req->uf;
         $venda->troco = $req->troco;
         $venda->forma = $req->forma;  //Forma pagamento
-        $venda = $venda->save();
+        $venda = $venda->create($venda);
 
         ////------Limpezas do cash em browser
         Session::put('carrinho', null);
