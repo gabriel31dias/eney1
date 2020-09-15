@@ -1390,7 +1390,7 @@ function atualiza_obj_user(){
 
       
 
-  
+   
 
      // alert('numero' + obj_final.numero)
     
@@ -1400,7 +1400,7 @@ function atualiza_obj_user(){
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				    //  alert(JSON.stringify(data))
+				     alert(JSON.stringify(data))
               location.href=data
             },
 
