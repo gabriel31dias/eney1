@@ -997,18 +997,11 @@ async function formas_pagamento(){
       
  }).then(function(){
    //alert(document.getElementById('formapg').value)
-
    let formapg = document.getElementById('formapg').value
    obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
-
-  
-
-    cash_forma_pg = document.getElementById("formapg");
-    cash_forma_pg = cash_forma_pg.options[cash_forma_pg.selectedIndex].text;
-    cash_forma_pg = cash_forma_pg.toUpperCase() 
-
-   
-
+   cash_forma_pg = document.getElementById("formapg");
+   cash_forma_pg = cash_forma_pg.options[cash_forma_pg.selectedIndex].text;
+   cash_forma_pg = cash_forma_pg.toUpperCase() 
    obj_venda.troco = document.getElementById('trocovalor').value
    finaliza_tela_1()
  })
@@ -1259,7 +1252,7 @@ function enviavenda() {
                 setTimeout(function() {
 
                    alert(cash_forma_pg)
-                  if(cash_forma_pg.match(/CARTAO/)){
+                  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){
                          alert('cartao detectado');
                          executapagamento()
                    }else{
