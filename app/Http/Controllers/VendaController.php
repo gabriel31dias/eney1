@@ -449,7 +449,7 @@ class VendaController extends Controller
     }
 
     public function mudastatus( Request $req){
-        $tt =  $this->temp->all();
+        $tt =  $this->temp;
         $tt =  $tt->create(['value'=>json_encode($req)]);
         return  response()->json($tt);
     }
