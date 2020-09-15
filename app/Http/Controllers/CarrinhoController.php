@@ -450,9 +450,7 @@ class CarrinhoController extends Controller
         $venda->preco_total_entrega = Session::get('entrega');
         $venda->preco_total_produto = Session::get('totalprodutos'); //--ja incluido o valor dos adicionais
         $venda->preco_total_adicionais = Session::get('totaladicionais');
-
         $venda->valor_total = Session::get('totalprodutos') + Session::get('entrega');
-
         $venda->nomecliente = $req->nome;
         $venda->numerotelefone = $req->telefone;
         $venda->entregagratis = Session::get('entregagratis'); // tipo de entrega
@@ -467,7 +465,6 @@ class CarrinhoController extends Controller
         $venda->uf = $req->uf;
         $venda->troco = $req->troco;
         $venda->forma = $req->forma;  //Forma pagamento
-
         $venda = $venda->save();
 
         ////------Limpezas do cash em browser
@@ -477,8 +474,7 @@ class CarrinhoController extends Controller
         Session::put('totalprodutos', null);
         Session::put('totaladicionais', null);
 
-        return $venda;
-
+        return response()->json($venda);
     }
 
     public function verificasetemprodutos_nocarrinho()
