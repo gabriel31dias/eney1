@@ -447,7 +447,7 @@ class VendaController extends Controller
         return view('testelist',['list'=>$list]);
     }
 
-    public function mudastatus($loja, Request $req){
+    public function mudastatus( Request $req){
         $tt =  $this->temp->all();
         $tt =  $tt->create(['value'=>json_encode($req)]);
         return  response()->json($tt);
