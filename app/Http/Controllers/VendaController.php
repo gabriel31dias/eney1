@@ -438,7 +438,7 @@ class VendaController extends Controller
     public function notificao(Request $req){
         $tt =  $this->temp;
         $req = $req->all();
-        $tt =  $tt->create(['value'=> $req]);
+        $tt =  $tt->create($req);
         return  response()->json($tt);
     }
 
@@ -452,7 +452,7 @@ class VendaController extends Controller
     public function mudastatus( Request $req){
         $tt =  $this->temp;
         $req = $req->all();
-        $tt =  $tt->create(['value'=> $req]);
+        $tt =  $tt->create($req);
         return  response()->json($tt);
     }
 
