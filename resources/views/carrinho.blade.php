@@ -1388,6 +1388,9 @@ function atualiza_obj_user(){
       obj_final.email = obj_venda.email
       obj_final.numerovenda = cash_idvenda
       obj_final.codeloja = lojacode
+      obj_final.urlretorno = '' + 'https://versatil14185.herokuapp.com'+'/app/loja/' + lojacode
+
+      alert(obj_final.urlretorno)
 
       
 

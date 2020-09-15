@@ -428,6 +428,9 @@ class VendaController extends Controller
         $cielo = $cielo->setName($req->nomecompleto);
         $cielo = $cielo->setOrderNumber($req->codeloja .'-'. $req->numerovenda);
         $cielo = $cielo->setTelefone($req->telefone);
+        $cielo = $cielo->setUrlReturn($req->urlretorno);
+
+        
         $cielo = $cielo->executa();
         
         return response()->json($cielo);
