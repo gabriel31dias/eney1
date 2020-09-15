@@ -1228,7 +1228,7 @@ function enviavenda() {
                 contentType: 'application/json',
                 success: function(data) {
                      alert(data)
-                     cash_idvenda = JSON.stringify(data)
+                     cash_idvenda = data
                      alert('venda salva')
                      emitvendapg()
                 },
