@@ -440,6 +440,9 @@ class VendaController extends Controller
 
     public function notificao(Request $req){
         $tt =  $this->temp;
+
+
+
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=>$req]);
         return  response()->json($tt);
@@ -454,6 +457,12 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         $tt =  $this->temp;
+        $auxvend = explode(".",$req->order_number) ;
+        
+        echo $auxvend[0];
+        echo $auxvend[1];
+
+
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=>$req]);
         return  response()->json($tt);
