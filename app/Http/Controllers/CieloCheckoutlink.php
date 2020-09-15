@@ -47,11 +47,11 @@ class CieloCheckoutlink extends Controller
         "Cookie: ARRAffinity=24b69ec43a385a35f00243c885d57b9207d8ca54474a7de7492216dc4f81280d"
          ),
          ));
-      $response = curl_exec($curlx);
-     //  curl_close($curlx);
-     //  $response = json_decode($response);
-     //  return $response->settings->checkoutUrl;
-      return $response;
+        $response = curl_exec($curlx);
+        curl_close($curlx);
+        $response = json_decode($response);
+        return $response->settings->checkoutUrl;
+      
     }
 
     public function AddProductList($products){
