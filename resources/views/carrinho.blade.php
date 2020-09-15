@@ -1240,18 +1240,15 @@ function enviavenda(){
 
             data: JSON.stringify(obj_venda)
        
-
-            
+          
         }).then(function(){
 
             lembrar()
 
         })
 		
-
-
   async function emitvendapg(){
-    ''emit venda
+    //emit venda
     alert('entro no emit venda pagamento')
     await  Swal.fire(
       'Parabéns, a compra foi concluida com sucesso, caso tenha alguma duvida entre em contato.',
