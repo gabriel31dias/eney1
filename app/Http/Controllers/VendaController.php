@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Venda;
 use Session;
 use App\Http\Controllers\CieloCheckoutlink;
+use Log;
 
 
 class VendaController extends Controller
@@ -410,7 +411,7 @@ class VendaController extends Controller
 
     public function cielopagamento(Request $req){
         $cielo = new CieloCheckoutlink();
-
+        Log::info('Novo pagamento cielo');
         $cielo = $cielo->addMerchantId('35c778b2-f9b1-478c-bc7a-2667f6027652');
         $cielo = $cielo->AddProductList($req->produtos);
         $cielo = $cielo->setCep($req->cep);
@@ -431,9 +432,10 @@ class VendaController extends Controller
        // $cielo->AddProductList();
     }
 
-    public function notificao($loja, Request $req){
+    public function notificao(Request $req){
         
 
+      
 
         return response()->json($loja);
     }

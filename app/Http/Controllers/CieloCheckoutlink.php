@@ -51,7 +51,6 @@ class CieloCheckoutlink extends Controller
         curl_close($curlx);
         $response = json_decode($response);
         return $response->settings->checkoutUrl;
-      
     }
 
     public function AddProductList($products){
