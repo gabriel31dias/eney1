@@ -457,13 +457,18 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         $tt =  $this->temp;
-        $auxvend = explode("-",$req->order_number) ;
+        $auxvend = explode("-",$req->order_number);
+
+        $venda = $this->vendas->find($auxvend[1]);
+        if($req->payment_status == '3'){
+            $venda->statuspvenda_pg = true;
+        }
+        $venda = $venda->save();
+
         
         
-
-
         $req = json_encode($req->all()) ;
-        $tt =  $tt->create(['value'=> $auxvend[0]]);
+        $tt =  $tt->create(['value'=> $venda]);
         return  response()->json($tt);
     }
 
