@@ -1387,6 +1387,7 @@ function atualiza_obj_user(){
       obj_final.telefone = obj_venda.telefone
       obj_final.email = obj_venda.email
       obj_final.numerovenda = cash_idvenda
+      obj_final.codeloja = lojacode
 
       
 

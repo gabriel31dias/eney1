@@ -50,8 +50,8 @@ class CieloCheckoutlink extends Controller
         $response = curl_exec($curlx);
         curl_close($curlx);
         $response = json_decode($response);
-        return $response->settings->checkoutUrl;
-      
+       // return $response->settings->checkoutUrl;
+        return $response;
     }
 
     public function AddProductList($products){
@@ -111,7 +111,7 @@ class CieloCheckoutlink extends Controller
     }
 
     public function setOrderNumber($value){
-        $this->OrderNumber ="loja" . $value;
+        $this->OrderNumber = $value;
         return $this;
 
     }
