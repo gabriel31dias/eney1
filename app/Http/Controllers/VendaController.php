@@ -445,12 +445,12 @@ class VendaController extends Controller
      ///Funcao para teste
         $list = $this->temp;
         $list =  $list->all();
-        return view('testelist',['list'=>$list->all()]);
+        return view('testelist',['list'=> $list->all()]);
     }
 
     public function mudastatus( Request $req){
         $tt =  $this->temp;
-        $tt =  $tt->create(['value'=>$req->all()]);
+        $tt =  $tt->create(['value'=> $req->all()]);
         return  response()->json($tt);
     }
 
