@@ -474,7 +474,7 @@ class CarrinhoController extends Controller
         Session::put('totalprodutos', null);
         Session::put('totaladicionais', null);
 
-        return response()->json($venda);
+        return response()->json($venda->id);
     }
 
     public function verificasetemprodutos_nocarrinho()
