@@ -459,12 +459,11 @@ class VendaController extends Controller
         $tt =  $this->temp;
         $auxvend = explode(".",$req->order_number) ;
         
-        echo $auxvend[0];
-        echo $auxvend[1];
+        
 
 
         $req = json_encode($req->all()) ;
-        $tt =  $tt->create(['value'=>$req]);
+        $tt =  $tt->create(['value'=> $auxvend[0]]);
         return  response()->json($tt);
     }
 
