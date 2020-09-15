@@ -443,7 +443,8 @@ class VendaController extends Controller
 
     public function listteste(){
      ///Funcao para teste
-        $list = $this->temp->all();
+        $list = $this->temp;
+        $list =  $list->all();
         return view('testelist',['list'=>$list]);
     }
 
