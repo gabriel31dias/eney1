@@ -111,7 +111,7 @@ class CieloCheckoutlink extends Controller
     }
 
     public function setOrderNumber($value){
-        $this->OrderNumber = "loja" ;
+        $this->OrderNumber =  utf8_encode("loja" . $value);
         return $this;
     }
 
