@@ -1226,26 +1226,19 @@ function enviavenda() {
                 dataType: 'json',
                 contentType: 'application/json',
                 success: function(data) {
-                    // alert(JSON.stringify(data))
-                    alert('venda salva')
-                    emitvendapg()
-
-
+                     alert(JSON.stringify(data))
+                     alert('venda salva')
+                     emitvendapg()
                 },
 
                 error: function(data) {
-
                     //alert(JSON.stringify(data))
-
                 },
 
                 data: JSON.stringify(obj_venda)
 
-
             }).then(function() {
-
                 lembrar()
-
             })
 
             async function emitvendapg() {
@@ -1261,7 +1254,6 @@ function enviavenda() {
 
 
             }
-
 
         }
 
