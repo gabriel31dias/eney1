@@ -1206,7 +1206,7 @@ async function socket_createroom(){
 
 var datax = null;
 function enviavenda() {
-    alert('entrou na venda')
+   // alert('entrou na venda')
 
     $.get('{{route("verificacarrinho")}}', function(data) {
 
@@ -1227,9 +1227,9 @@ function enviavenda() {
                 dataType: 'json',
                 contentType: 'application/json',
                 success: function(data) {
-                     alert(data)
+                  //   alert(data)
                      cash_idvenda = data
-                     alert('venda salva')
+                    // alert('venda salva')
                      emitvendapg()
                 },
 
@@ -1390,11 +1390,11 @@ function atualiza_obj_user(){
       obj_final.codeloja = lojacode
       obj_final.urlretorno = '' + 'https://versatil14185.herokuapp.com'+'/app/loja/' + lojacode
 
-      alert(obj_final.urlretorno)
+      //alert(obj_final.urlretorno)
 
       
 
-   
+   //teter
 
      // alert('numero' + obj_final.numero)
     
