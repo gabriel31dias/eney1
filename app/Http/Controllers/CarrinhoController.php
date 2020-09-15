@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Carrinho;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\User;
 use App\Produto;
 use App\Config;
 use App\Grupo;
 use Session;
-use DB;
+///use DB;
 use App\Venda;
 use App\Forma;
 
@@ -465,7 +466,7 @@ class CarrinhoController extends Controller
         $venda->uf = $req->uf;
         $venda->troco = $req->troco;
         $venda->forma = $req->forma;  //Forma pagamento
-        $venda = $venda->create($venda);
+        $venda = $venda->save();
 
         ////------Limpezas do cash em browser
         Session::put('carrinho', null);
@@ -474,7 +475,10 @@ class CarrinhoController extends Controller
         Session::put('totalprodutos', null);
         Session::put('totaladicionais', null);
 
-        return response()->json($venda->id);
+        $vendaid = DB::getPdo()->lastInsertId();
+
+
+        return response()->json($venda);
     }
 
     public function verificasetemprodutos_nocarrinho()
