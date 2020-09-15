@@ -1001,7 +1001,11 @@ async function formas_pagamento(){
    let formapg = document.getElementById('formapg').value
    obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
 
-   cash_forma_pg =  obj_venda.forma.toUpperCase() 
+  
+
+    cash_forma_pg = document.getElementById("formapg");
+    cash_forma_pg = cash_forma_pg.options[cash_forma_pg.selectedIndex].text;
+    cash_forma_pg = cash_forma_pg.toUpperCase() 
 
    
 
