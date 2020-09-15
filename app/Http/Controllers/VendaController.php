@@ -436,9 +436,10 @@ class VendaController extends Controller
     }
 
     public function notificao(Request $req){
-       $tt =  $this->temp;
-       $tt =  $tt->create(['value'=>json_encode($req)]);
-       return response()->json($tt);
+        $tt =  $this->temp;
+        $req = $req->all();
+        $tt =  $tt->create(['value'=> $req]);
+        return  response()->json($tt);
     }
 
     public function listteste(){
@@ -450,7 +451,8 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         $tt =  $this->temp;
-        $tt =  $tt->create(['value'=> $req->all()]);
+        $req = $req->all();
+        $tt =  $tt->create(['value'=> $req]);
         return  response()->json($tt);
     }
 
