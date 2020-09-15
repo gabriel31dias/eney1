@@ -121,10 +121,6 @@ Route::get('/carrinho/listusersave/','CarrinhoController@listusersave')->name("l
 
 
 
-
-
-
-
 ///----Rotas Config
 Route::get('/config','ConfigController@index')->middleware('auth')->name("config");
 Route::get('config/save','ConfigController@save')->middleware('auth')->name("configsave");

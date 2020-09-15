@@ -411,7 +411,7 @@
 
 
 <script>
-  
+  var cash_forma_pg = ''
   let obj_final = new Object()
   let obj_produtos = new Object()
   let array_produtos_venda = []
@@ -1001,6 +1001,8 @@ async function formas_pagamento(){
    let formapg = document.getElementById('formapg').value
    obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
 
+   cash_forma_pg =  obj_venda.forma.toUpperCase() 
+
    obj_venda.troco = document.getElementById('trocovalor').value
    finaliza_tela_1()
  })
@@ -1247,10 +1249,18 @@ function enviavenda() {
                 //emit venda
                 alert('entro no emit venda pagamento')
 
-                socket.emit('canalcomunica', obj_venda);
+                
                 setTimeout(function() {
 
-                    executapagamento()
+                
+                  if(cash_forma_pg.match(/CARTÃO/)){
+                         alert('cartao detectado');
+                         executapagamento()
+                   }else{
+                        socket.emit('canalcomunica', obj_venda);
+                   }
+
+                    
 
                 }, 800)
 
