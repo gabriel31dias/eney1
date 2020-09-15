@@ -422,6 +422,7 @@
   var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
   var tipo_retirada = 'Entrega'
   var lojacode = '{{$lojacod}}'
+  var cash_idvenda = ''
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
   obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
@@ -1226,7 +1227,8 @@ function enviavenda() {
                 dataType: 'json',
                 contentType: 'application/json',
                 success: function(data) {
-                     alert(JSON.stringify(data))
+                     alert(data)
+                     cash_idvenda = JSON.stringify(data)
                      alert('venda salva')
                      emitvendapg()
                 },
@@ -1384,6 +1386,9 @@ function atualiza_obj_user(){
       obj_final.nomecompleto = obj_venda.nome
       obj_final.telefone = obj_venda.telefone
       obj_final.email = obj_venda.email
+      obj_final.numerovenda = cash_idvenda
+
+      
 
   
 

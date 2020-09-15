@@ -19,6 +19,7 @@ class CieloCheckoutlink extends Controller
     private $Name;
     private $Telefone;
     private $Email;
+    private $OrderNumber;
 
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
@@ -107,6 +108,11 @@ class CieloCheckoutlink extends Controller
     public function setEmail($value){
        $this->Email = $value;
        return $this;
+    }
+
+    public function setOrderNumber($value){
+        $this->OrderNumber = $value;
+        return $this;
     }
 
 
