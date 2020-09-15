@@ -1254,11 +1254,12 @@ function enviavenda() {
                 
                 setTimeout(function() {
 
-                
+                   alert(cash_forma_pg)
                   if(cash_forma_pg.match(/CARTAO/)){
                          alert('cartao detectado');
                          executapagamento()
                    }else{
+                      alert('cartao nao detectado');
                         socket.emit('canalcomunica', obj_venda);
                    }
 
