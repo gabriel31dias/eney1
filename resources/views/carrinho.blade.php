@@ -1205,7 +1205,7 @@ async function socket_createroom(){
 
 var datax = null;
 function enviavenda(){
-
+      alert('entrou na venda')
    
     $.get('{{route("verificacarrinho")}}',function(data){
 
@@ -1252,6 +1252,7 @@ function enviavenda(){
 
   async function emitvendapg(){
     ''emit venda
+    alert('entro no emit venda pagamento')
     await  Swal.fire(
       'Parabéns, a compra foi concluida com sucesso, caso tenha alguma duvida entre em contato.',
       '',
