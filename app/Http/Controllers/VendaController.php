@@ -429,9 +429,18 @@ class VendaController extends Controller
        // $cielo->AddProductList();
     }
 
-    public function confirmavenda(){
+    public function notificao($loja, Request $req){
+        
 
 
+        return response()->json($loja);
+    }
+
+    public function mudastatus($loja, Request $req){
+
+
+
+        return response()->json($loja);
     }
 
 }

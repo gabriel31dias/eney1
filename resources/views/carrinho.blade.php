@@ -1228,6 +1228,8 @@ function enviavenda(){
             success: function (data) {
 				    // alert(JSON.stringify(data))
               emitsk()
+
+              alert('venda salva')
             },
 
 		   	error: function (data) {
@@ -1237,6 +1239,7 @@ function enviavenda(){
           },
 
             data: JSON.stringify(obj_venda)
+       
 
             
         }).then(function(){

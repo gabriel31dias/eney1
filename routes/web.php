@@ -159,6 +159,9 @@ Route::get('/vendas/searchnaoentregue/{params?}','VendaController@searchnaoentre
 Route::get('/vendas/searchbairro/{params?}','VendaController@searchbairro')->middleware('auth')->name("searchbairro");
 Route::get('/vendas/searchrua/{params?}','VendaController@searchrua')->middleware('auth')->name("searchrua");
 Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->middleware('auth')->name("searchnumero");
+Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->middleware('auth')->name("searchnumero");
+Route::post('/vendas/notificacao/','VendaController@notificao')->name("notificao");
+Route::post('/vendas/mudastatus/','VendaController@mudastatus')->name("mudastatus");
 
 
 
