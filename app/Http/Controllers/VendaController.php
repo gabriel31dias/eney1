@@ -457,7 +457,7 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         $tt =  $this->temp;
-        $auxvend = explode(".",$req->order_number) ;
+        $auxvend = explode("-",$req->order_number) ;
         
         
 
