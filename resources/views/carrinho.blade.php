@@ -1204,83 +1204,73 @@ async function socket_createroom(){
 
 
 var datax = null;
-function enviavenda(){
-      alert('entrou na venda')
-   
-    $.get('{{route("verificacarrinho")}}',function(data){
+function enviavenda() {
+    alert('entrou na venda')
 
-     
-    if(data=='0'){
-      temaapp.fire({
-      icon: 'error',
-      title: 'O carrinho esta vazio',
-      text: '',
-      })
-           
-          return 
-    }else{
-      
-   $.ajax({
-            url: '{{route("savevenda")}}',
-            type: 'post',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {
-				    // alert(JSON.stringify(data))
-            emitvendapg()
-
-              alert('venda salva')
-            },
-
-		   	error: function (data) {
-				  
-         //alert(JSON.stringify(data))
-           
-          },
-
-            data: JSON.stringify(obj_venda)
-       
-          
-        }).then(function(){
-
-            lembrar()
-
-        })
-		
-  async function emitvendapg(){
-    //emit venda
-    alert('entro no emit venda pagamento')
-    await  Swal.fire(
-      'Parabéns, a compra foi concluida com sucesso, caso tenha alguma duvida entre em contato.',
-      '',
-       'success'
-      )
-    socket.emit('canalcomunica', obj_venda);
-    setTimeout(function(){
-
-      executapagamento()
-    
-    },800)
+    $.get('{{route("verificacarrinho")}}', function(data) {
 
 
-  }
- 
+        if (data == '0') {
+            temaapp.fire({
+                icon: 'error',
+                title: 'O carrinho esta vazio',
+                text: '',
+            })
+
+            return
+        } else {
+
+            $.ajax({
+                url: '{{route("savevenda")}}',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function(data) {
+                    // alert(JSON.stringify(data))
+                    alert('venda salva')
+                    emitvendapg()
 
 
+                },
+
+                error: function(data) {
+
+                    //alert(JSON.stringify(data))
+
+                },
+
+                data: JSON.stringify(obj_venda)
 
 
+            }).then(function() {
 
-    }
+                lembrar()
 
+            })
+
+            async function emitvendapg() {
+                //emit venda
+                alert('entro no emit venda pagamento')
+
+                socket.emit('canalcomunica', obj_venda);
+                setTimeout(function() {
+
+                    executapagamento()
+
+                }, 800)
+
+
+            }
+
+
+        }
 
     })
-  
 
-    
+
 
 
 }
-
 
  async function add_adicionais(){
 
