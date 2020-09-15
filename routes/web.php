@@ -160,8 +160,8 @@ Route::get('/vendas/searchbairro/{params?}','VendaController@searchbairro')->mid
 Route::get('/vendas/searchrua/{params?}','VendaController@searchrua')->middleware('auth')->name("searchrua");
 Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->middleware('auth')->name("searchnumero");
 Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->middleware('auth')->name("searchnumero");
-Route::post('/vendas/notificacao/','VendaController@notificao')->name("notificao");
-Route::post('/vendas/mudastatus/','VendaController@mudastatus')->name("mudastatus");
+Route::post('/vendas/notificacao','VendaController@notificao')->name("notificao");
+Route::post('/vendas/mudastatus','VendaController@mudastatus')->name("mudastatus");
 
 Route::get('/vendas/listteste/','VendaController@listteste')->middleware('auth')->name("listteste");
 
