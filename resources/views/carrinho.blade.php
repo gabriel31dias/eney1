@@ -1236,6 +1236,13 @@ function enviavenda() {
 
                 error: function(data) {
                     //alert(JSON.stringify(data))
+
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Ocorreu um erro na finalização da venda, Verifique os dados inseridos e tente novamente',
+                      footer: '<a href>Se persistir entre em contato</a>'
+                    })
                 },
 
                 data: JSON.stringify(obj_venda)
@@ -1416,7 +1423,13 @@ function atualiza_obj_user(){
             },
 
 		      	error: function (data) {
-				      console.log(data)
+				      
+              Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Ocorreu um erro na finalização da venda, Verifique os dados inseridos e tente novamente',
+                      footer: '<a href>Se persistir entre em contato</a>'
+                   })
             },
 
             data: JSON.stringify(obj_final) 
