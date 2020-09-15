@@ -1227,7 +1227,7 @@ function enviavenda(){
             contentType: 'application/json',
             success: function (data) {
 				    // alert(JSON.stringify(data))
-              emitsk()
+            emitvendapg()
 
               alert('venda salva')
             },
@@ -1250,7 +1250,8 @@ function enviavenda(){
 		
 
 
-  async function emitsk(){
+  async function emitvendapg(){
+    ''emit venda
     await  Swal.fire(
       'Parabéns, a compra foi concluida com sucesso, caso tenha alguma duvida entre em contato.',
       '',
