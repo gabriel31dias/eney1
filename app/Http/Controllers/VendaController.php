@@ -44,7 +44,7 @@ class VendaController extends Controller
         $tipo_op = Auth::user()->tipo_op;
 
         $getvendas = $this->vendas;
-        $getvendas = $getvendas->where('ID_USER', $iduser)->orderBy('id', 'ASC')->get();
+        $getvendas = $getvendas->where('ID_USER', $iduser)->where('statuspvenda_pg',true)->orderBy('id', 'ASC')->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -88,7 +88,7 @@ class VendaController extends Controller
         $iduser = Session::get('ID_USER');
         $cliente = $this
             ->vendas
-            ->where('ID_USER', $iduser)->where('nomecliente', 'like', '%' . $param . '%')->get();
+            ->where('ID_USER', $iduser)->where('nomecliente', 'like', '%' . $param . '%')->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -134,7 +134,7 @@ class VendaController extends Controller
         $cliente = $this
             ->vendas
             ->where('statuspvenda', true)
-            ->where('ID_USER', $iduser)->where('nomecliente', 'like', '%' . $param . '%')->get();
+            ->where('ID_USER', $iduser)->where('nomecliente', 'like', '%' . $param . '%')->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -179,7 +179,7 @@ class VendaController extends Controller
         $cliente = $this
             ->vendas
             ->where('statuspvenda', false)
-            ->where('ID_USER', $iduser)->where('nomecliente', 'like', '%' . $param . '%')->get();
+            ->where('ID_USER', $iduser)->where('nomecliente', 'like', '%' . $param . '%')->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -222,7 +222,7 @@ class VendaController extends Controller
         $iduser = Session::get('ID_USER');
         $cliente = $this
             ->vendas
-            ->where('ID_USER', $iduser)->where('numerotelefone', $param)->get();
+            ->where('ID_USER', $iduser)->where('numerotelefone', $param)->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -266,7 +266,7 @@ class VendaController extends Controller
         $iduser = Session::get('ID_USER');
         $cliente = $this
             ->vendas
-            ->where('ID_USER', $iduser)->where('bairro', 'like', '%' . $param . '%')->get();
+            ->where('ID_USER', $iduser)->where('bairro', 'like', '%' . $param . '%')->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -310,7 +310,7 @@ class VendaController extends Controller
         $iduser = Session::get('ID_USER');
         $cliente = $this
             ->vendas
-            ->where('ID_USER', $iduser)->where('endereco', 'like', '%' . $param . '%')->get();
+            ->where('ID_USER', $iduser)->where('endereco', 'like', '%' . $param . '%')->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -354,7 +354,7 @@ class VendaController extends Controller
         $iduser = Session::get('ID_USER');
         $cliente = $this
             ->vendas
-            ->where('ID_USER', $iduser)->where('endereco', 'like', '%' . $param . '%')->get();
+            ->where('ID_USER', $iduser)->where('endereco', 'like', '%' . $param . '%')->where('statuspvenda_pg',true)->get();
 
         $filtrad_vendas = array_map(function ($value)
         {
@@ -459,7 +459,7 @@ class VendaController extends Controller
         $tt =  $this->temp;
         $auxvend = explode("-",$req->order_number);
         $venda = $this->vendas->find($auxvend[1]);
-        if($req->payment_status == '3'){
+        if($req->payment_status == '2'){
             $venda->statuspvenda_pg = true;
         }
         $venda = $venda->save();
