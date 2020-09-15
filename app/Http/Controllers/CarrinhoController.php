@@ -478,7 +478,7 @@ class CarrinhoController extends Controller
         $vendaid = DB::getPdo()->lastInsertId();
 
 
-        return response()->json($venda);
+        return response()->json($vendaid);
     }
 
     public function verificasetemprodutos_nocarrinho()
