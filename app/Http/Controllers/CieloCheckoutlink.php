@@ -116,16 +116,11 @@ class CieloCheckoutlink extends Controller
     }
 
 
-
-
-
     public function Writemercantid(){
-        
         return $this->Mercantid;
     }
 
     public function Writenumber(){
-        
         return $this->Number;
     }
 
