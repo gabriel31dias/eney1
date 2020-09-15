@@ -1003,6 +1003,8 @@ async function formas_pagamento(){
 
    cash_forma_pg =  obj_venda.forma.toUpperCase() 
 
+   
+
    obj_venda.troco = document.getElementById('trocovalor').value
    finaliza_tela_1()
  })
@@ -1253,7 +1255,7 @@ function enviavenda() {
                 setTimeout(function() {
 
                 
-                  if(cash_forma_pg.match(/CARTÃO/)){
+                  if(cash_forma_pg.match(/CARTAO/)){
                          alert('cartao detectado');
                          executapagamento()
                    }else{
