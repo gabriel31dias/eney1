@@ -13,7 +13,7 @@ class Temp extends Migration
      */
     public function up()
     {
-        Schema::create('temp', function (Blueprint $table) {
+        Schema::create('temps', function (Blueprint $table) {
             $table->id();
             $table->longText('value')->nullable();
             $table->rememberToken();

@@ -163,6 +163,9 @@ Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->mid
 Route::post('/vendas/notificacao/','VendaController@notificao')->name("notificao");
 Route::post('/vendas/mudastatus/','VendaController@mudastatus')->name("mudastatus");
 
+Route::get('/vendas/listteste/','VendaController@listteste')->middleware('auth')->name("listteste");
+
+
 
 
 Route::get('/vendas/telefone/{params?}','VendaController@searchtelefone')->middleware('auth')->name("searchtelefone");

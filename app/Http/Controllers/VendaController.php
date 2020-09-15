@@ -8,6 +8,7 @@ use App\Venda;
 use Session;
 use App\Http\Controllers\CieloCheckoutlink;
 use Log;
+use App\Temp;
 
 
 class VendaController extends Controller
@@ -16,10 +17,12 @@ class VendaController extends Controller
     
 
     private $vendas;
+    private $temp;
 
-    public function __construct(Venda $venda)
+    public function __construct(Venda $venda, Temp $temp)
     {
         $this->vendas = $venda;
+        $this->temp = $temp;
     }
 
     public function index(Request $req)
@@ -433,18 +436,19 @@ class VendaController extends Controller
     }
 
     public function notificao(Request $req){
-        
+       $tt =  $this->temp;
+       $tt->create(['value'=>json_encode($req)]);
+    }
 
-      
-
-        return response()->json($loja);
+    public function listteste(){
+     ///Funcao para teste
+        $list = $this->temp->all();
+        return view('testelist',['list'=>$list]);
     }
 
     public function mudastatus($loja, Request $req){
-
-
-
-        return response()->json($loja);
+        $tt =  $this->temp->all();
+        $tt->create(['value'=>json_encode($req)]);
     }
 
 }
