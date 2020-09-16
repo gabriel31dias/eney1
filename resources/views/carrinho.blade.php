@@ -1459,7 +1459,7 @@ function IsEmail(email){
 
  async function screen_concluida(){
   await  Swal.fire(
-    'Muito bom, A venda foi concluida, com sucesso, mande um Oi no nosso whats para qualquer duvida! <a href="https://api.whatsapp.com/send?phone={{$whats_contato}}&text=Ol%C3%A1%20estou%20aguardando%20o%20pedido."></a>',
+    'Muito bom, A venda foi concluida, com sucesso, mande um Oi no nosso whats para qualquer duvida! <a href="https://api.whatsapp.com/send?phone={{$whats_contato}}&text=Ol%C3%A1%20estou%20aguardando%20o%20pedido.">Abrir Whats</a>',
     '',
     'success'
     )
