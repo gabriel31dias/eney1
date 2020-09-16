@@ -481,7 +481,7 @@ class VendaController extends Controller
 
     public function TesteHttpSocket(){
 
-        $response = Http::post('http://localhost:3400/comunica', [
+        $response = Http::post('https://servidorsocket3636.herokuapp.com/comunica', [
             'name' => 'Steve',
             'role' => 'Network Administrator',
           ]);
