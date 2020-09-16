@@ -1258,10 +1258,15 @@ function enviavenda() {
                 
                 setTimeout(function() {
 
-                  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){
+                  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                          executapagamento()
                    }else{
                         socket.emit('canalcomunica', obj_venda);
+                        setTimeout(function(){
+                
+                          screen_concluida()
+
+                        },1000);
                    }
 
                     
@@ -1452,6 +1457,17 @@ function IsEmail(email){
     else {return true;}
  }
  
+
+ async function screen_concluida(){
+  await  Swal.fire(
+    'Muito bom!',
+    'A venda foi concluida, com sucesso',
+    'success'
+    )
+    
+    alert('{{ env('SERVIDOR.SOCKET') }}')
+    location.href = "{{ env('SERVIDOR.SOCKET') }}"
+ }
 
 
 

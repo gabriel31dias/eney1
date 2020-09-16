@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Venda;
 use Session;
@@ -429,8 +429,6 @@ class VendaController extends Controller
         $cielo = $cielo->setOrderNumber($req->codeloja .'-'. $req->numerovenda);
         $cielo = $cielo->setTelefone($req->telefone);
         $cielo = $cielo->setUrlReturn($req->urlretorno);
-
-        
         $cielo = $cielo->executa();
         
         return response()->json($cielo);
@@ -456,13 +454,25 @@ class VendaController extends Controller
     }
 
     public function mudastatus( Request $req){
+        //Função responsavel por mudar status da tranzação
         $tt =  $this->temp;
-        $auxvend = explode("-",$req->order_number);
+        $auxvend = explode("-",$req->order_number);//Separa codigo da loja e o da venda
         $venda = $this->vendas->find($auxvend[1]);
         if($req->payment_status == '2'){
             $venda->statuspvenda_pg = true;
         }
         $venda = $venda->save();
+
+       // if($venda){
+
+         //   $response = Http::post('http://test.com/users', [
+             //   'name' => 'Steve',
+             //   'role' => 'Network Administrator',
+           // ]);
+
+        /// }
+  
+    
 
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=> $venda]);
