@@ -47,7 +47,7 @@ class CarrinhoController extends Controller
     {
         $this->set_total();
         $this->set_total_adicionais();
-        $getwhats_loja = $this->getnumero_whats($codigo);
+        $getwhats_loja = '';/// $this->getnumero_whats($codigo);
         $getuser_app = Session::get("user_web_app");
         $produtosjson = json_encode(['produtos'=>$this->removefotosall(Session::get('carrinho'))]);
         $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
