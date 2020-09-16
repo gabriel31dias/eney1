@@ -517,16 +517,16 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	<div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
          <br>
 		 <br>
-		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
+		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
 
 		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="addquantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
       
 	    </div>
-		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
+		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
 		<input type="text" id="quantidade" name="quantidade" style="height:30px;width:60px"  /> 
 	    </div>
 
-		<div class="col-xs-4 col-lg-6 col-md-6 col-sm-6">
+		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
 		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="removequantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
 	    </div>
        
