@@ -1465,8 +1465,8 @@ function IsEmail(email){
     'success'
     )
     
-    alert('{{ env('SERVIDOR.SOCKET') }}')
-    location.href = "{{ env('SERVIDOR.SOCKET') }}"
+    alert('{{ env('SERVIDOR_SOCKET') }}')
+    location.href = "{{ env('SERVIDOR_SOCKET') }}"
  }
 
 
