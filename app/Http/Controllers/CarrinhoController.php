@@ -47,6 +47,7 @@ class CarrinhoController extends Controller
     {
         $this->set_total();
         $this->set_total_adicionais();
+        $getwhats_loja = $this->getnumero_whats($codigo);
         $getuser_app = Session::get("user_web_app");
         $produtosjson = json_encode(['produtos'=>$this->removefotosall(Session::get('carrinho'))]);
         $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
@@ -78,7 +79,7 @@ class CarrinhoController extends Controller
 
         $getgrupos = $this->grupos->where('ID_USER', $getidloja)->paginate(10);
 
-        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app ]);
+        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app ]);
     }
 
 
@@ -501,6 +502,12 @@ class CarrinhoController extends Controller
         $iduser = $iduser->id;   
         $getformas = $this->formas->where('ID_USER',$iduser)->get();
         return  response()->json($getformas);
+    }
+    
+
+    public function getnumero_whats($codeloja){
+       $getnumero = DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
+       return $getnumero->telefone1;
     }
 
 }
