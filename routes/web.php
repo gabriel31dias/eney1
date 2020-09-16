@@ -161,6 +161,11 @@ Route::post('/vendas/mudastatus','VendaController@mudastatus')->name("mudastatus
 
 Route::get('/vendas/listteste/','VendaController@listteste')->middleware('auth')->name("listteste");
 
+Route::get('/vendas/testehttp/','VendaController@TesteHttpSocket')->name("TesteHttpSocket");
+
+
+
+
 
 
 

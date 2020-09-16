@@ -463,20 +463,30 @@ class VendaController extends Controller
         }
         $venda = $venda->save();
 
-       // if($venda){
+        //if($venda){
 
-         //   $response = Http::post('http://test.com/users', [
-             //   'name' => 'Steve',
-             //   'role' => 'Network Administrator',
-           // ]);
+         // $response = Http::post('http://localhost:3000/', [
+           //  'name' => 'Steve',
+           //  'role' => 'Network Administrator',
+          // ]);
 
-        /// }
-  
-    
+       // }
+
 
         $req = json_encode($req->all()) ;
-        $tt =  $tt->create(['value'=> $venda]);
+        $tt =  $tt->create(['value'=> $req ]);
         return  response()->json($tt);
+    }
+
+
+    public function TesteHttpSocket(){
+
+        $response = Http::post('http://localhost:3400/comunica', [
+            'name' => 'Steve',
+            'role' => 'Network Administrator',
+          ]);
+
+          return  $response;
     }
 
 }
