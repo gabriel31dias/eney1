@@ -1460,13 +1460,13 @@ function IsEmail(email){
 
  async function screen_concluida(){
   await  Swal.fire(
-    'Muito bom!',
-    'A venda foi concluida, com sucesso',
+    'Muito bom, A venda foi concluida, com sucesso!',
+    '',
     'success'
     )
     
-    alert('{{ env('SERVIDOR_SOCKET') }}')
-    location.href = "{{ env('SERVIDOR_SOCKET') }}"
+    location.href = "{{ env('APP_URL') }}" + "app/loja/" + codeloja;
+
  }
 
 
