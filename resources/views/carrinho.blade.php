@@ -1407,11 +1407,10 @@ function atualiza_obj_user(){
       obj_final.email = obj_venda.email
       obj_final.numerovenda = cash_idvenda
       obj_final.codeloja = lojacode
-      obj_final.urlretorno = '' + 'https://versatil14185.herokuapp.com'+'/app/loja/' + lojacode
+      obj_final.urlretorno = '{{env('APP_URL')}}'+'app/loja/' + lojacode
 
       //alert(obj_final.urlretorno)
 
-      
 
    //teter
 
@@ -1460,12 +1459,12 @@ function IsEmail(email){
 
  async function screen_concluida(){
   await  Swal.fire(
-    'Muito bom, A venda foi concluida, com sucesso!',
+    'Muito bom, A venda foi concluida, com sucesso, mande um Oi no nosso whats para qualquer duvida!',
     '',
     'success'
     )
     
-    location.href = "{{ env('APP_URL') }}" + "app/loja/" + codeloja;
+    location.href = "{{ env('APP_URL') }}" + "app/loja/" + lojacode;
 
  }
 

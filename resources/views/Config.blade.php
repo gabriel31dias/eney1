@@ -212,13 +212,13 @@ visibility: hidden;
                             <p>
 
                         <div class="form-line">
-                            <label class="form-label">Telefone 1:</label>
+                            <label class="form-label">Celular Whatsapp 1:</label>
                             <input  value="{{$usercf->telefone1 ?? ''}}" name="telefone1"  name="telefone1" type="text" class="form-control">
                            
                         </div>
                         <p>
                         <div class="form-line">
-                            <label class="form-label">Telefone 2:</label>
+                            <label class="form-label">Telefone ou Celular 2:</label>
                             <input value="{{$usercf->telefone2 ?? ''}}" name="telefone2"  name="telefone2" type="text" class="form-control">
                         </div>
                     <br>
