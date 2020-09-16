@@ -1253,7 +1253,7 @@ function enviavenda() {
 
             async function emitvendapg() {
                 //emit venda
-                alert('entro no emit venda pagamento')
+               /// alert('entro no emit venda pagamento')
 
                 
                 setTimeout(function() {
