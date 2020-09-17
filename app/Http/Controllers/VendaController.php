@@ -482,7 +482,7 @@ class VendaController extends Controller
 
 
     public function TesteHttpSocket(){
-        $client = new SocketIOClient('http://localhost:8000');
+        $client = new SocketIOClient('https://servidorsocket3636.herokuapp.com/');
         $client->connect();
         //send messag
         $client->message('fefe');
