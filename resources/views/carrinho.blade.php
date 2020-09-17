@@ -1208,6 +1208,7 @@ async function socket_createroom(){
 var datax = null;
 function enviavenda() {
    // alert('entrou na venda')
+   obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
     $.get('{{route("verificacarrinho")}}', function(data) {
 

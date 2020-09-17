@@ -19,7 +19,7 @@ class Vendas extends Migration
             $table->longText('produtos_array')->nullable();
             $table->decimal('preco_total_adicionais', 10, 2)->nullable();
             $table->decimal('preco_total_produto', 10, 2)->nullable(); ////SOMA TODOS OS PRODUTOS + ADICIONAIS
-
+            $table->longText('venda_json')->nullable();
             $table->decimal('preco_total_entrega', 10, 2)->nullable();
             $table->decimal('valor_total', 10, 2)->nullable();
             $table->string('tiporetirada')->nullable(); //array

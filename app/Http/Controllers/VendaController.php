@@ -479,6 +479,14 @@ class VendaController extends Controller
 
        // }
 
+        // Socket io --------->>>> Envia
+            $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+            /// $client = new Client(new Version2X('http://localhost:3000'));
+            $client->initialize();
+            // send for server (listen) the any array
+            $client->emit('canalcomunica', ['room' => 28]);
+            $client->close();
+
 
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=> $req ]);
@@ -487,18 +495,15 @@ class VendaController extends Controller
 
 
     public function TesteHttpSocket(){
-    // create client for server http://localhost:9009
-$client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+            $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+            $getvenda =  $this->vendas->find(1)->first();
 
-// open connection
-$client->initialize();
+            var_dump($getvenda);
 
-// send for server (listen) the any array
-$client->emit('listen', ['age' => 28]);
-
-// close connection
-$client->close();
-        
+            $client->initialize();
+            // send for server (listen) the any array
+            $client->emit('canalcomunica', ['value' =>  $getvenda->venda_json]);
+            $client->close();
     }
 
 }

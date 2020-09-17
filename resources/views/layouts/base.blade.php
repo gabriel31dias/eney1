@@ -806,7 +806,9 @@ Swal.fire({
 
              });
 
-var socket = io('https://servidorsocket3636.herokuapp.com/')
+///var socket = io('https://servidorsocket3636.herokuapp.com/')
+
+var socket = io('http://localhost:3000')
 
 
 setTimeout(function(){ //Aguarda para criar a room 
@@ -819,7 +821,7 @@ async function socket_createroom(){
 }
 
 socket.on('receive',function(data){
-  alert('fesfs')
+ 
   if (data.tipo == 'novavenda'){
      novavenda(data)
      var audio = new Audio('/audio.mp3');
@@ -838,6 +840,7 @@ socket.on('receive',function(data){
   }
 
   if(data.produtosjson == 'volta'){
+     alert('xx')
     // resposta pra tela produtos
      document.getElementById('NOME_PRODUTO').value = data.nomeproduto
      document.getElementById('CODIGO_SISTEMA_GRUPO').value = data.codgrupo
