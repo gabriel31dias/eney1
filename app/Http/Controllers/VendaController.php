@@ -11,6 +11,7 @@ use Log;
 use App\Temp;
 use Ephp\SocketIOClient;
 use Ephp\Message;
+use Ephp\EngineInterface;
 
 
 class VendaController extends Controller
