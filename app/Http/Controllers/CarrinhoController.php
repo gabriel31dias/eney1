@@ -435,8 +435,15 @@ class CarrinhoController extends Controller
     }
 
     public function removefotosall($carrinho)
+    
     {
+
         $produtos = $carrinho;
+
+        if(!isset($produtos)){
+            
+           return ;
+        }
 
         $newproducts = array_map(function ($value)
         {
