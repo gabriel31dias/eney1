@@ -483,14 +483,13 @@ class VendaController extends Controller
 
 
     public function TesteHttpSocket(){
-
-        $response = Http::post('http://localhost:3400/comunica', [
-            'room'=>'1010',
-            'name' => 'Steve',
-            'role' => 'Network Administrator',
-          ]);
-
-          return  $response;
+        $client = new SocketIOClient('http://localhost:8000');
+        $client->connect();
+        //send message
+        //emit event
+        $client->emit('', 'dwadaw');
+        $client->disconnect();
+        
     }
 
 }
