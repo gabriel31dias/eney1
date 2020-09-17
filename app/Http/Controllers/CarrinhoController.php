@@ -439,11 +439,7 @@ class CarrinhoController extends Controller
     {
 
         $produtos = $carrinho;
-
-        if(!isset($produtos)){
-            
-           return ;
-        }
+        
 
         $newproducts = array_map(function ($value)
         {
