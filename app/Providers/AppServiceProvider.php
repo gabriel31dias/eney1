@@ -16,11 +16,9 @@ class AppServiceProvider extends ServiceProvider
     {
        // if ($this->app->environment() !== 'production') {
             
-      //  }  
+       // }  
         
-       // if (app()->environment('remote')) {
-            URL::forceSchema('https');
-       // }
+       
     }
 
     /**
