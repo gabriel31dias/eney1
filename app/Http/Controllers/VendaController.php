@@ -9,9 +9,8 @@ use Session;
 use App\Http\Controllers\CieloCheckoutlink;
 use Log;
 use App\Temp;
-use Tembo\Message;
-use Tembo\SocketIOClient;
-
+use Ephp\SocketIOClient;
+use Ephp\Message;
 
 
 class VendaController extends Controller
@@ -484,10 +483,16 @@ class VendaController extends Controller
 
     public function TesteHttpSocket(){
         $client = new SocketIOClient('http://localhost:8000');
+
         $client->connect();
+        
         //send message
+        $client->message('fefe');
+        
         //emit event
-        $client->emit('', 'dwadaw');
+    
+        $client->emit('fes', 'fes');
+        
         $client->disconnect();
         
     }
