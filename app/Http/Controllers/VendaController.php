@@ -468,9 +468,16 @@ class VendaController extends Controller
         $venda = $this->vendas->find($auxvend[1]);
      
         
-        if( $payment_vr->VerifyPayment($req)){
+        if( $payment_vr->VerifyPayment($req)){ //Verifica se a forma de pagamento aceitou o pagamento
             $venda->statuspvenda_pg = true;
             $venda = $venda->save();
+
+            $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+            $getvenda =  $this->vendas->find($auxvend[1])->first();
+            $client->initialize();
+            // send for server (listen) the any array
+            $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
+            $client->close();
         }
 
         //if($venda){
@@ -483,14 +490,7 @@ class VendaController extends Controller
        // }
 
         // Socket io --------->>>> Envia
-        $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
-        $getvenda =  $this->vendas->find($auxvend[1])->first();
-        var_dump($getvenda);
-        $client->initialize();
-        // send for server (listen) the any array
-        $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
-        $client->close();
-
+     
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=> $req ]);
         return  response()->json($tt);

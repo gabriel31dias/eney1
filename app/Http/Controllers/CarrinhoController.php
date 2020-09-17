@@ -513,6 +513,7 @@ class CarrinhoController extends Controller
 
     public function getnumero_whats($codeloja){
        $getnumero = DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
+    
        return $getnumero->telefone1;
     }
 
