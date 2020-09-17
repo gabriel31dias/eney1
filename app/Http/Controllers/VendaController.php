@@ -502,7 +502,7 @@ class VendaController extends Controller
 
             $client->initialize();
             // send for server (listen) the any array
-            $client->emit('canalcomunica', ['value' =>  $getvenda->venda_json]);
+            $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);
             $client->close();
     }
 
