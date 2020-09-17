@@ -13,6 +13,10 @@ use Ephp\SocketIOClient;
 use Ephp\Message;
 use Ephp\EngineInterface;
 
+use  ElephantIO\Client;
+use  ElephantIO\Engine\SocketIO\Version2X;
+
+
 
 class VendaController extends Controller
 {
@@ -483,13 +487,17 @@ class VendaController extends Controller
 
 
     public function TesteHttpSocket(){
-        $client = new SocketIOClient('https://servidorsocket3636.herokuapp.com/');
-       $client->connect();
-        //send messag
-      $client->message('fefe');
-        //emit event
-        $client->emit('fes', 'fes');
-        $client->disconnect();
+    // create client for server http://localhost:9009
+$client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+
+// open connection
+$client->initialize();
+
+// send for server (listen) the any array
+$client->emit('listen', ['age' => 28]);
+
+// close connection
+$client->close();
         
     }
 
