@@ -806,9 +806,9 @@ Swal.fire({
 
              });
 
-///var socket = io('https://servidorsocket3636.herokuapp.com/')
+var socket = io('https://servidorsocket3636.herokuapp.com/')
 
-var socket = io('http://localhost:3000')
+///var socket = io('http://localhost:3000')
 
 
 setTimeout(function(){ //Aguarda para criar a room 
