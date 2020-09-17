@@ -128,8 +128,19 @@ class CieloCheckoutlink extends Controller
     }
 
     public function Writenumber(){
-        
         return $this->Number;
+    }
+    
+    public function VerifyPayment($req){
+        if($req->payment_status == '2'){
+            return true;
+        }
+    }
+
+    public function getproperty_ident_venda($req){
+      
+      return  $req->order_number;
+
     }
 
     

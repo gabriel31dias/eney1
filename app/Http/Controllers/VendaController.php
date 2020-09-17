@@ -462,13 +462,16 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
+        $payment_vr = new CieloCheckoutlink();
         $tt =  $this->temp;
-        $auxvend = explode("-",$req->order_number);//Separa codigo da loja e o da venda
+        $auxvend = explode("-",  $payment_vr->getproperty_ident_venda($req));//Separa codigo da loja e o da venda --> getproperty_ident_venda() pega a propriedade de identificao da venda da forma de pagamento
         $venda = $this->vendas->find($auxvend[1]);
-        if($req->payment_status == '2'){
+     
+        
+        if( $payment_vr->VerifyPayment($req)){
             $venda->statuspvenda_pg = true;
+            $venda = $venda->save();
         }
-        $venda = $venda->save();
 
         //if($venda){
 
@@ -480,13 +483,13 @@ class VendaController extends Controller
        // }
 
         // Socket io --------->>>> Envia
-            $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
-            /// $client = new Client(new Version2X('http://localhost:3000'));
-            $client->initialize();
-            // send for server (listen) the any array
-            $client->emit('canalcomunica', ['room' => 28]);
-            $client->close();
-
+        $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+        $getvenda =  $this->vendas->find($auxvend[1])->first();
+        var_dump($getvenda);
+        $client->initialize();
+        // send for server (listen) the any array
+        $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
+        $client->close();
 
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=> $req ]);
@@ -495,15 +498,7 @@ class VendaController extends Controller
 
 
     public function TesteHttpSocket(){
-            $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
-            $getvenda =  $this->vendas->find(1)->first();
-
-            var_dump($getvenda);
-
-            $client->initialize();
-            // send for server (listen) the any array
-            $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);
-            $client->close();
+           
     }
 
 }
