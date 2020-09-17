@@ -483,16 +483,11 @@ class VendaController extends Controller
 
     public function TesteHttpSocket(){
         $client = new SocketIOClient('http://localhost:8000');
-
         $client->connect();
-        
-        //send message
+        //send messag
         $client->message('fefe');
-        
         //emit event
-    
         $client->emit('fes', 'fes');
-        
         $client->disconnect();
         
     }
