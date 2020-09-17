@@ -819,7 +819,7 @@ async function socket_createroom(){
 }
 
 socket.on('receive',function(data){
-  
+  alert('fesfs')
   if (data.tipo == 'novavenda'){
      novavenda(data)
      var audio = new Audio('/audio.mp3');

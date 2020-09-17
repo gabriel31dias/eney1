@@ -9,6 +9,9 @@ use Session;
 use App\Http\Controllers\CieloCheckoutlink;
 use Log;
 use App\Temp;
+use Tembo\Message;
+use Tembo\SocketIOClient;
+
 
 
 class VendaController extends Controller
@@ -481,7 +484,8 @@ class VendaController extends Controller
 
     public function TesteHttpSocket(){
 
-        $response = Http::post('https://servidorcli8585858.herokuapp.com/comunica', [
+        $response = Http::post('http://localhost:3400/comunica', [
+            'room'=>'1010',
             'name' => 'Steve',
             'role' => 'Network Administrator',
           ]);
