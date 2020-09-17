@@ -146,11 +146,5 @@ class CieloCheckoutlink extends Controller
     
     
     
- 
-
-
-
-
-
 
 }

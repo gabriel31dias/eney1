@@ -236,12 +236,19 @@ class CarrinhoController extends Controller
         $produtos_salvos_ids = [];
         $contador_valor = null;
 
-        foreach ($produtos_salvos as $value)
-        {
-            $contador_valor = (double)$value['precoproduto'] + $contador_valor;
-            array_push($getadicionais, $value['adicionais']);
+
+        if(isset($produtos_salvos )){
+
+            foreach ($produtos_salvos as $value)
+            {
+                $contador_valor = (double)$value['precoproduto'] + $contador_valor;
+                array_push($getadicionais, $value['adicionais']);
+            }
+    
+
         }
 
+    
         $getpreco_adicionais = null;
 
         // foreach ($getadicionais as $value) {
