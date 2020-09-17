@@ -442,6 +442,11 @@ class CarrinhoController extends Controller
         return $newproducts;
     }
 
+    public function testevendasall(){
+        $vendas = $this->vendas->all();
+        return response()->json($vendas);
+    }
+
     public function savevenda(Request $req)
     {
 
