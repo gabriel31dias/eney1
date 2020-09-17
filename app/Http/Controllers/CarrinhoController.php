@@ -236,6 +236,12 @@ class CarrinhoController extends Controller
         $produtos_salvos_ids = [];
         $contador_valor = null;
 
+        if(!isset($produtos_salvos)){
+
+            return ;
+
+        }
+
         foreach ($produtos_salvos as $value)
         {
             $contador_valor = (double)$value['precoproduto'] + $contador_valor;
@@ -285,6 +291,13 @@ class CarrinhoController extends Controller
         $produtos_salvos = Session::get('carrinho');
 
         $getadicionais = [];
+
+        if(!isset($produtos_salvos)){
+
+            return ;
+
+        }
+
 
         foreach ($produtos_salvos as $value)
         {
@@ -423,8 +436,14 @@ class CarrinhoController extends Controller
     }
 
     public function removefotosall($carrinho)
+
     {
         $produtos = $carrinho;
+
+        if(!isset($produtos)){
+           
+            return ;
+        }
 
         $newproducts = array_map(function ($value)
         {
