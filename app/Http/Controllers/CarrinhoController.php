@@ -236,19 +236,12 @@ class CarrinhoController extends Controller
         $produtos_salvos_ids = [];
         $contador_valor = null;
 
-
-        if(isset($produtos_salvos )){
-
-            foreach ($produtos_salvos as $value)
-            {
-                $contador_valor = (double)$value['precoproduto'] + $contador_valor;
-                array_push($getadicionais, $value['adicionais']);
-            }
-    
-
+        foreach ($produtos_salvos as $value)
+        {
+            $contador_valor = (double)$value['precoproduto'] + $contador_valor;
+            array_push($getadicionais, $value['adicionais']);
         }
 
-    
         $getpreco_adicionais = null;
 
         // foreach ($getadicionais as $value) {
@@ -292,11 +285,18 @@ class CarrinhoController extends Controller
         $produtos_salvos = Session::get('carrinho');
 
         $getadicionais = [];
+      
+        if(!isset($produtos_salvos)){
 
+          return ;
+        }
+         
         foreach ($produtos_salvos as $value)
         {
             array_push($getadicionais, $value['adicionais']);
         }
+
+
 
         foreach ($getadicionais as $value)
         {
