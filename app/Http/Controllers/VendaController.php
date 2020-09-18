@@ -558,11 +558,16 @@ class VendaController extends Controller
 
         foreach ($vendasnaoenviadas as $value) {
 
-         //  $this->socketEmitVenda($value->venda_json);
+          if( array_search($value->cod_venda_web ,$array_loja_enviada ,false) ){
+              $this->socketEmitVenda($value->venda_json);
+              echo $value->id;
+          }
+         
 
-          array_push($array_loja_enviada,$value->cod_venda_web);
-          echo $value->cod_venda_web;
-
+          
+          array_push($array_loja_enviada , $value->cod_venda_web);
+        
+          
         }
 
 
