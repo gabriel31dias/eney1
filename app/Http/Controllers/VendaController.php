@@ -560,7 +560,8 @@ class VendaController extends Controller
 
          //  $this->socketEmitVenda($value->venda_json);
 
-          array_push($array_loja_enviada,$vendasnaoenviadas->cod_venda_web);
+          array_push($array_loja_enviada,$value->cod_venda_web);
+          echo $value->cod_venda_web;
 
         }
 
