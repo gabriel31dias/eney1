@@ -554,6 +554,17 @@ class VendaController extends Controller
 
         $vendasnaoenviadas = $this->vendas->where('vendas_received', null)->get();
         $tt =  $this->temp;
+
+        foreach ($vendasnaoenviadas as $value) {
+
+                    
+           sleep(20);
+           $this->socketEmitVenda($value->venda_json);
+
+        }
+
+
+
         $tt =  $tt->create(['value'=> 'Cron app' ]);
         return  response()->json($vendasnaoenviadas);
 
