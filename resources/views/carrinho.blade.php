@@ -1429,7 +1429,7 @@ function atualiza_obj_user(){
             },
 
 		      	error: function (data) {
-				      
+				      console.log(data)
               Swal.fire({
                       icon: 'error',
                       title: 'Oops...',
