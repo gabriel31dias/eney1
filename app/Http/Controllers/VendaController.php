@@ -509,5 +509,10 @@ class VendaController extends Controller
 
     }
 
+    public function ReenvioVendaSimples(){
+
+
+    }
+
 }
 
