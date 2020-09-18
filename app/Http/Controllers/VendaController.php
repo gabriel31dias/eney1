@@ -554,12 +554,13 @@ class VendaController extends Controller
 
         $vendasnaoenviadas = $this->vendas->where('vendas_received', null)->get();
         $tt =  $this->temp;
+        $array_loja_enviada = [];
 
         foreach ($vendasnaoenviadas as $value) {
 
-                    
-           sleep(20);
-           $this->socketEmitVenda($value->venda_json);
+         //  $this->socketEmitVenda($value->venda_json);
+
+          array_push($array_loja_enviada,$vendasnaoenviadas->cod_venda_web);
 
         }
 
