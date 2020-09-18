@@ -149,6 +149,9 @@ Route::get('/adicionado/delete/{id?}/{idproduto?}','AdicionadoController@destroy
 ///-----Vendas
 Route::get('/vendas','VendaController@index')->middleware('auth')->name("vendas");
 Route::get('/vendas/list','VendaController@listvendas')->middleware('auth')->name("listvendas");
+Route::get('/vendas/listvendasn','VendaController@listvendasnaoaprovadas')->middleware('auth')->name("listvendasnaoaprovadas");
+
+
 Route::get('/vendas/searchbyname/{params?}','VendaController@search_nome')->middleware('auth')->name("search_nome");
 Route::get('/vendas/searchentregue/{params?}','VendaController@searchentregue')->middleware('auth')->name("searchentregue");
 Route::get('/vendas/searchnaoentregue/{params?}','VendaController@searchnaoentregue')->middleware('auth')->name("searchnaoentregue");
