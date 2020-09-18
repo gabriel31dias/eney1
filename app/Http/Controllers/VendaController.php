@@ -552,7 +552,7 @@ class VendaController extends Controller
 
     public function enviaVendasNaoenviadas(){
 
-        $vendasnaoenviadas = $this->vendas->where('vendas_received',false)->get();
+        $vendasnaoenviadas = $this->vendas->where('vendas_received', null)->get();
         $tt =  $this->temp;
         $tt =  $tt->create(['value'=> 'Cron app' ]);
         return  response()->json($vendasnaoenviadas);
