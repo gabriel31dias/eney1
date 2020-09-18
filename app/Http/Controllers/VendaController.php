@@ -572,12 +572,17 @@ class VendaController extends Controller
     }
 
     
+    public function ReenvioVendaSimples($codvenda){
+        $venda = $this->vendas->where("cod_venda_web",$codvenda)->first();
+        $this->socketEmitVenda($venda->venda_json);
+    } 
 
-
-
-    public function ReenvioVendaSimples(){
-
-
+    public function socketEmitVenda($json){
+        $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+        $client->initialize();
+        // send for server (listen) the any array
+        $client->emit('canalcomunica', ['valuexx' => $json ]);///Joga pra tabela de logs de mudança de status de venda
+        $client->close();
     }
 
 }

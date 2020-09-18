@@ -161,10 +161,10 @@ Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->mid
 Route::get('/vendas/searchnumero/{params?}','VendaController@searchnumero')->middleware('auth')->name("searchnumero");
 Route::post('/vendas/notificacao','VendaController@notificao')->name("notificao");
 Route::post('/vendas/mudastatus','VendaController@mudastatus')->name("mudastatus");
-
 Route::get('/vendas/listteste/','VendaController@listteste')->middleware('auth')->name("listteste");
-
 Route::get('/vendas/testehttp/','VendaController@TesteHttpSocket')->name("TesteHttpSocket");
+Route::get('/vendas/reenviovendasimples/{codvenda}','VendaController@ReenvioVendaSimples')->middleware('auth')->name("reenviasimples");
+
 
 
 
