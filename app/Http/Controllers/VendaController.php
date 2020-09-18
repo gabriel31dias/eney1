@@ -519,7 +519,7 @@ class VendaController extends Controller
      
      //   $tt =  $this->temp;//Logs
      //   $tt =  $tt->create(['value'=>  $codevenda]);
-     //   return $codevenda;
+       return $codevenda;
     }
 
     
