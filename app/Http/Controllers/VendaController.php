@@ -515,6 +515,7 @@ class VendaController extends Controller
         ///$vendasnaoenviadas = $this->vendas->where('vendas_received',false)->get();
         $tt =  $this->temp;
         $tt =  $tt->create(['value'=>  $req ]);
+        return "dwead";
       
     }
 
