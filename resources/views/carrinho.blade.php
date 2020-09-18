@@ -1237,7 +1237,7 @@ function enviavenda() {
 
                 error: function(data) {
                     //alert(JSON.stringify(data))
-
+                   alert('dfefes')
                    console.log(data)
                     Swal.fire({
                       icon: 'error',
