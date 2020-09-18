@@ -511,10 +511,16 @@ class VendaController extends Controller
     }
 
     public function setVendaRecebida(Request $req){
-        
-
-        return response()->json($req);
+        $req = json_encode($req);
+        $vendasnaoenviadas = $this->vendas->where('vendas_received',false)->get();
+        $tt =  $this->temp;
+        $tt =  $tt->create(['value'=>  $req ]);
+      
     }
+
+    
+
+
 
     public function ReenvioVendaSimples(){
 
