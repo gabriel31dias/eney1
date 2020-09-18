@@ -503,10 +503,17 @@ class VendaController extends Controller
 
     public function enviaVendasNaoenviadas(){
 
+        $vendasnaoenviadas = $this->vendas->where('vendas_received',false)->get();
         $tt =  $this->temp;
         $tt =  $tt->create(['value'=> 'Cron app' ]);
         return  response()->json($tt);
 
+    }
+
+    public function setVendaRecebida(Request $req){
+        
+
+        return response()->json($req);
     }
 
     public function ReenvioVendaSimples(){
