@@ -176,7 +176,8 @@ Route::get('/vendas/getproductsjson/{id?}','VendaController@getproductsjson')->m
 Route::post('/vendas/cielo/','VendaController@cielopagamento')->name("cielopagamento");
 
 Route::get('/vendas/enviavendasnaoenviadas/','VendaController@enviaVendasNaoenviadas')->name("enviavendasnaoenviadas");
-Route::post('/vendas/setvendarecebida','VendaController@setVendaRecebida')->name("setVendaRecebida");
+
+Route::post('/vendas/setvendarecebida','VendaController@setVendaRecebida')->name("setrecebida");
 
 
 
