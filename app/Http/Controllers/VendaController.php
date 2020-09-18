@@ -573,7 +573,7 @@ class VendaController extends Controller
 
 
         $tt =  $tt->create(['value'=> 'Cron app' ]);
-        return  response()->json($vendasnaoenviadas);
+      //  return  response()->json($vendasnaoenviadas);
 
     }
 
