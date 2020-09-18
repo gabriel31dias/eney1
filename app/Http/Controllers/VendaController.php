@@ -503,7 +503,10 @@ class VendaController extends Controller
 
     public function enviaVendasNaoenviadas(){
 
-     return response()->json('contingencia');   
+        $tt =  $this->temp;
+        $tt =  $tt->create(['value'=> 'Cron app' ]);
+        return  response()->json($tt);
+
     }
 
 }
