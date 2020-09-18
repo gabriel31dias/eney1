@@ -512,11 +512,13 @@ class VendaController extends Controller
 
     public function setVendaRecebida($codevenda){
         
-        ///$vendasnaoenviadas = $this->vendas->where('vendas_received',false)->get();
-        $tt =  $this->temp;
+        $vendasnaoenviadas = $this->vendas->find($codevenda);
+        $vendasnaoenviadas->vendas_received = true;
+        $vendasnaoenviadas->save();
+     
+        $tt =  $this->temp;//Logs
         $tt =  $tt->create(['value'=>  $codevenda]);
         return $codevenda;
-      
     }
 
     
