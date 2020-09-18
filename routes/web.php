@@ -177,7 +177,7 @@ Route::post('/vendas/cielo/','VendaController@cielopagamento')->name("cielopagam
 
 Route::get('/vendas/enviavendasnaoenviadas/','VendaController@enviaVendasNaoenviadas')->name("enviavendasnaoenviadas");
 
-Route::get('/vendas/setvendarecebida','VendaController@setVendaRecebida')->name("setrecebida");
+Route::get('/vendas/setvendarecebida/{codevenda}','VendaController@setVendaRecebida')->name("setrecebida");
 
 
 
