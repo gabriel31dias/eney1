@@ -501,5 +501,10 @@ class VendaController extends Controller
            
     }
 
+    public function enviaVendasNaoenviadas(){
+
+     return response()->json('contingencia');   
+    }
+
 }
 

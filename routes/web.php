@@ -175,6 +175,7 @@ Route::get('/vendas/getproductsjson/{id?}','VendaController@getproductsjson')->m
 //Forma d epagamento cielo
 Route::post('/vendas/cielo/','VendaController@cielopagamento')->name("cielopagamento");
 
+Route::get('/vendas/enviavendasnaoenviadas/','VendaController@enviaVendasNaoenviadas')->name("enviavendasnaoenviadas");
 
 
 

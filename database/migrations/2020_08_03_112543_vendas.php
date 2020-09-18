@@ -42,6 +42,7 @@ class Vendas extends Migration
             $table->string('forma')->nullable();  //Forma pagamento
             $table->boolean('statuspvenda')->nullable(); //true entregue //false pendente
             $table->boolean('statuspvenda_pg')->nullable(); //true pagamento ok //false pagamento nao concluido
+            $table->boolean('vendas_received')->nullable(); //campo para saber se o cliente recebeu a venda
             
             http://versatil14185.herokuapp.com/vendas/mudastatus
             $table->rememberToken();
