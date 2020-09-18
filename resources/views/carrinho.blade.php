@@ -1238,6 +1238,7 @@ function enviavenda() {
                 error: function(data) {
                     //alert(JSON.stringify(data))
 
+                   console.log(data)
                     Swal.fire({
                       icon: 'error',
                       title: 'Oops...',
