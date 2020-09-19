@@ -560,7 +560,7 @@ class VendaController extends Controller
 
          // if(! array_search($value->cod_venda_web ,$array_loja_enviada ,false) ){
               $this->socketEmitVenda($value->venda_json);
-              echo $value->id;
+           ///   echo $value->id;
              // $updatevenda = $this->vendas->find($value->id);
              // $updatevenda = $updatevenda->vendas_received 
          // }
