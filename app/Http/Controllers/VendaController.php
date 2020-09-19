@@ -561,6 +561,8 @@ class VendaController extends Controller
          // if(! array_search($value->cod_venda_web ,$array_loja_enviada ,false) ){
               $this->socketEmitVenda($value->venda_json);
               echo $value->id;
+             // $updatevenda = $this->vendas->find($value->id);
+             // $updatevenda = $updatevenda->vendas_received 
          // }
          
 
@@ -573,7 +575,9 @@ class VendaController extends Controller
 
 
         $tt =  $tt->create(['value'=> 'Cron app' ]);
-      //  return  response()->json($vendasnaoenviadas);
+      return  response()->json($vendasnaoenviadas);
+
+
 
     }
 
