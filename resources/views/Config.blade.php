@@ -372,7 +372,7 @@ visibility: hidden;
                         <p>
                             <div class="demo-switch">
                                 <div class="switch">
-                                     CieloCheckout<br><label>OFF<input type="checkbox" checked=""><span class="lever"></span>ON</label>
+                                     CieloCheckout<br><label>OFF<input type="checkbox" checked="true"><span class="lever"></span>ON</label>
                                 </div>
                                 <div class="switch">
                                     SkyTef<br><label>OFF<input type="checkbox" checked=""><span class="lever"></span>ON</label>
