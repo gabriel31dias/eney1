@@ -12,6 +12,8 @@ use App\Config;
 use App\Grupo;
 use Session;
 use DB;
+use Carbon\Carbon;
+
 
 class AppController extends Controller
 {
@@ -60,6 +62,13 @@ class AppController extends Controller
       $status_loja = true;
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
 
+    
+      if($getloja->horarioinicio >= Carbon::now() && $getloja->horariofinal <= Carbon::now()  ){ //Horario de funcionamento
+        $status_loja = true;
+      }else{
+        $status_loja = false;
+      }
+    
       if($getloja->status_at == 'true'){
         $status_loja = true;
       }else{
