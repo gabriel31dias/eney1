@@ -9,8 +9,8 @@
    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
    />
 
-   <script src='http://bgrins.github.io/spectrum/spectrum.js'></script>
-<link rel='stylesheet' href='http://bgrins.github.io/spectrum/spectrum.css' />
+   <script src='https://bgrins.github.io/spectrum/spectrum.js'></script>
+<link rel='stylesheet' href='https://bgrins.github.io/spectrum/spectrum.css' />
    <style>
 
 *:focus {
@@ -180,7 +180,7 @@ visibility: hidden;
                         Designer</a></li>
 
                         <li role="presentation" class=""><a href="#bandeiras" data-toggle="tab" aria-expanded="false">  <i class="large material-icons">card_membership</i>
-                            Bandeiras</a></li>
+                            Configurações de pagamento</a></li>
 
 
                         

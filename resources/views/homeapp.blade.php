@@ -68,7 +68,7 @@ visibility: hidden;
                    </div>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                   <div class="info-box">
+                   <div class="info-box hover-zoom-effect">
                        <div class="icon bg-deep-purple">
                            <i class="material-icons">favorite</i>
                        </div>
