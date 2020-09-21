@@ -37,8 +37,8 @@ class CreateUsersTable extends Migration
              
             $table->time('horarioinicio')->nullable();
             $table->time('horariofinal')->nullable();
-
-
+            $table->time('cielocode')->nullable();
+            $table->time('skytef')->nullable();
             $table->decimal('MINIMOPRECOENTREGAGRATIS', 10, 2)->nullable();
             $table->decimal('PRECOENTREGA', 10, 2)->nullable();
             ///REDES SOCIAIS

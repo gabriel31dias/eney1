@@ -172,7 +172,6 @@ visibility: hidden;
                             @desktop
                             <th>NOME CLIENTE</th>
                             @elsedesktop
-                           
                             @enddesktop
                            
                             <th>VALOR TOTAL</th>
@@ -186,7 +185,6 @@ visibility: hidden;
                             @desktop
                             <td>{{$item->nomecliente}}</td>
                             @elsedesktop
-                           
                             @enddesktop
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>{{$item->created_at}}</td>
