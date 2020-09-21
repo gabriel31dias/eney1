@@ -1211,9 +1211,10 @@ function enviavenda() {
                         
     }else{
                         
-  ///  obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
+       obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
                          
-     }
+   }
+   
    // alert('entrou na venda')
    obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
