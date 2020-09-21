@@ -34,7 +34,10 @@ class ConfigController extends Controller
         'telefone2'=> $req->telefone2,
         'tipo_op'=> $req->tipo_op,
         'MINIMOPRECOENTREGAGRATIS'=> $req->MINIMOPRECOENTREGAGRATIS,
-        'PRECOENTREGA'=> $req->PRECOENTREGA
+        'PRECOENTREGA'=> $req->PRECOENTREGA,
+        'horarioinicio'=> $req->horarioinicio,
+        'horarioinicio'=> $req->horarioinicio
+
         ]);
 
         return redirect()->route('config');
