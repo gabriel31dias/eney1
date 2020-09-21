@@ -69,7 +69,7 @@ class AppController extends Controller
         $status_loja = false;
       }
 
-      var_dump($getloja->horarioinicio);
+      var_dump(Carbon::now());
     
       if($getloja->status_at == 'true'){
         $status_loja = true;
