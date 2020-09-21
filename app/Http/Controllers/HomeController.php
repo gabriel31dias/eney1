@@ -34,8 +34,11 @@ class HomeController extends Controller
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',null)->get();
-        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasnaoaprovadas'=> $vendasnaoaprovadas]);
+        $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->get();
+
+        $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->get();
+        
+        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas]);
     }
 
     public function openloja(){

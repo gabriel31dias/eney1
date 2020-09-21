@@ -116,7 +116,7 @@ visibility: hidden;
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($vendasnaoaprovadas as $item)
+                        @foreach ($vendasaguardando as $item)
 
                         <tr>
                             <td>{{$item->nomecliente}}</td>

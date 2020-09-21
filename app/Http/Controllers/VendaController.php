@@ -527,6 +527,10 @@ class VendaController extends Controller
             // send for server (listen) the any array
             $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
             $client->close();
+        }else{
+            $venda->statuspvenda_pg = false;
+            $venda = $venda->save();
+
         }
 
         //if($venda){
