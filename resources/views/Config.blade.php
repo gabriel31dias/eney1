@@ -228,6 +228,8 @@ visibility: hidden;
                    
 
                     <div class="demo-checkbox">
+                        <div class="row">
+
                         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                             <h3>Hora de entrada</h3>
                             <input  type="time"  class="form-control" name="horarioinicio" id="horarioinicio" value="{{$usercf->horarioinicio ?? ''}}"  type="text" />
@@ -238,6 +240,7 @@ visibility: hidden;
                                 <input  type="time" class="form-control" name="horariofinal" id="horariofinal" value="{{$usercf->horariofinal ?? ''}}" type="text" />
                             </div>
                             
+                    </div>
                     </div>
 
                     
