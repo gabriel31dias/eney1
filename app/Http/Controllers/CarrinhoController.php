@@ -479,6 +479,7 @@ class CarrinhoController extends Controller
         $venda->preco_total_adicionais = Session::get('totaladicionais');
         $venda->valor_total = Session::get('totalprodutos') + Session::get('entrega');
         $venda->nomecliente = $req->nome;
+        $venda->statuspvenda_pg = $req->statuspvenda_pg;///Se for venda por cheque ja seta como true
         $venda->numerotelefone = $req->telefone;
         $venda->entregagratis = Session::get('entregagratis'); // tipo de entrega
         $venda->ID_USER = $req->ID_USER;

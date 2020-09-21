@@ -1223,6 +1223,12 @@ function enviavenda() {
             return
         } else {
 
+          if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                        
+            }else{
+              //obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
+            }
+
             $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
@@ -1263,6 +1269,7 @@ function enviavenda() {
                   if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                          executapagamento()
                    }else{
+                       
                         socket.emit('canalcomunica', obj_venda);
                         setTimeout(function(){
                 
