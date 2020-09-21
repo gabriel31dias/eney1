@@ -36,7 +36,7 @@ class ConfigController extends Controller
         'MINIMOPRECOENTREGAGRATIS'=> $req->MINIMOPRECOENTREGAGRATIS,
         'PRECOENTREGA'=> $req->PRECOENTREGA,
         'horarioinicio'=> $req->horarioinicio,
-        'horarioinicio'=> $req->horariofinal
+        'horariofinal'=> $req->horariofinal
 
         ]);
 
