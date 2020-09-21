@@ -79,18 +79,7 @@ class AppController extends Controller
       
       }
 
-      $gg =  gettype( $hora1 );
-      echo  $gg;
-      $ff =  gettype(   $hora2 );
-      echo  $ff;
 
-      var_dump(date("H:i:s"));
-      var_dump(strtotime($getloja->horarioinicio));
-      var_dump($getloja->horariofinal);
-
-    
-   
-     
       $getidloja  = '';
       if(isset( $getloja->id)){
          $getidloja =  $getloja->id; // o id da loja e o i do usuario
