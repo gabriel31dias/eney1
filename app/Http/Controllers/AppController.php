@@ -68,11 +68,12 @@ class AppController extends Controller
     
 
     
-      if($horainicio > strtotime(date('H:i')) &&  $horafinal < strtotime(date('H:i:s')) ){ //Horario de funcionamento
+      if($horainicio > strtotime(date('H:i:s')) &&  $horafinal < strtotime(date('H:i:s')) ){ //Horario de funcionamento
         $status_loja = true;
       }else{
         $status_loja = false;
       }
+
       $gg =  gettype($getloja->horarioinicio);
       echo  $gg;
       $ff =  gettype(date("H:i:s"));
