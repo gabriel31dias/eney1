@@ -70,6 +70,13 @@ class AppController extends Controller
         $status_loja = true;
       }else{
         $status_loja = false;
+
+        if($getloja->status_at == 'true'){
+          $status_loja = true;
+        }else{
+         $status_loja = false;
+         }
+      
       }
 
       $gg =  gettype( $hora1 );
@@ -82,12 +89,7 @@ class AppController extends Controller
       var_dump($getloja->horariofinal);
 
     
-    if($getloja->status_at == 'true'){
-          $status_loja = true;
-     }else{
-         $status_loja = false;
-    }
-      
+   
      
       $getidloja  = '';
       if(isset( $getloja->id)){
