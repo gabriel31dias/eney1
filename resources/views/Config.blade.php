@@ -368,16 +368,17 @@ visibility: hidden;
                     
             
                     <div role="tabpanel" class="tab-pane fade" id="bandeiras">
-                        <b>Escreva as bandeiras aceitas em seu estabelecimento</b>
+                        <b>Selecione o meio de pagamento eletrônico padrão</b>
                         <p>
-                            
-                            <div class="form-group demo-tagsinput-area">
-                                <div class="form-line focused">
-                                    <div class="bootstrap-tagsinput">    
-                                        
-                                       <input id="dew" type="text" class="form-control" data-role="tagsinput" value="Visa,MasterCard,Maestro,Hipercard,American,Express,Diners Club,Elo," >
+                            <div class="demo-switch">
+                                <div class="switch">
+                                     CieloCheckout<label>OFF<input type="checkbox" checked=""><span class="lever"></span>ON</label>
                                 </div>
-                            </div></div>
+                                <div class="switch">
+                                    SkyTef<label>OFF<input type="checkbox" checked=""><span class="lever"></span>ON</label>
+                                </div>
+                            </div>
+                           
                         </p>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="settings">
