@@ -62,13 +62,17 @@ class AppController extends Controller
       $status_loja = true;
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
 
-      $horainicio = strtotime("10:00:00");
-      $horafinal = strtotime("12:00:00");
+      
+      
+
+      $hora1      = strtotime('09:00');
+      $hora2      = strtotime('16:00');
+      $horaAtual = strtotime(date('H:i'));
      
     
 
     
-      if($horainicio > strtotime(date('H:i:s')) &&  $horafinal < strtotime(date('H:i:s')) ){ //Horario de funcionamento
+      if( $hora1   > $horaAtual &&  $hora2 <  $horaAtual  ){ //Horario de funcionamento
         $status_loja = true;
       }else{
         $status_loja = false;
