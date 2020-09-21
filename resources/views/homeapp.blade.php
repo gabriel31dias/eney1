@@ -110,8 +110,8 @@ visibility: hidden;
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>NOME</th>
-                            <th>TOTAL</th>
+                          
+                            <th>VALOR TOTAL</th>
                             <th>HORA</th>
                         </tr>
                     </thead>
@@ -119,10 +119,10 @@ visibility: hidden;
                         @foreach ($vendasaguardando as $item)
 
                         <tr>
-                            <td>{{$item->nomecliente}}</td>
+                            
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>{{$item->created_at}}</td>
-                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
+                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%%{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
                                 <i class="material-icons">chat</i>
                             </a></td>
                         </tr>
@@ -162,8 +162,8 @@ visibility: hidden;
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>NOME</th>
-                            <th>TOTAL</th>
+                           
+                            <th>VALOR TOTAL</th>
                             <th>HORA</th>
                         </tr>
                     </thead>
@@ -171,10 +171,10 @@ visibility: hidden;
                         @foreach ($vendasnaoaprovadas as $item)
 
                         <tr>
-                            <td>{{$item->nomecliente}}</td>
+                            
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>{{$item->created_at}}</td>
-                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
+                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%%{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
                                 <i class="material-icons">chat</i>
                             </a></td>
                         </tr>
