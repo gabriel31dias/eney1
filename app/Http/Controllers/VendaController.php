@@ -560,7 +560,7 @@ class VendaController extends Controller
 
     public function enviaVendasNaoenviadas(){
 
-        $vendasnaoenviadas = $this->vendas->where('vendas_received', null)->get();
+        $vendasnaoenviadas = $this->vendas->where('vendas_received', true)->get();
         $tt =  $this->temp;
         $array_loja_enviada = [];
 
