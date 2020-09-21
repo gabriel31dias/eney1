@@ -256,12 +256,12 @@ visibility: hidden;
                     <div class="row">
                         <div class="col-xs-4 col-lg-6 col-md-4 col-sm-4">
                         <h3>Hora de entrada</h3>
-                        <input   class="form-control" name="horarioinicio" id="horarioinicio" value="{{$usercf->horarioinicio ?? ''}}"  type="text" />
+                        <input  type="time"  class="form-control" name="horarioinicio" id="horarioinicio" value="{{$usercf->horarioinicio ?? ''}}"  type="text" />
                         </div>
     
                         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                             <h3>Hora de saida</h3>
-                            <input class="form-control" name="horariofinal" id="horariofinal" value="{{$usercf->horariofinal ?? ''}}" type="text" />
+                            <input  type="time" class="form-control" name="horariofinal" id="horariofinal" value="{{$usercf->horariofinal ?? ''}}" type="text" />
                         </div>
                         
                                         
@@ -460,6 +460,13 @@ var openFile = function(file) {
       thousands: ","
    });
    }
+
+
+   
+
+
+
+
 
   
 
