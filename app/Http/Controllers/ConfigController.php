@@ -36,8 +36,9 @@ class ConfigController extends Controller
         'MINIMOPRECOENTREGAGRATIS'=> $req->MINIMOPRECOENTREGAGRATIS,
         'PRECOENTREGA'=> $req->PRECOENTREGA,
         'horarioinicio'=> $req->horarioinicio,
-        'horariofinal'=> $req->horariofinal
-
+        'horariofinal'=> $req->horariofinal,
+        'cielocode' => $req->cielocode,
+        'skytef' => $req->skytef
         ]);
 
         return redirect()->route('config');
