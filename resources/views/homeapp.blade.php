@@ -111,9 +111,9 @@ visibility: hidden;
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>FIRST NAME</th>
-                            <th>LAST NAME</th>
-                            <th>USERNAME</th>
+                            <th>NOME CLIENTE</th>
+                            <th>VALOR TOTAL</th>
+                            <th>HORA VENDA</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -122,7 +122,7 @@ visibility: hidden;
                         <tr>
                             <th scope="row">1</th>
                             <td>{{$item->nomecliente}}</td>
-                            <td>Otto</td>
+                            <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>@mdo</td>
                         </tr>
                             
