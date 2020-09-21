@@ -34,7 +34,7 @@ class CreateUsersTable extends Migration
             $table->string('COR2')->nullable();//Nome da loja que vai aparecer no app
             $table->string('COR3')->nullable();//Nome da loja que vai aparecer no app
             $table->string('password');
-
+             
             $table->dateTime('horarioinicio')->nullable();
             $table->dateTime('horariofinal')->nullable();
 
