@@ -225,21 +225,10 @@ visibility: hidden;
 
                     
                     
-                    <div class="demo-checkbox">
-                        <h3>Configução de exportação</h3>
-                        <br>
-                        <input name="tipo_op" value="1" style="padding: 30px" type="radio" id="md_checkbox_1" class="chk-col-red">
-                        <label for="md_checkbox_1">Exportar do erp, mais manter a edição dos campos</label>
-                        
-                        <input name="tipo_op" value="2" style="padding:30px" type="radio" id="md_checkbox_2" class="chk-col-red" >
-                        <label for="md_checkbox_2">Exportar do erp, e bloquear a edição dos campos (configuração recomenda para evitar problemas como imparcialidade ou redundância de informações) </label>
-                        
-                       
-                        <br>
-                    </div>
+                   
 
                     <div class="demo-checkbox">
-                        <div class="col-xs-4 col-lg-6 col-md-4 col-sm-4">
+                        <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                             <h3>Hora de entrada</h3>
                             <input  type="time"  class="form-control" name="horarioinicio" id="horarioinicio" value="{{$usercf->horarioinicio ?? ''}}"  type="text" />
                             </div>
