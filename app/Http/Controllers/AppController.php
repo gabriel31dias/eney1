@@ -72,7 +72,7 @@ class AppController extends Controller
     
 
     
-      if($horaAtual > $hora1 && $horaAtual < $hora2  ){ //Horario de funcionamento
+      if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento
         $status_loja = true;
       }else{
         $status_loja = false;
