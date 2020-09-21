@@ -382,12 +382,12 @@ visibility: hidden;
 
                                 <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                     <h3>Código cielo</h3>
-                                    <input type="text" class="form-control" name="cielocode" id="cielocode" value="10:02:00">
+                                    <input type="text" class="form-control" name="cielocode" id="cielocode" value="{{$usercf->cielocode ?? ''}}">
                                     </div>
                 
                                     <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                         <h3>Código Skytef</h3>
-                                        <input type="text" class="form-control" name="skytef" id="skytef" value="13:04:00">
+                                        <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf->skytef ?? ''}}">
                                     </div>
                                     
                             </div>
