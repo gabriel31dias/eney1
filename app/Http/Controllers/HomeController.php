@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\VendaController;
+use App\Venda;
+
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class HomeController extends Controller
      * @return void
      */
     private $vendas;
-    public function __construct(VendaController $venda)
+    public function __construct(Venda $venda)
     {
         $this->vendas =  $venda;
         $this->middleware('auth');
@@ -31,8 +34,7 @@ class HomeController extends Controller
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        $vendasnaoaprovadas = $this->vendas->listvendasnaoaprovadas();
-        var_dump($vendasnaoaprovadas);
+        $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',null)->get();
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasnaoaprovadas'=> $vendasnaoaprovadas]);
     }
 
