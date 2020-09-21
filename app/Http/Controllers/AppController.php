@@ -66,11 +66,11 @@ class AppController extends Controller
       $horaAtual = strtotime(date('H:i:s'));
      
   
-      if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento
+      if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento 
         $status_loja = true;
       }else{
         $status_loja = false;
-
+        //Se nao tiver assume o manual
         if($getloja->status_at == 'true'){
           $status_loja = true;
         }else{
