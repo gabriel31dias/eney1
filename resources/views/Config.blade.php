@@ -389,7 +389,8 @@ visibility: hidden;
                                         <h3>Código Skytef</h3>
                                         <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf->skytef ?? ''}}">
                                     </div>
-                                    
+                                    <input id="save" class="btn bg-blue waves-effect" type="submit" value="Salvar">
+
                             </div>
                         </p>
                     </div>
