@@ -110,7 +110,11 @@ visibility: hidden;
                 <table class="table">
                     <thead>
                         <tr>
-                          
+                            @desktop
+                            <th>NOME CLIENTE</th>
+                            @elsedesktop
+                           
+                            @enddesktop
                             <th>VALOR TOTAL</th>
                             <th>HORA</th>
                         </tr>
@@ -162,6 +166,11 @@ visibility: hidden;
                 <table class="table">
                     <thead>
                         <tr>
+                            @desktop
+                            <th>NOME CLIENTE</th>
+                            @elsedesktop
+                           
+                            @enddesktop
                            
                             <th>VALOR TOTAL</th>
                             <th>HORA</th>
