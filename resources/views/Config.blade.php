@@ -378,7 +378,8 @@ visibility: hidden;
                                     SkyTef<br><label>OFF<input type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
                                 </div>
                             </div>
-                           
+                            <input type="text" id="codcielo" class="form-control" placeholder="Código cielo">
+                            <input type="text" id="codcielo" class="form-control" placeholder="Código Skytef">
                         </p>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="settings">
