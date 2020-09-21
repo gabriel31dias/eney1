@@ -1227,6 +1227,9 @@ function enviavenda() {
                         
             }else{
                obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
+               
+               alert(JSON.stringify(obj_venda))
+              
             }
 
             $.ajax({
