@@ -366,8 +366,7 @@ visibility: hidden;
 
 
                     
-                <form method="GET" action="{{route('configsave')}}">
-
+            
                     <div role="tabpanel" class="tab-pane fade" id="bandeiras">
                         <b>Selecione o meio de pagamento eletrônico padrão</b>
                         <p>
@@ -388,12 +387,8 @@ visibility: hidden;
                 
                                     <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                         <h3>Código Skytef</h3>
-                                        <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf-> ?? ''}}">
+                                        <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf->skytef ?? ''}}">
                                     </div>
-
-                                  <br>
-                                    <input id="save" class="btn bg-blue waves-effect" type="submit" value="Salvar">
-
                                     
                             </div>
                         </p>
@@ -409,7 +404,7 @@ visibility: hidden;
                     </div>
                 </div>
 
-            </form>
+            <
         
 </section>
 
