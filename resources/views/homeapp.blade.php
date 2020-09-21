@@ -110,8 +110,8 @@ visibility: hidden;
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>NOME CLIENTE</th>
-                            <th>VALOR TOTAL + ENTREGA</th>
+                            <th>NOME</th>
+                            <th>TOTAL+ENTREGA</th>
                             <th>HORA VENDA</th>
                         </tr>
                     </thead>
