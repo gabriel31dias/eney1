@@ -110,9 +110,8 @@ visibility: hidden;
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>#</th>
                             <th>NOME CLIENTE</th>
-                            <th>VALOR TOTAL</th>
+                            <th>VALOR TOTAL + ENTREGA</th>
                             <th>HORA VENDA</th>
                         </tr>
                     </thead>
@@ -120,10 +119,9 @@ visibility: hidden;
                         @foreach ($vendasnaoaprovadas as $item)
 
                         <tr>
-                            <th scope="row">1</th>
                             <td>{{$item->nomecliente}}</td>
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
-                            <td>@mdo</td>
+                            <td>{{$item->created_at}}</td>
                         </tr>
                             
                         @endforeach
