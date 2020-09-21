@@ -81,8 +81,8 @@ visibility: hidden;
            </div>
             
    </div>
-</div>
 
+   
 <table>
     <thead>
       <tr>
@@ -109,6 +109,8 @@ visibility: hidden;
       </tr>
     </tbody>
   </table>
+</div>
+
 
 
 </div>
