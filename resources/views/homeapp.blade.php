@@ -111,8 +111,8 @@ visibility: hidden;
                     <thead>
                         <tr>
                             <th>NOME</th>
-                            <th>TOTAL+ENTREGA</th>
-                            <th>HORA VENDA</th>
+                            <th>TOTAL</th>
+                            <th>HORA</th>
                         </tr>
                     </thead>
                     <tbody>
