@@ -65,9 +65,9 @@ class AppController extends Controller
       
       
 
-      $hora1      = strtotime('09:00');
-      $hora2      = strtotime('16:00');
-      $horaAtual = strtotime(date('H:i'));
+      $hora1      = strtotime('09:00:00');
+      $hora2      = strtotime('16:00:00');
+      $horaAtual = strtotime(date('H:i:s'));
      
     
 
