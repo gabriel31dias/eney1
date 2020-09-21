@@ -66,7 +66,7 @@ class AppController extends Controller
       $horafinal = strtotime("12:00:00");
 
     
-      if($horainicio >= strtotime("now") &&  $horafinal < strtotime("now")  ){ //Horario de funcionamento
+      if($horainicio > strtotime("now") &&  $horafinal < strtotime("now")  ){ //Horario de funcionamento
         $status_loja = true;
       }else{
         $status_loja = false;
@@ -81,11 +81,11 @@ class AppController extends Controller
       var_dump($getloja->horariofinal);
 
     
-      if($getloja->status_at == 'true'){
-        $status_loja = true;
-      }else{
-        $status_loja = false;
-      }
+   ///   if($getloja->status_at == 'true'){
+       // $status_loja = true;
+     // }else{
+    //    $status_loja = false;
+   //   }
       
      
       $getidloja  = '';
