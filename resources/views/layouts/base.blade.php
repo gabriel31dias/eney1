@@ -545,7 +545,7 @@ select {
                </li>
                <br>
               <center>
-               @if($tipo_op == '1')
+              
 
 
              
@@ -566,8 +566,7 @@ select {
                <i class="material-icons">remove_from_queue</i>
              </button>
 
-           @endif
-
+         
           
 
            
