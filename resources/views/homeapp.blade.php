@@ -122,7 +122,7 @@ visibility: hidden;
                             
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>{{$item->created_at}}</td>
-                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%%{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
+                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%20{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
                                 <i class="material-icons">chat</i>
                             </a></td>
                         </tr>
@@ -174,7 +174,7 @@ visibility: hidden;
                             
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>{{$item->created_at}}</td>
-                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%%{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
+                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%20{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
                                 <i class="material-icons">chat</i>
                             </a></td>
                         </tr>
