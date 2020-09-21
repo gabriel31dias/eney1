@@ -1207,6 +1207,13 @@ async function socket_createroom(){
 
 var datax = null;
 function enviavenda() {
+  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                        
+    }else{
+                        
+    obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
+                         
+     }
    // alert('entrou na venda')
    obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
@@ -1223,14 +1230,7 @@ function enviavenda() {
             return
         } else {
 
-          if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
-                        
-            }else{
-               obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
-               
-               alert(JSON.stringify(obj_venda.statuspvenda_pg))
-              
-            }
+         
 
             $.ajax({
                 url: '{{route("savevenda")}}',
