@@ -54,7 +54,7 @@ class AppController extends Controller
      
 
      //return  Session::get('CODLOJA');
-     
+     date_default_timezone_set('America/Sao_Paulo');
      
     
       $grupoitem = str_replace("-", " ", $grupoitem);
