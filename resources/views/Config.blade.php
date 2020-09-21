@@ -239,6 +239,17 @@ visibility: hidden;
                     </div>
 
                     <div class="demo-checkbox">
+                        <h3>Configurações de abertura por padrão ela é manual </h3>
+                        <br>
+                        <input name="tipo_op" value="1" style="padding: 30px" type="radio" id="md_checkbox_1" class="chk-col-red">
+                        <label for="md_checkbox_1">Loja aberta 24 horas por dia</label>
+                        
+                        <input name="tipo_op" value="2" style="padding:30px" type="radio" id="md_checkbox_2" class="chk-col-red" >
+                        <label for="md_checkbox_2">Definir horario de abertura e fechamento</label>
+                        
+                       
+                        <br>
+
                         <div class="col-xs-4 col-lg-6 col-md-4 col-sm-4">
                             <h3>Hora de entrada</h3>
                             <input  type="time"  class="form-control" name="horarioinicio" id="horarioinicio" value="{{$usercf->horarioinicio ?? ''}}"  type="text" />
@@ -250,6 +261,7 @@ visibility: hidden;
                             </div>
                        
                         <br>
+                    </div>
                     </div>
 
                     
