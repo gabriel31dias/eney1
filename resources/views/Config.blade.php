@@ -378,8 +378,19 @@ visibility: hidden;
                                     SkyTef<br><label>OFF<input type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
                                 </div>
                             </div>
-                            <input type="text" id="codcielo" class="form-control" placeholder="Código cielo">
-                            <input type="text" id="codcielo" class="form-control" placeholder="Código Skytef">
+                            <div class="row">
+
+                                <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+                                    <h3>Código cielo</h3>
+                                    <input type="time" class="form-control" name="horarioinicio" id="horarioinicio" value="10:02:00">
+                                    </div>
+                
+                                    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+                                        <h3>Código Skytef</h3>
+                                        <input type="time" class="form-control" name="horariofinal" id="horariofinal" value="13:04:00">
+                                    </div>
+                                    
+                            </div>
                         </p>
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="settings">
