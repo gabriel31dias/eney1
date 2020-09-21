@@ -35,7 +35,7 @@ visibility: hidden;
 
             <div class="row clearfix">
                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                   <div class="info-box">
+                   <div class="info-box hover-zoom-effect">
                        <div class="icon bg-red">
                            <i class="material-icons">shopping_cart</i>
                        </div>
@@ -46,7 +46,7 @@ visibility: hidden;
                    </div>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                   <div class="info-box">
+                   <div class="info-box hover-zoom-effect">
                        <div class="icon bg-indigo">
                            <i class="material-icons">face</i>
                        </div>
@@ -57,7 +57,7 @@ visibility: hidden;
                    </div>
                </div>
                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                   <div class="info-box">
+                   <div class="info-box hover-zoom-effect">
                        <div class="icon bg-purple">
                            <i class="material-icons">bookmark</i>
                        </div>
