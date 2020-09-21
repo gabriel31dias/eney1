@@ -273,6 +273,28 @@ visibility: hidden;
                     <br>
                     <br>
                     <br>
+
+                    <b>Selecione o meio de pagamento eletrônico padrão</b>
+                    <p>
+                        <div class="demo-switch">
+                            <div class="switch">
+                                 CieloCheckout<br><label>OFF<input id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
+                            </div>
+                            <div class="switch">
+                                SkyTef<br><label>OFF<input type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
+                            </div>
+                        </div>
+                        <div class="row">
+            
+                            <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+                                <h3>Código cielo</h3>
+                                <input type="text" class="form-control" name="cielocode" id="cielocode" value="{{$usercf->cielocode ?? ''}}">
+                                </div>
+            
+                                <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+                                    <h3>Código Skytef</h3>
+                                    <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf->skytef ?? ''}}">
+                                </div>
                     <input class="btn bg-blue waves-effect" type="submit" value="Salvar">
 
                     </form>
@@ -368,27 +390,7 @@ visibility: hidden;
                     
                 <form method="GET" action="{{route('configsave')}}">
                     <div role="tabpanel" class="tab-pane fade" id="bandeiras">
-                        <b>Selecione o meio de pagamento eletrônico padrão</b>
-                        <p>
-                            <div class="demo-switch">
-                                <div class="switch">
-                                     CieloCheckout<br><label>OFF<input id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
-                                </div>
-                                <div class="switch">
-                                    SkyTef<br><label>OFF<input type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                
-                                <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-                                    <h3>Código cielo</h3>
-                                    <input type="text" class="form-control" name="cielocode" id="cielocode" value="{{$usercf->cielocode ?? ''}}">
-                                    </div>
-                
-                                    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-                                        <h3>Código Skytef</h3>
-                                        <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf->skytef ?? ''}}">
-                                    </div>
+                      
                                     
                                     <br>
                                     <input id="save" class="btn bg-blue waves-effect" type="submit" value="Salvar">
