@@ -253,7 +253,7 @@ visibility: hidden;
 
                     <br>
                     <div class="row">
-                    <div class="col-xs-4 col-lg-6 col-md-4 col-sm-4">
+                    <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                     <h3>Entrega gratis, a partir de</h3>
                     <input onfocus="masc(this)"  class="form-control" name="MINIMOPRECOENTREGAGRATIS" id="MINIMOPRECOENTREGAGRATIS" value="{{$usercf->MINIMOPRECOENTREGAGRATIS ?? ''}}"  type="text" />
                     </div>
