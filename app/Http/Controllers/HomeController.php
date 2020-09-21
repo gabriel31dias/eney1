@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\VendaController;
 use App\Venda;
+use Carbon\Carbon;
 
 
 class HomeController extends Controller
@@ -34,9 +35,9 @@ class HomeController extends Controller
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->get();
+        $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->whereDate('created_at', Carbon::today())->get();
 
-        $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->get();
+        $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->whereDate('created_at', Carbon::today())->get();
         
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas]);
     }
