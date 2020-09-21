@@ -273,8 +273,9 @@ visibility: hidden;
                     <br>
                     <br>
                     <br>
-
-                    <b>Selecione o meio de pagamento eletrônico padrão</b>
+                   
+                    <h3>Selecione o meio de pagamento eletrônico padrão</h3>
+                    <br>
                     <p>
                         <div class="demo-switch">
                             <div class="switch">
@@ -295,6 +296,9 @@ visibility: hidden;
                                     <h3>Código Skytef</h3>
                                     <input type="text" class="form-control" name="skytef" id="skytef"  value="{{$usercf->skytef ?? ''}}">
                                 </div>
+                        </div>
+                        <br>
+                        <br>
                     <input class="btn bg-blue waves-effect" type="submit" value="Salvar">
 
                     </form>
