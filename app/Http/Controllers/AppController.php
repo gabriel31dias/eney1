@@ -68,6 +68,8 @@ class AppController extends Controller
       }else{
         $status_loja = false;
       }
+
+      var_dump($getloja->horarioinicio);
     
       if($getloja->status_at == 'true'){
         $status_loja = true;
