@@ -78,9 +78,9 @@ class AppController extends Controller
         $status_loja = false;
       }
 
-      $gg =  gettype($getloja->horarioinicio);
+      $gg =  gettype( $hora1 );
       echo  $gg;
-      $ff =  gettype(date('H:i:s'));
+      $ff =  gettype(   $hora2 );
       echo  $ff;
 
       var_dump(date("H:i:s"));
