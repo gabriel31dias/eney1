@@ -372,10 +372,10 @@ visibility: hidden;
                         <p>
                             <div class="demo-switch">
                                 <div class="switch">
-                                     CieloCheckout<br><label>OFF<input type="checkbox" checked="true"><span class="lever"></span>ON</label>
+                                     CieloCheckout<br><label>OFF<input id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
                                 </div>
                                 <div class="switch">
-                                    SkyTef<br><label>OFF<input type="checkbox" checked=""><span class="lever"></span>ON</label>
+                                    SkyTef<br><label>OFF<input type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
                                 </div>
                             </div>
                            
@@ -446,7 +446,8 @@ var openFile = function(file) {
    }
 
 
-   
+   document.getElementById("skytef").checked = false;
+
 
 
 
