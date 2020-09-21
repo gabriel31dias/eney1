@@ -91,8 +91,7 @@ visibility: hidden;
         <div class="card">
             <div class="header">
                 <h2>
-                    BASIC TABLES
-                    <small>Basic example without any additional modification classes</small>
+                    VENDAS AGUARDANDO APROVAÇÃO
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
