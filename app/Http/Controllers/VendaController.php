@@ -483,13 +483,17 @@ class VendaController extends Controller
         $cielo = $cielo->setEmail($req->email);
         $cielo = $cielo->setName($req->nomecompleto);
         $cielo = $cielo->setOrderNumber($req->codeloja .'-'. $req->numerovenda);
-        $cielo = $cielo->setTelefone($req->telefone);
+        $cielo = $cielo->setTelefone($this->soNumero($req->telefone));
         $cielo = $cielo->setUrlReturn($req->urlretorno);
         $cielo = $cielo->executa();
         
         return response()->json($cielo);
 
        // $cielo->AddProductList();
+    }
+
+    public function soNumero($str) {
+        return preg_replace("/[^0-9]/", "", $str);
     }
 
     public function notificao(Request $req){
