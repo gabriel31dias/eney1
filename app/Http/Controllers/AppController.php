@@ -63,7 +63,7 @@ class AppController extends Controller
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
 
     
-      if($getloja->horarioinicio >= Carbon::now() && $getloja->horariofinal <= Carbon::now()  ){ //Horario de funcionamento
+      if($getloja->horarioinicio >= date("H:i:s") && $getloja->horariofinal <= date("H:i:s")  ){ //Horario de funcionamento
         $status_loja = true;
       }else{
         $status_loja = false;
