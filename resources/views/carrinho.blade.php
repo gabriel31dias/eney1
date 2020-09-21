@@ -1107,7 +1107,7 @@ function lembrar(){
   </div>
   <div class="form-group col-md-6">
     <label for="inputAddress">Numero residencia</label>
-    <input type="text" class="form-control" value="@isset($userapp['numero']){{$userapp['numero']}}
+    <input maxlength="5" type="text" class="form-control" value="@isset($userapp['numero']){{$userapp['numero']}}
       @endisset"  id="NUMERO" name="NUMERO" placeholder="Numero ">
   </div>
   <div class="form-group col-md-6">
@@ -1214,7 +1214,7 @@ function enviavenda() {
        obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
                          
    }
-   
+
    // alert('entrou na venda')
    obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
