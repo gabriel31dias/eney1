@@ -443,9 +443,8 @@
       await $.get('{{route("validacodvenda")}}/'+vendac ,function(data){
       
        if(data==true){
-          control == false
+          control = false
           console.log('exit lot validation')
-          break
        }
       })
    }
