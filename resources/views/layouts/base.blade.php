@@ -743,7 +743,7 @@ async function getcodloja(){
 
  $("#eye").click(function(){
 
-   location.href = "{{route('get_loja')}}/"+getdata
+   location.href = "{{route('get_loja')}}/"+{{$codeloja}}
 
  })
 
