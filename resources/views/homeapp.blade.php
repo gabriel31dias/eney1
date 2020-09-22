@@ -132,9 +132,13 @@ visibility: hidden;
                             @enddesktop
                             @desktop
                             <td>@if($item->statuspvenda_pg == 1)
-                                   {{'Recebido'}}
-                                @endif
-                                </td>
+                                {{'Recebido no sistema'}}
+                   
+                                @else
+
+                                {{'Não recebido no sistema'}}
+                               @endif
+                             </td>
                             @elsedesktop
                             @enddesktop
 
@@ -203,8 +207,12 @@ visibility: hidden;
                             @enddesktop
                             @desktop
                             <td>@if($item->statuspvenda_pg == 1)
-                                {{'Recebido'}}
-                             @endif
+                                {{'Recebido no sistema'}}
+                   
+                                @else
+
+                                {{'Não recebido no sistema'}}
+                               @endif
                              </td>
                             @elsedesktop
                             @enddesktop
@@ -275,8 +283,12 @@ visibility: hidden;
                             @enddesktop
                             @desktop
                             <td>@if($item->statuspvenda_pg == 1)
-                                {{'Recebido'}}
-                             @endif
+                                {{'Recebido no sistema'}}
+                   
+                                @else
+
+                                {{'Não recebido no sistema'}}
+                               @endif
                              </td>
                             @elsedesktop
                             @enddesktop
