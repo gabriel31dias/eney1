@@ -438,7 +438,7 @@
     let vendac =  Math.floor(Math.random() * 655360);
     let control = true
   
-   // while (control == true) {
+   while (control == true) {
       await $.get('{{route("validacodvenda")}}/'+vendac ,function(){
        alert('codigo venda carregado'+vendac)
        alert(data)
@@ -446,7 +446,7 @@
           control == false
        }
       })
-    //}
+   }
 
     return vendac
  }
