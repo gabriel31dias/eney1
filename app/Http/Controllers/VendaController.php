@@ -618,5 +618,10 @@ class VendaController extends Controller
         $client->close();
     }
 
+    public function Validacod_venda($codevenda){
+        $vendas = $this->vendas->where('cod_venda_web',$codevenda);
+        return response()->json($codevenda);
+    }
+
 }
 

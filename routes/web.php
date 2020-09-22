@@ -170,11 +170,9 @@ Route::get('/vendas/reenviovendasimples/{codvenda}','VendaController@ReenvioVend
 
 
 
-
-
+Route::get('/vendas/validacodvenda/{codevenda}','VendaController@Validacod_venda')->name("validacodvenda");
 Route::get('/vendas/telefone/{params?}','VendaController@searchtelefone')->middleware('auth')->name("searchtelefone");
 Route::get('/vendas/getproductsjson/{id?}','VendaController@getproductsjson')->middleware('auth')->name("getproductsjson");
-
 //Forma d epagamento cielo
 Route::post('/vendas/cielo/','VendaController@cielopagamento')->name("cielopagamento");
 
