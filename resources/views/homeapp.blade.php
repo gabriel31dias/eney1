@@ -131,7 +131,10 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <td>{{$item->statuspvenda_pg}}</td>
+                            <td>@if($item->statuspvenda_pg == 1)
+                                   {{'Recebido'}}
+                                @endif
+                                </td>
                             @elsedesktop
                             @enddesktop
 
@@ -199,7 +202,10 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <td>{{$item->statuspvenda_pg}}</td>
+                            <td>@if($item->statuspvenda_pg == 1)
+                                {{'Recebido'}}
+                             @endif
+                             </td>
                             @elsedesktop
                             @enddesktop
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
@@ -268,7 +274,10 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <td>{{$item->statuspvenda_pg}}</td>
+                            <td>@if($item->statuspvenda_pg == 1)
+                                {{'Recebido'}}
+                             @endif
+                             </td>
                             @elsedesktop
                             @enddesktop
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
