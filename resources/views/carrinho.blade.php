@@ -429,7 +429,7 @@
   obj_venda.produtosjson = obj_venda.produtosjson.substring(0,  obj_venda.produtosjson.length - 1)
   obj_venda.totalentrega = valor_total_frete
   obj_venda.valortotalprodutos = '{{ number_format($totalemprodutos + $valorentrega  , 2) }}'
-  obj_venda.cod_venda_web = gerarcod_venda()
+  obj_venda.cod_venda_web =  Math.floor(Math.random() * 655360)
 
   
  
