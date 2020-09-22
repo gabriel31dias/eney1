@@ -440,7 +440,7 @@
   
    // while (control == true) {
       await $.get('{{route("validacodvenda")}}/'+vendac ,function(){
-       alert('codigo venda carregado'+codigovenda)
+       alert('codigo venda carregado'+vendac)
        alert(data)
        if(data==true){
           control == false
