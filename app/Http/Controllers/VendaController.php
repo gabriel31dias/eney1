@@ -627,7 +627,7 @@ class VendaController extends Controller
             $result = true;
         }
 
-        return response()->json($vendas);
+        return response()->json($result);
     }
 
 }
