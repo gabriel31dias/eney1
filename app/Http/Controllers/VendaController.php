@@ -475,7 +475,7 @@ class VendaController extends Controller
       
         $getmercantid = $this->users->where('codigo_estabelecimento', $req->codigo_estabelecimento )->first();
         Log::info('Novo pagamento cielo');
-        $cielo = $cielo->addMerchantId($getmercantid->entregagratis);
+        $cielo = $cielo->addMerchantId($getmercantid->cielocode);
        /// $cielo = $cielo->addMerchantId( '35c778b2-f9b1-478c-bc7a-2667f6027652');
         $cielo = $cielo->AddProductList($req->produtos);
         $cielo = $cielo->setCep($req->cep);
