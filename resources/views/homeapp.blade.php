@@ -113,7 +113,10 @@ visibility: hidden;
                             @desktop
                             <th>NOME CLIENTE</th>
                             @elsedesktop
-                           
+                            @enddesktop
+                            @desktop
+                            <th>SINCRONIZADO</th>
+                            @elsedesktop
                             @enddesktop
                             <th>VALOR TOTAL</th>
                             <th>HORA</th>
@@ -127,6 +130,11 @@ visibility: hidden;
                             <td>{{$item->nomecliente}}</td>
                             @elsedesktop
                             @enddesktop
+                            @desktop
+                            <td>{{$item->statuspvenda_pg}}</td>
+                            @elsedesktop
+                            @enddesktop
+
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
                             <td>{{$item->created_at}}</td>
                             <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%20{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
@@ -173,6 +181,10 @@ visibility: hidden;
                             <th>NOME CLIENTE</th>
                             @elsedesktop
                             @enddesktop
+                            @desktop
+                            <th>SINCRONIZADO</th>
+                            @elsedesktop
+                            @enddesktop
                            
                             <th>VALOR TOTAL</th>
                             <th>HORA</th>
@@ -184,6 +196,10 @@ visibility: hidden;
                         <tr>
                             @desktop
                             <td>{{$item->nomecliente}}</td>
+                            @elsedesktop
+                            @enddesktop
+                            @desktop
+                            <td>{{$item->statuspvenda_pg}}</td>
                             @elsedesktop
                             @enddesktop
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
@@ -234,6 +250,10 @@ visibility: hidden;
                             <th>NOME CLIENTE</th>
                             @elsedesktop
                             @enddesktop
+                            @desktop
+                            <th>SINCRONIZADO</th>
+                            @elsedesktop
+                            @enddesktop
                            
                             <th>VALOR TOTAL</th>
                             <th>HORA</th>
@@ -245,6 +265,10 @@ visibility: hidden;
                         <tr>
                             @desktop
                             <td>{{$item->nomecliente}}</td>
+                            @elsedesktop
+                            @enddesktop
+                            @desktop
+                            <td>{{$item->statuspvenda_pg}}</td>
                             @elsedesktop
                             @enddesktop
                             <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
