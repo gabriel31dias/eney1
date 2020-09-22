@@ -16,9 +16,10 @@ class GruposController extends Controller
     public function index(){
         $tipo_op = Auth::user()->tipo_op;
         $user = Auth::user()->email;
+        $codeloja =  Auth::user()->codigo_estabelecimento;
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
-        return view('grupos',['user'=>$user , 'username'=>$username,'iduser' => $iduser ,'tipo_op'=> $tipo_op]);
+        return view('grupos',['user'=>$user , 'username'=>$username,'iduser' => $iduser ,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja]);
     }
 
     public function save(Request $req){

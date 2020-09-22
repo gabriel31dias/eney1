@@ -25,6 +25,7 @@ class AdicionadoController extends Controller
     private $adicionado;
     private $produto;
 
+
     public function __construct(Adicional $adicionais,adicionado $adicionado,Produto $produto){
       $this->adicionais = $adicionais; 
       $this->adicionado = $adicionado;
@@ -35,11 +36,13 @@ class AdicionadoController extends Controller
     public function index($idproduto)
     {
         $produto = $this->produto->find($idproduto);
+        
         $user = Auth::user()->email;
+        $codeloja =  Auth::user()->codigo_estabelecimento;
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        return view('add_adicional',['user'=>$user , 'username' => $username,'iduser' => $iduser,'tipo_op'=> $tipo_op,'nomeproduto'=>  $produto->NOME_PRODUTO,'produto'=> $produto]);
+        return view('add_adicional',['user'=>$user , 'username' => $username,'iduser' => $iduser,'tipo_op'=> $tipo_op,'nomeproduto'=>  $produto->NOME_PRODUTO,'produto'=> $produto,"codeloja"=>$codeloja]);
     }
 
     public function adicionados($idproduto){

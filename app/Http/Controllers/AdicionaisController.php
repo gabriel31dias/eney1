@@ -23,10 +23,11 @@ class AdicionaisController extends Controller
 
     public function index(){
         $user = Auth::user()->email;
+        $codeloja =  Auth::user()->codigo_estabelecimento;
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        return view('adicionais',['user'=>$user , 'username' => $username,'iduser' => $iduser,'tipo_op'=> $tipo_op ]);
+        return view('adicionais',['user'=>$user , 'username' => $username,'iduser' => $iduser,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja ]);
     }
 
     public function list(){

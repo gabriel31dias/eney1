@@ -18,11 +18,13 @@ class ConfigController extends Controller
 
     public function index(){
         $user = Auth::user()->email;
+        $codeloja =  Auth::user()->codigo_estabelecimento;
+
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $user_cf = $this->select_user_config($iduser);
         $tipo_op = Auth::user()->tipo_op;
-        return view('Config',['user'=>$user , 'username' => $username,'iduser' => $iduser,'usercf'=>$user_cf,'tipo_op'=> $tipo_op]);
+        return view('Config',['user'=>$user , 'username' => $username,'iduser' => $iduser,'usercf'=>$user_cf,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja]);
     }
 
     public function save(Request $req){ 

@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+        $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
@@ -39,7 +39,7 @@ class HomeController extends Controller
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->whereDate('created_at', Carbon::today())->get();
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->whereDate('created_at', Carbon::today())->get();
         
-        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas]);
+        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja]);
     }
 
     public function openloja(){

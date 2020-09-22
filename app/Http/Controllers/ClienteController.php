@@ -24,7 +24,8 @@ class ClienteController extends Controller
     public function index(){
         $user = Auth::user()->email;
         $username = Auth::user()->name;
-        return view('clientes',['user'=>$user , 'username'=>$username ,'tipo_op'=> $tipo_op]);
+        
+        return view('clientes',['user'=>$user , 'username'=>$username ]);
     }
 
 

@@ -46,8 +46,9 @@ class FormaController extends Controller
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $formas =  $this->formas->all();
+        $codeloja =  Auth::user()->codigo_estabelecimento;
        
-        return view('formasdepagamento',['user'=>$user , 'username' => $username,'iduser' => $iduser,'codigosnfe'=> $this->codigos_nfe,'formas'=> $formas,'tipo_op'=> $tipo_op]);
+        return view('formasdepagamento',['user'=>$user , 'username' => $username,'iduser' => $iduser,'codigosnfe'=> $this->codigos_nfe,'formas'=> $formas,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja]);
     }
 
 
