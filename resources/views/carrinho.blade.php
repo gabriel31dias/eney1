@@ -434,12 +434,21 @@
   
  
 
- function gerarcod_venda(){
+ async function gerarcod_venda(){
     let vendac =  Math.floor(Math.random() * 655360);
-    $.get('{{route("validacodvenda")}}/'+vendac ,function(){
+    let control = true
+  
+    while (control == true) {
+      await $.get('{{route("validacodvenda")}}/'+vendac ,function(){
        alert('codigo venda carregado'+codigovenda)
        alert(data)
-    })
+       if(data==true){
+          control == false
+       }
+      })
+    }
+
+  
     return vendac
  }
 
