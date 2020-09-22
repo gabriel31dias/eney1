@@ -76,7 +76,7 @@
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo">
 						
-						<img style="max-width:100px;max-height:100px"  src="https://imagensbrasil.org/images/2018/02/07/restaurant-icon-4.png" class="img-responsive">
+						<img style="max-width:100px;max-height:50px"  src="https://imagensbrasil.org/images/2018/02/07/restaurant-icon-4.png" class="img-responsive">
 
 					</div>
 				</div>
