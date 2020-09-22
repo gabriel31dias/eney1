@@ -344,7 +344,7 @@ visibility: hidden;
 
                                     <input id="selecao-arquivo"  type='file' accept='image/*' onchange='openFile(event)'><br>
 
-                                    <input style="display: none"  id='imagem_loja' name="imagem_loja" type="text">
+                                    <input style="display: none" src="{{$usercf->imagem_loja ?? ''}}"  id='imagem_loja' name="imagem_loja" type="text">
                                     <div class="col-xs-12 col-lg-4 col-md-4 col-sm-6">
                                     <img src="{{$usercf->imagem_loja ?? ''}}" id='output' style="height:300px; width:300px;">
                                     <br>
