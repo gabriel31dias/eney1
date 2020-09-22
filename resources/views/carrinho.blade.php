@@ -435,13 +435,16 @@
  
 
  async function gerarcod_venda(){
-    let vendac =  Math.floor(Math.random() * 655360);
+ 
     let control = true
   
    while (control == true) {
-      await $.get('{{route("validacodvenda")}}/'+vendac ,function(){
+    let vendac =  Math.floor(Math.random() * 655360);
+      await $.get('{{route("validacodvenda")}}/'+vendac ,function(data){
+      
        if(data==true){
           control == false
+          console.log('exit lot validation')
        }
       })
    }
