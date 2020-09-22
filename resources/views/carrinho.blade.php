@@ -445,6 +445,7 @@
        if(data==true){
           control == false
           console.log('exit lot validation')
+          break
        }
       })
    }
