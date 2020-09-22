@@ -439,17 +439,17 @@
   let control = true
   let valuefinal = ''
   
-   while (control == true) {
+   
     let vendac =  Math.floor(Math.random() * 655360);
       await $.get('{{route("validacodvenda")}}/'+vendac ,function(data){
       
        if(data==true){
           control = false
-          valuefinal = vendac
+          vendac = Math.floor(Math.random() * 655360)
           console.log('exit lot validation')
        }
       })
-   }
+  
     console.log('code venda validade')
     return valuefinal
  }
