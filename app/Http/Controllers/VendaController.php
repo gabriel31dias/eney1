@@ -619,7 +619,7 @@ class VendaController extends Controller
     }
 
     public function Validacod_venda($codevenda){
-        $vendas = $this->vendas->where('cod_venda_web',$codevenda)->get();
+        $vendas = $this->vendas->where('cod_venda_web',$codevenda)->first();
         $result = true;
         if(isset($vendas->id)){
             $result = false;
