@@ -75,9 +75,9 @@
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo">
-						<a href="index.html">Saboroso
-							<em>!</em>
-						</a>
+						
+						<img style="max-width:100px;max-height:100px"  src="https://imagensbrasil.org/images/2018/02/07/restaurant-icon-4.png" class="img-responsive">
+
 					</div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
