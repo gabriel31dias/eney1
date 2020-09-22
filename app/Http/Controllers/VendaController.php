@@ -621,7 +621,7 @@ class VendaController extends Controller
     public function Validacod_venda($codevenda){
         $vendas = $this->vendas->where('cod_venda_web',$codevenda);
         $result = true;
-        if(isset($vendas->id)){
+        if($vendas->id){
             $result = false;
         }else{
             $result = true;
