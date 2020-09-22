@@ -15,7 +15,7 @@ use Ephp\EngineInterface;
 
 use  ElephantIO\Client;
 use  ElephantIO\Engine\SocketIO\Version2X;
-
+use App\User;
 
 
 class VendaController extends Controller
@@ -25,11 +25,13 @@ class VendaController extends Controller
 
     private $vendas;
     private $temp;
+    private $users;
 
-    public function __construct(Venda $venda, Temp $temp)
+    public function __construct(Venda $venda, Temp $temp, User $user)
     {
         $this->vendas = $venda;
         $this->temp = $temp;
+        $this->users = $user;
     }
 
     public function index(Request $req)
@@ -471,7 +473,7 @@ class VendaController extends Controller
     public function cielopagamento(Request $req){
         $cielo = new CieloCheckoutlink();
       
-        $getmercantid = $this->vendas->where('codigo_estabelecimento', $req->codigo_estabelecimento )->first();
+        $getmercantid = $this->users->where('codigo_estabelecimento', $req->codigo_estabelecimento )->first();
         Log::info('Novo pagamento cielo');
         $cielo = $cielo->addMerchantId($getmercantid->entregagratis);
        /// $cielo = $cielo->addMerchantId( '35c778b2-f9b1-478c-bc7a-2667f6027652');
