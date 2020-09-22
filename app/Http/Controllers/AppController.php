@@ -56,7 +56,7 @@ class AppController extends Controller
      //return  Session::get('CODLOJA');
      date_default_timezone_set('America/Sao_Paulo');
      
-    
+     
       $grupoitem = str_replace("-", " ", $grupoitem);
      
       $status_loja = true;
@@ -64,7 +64,7 @@ class AppController extends Controller
       $hora1 = strtotime($getloja->horarioinicio);
       $hora2 = strtotime($getloja->horariofinal);
       $horaAtual = strtotime(date('H:i:s'));
-     
+      $imagem_loja = $getloja->imagem_loja ;
   
       if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento 
         $status_loja = true;
@@ -109,7 +109,7 @@ class AppController extends Controller
 
       $getgrupos = $this->grupos->where('ID_USER',$getidloja)->paginate(10);
     
-      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja]);
+      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja]);
     }
 
 
