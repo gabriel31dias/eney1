@@ -436,7 +436,8 @@
 
  async function gerarcod_venda(){
  
-    let control = true
+  let control = true
+  let valuefinal = ''
   
    while (control == true) {
     let vendac =  Math.floor(Math.random() * 655360);
@@ -444,12 +445,13 @@
       
        if(data==true){
           control = false
+          valuefinal = vendac
           console.log('exit lot validation')
        }
       })
    }
 
-    return vendac
+    return valuefinal
  }
 
    $('.fh5co-text').click(function(){
