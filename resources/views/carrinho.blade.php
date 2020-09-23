@@ -1528,7 +1528,7 @@ function IsEmail(email){
  }
 
 
- function processandovenda(){
+async function processandovenda(){
      
 		
 let timerInterval
