@@ -771,6 +771,14 @@ const { value: formValues } = await temaapp.fire({
 	  <input type="radio" class="form-control"  value="entrega" id="entrega" name="tipodel" placeholder="" checked>
 
     </div>
+
+    <br>
+    <div class="alert alert-warning" role="alert">
+  This is a warning alert—check it out!
+   </div>
+   <br>
+   <br>
+
     
 ` ,
     
