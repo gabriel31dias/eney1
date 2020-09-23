@@ -1508,12 +1508,14 @@ function IsEmail(email){
  }
 
 
- realtimevalidation(){
+ function realtimevalidation(){
   alert('dwadadaw')
-   setInterval(function(){
-      console.log('executando')
-
-   },1000)
+  
+   setInterval(function(){ 
+     
+    console.log('executando')
+   
+    }, 1000);
 
  }
 
