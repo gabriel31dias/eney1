@@ -756,7 +756,7 @@ const { value: formValues } = await temaapp.fire({
 
      <div class="form-group col-xs-12  col-md-12">
       <label for="inputZip">Digite seu Email</label>
-	    <input onfocus="digitouemail()" type="email" requirid value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
+	    <input onfocus="masctel(this)" onenter="digitouemail()" type="email" requirid value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
 
     </div>
 
@@ -777,7 +777,7 @@ const { value: formValues } = await temaapp.fire({
     </div>
   </div>
     <div class="row">
-      <div  id="alertx" class="form-group col-xs-12  col-md-12 alert alert-warning" role="alert">
+      <div style="display:none"  id="alertx" class="form-group col-xs-12  col-md-12 alert alert-warning" role="alert">
           Email digitado é invalido
       </div>
     </div>
