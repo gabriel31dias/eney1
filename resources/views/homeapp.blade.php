@@ -131,7 +131,7 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <td>@if($item->statuspvenda_pg == 1)
+                            <td>@if($item->vendas_received == 1)
                                 <button type="button" class="btn bg-green waves-effect">  <i class="material-icons">trending_up</i>Sincronizado</button>
                                 @else
 
@@ -208,7 +208,7 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <td>@if($item->statuspvenda_pg == 1)
+                            <td>@if($item->vendas_received == 1)
                                
                                 <button type="button" class="btn bg-green waves-effect">  <i class="material-icons">trending_up</i>Sincronizado</button>
 
@@ -286,7 +286,7 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <td>@if($item->statuspvenda_pg == 1)
+                            <td>@if($item->vendas_received == 1)
                                 
                                 <button type="button" class="btn bg-green waves-effect">  <i class="material-icons">trending_up</i>Sincronizado</button>
 
