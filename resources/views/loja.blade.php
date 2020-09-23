@@ -228,7 +228,7 @@
                             
                             <i  style="" class="material-icons">apps</i>
                             <br>
-                            Grupos do cardapio
+                            Grupos
                         </p>
                     </a>
                 </div>
@@ -244,7 +244,7 @@
                             
                             <i  style="" class="material-icons">search</i>
                             <br>
-                        Pesquisar produto
+                        Pesquisar
                         </p>
                     </a>
 				</div>
