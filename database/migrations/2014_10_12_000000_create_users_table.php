@@ -45,7 +45,7 @@ class CreateUsersTable extends Migration
             $table->string('TWITTER')->nullable();//aberta ou fechada
             $table->string('FACEBOOK')->nullable();//aberta ou fechada
             $table->string('YOUTUBE')->nullable();//aberta ou fechada
-
+            $table->string('INSTAGRAM')->nullable();//aberta ou fechada
             $table->rememberToken();
             $table->timestamps();
         });
