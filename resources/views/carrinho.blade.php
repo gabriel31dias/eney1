@@ -411,6 +411,7 @@
 
 
 <script>
+  var digitando_email = false
   var cash_forma_pg = ''
   let obj_final = new Object()
   let obj_produtos = new Object()
@@ -755,7 +756,7 @@ const { value: formValues } = await temaapp.fire({
 
      <div class="form-group col-xs-12  col-md-12">
       <label for="inputZip">Digite seu Email</label>
-	    <input onfocus="masctel(this)" type="email" requirid value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
+	    <input onfocus="masctel(this)" onblur="digitouemail()" type="email" requirid value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
 
     </div>
 
@@ -1527,18 +1528,18 @@ function IsEmail(email){
    setInterval(function(){ 
      
       if(!validateEmail(document.getElementById('email').value)){
-
+        if(digitando_email==true){
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
         document.getElementById("alertx").style.display = "block";
-
+      }
 
       }else{
 
-        const button = document.querySelector('.swal2-confirm')
-        button.disabled = false
-        document.getElementById("alertx").style.display = "none";
-
+    
+          const button = document.querySelector('.swal2-confirm')
+          button.disabled = false
+          document.getElementById("alertx").style.display = "none";
 
       }
    
@@ -1550,6 +1551,10 @@ function IsEmail(email){
  function validateEmail(email){
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
+  }
+
+  function digitouemail(){
+    digitando_email = true;
   }
     
 
