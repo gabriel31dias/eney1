@@ -776,7 +776,7 @@ const { value: formValues } = await temaapp.fire({
     </div>
   </div>
     <div class="row">
-      <div class="form-group col-xs-6  col-md-6" class="alert alert-warning" role="alert">
+      <div class="form-group col-xs-6  col-md-6 alert alert-warning" role="alert">
           This is a warning alert—check it out!
       </div>
     </div>
