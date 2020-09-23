@@ -1,20 +1,17 @@
 APP_NAME=Laravel
 APP_ENV=local
-APP_KEY=base64:Stu8TOc7KvcmGMcFVkMKBJvm1DovmTlFRVZFBEgv6Ms=
+APP_KEY=base64:aWmUgubYHCtmiWQehwb4o1CJmRM3/WOnrBecatisrvU=
 APP_DEBUG=true
-APP_URL=https://versatil14185.herokuapp.com/
-SERVIDOR_SOCKET=https://servidorsocket3636.herokuapp.com/
+APP_URL=http://localhost
 
 LOG_CHANNEL=stack
-FORCE_HTTPS=true
 
-
-DB_CONNECTION=pgsql
-DB_HOST=ec2-34-236-215-156.compute-1.amazonaws.com
-DB_PORT=5432
-DB_DATABASE=d5e3jvsla4cova
-DB_USERNAME=xbdfelwxtxfabf
-DB_PASSWORD=e28c45ce56fee9139f29231be8059ed8f284fd4c26a875dd9e9f7285b50381ee
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_dv
+DB_USERNAME=root
+DB_PASSWORD=
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
