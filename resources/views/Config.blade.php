@@ -296,6 +296,7 @@ visibility: hidden;
                             <h3>Youtube Link</h3>
                             <input onfocus="masc(this)" class="form-control" name="TWITTER" id="TWITTER" value="{{$usercf->PRECOENTREGA ?? ''}}" type="text" />
                         </div>
+                    </div>
 
                     <br>
                      <br>  <br>
