@@ -729,6 +729,9 @@ const { value: formValues } = await temaapp.fire({
   closeOnClickOutside: false,
     allowOutsideClick: false,
   title: 'Selecione o tipo de retirada',
+  onBeforeOpen () {
+     realtimevalidation()
+  },
   width:600,
   confirmButtonText: 'Avançar',
   html:
@@ -1501,6 +1504,13 @@ function IsEmail(email){
     )
     
     location.href = "{{ env('APP_URL') }}" + "app/loja/" + lojacode;
+
+ }
+
+
+ realtimevalidation(){
+
+ alert('')
 
  }
 
