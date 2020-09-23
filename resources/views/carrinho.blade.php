@@ -776,7 +776,7 @@ const { value: formValues } = await temaapp.fire({
     </div>
   </div>
     <div class="row">
-      <div style="display:none" class="form-group col-xs-12  col-md-12 alert alert-warning" role="alert">
+      <div  id="alertx" class="form-group col-xs-12  col-md-12 alert alert-warning" role="alert">
           Email digitado é invalido
       </div>
     </div>
@@ -1530,14 +1530,14 @@ function IsEmail(email){
 
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
-        document.getElementById("email").style.display = "block";
+        document.getElementById("alertx").style.display = "block";
 
 
       }else{
 
         const button = document.querySelector('.swal2-confirm')
         button.disabled = false
-        document.getElementById("myDIV").style.display = "none";
+        document.getElementById("alertx").style.display = "none";
 
 
       }
