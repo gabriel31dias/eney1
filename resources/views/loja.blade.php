@@ -1031,6 +1031,8 @@ $( '.mfp-close' ).click();
 const { value: formValues } = await temaapp.fire({
   title: 'Observações do produto',
   confirmButtonText:'Salvar',
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
   html:` 
       <textarea type="" class="form-control"  id="OBSIN" name="OBSIN" placeholder="Cep"> </textarea>
   `,
