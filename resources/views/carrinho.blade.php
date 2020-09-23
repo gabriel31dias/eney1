@@ -1442,6 +1442,10 @@ function atualiza_obj_user(){
 
 
     async function executapagamento(apipg){
+  
+
+      processandovenda()
+
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
       obj_final.id_loja = obj_produtos
@@ -1495,6 +1499,8 @@ function atualiza_obj_user(){
          }).then(function(){
 
            
+         
+           
 
          })
     }
@@ -1518,6 +1524,44 @@ function IsEmail(email){
     )
     
     location.href = "{{ env('APP_URL') }}" + "app/loja/" + lojacode;
+
+ }
+
+
+ function processandovenda(){
+     
+		
+let timerInterval
+await Swal.fire({
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  title: '',
+  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Adicionando produto ao seu carrinho...</h2>',
+  timer: 2000,
+  timerProgressBar: true,
+  onBeforeOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 100)
+  },
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  onClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
 
  }
 
