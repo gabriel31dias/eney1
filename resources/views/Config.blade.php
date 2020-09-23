@@ -270,8 +270,8 @@ visibility: hidden;
                     
                     </div>
                       
-                    <br>
-                    <br>
+                   
+                  
 
                     
                     <br>
@@ -297,7 +297,7 @@ visibility: hidden;
                             <input onfocus="masc(this)" class="form-control" name="TWITTER" id="TWITTER" value="{{$usercf->PRECOENTREGA ?? ''}}" type="text" />
                         </div>
                     </div>
-
+                
                     <br>
                      <br>  <br>
                     <h3>Selecione o meio de pagamento eletrônico padrão</h3>
