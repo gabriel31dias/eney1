@@ -1518,6 +1518,12 @@ function IsEmail(email){
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
 
+      }else{
+
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = false
+
+
       }
    
     }, 1000);
