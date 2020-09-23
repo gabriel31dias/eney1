@@ -132,13 +132,12 @@ visibility: hidden;
                             @enddesktop
                             @desktop
                             <td>@if($item->statuspvenda_pg == 1)
-                                
-                                <button type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
-                                    <i class="material-icons">trending_up</i>
-                                </button>
+                                <button type="button" class="btn bg-green waves-effect">  <i class="material-icons">trending_up</i></button>
                                 @else
-                                <button type="button" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
-                                    <i class="material-icons">...</i>
+
+                                <button type="button" class="btn bg-orange waves-effect"><i class="material-icons">access_alarm</i></button>
+
+                                    
                                 </button>
                                @endif
                              </td>
@@ -217,9 +216,7 @@ visibility: hidden;
                    
                                 @else
 
-                                <button type="button" class="btn bg-red btn-circle waves-effect waves-circle waves-float">
-                                    <i class="material-icons">...</i>
-                                </button>
+                                <button type="button" class="btn btn-danger waves-effect">Não aprovada</button>
                                @endif
                              </td>
                             @elsedesktop
