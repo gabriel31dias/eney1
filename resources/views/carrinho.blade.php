@@ -1513,7 +1513,12 @@ function IsEmail(email){
   
    setInterval(function(){ 
      
-    console.log('executando')
+      if(!validateEmail(document.getElementById('email').value)){
+
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = true
+
+      }
    
     }, 1000);
 
