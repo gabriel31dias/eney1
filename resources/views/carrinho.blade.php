@@ -1536,7 +1536,7 @@ await Swal.fire({
   closeOnClickOutside: false,
   allowOutsideClick: false,
   title: '',
-  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Adicionando produto ao seu carrinho...</h2>',
+  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Aguarde estamos processando sua venda...</h2>',
   timer: 2000,
   timerProgressBar: true,
   onBeforeOpen: () => {
