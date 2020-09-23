@@ -84,12 +84,19 @@ class CarrinhoController extends Controller
 
 
     public function save_user(Request $req){
-       $getuser = array(
+     
+        $getuser = array(
         "nome"=>$req->nome,
         "celular"=>$req->celular,
         "cep"=>$req->cep,
-        "numero" => $req->numero,
+        "endereco"=>$req->cep,
+        "bairro"=>$req->cep,
+        "cidade"=>$req->cep,
+        "estado" => $req->numero,
         "email" => $req->email,
+        "numero" => $req->email,
+        "complemento" => $req->email,
+        "referente" => $req->email
        );
 
        Session::put("user_web_app",$getuser);

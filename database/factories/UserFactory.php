@@ -26,3 +26,12 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+
+$factory->define(Adicional::class, function (Faker $faker) {
+    return [
+        'adicional' => $faker->name,
+        'preco' => $faker->unique()->randomDigit,
+      
+    ];
+});

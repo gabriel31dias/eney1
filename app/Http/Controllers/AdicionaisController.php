@@ -71,6 +71,13 @@ class AdicionaisController extends Controller
        return  $adicionais;
     }
 
+    
+    public function searchbyname($nomeadicional){
+      $iduser = Auth::user()->id;
+      $getadd = $this->adicionais->with('produto')->where('ID_USER',$iduser)->where('adicional', 'like', '%' . $nomeadicional . '%')->get();
+      return response()->json( $getadd );
+    }
+
 
     
 

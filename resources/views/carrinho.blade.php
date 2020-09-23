@@ -752,7 +752,7 @@ const { value: formValues } = await temaapp.fire({
 
      <div class="form-group col-xs-12  col-md-12">
       <label for="inputZip">Digite seu Email</label>
-	  <input onfocus="masctel(this)" type="text" value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
+	  <input onfocus="masctel(this)" type="email" requirid value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
 
     </div>
 

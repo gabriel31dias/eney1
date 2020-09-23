@@ -135,6 +135,8 @@ Route::get('/adicionais/delete/{id?}','AdicionaisController@delete')->middleware
 Route::get('/adicionais/edit/{id?}','AdicionaisController@edit')->middleware('auth')->name("adicionaisedit");
 Route::post('/adicionais/update/','AdicionaisController@update')->middleware('auth')->name("adicionaisupdate");
 Route::get('/adicionais/item/{id?}','AdicionaisController@item')->middleware('auth')->name("adicionaisitem");
+Route::get('/adicionais/searchname/{namead?}','AdicionaisController@searchbyname')->middleware('auth')->name("searchbynameadd");
+
 
 
 Route::get('/adicionaisindex/{idproduto?}','AdicionadoController@index')->middleware('auth')->name("addindex");

@@ -277,6 +277,15 @@ const frm = await Swal.fire({
                         
 @csrf
 
+<div class="row">
+   <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+      <input  onkeyup="addsearch(this.value)" id="SEARCHx"  name="SEARCHx" type="text" class="form-control">
+   </div>
+  
+
+
+</div>
+
            
                <table   class="highlight"  id="listadicionais"  style="color:white;width:100%;background-color:#96DDEA;font-size:30px" >
                   <thead style="background-color:#337ab7;">
@@ -618,6 +627,82 @@ function showNotification(colorName, text, placementFrom, placementAlign, animat
         });
 }
 
+function addsearch(vv){
+   conadd(vv)
+}
+
+
+function conadd(){
+ 
+   
+setTimeout(function(){ 
+$.ajax({
+     url: `{{ route('searchbynameadd') }}/${document.getElementById('SEARCHx').value}`,
+     type: 'GET',
+     success: function(data) {
+       
+         var table = $('#listadicionais').DataTable({
+            
+             "language": {
+                 "lengthMenu": "Mostrar _MENU_ cadastros por pagina",
+                 "zeroRecords": "Nenhum registro foi encontrado",
+                 "info": "Showing page _PAGE_ of _PAGES_",
+                 "infoEmpty": "Nenhum registro foi encontrado",
+                 "infoFiltered": "(filtered from _MAX_ total records)",
+                 "search": "Consulta: ",
+                 "oPaginate": {
+                 "sFirst": "Avançar", // This is the link to the first page
+                 "sPrevious": "Voltar", // This is the link to the previous page
+                 "sNext": "Avançar", // This is the link to the next page
+                 "sLast": "Voltar" // This is the link to the last page
+}
+             },
+             "pageLength": 20,
+             data: data,
+             destroy: true,
+             'order': [[0, 'dec']],
+    
+             columns: [{
+                     "data": "id"
+                 },
+                 
+                 
+                 {
+                     "data": "ADICIONAL"
+                 },
+
+                 {
+                     "data": "PRECO"
+                 },
+
+                 { "data": "ADICIONAL", "name": "ADICIONAL",
+             fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+              if(oData.ADICIONAL) {
+              
+                $(nTd).html(`<a  id='btad${oData.id}' data-placement-from="bottom" data-placement-align="right" data-animate-enter="" data-animate-exit="" data-color-name="bg-blue-grey" onclick="add_adicional(${global_idproduto},${oData.id},'btad${oData.id}')" class="btn bg-red btn-circle waves-effect waves-circle waves-float"><i class="material-icons left">add</i></a>
+`);
+             }
+            //] image
+             
+        }
+    },
+                      
+             ],
+             responsive: true,
+         });
+         $('#datatable-json').on('click', 'button', function(e) {
+             e.preventDefault;
+             var rows = table.row($(this).parents('tr')).data(); //Get Data Of The Selected Row
+             console.log(rows)
+         });
+     }
+    });
+   },1000)
+
+}
+
+
+   
 //Mascaras
 
        
