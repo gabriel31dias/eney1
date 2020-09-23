@@ -115,7 +115,7 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <th>SINCRONIZADO</th>
+                            <th>SINCRONIZAÇÃO</th>
                             @elsedesktop
                             @enddesktop
                             <th>VALOR TOTAL</th>
@@ -191,7 +191,7 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <th>SINCRONIZADO</th>
+                            <th>SINCRONIZAÇÃO</th>
                             @elsedesktop
                             @enddesktop
                            
@@ -269,7 +269,7 @@ visibility: hidden;
                             @elsedesktop
                             @enddesktop
                             @desktop
-                            <th>SINCRONIZADO</th>
+                            <th>SINCRONIZAÇÃO</th>
                             @elsedesktop
                             @enddesktop
                            
