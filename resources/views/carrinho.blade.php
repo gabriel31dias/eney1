@@ -1510,9 +1510,19 @@ function IsEmail(email){
 
  realtimevalidation(){
 
- alert('')
+   setInterval(function(){
+      console.log('executando')
+
+   },1000)
 
  }
+
+
+ function validateEmail(email){
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+    
 
 
 
