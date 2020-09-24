@@ -278,23 +278,23 @@ visibility: hidden;
                     <div class="row">
                     <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                     <h3>Facebook link</h3>
-                    <input onfocus="masc(this)"  class="form-control" name="FACEBOOK" id="FACEBOOK" value="{{$usercf->MINIMOPRECOENTREGAGRATIS ?? ''}}"  type="text" />
+                    <input   class="form-control" name="FACEBOOK" id="FACEBOOK" value="{{$usercf->FACEBOOK ?? ''}}"  type="text" />
                     </div>
 
                     <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                         <h3>Instagram Link</h3>
-                        <input onfocus="masc(this)" class="form-control" name="TWITTER" id="TWITTER" value="{{$usercf->PRECOENTREGA ?? ''}}" type="text" />
+                        <input  class="form-control" name="TWITTER" id="TWITTER" value="{{$usercf->TWITTER ?? ''}}" type="text" />
                     </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                         <h3>Facebook link</h3>
-                        <input onfocus="masc(this)"  class="form-control" name="FACEBOOK" id="FACEBOOK" value="{{$usercf->MINIMOPRECOENTREGAGRATIS ?? ''}}"  type="text" />
+                        <input   class="form-control" name="YOUTUBE" id="YOUTUBE" value="{{$usercf->YOUTUBE ?? ''}}"  type="text" />
                         </div>
     
                         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                             <h3>Youtube Link</h3>
-                            <input onfocus="masc(this)" class="form-control" name="TWITTER" id="TWITTER" value="{{$usercf->PRECOENTREGA ?? ''}}" type="text" />
+                            <input  class="form-control" name="INSTAGRAM" id="INSTAGRAM" value="{{$usercf->INSTAGRAM ?? ''}}" type="text" />
                         </div>
                     </div>
                 

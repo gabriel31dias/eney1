@@ -1464,7 +1464,7 @@ function atualiza_obj_user(){
      
       obj_final.codigo_estabelecimento = lojacode
     
-      obj_final.urlretorno = '{{env('APP_URL')}}'+'app/loja/' + lojacode
+      obj_final.urlretorno = '{{env('APP_URL')}}'+'app/loja/' + lojacode + '?success=true'
 
       //alert(obj_final.urlretorno)
 

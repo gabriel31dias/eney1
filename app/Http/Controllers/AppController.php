@@ -54,11 +54,13 @@ class AppController extends Controller
      
       $getsucesso = $_GET['success'];
     
+      if(isset($getsucesso)){
       if($getsucesso == true){
         $getsucesso = 'true';
       }else{
         $getsucesso = 'false';
       }
+     }
 
      //return  Session::get('CODLOJA');
      date_default_timezone_set('America/Sao_Paulo');
