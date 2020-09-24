@@ -165,22 +165,22 @@
 						<h3>Redes Sociais</h3>
 						<ul class="gtco-social-icons">
 							<li>
-								<a href="https://twitter.com/hcodebr">
+								<a href="{{$url_twitter ?? ''}}">
 									<i class="icon-twitter"></i>
 								</a>
 							</li>
 							<li>
-								<a href="https://www.facebook.com/hcodebr">
+								<a href="{{$url_facebook ?? ''}}">
 									<i class="icon-facebook"></i>
 								</a>
 							</li>
 							<li>
-								<a href="https://www.linkedin.com/company/grupo-hcode/">
+								<a href="{{$url_instagram ?? ''}}">
 									<i class="icon-linkedin"></i>
 								</a>
 							</li>
 							<li>
-								<a href="https://www.youtube.com/channel/UCjWENuSH2gX55-y7QSZiWxA">
+								<a href="{{$url_youtube ?? ''}}">
 									<i class="icon-youtube"></i>
 								</a>
 							</li>
