@@ -719,8 +719,8 @@ return
    }
 
    
-function changgrupo(this.value){
-    $.get('{{route("selectidpornomegrupo")}}',function(){
+function changgrupo(value){
+    $.get('{{route("selectidpornomegrupo")}}/'+ value,function(){
 
 
     }).then(function(data){
@@ -937,7 +937,7 @@ const frm = await Swal.fire({
 
                            <div class="col-sm-12">
                               <div class="form-group form-float">
-                                 <div  class="btn-group bootstrap-select form-control show-tick"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">-- Please select --</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">10</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">20</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">30</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">40</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">50</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select  onchange="changgrupo()" name="NOME_GRUPO" class="form-control show-tick" tabindex="-98">
+                                 <div  class="btn-group bootstrap-select form-control show-tick"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="-- Please select --"><span class="filter-option pull-left">-- Please select --</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">-- Please select --</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">10</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">20</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">30</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">40</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">50</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select  onchange="changgrupo(this.value)" name="NOME_GRUPO" class="form-control show-tick" tabindex="-98">
                                        
                                        
                                           <option value="${data_dom.NOME_GRUPO}">${data_dom.NOME_GRUPO}</option>
