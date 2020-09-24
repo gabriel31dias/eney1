@@ -117,7 +117,7 @@ class AppController extends Controller
       
 
      if($grupoitem){
-         $getproducts = $this->produtos->where('CODIGO_SISTEMA_GRUPO',$grupoitem)->paginate(10);
+         $getproducts = $this->produtos->where('ID_USER',$getidloja)->where('CODIGO_SISTEMA_GRUPO',$grupoitem)->paginate(10);
          $grupoitem = $this->grupos->where('id',$grupoitem)->first();
 
      }else{
