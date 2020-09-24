@@ -165,7 +165,7 @@
 						<h3>Redes Sociais</h3>
 						<ul class="gtco-social-icons">
 							<li>
-								<a href="{{$url_twitter ?? ''}}">
+								<a href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
 									<i class="icon-twitter"></i>
 								</a>
 							</li>
