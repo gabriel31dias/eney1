@@ -534,7 +534,7 @@ const frm = await Swal.fire({
 
                           
 
-                            <input   type="text" id="IMGedit" name="IMG">
+                            <input  style="display:none"  type="text" id="IMGedit" name="IMG">
                        
                         
                         <input type="submit"></input>
