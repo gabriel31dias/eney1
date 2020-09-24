@@ -53,7 +53,12 @@ class AppController extends Controller
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
      
       $getsucesso = $_GET['success'];
-      var_dump($getsucesso);
+    
+      if($getsucesso == true){
+        $getsucesso = 'true';
+      }else{
+        $getsucesso = 'false';
+      }
 
      //return  Session::get('CODLOJA');
      date_default_timezone_set('America/Sao_Paulo');
@@ -118,7 +123,7 @@ class AppController extends Controller
 
       $getgrupos = $this->grupos->where('ID_USER',$getidloja)->paginate(10);
     
-      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube]);
+      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube,'getsucesso'=>$getsucesso]);
     }
 
 

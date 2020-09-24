@@ -412,6 +412,21 @@ const temaapp = Swal.mixin({
   buttonsStyling: false
 })
 
+var getsuccesso ='{{$getsucesso}}'
+
+if (getsuccesso == 'true'){
+ 
+
+Swal.fire(
+  'Muito bom!',
+  'A venda foi concluida com sucesso',
+  'success'
+)
+
+}
+
+
+
 
 async function searchproduto(){
 const { value: txt } = await temaapp.fire({
