@@ -122,7 +122,7 @@
 				
 				
 
-				<a onclick="setgrupo('/{{$item->CODIGO_SISTEMA}}')" style="padding: 10px" class="grupos actionx col-xs-6 col-lg-6 col-md-6 col-sm-6">
+				<a onclick="setgrupo('/{{$item->CODIGO_SISTEMA}}')" style="padding: 10px" class="grupos actionx col-xs-4 col-lg-4 col-md-6 col-sm-6">
 					
 						<center>
 							<img style="height:80px;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
