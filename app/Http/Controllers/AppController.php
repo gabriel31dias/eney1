@@ -52,9 +52,9 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
      
-      $getsucesso = $_GET['success'];
+     
     
-      if(isset($getsucesso)){
+      if(isset( $_GET['success'])){
       if($getsucesso == true){
         $getsucesso = 'true';
       }else{
