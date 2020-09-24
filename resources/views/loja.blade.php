@@ -412,7 +412,7 @@ const temaapp = Swal.mixin({
   buttonsStyling: false
 })
 
-var getsuccesso ='{{$getsucesso}}'
+var getsuccesso ='{{$getsucesso ?? ""}}'
 
 if (getsuccesso == 'true'){
  
@@ -422,6 +422,7 @@ Swal.fire(
   '',
   'success'
 )
+
 
 }
 
