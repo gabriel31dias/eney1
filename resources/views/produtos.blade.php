@@ -718,6 +718,13 @@ return
 
    }
 
+   
+function changgrupo(){
+
+alert('dwad')
+}
+
+
 
    function onFileSelected(event) {
    var selectedFile = event.target.files[0];
@@ -1227,11 +1234,6 @@ async function requisitaproduto(){
     $(".swal2-container").show()
   },1000)
 
-}
-
-function changgrupo(){
-
-   alert('dwad')
 }
 
 
