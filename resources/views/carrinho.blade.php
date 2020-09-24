@@ -189,7 +189,7 @@
 							</li>
 							<li>
 								<a href="https://www.linkedin.com/company/grupo-hcode/">
-									<i class="icon-linkedin"></i>
+									<i class="icon-instagram"></i>
 								</a>
 							</li>
 							<li>
