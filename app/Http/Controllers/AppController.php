@@ -55,7 +55,6 @@ class AppController extends Controller
       $getsucesso = '';
     
       if(isset( $_GET['success'])){
-
         $getsucesso =  $_GET['success'];
       if($getsucesso == true){
         $getsucesso = 'true';
@@ -83,9 +82,9 @@ class AppController extends Controller
         $status_loja = false;
         //Se nao tiver assume o manual
         if($getloja->status_at == 'true'){
-          $status_loja = true;
+            $status_loja = true;
         }else{
-         $status_loja = false;
+            $status_loja = false;
          }
       
       }

@@ -839,7 +839,7 @@ socket.on('receive',function(data){
   }
 
   if(data.produtosjson == 'volta'){
-     alert('xx')
+     
     // resposta pra tela produtos
      document.getElementById('NOME_PRODUTO').value = data.nomeproduto
      document.getElementById('CODIGO_SISTEMA_GRUPO').value = data.codgrupo
