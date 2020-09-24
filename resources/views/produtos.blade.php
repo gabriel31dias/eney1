@@ -722,9 +722,10 @@ return
 function changgrupo(value){
     $.get('{{route("selectidpornomegrupo")}}/'+ value,function(){
 
+      
 
     }).then(function(data){
-       alert(data)
+       document.getElementById("CODIGO_SISTEMA_GRUPO").value = data
     })
 }
 
