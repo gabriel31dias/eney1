@@ -50,7 +50,7 @@ class AppController extends Controller
     }
 
 
-    public function getloja($codigo,$grupoitem=''){ ///A loja apenas
+    public function getloja($codigo,$grupocod=''){ ///A loja apenas
      
       $getsucesso = '';
     
@@ -67,7 +67,7 @@ class AppController extends Controller
      date_default_timezone_set('America/Sao_Paulo');
      
      
-      $grupoitem = str_replace("-", " ", $grupoitem);
+     /// $grupoitem = str_replace("-", " ", $grupoitem);
       
       $status_loja = true;
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
@@ -116,8 +116,8 @@ class AppController extends Controller
 
       
 
-     if($grupoitem){
-         $getproducts = $this->produtos->where('NOME_GRUPO',$grupoitem)->paginate(10);
+     if($grupocod){
+         $getproducts = $this->produtos->where('ID_USER',$getidloja)->where('CODIGO_SISTEMA_GRUPO',$grupocod)->paginate(10);
      }else{
          $getproducts = $this->produtos->where('ID_USER',$getidloja)->paginate(10);
      }
