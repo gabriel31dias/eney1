@@ -418,8 +418,8 @@ if (getsuccesso == 'true'){
  
 
 Swal.fire(
-  'Muito bom!',
-  'A venda foi concluida com sucesso',
+  'Muito bom, a venda foi concluida com sucesso',
+  '',
   'success'
 )
 
