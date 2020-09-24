@@ -892,7 +892,7 @@ const frm = await Swal.fire({
                                           <input style="display:none"  onblur="" id="PRECO_CUSTO" value="${data_dom.PRECO_CUSTO}" name="PRECO_CUSTO" type="text" class="form-control">
                                        
                                        
-                                          <input  style="display:none" onblur="" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
+                                          <input   onblur="" id="CODIGO_SISTEMA_GRUPO" value="${data_dom.CODIGO_SISTEMA_GRUPO}" name="CODIGO_SISTEMA_GRUPO" type="text" class="form-control">
 
                                        </div>
                                  </div>
