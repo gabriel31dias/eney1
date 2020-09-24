@@ -52,6 +52,8 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
      
+      $getsucesso = $_GET('success');
+      var_dump($getsucesso);
 
      //return  Session::get('CODLOJA');
      date_default_timezone_set('America/Sao_Paulo');
