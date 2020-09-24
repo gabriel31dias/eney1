@@ -719,9 +719,13 @@ return
    }
 
    
-function changgrupo(){
+function changgrupo(this.value){
+    $.get('{{route("selectidpornomegrupo")}}',function(){
 
-alert('dwad')
+
+    }).then(function(data){
+       alert(data)
+    })
 }
 
 

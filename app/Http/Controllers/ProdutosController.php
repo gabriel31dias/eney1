@@ -120,6 +120,13 @@ class ProdutosController extends Controller
         return response()->json($getproduto);
     }
 
+    public function selectcodeid($nomegrupo){
+     ///Passa o nome do grupo e retorna codigo do sistema pro front end
+       $codegrupo = $this->grupos->where('NOME_GRUPO',$nomegrupo)->first();
+       $codegrupo = $codegrupo->CODIGO_SISTEMA;
+       return response()->json( $codegrupo);
+    }
+
     
 
 
