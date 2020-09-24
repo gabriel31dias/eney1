@@ -122,9 +122,11 @@ class AppController extends Controller
          $getproducts = $this->produtos->where('ID_USER',$getidloja)->paginate(10);
      }
      
-     if(isset( $grupoitem)){
 
-      $grupoitem = $this->grupos->where('id',$grupoitem)->first();
+     $grupoitem = $this->grupos->where('id',$grupoitem)->first();
+   
+     if(isset($grupoitem->NOME_GRUPO)){
+   
       $grupoitem = $grupoitem->NOME_GRUPO;
 
      }
