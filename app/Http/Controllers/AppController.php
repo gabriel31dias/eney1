@@ -55,6 +55,8 @@ class AppController extends Controller
       $getsucesso = '';
     
       if(isset( $_GET['success'])){
+
+        $getsucesso =  $_GET['success'];
       if($getsucesso == true){
         $getsucesso = 'true';
       }else{
