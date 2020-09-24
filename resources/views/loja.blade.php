@@ -176,7 +176,7 @@
 							</li>
 							<li>
 								<a href="{{$url_instagram ?? ''}}">
-									<i class="icon-linkedin"></i>
+									<i class="fab fa-instagram"></i>
 								</a>
 							</li>
 							<li>
