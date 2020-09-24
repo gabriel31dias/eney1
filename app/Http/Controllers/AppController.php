@@ -122,6 +122,8 @@ class AppController extends Controller
          $getproducts = $this->produtos->where('ID_USER',$getidloja)->paginate(10);
      }
      
+      $grupoitem = $this->grupos->where('id',$grupoitem)->first();
+      $grupoitem = $grupoitem->NOME_GRUPO;
 
 
       $getgrupos = $this->grupos->where('ID_USER',$getidloja)->paginate(10);
