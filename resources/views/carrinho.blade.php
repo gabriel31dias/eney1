@@ -423,6 +423,7 @@
   var tipo_retirada = 'Entrega'
   var lojacode = '{{$lojacod}}'
   var cash_idvenda = ''
+  var cash_token_true = true
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
   obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
@@ -499,9 +500,22 @@
     inputPlaceholder: 'Digite o token'
      })
 
+     await verificatoken().then(function(data){
+         
+         alert(data)
+     })
+
      if (email) {
        Swal.fire(`Entered email: ${email}`)
     }
+  }
+
+
+  async function verificatoken(){
+   return $.get('{{route("verificatoken")}}',function(data){
+
+       alert(data)
+    })
   }
 
 
