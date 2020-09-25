@@ -501,7 +501,7 @@
      })
 
      await verificatoken(getx)
-
+     alert('gggggggg')
      if (getx) {
        Swal.fire(`Entered email: ${email}`)
     } 
