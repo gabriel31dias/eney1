@@ -494,13 +494,16 @@
   }
 
   async function showdialogtoken(){
-    const { value: getx } = await Swal.fire({
+
+    await verificatoken(getx)
+
+   await const { value: getx } = await Swal.fire({
     title: 'Digite o token',
     input: 'text',
     inputPlaceholder: 'Digite o token'
      })
 
-     await verificatoken(getx)
+    
      alert('gggggggg')
      if(cash_token_true){
 
