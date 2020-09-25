@@ -25,9 +25,9 @@ class SmsValidController extends Controller
       $sms = $sms->where('token',$token)->first();
        
       if(isset($sms->id)){
-          return 'true';
+          return   response()->json(['su'=>true]) ;
       }else{
-          return 'false'; 
+        return   response()->json(['su'=>false]) ;
       }
 
     

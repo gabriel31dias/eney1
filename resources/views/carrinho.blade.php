@@ -538,8 +538,8 @@
 
        alert(data)
     }).then(function(data){
-        console.log(data)
-       if(data == true){
+        console.log(data.su)
+       if(data.su == true){
         cash_token_true = true
         console.log('deu true')
        
