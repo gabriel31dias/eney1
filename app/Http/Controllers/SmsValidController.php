@@ -9,6 +9,8 @@ class SmsValidController extends Controller
 {
     
     public function sendSmsToken($telefone){
-      return  $this->sendSinglesms('0030015529',$telefone,'dwadaw token dwadwadadawdw5555');
+      $sms = new SmsController();
+
+      return   $sms->sendSinglesms('0030015529',$telefone,'dwadaw token dwadwadadawdw5555');
    }
 }
