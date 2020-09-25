@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\CieloCheckoutlink;
+use App\Http\Controllers\RedeCheckoutlink;
 
 class SwitchForma extends Controller
 {
@@ -15,7 +16,7 @@ class SwitchForma extends Controller
     public function __construct($iduser){
         $this->user = new User;
         $this->user->find($iduser)->first();
-        return $this->getForma();
+      
     }
 
    public function getForma(){
@@ -24,10 +25,10 @@ class SwitchForma extends Controller
     
       switch ($user->fpagamentoeletronico) {
         case 1:
-            return "CieloCheckoutlink";
+            return new CieloCheckoutlink();
             break;
         case 2:
-            return "RedeCheckoutlink";
+            return new RedeCheckoutlink();
             break;
        }
 
