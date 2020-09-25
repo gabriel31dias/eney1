@@ -15,7 +15,7 @@ class SwitchForma extends Controller
 
     public function __construct($iduser){
         $this->user = new User;
-        $this->user->find($iduser)->first();
+        $this->user->where('codigo_estabelecimento',$iduser)->first();
       
     }
 

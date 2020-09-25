@@ -471,7 +471,7 @@ class VendaController extends Controller
 
 
     public function cielopagamento(Request $req){
-        $selectf = new SwitchForma(1);///Seleciona forma pagamento da loja
+        $selectf = new SwitchForma($req->codeloja );///Seleciona forma pagamento da loja
         $selectf = $selectf->getForma();
           
          
