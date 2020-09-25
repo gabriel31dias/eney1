@@ -483,11 +483,9 @@
   async function sendsms(telefone){
     $.get('{{route("sendtoken")}}/'+telefone ,function(data){
       alert(data)
-
-
     }).then(function(data){
        alert(data)
-     //  showdialogtoken()
+       showdialogtoken()
     }).fail(function(data) {
       alert('woops'); // or whatever
       console.log(data)
