@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\VendaController;
 use App\Venda;
 use Carbon\Carbon;
-use App\Http\Controllers\SwitchForma;
-
 
 
 class HomeController extends Controller
@@ -52,12 +50,5 @@ class HomeController extends Controller
     public function sair(){
         Auth::logout();
         return redirect("/login");
-    }
-
-    public function switch(){
-      $gg = new SwitchForma();
-      
-       echo  $gg ;
-
     }
 }

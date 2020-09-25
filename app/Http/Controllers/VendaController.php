@@ -12,7 +12,7 @@ use App\Temp;
 use Ephp\SocketIOClient;
 use Ephp\Message;
 use Ephp\EngineInterface;
-
+use App\Http\Controllers\SwitchForma;
 use  ElephantIO\Client;
 use  ElephantIO\Engine\SocketIO\Version2X;
 use App\User;
@@ -633,6 +633,13 @@ class VendaController extends Controller
         }
         return response()->json($result);
     }
+
+    public function switch(){
+        $gg = new SwitchForma();
+        
+         echo  $gg; 
+  
+      }
 
 }
 
