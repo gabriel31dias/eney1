@@ -521,7 +521,7 @@
 
        alert(data)
     }).then(function(data){
-       alert(data)
+       alert(JSON.stringify(data))
 
        if(data == true){
          return true
