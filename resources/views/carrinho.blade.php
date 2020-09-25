@@ -482,7 +482,7 @@
 
   async function sendsms(telefone){
     $.get('{{route("sendtoken")}}/'+telefone ,function(data){
-      alert(data)
+
     }).then(function(data){
        alert(data)
        showdialogtoken()
