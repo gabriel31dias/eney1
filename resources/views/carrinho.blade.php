@@ -537,23 +537,17 @@
     $.get('{{route("verificatoken")}}/'+token,function(data){
 
           if(data.su = true){
-            alert("caraiiaiaiaiaiiaiaiaiaiia")
+            cash_token_true = true
+            console.log('deu true')
+          } else{
+            cash_token_true = false
+            console.log('deu false') 
           }
        
     }).then(function(data){
-        console.log(data.su)
-       if(data.su == true){
-        cash_token_true = true
-        console.log('deu true')
        
-       }else{
-        cash_token_true = false
-        console.log('deu false')
-        
-       }
 
-     
-
+    
     }).fail(function(data) {
       alert('woops'); // or whatever
       console.log(data)
