@@ -15,8 +15,8 @@ class SmsController extends Controller
         
         $data = array(
           "id" => "18",
-          "phone" => "18981290451",
-          "message" => "Aqui vai a mensagem."
+          "phone" => "18981290276",
+          "message" => "Mensagem teste versatil"
       );
       
       $curl = curl_init();
