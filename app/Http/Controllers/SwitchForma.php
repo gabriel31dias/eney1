@@ -15,8 +15,14 @@ class SwitchForma extends Controller
         $this->user = new User;
 
         $this->user->find($iduser)->first();
-        
-      switch ($this->user->fpagamentoeletronico) {
+      
+    }
+
+   public function setForma(){
+
+      $user =  $this->user;
+    
+      switch ($user->fpagamentoeletronico) {
         case 1:
             return "CieloCheckoutlink";
             break;
@@ -24,10 +30,8 @@ class SwitchForma extends Controller
             return "RedeCheckoutlink";
             break;
        }
-      
-      
-    }
 
+   }
    
   
 
