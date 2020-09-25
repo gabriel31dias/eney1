@@ -19,7 +19,7 @@ class SmsValidController extends Controller
    }
 
    public function verificatoken($token){
-      $sms = new SmsController();
+      $sms = new Validatestoken();
       $sms = $sms->where('token',$token)->first();
        
       if(isset($sms->id)){
