@@ -487,7 +487,7 @@
 
     }).then(function(data){
        alert(data)
-       showdialogtoken()
+     //  showdialogtoken()
     })
   }
 
