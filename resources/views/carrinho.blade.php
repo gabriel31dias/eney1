@@ -495,7 +495,7 @@
   async function showdialogtoken(){
     const { value: email } = await Swal.fire({
     title: 'Digite o token',
-    input: 'email',
+    input: 'text',
     inputPlaceholder: 'Digite o token'
      })
 
