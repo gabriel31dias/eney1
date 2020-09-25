@@ -488,7 +488,10 @@
     }).then(function(data){
        alert(data)
      //  showdialogtoken()
-    })
+    }).fail(function(data) {
+    alert('woops'); // or whatever
+    console.log(data)
+    });
   }
 
   async function showdialogtoken(){
