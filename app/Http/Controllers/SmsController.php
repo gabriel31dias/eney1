@@ -12,12 +12,11 @@ class SmsController extends Controller
 
      if($password == '0030015529'){
 
-        
         $data = array(
           "id" => "18",
-          "phone" => "18981290276",
-          "message" => "Mensagem teste versatil"
-      );
+          "phone" => $telefone,
+          "message" => $message
+        );
       
       $curl = curl_init();
       
@@ -38,14 +37,11 @@ class SmsController extends Controller
       ));
       
       $response = curl_exec($curl);
-      
       curl_close($curl);
            
-
   }
 
         return response()->json($response);
-
     }
 
 
