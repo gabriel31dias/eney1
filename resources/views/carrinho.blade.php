@@ -504,7 +504,7 @@
 
      if (getx) {
        Swal.fire(`Entered email: ${email}`)
-    }
+    } 
   }
 
 
@@ -514,9 +514,9 @@
        alert(data)
     }).then(function(){
       return new Promise((resolve, reject) => {
-    
+        alert('secesso')
           resolve()
-          
+
        })
 
     })
