@@ -494,25 +494,22 @@
   }
 
   async function showdialogtoken(){
-    const { value: email } = await Swal.fire({
+    const { value: getx } = await Swal.fire({
     title: 'Digite o token',
     input: 'text',
     inputPlaceholder: 'Digite o token'
      })
 
-     await verificatoken().then(function(data){
-         
-         alert(data)
-     })
+     await verificatoken(getx)
 
-     if (email) {
+     if (getx) {
        Swal.fire(`Entered email: ${email}`)
     }
   }
 
 
-  async function verificatoken(){
-   return $.get('{{route("verificatoken")}}',function(data){
+  async function verificatoken(token){
+   return $.get('{{route("verificatoken")}}/'+token,function(data){
 
        alert(data)
     })
