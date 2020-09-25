@@ -536,7 +536,7 @@
   async function verificatoken(token){
     $.get('{{route("verificatoken")}}/'+token,function(data){
 
-          if(data.su = true){
+          if(data.su == true){
             cash_token_true = true
             console.log('deu true')
           } else{
@@ -547,7 +547,6 @@
     }).then(function(data){
        
 
-    
     }).fail(function(data) {
       alert('woops'); // or whatever
       console.log(data)
