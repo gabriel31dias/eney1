@@ -512,6 +512,12 @@
     $.get('{{route("verificatoken")}}/'+token,function(data){
 
        alert(data)
+    }).then(function(){
+      return new Promise((resolve, reject) => {
+    
+          resolve()
+       })
+
     })
   }
 
