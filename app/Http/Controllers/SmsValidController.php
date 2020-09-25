@@ -23,14 +23,16 @@ class SmsValidController extends Controller
    public function verificatoken($token){
       $sms = new Validatestoken();
       $sms = $sms->where('token',$token)->first();
-       
+      
       if(isset($sms->id)){
+        $sms->delete();
           return   response()->json(['su'=>true]) ;
       }else{
-        return   response()->json(['su'=>false]) ;
+        $sms->delete();
+          return   response()->json(['su'=>false]) ;
       }
        
-      $sms->delete();
+   
     
 
    }
