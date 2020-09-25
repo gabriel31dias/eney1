@@ -423,7 +423,7 @@
   var tipo_retirada = 'Entrega'
   var lojacode = '{{$lojacod}}'
   var cash_idvenda = ''
-  var cash_token_true = true
+  var cash_token_true = false
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
   obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
@@ -502,6 +502,10 @@
 
      await verificatoken(getx)
      alert('gggggggg')
+     if(cash_token_true){
+
+       alert('validade')
+     }
      if (getx) {
        Swal.fire(`Entered email: ${email}`)
     } 
@@ -514,7 +518,8 @@
        alert(data)
     }).then(function(){
       return new Promise((resolve, reject) => {
-        alert('secesso')
+        
+        cash_token_true = true
           resolve()
 
        })
