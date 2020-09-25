@@ -16,7 +16,7 @@ class SwitchForma extends Controller
 
         $this->user->find($iduser)->first();
       
-        $this->setForma();
+       return $this->setForma();
     }
 
    public function setForma(){
