@@ -490,6 +490,7 @@
        showdialogtoken()
     }).fail(function(data) {
       alert('woops'); // or whatever
+      
       console.log(data)
     });
   }
@@ -509,6 +510,10 @@
 
      if (verificatoken(getx)){
          alert('deu certp')
+     }else{
+        
+      Swal.fire(`Token invalido tente novamente`)
+
      }
 
     // if (getx) {
