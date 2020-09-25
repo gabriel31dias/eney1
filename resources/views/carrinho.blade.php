@@ -509,10 +509,11 @@
 
 
      if (cash_token_true==true){
-         alert('deu certp')
+         
+         
      }else{
         
-      Swal.fire(`Token invalido tente novamente`)
+     
 
      }
 

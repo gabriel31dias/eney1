@@ -30,7 +30,7 @@ class SmsValidController extends Controller
           return 'false'; 
       }
 
-      return response()->json( $sms);
+    
 
    }
 
