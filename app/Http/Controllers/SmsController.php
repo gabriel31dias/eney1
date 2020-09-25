@@ -44,9 +44,7 @@ class SmsController extends Controller
 
   }
 
-
-    
-        return $response;
+        return response()->json($response);
 
     }
 
