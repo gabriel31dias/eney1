@@ -495,7 +495,7 @@
 
   async function showdialogtoken(){
 
-    await verificatoken(getx)
+ 
 
     const { value: getx } = await Swal.fire({
     title: 'Digite o token',
@@ -504,14 +504,15 @@
      })
 
     
-     alert('gggggggg')
-     if(cash_token_true){
 
-       alert('validade')
+
+     if (verificatoken(getx)){
+         alert('deu certp')
      }
-     if (getx) {
-       Swal.fire(`Entered email: ${email}`)
-    } 
+
+    // if (getx) {
+    //   Swal.fire(`Entered email: ${email}`)
+  //  } 
   }
 
 
@@ -520,12 +521,8 @@
 
        alert(data)
     }).then(function(){
-      return new Promise((resolve, reject) => {
-        
-        cash_token_true = true
-          resolve()
-
-       })
+      
+      return true
 
     }).fail(function(data) {
       alert('woops'); // or whatever
