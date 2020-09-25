@@ -25,7 +25,7 @@ Route::get('/openloja', 'HomeController@openloja')->name('openloja');
 Route::get('/sair', 'HomeController@sair')->name('sairapp');
 Route::get('/home', 'HomeController@index')->name('home2');
 
-Route::get('/testesw', 'HomeController@switch')->name('switch');
+Route::get('/testesw', 'VendaController@switch')->name('switch');
 
 
 Route::get('/abreloja/{code?}', 'AberturaFechamentoController@abreloja')->name('abreloja');
