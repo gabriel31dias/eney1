@@ -475,7 +475,7 @@ class VendaController extends Controller
         $selectf = $selectf->getForma();
           
          
-        $cielo = $selectf->getForma();
+        $cielo = $selectf;
       
         $getmercantid = $this->users->where('codigo_estabelecimento', $req->codigo_estabelecimento )->first();
         Log::info('Novo pagamento cielo');
