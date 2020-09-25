@@ -497,7 +497,7 @@
 
     await verificatoken(getx)
 
-   await const { value: getx } = await Swal.fire({
+    const { value: getx } = await Swal.fire({
     title: 'Digite o token',
     input: 'text',
     inputPlaceholder: 'Digite o token'
