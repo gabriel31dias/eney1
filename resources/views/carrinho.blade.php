@@ -520,9 +520,16 @@
     $.get('{{route("verificatoken")}}/'+token,function(data){
 
        alert(data)
-    }).then(function(){
-      
-      return true
+    }).then(function(data){
+       alert(data)
+
+       if(data == true){
+         return true
+       }else{
+         return false
+       }
+
+     
 
     }).fail(function(data) {
       alert('woops'); // or whatever
