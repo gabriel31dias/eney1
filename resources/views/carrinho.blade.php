@@ -536,7 +536,10 @@
   async function verificatoken(token){
     $.get('{{route("verificatoken")}}/'+token,function(data){
 
-       alert(data)
+          if(data.su = true){
+            alert("caraiiaiaiaiaiiaiaiaiaiia")
+          }
+       
     }).then(function(data){
         console.log(data.su)
        if(data.su == true){
