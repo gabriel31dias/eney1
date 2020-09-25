@@ -29,7 +29,8 @@ class SmsValidController extends Controller
       }else{
         return   response()->json(['su'=>false]) ;
       }
-
+       
+      $sms->delete();
     
 
    }
