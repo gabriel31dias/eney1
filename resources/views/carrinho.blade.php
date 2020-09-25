@@ -487,8 +487,20 @@
 
     }).then(function(data){
        alert(data)
-
+       showdialogtoken()
     })
+  }
+
+  async function showdialogtoken(){
+    const { value: email } = await Swal.fire({
+    title: 'Digite o token',
+    input: 'email',
+    inputPlaceholder: 'Digite o token'
+     })
+
+     if (email) {
+       Swal.fire(`Entered email: ${email}`)
+    }
   }
 
 
