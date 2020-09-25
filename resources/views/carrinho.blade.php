@@ -507,8 +507,8 @@
 
    await  verificatoken(getx)
 
-
-     if (cash_token_true==true){
+     
+     if (cash_token_true == true){
          
       Swal.fire(
         'Good job!',
@@ -541,11 +541,12 @@
         console.log(data)
        if(data == true){
         cash_token_true = true
-        alert(data)
-         return true
+        console.log('deu true')
+       
        }else{
         cash_token_true = false
-         return false
+        console.log('deu false')
+        
        }
 
      
