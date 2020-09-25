@@ -486,6 +486,7 @@
 
     }).then(function(data){
        alert(data)
+       console.log(data)
        showdialogtoken()
     }).fail(function(data) {
       alert('woops'); // or whatever
