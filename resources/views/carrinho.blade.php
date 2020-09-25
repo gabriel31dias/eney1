@@ -519,7 +519,10 @@
 
        })
 
-    })
+    }).fail(function(data) {
+      alert('woops'); // or whatever
+      console.log(data)
+    });
   }
 
 
