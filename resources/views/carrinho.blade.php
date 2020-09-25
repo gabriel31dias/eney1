@@ -531,6 +531,7 @@
         console.log(data)
        if(data == true){
         cash_token_true = true
+        alert(data)
          return true
        }else{
         cash_token_true = false
