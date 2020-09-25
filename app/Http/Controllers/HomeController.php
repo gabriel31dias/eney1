@@ -55,7 +55,7 @@ class HomeController extends Controller
     }
 
     public function switch(){
-         eval(' $ss = new VendaController()');
+         eval(' $ss = new VendaController();');
     
 
     }
