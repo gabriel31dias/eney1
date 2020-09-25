@@ -34,11 +34,12 @@ class CreateUsersTable extends Migration
             $table->string('COR2')->nullable();//Nome da loja que vai aparecer no app
             $table->string('COR3')->nullable();//Nome da loja que vai aparecer no app
             $table->string('password');
-             
+            $table->boolean('redecheckout')->nullable();
+            $table->boolean('cieocheckout')->nullable();
             $table->time('horarioinicio')->nullable();
             $table->time('horariofinal')->nullable();
             $table->string('cielocode')->nullable();
-            $table->string('skytef')->nullable();
+            $table->string('redecode')->nullable();
             $table->decimal('MINIMOPRECOENTREGAGRATIS', 10, 2)->nullable();
             $table->decimal('PRECOENTREGA', 10, 2)->nullable();
             ///REDES SOCIAIS
