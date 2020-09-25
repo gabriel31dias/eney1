@@ -508,7 +508,7 @@
     
 
 
-     if (verificatoken(getx)){
+     if (cash_token_true==true){
          alert('deu certp')
      }else{
         
@@ -529,8 +529,10 @@
     }).then(function(data){
         console.log(data)
        if(data == true){
+        cash_token_true = true
          return true
        }else{
+        cash_token_true = false
          return false
        }
 
