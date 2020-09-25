@@ -505,7 +505,7 @@
     inputPlaceholder: 'Digite o token'
      })
 
-   await  verificatoken()
+   await  verificatoken(getx)
 
 
      if (cash_token_true==true){
