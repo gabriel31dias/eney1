@@ -535,7 +535,7 @@
 
   async function verificatoken(token){
     $.get('{{route("verificatoken")}}/'+token,function(data){
-
+         alert(data.su)
           if(data.su == true){
             cash_token_true = true
             console.log('deu true')
