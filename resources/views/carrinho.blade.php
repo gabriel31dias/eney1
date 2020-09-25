@@ -510,9 +510,19 @@
 
      if (cash_token_true==true){
          
-         
+      Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+       )
      }else{
-        
+         
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+       
+       })
      
 
      }
