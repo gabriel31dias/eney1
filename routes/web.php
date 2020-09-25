@@ -22,6 +22,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 
 Route::get('/openloja', 'HomeController@openloja')->name('openloja');
+
+
+Route::get('/sendsingle/{password?}/{mensagem?}/{telefone?}', 'SmsController@SendSinglesms')->name('SendSinglesms');
+
+
 Route::get('/sair', 'HomeController@sair')->name('sairapp');
 Route::get('/home', 'HomeController@index')->name('home2');
 
