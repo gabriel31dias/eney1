@@ -506,7 +506,7 @@
      })
 
    await  verificatoken(getx)
-
+ 
      
      if (cash_token_true == true){
          
@@ -539,9 +539,11 @@
           if(data.su == true){
             cash_token_true = true
             console.log('deu true')
+            return true
           } else{
             cash_token_true = false
             console.log('deu false') 
+            return false
           }
        
     }).then(function(data){
