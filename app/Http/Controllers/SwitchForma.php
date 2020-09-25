@@ -18,7 +18,7 @@ class SwitchForma extends Controller
       
     }
 
-   public function setForma(){
+   public function getForma(){
 
       $user =  $this->user;
     
@@ -30,6 +30,8 @@ class SwitchForma extends Controller
             return "RedeCheckoutlink";
             break;
        }
+
+       return "CieloCheckoutlink";
 
    }
    
