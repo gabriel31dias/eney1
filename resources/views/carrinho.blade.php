@@ -509,7 +509,7 @@
 
 
   async function verificatoken(token){
-   return $.get('{{route("verificatoken")}}/'+token,function(data){
+    $.get('{{route("verificatoken")}}/'+token,function(data){
 
        alert(data)
     })
