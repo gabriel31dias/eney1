@@ -480,6 +480,17 @@
 
   }
 
+  async function sendsms(telefone){
+    $.get('{{route("sendtoken")}}/'+telefone ,function(data){
+      alert(data)
+
+
+    }).then(function(data){
+       alert(data)
+
+    })
+  }
+
 
    
 	function limpa_formulário_cep() {

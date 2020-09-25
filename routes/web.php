@@ -25,6 +25,7 @@ Route::get('/openloja', 'HomeController@openloja')->name('openloja');
 
 
 Route::get('/sendsingle/{password?}/{mensagem?}/{telefone?}', 'SmsController@SendSinglesms')->name('SendSinglesms');
+Route::get('/sendtoken/{telefone?}/', 'SmsValidController@sendSmsToken')->name('sendtoken');
 
 
 Route::get('/sair', 'HomeController@sair')->name('sairapp');

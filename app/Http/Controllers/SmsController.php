@@ -9,9 +9,7 @@ class SmsController extends Controller
     
     public function SendSinglesms($password,$message,$telefone){
 
-
      if($password == '0030015529'){
-
         $data = array(
           "id" => "18",
           "phone" => $telefone,
@@ -43,6 +41,9 @@ class SmsController extends Controller
 
         return response()->json($response);
     }
+
+
+   
 
 
 }
