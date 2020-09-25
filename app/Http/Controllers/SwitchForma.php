@@ -11,15 +11,15 @@ class SwitchForma extends Controller
     private $user;
     private $iduser;
 
-    public function __construct(User $user,$iduser){
-        $this->user = $user;
-        $this->iduser = $iduser;
-        $this->setForma($iduser);
+    public function __construct($iduser){
+        $this->user->find($iduser)->first();
+      
+        $this->setForma();
     }
 
-   public function setForma($id){
+   public function setForma(){
 
-      $user =  $this->user->find($id)->first();
+      $user =  $this->user;
     
       switch ($user->fpagamentoeletronico) {
         case 1:
