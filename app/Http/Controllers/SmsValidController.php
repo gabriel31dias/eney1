@@ -15,8 +15,8 @@ class SmsValidController extends Controller
       $newtoken = new Validatestoken();
       $newtoken->token = $generatetoken;
       $newtoken->save();
-     
-      return   $sms->sendSinglesms('0030015529','O seu token do WebApp é'.$generatetoken, "55".$telefone );
+      
+      return   $sms->sendSinglesms('0030015529','O seu token do WebApp é'.$generatetoken, $telefone );
       $gg = $newtoken->all();
      
    }
