@@ -1418,7 +1418,7 @@ async function enviavenda() {
           }else{
               
               sendsms(obj_final.telefone)
-
+             alert(obj_final.telefone) 
           }
 
        
