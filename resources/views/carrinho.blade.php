@@ -1395,7 +1395,8 @@ async function enviavenda() {
    obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
     $.get('{{route("verificacarrinho")}}', async function(data) {
-
+        
+        alert('Dfadwadawd')
 
         if (data == '0') {
             temaapp.fire({
