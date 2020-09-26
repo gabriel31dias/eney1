@@ -1391,7 +1391,7 @@ async function enviavenda() {
    // alert('entrou na venda')
    obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
-  async $.get('{{route("verificacarrinho")}}',  function(data) {
+    $.get('{{route("verificacarrinho")}}', async function(data) {
 
 
         if (data == '0') {
