@@ -1320,7 +1320,7 @@ var datax = null;
 
 async function savevenda(){
   alert('save venda')
-         async  $.ajax({
+           $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
                 dataType: 'json',
@@ -1395,7 +1395,7 @@ async function enviavenda() {
    // alert('entrou na venda')
    obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
 
-    $.get('{{route("verificacarrinho")}}', async () =>  {
+    $.get('{{route("verificacarrinho")}}', function(data) {
         
         alert('Dfadwadawd')
 
@@ -1411,13 +1411,15 @@ async function enviavenda() {
 
          alert('carrinho aberto')
        
-           await savevenda()
+            savevenda()
             
-            alert('passou')
 
         }
 
     })
+
+
+
 
 }
 
