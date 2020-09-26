@@ -1379,7 +1379,7 @@ async function emitvendapg() {
     }
 
 
-function enviavenda() {
+async function enviavenda() {
   if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                         
     }else{
