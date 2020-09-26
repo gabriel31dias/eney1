@@ -500,7 +500,7 @@
  
 
     const { value: getx } = await Swal.fire({
-    title: 'Digite o token',
+    title: 'Digite o token enviado para seu dispositivo.',
     input: 'text',
     inputPlaceholder: 'Digite o token'
      })

@@ -32,9 +32,6 @@ class SmsValidController extends Controller
           return   response()->json(['su'=>false]) ;
       }
        
-   
-    
-
    }
 
 }
