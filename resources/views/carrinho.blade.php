@@ -1411,8 +1411,9 @@ async function enviavenda() {
          alert('carrinho aberto')
        
           savevenda().then(function(){
+                 
+                 alert('venda salva')
 
-            
           })
             
 
