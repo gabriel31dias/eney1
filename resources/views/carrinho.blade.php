@@ -1381,6 +1381,8 @@ async function emitvendapg() {
 
 
 async function enviavenda() {
+
+  alert('envia venda')
   if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                         
     }else{
