@@ -1420,7 +1420,7 @@ async function enviavenda() {
               gett = gett.replace("(", "");
               gett = gett.replace(")", "");
               gett = gett.replace("-", "");
-
+              gett = gett.replace(" ", "");
               sendsms(gett)
            
           }
