@@ -1317,33 +1317,9 @@ async function socket_createroom(){
 
 
 var datax = null;
-function enviavenda() {
-  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
-                        
-    }else{
-                        
-       obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
-                         
-   }
 
-   // alert('entrou na venda')
-   obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
-
-    $.get('{{route("verificacarrinho")}}', function(data) {
-
-
-        if (data == '0') {
-            temaapp.fire({
-                icon: 'error',
-                title: 'O carrinho esta vazio',
-                text: '',
-            })
-
-            return
-        } else {
-
-         
-
+async function savevenda(){
+     
             $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
@@ -1373,6 +1349,38 @@ function enviavenda() {
             }).then(function() {
                 lembrar()
             })
+ 
+}
+
+
+function enviavenda() {
+  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                        
+    }else{
+                        
+       obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
+                         
+   }
+
+   // alert('entrou na venda')
+   obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
+
+    $.get('{{route("verificacarrinho")}}', function(data) {
+
+
+        if (data == '0') {
+            temaapp.fire({
+                icon: 'error',
+                title: 'O carrinho esta vazio',
+                text: '',
+            })
+
+            return
+        } else {
+
+         
+          savevenda()
+
 
             async function emitvendapg() {
                 //emit venda
