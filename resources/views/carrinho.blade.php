@@ -1407,7 +1407,7 @@ function enviavenda() {
 
          await savevenda()
          await emitvendapg()
-
+        
             
 
         }
