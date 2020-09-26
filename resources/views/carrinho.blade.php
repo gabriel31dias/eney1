@@ -1319,6 +1319,7 @@ async function socket_createroom(){
 var datax = null;
 
 async function savevenda(){
+  alert('save venda')
            $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
@@ -1406,8 +1407,7 @@ async function enviavenda() {
 
 
          await savevenda()
-         await emitvendapg()
-        
+      
             
 
         }
@@ -1654,7 +1654,8 @@ await Swal.fire({
   alert('dwadadaw')
   
    setInterval(function(){ 
-     
+    
+
       if(!validateEmail(document.getElementById('email').value)){
         if(digitando_email==true){
         const button = document.querySelector('.swal2-confirm')
