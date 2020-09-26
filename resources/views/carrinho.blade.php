@@ -1319,8 +1319,7 @@ async function socket_createroom(){
 var datax = null;
 
 async function savevenda(){
-     
-            $.ajax({
+           $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
                 dataType: 'json',
@@ -1330,6 +1329,7 @@ async function savevenda(){
                      cash_idvenda = data
                     // alert('venda salva')
                      emitvendapg()
+
                 },
 
                 error: function(data) {
@@ -1349,8 +1349,34 @@ async function savevenda(){
             }).then(function() {
                 lembrar()
             })
- 
 }
+
+
+async function emitvendapg() {
+                //emit venda
+               /// alert('entro no emit venda pagamento')
+
+                
+                setTimeout(function() {
+
+                  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                         executapagamento()
+                   }else{
+                       
+                        socket.emit('canalcomunica', obj_venda);
+                        setTimeout(function(){
+                
+                          screen_concluida()
+
+                        },1000);
+                   }
+
+                    
+
+                }, 800)
+
+
+    }
 
 
 function enviavenda() {
@@ -1378,35 +1404,11 @@ function enviavenda() {
             return
         } else {
 
-         
-          savevenda()
 
+         await savevenda()
+         await emitvendapg()
 
-            async function emitvendapg() {
-                //emit venda
-               /// alert('entro no emit venda pagamento')
-
-                
-                setTimeout(function() {
-
-                  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
-                         executapagamento()
-                   }else{
-                       
-                        socket.emit('canalcomunica', obj_venda);
-                        setTimeout(function(){
-                
-                          screen_concluida()
-
-                        },1000);
-                   }
-
-                    
-
-                }, 800)
-
-
-            }
+            
 
         }
 
