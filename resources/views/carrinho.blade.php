@@ -1416,7 +1416,11 @@ async function enviavenda() {
              savevenda()
 
           }else{
-              
+              let gett  = obj_venda.telefone
+              gett = gett.replace("(", "");
+              gett = gett.replace(")", "");
+              gett = gett.replace("-", "");
+
               sendsms(obj_venda.telefone)
            
           }
