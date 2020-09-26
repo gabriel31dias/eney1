@@ -1417,7 +1417,7 @@ async function enviavenda() {
 
           }else{
               
-              alert('nao e cartao')
+              sendsms(obj_final.telefone)
 
           }
 
