@@ -1417,7 +1417,7 @@ async function enviavenda() {
 
           }else{
               
-              sendsms(obj_final.telefone)
+              sendsms(obj_venda.telefone)
              alert(obj_final.telefone) ///dwdww
           }
 
