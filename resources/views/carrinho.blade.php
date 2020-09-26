@@ -1320,7 +1320,7 @@ var datax = null;
 
 async function savevenda(){
   alert('save venda')
-           $.ajax({
+         async  $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
                 dataType: 'json',
