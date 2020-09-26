@@ -1407,7 +1407,7 @@ async function enviavenda() {
             return
         } else {
 
-
+         alert('carrinho aberto')
          await savevenda()
       
             
