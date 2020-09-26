@@ -1410,16 +1410,24 @@ async function enviavenda() {
         } else {
 
          alert('carrinho aberto')
+
+         if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                         
+             savevenda()
+
+          }else{
+              
+              alert('nao e cartao')
+
+          }
+
        
-            savevenda()
+         
             
 
         }
 
     })
-
-
-
 
 }
 
