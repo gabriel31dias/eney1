@@ -1330,7 +1330,7 @@ async function savevenda(){
                      cash_idvenda = data
                     // alert('venda salva')
                      emitvendapg()
-
+                    
                 },
 
                 error: function(data) {
@@ -1349,6 +1349,7 @@ async function savevenda(){
 
             }).then(function() {
                 lembrar()
+                return true
             })
 }
 
