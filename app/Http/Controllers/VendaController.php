@@ -524,14 +524,16 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
-        $auxvend1 = explode("-", $req->order_number);//
-
-      //  $selectf = new SwitchForma($auxvend1[0]);///Seleciona forma pagamento da loja
-      //  $selectf = $selectf->getForma();
-      //  $payment_vr =  $selectf;
-        $payment_vr = new CieloCheckoutlink();
-
+        $getcodeloja = SwitchForma::getCodloja($req);
         $tt =  $this->temp;
+        $req = json_encode($req->all()) ;
+        $tt =  $tt->create(['value'=>  $getcodeloja ]);
+        $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
+        $selectf = $selectf->getForma();
+        $payment_vr =  $selectf;
+       // $payment_vr = new CieloCheckoutlink();
+
+       
         $auxvend = explode("-",  $payment_vr->getproperty_ident_venda($req));//Separa codigo da loja e o da venda --> getproperty_ident_venda() pega a propriedade de identificao da venda da forma de pagamento
         $venda = $this->vendas->find($auxvend[1]);
      
@@ -561,8 +563,8 @@ class VendaController extends Controller
 
         // Socket io --------->>>> Envia
      
-        $req = json_encode($req->all()) ;
-        $tt =  $tt->create(['value'=> $req ]);
+       // $req = json_encode($req->all()) ;
+      //  $tt =  $tt->create(['value'=>  $getcodeloja ]);
         return  response()->json($tt);
     }
 
