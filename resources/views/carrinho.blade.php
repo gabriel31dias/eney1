@@ -1678,7 +1678,7 @@ await Swal.fire({
 
     
 
-      if(!validateEmail(document.getElementById('email').value) && (!document.getElementById('nome').value) ){
+      if(!validateEmail(document.getElementById('email').value) && (document.getElementById('nome').value) ){
         if(digitando_email==true){
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
