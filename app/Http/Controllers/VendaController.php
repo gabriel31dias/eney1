@@ -526,10 +526,10 @@ class VendaController extends Controller
         //Função responsavel por mudar status da tranzação
         $auxvend1 = explode("-", $req->order_number);//
 
-        $selectf = new SwitchForma($auxvend1[0]);///Seleciona forma pagamento da loja
-        $selectf = $selectf->getForma();
-        $payment_vr =  $selectf;
-       // $payment_vr = new CieloCheckoutlink();
+      //  $selectf = new SwitchForma($auxvend1[0]);///Seleciona forma pagamento da loja
+      //  $selectf = $selectf->getForma();
+      //  $payment_vr =  $selectf;
+        $payment_vr = new CieloCheckoutlink();
 
         $tt =  $this->temp;
         $auxvend = explode("-",  $payment_vr->getproperty_ident_venda($req));//Separa codigo da loja e o da venda --> getproperty_ident_venda() pega a propriedade de identificao da venda da forma de pagamento
