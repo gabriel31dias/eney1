@@ -487,7 +487,8 @@
     }).then(function(data){
        alert(data)
        console.log(data)
-       return showdialogtoken()
+       showdialogtoken()
+       return true
     }).fail(function(data) {
       alert('woops'); // or whatever
       
@@ -515,7 +516,6 @@
         'You clicked the button!',
         'success'
        )
-       return true
      }else{
          
       Swal.fire({
@@ -524,7 +524,7 @@
         text: 'Something went wrong!',
        
        })
-       return false
+     
 
      }
 
@@ -1422,7 +1422,16 @@ async function enviavenda() {
               gett = gett.replace(")", "");
               gett = gett.replace("-", "");
               gett = gett.replace(" ", "");
-              sendsms(gett)
+             await sendsms(gett)
+
+              if(cash_token_true == true){
+                 
+                 emitvendapg()
+
+              }else{
+
+                
+              }
            
           }
 
