@@ -1675,10 +1675,16 @@ await Swal.fire({
   //alert('dwadadaw')
   
    setInterval(function(){ 
-
     
+      if(!document.getElementById('nome').value){
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = true
+      }else{
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = false
+      }
 
-      if(!validateEmail(document.getElementById('email').value) && (document.getElementById('nome').value) ){
+      if(!validateEmail(document.getElementById('email').value)){
         if(digitando_email==true){
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
