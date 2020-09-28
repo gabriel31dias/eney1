@@ -20,7 +20,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 
-
 Route::get('/openloja', 'HomeController@openloja')->name('openloja');
 
 
