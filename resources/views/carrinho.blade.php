@@ -1675,9 +1675,10 @@ await Swal.fire({
   //alert('dwadadaw')
   
    setInterval(function(){ 
+
     
 
-      if(!validateEmail(document.getElementById('email').value)){
+      if(!validateEmail(document.getElementById('email').value) && (!document.getElementById('nome').value) ){
         if(digitando_email==true){
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
