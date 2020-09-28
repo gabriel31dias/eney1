@@ -117,7 +117,7 @@ class CieloCheckoutlink extends Controller
     }
 
     public function setUrlReturn($value){
-        $this->UrlReturn = $value;
+        $this->UrlReturn = $value.$this->OrderNumber;
         return $this;
     }
 

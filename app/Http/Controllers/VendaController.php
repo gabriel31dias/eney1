@@ -642,7 +642,7 @@ class VendaController extends Controller
         $gg = new SwitchForma(1);
         $gg = $gg->getForma();
     
-       var_dump($gg);
+         var_dump($gg);
   
       }
 
