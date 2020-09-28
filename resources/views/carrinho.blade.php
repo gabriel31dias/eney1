@@ -1426,7 +1426,7 @@ async function enviavenda() {
                
               loaddingtoken()
               sendsms(gett)
-
+             
               
            
           }
