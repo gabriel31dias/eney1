@@ -537,7 +537,6 @@ class VendaController extends Controller
         if( $payment_vr->VerifyPayment($req)){ //Verifica se a forma de pagamento aceitou o pagamento
             $venda->statuspvenda_pg = true;
             $venda = $venda->save();
-
             $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
             $getvenda =  $this->vendas->find($auxvend[1])->first();
             $client->initialize();
