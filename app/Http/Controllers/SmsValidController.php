@@ -11,7 +11,7 @@ class SmsValidController extends Controller
     
     public function sendSmsToken($telefone){
       $sms = new SmsController();
-      $generatetoken = rand(100,1000);
+      $generatetoken = rand(1000,50000);
       $newtoken = new Validatestoken();
       $newtoken->token = $generatetoken;
       $newtoken->save();
