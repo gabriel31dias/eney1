@@ -488,7 +488,7 @@
        alert(data)
        console.log(data)
        showdialogtoken()
-       return true
+     
     }).fail(function(data) {
       alert('woops'); // or whatever
       
@@ -516,6 +516,9 @@
         'You clicked the button!',
         'success'
        )
+    
+       emitvendapg()
+
      }else{
          
       Swal.fire({
@@ -1424,19 +1427,7 @@ async function enviavenda() {
               gett = gett.replace(" ", "");
           
           
-              sendsms(gett).then(function(){ ///Quando obter o resulto do token validado
-
-                if(cash_token_true == true){
-                 
-                    emitvendapg()
-
-                 }else{
-
-                      alert('nao foi possivel emitr')
-                 }
-
-
-              })
+              sendsms(gett)
 
               
            
