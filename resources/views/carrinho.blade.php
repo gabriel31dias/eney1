@@ -485,7 +485,7 @@
     $.get('{{route("sendtoken")}}/'+telefone ,function(data){
 
     }).then(function(data){
-       alert(data)
+      // alert(data)
        console.log(data)
        showdialogtoken()
      
@@ -1336,7 +1336,7 @@ async function savevenda(){
 
                 error: function(data) {
                     //alert(JSON.stringify(data))
-                   alert('dfefes')
+                  // alert('dfefes')
                    console.log(data)
                     Swal.fire({
                       icon: 'error',
@@ -1398,7 +1398,7 @@ async function enviavenda() {
 
     $.get('{{route("verificacarrinho")}}', function(data) {
         
-        alert('Dfadwadawd')
+      ///  alert('Dfadwadawd')
 
         if (data == '0') {
             temaapp.fire({
@@ -1410,7 +1410,7 @@ async function enviavenda() {
             return
         } else {
 
-         alert('carrinho aberto')
+         ///alert('carrinho aberto')
 
          if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                          
