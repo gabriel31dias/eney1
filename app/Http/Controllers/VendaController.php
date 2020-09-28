@@ -524,7 +524,7 @@ class VendaController extends Controller
 
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
-        $getcodeloja = SwitchForma::getCodloja($req);
+        $getcodeloja = SwitchForma::getcodeloja($req);
      //   $tt =  $this->temp;
      //   $req = json_encode($req->all()) ;
       //  $tt =  $tt->create(['value'=>  $getcodeloja ]);
