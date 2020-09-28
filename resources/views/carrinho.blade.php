@@ -1331,7 +1331,7 @@ async function savevenda(){
                    
                    
                      emitvendapg()
-                    
+                    return true
                 },
 
                 error: function(data) {
@@ -1423,7 +1423,8 @@ async function enviavenda() {
               gett = gett.replace("-", "");
               gett = gett.replace(" ", "");
           
-          
+               
+              loaddingtoken()
               sendsms(gett)
 
               
@@ -1465,7 +1466,43 @@ async function enviavenda() {
 
 }
 
+async function loaddingtoken(){
 
+  
+let timerInterval
+await Swal.fire({
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  title: '',
+  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Aguarde processando token...</h2>',
+  timer: 2000,
+  timerProgressBar: true,
+  onBeforeOpen: () => {
+    Swal.showLoading()
+    timerInterval = setInterval(() => {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 500)
+  },
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  onClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+
+
+}
 
 function atualiza_obj_user(){
 
@@ -1550,6 +1587,8 @@ function atualiza_obj_user(){
   
 
       processandovenda()
+
+
 
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
@@ -1654,7 +1693,7 @@ await Swal.fire({
           b.textContent = Swal.getTimerLeft()
         }
       }
-    }, 100)
+    }, 500)
   },
   closeOnClickOutside: false,
   allowOutsideClick: false,
