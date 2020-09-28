@@ -646,5 +646,9 @@ class VendaController extends Controller
   
       }
 
+      public function testesteservidorsocket(){
+       return env('SERVIDOR_SOCKET');
+      }
+
 }
 
