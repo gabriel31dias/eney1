@@ -566,6 +566,8 @@ class VendaController extends Controller
        // $req = json_encode($req->all()) ;
       //  $tt =  $tt->create(['value'=>  $getcodeloja ]);
        // return  response()->json($tt);
+
+       return  response()->json( $getcodeloja);
     }
 
 
