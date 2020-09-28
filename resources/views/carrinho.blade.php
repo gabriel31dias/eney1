@@ -510,13 +510,7 @@
  
      
      if (cash_token_true == true){
-         
-      Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-       )
-    
+             
        emitvendapg()
 
      }else{
