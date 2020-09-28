@@ -525,32 +525,29 @@ class VendaController extends Controller
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
         $getcodeloja = SwitchForma::getcodeloja($req);
-     //   $tt =  $this->temp;
-     //   $req = json_encode($req->all()) ;
-      //  $tt =  $tt->create(['value'=>  $getcodeloja ]);
-       // $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
-      //  $selectf = $selectf->getForma();
-    ///    $payment_vr =  $selectf;
+        $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
+        $selectf = $selectf->getForma();
+        $payment_vr =  $selectf;
        // $payment_vr = new CieloCheckoutlink();
 
-       
-      //  $auxvend = explode("-",  $payment_vr->getproperty_ident_venda($req));//Separa codigo da loja e o da venda --> getproperty_ident_venda() pega a propriedade de identificao da venda da forma de pagamento
-      //  $venda = $this->vendas->find($auxvend[1]);
+        $tt =  $this->temp;
+        $auxvend = explode("-",  $payment_vr->getproperty_ident_venda($req));//Separa codigo da loja e o da venda --> getproperty_ident_venda() pega a propriedade de identificao da venda da forma de pagamento
+        $venda = $this->vendas->find($auxvend[1]);
      
         
-     //   if( $payment_vr->VerifyPayment($req)){ //Verifica se a forma de pagamento aceitou o pagamento
-        //    $venda->statuspvenda_pg = true;
-         //   $venda = $venda->save();
-         //   $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
-        //    $getvenda =  $this->vendas->find($auxvend[1])->first();
-         //  $client->initialize();
+        if( $payment_vr->VerifyPayment($req)){ //Verifica se a forma de pagamento aceitou o pagamento
+            $venda->statuspvenda_pg = true;
+            $venda = $venda->save();
+            $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+            $getvenda =  $this->vendas->find($auxvend[1])->first();
+            $client->initialize();
             // send for server (listen) the any array
-       //     $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
-          //  $client->close();
-      ///  }else{
-         ///   $venda->statuspvenda_pg = false;
-           // $venda = $venda->save();
-      //  }
+            $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
+            $client->close();
+        }else{
+            $venda->statuspvenda_pg = false;
+            $venda = $venda->save();
+        }
 
         //if($venda){
 
@@ -563,11 +560,9 @@ class VendaController extends Controller
 
         // Socket io --------->>>> Envia
      
-       // $req = json_encode($req->all()) ;
-      //  $tt =  $tt->create(['value'=>  $getcodeloja ]);
-       // return  response()->json($tt);
-
-       return  response()->json( $getcodeloja);
+        $req = json_encode($req->all()) ;
+        $tt =  $tt->create(['value'=>  $getcodeloja ]);
+        return  response()->json($tt);
     }
 
 
