@@ -34,6 +34,13 @@ class SwitchForma extends Controller
        return new CieloCheckoutlink();
 
    }
+
+   public static function getcodeloja($req){
+
+      $auxvend = explode("-", $req->order_number);
+      return  $auxvend[0];
+
+   }
    
   
 
