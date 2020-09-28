@@ -546,7 +546,6 @@ class VendaController extends Controller
         }else{
             $venda->statuspvenda_pg = false;
             $venda = $venda->save();
-
         }
 
         //if($venda){
@@ -586,10 +585,8 @@ class VendaController extends Controller
          // }
          
 
-          
           array_push($array_loja_enviada , $value->cod_venda_web);
         
-          
         }
 
 
