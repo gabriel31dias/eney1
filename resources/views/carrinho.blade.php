@@ -487,7 +487,7 @@
     }).then(function(data){
        alert(data)
        console.log(data)
-       showdialogtoken()
+       return showdialogtoken()
     }).fail(function(data) {
       alert('woops'); // or whatever
       
@@ -515,6 +515,7 @@
         'You clicked the button!',
         'success'
        )
+       return true
      }else{
          
       Swal.fire({
@@ -523,7 +524,7 @@
         text: 'Something went wrong!',
        
        })
-     
+       return false
 
      }
 

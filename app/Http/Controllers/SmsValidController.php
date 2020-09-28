@@ -16,7 +16,7 @@ class SmsValidController extends Controller
       $newtoken->token = $generatetoken;
       $newtoken->save();
       
-      return   $sms->sendSinglesms('0030015529','O seu token do WebApp é'.$generatetoken, $telefone );
+      return   $sms->sendSinglesms('0030015529','O seu token do WebApp é '.$generatetoken, $telefone );
       $gg = $newtoken->all();
      
    }
@@ -29,7 +29,7 @@ class SmsValidController extends Controller
         $sms->delete();
           return   response()->json(['su'=>true]) ;
       }else{
-        $sms->delete();
+      ////  $sms->delete();
           return   response()->json(['su'=>false]) ;
       }
        
