@@ -1422,16 +1422,23 @@ async function enviavenda() {
               gett = gett.replace(")", "");
               gett = gett.replace("-", "");
               gett = gett.replace(" ", "");
-             await sendsms(gett)
+          
+          
+              sendsms(gett).then(function(){ ///Quando obter o resulto do token validado
 
-              if(cash_token_true == true){
+                if(cash_token_true == true){
                  
-                 emitvendapg()
+                    emitvendapg()
 
-              }else{
+                 }else{
 
-                
-              }
+                      alert('nao foi possivel emitr')
+                 }
+
+
+              })
+
+              
            
           }
 
