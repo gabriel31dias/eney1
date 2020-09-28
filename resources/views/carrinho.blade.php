@@ -511,8 +511,9 @@
      
      if (cash_token_true == true){
              
-       emitvendapg()
-
+      savevenda()
+       
+ 
      }else{
          
       Swal.fire({
@@ -1328,6 +1329,8 @@ async function savevenda(){
                   //   alert(data)
                      cash_idvenda = data
                     // alert('venda salva')
+                   
+                   
                      emitvendapg()
                     
                 },
