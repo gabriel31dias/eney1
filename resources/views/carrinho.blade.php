@@ -1679,9 +1679,11 @@ await Swal.fire({
       if(!document.getElementById('nome').value){
         const button = document.querySelector('.swal2-confirm')
         button.disabled = true
+        return
       }else{
         const button = document.querySelector('.swal2-confirm')
         button.disabled = false
+        return
       }
 
       if(!validateEmail(document.getElementById('email').value)){
