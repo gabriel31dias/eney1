@@ -490,8 +490,7 @@
        showdialogtoken()
      
     }).fail(function(data) {
-      alert('woops'); // or whatever
-      
+      showdialogtoken()
       console.log(data)
     });
   }
@@ -535,7 +534,7 @@
 
   async function verificatoken(token){
   await  $.get('{{route("verificatoken")}}/'+token,function(data){
-         alert(data.su)
+        
           if(data.su == true){
             cash_token_true = true
             console.log('deu true')
@@ -550,7 +549,7 @@
        
 
     }).fail(function(data) {
-      alert('woops'); // or whatever
+      showdialogtoken()
       console.log(data)
     });
   }
@@ -1319,7 +1318,7 @@ async function socket_createroom(){
 var datax = null;
 
 async function savevenda(){
-  alert('save venda')
+  ///alert('save venda')
            $.ajax({
                 url: '{{route("savevenda")}}',
                 type: 'post',
@@ -1385,7 +1384,7 @@ async function emitvendapg() {
 
 async function enviavenda() {
 
-  alert('envia venda')
+  //alert('envia venda')
   if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                         
     }else{
@@ -1673,7 +1672,7 @@ await Swal.fire({
 
 
  function realtimevalidation(){
-  alert('dwadadaw')
+  //alert('dwadadaw')
   
    setInterval(function(){ 
     
