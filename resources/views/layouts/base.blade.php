@@ -34,7 +34,16 @@
       <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
       <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></link>
+
+      
       <style>
+
+.fh5co-card-item .fh5co-text h2 {
+           font-size: 20px;
+           font-weight: 400;
+           margin: 0 0 10px 0;
+           color: black;
+          }
 
       * {
           
