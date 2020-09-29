@@ -658,7 +658,7 @@ class VendaController extends Controller
       }
 
 
-      public function Emitx()
+      public function testerede()
       {
           // Configuração da loja em modo produção
          $store = new Store('PV', 'TOKEN', Environment::production());
