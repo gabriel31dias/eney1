@@ -16,6 +16,12 @@ use App\Http\Controllers\SwitchForma;
 use  ElephantIO\Client;
 use  ElephantIO\Engine\SocketIO\Version2X;
 use App\User;
+use Rede;
+use Rede\Store;
+use Rede\Environment;
+use Rede\Transaction;
+use Rede\eRede;
+use Rede\Exception\RedeException;
 
 
 class VendaController extends Controller
@@ -649,6 +655,33 @@ class VendaController extends Controller
 
       public function testesteservidorsocket(){
        return env('SERVIDOR_SOCKET');
+      }
+
+
+      public function Emitx()
+      {
+          // Configuração da loja em modo produção
+         $store = new Store('PV', 'TOKEN', Environment::production());
+
+          // Configuração da loja em modo sandbox
+         // $store = new \Rede\Store('PV', 'TOKEN', \Rede\Environment::sandbox());
+
+       // Transação que será autorizada
+        $transaction = (new Transaction(20.99, 'pedido' . time()))->creditCard(
+            '5448280000000007',
+            '235',
+            '12',
+            '2020',
+            'John Snow'
+         );
+
+          // Autoriza a transação
+         $transaction = (new eRede($store))->create($transaction);
+       
+ 
+         if ($transaction->getReturnCode() == '00') {
+              printf("Transação autorizada com sucesso; tid=%s\n", $transaction->getTid());
+           }
       }
 
 }

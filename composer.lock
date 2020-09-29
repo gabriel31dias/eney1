@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14445ac11c7b1e05a7ea1af2ea602507",
+    "content-hash": "cbc2d2dff26b88fbc4a9d3b4dd3ed84f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -109,6 +109,49 @@
                 }
             ],
             "time": "2020-04-15T15:59:35+00:00"
+        },
+        {
+            "name": "developersrede/erede-php",
+            "version": "5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DevelopersRede/erede-php.git",
+                "reference": "0cf6e8816d8f08d85ac4f31eb34b88918a9ed839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DevelopersRede/erede-php/zipball/0cf6e8816d8f08d85ac4f31eb34b88918a9ed839",
+                "reference": "0cf6e8816d8f08d85ac4f31eb34b88918a9ed839",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "monolog/monolog": "*",
+                "php": ">=7.2",
+                "psr/log": "^1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rede\\": "src/Rede"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Batista Neto",
+                    "email": "neto.joaobatista@gmail.com"
+                }
+            ],
+            "description": "e.Rede integration SDK",
+            "time": "2020-09-22T19:08:15+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

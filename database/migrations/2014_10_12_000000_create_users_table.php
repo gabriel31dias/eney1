@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->string('COR3')->nullable();//Nome da loja que vai aparecer no app
             $table->string('password');
             $table->integer('fpagamentoeletronico')->default(1)->nullable();//code 1 para cielo ,2 para rede
+            $table->longText('apismscliente');
             $table->time('horarioinicio')->nullable();
             $table->time('horariofinal')->nullable();
             $table->string('cielocode')->nullable();
