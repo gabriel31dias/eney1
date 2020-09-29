@@ -55,6 +55,12 @@
         <![endif]-->
         
         <style>
+			.fh5co-card-item .fh5co-text h2 {
+           font-size: 20px;
+           font-weight: 400;
+           margin: 0 0 10px 0;
+           color: black;
+          }
 		       .actionx:hover {
               background-color:darkgrey;
               color:white!important;
