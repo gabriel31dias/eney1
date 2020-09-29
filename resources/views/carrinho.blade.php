@@ -52,7 +52,18 @@
 		<link rel="stylesheet" href="/lojavers/css/owl.theme.default.min.css">
 	
 		<!-- Theme style  -->
-		<link rel="stylesheet" href="/lojavers/css/style.css">
+    <link rel="stylesheet" href="/lojavers/css/style.css">
+    <style>
+
+  .fh5co-card-item .fh5co-text h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    color: black;
+   }
+
+    </style>
+
 	
 		<!-- Modernizr JS -->
 		<script src="/lojavers/js/modernizr-2.6.2.min.js"></script>
