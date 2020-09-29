@@ -318,14 +318,14 @@
                         <br>
                         <br>
                         
-                        <div class="">
+                        <div class="fh5co-text">
                             <h2>{{$item['nomeproduto']}} {{$item['tags_adicionais']}} </h2>
                             
                             <p>
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
                             <p>
-                              <h2 class=""> Quantidade {{$item['quantidade']}} </h2>
+                              <h2 class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
                           </p>
                           
                             
