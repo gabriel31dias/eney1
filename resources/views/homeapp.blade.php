@@ -79,7 +79,7 @@ visibility: hidden;
                             
                         @endforeach
 
-                        @if(Session::get('client'))
+                        @if(\Session::get('client'))
                            
                              dwadwadawd cliente
                         @endif
