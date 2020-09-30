@@ -43,7 +43,7 @@ class User extends Authenticatable
       return  $loja;
     }
 
-    public static function countMsgmonth($codeloja){
+    public static function countMsgmMonth($codeloja){
 
       $countsms =  DB::table('smsenviados')->where('code_loja',$codeloja)
       ->whereMonth('created_at', Carbon::now()->format('m'))
@@ -52,6 +52,15 @@ class User extends Authenticatable
       return  $countsms;
        // ;
     }
+
+
+    public static function countMsgTotal($codeloja){
+
+        $countsms =  DB::table('smsenviados')->where('code_loja',$codeloja)
+        ->count();
+        return  $countsms;
+         // ;
+      }
 
    
 }
