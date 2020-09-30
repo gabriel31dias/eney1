@@ -43,6 +43,8 @@ class HomeController extends Controller
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->whereDate('created_at', Carbon::today())->get();
         $getclientes_sms =   $this->clisms->all();
         $roole = Auth::user()->tipo_user;//3 para admin
+
+        var_dump( $getclientes_sms);
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms ]);
     }
 
