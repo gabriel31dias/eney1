@@ -37,6 +37,8 @@ visibility: hidden;
             <div class="header">
                 <h2>
                 TOTAL SMS POR CLIENTE
+                <input  id="SEARCHCLIENT" name="SEARCHCLIENT" placeholder="Pesquise o cliente" type="text" class="form-control">
+                
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
