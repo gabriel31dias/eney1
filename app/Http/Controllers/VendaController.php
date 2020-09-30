@@ -479,10 +479,7 @@ class VendaController extends Controller
     public function cielopagamento(Request $req){
         $selectf = new SwitchForma($req->codeloja );///Seleciona forma pagamento da loja
         $selectf = $selectf->getForma();
-          
-         
         $cielo = $selectf;
-      
         $getmercantid = $this->users->where('codigo_estabelecimento', $req->codigo_estabelecimento )->first();
         Log::info('Novo pagamento cielo');
         $cielo = $cielo->addMerchantId($getmercantid->cielocode);
@@ -501,9 +498,7 @@ class VendaController extends Controller
         $cielo = $cielo->setTelefone($this->soNumero($req->telefone));
         $cielo = $cielo->setUrlReturn($req->urlretorno);
         $cielo = $cielo->executa();
-        
         return response()->json($cielo);
-
        // $cielo->AddProductList();
     }
 
@@ -513,9 +508,6 @@ class VendaController extends Controller
 
     public function notificao(Request $req){
         $tt =  $this->temp;
-
-
-
         $req = json_encode($req->all()) ;
         $tt =  $tt->create(['value'=>$req]);
         return  response()->json($tt);
