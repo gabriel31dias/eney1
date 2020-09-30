@@ -77,9 +77,11 @@ visibility: hidden;
                             
                         @endforeach
 
-                        {{ $clients_sms->links() }}
+                       
                     </tbody>
                 </table>
+
+                {{ $clients_sms->links() }}
             </div>
         </div>
     </div>
