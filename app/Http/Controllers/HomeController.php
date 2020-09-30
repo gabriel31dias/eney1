@@ -57,7 +57,7 @@ class HomeController extends Controller
         return redirect("/login");
     }
 
-    public function searchclisms(){
+    public function searchclisms($cliname){
         
         
 

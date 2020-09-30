@@ -399,7 +399,8 @@ visibility: hidden;
 
 $(document).on('keypress',function(e) {
     if(e.which == 13) {
-       location.href = "{{route('searchclisms')}}"
+       let getvalue = document.getElementById('SEARCHCLIENT').value
+       location.href = "{{route('searchclisms')}}/" + getvalue
     }
 });
    
