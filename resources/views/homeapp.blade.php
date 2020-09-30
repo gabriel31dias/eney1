@@ -120,6 +120,7 @@ visibility: hidden;
                             @enddesktop
                             <th>VALOR TOTAL</th>
                             <th>HORA</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -317,6 +318,13 @@ visibility: hidden;
         </div>
     </div>
 </div>
+
+
+@if($roole=='3')
+
+dwadawdwada
+
+@endif
 
 
 

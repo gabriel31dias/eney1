@@ -573,7 +573,7 @@ class VendaController extends Controller
         $vendasnaoenviadas = $this->vendas->where('vendas_received', null)->where('statuspvenda_pg', true)->get();
         $tt =  $this->temp;
         $array_loja_enviada = [];
-
+       
         foreach ($vendasnaoenviadas as $value) {
 
          // if(! array_search($value->cod_venda_web ,$array_loja_enviada ,false) ){

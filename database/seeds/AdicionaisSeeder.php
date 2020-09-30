@@ -14,6 +14,7 @@ class AdicionaisSeeder extends Seeder
      *
      * @return void
      */
+    
     public function run()
     {
        /// Factory();
