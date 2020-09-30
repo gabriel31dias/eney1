@@ -60,33 +60,22 @@ visibility: hidden;
                     <thead>
                         <tr>
                             <th>NOME CLIENTE</th>
-                            <th>SINCRONIZAÇÃO</th>
-                            <th>VALOR TOTAL</th>
+                            <th>CODIGO LOJA</th>
+                            <th>TOTAL SMSENVIADOS NO MES</th>
+                            <th>TOTAL SMS ENVIADOS</th>
                             <th>HORA</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($vendasaguardando as $item)
+                        @foreach ($clients_sms as $item)
 
                         <tr>
                        
-                            <td>{{$item->nomecliente}}</td>
+                            <td>{{$item->code_loja}}</td>
 
-                            <td>@if($item->vendas_received == 1)
-                                <button type="button" class="btn bg-green waves-effect">  <i class="material-icons">trending_up</i>Sincronizado</button>
-                                @else
-
-                                <button type="button" class="btn bg-orange waves-effect"><i class="material-icons">access_alarm</i>Aguardando</button>
-
-                                    
-                                </button>
-                               @endif
-                             </td>
-                            <td>{{$item->preco_total_produto + $item->preco_total_entrega }}</td>
-                            <td>{{$item->created_at}}</td>
-                            <td><a href="https://api.whatsapp.com/send?phone=55{{$item->numerotelefone}}&text=Ola%20{{$item->nomecliente}}!" type="button" class="btn bg-green btn-circle waves-effect waves-circle waves-float">
-                                <i class="material-icons">chat</i>
-                            </a></td>
+                          
+                           
+                           
                         </tr>
                             
                         @endforeach

@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function __construct(Venda $venda,Smsenviado $sms)
     {
         $this->vendas =  $venda;
-        $this->clisms = $sms;
+        $this->clisms = $sms;///Pega clientes e seus sms enviados
         $this->middleware('auth');
     }
 
