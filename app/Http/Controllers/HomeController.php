@@ -61,6 +61,6 @@ class HomeController extends Controller
         
         
 
-        return redirect()->back()->with('success', 'your message,here');   
+        return redirect()->back()->with('success', 'your message,here'.$cliname);   
     }
 }
