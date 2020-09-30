@@ -38,8 +38,8 @@ class User extends Authenticatable
 
 
     public static function getclientname($codeloja){
-      $loja =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
+      $loja =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->value($codeloja);
       //
-      return  $loja->nome_estabelecimento;
+      return  $loja;
     }
 }
