@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Smsenviado extends Model
 {
     //
+
+    protected $guarded = [];
+
 }
