@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public static function countMsgmonth($codeloja){
 
-      $loja =  DB::table('smsenviados')->where('codigo_estabelecimento',$codeloja)
+      $loja =  DB::table('smsenviados')->where('code_loja',$codeloja)
       ->whereMonth('created_at', Carbon::now()->format('m'))
       ->whereYear('created_at', Carbon::now()->format('Y'))->get()
       ->count();
