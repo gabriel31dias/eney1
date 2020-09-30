@@ -61,7 +61,7 @@ visibility: hidden;
                         <tr>
                             <th>NOME CLIENTE</th>
                             <th>CODIGO LOJA</th>
-                            <th>TOTAL SMSENVIADOS NO MES</th>
+                            <th>SMSENVIADOS NO MES</th>
                             <th>TOTAL SMS ENVIADOS</th>
                             <th>HORA</th>
                         </tr>
@@ -71,9 +71,9 @@ visibility: hidden;
 
                         <tr>
                             <td>{{ App\User::getclient('nome_estabelecimento',$item->codigo_estabelecimento) }}</td>
-                            <td>{{$item->code_loja}}</td>
-                            <td>{{ App\User::countMsgmMonth( $item->codigo_estabelecimento) }}</td>
-                            <td>{{ App\User::countMsgTotal( $item->codigo_estabelecimento) }}</td>
+                            <td>{{$item->nome_estabelecimento}}</td>
+                            <td style="color:green">{{ App\User::countMsgmMonth( $item->codigo_estabelecimento) }}</td>
+                            <td style="color:red">{{ App\User::countMsgTotal( $item->codigo_estabelecimento) }}</td>
                         </tr>
                             
                         @endforeach

@@ -45,7 +45,6 @@ class HomeController extends Controller
         $getclientes_sms = $this->clisms->get();
         $roole = Auth::user()->tipo_user;//3 para admin
 
-        var_dump( $getclientes_sms);
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms ]);
     }
 
