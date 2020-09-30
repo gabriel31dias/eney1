@@ -37,6 +37,12 @@ visibility: hidden;
             <div class="header">
                 <h2>
                 TOTAL SMS POR CLIENTE
+
+                
+@if($gg)
+clientdawadw
+
+@endif
                 <br>
                 <br>
                 <input  id="SEARCHCLIENT" name="SEARCHCLIENT" placeholder="Pesquise o cliente e precione enter" type="text" class="form-control">
@@ -393,10 +399,6 @@ visibility: hidden;
 @endif
 
 
-@if($gg)
-clientdawadw
-
-@endif
 
 <li>{!! \Session::get('success') !!}</li>
 
