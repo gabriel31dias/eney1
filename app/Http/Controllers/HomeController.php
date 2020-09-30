@@ -35,7 +35,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $gg = Session::get('client');
+        $gg = Session::get('success');
         $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
         $username = Auth::user()->name;
@@ -62,6 +62,6 @@ class HomeController extends Controller
     public function searchclisms($cliname){
         
         
-        return redirect()->back()->with('cliente', 'Resultado de '.$cliname);   
+        return redirect()->back()->with('success', 'Resultado de '.$cliname);   
     }
 }
