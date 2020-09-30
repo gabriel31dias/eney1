@@ -70,10 +70,10 @@ visibility: hidden;
                         @foreach ($clients_sms as $item)
 
                         <tr>
-                            <td>{{ App\User::getclient('nome_estabelecimento',$item->code_loja) }}</td>
+                            <td>{{ App\User::getclient('nome_estabelecimento',$item->codigo_estabelecimento) }}</td>
                             <td>{{$item->code_loja}}</td>
-                            <td>{{ App\User::countMsgmMonth( $item->code_loja) }}</td>
-                            <td>{{ App\User::countMsgTotal( $item->code_loja) }}</td>
+                            <td>{{ App\User::countMsgmMonth( $item->codigo_estabelecimento) }}</td>
+                            <td>{{ App\User::countMsgTotal( $item->codigo_estabelecimento) }}</td>
                         </tr>
                             
                         @endforeach
