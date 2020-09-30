@@ -495,7 +495,7 @@
   }
 
   async function sendsms(telefone){
-    $.get('{{route("sendtoken")}}/'+telefone ,function(data){
+    $.get('{{route("sendtoken")}}/'+telefone+'/'+lojacode ,function(data){
 
     }).then(function(data){
       // alert(data)
