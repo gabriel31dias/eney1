@@ -72,7 +72,8 @@ visibility: hidden;
                         <tr>
                             <td>{{ App\User::getclient('nome_estabelecimento',$item->code_loja) }}</td>
                             <td>{{$item->code_loja}}</td>
-                            <td>{{ App\User::countMsgmonth( $item->code_loja) }}</td>
+                            <td>{{ App\User::countMsgMonth( $item->code_loja) }}</td>
+                            <td>{{ App\User::countMsgTotal( $item->code_loja) }}</td>
                         </tr>
                             
                         @endforeach
