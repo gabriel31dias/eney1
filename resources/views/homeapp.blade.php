@@ -63,7 +63,6 @@ visibility: hidden;
                             <th>CODIGO LOJA</th>
                             <th>SMSENVIADOS NO MES</th>
                             <th>TOTAL SMS ENVIADOS</th>
-                            <th>HORA</th>
                         </tr>
                     </thead>
                     <tbody>
