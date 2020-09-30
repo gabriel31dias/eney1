@@ -67,6 +67,8 @@ visibility: hidden;
                     </thead>
                     <tbody>
                         @foreach ($clients_sms as $item)
+                          
+                        
 
                         <tr>
                             <td>{{ App\User::getclient('nome_estabelecimento',$item->codigo_estabelecimento) }}</td>
@@ -76,6 +78,11 @@ visibility: hidden;
                         </tr>
                             
                         @endforeach
+
+                        @if(Session::get('client'))
+                           
+                             dwadwadawd cliente
+                        @endif
 
                        
                     </tbody>
@@ -388,7 +395,7 @@ visibility: hidden;
 
 @endif
 
-<li>{!! \Session::get('success') !!}</li>
+<li>{!! \Session::get('client') !!}</li>
 
 </div>
 </div>
