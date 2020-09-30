@@ -26,6 +26,17 @@ visibility: hidden;
 <script src="../binjs/clientes.js"></script>
 <script src="../helpers.js"></script>
 <div class="row clearfix">
+
+
+    @if($roole=='3')
+
+     admin
+
+    
+    @else
+
+    
+
    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="card">
          <div class="header">
@@ -318,11 +329,6 @@ visibility: hidden;
         </div>
     </div>
 </div>
-
-
-@if($roole=='3')
-
-dwadawdwada
 
 @endif
 
