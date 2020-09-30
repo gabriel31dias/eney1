@@ -47,7 +47,7 @@ class User extends Authenticatable
 
       $loja =  DB::table('smsenviados')->where('codigo_estabelecimento',$codeloja)
       ->whereMonth('created_at', Carbon::now()->format('m'))
-      ->whereYear('created_at', Carbon::now()->format('Y'))
+      ->whereYear('created_at', Carbon::now()->format('Y'))->get()
       ->count();
       return $loja;
        // ;
