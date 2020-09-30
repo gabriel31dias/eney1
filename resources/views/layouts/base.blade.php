@@ -68,12 +68,13 @@
     background-color: #96DDEA;
     background-image: none;
     border: 1px  black;
-    border-radius: 4px;
+    border-radius: 0px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    color:#111;
 }
       .input-group{
          border: 2px  black;
