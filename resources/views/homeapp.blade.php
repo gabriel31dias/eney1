@@ -67,10 +67,7 @@ visibility: hidden;
                     </thead>
                     <tbody>
                         @foreach ($clients_sms as $item)
-                        @if(\Session::get('client'))
-                           
-                        dwadwadawd cliente
-                   @endif
+                     
                         
 
                         <tr>
@@ -392,6 +389,12 @@ visibility: hidden;
         </div>
     </div>
 </div>
+
+@endif
+
+
+@if($gg)
+clientdawadw
 
 @endif
 
