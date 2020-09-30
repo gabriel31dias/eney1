@@ -20,6 +20,7 @@ class Smsenviados extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        
     }
 
     /**
