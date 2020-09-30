@@ -15,7 +15,7 @@ class Smsenviados extends Migration
     {
         Schema::create('smsenviados', function (Blueprint $table) {
             $table->id();
-            $table->integer('code_loja')->nullable();
+            $table->string('code_loja')->nullable();
             $table->string('telefone')->nullable();
             $table->rememberToken();
             $table->timestamps();
