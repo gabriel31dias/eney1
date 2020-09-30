@@ -42,7 +42,7 @@ class HomeController extends Controller
         $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->whereDate('created_at', Carbon::today())->get();
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->whereDate('created_at', Carbon::today())->get();
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->whereDate('created_at', Carbon::today())->get();
-        $getclientes_sms = $this->clisms->all();
+        $getclientes_sms = $this->clisms->get();
         $roole = Auth::user()->tipo_user;//3 para admin
 
         var_dump( $getclientes_sms);
