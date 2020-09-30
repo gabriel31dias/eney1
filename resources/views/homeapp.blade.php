@@ -70,7 +70,7 @@ visibility: hidden;
                         @foreach ($clients_sms as $item)
 
                         <tr>
-                            <td>{{ App\User::getclientname($item->code_loja) }}</td>
+                            <td>{{ App\User::getclient($item->code_loja) }}</td>
                             <td>{{$item->code_loja}}</td>
  
                         </tr>
