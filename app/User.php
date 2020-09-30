@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 
 class User extends Authenticatable
@@ -42,11 +43,10 @@ class User extends Authenticatable
       return  $loja;
     }
 
-    public static function countMessms($codeloja){
+    public static function countMsgmonth($codeloja){
 
-     // $loja =  DB::table('users')->where(,$codeloja)->count();
-   //   return  $loja;
-
+      $loja =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->whereDate('created_at', Carbon::now()->month())->get()->count();
+      return  $loja;
        // ;
     }
 
