@@ -43,8 +43,7 @@ class HomeController extends Controller
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->whereDate('created_at', Carbon::today())->get();
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->whereDate('created_at', Carbon::today())->get();
         $getclientes_sms = $this->clisms->paginate(15);
-        $roole = Auth::user()->tipo_user;//3 para admin
-
+        $roole = Auth::user()->tipo_user ;//3 para admin
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms ]);
     }
 
@@ -56,5 +55,12 @@ class HomeController extends Controller
     public function sair(){
         Auth::logout();
         return redirect("/login");
+    }
+
+    public function searchclisms(){
+        
+        
+
+        return redirect()->back()->with('success', 'your message,here');   
     }
 }

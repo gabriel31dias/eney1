@@ -388,7 +388,7 @@ visibility: hidden;
 
 @endif
 
-
+<li>{!! \Session::get('success') !!}</li>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ visibility: hidden;
 
 $(document).on('keypress',function(e) {
     if(e.which == 13) {
-        alert('You pressed enter!');
+       location.href = "{{route('searchclisms')}}"
     }
 });
    

@@ -31,6 +31,10 @@ Route::get('/sendsingle/{password?}/{mensagem?}/{telefone?}', 'SmsController@Sen
 Route::get('/sendtoken/{telefone?}/{codeloja?}', 'SmsValidController@sendSmsToken')->name('sendtoken');
 Route::get('/verificatoken/{token?}/', 'SmsValidController@verificatoken')->name('verificatoken');
 
+Route::get('/searchclisms/{cliname?}/', 'HomeController@searchclisms')->name('searchclisms');
+
+
+
 
 Route::get('/sair', 'HomeController@sair')->name('sairapp');
 Route::get('/home', 'HomeController@index')->name('home2');
