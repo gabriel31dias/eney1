@@ -8,7 +8,7 @@ use App\Http\Controllers\VendaController;
 use App\Smsenviado;
 use App\Venda;
 use Carbon\Carbon;
-
+use App\User;
 
 class HomeController extends Controller
 {
@@ -19,10 +19,11 @@ class HomeController extends Controller
      */
     private $vendas;
     private $clisms;
-    public function __construct(Venda $venda,Smsenviado $sms)
+    public function __construct(Venda $venda, User $sms)
     {
         $this->vendas =  $venda;
         $this->clisms = $sms;///Pega clientes e seus sms enviados
+        $this->clisms = $this->clisms->where('tipo_user', 1);
         $this->middleware('auth');
     }
 
@@ -41,7 +42,7 @@ class HomeController extends Controller
         $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->whereDate('created_at', Carbon::today())->get();
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->whereDate('created_at', Carbon::today())->get();
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->whereDate('created_at', Carbon::today())->get();
-        $getclientes_sms =   $this->clisms->all();
+        $getclientes_sms = $this->clisms->all();
         $roole = Auth::user()->tipo_user;//3 para admin
 
         var_dump( $getclientes_sms);
