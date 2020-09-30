@@ -60,7 +60,6 @@ class HomeController extends Controller
     public function searchclisms($cliname){
         
         
-
         return redirect()->back()->with('success', 'your message,here'.$cliname);   
     }
 }
