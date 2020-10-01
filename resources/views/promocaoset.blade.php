@@ -207,7 +207,7 @@ if (document.getElementById('preco').value) {
   let inicio = document.getElementById('DATA_INICIO_PROMOCAO').value
   let final = document.getElementById('DATA_FINAL_PROMOCAO').value
 
-    $.get( `{{route("updatepromocoesx")}}/${id}/${inicio}/${final}`   ,(data) => {
+    $.get( `{{route("updatepromocoesx")}}/${id}/${preco}/${inicio}/${final}`   ,(data) => {
 
        alert(data)
 
