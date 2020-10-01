@@ -84,7 +84,7 @@ visibility: hidden;
                     @foreach ($produtos as $item)
                  
                     
-                    <tr   showset('{{ $item->CODIGO_SISTEMA }}')>
+                    <tr  onclick="showset('{{ $item->CODIGO_SISTEMA }}')" >
                         <td>{{ $item->CODIGO_SISTEMA }}</td>
                         <td>{{ $item->NOME_PRODUTO }}</td>
                         <td>{{$item->PRECO_UNIT}}</td>
