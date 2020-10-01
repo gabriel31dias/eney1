@@ -39,10 +39,7 @@ visibility: hidden;
                 TOTAL SMS POR CLIENTE
 
                 
-@if($gg)
- 
 
-@endif
                 <br>
                 <br>
                 <input  id="SEARCHCLIENT" name="SEARCHCLIENT" placeholder="Pesquise o cliente e precione enter" type="text" class="form-control">
@@ -399,7 +396,7 @@ visibility: hidden;
 
 
 
-<li>{!! \Session::get('success') !!}</li>
+
 
 </div>
 </div>
