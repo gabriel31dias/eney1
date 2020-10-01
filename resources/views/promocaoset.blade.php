@@ -142,17 +142,25 @@ Swal.fire(
   'info'
 )
 
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
 async function showset(id){
   
   
   
 
 
-const { value: formValues } = await Swal.fire({
+const { value: formValues } = await swalWithBootstrapButtons.fire({
   title: '',
-  cancelButtonText: "Salvar promoção",
+  cancelButtonText: "Cancelar Promoção",
   showCancelButton: true,
-  confirmButtonText: 'Continuar comprando',
+  confirmButtonText: 'Salvar promoção',
   width:500,
   html:
     `
