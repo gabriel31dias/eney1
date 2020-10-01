@@ -282,7 +282,7 @@
 			
 			
 			  			
-<div class="container card">
+<div class="container fh5co-card-item">
 	<h2>Carousel Example</h2>  
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
