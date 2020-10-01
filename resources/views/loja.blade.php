@@ -313,7 +313,7 @@
 		</div>
   
 		<div class="item">
-		  <img src="" alt="Chicago" style="width:100%;">
+		  <img src="https://m.bonde.com.br/img/bondenews/2019/11/img_4245.jpg" alt="Chicago" style="width:100%;">
 		</div>
 	  
 		<div class="item">
