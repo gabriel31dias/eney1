@@ -300,11 +300,14 @@
 		
 			 
 			  <div class="carousel-inner">
+				<div class="item active">
+					<img src="la.jpg" alt="Los Angeles" style="width:100%;">
+				  </div>
 			  @foreach ($promoces as $item)
 		  
 			  <!-- Wrapper for slides -->
 			 
-				<div class="item active">
+				<div class="item">
 				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  style="max-height: 300px;height: 250px;"  alt="Los Angeles" style="width:100%;">
 				</div>
 		  
