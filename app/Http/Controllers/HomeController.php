@@ -10,7 +10,7 @@ use App\Venda;
 use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller
 {
     /**
