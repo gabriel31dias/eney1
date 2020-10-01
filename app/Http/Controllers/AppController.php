@@ -52,7 +52,7 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      $promoces = FacadesDB::table('produtos')->where('codigo_estabelecimento',$codigo)->get();
+      
      
       $getsucesso = '';
     
@@ -95,6 +95,8 @@ class AppController extends Controller
       $instagram =  $getloja->INSTAGRAM;
       $twitter = $getloja->TWITTER;
       $youtube = $getloja->YOUTUBE;
+
+      $promoces = FacadesDB::table('produtos')->where('ID_USER', $getloja->id)->get();
 
    
 
