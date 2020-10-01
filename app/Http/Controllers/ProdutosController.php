@@ -9,6 +9,8 @@ use App\Grupo;
 use App\adicionado;
 use App\Adicional;
 use Grupos;
+use Illuminate\Support\Facades\DB;
+
 
 class ProdutosController extends Controller
 {
@@ -131,12 +133,14 @@ class ProdutosController extends Controller
         
         $user = Auth::user()->email;
         $codeloja =  Auth::user()->codigo_estabelecimento;
-        $produtos =  $this->produtos->all();
+        $produtos =  $this->produtos->all()->paginate(15);
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $grupos = new Grupo;
         $grupos = $grupos->where('ID_USER',$iduser)->get();
         $tipo_op = Auth::user()->tipo_op;
+
+        
 
         return view('promocaoset',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'grupos'=>$grupos,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja,'produtos'=> $produtos]);
     }

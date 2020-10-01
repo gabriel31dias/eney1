@@ -104,6 +104,9 @@ visibility: hidden;
                      </tr>
                   </tfoot>
                </table>
+
+               {{ $produtos->links() }}
+
             </div>
          </div>
       </div>
