@@ -134,12 +134,14 @@ class ProdutosController extends Controller
         
         $user = Auth::user()->email;
         $codeloja =  Auth::user()->codigo_estabelecimento;
-        $produtos =  $this->produtos->paginate(15);
+     
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $grupos = new Grupo;
         $grupos = $grupos->where('ID_USER',$iduser)->get();
         $tipo_op = Auth::user()->tipo_op;
+
+        $produtos =  $this->produtos->where('ID_USER',$iduser)->paginate(15);
 
         
 
@@ -148,7 +150,7 @@ class ProdutosController extends Controller
 
 
     public function updatepromocoes($idproduto,$preco,$horaini,$horafn){
-
+       //Passa true e hora para promocao
         $getproduto = $this->produtos->find($idproduto);
         $getproduto->PRECO_CUSTO = $preco;
         $getproduto->DATA_INICIO_PROMOCAO = $horaini;
@@ -157,6 +159,16 @@ class ProdutosController extends Controller
         $getproduto =  $getproduto->save();
            
     }
+
+    public function cancelpromocao($idproduto,$preco,$horaini,$horafn){
+        //Passa true e hora para promocao
+         $getproduto = $this->produtos->find($idproduto);
+         $getproduto->PRECO_CUSTO = $preco;
+         $getproduto->DATA_INICIO_PROMOCAO = $horaini;
+         $getproduto->DATA_FINAL_PROMOCAO = $horafn;
+         $getproduto->PROMOCAO = false;
+         $getproduto =  $getproduto->save();
+     }
 
     
 
