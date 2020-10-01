@@ -10,6 +10,7 @@ use App\adicionado;
 use App\Adicional;
 use Grupos;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 
 class ProdutosController extends Controller
