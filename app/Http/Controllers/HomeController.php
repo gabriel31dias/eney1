@@ -39,7 +39,7 @@ class HomeController extends Controller
 
         if($gg){
 
-            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('name', 'like', '%' . $gg . '%');
+            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('nome_estabelecimento', 'like', '%' . $gg . '%');
        
         }
 
