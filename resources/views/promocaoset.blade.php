@@ -15,12 +15,12 @@
 }
 
 .lbl{
-    font-size: 10px;
+    font-size: 20px;
 
 }
 
 .space{
-    padding:5px;
+    padding:2px;
 }
       .dataTables_wrapper .dataTables_filter {
 float: right;
