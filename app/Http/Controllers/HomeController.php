@@ -38,7 +38,8 @@ class HomeController extends Controller
         $gg = Session::get('success');
 
         if($gg){
-            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('id', $gg);
+
+            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('name', 'like', '%' . $gg . '%')->get();
        
         }
 
