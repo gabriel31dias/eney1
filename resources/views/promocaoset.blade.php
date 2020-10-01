@@ -130,16 +130,34 @@ Swal.fire(
 )
 
 async function showset(id){
-     
-     alert(id)
+const { value: formValues } = await Swal.fire({
+  title: 'Multiple inputs',
+  html:
+    '<input id="swal-input1" class="swal2-input" placeholder="Digite o preço promocional">' +
+    '<input id="swal-input2" class="swal2-input">',
+  focusConfirm: false,
+  preConfirm: () => {
+    return [
+      document.getElementById('swal-input1').value,
+      document.getElementById('swal-input2').value
+    ]
+  }
+})
 
+if (formValues) {
+  Swal.fire(JSON.stringify(formValues))
+}
    
 }
 
 
 $('.tab tr').click(function() {
       $(this).toggleClass("clicked");
-    });
+});
+
+
+
+    
 
 
 
