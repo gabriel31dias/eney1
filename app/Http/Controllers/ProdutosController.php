@@ -143,8 +143,7 @@ class ProdutosController extends Controller
 
         $produtos =  $this->produtos->where('ID_USER',$iduser)->paginate(15);
 
-        
-
+    
         return view('promocaoset',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'grupos'=>$grupos,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja,'produtos'=> $produtos]);
     }
 
@@ -157,7 +156,7 @@ class ProdutosController extends Controller
         $getproduto->DATA_FINAL_PROMOCAO = $horafn;
         $getproduto->PROMOCAO = true;
         $getproduto =  $getproduto->save();
-           
+        return response()->json($getproduto);
     }
 
     public function cancelpromocao($idproduto,$preco,$horaini,$horafn){
