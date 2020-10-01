@@ -313,7 +313,7 @@
 		</div>
   
 		<div class="item">
-		  <img src="https://www.oetker.com.br/Recipe/Recipes/oetker.com.br/br-pt/baking/image-thumb__76794__RecipeDetailsLightBox/bolinho-de-chocolate-rapido.jpg" alt="Chicago" style="width:100%;">
+		  <img src="" alt="Chicago" style="width:100%;">
 		</div>
 	  
 		<div class="item">
