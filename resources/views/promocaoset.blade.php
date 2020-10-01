@@ -211,10 +211,6 @@ if (document.getElementById('preco').value) {
 
        alert(data)
 
-    }).then(()=>{
-
-
-        alert('true')
     })
   
 }
