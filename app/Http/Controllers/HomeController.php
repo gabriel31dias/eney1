@@ -54,9 +54,10 @@ class HomeController extends Controller
 
         if($gg){
 
-            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('nome_estabelecimento', 'like', '%' . $gg . '%')->first();
+            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('nome_estabelecimento', 'like', '%' . $gg . '%')->paginate(1);
               
         }
+
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,'gg'=>$gg ]);
     }
 
