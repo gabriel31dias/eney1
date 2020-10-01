@@ -16,6 +16,12 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 		<meta name="theme-color" content="#FBB448">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 	    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
