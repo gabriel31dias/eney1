@@ -211,7 +211,10 @@ if (document.getElementById('preco').value) {
 
        alert(data)
 
-    })
+    }).fail(function(data) {
+    alert('woops'); // or whatever
+    console.log(data)
+    });
   
 }
    
