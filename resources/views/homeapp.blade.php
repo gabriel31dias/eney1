@@ -40,7 +40,7 @@ visibility: hidden;
 
                 
 @if($gg)
-clientdawadw
+ 
 
 @endif
                 <br>
@@ -75,7 +75,6 @@ clientdawadw
                         @foreach ($clients_sms as $item)
                      
                         
-
                         <tr>
                             <td>{{ App\User::getclient('nome_estabelecimento',$item->codigo_estabelecimento) }}</td>
                             <td>{{$item->nome_estabelecimento}}</td>

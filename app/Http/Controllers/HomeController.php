@@ -10,7 +10,7 @@ use App\Venda;
 use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -36,6 +36,13 @@ class HomeController extends Controller
     public function index()
     {
         $gg = Session::get('success');
+
+        if($gg){
+           
+            $this->clisms = DB::table('users')->where('id',$gg)->where('tipo_user', 1)->get();
+            
+        }
+
         $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
         $username = Auth::user()->name;
