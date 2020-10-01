@@ -301,7 +301,7 @@
 			 
 			  <div class="carousel-inner">
 				<div class="item active">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQBhXeNDhNwY5tlqRMpH8RkbbIYa-6DLbtUqg&usqp=CAU" alt="Los Angeles" style="width:100%;">
+					<img src="https://www.indike.com.br/wp-content/uploads/2020/07/banner-promocoes.png" alt="Los Angeles" style="width:100%;">
 				  </div>
 			  @foreach ($promoces as $item)
 		  
