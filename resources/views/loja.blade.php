@@ -278,22 +278,9 @@
            
               
               
-            </div>
-
-            
-        
-
-            
-			  <br>
-			  
-
-			  <div class="fullscreen" id="wrapper">
+			</div>
 			
-		 
-			  </div>
-
-
-
+			
 			  			
 <div class="container">
 	<h2>Carousel Example</h2>  
@@ -331,6 +318,21 @@
 	  </a>
 	</div>
   </div>
+
+            
+        
+
+            
+			  <br>
+			  
+
+			  <div class="fullscreen" id="wrapper">
+			
+		 
+			  </div>
+
+
+
          
 
               
