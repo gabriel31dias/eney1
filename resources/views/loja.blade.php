@@ -300,15 +300,15 @@
 		
 			 
 			  <div  class="carousel-inner">
-				<div class="item active">
+				<div  class="item active">
 					<img src="https://www.danny.com.br/wp-content/uploads/2015/12/imagem-branca-grande.png" alt="Los Angeles" style="width:100%;">
 				  </div>
 			  @foreach ($promoces as $item)
 		  
 			  <!-- Wrapper for slides -->
 			 
-				<div class="item">
-				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  style="height: 250px;"  alt="Los Angeles" style="width:100%;">
+				<div  style="width:100%;" class="item">
+				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  alt="Los Angeles" style="width:100%;height: 300px;">
 				</div>
 		  
 			 
