@@ -76,12 +76,28 @@ visibility: hidden;
                         <th>Código sistema</th>
                         <th>Nome produto</th>
                         <th>Valor unitario</th>
-                        <th>Cfop</th>
-                        <th>Icms</th>
-                        <th>Total em estoque</th>
-                        <th>Ações</th>
+                        
                      </tr>
                   </thead>
+
+                  <tbody>
+                    @foreach ($produtos as $item)
+                 
+                    
+                    <tr>
+                        <td>{{ $item->CODIGO_SISTEMA }}</td>
+                        <td>{{ $item->NOME_PRODUTO }}</td>
+                        <td>{{$item->PRECO_UNIT}}</td>
+                       
+                    </tr>
+                        
+                    @endforeach
+
+                 
+
+                   
+                </tbody>
+
                   <tfoot>
                      <tr>
                      <tr>
