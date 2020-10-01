@@ -305,7 +305,7 @@
 			  <!-- Wrapper for slides -->
 			 
 				<div class="item active">
-				  <img src="https://m.bonde.com.br/img/bondenews/2019/11/img_4245.jpg" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  style="max-height: 300px;height: 250px;"  alt="Los Angeles" style="width:100%;">
+				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  style="max-height: 300px;height: 250px;"  alt="Los Angeles" style="width:100%;">
 				</div>
 		  
 			 
