@@ -151,6 +151,7 @@ const { value: formValues } = await Swal.fire({
                      </div>
                   ` +
                   `
+                  
                   <div class="form-line space">
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
@@ -177,15 +178,12 @@ const { value: formValues } = await Swal.fire({
     ,
   focusConfirm: false,
   preConfirm: () => {
-    return [
-      document.getElementById('swal-input1').value,
-      document.getElementById('swal-input2').value
-    ]
+   
   }
 })
 
 if (formValues) {
-  Swal.fire(JSON.stringify(formValues))
+  
 }
    
 }
