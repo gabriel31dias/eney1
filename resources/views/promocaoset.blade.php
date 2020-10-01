@@ -14,6 +14,11 @@
       background-color: #abc;
 }
 
+.lbl{
+    font-size: 5px;
+
+}
+
 .space{
     padding:5px;
 }
@@ -140,14 +145,14 @@ const { value: formValues } = await Swal.fire({
   html:
     `
                      <div class="form-line space">
-                     <h3>Digite o preço promocional</h3>
+                     <h3 class="lbl">Digite o preço promocional</h3>
                         <input id="busca" type="text" placeholder="Digite o preço promocional" class="form-control">
                         
                      </div>
                   ` +
                   `
                   <div class="form-line space">
-                   <h3>Quantos tempo de disponibilidade</h3>
+                   <h3 class="lbl">Quantos tempo de disponibilidade</h3>
                     <select name="select"  class="form-control">
                        <option value="1">1 dia</option> 
                        <option value="2" selected>2 dias</option>
