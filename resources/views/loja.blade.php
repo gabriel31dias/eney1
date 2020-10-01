@@ -299,7 +299,7 @@
 			  </ol>
 		
 			 
-			  <div class="carousel-inner">
+			  <div  class="carousel-inner">
 				<div class="item active">
 					<img src="https://www.danny.com.br/wp-content/uploads/2015/12/imagem-branca-grande.png" alt="Los Angeles" style="width:100%;">
 				  </div>
@@ -308,7 +308,7 @@
 			  <!-- Wrapper for slides -->
 			 
 				<div class="item">
-				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  style="max-height: 300px;height: 250px;"  alt="Los Angeles" style="width:100%;">
+				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  style="height: 250px;"  alt="Los Angeles" style="width:100%;">
 				</div>
 		  
 			 
