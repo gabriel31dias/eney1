@@ -138,8 +138,15 @@ const { value: formValues } = await Swal.fire({
                      <div class="form-line">
                         <input id="busca" type="text" placeholder="Escreva a busca.." class="form-control">
                      </div>
-                  </div>` +
-    '<input id="swal-input2" class="swal2-input">',
+                  ` +
+                  `<div class="form-group">
+                     <div class="form-line">
+                        <input id="busca" type="text" placeholder="Escreva a busca.." class="form-control">
+                     </div>
+                  `
+    
+    
+    ,
   focusConfirm: false,
   preConfirm: () => {
     return [
