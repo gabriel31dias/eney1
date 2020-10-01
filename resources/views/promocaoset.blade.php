@@ -143,8 +143,16 @@ Swal.fire(
 )
 
 async function showset(id){
+  
+  
+  
+
+
 const { value: formValues } = await Swal.fire({
   title: '',
+  cancelButtonText: "Salvar promoção",
+  showCancelButton: true,
+  confirmButtonText: 'Continuar comprando',
   width:500,
   html:
     `
