@@ -37,11 +37,7 @@ class HomeController extends Controller
     {
         $gg = Session::get('success');
 
-        if($gg){
-
-            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('nome_estabelecimento', 'like', '%' . $gg . '%');
-              var_dump($this->clisms );
-        }
+      
 
        
 
@@ -55,6 +51,12 @@ class HomeController extends Controller
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->whereDate('created_at', Carbon::today())->get();
         $getclientes_sms = $this->clisms->paginate(15);
         $roole = Auth::user()->tipo_user ;//3 para admin
+
+        if($gg){
+
+            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('nome_estabelecimento', 'like', '%' . $gg . '%')->firts();
+              
+        }
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,'gg'=>$gg ]);
     }
 
