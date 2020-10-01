@@ -10,6 +10,10 @@
    />
 
    <style>
+       td:hover{
+        background-color: #abc;
+
+       }
        tr.clicked {
       background-color: #abc;
 }
