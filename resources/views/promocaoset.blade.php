@@ -151,6 +151,7 @@ const { value: formValues } = await Swal.fire({
                        <option value="1">1 dia</option> 
                        <option value="2" selected>2 dias</option>
                        <option value="3">3 dias</option>
+                       <option value="s">1 semana</option>
                         <option value="n">Indeterminado</option>
                     </select>
                   `
