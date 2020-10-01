@@ -139,7 +139,7 @@ const { value: formValues } = await Swal.fire({
   width:500,
   html:
     `
-                     <div class="form-line">
+                     <div class="form-line space">
                         <input id="busca" type="text" placeholder="Escreva a busca.." class="form-control">
                      </div>
                   ` +
