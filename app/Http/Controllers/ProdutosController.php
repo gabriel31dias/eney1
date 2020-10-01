@@ -134,7 +134,7 @@ class ProdutosController extends Controller
         
         $user = Auth::user()->email;
         $codeloja =  Auth::user()->codigo_estabelecimento;
-        $produtos =  $this->produtos->all()->paginate(15);
+        $produtos =  $this->produtos->paginate(15);
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $grupos = new Grupo;
