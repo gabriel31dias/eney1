@@ -129,9 +129,16 @@ class ProdutosController extends Controller
 
     public function setpromocao(){
         
-        
-        return view('promocaoset',['da'=>'']);
+        $user = Auth::user()->email;
+        $codeloja =  Auth::user()->codigo_estabelecimento;
 
+        $username = Auth::user()->name;
+        $iduser = Auth::user()->id;
+        $grupos = new Grupo;
+        $grupos = $grupos->where('ID_USER',$iduser)->get();
+        $tipo_op = Auth::user()->tipo_op;
+
+        return view('promocaoset',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'grupos'=>$grupos,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja]);
     }
 
     
