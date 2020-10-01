@@ -157,13 +157,13 @@ const { value: formValues } = await Swal.fire({
                         <h3 class="lbl">Inicio da promoção</h3>
                         <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
                     name="DATA_INICIO_PROMOCAO" value="2018-06-12T19:30"
-                    min="2018-06-07T00:00" max="2018-06-14T00:00">
+                   >
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Final da promoção</h3>
                         <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
                     name="DATA_FINAL_PROMOCAO" value="2018-06-12T19:30"
-                    min="2018-06-07T00:00" max="2018-06-14T00:00">
+                    >
                     </div>
                   </div>
 
