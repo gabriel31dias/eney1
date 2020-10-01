@@ -133,7 +133,11 @@ async function showset(id){
 const { value: formValues } = await Swal.fire({
   title: 'Multiple inputs',
   html:
-    '<input id="swal-input1" class="swal2-input" placeholder="Digite o preço promocional">' +
+    `<div class="form-group">
+                     <div class="form-line">
+                        <input id="busca" type="text" placeholder="Escreva a busca.." class="form-control">
+                     </div>
+                  </div>` +
     '<input id="swal-input2" class="swal2-input">',
   focusConfirm: false,
   preConfirm: () => {
