@@ -33,8 +33,6 @@ visibility: hidden;
                Cadastro de promoções
             </h2>
            
-            <br>
-            <br>
             <div class="row clearfix">
                <div class="col-sm-3">
                   <div class="form-group">
