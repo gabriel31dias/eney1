@@ -132,6 +132,7 @@ Swal.fire(
 async function showset(id){
 const { value: formValues } = await Swal.fire({
   title: 'Multiple inputs',
+  width:500,
   html:
     `<div class="form-group">
                      <div class="form-line">
