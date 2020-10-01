@@ -309,11 +309,11 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
 		<div class="item active">
-		  <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+		  <img src="https://m.bonde.com.br/img/bondenews/2019/11/img_4245.jpg" alt="Los Angeles" style="width:100%;">
 		</div>
   
 		<div class="item">
-		  <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+		  <img src="https://www.oetker.com.br/Recipe/Recipes/oetker.com.br/br-pt/baking/image-thumb__76794__RecipeDetailsLightBox/bolinho-de-chocolate-rapido.jpg" alt="Chicago" style="width:100%;">
 		</div>
 	  
 		<div class="item">
