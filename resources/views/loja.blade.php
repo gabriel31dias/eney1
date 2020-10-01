@@ -282,7 +282,7 @@
 			
 			
 			  			
-<div class="container">
+<div class="container card">
 	<h2>Carousel Example</h2>  
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
