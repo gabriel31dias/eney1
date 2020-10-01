@@ -298,7 +298,7 @@
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 			  </ol>
 		
-			  @isset($promocoes)
+			 
 			  <div class="carousel-inner">
 			  @foreach ($promoces as $item)
 		  
@@ -312,7 +312,7 @@
 		
 			  @endforeach
 		
-			  @endisset
+			
 		
 			</div>
 		  
