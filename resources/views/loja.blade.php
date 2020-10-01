@@ -292,10 +292,9 @@
 		 
 			  </div>
 
-              
-			<div style="max-height: 50px;"  class="row">
-				
-				
+
+
+			  			
 <div class="container">
 	<h2>Carousel Example</h2>  
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -332,7 +331,12 @@
 	  </a>
 	</div>
   </div>
-                
+         
+
+              
+			<div style="max-height: 50px;"  class="row">
+				
+	       
 
           <h1 style="color:#FBB448"> {{ $grupoitem }}</h1>
 
