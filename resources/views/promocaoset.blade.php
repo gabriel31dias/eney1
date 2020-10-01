@@ -13,6 +13,10 @@
        tr.clicked {
       background-color: #abc;
 }
+
+.space{
+    padding:10px;
+}
       .dataTables_wrapper .dataTables_filter {
 float: right;
 text-align: right;
@@ -140,7 +144,7 @@ const { value: formValues } = await Swal.fire({
                      </div>
                   ` +
                   `
-                     <div class="form-line">
+                     <div  class="form-line space">
                         <input id="busca" type="text" placeholder="Escreva a busca.." class="form-control">
                      </div>
                   `
