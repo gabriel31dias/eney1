@@ -10,6 +10,9 @@
    />
 
    <style>
+       tr.clicked {
+      background-color: #abc;
+}
       .dataTables_wrapper .dataTables_filter {
 float: right;
 text-align: right;
@@ -132,6 +135,11 @@ async function showset(id){
 
    
 }
+
+
+$('.tab tr').click(function() {
+      $(this).toggleClass("clicked");
+    });
 
 
 
