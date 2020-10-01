@@ -140,13 +140,14 @@ const { value: formValues } = await Swal.fire({
   html:
     `
                      <div class="form-line space">
-                     <labe>Digite o preço promocional</label>
+                     <h3>Digite o preço promocional</h3>
                         <input id="busca" type="text" placeholder="Digite o preço promocional" class="form-control">
                         
                      </div>
                   ` +
                   `
-                   <labe>Quantos tempo de disponibilidade</label>
+                  <div class="form-line space">
+                   <h3>Quantos tempo de disponibilidade</h3>
                     <select name="select"  class="form-control">
                        <option value="1">1 dia</option> 
                        <option value="2" selected>2 dias</option>
@@ -154,6 +155,7 @@ const { value: formValues } = await Swal.fire({
                        <option value="s">1 semana</option>
                         <option value="n">Indeterminado</option>
                     </select>
+                </div>
                   `
     ,
   focusConfirm: false,
