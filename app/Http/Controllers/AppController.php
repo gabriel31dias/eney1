@@ -13,7 +13,7 @@ use App\Grupo;
 use Session;
 use DB;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class AppController extends Controller
 {
@@ -51,6 +51,8 @@ class AppController extends Controller
 
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
+
+      $promoces = FacadesDB::table('produtos')->where('codigo_estabelecimento',$codigo)->get();
      
       $getsucesso = '';
     
@@ -136,7 +138,7 @@ class AppController extends Controller
 
       $getgrupos = $this->grupos->where('ID_USER',$getidloja)->paginate(10);
     
-      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube,'getsucesso'=>$getsucesso]);
+      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces]);
     }
 
 

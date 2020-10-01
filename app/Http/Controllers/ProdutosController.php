@@ -153,6 +153,7 @@ class ProdutosController extends Controller
         $getproduto->PRECO_CUSTO = $preco;
         $getproduto->DATA_INICIO_PROMOCAO = $horaini;
         $getproduto->DATA_FINAL_PROMOCAO = $horafn;
+        $getproduto->PROMOCAO = true;
         $getproduto =  $getproduto->save();
            
     }
