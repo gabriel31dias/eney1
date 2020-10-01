@@ -96,7 +96,7 @@ class AppController extends Controller
       $twitter = $getloja->TWITTER;
       $youtube = $getloja->YOUTUBE;
 
-      $promoces = FacadesDB::table('produtos')->where('ID_USER', $getloja->id)->get();
+      $promoces = FacadesDB::table('produtos')->where('ID_USER', $getloja->id)->where('PROMOCAO',true)->get();
 
    
 
