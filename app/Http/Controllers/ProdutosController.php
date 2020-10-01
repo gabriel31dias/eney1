@@ -146,6 +146,17 @@ class ProdutosController extends Controller
         return view('promocaoset',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'grupos'=>$grupos,'tipo_op'=> $tipo_op,"codeloja"=>$codeloja,'produtos'=> $produtos]);
     }
 
+
+    public function updatepromocoes($idproduto,$preco,$horaini,$horafn){
+
+        $getproduto = $this->produtos->find($idproduto);
+        $getproduto->PRECO_CUSTO = $preco;
+        $getproduto->DATA_INICIO_PROMOCAO = $horaini;
+        $getproduto->DATA_FINAL_PROMOCAO = $horafn;
+        $getproduto =  $getproduto->save();
+           
+    }
+
     
 
 

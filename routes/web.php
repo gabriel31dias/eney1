@@ -88,6 +88,9 @@ Route::get('/searchpornomeproduto/{nomeproduto?}','ProdutosController@searchbyna
 Route::get('/selectidpornomegrupo/{nomegrupo?}','ProdutosController@selectcodeid')->middleware('auth')->name("selectidpornomegrupo");
 
 Route::get('/setpromocao','ProdutosController@setpromocao')->middleware('auth')->name("setpromocao");
+Route::get('/updatepromoções/{idproduto?}/{preco?}/{horaini?}/{horafn?}','ProdutosController@updatepromoções')->middleware('auth')->name("updatepromocoes");
+
+
 
 
 

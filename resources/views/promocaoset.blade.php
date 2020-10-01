@@ -10,7 +10,7 @@
    />
 
    <style>
-       td:hover{
+       tr:hover{
         background-color: #abc;
 
        }
@@ -150,7 +150,7 @@ const { value: formValues } = await Swal.fire({
     `
                      <div class="form-line space">
                      <h3 class="lbl">Digite o preço promocional</h3>
-                        <input id="busca" type="text" placeholder="Digite o preço promocional" class="form-control">
+                        <input id="preco" type="text" placeholder="Digite o preço promocional" class="form-control">
                         
                      </div>
                   ` +
@@ -160,7 +160,7 @@ const { value: formValues } = await Swal.fire({
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Inicio da promoção</h3>
-                        <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
+                        <input type="datetime-local" id="DATA_INICIO_PROMOCAO"
                     name="DATA_INICIO_PROMOCAO" value="2018-06-12T19:30"
                    >
                     </div>
@@ -186,7 +186,20 @@ const { value: formValues } = await Swal.fire({
   }
 })
 
-if (formValues) {
+if (document.getElementById('preco').value) {
+  let preco = document.getElementById('preco').value
+  let inicio = document.getElementById('DATA_INICIO_PROMOCAO').value
+  let final = document.getElementById('DATA_FINAL_PROMOCAO').value
+
+    $.get('{{route("updatepromocoes")}}/' + id + `/${inicio}/${final}`  ,(data) => {
+
+       alert(data)
+
+    }).then(()=>{
+
+
+        alert('true')
+    })
   
 }
    
