@@ -31,7 +31,8 @@ class Produtos extends Migration
             $table->string('TIPO_PRODUTO')->nullable();
             $table->boolean('PROMOCAO')->nullable();
             $table->decimal('PRECO_PROMOCAO', 10, 2)->nullable();
-           
+            $table->dateTime('DATA_INICIO_PROMOCAO')->nullable();
+            $table->dateTime('DATA_FINAL_PROMOCAO')->nullable();
             $table->decimal('PRECO_UNIT', 10, 2)->nullable();
             $table->decimal('PRECO_CUSTO', 10, 2)->nullable();
             $table->string('DESCONTO')->nullable();
