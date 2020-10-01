@@ -37,11 +37,7 @@ class HomeController extends Controller
     {
         $gg = Session::get('success');
 
-        if($gg){
-           
-            $this->clisms = DB::table('users')->where('id',$gg)->where('tipo_user', 1)->get();
-            
-        }
+       
 
         $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
