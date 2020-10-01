@@ -10,7 +10,7 @@ use App\Venda;
 use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -36,6 +36,11 @@ class HomeController extends Controller
     public function index()
     {
         $gg = Session::get('success');
+
+        if($gg){
+            $this->clisms = DB::table('users')->where('tipo_user', 1)->where('id', $gg);
+       
+        }
 
        
 
