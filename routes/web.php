@@ -87,6 +87,8 @@ Route::get('/searchpornomeproduto/{nomeproduto?}','ProdutosController@searchbyna
 
 Route::get('/selectidpornomegrupo/{nomegrupo?}','ProdutosController@selectcodeid')->middleware('auth')->name("selectidpornomegrupo");
 
+Route::get('/setpromocao','ProdutosController@setpromocao')->middleware('auth')->name("setpromocao");
+
 
 
 ///----Rotas Opcoes

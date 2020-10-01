@@ -507,6 +507,16 @@ select {
                            </a>
             
                         </li>
+
+                        <li>
+                           <a href="{{route("setpromocao")}}" class="menuit menu-toggle">
+                           <i class="material-icons" >create_new_folder</i>
+                           <span style="margin-top:10px;">Formas de pagamento</span>
+                           </a>
+            
+                        </li>
+
+                        
                      </ul>
                      
                   </li>

@@ -127,6 +127,13 @@ class ProdutosController extends Controller
        return response()->json( $codegrupo);
     }
 
+    public function setpromocao(){
+        
+        
+        return view('promocaoset',['da'=>'']);
+
+    }
+
     
 
 

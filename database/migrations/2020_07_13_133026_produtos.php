@@ -29,6 +29,8 @@ class Produtos extends Migration
             $table->longText('IMG3')->nullable();
             $table->longText('IMG4')->nullable();
             $table->string('TIPO_PRODUTO')->nullable();
+            $table->boolean('PROMOCAO')->nullable();
+            $table->decimal('PRECO_PROMOCAO', 10, 2)->nullable();
            
             $table->decimal('PRECO_UNIT', 10, 2)->nullable();
             $table->decimal('PRECO_CUSTO', 10, 2)->nullable();
