@@ -150,7 +150,7 @@ class ProdutosController extends Controller
 
     public function updatepromocoes($idproduto,$preco,$horaini,$horafn){
        //Passa true e hora para promocao
-        $getproduto = $this->produtos->find($idproduto);
+        $getproduto = $this->produtos->find($idproduto)->first();
         $getproduto->PRECO_CUSTO = $preco;
         $getproduto->DATA_INICIO_PROMOCAO = $horaini;
         $getproduto->DATA_FINAL_PROMOCAO = $horafn;
