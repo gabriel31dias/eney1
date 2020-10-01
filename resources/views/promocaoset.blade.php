@@ -15,7 +15,7 @@
 }
 
 .space{
-    padding:10px;
+    padding:5px;
 }
       .dataTables_wrapper .dataTables_filter {
 float: right;
