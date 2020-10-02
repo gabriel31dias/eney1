@@ -161,10 +161,12 @@ async function verifi_api(id) {
           console.log(data)
           if(data == true){
 
-              showset(id)
+            showset2(id)
 
           }else{
-             // showset2(id)
+             // 
+
+             showset(id)
           } 
 
 
@@ -178,12 +180,80 @@ async function verifi_api(id) {
 }
 
 async function showset(id){
-
+//Ja tem promocao
 
 const { value: formValues } = await swalWithBootstrapButtons.fire({
   title: '',
   cancelButtonText: "Cancelar Promoção",
   showCancelButton: true,
+  confirmButtonText: 'Salvar promoção',
+  width:500,
+  html:
+    `
+                     <div class="form-line space">
+                     <h3 class="lbl">Digite o preço promocional</h3>
+                        <input id="preco" type="text" placeholder="Digite o preço promocional" class="form-control">
+                        
+                     </div>
+                  ` +
+                  `
+                  
+                  <div class="form-line space">
+                  <div class="row">
+                    <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+                        <h3 class="lbl">Inicio da promoção</h3>
+                        <input type="datetime-local" id="DATA_INICIO_PROMOCAO"
+                    name="DATA_INICIO_PROMOCAO" value="2018-06-12T19:30"
+                   >
+                    </div>
+                    <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+                        <h3 class="lbl">Final da promoção</h3>
+                        <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
+                    name="DATA_FINAL_PROMOCAO" value="2018-06-12T19:30"
+                    >
+                    </div>
+                  </div>
+
+                   
+                   
+                   
+
+                  
+                </div>
+                  `
+    ,
+  focusConfirm: false,
+  preConfirm: () => {
+   
+  }
+})
+
+if (document.getElementById('preco').value) {
+  let preco = document.getElementById('preco').value
+  let inicio = document.getElementById('DATA_INICIO_PROMOCAO').value
+  let final = document.getElementById('DATA_FINAL_PROMOCAO').value
+
+    $.get( `{{route("updatepromocoesx")}}/${id}/${preco}/${inicio}/${final}`   ,(data) => {
+
+       alert(data)
+
+    }).fail(function(data) {
+    alert('woops'); // or whatever
+    console.log(data)
+    });
+  
+}
+   
+}
+
+
+
+
+async function showset2(id){
+//Ja tem promocao
+
+const { value: formValues } = await swalWithBootstrapButtons.fire({
+  title: '',
   confirmButtonText: 'Salvar promoção',
   width:500,
   html:
