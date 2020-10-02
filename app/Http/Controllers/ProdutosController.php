@@ -161,7 +161,7 @@ class ProdutosController extends Controller
 
     public function cancelpromocao($idproduto){
         //Passa true e hora para promocao
-         $getproduto = $this->produtos->find($idproduto)->first();
+         $getproduto = $this->produtos->find($idproduto);
          $getproduto->PROMOCAO = false;
          $getproduto->PRECO_PROMOCAO = null;
          $getproduto->DATA_INICIO_PROMOCAO = null;
