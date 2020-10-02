@@ -162,10 +162,11 @@ class ProdutosController extends Controller
     public function cancelpromocao($idproduto){
         //Passa true e hora para promocao
          $getproduto = $this->produtos->find($idproduto)->first();
+         $getproduto->PROMOCAO = false;
          $getproduto->PRECO_PROMOCAO = null;
          $getproduto->DATA_INICIO_PROMOCAO = null;
          $getproduto->DATA_FINAL_PROMOCAO = null;
-         $getproduto->PROMOCAO = false;
+        
          $getproduto =  $getproduto->save();
 
          $getproduto = $this->produtos->find($idproduto)->first();
@@ -176,12 +177,8 @@ class ProdutosController extends Controller
      public function verifica_promocao($idproduto){
         //retorna true se tiver em promocao 
         $getproduto =  $this->produtos->where('id',$idproduto)->where('PROMOCAO',true)->first();
-        $result = null ;
-        if(isset($getproduto->id)){
-            $result = true;
-        }else{
-            $result = false;
-        }
+        $result = $getproduto->PROMOCAO;
+       
         return response()->json($result);
      }
 
