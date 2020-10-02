@@ -308,7 +308,7 @@
 
 				  <div  style="width:100%;" class="item active">
 					<center>
-					<h1 style="font-size:15px;color:red;padding:15px;">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
+					<h1 style="font-size:15px;color:red;padding:25px;">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
 					</center>
 				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_PROMOCAO}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_PROMOCAO}}"  alt="Los Angeles" style="width:100%;height: 300px;">
 				</div>
@@ -317,7 +317,7 @@
 
 				 <div  style="width:100%;" class="item">
 					<center>
-					<h1 style="font-size:15px;color:red;padding:15px;">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
+					<h1 style="font-size:15px;color:red;padding:25px;">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
 			     	</center>
 				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_PROMOCAO}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_PROMOCAO}}"  alt="Los Angeles" style="width:100%;height: 300px;">
 				</div>
