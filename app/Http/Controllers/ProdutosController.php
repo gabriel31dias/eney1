@@ -167,6 +167,8 @@ class ProdutosController extends Controller
          $getproduto->DATA_FINAL_PROMOCAO = null;
          $getproduto->PROMOCAO = false;
          $getproduto =  $getproduto->save();
+
+         $getproduto = $this->produtos->find($idproduto)->first();
          return response()->json($getproduto);
      }
 
