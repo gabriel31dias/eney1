@@ -159,7 +159,7 @@ async function verifi_api(id) {
           getresult = data
           cash_result = data
           console.log(data)
-          if(data == 'true'){
+          if(data == true){
 
               showset(id)
 
