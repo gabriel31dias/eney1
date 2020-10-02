@@ -382,7 +382,7 @@
 								<p>@if($item->PROMOCAO == true)
 									  
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
-									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}</span> <strike> <span style="color:gray" class="price cursive-font">{{$item->PRECO_UNIT}}</span> </strike>
+									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}</span> <strike style="color:gray" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
 								  @endif
                                     
 
