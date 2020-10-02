@@ -135,7 +135,8 @@ visibility: hidden;
 
 
 <script>
-     
+
+let cash_id = null
 Swal.fire(
   'Selecione o produto que deseja adicionar um valor promocional',
   '',
@@ -152,6 +153,7 @@ const swalWithBootstrapButtons = Swal.mixin({
 
 var cash_result = null
 async function verifi_api(id) {
+cash_id = id
 
   let getresult = null
   $.get(`{{route('verificapromocaox')}}/${id}`, function(data){
@@ -172,7 +174,7 @@ async function verifi_api(id) {
 
    }).done(function(data){
 
-        
+     
 
 
    })
@@ -181,12 +183,12 @@ async function verifi_api(id) {
 
 async function showset(id){
 //Ja tem promocao
-
+cash_id = id
 const { value: formValues } = await swalWithBootstrapButtons.fire({
   title: '',
   cancelButtonText: "Cancelar Promoção",
   showCancelButton: true,
-  confirmButtonText: 'Salvar promoção',
+  confirmButtonText: 'Manter promoção',
   width:500,
   html:
     `
@@ -226,6 +228,15 @@ const { value: formValues } = await swalWithBootstrapButtons.fire({
   preConfirm: () => {
    
   }
+}).then(function (params){
+   
+   if (params.isDismissed) {
+        
+        cancelpromocao(cash_id)
+
+      }
+
+
 })
 
 if (document.getElementById('preco').value) {
@@ -247,6 +258,8 @@ if (document.getElementById('preco').value) {
 }
 
 async function cancelpromocao(id) {
+
+   
      $.get('{{route("cancelpromocao")}}/'+id,(data)=>{
 
          alert(data)
@@ -301,6 +314,15 @@ const { value: formValues } = await swalWithBootstrapButtons.fire({
   preConfirm: () => {
    
   }
+}).then(function (params){
+
+   if (params.isDismissed) {
+         
+         cancelpromocao()
+      
+      }
+
+
 })
 
 if (document.getElementById('preco').value) {
