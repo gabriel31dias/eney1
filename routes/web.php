@@ -33,7 +33,7 @@ Route::get('/verificatoken/{token?}/', 'SmsValidController@verificatoken')->name
 
 Route::get('/searchclisms/{cliname?}/', 'HomeController@searchclisms')->name('searchclisms');
 
-Route::get('/listpromo/', 'HomeController@testelistprom')->name('testelistprom');
+Route::get('/listpromo/', 'ProdutosController@testelistprom')->name('testelistprom');
 
 
 
