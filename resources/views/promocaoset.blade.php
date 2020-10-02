@@ -246,11 +246,11 @@ if (document.getElementById('preco').value) {
    
 }
 
-async function cancelpromocao(params) {
-     $.get('',(data)=>{
+async function cancelpromocao(id) {
+     $.get('{{route("cancelpromocao")}}/'+id,(data)=>{
 
          alert(data)
-         
+
      })
    
 }
