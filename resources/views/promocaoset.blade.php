@@ -154,7 +154,7 @@ var cash_result = null
 async function verifi_api(id) {
 
   let getresult = null
-  $.get(`{{route('verificapromocaox')}}/${id}`,await function(data){
+  $.get(`{{route('verificapromocaox')}}/${id}`, function(data){
 
    getresult = data
           cash_result = data
