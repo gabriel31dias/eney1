@@ -381,7 +381,7 @@
 								
 								<p>@if($item->PROMOCAO == true)
 									  
-									<i style="margin-top:1px;"  class="large material-icons">local_offer</i>
+									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 								  @endif
                                     
 
