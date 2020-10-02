@@ -100,7 +100,7 @@ visibility: hidden;
                     @foreach ($produtos as $item)
                  
                     
-                    <tr  onclick="verifi_api('{{ $item->CODIGO_SISTEMA }}')" >
+                    <tr  onclick="verifi_api('{{ $item->id }}')" >
                         <td>{{ $item->CODIGO_SISTEMA }}</td>
                         <td>{{ $item->NOME_PRODUTO }}</td>
                         <td>{{$item->PRECO_UNIT}}</td>
