@@ -184,7 +184,7 @@ cash_id = id
 async function showset(id){
 //Ja tem promocao
 cash_id = id
-const { value: formValues } = await swalWithBootstrapButtons.fire({
+ await swalWithBootstrapButtons.fire({
   title: '',
   cancelButtonText: "Cancelar Promoção",
   showCancelButton: true,
@@ -233,7 +233,7 @@ const { value: formValues } = await swalWithBootstrapButtons.fire({
    if (params.isDismissed) {
         
         cancelpromocao(cash_id)
-
+        alert('cancel')
       }
 
 
