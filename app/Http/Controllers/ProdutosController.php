@@ -170,7 +170,7 @@ class ProdutosController extends Controller
      }
 
 
-     public function verifica_promocao($idproduto,$preco,$horaini,$horafn){
+     public function verifica_promocao($idproduto){
         //retorna true se tiver em promocao
         $getproduto =  $this->produtos->where('id',$idproduto)->where('PROMOCAO',true);
         $result = null ;
@@ -182,7 +182,7 @@ class ProdutosController extends Controller
 
             $result = false;
         }
-        
+
         return response()->json($result);
      }
 

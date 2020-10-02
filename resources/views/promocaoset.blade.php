@@ -155,9 +155,7 @@ async function verifi_api(params) {
 
 
   let getresult = null
-  $.get("{{route('verificapromocaox')}}",function(){
-
-
+  $.get(`{{route('verificapromocaox')}}/${params}`,function(){
 
 
    }).done(function(data){
@@ -173,7 +171,7 @@ async function verifi_api(params) {
 
 async function showset(id){
 
-   await verifi_api()  
+   await verifi_api(id)  
 
    if(cash_result == 'true'){
 
