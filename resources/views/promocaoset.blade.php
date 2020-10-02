@@ -235,7 +235,7 @@ cash_id = id
    if (params.isDismissed) {
         
         cancelpromocao(cash_id)
-
+       alert(cancelpromocao)
        location.reload();
 
         return
@@ -267,7 +267,7 @@ async function cancelpromocao(id) {
    
      $.get('{{route("cancelpromocao")}}/'+id,(data)=>{
 
-        
+        alert(data)
         
          console.log(data)
      })
