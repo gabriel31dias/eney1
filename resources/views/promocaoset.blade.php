@@ -235,7 +235,7 @@ cash_id = id
    if (params.isDismissed) {
         
         cancelpromocao(cash_id)
-       alert(cancelpromocao)
+       alert(cash_id)
        location.reload();
 
         return
