@@ -151,7 +151,7 @@ class ProdutosController extends Controller
     public function updatepromocoes($idproduto,$preco,$horaini,$horafn){
        //Passa true e hora para promocao
         $getproduto = $this->produtos->find($idproduto)->first();
-        $getproduto->PRECO_CUSTO = $preco;
+        $getproduto->PRECO_PROMOCAO = $preco;
         $getproduto->DATA_INICIO_PROMOCAO = $horaini;
         $getproduto->DATA_FINAL_PROMOCAO = $horafn;
         $getproduto->PROMOCAO = true;
@@ -162,7 +162,7 @@ class ProdutosController extends Controller
     public function cancelpromocao($idproduto){
         //Passa true e hora para promocao
          $getproduto = $this->produtos->find($idproduto)->first();
-         $getproduto->PRECO_CUSTO = null;
+         $getproduto->PRECO_PROMOCAO = null;
          $getproduto->DATA_INICIO_PROMOCAO = null;
          $getproduto->DATA_FINAL_PROMOCAO = null;
          $getproduto->PROMOCAO = false;
