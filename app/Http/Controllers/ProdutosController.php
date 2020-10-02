@@ -172,7 +172,7 @@ class ProdutosController extends Controller
 
      public function verifica_promocao($idproduto){
         //retorna true se tiver em promocao
-        $getproduto =  $this->produtos->where('id',$idproduto)->where('PROMOCAO',true)->get();
+        $getproduto =  $this->produtos->where('id',$idproduto)->where('PROMOCAO',true)->first();
         $result = null ;
         if(isset($getproduto->id)){
 
