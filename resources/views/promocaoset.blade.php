@@ -189,6 +189,8 @@ cash_id = id
   cancelButtonText: "Cancelar Promoção",
   showCancelButton: true,
   confirmButtonText: 'Manter promoção',
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
   width:500,
   html:
     `
@@ -280,6 +282,8 @@ async function showset2(id){
   title: '',
   confirmButtonText: 'Salvar promoção',
   width:500,
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
   html:
     `
                      <div class="form-line space">
