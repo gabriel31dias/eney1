@@ -101,7 +101,7 @@ visibility: hidden;
                  
                     
                     <tr  onclick="verifi_api('{{ $item->id }}')" >
-                        <td>{{ $item->CODIGO_SISTEMA }}</td>
+                        <td>{{ $item->id }}</td>
                         <td>{{ $item->NOME_PRODUTO }}</td>
                         <td>{{$item->PRECO_UNIT}}</td>
                        
