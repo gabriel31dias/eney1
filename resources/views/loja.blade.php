@@ -385,7 +385,7 @@
 									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
 
 								   @else
-								   <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
+								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 								  @endif
 
                                     
@@ -654,7 +654,7 @@ async function open_product(id,nomeproduto,preco,descr,img){
 	<button type="button" style="width:180px" onclick="adicionar_carrinho('${id}','${nomeproduto}')"  class="animated infinite pulse btn btn-success">  <i style="margin-top:3px;"  class="large material-icons">shopping_cart</i>ADICIONAR</button></center>`,
 
   focusConfirm: false,
-  preConfirm: () => {
+  preConfirm: function() {
     return [
       document.getElementById('swal-input1').value,
       document.getElementById('swal-input2').value
@@ -780,9 +780,9 @@ await Swal.fire({
   html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Adicionando produto ao seu carrinho...</h2>',
   timer: 2000,
   timerProgressBar: true,
-  onBeforeOpen: () => {
+  onBeforeOpen: function() {
     Swal.showLoading()
-    timerInterval = setInterval(() => {
+    timerInterval = setInterval(function(){
       const content = Swal.getContent()
       if (content) {
         const b = content.querySelector('b')
