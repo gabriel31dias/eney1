@@ -794,7 +794,7 @@ await Swal.fire({
   },
   closeOnClickOutside: false,
   allowOutsideClick: false,
-  onClose: () => {
+  onClose: function() {
     clearInterval(timerInterval)
   }
 }).then((result) => {
