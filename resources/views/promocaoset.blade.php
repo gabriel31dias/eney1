@@ -170,7 +170,6 @@ async function verifi_api(id) {
              
           }
 
-          return true
 
    })
    
