@@ -307,9 +307,10 @@
 		  
 			  <!-- Wrapper for slides -->
 
-			    <h1 style="color:green">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
+			   
 			 
 				<div  style="width:100%;" class="item">
+					<h1 style="color:green">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
 				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  alt="Los Angeles" style="width:100%;height: 300px;">
 				</div>
 		  
