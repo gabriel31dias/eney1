@@ -236,7 +236,7 @@ cash_id = id
         
         cancelpromocao(cash_id)
 
-      //  location.reload();
+       location.reload();
 
         return
       }
