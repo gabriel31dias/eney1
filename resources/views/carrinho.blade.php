@@ -740,7 +740,7 @@ async function open_product(nomeproduto,preco,descr,img,id){
 	<button type="button"  onclick="adicionar_carrinho('${id}','${nomeproduto}')"  class="animated infinite pulse btn btn-success">  <i style="margin-top:3px;"  class="large material-icons">shopping_cart</i>ADICIONAR AO CARRINHO</button>`,
 
   focusConfirm: false,
-  preConfirm: () => {
+  preConfirm: function() {
     return [
       document.getElementById('swal-input1').value,
       document.getElementById('swal-input2').value
@@ -1495,9 +1495,9 @@ await Swal.fire({
   html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Aguarde processando token...</h2>',
   timer: 2000,
   timerProgressBar: true,
-  onBeforeOpen: () => {
+  onBeforeOpen: function() {
     Swal.showLoading()
-    timerInterval = setInterval(() => {
+    timerInterval = setInterval(function() {
       const content = Swal.getContent()
       if (content) {
         const b = content.querySelector('b')
@@ -1509,7 +1509,7 @@ await Swal.fire({
   },
   closeOnClickOutside: false,
   allowOutsideClick: false,
-  onClose: () => {
+  onClose: function() {
     clearInterval(timerInterval)
   }
 }).then((result) => {
@@ -1701,9 +1701,9 @@ await Swal.fire({
   html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Aguarde estamos processando sua venda...</h2>',
   timer: 2000,
   timerProgressBar: true,
-  onBeforeOpen: () => {
+  onBeforeOpen: function() {
     Swal.showLoading()
-    timerInterval = setInterval(() => {
+    timerInterval = setInterval(function() {
       const content = Swal.getContent()
       if (content) {
         const b = content.querySelector('b')
@@ -1715,7 +1715,7 @@ await Swal.fire({
   },
   closeOnClickOutside: false,
   allowOutsideClick: false,
-  onClose: () => {
+  onClose: function() {
     clearInterval(timerInterval)
   }
 }).then((result) => {
