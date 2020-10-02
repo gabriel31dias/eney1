@@ -288,7 +288,7 @@
 
             
 			 
-		<div class="container fh5co-card-item"  style="height: 400px;">
+		<div class="container fh5co-card-item"  style="height: 500px;">
 			<h2 style="color:#FBB448;padding:5px">Promoções</h2>  
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
