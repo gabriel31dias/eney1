@@ -379,7 +379,12 @@
 							<div class="fh5co-text">
 								<h2>{{$item->NOME_PRODUTO}}</h2>
 								
-								<p>
+								<p>@if($item->PROMOCAO == true)
+									  
+									<i style="margin-top:1px;"  class="large material-icons">local_offer</i>
+								  @endif
+                                    
+
 									<span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 								</p>
 							</div>
