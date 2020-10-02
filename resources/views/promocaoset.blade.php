@@ -161,6 +161,7 @@ cash_id = id
           getresult = data
           cash_result = data
           console.log(data)
+          alert(id)
           if(data == true){
 
             showset(id)
@@ -267,7 +268,7 @@ async function cancelpromocao(id) {
    
      $.get('{{route("cancelpromocao")}}/'+id,(data)=>{
 
-        alert(data)
+        alert(id)
         
          console.log(data)
      })
