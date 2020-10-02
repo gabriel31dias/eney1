@@ -100,7 +100,7 @@ visibility: hidden;
                     @foreach ($produtos as $item)
                  
                     
-                    <tr  onclick="showset('{{ $item->CODIGO_SISTEMA }}')" >
+                    <tr  onclick="verifi_api('{{ $item->CODIGO_SISTEMA }}')" >
                         <td>{{ $item->CODIGO_SISTEMA }}</td>
                         <td>{{ $item->NOME_PRODUTO }}</td>
                         <td>{{$item->PRECO_UNIT}}</td>
@@ -162,6 +162,14 @@ async function verifi_api(id) {
           getresult = data
           cash_result = data
 
+          if(cash_result == 'true'){
+
+              showset(id)
+
+          }else{
+             
+          }
+
           return true
 
    })
@@ -170,14 +178,6 @@ async function verifi_api(id) {
 
 async function showset(id){
 
-   await verifi_api(id)  
-
-   if(cash_result == 'true'){
-
-      alert('sim')
-   }else{
-      alert('nao')
-   }
 
 const { value: formValues } = await swalWithBootstrapButtons.fire({
   title: '',
