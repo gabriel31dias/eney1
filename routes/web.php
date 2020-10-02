@@ -91,7 +91,7 @@ Route::get('/selectidpornomegrupo/{nomegrupo?}','ProdutosController@selectcodeid
 Route::get('/setpromocao','ProdutosController@setpromocao')->middleware('auth')->name("setpromocao");
 Route::get('/updatepromocoes/{idproduto?}/{preco?}/{horaini?}/{horafn?}','ProdutosController@updatepromocoes')->middleware('auth')->name("updatepromocoesx");
 
-Route::get('/verificapromocao/{idproduto?}','ProdutosController@verifica_promocao')->middleware('auth')->name("verificapromocaox");
+Route::get('/verificapromocao/{idprodutox?}','ProdutosController@verifica_promocao')->middleware('auth')->name("verificapromocaox");
 Route::get('/cancelpromocao/{idproduto?}','ProdutosController@cancelpromocao')->middleware('auth')->name("cancelpromocao");
 
 
