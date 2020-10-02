@@ -151,11 +151,10 @@ const swalWithBootstrapButtons = Swal.mixin({
 })
 
 var cash_result = null
-async function verifi_api(params) {
-
+async function verifi_api(id) {
 
   let getresult = null
-  $.get(`{{route('verificapromocaox')}}/${params}`,await function(){
+  $.get(`{{route('verificapromocaox')}}/${id}`,await function(){
 
 
    }).done(function(data){
