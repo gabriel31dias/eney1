@@ -161,12 +161,12 @@ async function verifi_api(id) {
           console.log(data)
           if(data == true){
 
-            showset2(id)
+            showset(id)
 
           }else{
              // 
-
-             showset(id)
+             showset2(id)
+            
           } 
 
 
@@ -246,7 +246,14 @@ if (document.getElementById('preco').value) {
    
 }
 
+async function cancelpromocao(params) {
+     $.get('',(data)=>{
 
+         alert(data)
+         
+     })
+   
+}
 
 
 async function showset2(id){
