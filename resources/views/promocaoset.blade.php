@@ -150,11 +150,37 @@ const swalWithBootstrapButtons = Swal.mixin({
   buttonsStyling: false
 })
 
-async function showset(id){
-  
-  
-  
+var cash_result = null
+async function verifi_api(params) {
 
+
+  let getresult = null
+  $.get("{{route('')}}",function(){
+
+
+
+
+   }).done(function(data){
+
+          getresult = data
+          cash_result = data
+
+          return data
+
+   })
+   
+}
+
+async function showset(id){
+
+   await verifi_api()  
+
+   if(cash_result == 'true'){
+
+      alert('sim')
+   }else{
+      alert('nao')
+   }
 
 const { value: formValues } = await swalWithBootstrapButtons.fire({
   title: '',
