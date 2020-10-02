@@ -183,7 +183,7 @@ class ProdutosController extends Controller
             $result = false;
         }
 
-        return response()->json($getproduto);
+        return response()->json($result);
      }
 
 
