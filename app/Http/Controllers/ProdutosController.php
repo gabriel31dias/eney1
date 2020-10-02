@@ -184,7 +184,8 @@ class ProdutosController extends Controller
 
      public function testelistprom(){
        $getproducts = $this->produtos->get();
-        return response()->json( $getproducts);
+
+        return response()->json($getproducts);
      }
 
 
