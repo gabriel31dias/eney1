@@ -264,7 +264,7 @@ async function cancelpromocao(id) {
      $.get('{{route("cancelpromocao")}}/'+id,(data)=>{
 
          alert(data)
-
+         console.log(data)
      })
    
 }
