@@ -272,7 +272,7 @@ async function cancelpromocao(id) {
 async function showset2(id){
 //Ja tem promocao
 
-const { value: formValues } = await swalWithBootstrapButtons.fire({
+ await swalWithBootstrapButtons.fire({
   title: '',
   confirmButtonText: 'Salvar promoção',
   width:500,
