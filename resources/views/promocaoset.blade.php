@@ -155,7 +155,7 @@ async function verifi_api(params) {
 
 
   let getresult = null
-  $.get(`{{route('verificapromocaox')}}/${params}`,function(){
+  $.get(`{{route('verificapromocaox')}}/${params}`,await function(){
 
 
    }).done(function(data){
