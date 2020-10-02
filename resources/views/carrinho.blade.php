@@ -309,7 +309,7 @@
         <h3 style="color:#FBB448; margin: 0 0 10px 0;">  Valor total adicionais  R${{ number_format($totaladc, 2) }} </h3>
 
         
-        <img onclick="formas_pagamento()">
+        <img onclick="formas_pagamento()" calss>
         
      </div>
      
