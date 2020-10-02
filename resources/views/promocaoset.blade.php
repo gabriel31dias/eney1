@@ -163,7 +163,7 @@ async function verifi_api(params) {
           getresult = data
           cash_result = data
 
-          return data
+          return true
 
    })
    
