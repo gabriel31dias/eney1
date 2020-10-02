@@ -241,7 +241,7 @@
 
                   
                 <div class="actionx col-xs-4 col-lg-4 col-md-4 col-sm-6">
-                    <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a onclick="formas_pagamento()" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
                         <p  style="text-align: center;margin-top:15px">
                             
