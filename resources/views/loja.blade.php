@@ -303,15 +303,15 @@
 				<div  class="item active">
 					<img src="https://www.danny.com.br/wp-content/uploads/2015/12/imagem-branca-grande.png" alt="Los Angeles" style="width:100%;">
 				  </div>
-			  @foreach ($promoces as $item)
+			  @foreach ($promoces as  $indexKey => $item)
 		  
 			  <!-- Wrapper for slides -->
 
 			   
-			 
+			     
 				<div  style="width:100%;" class="item">
-					<h1 style="font-size:15px;color:red;padding:8px;">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>
-				
+					<h1 style="font-size:15px;color:red;padding:8px;">Preço promocional {{$item->PRECO_PROMOCAO}}</h1>{{$indexKey}}
+				<br>
 				  <img src="{{$item->IMG}}" onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}');	preco_old = {{$item->PRECO_UNIT}}"  alt="Los Angeles" style="width:100%;height: 300px;">
 				</div>
 		  
