@@ -97,8 +97,7 @@ class AppController extends Controller
       $youtube = $getloja->YOUTUBE;
 
       $promoces = FacadesDB::table('produtos')->where('ID_USER', $getloja->id)->where('PROMOCAO',true)
-      ->where('DATA_INICIO_PROMOCAO', '>=' , Carbon::now()->date() )
-      ->where('DATA_FINAL_PROMOCAO', '<=' , Carbon::now()->date() )
+      ->where('DATA_FINAL_PROMOCAO', '<=' , Carbon::now() )
       ->get();
 
    
