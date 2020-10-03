@@ -52,7 +52,7 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      var_dump(Carbon::now());
+      
      
       $getsucesso = '';
     
@@ -68,7 +68,7 @@ class AppController extends Controller
      //return  Session::get('CODLOJA');
      date_default_timezone_set('America/Sao_Paulo');
      
-     
+     var_dump(Carbon::now());
       $grupoitem = str_replace("-", " ", $grupoitem);
       
       $status_loja = true;
