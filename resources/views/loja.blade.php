@@ -562,8 +562,9 @@ const swalWithBootstrapButtons = Swal.mixin({
 			 
 async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_promocao=''){
     if(promocao == true){
-
+          
 		alert('esta em promoção')
+
 	}
 
 	var price = preco_old ? preco_old : preco;
