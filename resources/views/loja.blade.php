@@ -371,7 +371,8 @@
 					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
 						<a href="{{$item->IMG ?? 'https://radio93fm.com.br/wp-content/uploads/2019/02/produto.png'}}" class="fh5co-card-item image-popup">
 							
-								<img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}});	preco_old = {{$item->PRECO_UNIT}}" style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
+								<img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}});	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_UNIT}} : {{$item->PRECO_UNIT}};
+								"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
 		
 							<br>
 							<br>
@@ -559,6 +560,8 @@ const swalWithBootstrapButtons = Swal.mixin({
         // $('body').load($geturl+$getlojacode+resultado);
 		location.href = $geturl+$getlojacode+resultado
 		}
+
+
 			 
 async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_promocao=''){
    
