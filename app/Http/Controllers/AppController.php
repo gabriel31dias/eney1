@@ -52,7 +52,7 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      
+      var_dump(Carbon::now());
      
       $getsucesso = '';
     
@@ -200,6 +200,11 @@ class AppController extends Controller
           }
 
           return response()->json($arrayresult);
+    }
+
+    public function verifica_tempo_promocao(){
+
+
     }
 
     
