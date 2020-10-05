@@ -171,7 +171,6 @@ class CarrinhoController extends Controller
 
        // $getpreco = $getpro->PRECO_UNIT;
         $getpreco =  $getpro->PROMOCAO ? $getpro->PRECO_PROMOCAO : $getpro->PRECO_UNIT;
-
         $getimg = $getpro->IMG;
         
         $produtos_salvos = Session::get('carrinho');
