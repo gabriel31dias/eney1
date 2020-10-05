@@ -328,10 +328,7 @@
 
 			   
 			     
-			
-		  
-			 
-		
+	
 			  @endforeach
 		@endisset
 			
