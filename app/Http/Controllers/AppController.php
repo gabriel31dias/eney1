@@ -213,7 +213,7 @@ class AppController extends Controller
       ->firstOrFail();
 
 
-      return  $promoces;
+      return  true;
 
       
         
