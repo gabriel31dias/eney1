@@ -370,7 +370,7 @@
             @isset($produtos)
 				@foreach ($produtos as $item)
 				
-				<h1>{{ App\Produto::verifica_tempo_promocao( $lojacod , $item->id) }}</h1
+				<h1>{{ $getre = App\Produto::verifica_tempo_promocao( $lojacod , $item->id) }}</h1
 					>
 					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
 						<a href="{{$item->IMG ?? 'https://radio93fm.com.br/wp-content/uploads/2019/02/produto.png'}}" class="fh5co-card-item image-popup">
