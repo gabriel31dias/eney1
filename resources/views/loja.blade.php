@@ -332,7 +332,7 @@
 	
 			  @endforeach
 		@endisset
-			@end
+			@endif
 		
 			</div>
 		  
