@@ -348,7 +348,7 @@
 			</div>
 		  </div>
 			  
-
+		  @endif
 			  <div class="fullscreen" id="wrapper">
 			
 		 
@@ -357,7 +357,7 @@
 
 
          
-			  @endif
+			 
               
 			<div style="max-height: 50px;"  class="row">
 				
