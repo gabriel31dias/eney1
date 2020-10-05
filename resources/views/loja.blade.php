@@ -306,9 +306,8 @@
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0  )
 				 
-				 @php
-                    $i = App\Http\Controllers::verifica_tempo_promocao($item->id)
-				 @endphp
+				 @define $i = App\Http\Controllers::verifica_tempo_promocao($item->id)
+				 
 				  {{$i}}
 
 				 @if( $i == true )
