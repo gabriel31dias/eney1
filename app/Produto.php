@@ -24,9 +24,9 @@ class Produto extends Model
         $promoces = DB::table('produtos')->where('ID_USER',  $iduser->id )->where('id', $id)->where('PROMOCAO',true)
         ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
         ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
-        ->firstOrFail();
+        ->first();
   
-  
+       return $promoces;
        
           
       }
