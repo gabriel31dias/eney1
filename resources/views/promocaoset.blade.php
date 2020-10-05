@@ -306,7 +306,11 @@ async function cancelpromocao(id) {
 
 function masc(val) {
    alert('')
-  
+   $(val).maskMoney({
+      prefix: "",
+      decimal: ".",
+      thousands: ","
+   });
    }
 
 
@@ -323,7 +327,7 @@ async function showset2(id){
     `
                      <div class="form-line space">
                      <h3 class="lbl">Digite o preço promocional</h3>
-                        <input id="preco" type="text" placeholder="Digite o preço promocional" class="form-control">
+                        <input id="preco" onfocus="masc(this)" type="text" placeholder="Digite o preço promocional" class="form-control">
                         
                      </div>
                   ` +
