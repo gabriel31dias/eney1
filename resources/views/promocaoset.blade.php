@@ -205,7 +205,7 @@ async function showset(id){
     
         
   }).done(function(data){
-      
+  alert('fdadfa')
    getprice = data.PRECO_UNIT
    getini = data.DATA_INICIO_PROMOCAO
    getfini = data.DATA_FINAL_PROMOCAO
