@@ -306,11 +306,7 @@ async function cancelpromocao(id) {
 
 function masc(val) {
    alert('')
-   $(val).maskMoney({
-      prefix: "",
-      decimal: ".",
-      thousands: ","
-   });
+  
    }
 
 
