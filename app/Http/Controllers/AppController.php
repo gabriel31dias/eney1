@@ -100,6 +100,8 @@ class AppController extends Controller
       ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
       ->get();
+
+
         
       
 
@@ -177,7 +179,7 @@ class AppController extends Controller
       $getiduserloja =    $getiduserloja->id ;
       $getprodutossearch = $this->produtos->where('ID_USER',  $getiduserloja)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->paginate(10);
       $getgrupos = $this->grupos->where('ID_USER', $getiduserloja)->paginate(10);
-      return view('loja',['produtos'=> $getprodutossearch,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$loja,'grupoitem'=>'','status_loja'=>$status_loja]);
+      return view('loja',['produtos'=> $getprodutossearch,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$loja,'grupoitem'=>'','status_loja'=>$status_loja,'gr'=>true]);
 
     }
 

@@ -286,7 +286,7 @@
             
         
 
-	 @if($promoces)
+	 @if($gr)
 			 
 		<div class="container fh5co-card-item"  style="height: 500px;">
 			<h2 style="color:#FBB448;padding:5px">Promoções</h2>  
