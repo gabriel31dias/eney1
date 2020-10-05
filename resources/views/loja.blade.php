@@ -377,6 +377,8 @@
 							
 							@if($item->PROMOCAO)
 
+							  
+
 								<img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}}); 	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_PROMOCAO}} : {{$item->PRECO_UNIT}};
 								"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
 
@@ -391,11 +393,12 @@
 							<div class="fh5co-text">
 								<h2>{{$item->NOME_PRODUTO}}</h2>
 								
-								<p>@if($item->PROMOCAO == true)
+								<p>@if($item->PROMOCAO == true && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 									  
+									
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
-
+                                   
 								   @else
 								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 								  @endif
