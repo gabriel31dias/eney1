@@ -305,7 +305,7 @@
 		  
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0  )
-				 
+				 <td>{{ App\Produto::verifica_tempo_promocao($item->id, $item->id) }}</td>
 			
 
 				  <div  style="width:100%;" class="item active">
