@@ -162,6 +162,7 @@ cash_id = id
           cash_result = data
           console.log(data)
           alert(id)
+          
           if(data == true){
 
             showset(id)
@@ -171,6 +172,12 @@ cash_id = id
              showset2(id)
             
           } 
+
+          Swal.fire(
+          'Good job!',
+          'You clicked the button!',
+          'success'
+           )
 
 
    }).done(function(data){
