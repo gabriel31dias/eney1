@@ -103,7 +103,7 @@ class AppController extends Controller
         
       
 
-      if($promoces){
+      if(!$promoces){
         return false;
         
       }
