@@ -306,7 +306,7 @@
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0  )
 				 
-				 {{ $result_resumo = app(App\Http\Controllers\AppController::class)::NoticiasResumo($dados_noticias->post,80, FALSE, "") }}
+				 {{ $result_resumo = app(App\Http\Controllers\AppController::class)::verifica_tempo_promocao( $item->id) }}
 
 
 				{{ $result_resumo  }} 
