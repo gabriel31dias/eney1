@@ -198,6 +198,9 @@ cash_id = id
 async function showset(id){
 //Ja tem promocao
 cash_id = id
+
+
+
  await swalWithBootstrapButtons.fire({
   title: '',
   cancelButtonText: "Cancelar Promoção",
@@ -210,7 +213,7 @@ cash_id = id
     `
                      <div class="form-line space">
                      <h3 class="lbl">Digite o preço promocional</h3>
-                        <input id="preco" onfocus="masc(this)" type="text" placeholder="Digite o preço promocional" class="form-control">
+                        <input id="preco" value="${id}" onfocus="masc(this)" type="text" placeholder="Digite o preço promocional" class="form-control">
                         
                      </div>
                   ` +
