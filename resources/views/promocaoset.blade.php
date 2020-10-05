@@ -194,13 +194,13 @@ cash_id = id
    
    
 }
-
+   var getprice = ''
+   var  getini = ''
+   var getfini = ''
 async function showset(id){
 //Ja tem promocao
   cash_id = id
-  let getprice = ''
-  let getini = ''
-  let getfini = ''
+  
   $.get("{{route('produtositem')}}/"+`${id}`, function(data){
 
    alert(data.PRECO_PROMOCAO)
