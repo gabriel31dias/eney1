@@ -375,7 +375,7 @@
 					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
 						<a href="{{$item->IMG ?? 'https://radio93fm.com.br/wp-content/uploads/2019/02/produto.png'}}" class="fh5co-card-item image-popup">
 							
-							@if($item->PROMOCAO)
+							@if($item->PROMOCAO = true)
 
 								@if(App\Produto::verifica_tempo_promocao( $lojacod , $item->id) == true)
 								
@@ -399,9 +399,16 @@
 								
 								<p>@if($item->PROMOCAO == true)
 									  
+									
+									
+									@if(App\Produto::verifica_tempo_promocao( $lojacod , $item->id) == true)
+								
+							
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
-
+                   
+									  @endif
+									  
 								   @else
 								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 								  @endif
