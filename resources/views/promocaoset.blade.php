@@ -197,9 +197,21 @@ cash_id = id
 
 async function showset(id){
 //Ja tem promocao
-cash_id = id
+  cash_id = id
+  getprice = ''
 
+  $.get("{{route('produtositem')}}", function(data){
+    
+        
+  }).done(function(data){
+      
+      
+   data = JSON.parse(data)
+     
 
+     alert(data.id)
+
+  })
 
  await swalWithBootstrapButtons.fire({
   title: '',
@@ -213,7 +225,7 @@ cash_id = id
     `
                      <div class="form-line space">
                      <h3 class="lbl">Digite o preço promocional</h3>
-                        <input id="preco" value="${id}" onfocus="masc(this)" type="text" placeholder="Digite o preço promocional" class="form-control">
+                        <input id="preco" value="${getprice}" onfocus="masc(this)" type="text" placeholder="Digite o preço promocional" class="form-control">
                         
                      </div>
                   ` +
@@ -224,13 +236,13 @@ cash_id = id
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Inicio da promoção</h3>
                         <input type="datetime-local" id="DATA_INICIO_PROMOCAO"
-                    name="DATA_INICIO_PROMOCAO" value="2018-06-12T19:30"
+                    name="DATA_INICIO_PROMOCAO" value="0000-00-00T00:00"
                    >
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Final da promoção</h3>
                         <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
-                    name="DATA_FINAL_PROMOCAO" value="2018-06-12T19:30"
+                    name="DATA_FINAL_PROMOCAO" value="0000-00-00T00:00"
                     >
                     </div>
                   </div>
