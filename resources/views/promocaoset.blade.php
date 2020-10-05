@@ -202,13 +202,15 @@ async function showset(id){
   let getini = ''
   let getfini = ''
   $.get("{{route('produtositem')}}/"+`${id}`, function(data){
-    
-        
-  }).done(function(data){
-  alert('fdadfa')
+
+   alert('fdadfa')
    getprice = data.PRECO_PROMOCAO
    getini = data.DATA_INICIO_PROMOCAO
    getfini = data.DATA_FINAL_PROMOCAO
+    
+        
+  }).done(function(data){
+  
      
 
   })
