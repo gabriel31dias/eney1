@@ -305,7 +305,7 @@
 		  
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0  )
-				 <td>{{ App\Produto::verifica_tempo_promocao($item->id, $item->id) }}</td>
+				
 			
 
 				  <div  style="width:100%;" class="item active">
@@ -369,7 +369,7 @@
 
             @isset($produtos)
                 @foreach ($produtos as $item)
-                
+				<h1>{{ App\Produto::verifica_tempo_promocao($item->id, $item->id) }}</h1>
 					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
 						<a href="{{$item->IMG ?? 'https://radio93fm.com.br/wp-content/uploads/2019/02/produto.png'}}" class="fh5co-card-item image-popup">
 							
