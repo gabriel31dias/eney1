@@ -105,7 +105,7 @@ class AppController extends Controller
         
       
 
-      if(isset($promoces[0]->id)){
+      if(!isset($promoces[0]->id)){
        
         $promoces = false;
         
