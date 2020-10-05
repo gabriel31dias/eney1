@@ -310,7 +310,7 @@
                     $i = App\Http\Controllers::verifica_tempo_promocao($item->id)
                  @endphp
 				 @if(   $i == true )
-				   
+				     {{$i}}
 				    esta em true
 				 @endif
 
