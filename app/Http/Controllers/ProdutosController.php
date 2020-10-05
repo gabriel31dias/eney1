@@ -11,7 +11,7 @@ use App\Adicional;
 use Grupos;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
-
+use Carbon\Carbon;
 
 class ProdutosController extends Controller
 {
@@ -186,6 +186,14 @@ class ProdutosController extends Controller
        $getproducts = $this->produtos->get();
 
         return response()->json($getproducts);
+     }
+
+     public function getitempromo(){
+        
+        
+        $startedAt = Carbon::createFromFormat('Y-m-d\TH:i','2016-11-20T11:45');
+        $finalAt = Carbon::createFromFormat('Y-m-d\TH:i','2016-11-20T11:45');
+
      }
 
 
