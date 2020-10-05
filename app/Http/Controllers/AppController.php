@@ -100,7 +100,7 @@ class AppController extends Controller
       ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
       ->get();
-
+        
    
 
 
@@ -202,9 +202,18 @@ class AppController extends Controller
           return response()->json($arrayresult);
     }
 
-    public function verifica_tempo_promocao(){
+    public function verifica_tempo_promocao($codeloja,$id){
+      
+      $iduser =  FacadesDB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
 
 
+      $promoces = FacadesDB::table('produtos')->where('ID_USER',  $iduser->id )->where('id', $id)->where('PROMOCAO',true)
+      ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
+      ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
+      ->firstOrFail();
+
+      return $promoces->id;
+        
     }
 
     

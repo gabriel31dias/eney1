@@ -304,7 +304,11 @@
 			  @foreach ($promoces as  $indexKey => $item)
 		  
 			  <!-- Wrapper for slides -->
-				 @if($indexKey == 0)
+				 @if($indexKey == 0 && )
+
+				 @if({{ App\Http\Controllers::verifica_tempo_promocao($item) }})
+                    esta em true
+				 @endif
 
 				  <div  style="width:100%;" class="item active">
 					<center>
