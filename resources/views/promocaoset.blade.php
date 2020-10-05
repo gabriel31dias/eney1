@@ -199,7 +199,8 @@ async function showset(id){
 //Ja tem promocao
   cash_id = id
   let getprice = ''
-  let getdata = ''
+  let getini = ''
+  let getfini = ''
   $.get("{{route('produtositem')}}/"+`${id}`, function(data){
     
         
