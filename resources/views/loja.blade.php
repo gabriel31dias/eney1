@@ -306,14 +306,9 @@
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0  )
 				 
-				 @define $i = App\Http\Controllers::verifica_tempo_promocao($item->id)
 				 
-				  {{$i}}
 
-				 @if( $i == true )
-				     {{$i}}
-				    esta em true
-				 @endif
+				 {{ App\Http\Controllers::verifica_tempo_promocao($item->id) }}
 
 				  <div  style="width:100%;" class="item active">
 					<center>
