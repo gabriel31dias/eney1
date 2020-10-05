@@ -208,7 +208,6 @@ async function showset(id){
       
    data = JSON.parse(data)
      
-
      alert(data.id)
 
   })
