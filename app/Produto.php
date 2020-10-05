@@ -26,7 +26,12 @@ class Produto extends Model
         ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
         ->first();
   
-       return $promoces->id;
+        if(isset($promoces->id)){
+
+           return true;
+         }else{
+            return false;
+         }
        
           
       }
