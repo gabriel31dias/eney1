@@ -203,11 +203,11 @@ async function showset(id){
   
   $.get("{{route('produtositem')}}/"+`${id}`, function(data){
 
-   alert(data.PRECO_PROMOCAO)
+ 
    getprice = data.PRECO_PROMOCAO
    getini = data.DATA_INICIO_PROMOCAO
    getfini = data.DATA_FINAL_PROMOCAO
-    
+   alert(getprice)
         
   }).done(function(data){
   
