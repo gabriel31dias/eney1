@@ -300,13 +300,13 @@
 		
 			 
 			  <div  class="carousel-inner">
-				
+		@isset($promoces)
 			  @foreach ($promoces as  $indexKey => $item)
 		  
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0  )
 				
-			
+			   
 
 				  <div  style="width:100%;" class="item active">
 					<center>
@@ -333,7 +333,7 @@
 			 
 		
 			  @endforeach
-		
+		@endisset
 			
 		
 			</div>
