@@ -206,7 +206,7 @@ async function showset(id){
   }).done(function(data){
       
       
-   data = JSON.parse(data)
+   
      
      alert(data.id)
 
