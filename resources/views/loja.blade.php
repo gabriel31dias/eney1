@@ -301,6 +301,7 @@
 			 
 			  <div  class="carousel-inner">
 		@isset($promoces)
+		@if($promoces)
 			  @foreach ($promoces as  $indexKey => $item)
 		  
 			  <!-- Wrapper for slides -->
@@ -331,7 +332,7 @@
 	
 			  @endforeach
 		@endisset
-			
+			@end
 		
 			</div>
 		  
