@@ -199,16 +199,16 @@ async function showset(id){
 //Ja tem promocao
   cash_id = id
   let getprice = ''
-
+  let getdata = ''
   $.get("{{route('produtositem')}}/"+`${id}`, function(data){
     
         
   }).done(function(data){
       
-      
-   
+   getprice = data.PRECO_UNIT
+   getini = data.DATA_INICIO_PROMOCAO
+   getfini = data.DATA_FINAL_PROMOCAO
      
-     alert(data.id)
 
   })
 
@@ -235,13 +235,13 @@ async function showset(id){
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Inicio da promoção</h3>
                         <input type="datetime-local" id="DATA_INICIO_PROMOCAO"
-                    name="DATA_INICIO_PROMOCAO" value="0000-00-00T00:00"
+                    name="DATA_INICIO_PROMOCAO" value="${getini}"
                    >
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Final da promoção</h3>
                         <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
-                    name="DATA_FINAL_PROMOCAO" value="0000-00-00T00:00"
+                    name="DATA_FINAL_PROMOCAO" value="${getfini}"
                     >
                     </div>
                   </div>
