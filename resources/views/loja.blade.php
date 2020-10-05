@@ -377,13 +377,13 @@
 							
 							@if($item->PROMOCAO = true)
 
-								@if(App\Produto::verifica_tempo_promocao( $lojacod , $item->id) == true)
+							
 								
 								<img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}}); 	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_PROMOCAO}} : {{$item->PRECO_UNIT}};
 								"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
 
                    
-			                	@endif
+			                
 
 							
 		                     @else
@@ -407,7 +407,7 @@
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
                    
-									  @endif
+									@endif
 									  
 								   @else
 								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
