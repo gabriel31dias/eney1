@@ -308,7 +308,7 @@
 				 
 				 
 
-				 {{ App\Http\Controllers::verifica_tempo_promocao($item->id) }}
+				 {{ App\Http\Controllers\AppController::verifica_tempo_promocao($item->id) }}
 
 				  <div  style="width:100%;" class="item active">
 					<center>

@@ -202,7 +202,7 @@ class AppController extends Controller
           return response()->json($arrayresult);
     }
 
-    public function verifica_tempo_promocao($codeloja,$id){
+    public static function verifica_tempo_promocao($codeloja,$id){
       
       $iduser =  FacadesDB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
 
