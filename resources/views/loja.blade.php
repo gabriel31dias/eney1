@@ -306,7 +306,7 @@
 			  <!-- Wrapper for slides -->
 				 @if($indexKey == 0 && )
 
-				 @if({{ App\Http\Controllers::verifica_tempo_promocao($item) }})
+				 @if( App\Http\Controllers::verifica_tempo_promocao($item) )
                     esta em true
 				 @endif
 
