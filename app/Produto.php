@@ -29,7 +29,9 @@ class Produto extends Model
         if(isset($promoces->id)){
 
            return true;
+
          }else{
+             
             return false;
          }
        
