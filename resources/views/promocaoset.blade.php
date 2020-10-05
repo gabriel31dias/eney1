@@ -379,7 +379,7 @@ if (document.getElementById('preco').value) {
            )
     
     console.log(data)
-    });
+    })
     .done(function(){
 
       Swal.fire(
