@@ -249,7 +249,7 @@ cash_id = id
    if (params.isDismissed) {
         
         cancelpromocao(cash_id)
-       alert(cash_id)
+     //  alert(cash_id)
       
 
         return
@@ -268,7 +268,8 @@ if (document.getElementById('preco').value) {
      
 
     }).fail(function(data) {
-    alert('woops'); // or whatever
+  
+//  alert('woops'); // or whatever
     console.log(data)
     });
   
@@ -281,7 +282,7 @@ async function cancelpromocao(id) {
    
      $.get('{{route("cancelpromocao")}}/'+id,(data)=>{
 
-        alert(id)
+     //   alert(id)
         
          console.log(data)
      }).done(function(){
