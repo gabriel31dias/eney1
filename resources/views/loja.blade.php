@@ -286,7 +286,7 @@
             
         
 
-            
+		@if($promoces)
 			 
 		<div class="container fh5co-card-item"  style="height: 500px;">
 			<h2 style="color:#FBB448;padding:5px">Promoções</h2>  
@@ -301,7 +301,7 @@
 			 
 			  <div  class="carousel-inner">
 		@isset($promoces)
-		@if($promoces)
+	
 			  @foreach ($promoces as  $indexKey => $item)
 		  
 			  <!-- Wrapper for slides -->
@@ -332,7 +332,7 @@
 	
 			  @endforeach
 		@endisset
-			@endif
+			
 		
 			</div>
 		  
@@ -357,7 +357,7 @@
 
 
          
-
+			  @endif
               
 			<div style="max-height: 50px;"  class="row">
 				
