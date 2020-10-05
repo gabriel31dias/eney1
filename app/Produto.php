@@ -20,7 +20,7 @@ class Produto extends Model
       
         $iduser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
   
-        return  true;
+        return  "dwaddaw";
         $promoces = DB::table('produtos')->where('ID_USER',  $iduser->id )->where('id', $id)->where('PROMOCAO',true)
         ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
         ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
@@ -28,8 +28,6 @@ class Produto extends Model
   
   
        
-  
-        
           
       }
 
