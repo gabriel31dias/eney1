@@ -178,11 +178,7 @@ cash_id = id
 
    }).done(function(data){
         
-      Swal.fire(
-          'Good job!',
-          'You clicked the button!',
-          'success'
-           )
+     
      
 
 
@@ -288,6 +284,21 @@ async function cancelpromocao(id) {
         alert(id)
         
          console.log(data)
+     }).done(function(){
+      Swal.fire(
+          'Promoção cancelada!',
+          '',
+          'success'
+           )
+
+     })
+     .fail(function(){
+      Swal.fire(
+          'Um erro ocorreu, tente novamente.',
+          '',
+          'error'
+           )
+
      })
    
 }
@@ -361,9 +372,23 @@ if (document.getElementById('preco').value) {
      
 
     }).fail(function(data) {
+      Swal.fire(
+          'Um erro ocorreu tente novamente.',
+          '',
+          'error'
+           )
     
     console.log(data)
     });
+    .done(function(){
+
+      Swal.fire(
+          'Promoção salva !',
+          '',
+          'success'
+           )
+    })
+
   
 }
    
