@@ -169,7 +169,9 @@ class CarrinhoController extends Controller
         Session::put('totaladicionais', $getpreco_adicionais + $aux); ///Salva valor total dos
         $idproduto_gerado =  rand(10, 500000);
 
-        $getpreco = $getpro->PRECO_UNIT;
+       // $getpreco = $getpro->PRECO_UNIT;
+        $getpreco =  $getpro->PROMOCAO ? $getpro->PRECO_PROMOCAO : $getpro->PRECO_UNIT;
+
         $getimg = $getpro->IMG;
         
         $produtos_salvos = Session::get('carrinho');
