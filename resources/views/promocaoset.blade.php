@@ -161,7 +161,7 @@ cash_id = id
           getresult = data
           cash_result = data
           console.log(data)
-          alert(id)
+          
           
           if(data == true){
 
@@ -173,19 +173,29 @@ cash_id = id
             
           } 
 
-          Swal.fire(
+         
+
+
+   }).done(function(data){
+        
+      Swal.fire(
           'Good job!',
           'You clicked the button!',
           'success'
            )
-
-
-   }).done(function(data){
-
      
 
 
    })
+   .fail(function(data){
+
+     
+
+
+    })
+
+   
+   
    
 }
 
