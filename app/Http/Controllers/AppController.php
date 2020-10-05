@@ -212,7 +212,14 @@ class AppController extends Controller
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
       ->firstOrFail();
 
-      return $promoces->id;
+      if(isset($promoces->id)){
+         return true;
+         
+      }else{
+        return false;
+      }
+
+      
         
     }
 
