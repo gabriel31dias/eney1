@@ -101,7 +101,12 @@ class AppController extends Controller
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
       ->get();
         
-   
+      
+
+      if($promoces){
+        return false;
+        
+      }
 
 
       $getidloja  = '';
