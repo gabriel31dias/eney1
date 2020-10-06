@@ -207,6 +207,13 @@ async function showset(id){
    getprice = data.PRECO_PROMOCAO
    getini = data.DATA_INICIO_PROMOCAO
    getfini = data.DATA_FINAL_PROMOCAO
+
+   setInterval(function(){
+        document.getElementById('preco').value = getprice
+        document.getElementById('lbini').value = getini
+        document.getElementById('lbfin').value = getfini
+
+   })
   
         
   }).done(function(data){
@@ -237,12 +244,12 @@ async function showset(id){
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                    
-                        <label style="backgroud-color:#96DDEA;padding:10px;" > ${getini}</label>
+                        <label id="lbini" style="backgroud-color:#96DDEA;padding:10px;" > ${getini}</label>
                         
                    
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
-                        <label  style="backgroud-color:#96DDEA;padding:10px;" >${getfini}</label>
+                        <label id="lbfin"   style="backgroud-color:#96DDEA;padding:10px;" >${getfini}</label>
                         
                     </div>
                   </div>
