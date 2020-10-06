@@ -19,7 +19,7 @@ class RedirectHttps
     
 
         if (!$request->secure() ) {
-            redirect()->secure($request->getRequestUri());
+            return redirect()->secure($request->getRequestUri());
         }
 
         return $next($request);
