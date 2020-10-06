@@ -386,7 +386,7 @@ async function showset2(id){
       Swal.fire(
      'Digite um preco promocional',
      '',
-     'success'
+     'error'
        )
        
        return
