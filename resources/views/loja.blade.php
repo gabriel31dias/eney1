@@ -585,7 +585,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 	tags_adicionais = tags_adicionais.replace(",", "");
 	tags_adicionais = tags_adicionais.replace(",", "");
 
-     alert(promocao)
+     alert('dwadadw dwad '+promocao)
 	if(promocao == true){
 		//alert('promo')
           //Verifica se esta em promocao
