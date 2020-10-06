@@ -246,7 +246,7 @@ async function showset(id){
     `
                      <div class="form-line space">
                      <h3 class="lbl">Digite o preço promocional</h3>
-                        <input disable id="preco" value="${getprice}" onfocus="masc(this)" type="text" placeholder="Promoção ativa" class="form-control">
+                        <input  id="preco" value="${getprice}" onfocus="masc(this)" type="text" placeholder="Promoção ativa" class="form-control" disabled>
                         
                      </div>
                   ` +
