@@ -576,7 +576,7 @@ const swalWithBootstrapButtons = Swal.mixin({
 
 			 
 async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_promocao=''){
-   
+      alert(preco_promocao)
 
 	var price = preco_old ? preco_old : preco;
 	var tags_adicionais = cash_tags.toString(); //adicionais setados
