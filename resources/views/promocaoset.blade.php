@@ -347,6 +347,8 @@ async function showset2(id){
   width:500,
   closeOnClickOutside: false,
     allowOutsideClick: false,
+    cancelButtonText: "Cancelar Promoção",
+  showCancelButton: true,
   html:
     `
                      <div class="form-line space">
