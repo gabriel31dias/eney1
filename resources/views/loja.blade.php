@@ -575,8 +575,8 @@ const swalWithBootstrapButtons = Swal.mixin({
 
 
 			 
-async function open_product(id,nomeproduto,preco,descr,img,promocao=false,preco_promocao=''){
-      alert(preco_promocao)
+async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_promocao=''){
+   
 
 	var price = preco_old ? preco_old : preco;
 	var tags_adicionais = cash_tags.toString(); //adicionais setados
@@ -585,16 +585,12 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao=false,preco_
 	tags_adicionais = tags_adicionais.replace(",", "");
 	tags_adicionais = tags_adicionais.replace(",", "");
 
-     alert('dwadadw dwad '+promocao)
 	if(promocao == true){
 		//alert('promo')
           //Verifica se esta em promocao
 		  price = preco_promocao
 		  preco = preco_promocao
-		  alert('dadwa')
 	 }
-
-	 alert(price)
 	
 	cach_produto = [id,nomeproduto,preco,descr,img]
 //alert(preco_old)
