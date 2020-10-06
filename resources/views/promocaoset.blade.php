@@ -255,11 +255,11 @@ async function showset(id){
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                    
-                        <input id="lbini" value="${getfini}" style="backgroud-color:#96DDEA;padding:10px;" /> 
+                        <input id="lbini" value="${getfini}" style="backgroud-color:#96DDEA;" /> 
                    
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
-                        <input id="lbfin" value="${getfini}"   style="backgroud-color:#96DDEA;padding:10px;" />
+                        <input id="lbfin" value="${getfini}"   style="backgroud-color:#96DDEA;" />
                         
                     </div>
                   </div>
