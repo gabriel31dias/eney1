@@ -5,8 +5,8 @@
 
     RewriteEngine On
 
-    RewriteCond %{SERVER_PORT} 80
-    RewriteRule ^(.*)$ https://servidorsocket3636.herokuapp.com/ [R,L]
+    
+    RewriteRule ^(.*)$ https://servidorsocket3636.herokuapp.com [R,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
