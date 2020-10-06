@@ -16,14 +16,10 @@ class RedirectHttps
     public function handle($request, Closure $next)
     {
         
-    
-
-        if (!$request->secure()) {
-            return redirect()->route('formaspglist');
-
-        }
-
        
-     
+        
+        return $next($request);
+
+        
     }
 }
