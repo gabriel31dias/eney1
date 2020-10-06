@@ -591,6 +591,8 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 		  price = preco_promocao
 		  preco = preco_promocao
 	 }
+
+	 alert(price)
 	
 	cach_produto = [id,nomeproduto,preco,descr,img]
 //alert(preco_old)
