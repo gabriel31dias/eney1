@@ -18,8 +18,9 @@ class RedirectHttps
         
     
 
-        if (!$request->secure() && app()->environment('production')) {
-            return redirect()->secure($request->getRequestUri());
+        if (!$request->secure()) {
+            return redirect()->route('login');
+
         }
 
        
