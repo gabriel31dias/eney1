@@ -261,8 +261,8 @@ async function showset(id){
   }
 }).then(function (params){
 
-   if(!document.getElementById('preco').value){
-   alert('')
+   if(!document.getElementById('preco').value || document.getElementById('preco').value = '00.00' ){
+   alert(document.getElementById('preco').value)
        
        return
    }
