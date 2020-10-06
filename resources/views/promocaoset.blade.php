@@ -221,8 +221,8 @@ async function showset(id){
 
    setInterval(function(){
         document.getElementById('preco').value = getprice
-        document.getElementById('lbini').value = getini
-        document.getElementById('lbfin').value = getfini
+        document.getElementById('lbini').html = getini
+        document.getElementById('lbfin').html = getfini
 
    },1000)
   
