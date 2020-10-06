@@ -590,6 +590,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
           //Verifica se esta em promocao
 		  price = preco_promocao
 		  preco = preco_promocao
+		  alert('dadwa')
 	 }
 
 	 alert(price)
