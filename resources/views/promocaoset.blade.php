@@ -236,18 +236,14 @@ async function showset(id){
                   <div class="form-line space">
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
-                    <label>${getini}</label>
-                        <h3 class="lbl">Inicio da promoção</h3>
-                        <input type="datetime-local" id="DATA_INICIO_PROMOCAO"
-                    name="DATA_INICIO_PROMOCAO" value="${getini}"
-                   >
+                   
+                        <h3 class="lbl"> ${getini}</h3>
+                        
                    
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
-                        <h3 class="lbl">Final da promoção</h3>
-                        <input type="datetime-local" id="DATA_FINAL_PROMOCAO"
-                    name="DATA_FINAL_PROMOCAO" value="${getfini}"
-                    >
+                        <h3 class="lbl">${getfini}</h3>
+                        
                     </div>
                   </div>
 
