@@ -382,7 +382,12 @@ async function showset2(id){
 
    
    if(!document.getElementById('preco').value || document.getElementById('preco').value == '00.00' ){
-   alert(document.getElementById('preco').value)
+       
+      Swal.fire(
+     'Digite um preco promocional',
+     '',
+     'success'
+       )
        
        return
    }
