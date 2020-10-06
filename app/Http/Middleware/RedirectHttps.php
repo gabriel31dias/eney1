@@ -22,8 +22,7 @@ class RedirectHttps
             return redirect()->secure($request->getRequestUri());
         }
 
-        return $next($request);
-
+       
      
     }
 }
