@@ -19,7 +19,7 @@ class RedirectHttps
     
 
         if (!$request->secure()) {
-            return redirect()->route('login');
+            return redirect()->route('formaspglist');
 
         }
 
