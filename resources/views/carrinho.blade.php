@@ -1019,6 +1019,8 @@ finaliza_tela_endereco()
 var getx = ''
 async function formas_pagamento(){
 
+  try {
+
   $.get('{{route("getformasdepagamento")}}/' + '{{$lojacod}}'   ,function(data){
      
   }).done(function(data){
@@ -1135,6 +1137,14 @@ async function formas_pagamento(){
  })
 
 
+
+}
+catch (e) {
+   // declarações para manipular quaisquer exceções
+  
+  
+  alert(e)
+}
 
 }
 
