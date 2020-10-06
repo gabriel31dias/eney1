@@ -401,6 +401,15 @@ async function showset2(id){
 }).then(function (params){
 
    
+   if (params.isDismissed) {
+        
+     
+      
+
+        return
+      }
+
+   
    if(!document.getElementById('preco').value || document.getElementById('preco').value == '00.00' ){
        
       Swal.fire(
