@@ -237,12 +237,12 @@ async function showset(id){
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                    
-                        <label style="backgroud-color:#96DDEA" > ${getini}</label>
+                        <label style="backgroud-color:#96DDEA;padding:10px;" > ${getini}</label>
                         
                    
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
-                        <label  style="backgroud-color:#96DDEA" >${getfini}</label>
+                        <label  style="backgroud-color:#96DDEA;padding:10px;" >${getfini}</label>
                         
                     </div>
                   </div>
