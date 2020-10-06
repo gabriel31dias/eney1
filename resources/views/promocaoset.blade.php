@@ -221,8 +221,8 @@ async function showset(id){
 
    setInterval(function(){
         document.getElementById('preco').value = getprice
-        document.getElementById('lbini').html = getini
-        document.getElementById('lbfin').html = getfini
+        document.getElementById('lbini').value = getini
+        document.getElementById('lbfin').value = getfini
 
    },1000)
   
@@ -255,12 +255,11 @@ async function showset(id){
                   <div class="row">
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                    
-                        <label id="lbini" style="backgroud-color:#96DDEA;padding:10px;" > ${getini}</label>
-                        
+                        <input id="lbini" value="${getfini}" style="backgroud-color:#96DDEA;padding:10px;" /> 
                    
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
-                        <label id="lbfin"   style="backgroud-color:#96DDEA;padding:10px;" >${getfini}</label>
+                        <input id="lbfin" value="${getfini}"   style="backgroud-color:#96DDEA;padding:10px;" />
                         
                     </div>
                   </div>
