@@ -240,6 +240,7 @@ async function showset(id){
                         <input type="datetime-local" id="DATA_INICIO_PROMOCAO"
                     name="DATA_INICIO_PROMOCAO" value="${getini}"
                    >
+                   
                     </div>
                     <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                         <h3 class="lbl">Final da promoção</h3>
