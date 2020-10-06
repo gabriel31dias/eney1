@@ -241,7 +241,7 @@
 
                   
                 <div class="actionx col-xs-4 col-lg-4 col-md-4 col-sm-6">
-                    <a onclick="formas_pagamento()" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a onclick="chama()" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
                         <p  style="text-align: center;margin-top:15px">
                             
@@ -1012,14 +1012,24 @@ finaliza_tela_endereco()
 
 
  
- 
+   async function chama(){
+    try {
+      formas_pagamento()
+    }
+   catch (ex) {
+     alert(ex)
+    }
 
+
+     
+   }
+
+
+   
 
 
 var getx = ''
 async function formas_pagamento(){
-
-  try {
 
   $.get('{{route("getformasdepagamento")}}/' + '{{$lojacod}}'   ,function(data){
      
@@ -1137,14 +1147,6 @@ async function formas_pagamento(){
  })
 
 
-
-}
-catch (e) {
-   // declarações para manipular quaisquer exceções
-  
-  
-  alert(e)
-}
 
 }
 
