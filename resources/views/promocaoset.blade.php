@@ -151,6 +151,17 @@ const swalWithBootstrapButtons = Swal.mixin({
   buttonsStyling: false
 })
 
+
+
+const swalx = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+
 var cash_result = null
 async function verifi_api(id) {
 cash_id = id
@@ -341,13 +352,13 @@ function masc(val) {
 async function showset2(id){
 //Ja tem promocao
 
- await swalWithBootstrapButtons.fire({
+ await swalx.fire({
   title: '',
   confirmButtonText: 'Salvar promoção',
   width:500,
   closeOnClickOutside: false,
     allowOutsideClick: false,
-    cancelButtonText: "Cancelar Promoção",
+    cancelButtonText: "Cancelar",
   showCancelButton: true,
   html:
     `
