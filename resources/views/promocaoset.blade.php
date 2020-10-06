@@ -213,7 +213,7 @@ async function showset(id){
         document.getElementById('lbini').value = getini
         document.getElementById('lbfin').value = getfini
 
-   })
+   },1000)
   
         
   }).done(function(data){
