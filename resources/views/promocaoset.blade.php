@@ -262,7 +262,7 @@ async function showset(id){
 }).then(function (params){
 
    if(!document.getElementById('preco').value){
-
+   alert('')
        
        return
    }
