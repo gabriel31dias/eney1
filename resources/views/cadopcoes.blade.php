@@ -281,7 +281,7 @@ async function cadOpcoes() {
    request = $.ajax({
       url: "{{route('produtossave')}}",
       type: "post",
-      data: serializedData
+      data: obj_send
    });
 
    request.done(function(response, textStatus, jqXHR) {
