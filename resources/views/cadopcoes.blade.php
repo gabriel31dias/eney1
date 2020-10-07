@@ -169,10 +169,23 @@ async function cadOpcoes() {
                                        </div>
                                  </div>
                            </div>
+                           
+                           
+
+                           <div class="col-sm-6">
+                              <div class="form-group form-float">
+                                       <div class="form-line">
+                                       <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" />
+                                         
+                                       </div>
+                                 </div>
+                           </div>
+
+
                            @verbatim
 
                            <div id="opts" class="col-sm-6">
-                                <div  class="col-sm-6" v-for="item in items" v-model="item.value">
+                                <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
 
                                    <input type="text"  class="form-control"   v-bind:id="item.value">
                              
@@ -188,16 +201,6 @@ async function cadOpcoes() {
 
                            
                            @endverbatim
-                           
-
-                           <div class="col-sm-6">
-                              <div class="form-group form-float">
-                                       <div class="form-line">
-                                       <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" />
-                                         
-                                       </div>
-                                 </div>
-                           </div>
 
       
                            `,
