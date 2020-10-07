@@ -197,7 +197,7 @@ async function cadOpcoes() {
                            @verbatim
                               
                            <div id="opts" class="col-sm-12">
-                            <input  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
+                            <input style="display:none"  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
 
                             <h3 class="swal2-title"> Adicione as variações </h3>
                                 <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
