@@ -260,7 +260,7 @@ async function cadOpcoes() {
       
     }
 
-    let excc =   JSON.parse(array_item_opt)
+    let excc = array_item_opt
     let obj_send = {
          ID_USER: '{{$iduser}}' ,
          DESCROPT: descr ,
