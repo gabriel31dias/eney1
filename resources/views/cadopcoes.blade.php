@@ -243,11 +243,11 @@ async function cadOpcoes() {
          ID_USER: '{{$iduser}}' ,
          DESCROPT: document.getElementById('DESCROPT').value ,
          CAMPOSOPCOES: JSON.parse(array_item_opt)   ,
+         "_token": "{{ csrf_token() }}",
        }
 
 
       $.ajax({
-        "_token": "{{ csrf_token() }}",
         url: "{{route('saveopt')}}",
         type: "post",
         data: obj_send
