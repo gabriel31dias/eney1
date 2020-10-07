@@ -171,7 +171,7 @@ async function cadOpcoes() {
 
                            <div id="opts">
                                 <p v-for="item in items" v-model="item.value">
-                                <input type="text"   id="{{item.value}}">
+                                <input type="text"    v-bind:id="item.value">
                              
                                 </p>
 
