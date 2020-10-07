@@ -140,8 +140,9 @@ async function cadOpcoes() {
       methods: {
       addItem() {
        this.count = this.count + 1
+       let p  = String(this.count)
        this.items.push({
-          value:  this.count
+          value:  'opt' + p
        });
       
       }
@@ -170,13 +171,14 @@ async function cadOpcoes() {
                            </div>
                            @verbatim
 
-                           <div id="opts">
-                                <p v-for="item in items" v-model="item.value">
-                                <input type="text"  class="form-control"   v-bind:id="item.value">
-                             
-                                </p>
+                           <div id="opts" class="col-sm-6">
+                                <div  class="col-sm-6" v-for="item in items" v-model="item.value">
 
-                                <button @click="addItem">add</button> {{items}}
+                                   <input type="text"  class="form-control"   v-bind:id="item.value">
+                             
+                                </div>
+
+                                <button class="waves-effect waves-light btn btn-large  bg-light-blue" @click="addItem">add</button> {{items}}
                            </div>
                            @endverbatim
                            
