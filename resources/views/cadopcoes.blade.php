@@ -238,17 +238,36 @@ async function cadOpcoes() {
     for(let i = 0; i < getcountitem ; i++){
        count = count + 1
        let aux = document.getElementById('opt'+count).value
+
+       let obj_send = {
+         ID_USER: '{{$iduser}}' ,
+         DESCROPT: document.getElementById('DESCROPT').value ,
+         CAMPOSOPCOES: JSON.parse(array_item_opt)   ,
+       }
+
+
+      $.ajax({
+        "_token": "{{ csrf_token() }}",
+        url: "{{route('saveopt')}}",
+        type: "post",
+        data: obj_send
+      }).done(function(data){
+
+
+          alert(data)
+      });
+
       
-      $.get('{{route("saveopt")}}',function(data){
+   //   $.get(`{{route('saveopt')}}/${array_item_opt}/${}`,function(data){
         
-         location.href = "{{route('saveopt')}}"
+      //   location.href = 
 
-      }).then((value) => {
+   //   }).then((value) => {
 
       
-         location.href = "{{route('saveopt')}}"
+      ////   location.href = "{{route('saveopt')}}"
          
-      })
+   ///   })
       
     }
    
