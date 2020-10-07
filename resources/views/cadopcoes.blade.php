@@ -137,6 +137,9 @@ async function cadOpcoes() {
       items: [],
       count:0
     },
+    beforeDestroy: function(){
+      this.allx()
+   },
       methods: {
       addItem() {
        this.count = this.count + 1
