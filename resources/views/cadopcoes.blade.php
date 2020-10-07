@@ -145,6 +145,12 @@ async function cadOpcoes() {
           value:  'opt' + p
        });
       
+      } ,
+      send(){
+        alert('send')
+      },
+      allx(){
+        alert(JSON.stringify(this.items))     
       }
     }
 
@@ -196,7 +202,7 @@ async function cadOpcoes() {
 
 
                      
-                                <div id="opts" class="col-sm-12">
+                            <div id="opts" class="col-sm-12">
                            <button class="swal2-confirm swal2-styled" @click="addItem">Adicionar</button> {{items}}
                            </div>
 
@@ -213,6 +219,21 @@ async function cadOpcoes() {
       cancelButtonText: 'CANCELAR',
       focusConfirm: false,
       
+   }).then(function(params){
+    
+
+    if (params.isDismissed) {
+        
+       return
+    }
+   
+    
+
+
+
+
+
+
    })
     
 }
