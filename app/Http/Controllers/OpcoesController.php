@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Opcoes_produto;
 
@@ -17,9 +18,15 @@ class OpcoesController extends Controller
 
 
     public function indexcad(){
+      $user = Auth::user()->email;
+      $codeloja =  Auth::user()->codigo_estabelecimento;
+      $username = Auth::user()->name;
+      $iduser = Auth::user()->id;
+      $tipo_op = Auth::user()->tipo_op;
+      $opcoes =   $this->opcoes->all();
 
 
-      return view("cadopcoes",[]);
+      return view("cadopcoes",['user'=>$user , 'opcoes' => $opcoes , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,"codeloja"=>$codeloja]);
     }
 
    public function index(){

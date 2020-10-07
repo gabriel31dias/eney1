@@ -86,14 +86,29 @@ visibility: hidden;
                         
                         <th>Código</th>
                         <th>Descrição</th>
+                        
 
+                        
                      </tr>
                   </thead>
-                  <tfoot>
-                     <tr>
-                     <tr>
-                     </tr>
-                  </tfoot>
+                  <tbody>
+                    @foreach ($opcoes as $item)
+                 
+                    
+                    <tr>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->DESCROPT}}</td>
+                        <td>{{$item->CAMPOSOPCOES}}</td>
+
+                    </tr>
+                        
+                    @endforeach
+
+                 
+
+                   
+                </tbody>
+                
                </table>
             </div>
          </div>
