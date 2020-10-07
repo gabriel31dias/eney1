@@ -1,6 +1,8 @@
 @extends('layouts.base')
 @section('content')
 <script src="/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
 <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
 "></script>
 
