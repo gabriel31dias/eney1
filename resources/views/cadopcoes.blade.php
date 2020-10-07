@@ -239,7 +239,27 @@ async function cadOpcoes() {
        count = count + 1
        let aux = document.getElementById('opt'+count).value
 
-       let obj_send = {
+       array_item_opt.push(aux)
+
+      
+   //   $.get(`{{route('saveopt')}}/${array_item_opt}/${}`,function(data){
+        
+      //   location.href = 
+
+   //   }).then((value) => {
+
+      
+      ////   location.href = "{{route('saveopt')}}"
+         
+   ///   })
+
+
+
+
+      
+    }
+
+    let obj_send = {
          ID_USER: '{{$iduser}}' ,
          DESCROPT: document.getElementById('DESCROPT').value ,
          CAMPOSOPCOES: JSON.parse(array_item_opt)   ,
@@ -259,22 +279,8 @@ async function cadOpcoes() {
      .fail(function(jqXHR, textStatus, errorThrown) {
          alert(jqXHR)
      })
-
-      
-   //   $.get(`{{route('saveopt')}}/${array_item_opt}/${}`,function(data){
-        
-      //   location.href = 
-
-   //   }).then((value) => {
-
-      
-      ////   location.href = "{{route('saveopt')}}"
-         
-   ///   })
-      
-    }
    
-     
+     alert('dwadwad')
 
 
 
