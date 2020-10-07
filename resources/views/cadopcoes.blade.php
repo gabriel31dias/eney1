@@ -286,7 +286,7 @@ async function cadOpcoes() {
       Swal.fire(
    
    '',
-   '<h3>Produto cadastrado com sucesso !</h3>',
+   '<h3>Opção cadastrada com sucesso</h3>',
    'success'
       )
       consulta()
@@ -302,7 +302,7 @@ async function cadOpcoes() {
    Swal.fire({
    icon: 'error',
    title: '',
-   text: '<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
+   text: '<h3>Ouve um erro ao realizar a operação,tente novamente.</h3>',
    footer: ''
    })
 
