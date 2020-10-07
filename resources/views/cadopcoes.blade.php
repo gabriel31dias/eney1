@@ -323,77 +323,79 @@ async function cadOpcoes() {
    })
 
 
+      
+   }
+
+   
    async function  updateopt() {
 
     
       
-    const frm = await Swal.fire({
-      width: 800,
-      closeOnClickOutside: false,
-      allowOutsideClick: false,
-      title:'Editando opção' ,
-      html:  `
-      
+const frm = await Swal.fire({
+  width: 800,
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  title:'Editando opção' ,
+  html:  `
+  
 
-      <div class="col-sm-12">
+  <div class="col-sm-12">
 
-                             
-                                <h3 class="swal2-title"> Digite a descrição </h3>
-                                       <div class="form-line">
-                                          <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
+                         
+                            <h3 class="swal2-title"> Digite a descrição </h3>
+                                   <div class="form-line">
+                                      <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
 
-                                       </div>
-                               
-                           </div>
+                                   </div>
                            
+                       </div>
+                       
+                       
+
+                       <div class="col-sm-6">
+                          <div class="form-group form-float">
                            
-
-                           <div class="col-sm-6">
-                              <div class="form-group form-float">
-                               
-                                       <div class="form-line">
-                                       <input style="display:none"  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" />
-                                         
-                                       </div>
-                                 </div>
-                           </div>
+                                   <div class="form-line">
+                                   <input style="display:none"  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" />
+                                     
+                                   </div>
+                             </div>
+                       </div>
 
 
-                           @verbatim
-                              
-                           <div id="opts" class="col-sm-12">
-                            <input style="display:none"  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
+                       @verbatim
+                          
+                       <div id="opts" class="col-sm-12">
+                        <input style="display:none"  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
 
-                            <h3 class="swal2-title"> Adicione as variações </h3>
-                                <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
+                        <h3 class="swal2-title"> Adicione as variações </h3>
+                            <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
+             
+                               <input type="text"  class="form-control"   v-bind:id="item.value">
+                         
+                            </div>
+
+
                  
-                                   <input type="text"  class="form-control"   v-bind:id="item.value">
-                             
-                                </div>
+                        <div id="opts" class="col-sm-12">
+                       <button class="swal2-confirm swal2-styled" @click="addItem">Adicionar</button> 
+                       </div>
 
+                       </div>
 
-                     
-                            <div id="opts" class="col-sm-12">
-                           <button class="swal2-confirm swal2-styled" @click="addItem">Adicionar</button> 
-                           </div>
+                       
+                       @endverbatim
 
-                           </div>
+  
+                       `,
 
-                           
-                           @endverbatim
-
-      
-                           `,
-
-      confirmButtonText: 'SALVAR PRODUTO',
-      showCancelButton: true,
-      cancelButtonText: 'CANCELAR',
-      focusConfirm: false,
-      
-   })
-     
-      
-   }
+  confirmButtonText: 'SALVAR PRODUTO',
+  showCancelButton: true,
+  cancelButtonText: 'CANCELAR',
+  focusConfirm: false,
+  
+})
+ 
     
 }
 
