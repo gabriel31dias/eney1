@@ -131,12 +131,33 @@ async function cadOpcoes() {
       width: 800,
       closeOnClickOutside: false,
       allowOutsideClick: false,
-      title:'C' ,
+      title:'Cadastrando opção' ,
       html:  `
-         <input  type="text"  id="descrOPT" name="DESCROPT" />
+           
 
+      <div class="col-sm-6">
+                              <div class="form-group form-float">
+                                       <div class="form-line">
+                                       <label  class="">CFOP</label>
+                                          <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control" readonly=“true” />
 
-         <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES" />
+                                       </div>
+                                 </div>
+                           </div>
+
+                           
+
+                           <div class="col-sm-6">
+                              <div class="form-group form-float">
+                                       <div class="form-line">
+                                       <label  class="">CFOP</label>
+                                       <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" readonly=“true”/>
+                                         
+                                       </div>
+                                 </div>
+                           </div>
+
+      
                            `,
 
       confirmButtonText: 'SALVAR PRODUTO',
