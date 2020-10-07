@@ -139,7 +139,7 @@ async function cadOpcoes() {
     },
     beforeDestroy: function(){
       this.allx()
-   },
+     },
       methods: {
       addItem() {
        this.count = this.count + 1
@@ -168,7 +168,7 @@ async function cadOpcoes() {
       allowOutsideClick: false,
       title:'Cadastrando opção' ,
       html:  `
-           
+      
 
       <div class="col-sm-11">
                               <div class="form-group form-float">
@@ -196,9 +196,11 @@ async function cadOpcoes() {
                            @verbatim
                               
                            <div id="opts" class="col-sm-12">
+                            <input  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
+
                             <h3 class="swal2-title"> Adicione as variações </h3>
                                 <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
-
+                 
                                    <input type="text"  class="form-control"   v-bind:id="item.value">
                              
                                 </div>
@@ -230,7 +232,7 @@ async function cadOpcoes() {
        return
     }
    
-    
+     
 
 
 
