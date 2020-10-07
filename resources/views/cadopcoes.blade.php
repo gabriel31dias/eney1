@@ -178,8 +178,15 @@ async function cadOpcoes() {
                              
                                 </div>
 
-                                <button class="waves-effect waves-light btn btn-large  bg-light-blue" @click="addItem">add</button> {{items}}
+
+                     
+                                <div id="opts" class="col-sm-12">
+                           <button class="waves-effect waves-light btn btn-large  bg-light-blue" @click="addItem">add</button> {{items}}
                            </div>
+
+                           </div>
+
+                           
                            @endverbatim
                            
 
