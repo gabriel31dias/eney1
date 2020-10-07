@@ -242,7 +242,7 @@ async function cadOpcoes() {
       count = count + 1
       let aux = document.getElementById('opt'+count).value
       array_item_opt.push(aux)
-      
+      alert(JSON.stringify(array_item_opt))
 
 
     }
