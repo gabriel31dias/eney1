@@ -37,7 +37,32 @@
 
       
       <style>
+     
+     tr:hover{
+        background-color: #abc;
 
+       }
+       tr.clicked {
+      background-color: #abc;
+}
+
+.lbl{
+    font-size: 20px;
+
+}
+
+.space{
+    padding:2px;
+}
+      .dataTables_wrapper .dataTables_filter {
+float: right;
+text-align: right;
+visibility: hidden;
+}
+.custom-input-class::-webkit-input-placeholder {
+  color: #f00 !important;
+  opacity: 1 !important;
+}
 
 
       * {
