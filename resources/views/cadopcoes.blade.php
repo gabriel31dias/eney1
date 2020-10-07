@@ -264,15 +264,13 @@ async function cadOpcoes() {
     let obj_send = {
          ID_USER: '{{$iduser}}' ,
          DESCROPT: descr ,
-         CAMPOSOPCOES: excc  ,
+         CAMPOSOPCOES: JSON.stringify(excc)  ,
          "_token": "{{ csrf_token() }}",
        }
 
 
    
-   
-     
-      
+
    var $form = $('#f1');
    var serializedData = $form.serialize();
 
