@@ -139,10 +139,11 @@ async function cadOpcoes() {
     },
       methods: {
       addItem() {
+        this.count = this.count + 1
       this.items.push({
-        value: ''
+        value:  this.count
       });
-      this.count = this.count + 1
+      
       }
     }
 
