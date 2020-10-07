@@ -15,9 +15,15 @@ class OpcoesController extends Controller
        $this->opcoes = $pro;
     }
 
+
+    public function indexcad(){
+
+
+      return view("cadopcoes",[]);
+    }
+
    public function index(){
 
-   
     return view('opcoes',[]);
    }
    

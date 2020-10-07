@@ -13,12 +13,11 @@ class OpcoesProdutos extends Migration
      */
     public function up()
     {
-        Schema::create('Opcoes', function (Blueprint $table) {
+        Schema::create('opcoes', function (Blueprint $table) {
             $table->id();
-            $table->integer('ID_PRODUTO')->nullable();
-            $table->string('DESCR_OPT')->nullable();
-            $table->string('JSON_OPT')->nullable();
-            
+            $table->integer('ID_USER');//PRODUTOS ADICIONADO EM FORMATO JSON
+            $table->string('DESCROPT')->nullable();
+            $table->longText('CAMPOSOPCOES')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

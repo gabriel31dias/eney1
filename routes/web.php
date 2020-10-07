@@ -209,6 +209,10 @@ Route::get('/vendas/enviavendasnaoenviadas/','VendaController@enviaVendasNaoenvi
 Route::get('/vendas/setvendarecebida/{codevenda}','VendaController@setVendaRecebida')->name("setrecebida");
 
 
+//Rota opcoes
+
+Route::get('/opcoes','OpcoesController@indexcad')->name("opcoesindex");
+
 
 
 
