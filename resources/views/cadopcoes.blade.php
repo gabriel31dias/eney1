@@ -260,10 +260,11 @@ async function cadOpcoes() {
       
     }
 
+    let excc =   JSON.parse(array_item_opt)
     let obj_send = {
          ID_USER: '{{$iduser}}' ,
          DESCROPT: descr ,
-         CAMPOSOPCOES: JSON.parse(array_item_opt)   ,
+         CAMPOSOPCOES: excc  ,
          "_token": "{{ csrf_token() }}",
        }
 
