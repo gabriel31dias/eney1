@@ -298,7 +298,8 @@ async function cadOpcoes() {
 
 
    request.fail(function(jqXHR, textStatus, errorThrown) {
-
+   
+    console.log(jqXHR)
       
    Swal.fire({
    icon: 'error',
