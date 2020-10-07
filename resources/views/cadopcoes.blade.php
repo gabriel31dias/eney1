@@ -156,12 +156,13 @@ new Vue({
                                        </div>
                                  </div>
                            </div>
+                           @verbatim
 
                            <div id="opts">
                                 <input  v-for="item in items" v-model="item.value" id="{{item}}">
                                 <button @click="addItem">add</button> {{items}}
                            </div>
-
+                           @endverbatim
                            
 
                            <div class="col-sm-6">
