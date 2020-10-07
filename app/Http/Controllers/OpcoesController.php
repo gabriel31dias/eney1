@@ -47,6 +47,13 @@ class OpcoesController extends Controller
 
 
    }
+
+   public function saveopt(Request $req) {
+        
+      $opt  =  $this->opcoes->create(['ID_USER'=> $req->ID_USER ,'DESCROPT' => $req->DESCROPT , 'CAMPOSOPCOES' =>  $req->CAMPOSOPCOES  ]);
+     return $opt;
+
+   }
    
 
 

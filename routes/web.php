@@ -212,6 +212,7 @@ Route::get('/vendas/setvendarecebida/{codevenda}','VendaController@setVendaReceb
 //Rota opcoes
 
 Route::get('/opcoes','OpcoesController@indexcad')->name("opcoesindex");
+Route::get('/saveopt','OpcoesController@saveopt')->name("saveopt");
 
 
 

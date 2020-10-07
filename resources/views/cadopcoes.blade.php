@@ -208,7 +208,7 @@ async function cadOpcoes() {
 
                      
                             <div id="opts" class="col-sm-12">
-                           <button class="swal2-confirm swal2-styled" @click="addItem">Adicionar</button> {{items}}
+                           <button class="swal2-confirm swal2-styled" @click="addItem">Adicionar</button> 
                            </div>
 
                            </div>
@@ -226,7 +226,6 @@ async function cadOpcoes() {
       
    }).then(function(params){
     
-
     if (params.isDismissed) {
         
        return
@@ -236,15 +235,21 @@ async function cadOpcoes() {
     let count = 0
     let array_item_opt = []
 
-
-
     for(let i = 0; i < getcountitem ; i++){
-      count = count + 1
-      let aux = document.getElementById('opt'+count).value
-      array_item_opt.push(aux)
-      alert(JSON.stringify(array_item_opt))
+       count = count + 1
+       let aux = document.getElementById('opt'+count).value
+      
+      $.get('{{route("saveopt")}}',function(data){
+        
+         location.href = "{{route('saveopt')}}"
 
+      }).then((value) => {
 
+      
+         location.href = "{{route('saveopt')}}"
+         
+      })
+      
     }
    
      
