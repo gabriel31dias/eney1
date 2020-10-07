@@ -54,6 +54,26 @@ class OpcoesController extends Controller
      return $opt;
 
    }
+
+
+   public function editopt(Request $req) {
+      $opt  =  $this->opcoes->find($req->id);
+      $opt->CAMPOSOPCOES = "wddw";
+      $opt->DESCROPT = "wddw";
+      $res =  $opt->save();
+      return  $res;
+   }
+
+
+   public function itemopt(Request $req) {
+      $opt  =  $this->opcoes->find($req->id);
+      $opt->CAMPOSOPCOES = "wddw";
+      $opt->DESCROPT = "wddw";
+      $res =  $opt->save();
+      return  $res;
+   }
+
+
    
 
 
