@@ -135,7 +135,7 @@ async function cadOpcoes() {
       html:  `
          <input  type="text"  id="descrOPT" name="DESCROPT" />
 
-         
+
          <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES" />
                            `,
 
@@ -146,7 +146,7 @@ async function cadOpcoes() {
       preConfirm: () => {
          
       }
-   })s
+   })
     
 }
 
