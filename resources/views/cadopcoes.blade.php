@@ -168,8 +168,10 @@ async function cadOpcoes() {
                            @verbatim
 
                            <div id="opts">
-                                <input  v-for="item in items" v-model="item.value" id="{{item}}">
+                                <p v-for="item in items" v-model="item.value">
+                                <input type="text"   id="{{item}}">
                                 <button @click="addItem">add</button> {{items}}
+                                </p>
                            </div>
                            @endverbatim
                            
