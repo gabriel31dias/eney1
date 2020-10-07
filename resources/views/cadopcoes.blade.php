@@ -96,6 +96,7 @@ visibility: hidden;
                  
                     
                     <tr>
+
                         <td>{{$item->id}}</td>
                         <td>{{$item->DESCROPT}}</td>
                         <td>{{$item->CAMPOSOPCOES}}</td>
@@ -123,6 +124,31 @@ visibility: hidden;
 
 <script>
     
+async function cadOpcoes() {
+
+    
+    const frm = await Swal.fire({
+      width: 800,
+      closeOnClickOutside: false,
+      allowOutsideClick: false,
+      title:'C' ,
+      html:  `
+         <input  type="text"  id="descrOPT" name="DESCROPT" />
+
+         
+         <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES" />
+                           `,
+
+      confirmButtonText: 'SALVAR PRODUTO',
+      showCancelButton: true,
+      cancelButtonText: 'CANCELAR',
+      focusConfirm: false,
+      preConfirm: () => {
+         
+      }
+   })s
+    
+}
 
 
 
