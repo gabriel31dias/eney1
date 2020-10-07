@@ -128,19 +128,26 @@ visibility: hidden;
     
 async function cadOpcoes() {
    
-new Vue({
-  el: '#opts',
-  data: {
-    items: [],
-  },
-  methods: {
-    addItem() {
+
+
+   setTimeout(function(){
+    new Vue({
+    el: '#opts',
+     data: {
+      items: [],
+    },
+      methods: {
+      addItem() {
       this.items.push({
         value: ''
       });
+      }
     }
-  }
+    
  })
+ 
+
+   })
     
     const frm = await Swal.fire({
       width: 800,
