@@ -185,7 +185,7 @@ async function cadOpcoes() {
                            @verbatim
                               
                            <div id="opts" class="col-sm-12">
-                            <h3> Adicione as variações </h3>
+                            <h3 class="swal2-title"> Adicione as variações </h3>
                                 <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
 
                                    <input type="text"  class="form-control"   v-bind:id="item.value">
