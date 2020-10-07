@@ -269,18 +269,6 @@ async function cadOpcoes() {
        }
 
 
-      $.ajax({
-        url: "{{route('saveopt')}}",
-        type: "post",
-        data: obj_send
-      }).done(function(data){
-
-
-          alert(data)
-      }) 
-     .fail(function(jqXHR, textStatus, errorThrown) {
-         alert(jqXHR)
-     })
    
      alert('dwadwad')
 
