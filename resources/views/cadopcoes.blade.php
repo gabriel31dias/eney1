@@ -183,10 +183,10 @@ async function cadOpcoes() {
 
 
                            @verbatim
-
-                           <div id="opts" class="col-sm-6">
+                              
+                           <div id="opts" class="col-sm-12">
                                 <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
-
+.
                                    <input type="text"  class="form-control"   v-bind:id="item.value">
                              
                                 </div>
