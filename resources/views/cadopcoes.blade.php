@@ -125,7 +125,20 @@ visibility: hidden;
 <script>
     
 async function cadOpcoes() {
-
+   
+new Vue({
+  el: '#opts',
+  data: {
+    items: [],
+  },
+  methods: {
+    addItem() {
+      this.items.push({
+        value: ''
+      });
+    }
+  }
+ })
     
     const frm = await Swal.fire({
       width: 800,
@@ -138,11 +151,15 @@ async function cadOpcoes() {
       <div class="col-sm-6">
                               <div class="form-group form-float">
                                        <div class="form-line">
-                                       <label  class="">CFOP</label>
-                                          <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control" readonly=“true” />
+                                          <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
 
                                        </div>
                                  </div>
+                           </div>
+
+                           <div id="opts">
+                                <input  v-for="item in items" v-model="item.value" id="{{item}}">
+                                <button @click="addItem">add</button> {{items}}
                            </div>
 
                            
@@ -150,8 +167,7 @@ async function cadOpcoes() {
                            <div class="col-sm-6">
                               <div class="form-group form-float">
                                        <div class="form-line">
-                                       <label  class="">CFOP</label>
-                                       <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" readonly=“true”/>
+                                       <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" />
                                          
                                        </div>
                                  </div>
