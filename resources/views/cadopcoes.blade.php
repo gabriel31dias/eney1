@@ -279,7 +279,7 @@ async function cadOpcoes() {
   
 
    request = $.ajax({
-      url: "{{route('produtossave')}}",
+      url: "{{route('saveopt')}}",
       type: "post",
       data: obj_send
    });
