@@ -300,10 +300,10 @@ async function cadOpcoes() {
     console.log(jqXHR)
       
    Swal.fire({
-   icon: 'error',
-   title: '',
-   text: '<h3>Ouve um erro ao realizar a operação,tente novamente.</h3>',
-   footer: ''
+    icon: 'error',
+    title: '',
+    text: '<h3>Ouve um erro ao realizar a operação,tente novamente.</h3>',
+    footer: ''
    })
 
 
