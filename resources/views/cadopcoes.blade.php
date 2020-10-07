@@ -231,6 +231,10 @@ async function cadOpcoes() {
         
        return
     }
+
+    let getcountitem = document.getElementById('count').value
+  
+    alert(getcountitem)
    
      
 
