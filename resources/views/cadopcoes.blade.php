@@ -143,8 +143,8 @@ async function cadOpcoes() {
       });
       }
     }
-    
- })
+
+ },2000)
  
 
    })
