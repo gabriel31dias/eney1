@@ -170,15 +170,15 @@ async function cadOpcoes() {
       html:  `
       
 
-      <div class="col-sm-11">
+      <div class="col-sm-12">
 
-                              <div class="form-group form-float">
+                             
                                 <h3 class="swal2-title"> Digite a descrição </h3>
                                        <div class="form-line">
                                           <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
 
                                        </div>
-                                 </div>
+                               
                            </div>
                            
                            
