@@ -225,8 +225,11 @@ async function cadOpcoes() {
       focusConfirm: false,
       
    }).then(function(params){
-    
-   
+    let descr = document.getElementById('DESCROPT').value 
+    if (params.isDismissed) {
+        
+       return
+    }
 
     let getcountitem = document.getElementById('count').value
     let count = 0
@@ -258,7 +261,7 @@ async function cadOpcoes() {
 
     let obj_send = {
          ID_USER: '{{$iduser}}' ,
-         DESCROPT: document.getElementById('DESCROPT').value ,
+         DESCROPT: descr ,
          CAMPOSOPCOES: JSON.parse(array_item_opt)   ,
          "_token": "{{ csrf_token() }}",
        }
