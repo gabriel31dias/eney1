@@ -226,10 +226,7 @@ async function cadOpcoes() {
       
    }).then(function(params){
     
-    if (params.isDismissed) {
-        
-       return
-    }
+   
 
     let getcountitem = document.getElementById('count').value
     let count = 0
