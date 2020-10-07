@@ -234,11 +234,17 @@ async function cadOpcoes() {
 
     let getcountitem = document.getElementById('count').value
     let count = 0
-    for(let i = 0; i< getcountitem ; i++){
-      
-       count = count + 1
+    let array_item_opt = []
+
+
+
+    for(let i = 0; i < getcountitem ; i++){
+      count = count + 1
       let aux = document.getElementById('opt'+count).value
-      alert(aux)
+      array_item_opt.push(aux)
+      
+
+
     }
    
      
