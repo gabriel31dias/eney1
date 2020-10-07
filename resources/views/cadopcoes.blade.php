@@ -161,8 +161,9 @@ async function cadOpcoes() {
       html:  `
            
 
-      <div class="col-sm-6">
+      <div class="col-sm-11">
                               <div class="form-group form-float">
+                                <h3 class="swal2-title"> Digite a descrição </h3>
                                        <div class="form-line">
                                           <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
 
@@ -174,6 +175,7 @@ async function cadOpcoes() {
 
                            <div class="col-sm-6">
                               <div class="form-group form-float">
+                                <h3 class="swal2-title"> Adicione as variações </h3>
                                        <div class="form-line">
                                        <input  type="text"  id="CAMPOSOPCOES" name="CAMPOSOPCOES"  class="form-control" />
                                          
