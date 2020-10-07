@@ -171,6 +171,7 @@ async function cadOpcoes() {
       
 
       <div class="col-sm-11">
+
                               <div class="form-group form-float">
                                 <h3 class="swal2-title"> Digite a descrição </h3>
                                        <div class="form-line">
@@ -225,7 +226,7 @@ async function cadOpcoes() {
       focusConfirm: false,
       
    }).then(function(params){
-    let descr = document.getElementById('DESCROPT').value 
+    let descr = document.getElementById('descrOPT').value 
     if (params.isDismissed) {
         
        return
