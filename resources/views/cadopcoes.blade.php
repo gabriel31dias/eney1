@@ -270,7 +270,51 @@ async function cadOpcoes() {
 
 
    
-     alert('dwadwad')
+   
+     
+      
+   var $form = $('#f1');
+   var serializedData = $form.serialize();
+
+  
+
+   request = $.ajax({
+      url: "{{route('produtossave')}}",
+      type: "post",
+      data: serializedData
+   });
+
+   request.done(function(response, textStatus, jqXHR) {
+      Swal.fire(
+   
+   '',
+   '<h3>Produto cadastrado com sucesso !</h3>',
+   'success'
+      )
+      consulta()
+
+   
+   });
+
+
+   request.fail(function(jqXHR, textStatus, errorThrown) {
+
+      
+   Swal.fire({
+   icon: 'error',
+   title: '',
+   text: '<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
+   footer: ''
+   })
+
+
+   });
+
+
+   request.always(function() {
+      // Reenable the inputs
+      
+   });
 
 
 
