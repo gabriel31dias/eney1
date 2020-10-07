@@ -255,7 +255,10 @@ async function cadOpcoes() {
 
 
           alert(data)
-      });
+      }) 
+     .fail(function(jqXHR, textStatus, errorThrown) {
+         alert(jqXHR)
+     })
 
       
    //   $.get(`{{route('saveopt')}}/${array_item_opt}/${}`,function(data){
