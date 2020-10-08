@@ -394,6 +394,13 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
+
+	<!-- jQuery -->
+	<script src="/lojavers/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/lojavers/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/lojavers/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="/lojavers/js/jquery.waypoints.min.js"></script>
 	<!-- Carousel -->
