@@ -313,7 +313,7 @@
         
      </div>
      
-    
+     <button type="button" onclick="getx()" >
     
 		<div  class="col-xs-12">
 		  <button type="button" onclick="getx()" class="animated infinite pulse  btn btn-success"> <i class="large material-icons">check_circle</i><br>Finalizar compra <br>R${{ number_format($totalemprodutos   , 2) }} </button>
