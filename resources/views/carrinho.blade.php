@@ -298,7 +298,7 @@
     
     
 		<div  class="col-xs-12">
-		  <button type="button" onclick="formas_pagamento()" class="animated infinite pulse  btn btn-success"> <i class="large material-icons">check_circle</i><br>Finalizar compra <br>R${{ number_format($totalemprodutos   , 2) }} </button>
+		  <button type="button" onclick="formas_pagamento()" class="  btn btn-success"> <i class="large material-icons">check_circle</i><br>Finalizar compra <br>R${{ number_format($totalemprodutos   , 2) }} </button>
 		</div>
 			  </div>
   		  </center>
