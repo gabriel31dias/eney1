@@ -1,20 +1,9 @@
 
 <!DOCTYPE HTML>
 <html>
-	<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-    
-
+  <head>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-       <!-- production version, optimized for size and speed -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<!-- jQuery -->
-	<script src="/lojavers/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="/lojavers/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-  <script src="/lojavers/js/bootstrap.min.js"></script>
-  
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Serviços - Restaurante Saboroso!</title>
@@ -27,10 +16,12 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 		<meta name="theme-color" content="#FBB448">
-	
+	    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Animate.css -->
 		<link rel="stylesheet" href="/lojavers/css/animate.css">
@@ -43,6 +34,8 @@
 	
 		<!-- Magnific Popup -->
 		<link rel="stylesheet" href="/lojavers/css/magnific-popup.css">
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" ></script>
 	
 		<!-- Bootstrap DateTimePicker -->
 		<link rel="stylesheet" href="/lojavers/css/bootstrap-datetimepicker.min.css">
@@ -52,20 +45,7 @@
 		<link rel="stylesheet" href="/lojavers/css/owl.theme.default.min.css">
 	
 		<!-- Theme style  -->
-    <link rel="stylesheet" href="/lojavers/css/style.css">
-    <style>
-
-  .fh5co-card-item .fh5co-text h2 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0 0 10px 0;
-    color: black;
-   }
-
-   
-
-    </style>
-
+		<link rel="stylesheet" href="/lojavers/css/style.css">
 	
 		<!-- Modernizr JS -->
 		<script src="/lojavers/js/modernizr-2.6.2.min.js"></script>
@@ -73,12 +53,14 @@
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
         <![endif]-->
-        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
-"></script>
-
-<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
-
+        
         <style>
+			.fh5co-card-item .fh5co-text h2 {
+           font-size: 20px;
+           font-weight: 400;
+           margin: 0 0 10px 0;
+           color: black;
+          }
 		       .actionx:hover {
               background-color:darkgrey;
               color:white!important;
