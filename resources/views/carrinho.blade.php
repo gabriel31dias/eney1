@@ -1379,7 +1379,7 @@ async function savevenda(){
                 data: JSON.stringify(obj_venda)
 
             }).then(function() {
-                lembrar()
+                
                 return true
             })
 }
