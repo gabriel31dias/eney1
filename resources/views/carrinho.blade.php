@@ -428,6 +428,8 @@
 
 
 <script>
+
+  alert('dwadwa')
   var digitando_email = false
   var cash_forma_pg = ''
   let obj_final = new Object()
