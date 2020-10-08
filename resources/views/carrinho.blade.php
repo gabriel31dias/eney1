@@ -741,10 +741,7 @@ async function open_product(nomeproduto,preco,descr,img,id){
 
   focusConfirm: false,
   preConfirm: function() {
-    return [
-      document.getElementById('swal-input1').value,
-      document.getElementById('swal-input2').value
-    ]
+    
   }
 })
 
