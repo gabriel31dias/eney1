@@ -749,6 +749,8 @@ async function open_product(nomeproduto,preco,descr,img,id){
  }
 
 
+
+
  function closeswal(){
 	swalWithBootstrapButtons.close()
 	$( '.mfp-close' ).click();
@@ -769,6 +771,17 @@ async function open_product(nomeproduto,preco,descr,img,id){
 
 	$( '.mfp-close' ).click();
 	
+ }
+
+
+
+ async function teste(){
+  Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+   
  }
 
 
