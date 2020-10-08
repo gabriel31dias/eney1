@@ -103,6 +103,8 @@ visibility: hidden;
                         <td>{{$item->DESCROPT}}</td>
                         <td>{{$item->CAMPOSOPCOES}}</td>
 
+                        <td><a  onclick="updateopt({{$item->id}})" style="margin:10px" class="waves-effect waves-light btn btn-large  bg-light-blue" onclick="updateX(2)"><i class="material-icons">edit</i></a> <a style="margin:10px" onclick="{{$item->id}}" class="waves-effect waves-light  btn bg-red waves-effect" href="https://versatil14185.herokuapp.com/produtosdelete/2"><i class="material-icons">delete_forever</i></a></td>
+         
                     </tr>
                         
                     @endforeach
@@ -327,7 +329,7 @@ async function cadOpcoes() {
    }
 
    
-   async function  updateopt() {
+   async function  updateopt(id) {
 
     
       
