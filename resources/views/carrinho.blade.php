@@ -431,7 +431,7 @@
 
 function getx(){
 
-
+   alert('dwadawdwadw')
 }
   var digitando_email = false
   var cash_forma_pg = ''
