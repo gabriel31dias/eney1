@@ -2,32 +2,27 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     
 
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
        <!-- production version, optimized for size and speed -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<!-- jQuery -->
-	<script src="/lojavers/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="/lojavers/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-  <script src="/lojavers/js/bootstrap.min.js"></script>
+	
   
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Serviços - Restaurante Saboroso!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Site do restaurante fictício Saboroso desenvolvido no curso de JavaScript da Hcode Treinamentos"
+		<meta name="description" content="Site do restaurante fictício Saboroso desenvolvido no "
 		/>
 		<meta name="author" content="Hcode.com.br" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 		<meta name="theme-color" content="#FBB448">
-	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
