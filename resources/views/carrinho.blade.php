@@ -195,7 +195,7 @@
 					</div>
 					
 											<h3 style="color:#FBB448">Status 
-												
+												@isset($status_loja)
 												@if($status_loja == true )
 
 												<span style="color:green">Aberto</span>
@@ -206,7 +206,7 @@
 
 												@endif
 												
-											
+											 @endisset
 											
 											</h3>
 
