@@ -285,7 +285,7 @@
 
             
         
-
+   @isset($gr)
 	 @if($gr)
 			 
 		<div class="container fh5co-card-item"  style="height: 500px;">
@@ -333,7 +333,7 @@
 			  @endforeach
 		@endisset
 			
-		
+		@endisset
 			</div>
 		  
 			  <!-- Left and right controls -->
