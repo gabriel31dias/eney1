@@ -34,6 +34,7 @@ visibility: hidden;
             <h2 style="margin:10px 10px 10px 10px; " >
                Cadastro de opçoes
             </h2>
+            
             <a onclick="cadOpcoes()" class="waves-effect waves-light btn btn-large  bg-light-blue"><i  style="margin-top:-6px" class="material-icons right">add_circle_outline</i> <span style="margin-right:5px;" >Incluir</span> </a>
             <a class="waves-effect waves-light btn bg-light-blue "><i  style="margin-top:-6px" class="material-icons right">autorenew</i> <span style="margin-right:5px;" >Alterar</span> </a>
             <a class="waves-effect waves-light btn bg-light-blue"><i  style="margin-top:-6px" class="material-icons right">swap_vertical_circle</i> <span style="margin-right:5px;" >Ativar/Desativar</span> </a>
@@ -175,7 +176,8 @@ async function cadOpcoes() {
       <div class="col-sm-12">
 
                              
-                                <h3 class="swal2-title"> Digite a descrição </h3>
+                               
+                                <h2 class="swal2-title" id="swal2-title" style="display: flex;"> Digite a descrição </h2>
                                        <div class="form-line">
                                           <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
 
@@ -201,7 +203,8 @@ async function cadOpcoes() {
                            <div id="opts" class="col-sm-12">
                             <input style="display:none"  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
 
-                            <h3 class="swal2-title"> Adicione as variações </h3>
+                         
+                            <h2 class="swal2-title" id="swal2-title" style="display: flex;">Adicione as variações </h2>
                                 <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
                  
                                    <input type="text"  class="form-control"   v-bind:id="item.value">
@@ -344,7 +347,8 @@ const frm = await Swal.fire({
   <div class="col-sm-12">
 
                          
-                            <h3 class="swal2-title"> Digite a descrição </h3>
+                            
+                            <h2 class="swal2-title" id="swal2-title" style="display: flex;">Digite a descrição </h2>
                                    <div class="form-line">
                                       <input  type="text"  id="descrOPT" name="DESCROPT"  class="form-control"  />
 
@@ -370,7 +374,8 @@ const frm = await Swal.fire({
                        <div id="opts" class="col-sm-12">
                         <input style="display:none"  type="text"  id="count" name="count"  v-bind:value="count"  class="form-control" />
 
-                        <h3 class="swal2-title"> Adicione as variações </h3>
+                       
+                          <h2 class="swal2-title" id="swal2-title" style="display: flex;"> Adicione as variações </h2>
                             <div style="padding:5px"  class="col-sm-6" v-for="item in items" v-model="item.value">
              
                                <input type="text"  class="form-control"   v-bind:id="item.value">
