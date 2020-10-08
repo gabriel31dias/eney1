@@ -745,9 +745,6 @@ async function open_product(nomeproduto,preco,descr,img,id){
   }
 })
 
-if (formValues) {
-  Swal.fire(JSON.stringify(formValues))
-}
 
  }
 
