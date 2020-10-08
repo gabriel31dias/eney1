@@ -381,33 +381,8 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
-	<!-- Waypoints -->
-	<script src="/lojavers/js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="/lojavers/js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="/lojavers/js/jquery.countTo.js"></script>
 
-	<!-- Stellar Parallax -->
-	<script src="/lojavers/js/jquery.stellar.min.js"></script>
-
-	<!-- Magnific Popup -->
-	<script src="/lojavers/js/jquery.magnific-popup.min.js"></script>
-	<script src="/lojavers/js/magnific-popup-options.js"></script>
-	
-	<script src="/lojavers/js/moment.min.js"></script>
-	<script src="/lojavers/js/bootstrap-datetimepicker.min.js"></script>
-
-
-	<!-- Main -->
-	<script src="/lojavers/js/main.js"></script>
-
-
-	</body>
-</html>
-
-
-<!-- jQuery -->
+	<!-- jQuery -->
 	<script src="/lojavers/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="/lojavers/js/jquery.easing.1.3.js"></script>
@@ -433,6 +408,12 @@
 
 	<!-- Main -->
 	<script src="/lojavers/js/main.js"></script>
+
+
+
+	</body>
+</html>
+
 
 
 
