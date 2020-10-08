@@ -2,30 +2,26 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-    
-
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-       <!-- production version, optimized for size and speed -->
-	
-  
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Serviços - Restaurante Saboroso!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Site do restaurante fictício Saboroso desenvolvido no "
+		<meta name="description" content="Site do restaurante fictício Saboroso desenvolvido no curso de JavaScript da Hcode Treinamentos"
 		/>
 		<meta name="author" content="Hcode.com.br" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 		<meta name="theme-color" content="#FBB448">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Animate.css -->
 		<link rel="stylesheet" href="/lojavers/css/animate.css">
@@ -38,6 +34,8 @@
 	
 		<!-- Magnific Popup -->
 		<link rel="stylesheet" href="/lojavers/css/magnific-popup.css">
+
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" ></script>
 	
 		<!-- Bootstrap DateTimePicker -->
 		<link rel="stylesheet" href="/lojavers/css/bootstrap-datetimepicker.min.css">
@@ -47,20 +45,7 @@
 		<link rel="stylesheet" href="/lojavers/css/owl.theme.default.min.css">
 	
 		<!-- Theme style  -->
-    <link rel="stylesheet" href="/lojavers/css/style.css">
-    <style>
-
-  .fh5co-card-item .fh5co-text h2 {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0 0 10px 0;
-    color: black;
-   }
-
-   
-
-    </style>
-
+		<link rel="stylesheet" href="/lojavers/css/style.css">
 	
 		<!-- Modernizr JS -->
 		<script src="/lojavers/js/modernizr-2.6.2.min.js"></script>
@@ -68,12 +53,14 @@
 		<!--[if lt IE 9]>
 		<script src="js/respond.min.js"></script>
         <![endif]-->
-        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
-"></script>
-
-<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
-
+        
         <style>
+			.fh5co-card-item .fh5co-text h2 {
+           font-size: 20px;
+           font-weight: 400;
+           margin: 0 0 10px 0;
+           color: black;
+          }
 		       .actionx:hover {
               background-color:darkgrey;
               color:white!important;
@@ -95,9 +82,9 @@
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo">
-						<a href="index.html">Saboroso
-							<em>!</em>
-						</a>
+						
+						<img style="max-width:150px;max-height:40px"  src="{{$imagem_loja ?? ''}}" class="img-responsive">
+
 					</div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
@@ -125,7 +112,8 @@
 	
 		</div>
 	</nav>
-	
+  
+  
 	<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -388,13 +376,16 @@
 		</div>
 	</footer>
 
+
+
+	</footer>
+
 	</div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
-
 	<!-- jQuery -->
 	<script src="/lojavers/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -430,7 +421,6 @@
 
 
 <script>
- alert("dwadawadw")
   var digitando_email = false
   var cash_forma_pg = ''
   let obj_final = new Object()
@@ -1289,7 +1279,7 @@ function lembrar(){
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input  class="form-check-input" type="checkbox" id="gridCheck">
+      <input onchange="lembrar()" class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Lembrar do meu endereço
       </label>
@@ -1382,7 +1372,7 @@ async function savevenda(){
                 data: JSON.stringify(obj_venda)
 
             }).then(function() {
-                
+                lembrar()
                 return true
             })
 }
@@ -1788,8 +1778,6 @@ await Swal.fire({
     digitando_email = true;
   }
     
-
-
 
 	</script>
 
