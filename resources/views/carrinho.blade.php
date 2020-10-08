@@ -840,7 +840,7 @@ const { value: formValues } = await temaapp.fire({
 
     <div class="form-group col-xs-12  col-md-6">
       <label for="inputZip">Digite seu telefone</label>
-	  <input onfocus="masctel(this)" type="text" value="{{$userapp['celular'] ?? ''}}
+	  <input  type="text" value="{{$userapp['celular'] ?? ''}}
       " class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
 
     </div>
