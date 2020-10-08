@@ -22,6 +22,8 @@ use Rede\Environment;
 use Rede\Transaction;
 use Rede\eRede;
 use Rede\Exception\RedeException;
+use App\Http\Controllers\SmsController ;
+
 
 
 class VendaController extends Controller
@@ -542,6 +544,9 @@ class VendaController extends Controller
             // send for server (listen) the any array
             $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
             $client->close();
+            $SendSms = new SmsController();
+            $SendSms->SendSinglesms('0030015529','Uma venda foi realizada no aplicativo para o cliente ' +  $getvenda->nomecliente + 'no valor de ' +  $getvenda->valor_total , $getvenda->numerotelefone ) ;
+
         }else{
             $venda->statuspvenda_pg = false;
             $venda = $venda->save();
