@@ -115,66 +115,261 @@
 
 
 <script>
-alert('dwda')
 
-  var cash_produto_adicionais = null
-var total_adicionais = 0
+var digitando_email = false
+  var cash_forma_pg = ''
+  let obj_final = new Object()
+  let obj_produtos = new Object()
+  let array_produtos_venda = []
+  var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
 
-var cont_quantidade = 1
-var socket = io('http://localhost:3000/')
-var lojacode = '{{$lojacod}}'
-	gettotal()
-var preco_old = ''
-var cash_tags = []
-var new_cash_tags = []
-var cash_obs = ''
-const temaapp = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-primary',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false
-})
+  var socket = io('https://servidorsocket3636.herokuapp.com/')
+  var obj_venda = {}
+  var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
+  var tipo_retirada = 'Entrega'
+  var lojacode = '{{$lojacod}}'
+  var cash_idvenda = ''
+  var cash_token_true = false
 
-var getsuccesso ='{{$getsucesso ?? ""}}'
+  obj_venda.produtosjson = '{{!! $produtosjson !!}}'
+  obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)
+  obj_venda.produtosjson = obj_venda.produtosjson.substring(0,  obj_venda.produtosjson.length - 1)
+  obj_venda.totalentrega = valor_total_frete
+  obj_venda.valortotalprodutos = '{{ number_format($totalemprodutos + $valorentrega  , 2) }}'
+  obj_venda.cod_venda_web =  Math.floor(Math.random() * 65536580)
 
-if (getsuccesso == 'true'){
+  
  
 
-Swal.fire(
-  'Muito bom, a venda foi concluida com sucesso',
-  '',
-  'success'
-)
-
-
-}
-
-
-
-
-async function searchproduto(){
-const { value: txt } = await temaapp.fire({
-  title: 'Digite o nome do produto',
-  input: 'text',
-  inputPlaceholder: 'Nome produto'
-})
-
-if (txt) {
-	$getlojacode = '/{{$lojacod}}'
-	$('html').html('');
-    $('body').load('{{route('searchproduto')}}'+$getlojacode + '/' + txt );
+ async function gerarcod_venda(){
+ 
+  let control = true
+  let valuefinal = ''
+  
+   
+    let vendac =  Math.floor(Math.random() * 655360);
+      await $.get('{{route("validacodvenda")}}/'+vendac ,function(data){
+      
+       if(data==true){
+          control = false
+          vendac = Math.floor(Math.random() * 655360)
+          console.log('exit lot validation')
+       }
+      })
+  
+    console.log('code venda validade')
+    return valuefinal
  }
-}
 
-function open_car(){
+   $('.fh5co-text').click(function(){
+      
 
-//	$getlojacode = '/{{$lojacod}}'
-	//$('html').html('');
-   // $('body').load('{{route('carrinho')}}'+$getlojacode);
-   location.href = "{{route('carrinho')}}/{{$lojacod}}"
-}
+   })
 
+  function removerdocarrinho(id){
+
+    location.href = "{{route('removeproduct')}}/"+id
+
+  // $.get('{{route('removeproduct')}}/'+id,function(data){
+   
+  /// }).done(function(){
+     
+     //setTimeout(function(){
+     //  $getlojacode = '/{{$lojacod}}'
+	    // $('html').html('');
+     //  $('body').load('{{route('carrinho')}}'+$getlojacode);
+
+    // },2000)
+
+
+  // })
+
+
+  }
+
+  async function sendsms(telefone){
+    $.get('{{route("sendtoken")}}/'+telefone+'/'+lojacode ,function(data){
+
+    }).then(function(data){
+      // alert(data)
+       console.log(data)
+       showdialogtoken()
+     
+    }).fail(function(data) {
+      showdialogtoken()
+      console.log(data)
+    });
+  }
+
+  async function showdialogtoken(){
+
+ 
+
+    const { value: getx } = await Swal.fire({
+    title: 'Digite o token enviado para seu dispositivo.',
+    input: 'text',
+    inputPlaceholder: 'Digite o token'
+     })
+
+   await  verificatoken(getx)
+ 
+     
+     if (cash_token_true == true){
+             
+      savevenda()
+       
+ 
+     }else{
+         
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+       
+       })
+        
+       showdialogtoken()
+
+     }
+
+    // if (getx) {
+    //   Swal.fire(`Entered email: ${email}`)
+  //  } 
+  }
+
+
+  async function verificatoken(token){
+  await  $.get('{{route("verificatoken")}}/'+token,function(data){
+        
+          if(data.su == true){
+            cash_token_true = true
+            console.log('deu true')
+            return true
+          } else{
+            cash_token_true = false
+            console.log('deu false') 
+            return false
+          }
+       
+    }).then(function(data){
+       
+
+    }).fail(function(data) {
+      showdialogtoken()
+      console.log(data)
+    });
+  }
+
+
+   
+	function limpa_formulário_cep() {
+             //Limpa valores do formulário de cep.
+             document.getElementById('ENDERECO').value=("");
+             document.getElementById('BAIRRO').value=("");
+             document.getElementById('CIDADE').value=("");
+             document.getElementById('ESTADO').value=("");
+            /// document.getElementById('ibge').value=("");
+     }
+   
+     function meu_callback(conteudo) {
+         if (!("erro" in conteudo)) {
+             //Atualiza os campos com os valores.
+             document.getElementById('ENDERECO').value=(conteudo.logradouro);
+             document.getElementById('BAIRRO').value=(conteudo.bairro);
+             document.getElementById('CIDADE').value=(conteudo.localidade);
+             document.getElementById('ESTADO').value=(conteudo.uf);
+             document.getElementById('ENDERECO').focus()
+             document.getElementById('BAIRRO').focus()
+             document.getElementById('CIDADE').focus()
+             document.getElementById('ESTADO').focus()
+             
+             setTimeout(function(){
+                document.getElementById('NUMEROR').focus()
+                       
+             },10)
+   
+   
+   
+           //  document.getElementById('ibge').value=(conteudo.ibge);
+         } //end if.
+         else {
+             //CEP não Encontrado.
+             limpa_formulário_cep();
+             
+   
+             Swal.fire({
+   icon: 'error',
+   title: 'Oops...',
+   text: 'CEP não encontrado.',
+   })
+         }
+     }
+         
+     function pesquisacep(valor) {
+   
+    
+         //Nova variável "cep" somente com dígitos.
+         var cep = valor.replace(/\D/g, '');
+   
+         //Verifica se campo cep possui valor informado.
+         if (cep != "") {
+   
+             //Expressão regular para validar o CEP.
+             var validacep = /^[0-9]{8}$/;
+   
+             //Valida o formato do CEP.
+             if(validacep.test(cep)) {
+   
+                 //Preenche os campos com "..." enquanto consulta webservice.
+                 document.getElementById('ENDERECO').value="...";
+                 document.getElementById('BAIRRO').value="...";
+                 document.getElementById('CIDADE').value="...";
+                 document.getElementById('ESTADO').value="...";
+                // document.getElementById('ibge').value="...";
+   
+                 //Cria um elemento javascript.
+                 var script = document.createElement('script');
+   
+                 //Sincroniza com o callback.
+                 script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+   
+                 //Insere script no documento e carrega o conteúdo.
+                 document.body.appendChild(script);
+   
+             } //end if.
+             else {
+                 //cep é inválido.
+                 limpa_formulário_cep();
+               
+   
+                 Swal.fire({
+   icon: 'error',
+   title: 'Oops...',
+   text: 'Formato de CEP inválido.',
+   })
+             }
+         } //end if.
+         else {
+             //cep sem valor, limpa formulário.
+             limpa_formulário_cep();
+         }
+     };
+   
+   
+     function getFormData($form){
+     var unindexed_array = $form.serializeArray();
+     var indexed_array = {};
+   
+     $.map(unindexed_array, function(n, i){
+         indexed_array[n['name']] = n['value'];
+     });
+   
+     return indexed_array;
+   }
+    
+   
+   //-------------------------------------------------------------------------------------
+	
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: 'btn btn-success',
@@ -182,8 +377,17 @@ const swalWithBootstrapButtons = Swal.mixin({
   },
   buttonsStyling: false
 })
+
+
+const temaapp = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-primary',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
      
-    function setgrupo(grupo)
+function setgrupo(grupo)
         {
 
 			let resultado = grupo.replace(" ", "-");
@@ -200,113 +404,28 @@ const swalWithBootstrapButtons = Swal.mixin({
         // $('body').load($geturl+$getlojacode+resultado);
 		location.href = $geturl+$getlojacode+resultado
 		}
-
-
 			 
-async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_promocao=''){
-   
+async function open_product(nomeproduto,preco,descr,img,id){
 
-	var price = preco_old ? preco_old : preco;
-	var tags_adicionais = cash_tags.toString(); //adicionais setados
-	tags_adicionais = tags_adicionais.replace(",", "");
-	tags_adicionais = tags_adicionais.replace(",", "");
-	tags_adicionais = tags_adicionais.replace(",", "");
-	tags_adicionais = tags_adicionais.replace(",", "");
-
-	if(promocao == true){
-		//alert('promo')
-          //Verifica se esta em promocao
-		  price = preco_promocao
-		  preco = preco_promocao
-		/// alert('passou')
-	 }
-
-	
-	cach_produto = [id,nomeproduto,preco,descr,img]
-//alert(preco_old)
  const { value: formValues } = await swalWithBootstrapButtons.fire({
-  title: '<h1>'+ nomeproduto+ ' ' + '<a style="color:green">'+ '' +  '</a>' + ' ' + '</h1>' , 
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  title: '<h1>'+ nomeproduto+'</h1>' ,
   width:500,showConfirmButton: false,
-   closeOnClickOutside: false,
-    allowOutsideClick: false,
-	onBeforeOpen () {
-     update_tags()
-	 updatequantidade()
-   },
 
 
   confirmButtonText: 'Adicionar ao carrinho',
   html:
-    `  
-	<div style='display: inline;'>
-      <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-
-	
-				
-	<h3  style=";background-color:green; color:white">Preço unitário: ${price}</h3>
-	</div>
-	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-				
-		<h3  style="background-color:#FBB448; color:white">Valor total : <br> ${preco}</h3>
-				</div>
-	
-        <br> ` +
-	
-    `<h3 style="font-size:16px;"> ${descr}</h3>`+
-	` <img style="height:150px;width:80%" src="${img}" >
-	</div>
+    `  <br>
+        <br><h3>Preço: ${preco}</h3> ` +
+    `<h3> ${descr}</h3>`+
+	` <img style="height:30%;width:100%" src="${img}" >
 	<br>
 	<br>
-	<center>
-	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"  style="background-color:#FBB448;color:white;border:none;width:100px;"  onclick="set_obs(${id})" >  <i style="margin-top:3px;"  class="large material-icons">assignment</i>OBSERVAÇÕES</button>
 
-	</div>
-
-	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id})" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i><br>ADICIONAIS</button>
-	</div>
-
-
-	</center>
-
-<center>
-	<div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
-         <br>
-		 <br>
-		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
-
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="addquantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
-      
-	    </div>
-		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
-		<input type="text" id="quantidade" name="quantidade" style="height:30px;width:60px"  /> 
-	    </div>
-
-		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="removequantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
-	    </div>
-       
-		
-		 
-	</div>
-
-	<br>
-		 <br>
-		 <br>
-		 
-</center>
-
-	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<button type="button"  onclick="add_adicionais()"  class="btn btn-primary">  <i style="margin-top:3px;" class="large material-icons">local_mall</i> ADICIONAIS</button>
 	<button type="button" onclick="closeswal()" class="btn btn-danger">  <i style="margin-top:1px;"  class="large material-icons">close</i>FECHAR</button>
-	<center>
-	<button type="button" style="width:180px" onclick="adicionar_carrinho('${id}','${nomeproduto}')"  class="animated infinite pulse btn btn-success">  <i style="margin-top:3px;"  class="large material-icons">shopping_cart</i>ADICIONAR</button></center>`,
+	<button type="button"  onclick="adicionar_carrinho('${id}','${nomeproduto}')"  class="animated infinite pulse btn btn-success">  <i style="margin-top:3px;"  class="large material-icons">shopping_cart</i>ADICIONAR AO CARRINHO</button>`,
 
   focusConfirm: false,
   preConfirm: function() {
@@ -327,118 +446,758 @@ if (formValues) {
  function closeswal(){
 	swalWithBootstrapButtons.close()
 	$( '.mfp-close' ).click();
-	cach_adicionais = ''
-	cach_produto  = ''
-	cash_tags = null
-	cash_tags = new Map()
-	cont_quantidade = 1
-	cash_obs  = null
-	preco_old = null
  }
 
 
- function addquantidade(){
-	 swalWithBootstrapButtons.close()
-	 cont_quantidade = cont_quantidade + 1
-	 document.getElementById('quantidade').value =   cont_quantidade
-	 cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
-	 cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-	 //cach_produto[2] =  cach_produto[2] * cont_quantidade
-	 //cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-	 open_product(...cach_produto)
+ async function adicionar_carrinho(id,nomeproduto){
 
+  await $.get(`{{route("add_produto")}}${id}/${nomeproduto}`,function(data){
+        //alert(data)
+  })
+
+  Swal.fire(
+    'Muito bom!',
+    '<h3 style="color:#595959;">Produto adicionado ao carrinho com sucesso</h3>',
+    'success'
+    )
+
+	$( '.mfp-close' ).click();
+	
  }
 
 
- function removequantidade(){
-	if (cont_quantidade == 1){
+ ///////////////////////////////////////
 
-    }else{
-	  swalWithBootstrapButtons.close()
-	  cont_quantidade = cont_quantidade - 1
-	  document.getElementById('quantidade').value =  cont_quantidade
-	  cach_produto[2] = (preco_old + total_adicionais) * cont_quantidade
-	  cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-	  open_product(...cach_produto)
-    }
+ async function tipodelv(){
 
- }
+   
+ // obj_venda = {
+	//	room:lojacode,
+   // ID_USER:'{{$iduser}}',
+		//tipo:'novavenda',
+    //cep:document.getElementById('CEP').value,
+    //endereco:document.getElementById('ENDERECO').value,
+    //numero:document.getElementById('NUMERO').value,
+   // complemento:document.getElementById('COMPLEMENTO').value,
+    //pontoreferencia:document.getElementById('REFERENCIA').value,
+    //bairro:document.getElementById('BAIRRO').value,
+    //cidade:document.getElementById('CIDADE').value,
+    //uf:document.getElementById('ESTADO').value,
+   // valortotalprodutos:valor_total_venda
+	//}
 
- function updatequantidade(){
-	document.getElementById('quantidade').value =  cont_quantidade
- }
-
-
-async function adicionar_carrinho(id,nomeproduto){
-   cach_adicionais = ''
-   cach_produto = ''
-   preco_old = ''
-   cach_inputs_adicionados_chave = ''
- 
-    var produto = {
-		    lojacode:lojacode,
-            nomeproduto:nomeproduto,
-            idproduto: id,
-            adicionais:arrayadd,
-			tagsadicionais:new_cash_tags,
-			obs:cash_obs,
-			quantidade:cont_quantidade
-        }
-
-		if(status_loja=='1'){
-
-			
-		}else{
-
-			
-         Swal.fire(
-         'A loja esta fechada neste momento, tente mais tarde.',
-         '',
-         'error'
-          )
-
-			return
-		}
+  obj_venda.room = lojacode
+  obj_venda.ID_USER = '{{$iduser}}'
+  obj_venda.tipo = 'novavenda'
+  obj_venda.cep =  document.getElementById('CEP').value
+  obj_venda.endereco =  document.getElementById('ENDERECO').value
+  obj_venda.numero = document.getElementById('NUMERO').value
+  obj_venda.complemento = document.getElementById('COMPLEMENTO').value
+  obj_venda.pontoreferencia = document.getElementById('REFERENCIA').value
+  obj_venda.bairro = document.getElementById('BAIRRO').value
+  obj_venda.cidade = document.getElementById('CIDADE').value
+  obj_venda.uf = document.getElementById('ESTADO').value
+  obj_venda.valortotalprodutos = valor_total_venda
+  
+   
 
 
 
+   ///Selecao do tipo de retirada
+
+const { value: formValues } = await temaapp.fire({
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
+  title: 'Selecione o tipo de retirada',
+  onBeforeOpen () {
+     realtimevalidation()
+  },
+  width:600,
+  confirmButtonText: 'Avançar',
+  html:
+    `
+   <br>
+   <br>
+
+   <div class="form-group col-xs-12  col-md-6">
+      <label for="inputZip">Qual seu nome ?</label>
+	  <input type="text" value="{{$userapp['nome'] ?? ''}}" class="form-control"  id="nome" name="nome" placeholder="">
+
+    </div>
+
+
+    <div class="form-group col-xs-12  col-md-6">
+      <label for="inputZip">Digite seu telefone</label>
+	  <input onfocus="masctel(this)" type="text" value="{{$userapp['celular'] ?? ''}}
+      " class="form-control"  value="" id="telefone" name="telefone" placeholder="" >
+
+    </div>
+
+     <div class="form-group col-xs-12  col-md-12">
+      <label for="inputZip">Digite seu Email</label>
+	    <input onfocus="digitouemail()" onenter="digitouemail()" type="email" requirid value="{{$userapp['email'] ?? ''}}" class="form-control"  value="" id="email" name="email" placeholder="" >
+
+    </div>
+
+<div class="form-group col-xs-6  col-md-6">
+      <label for="inputZip">Retirada no local</label>
+	  <input type="radio" value="retirada" class="form-control"  id="retirada" name="tipodel" placeholder="">
+
+    </div>
+
+
+    <div class="form-group col-xs-6  col-md-6">
+      <label for="inputZip">Entrega em domicílio</label>
+	  <input type="radio" class="form-control"  value="entrega" id="entrega" name="tipodel" placeholder="" checked>
+
+    </div>
+
+    <br>
+    </div>
+  </div>
+    <div class="row">
+      <div style="display:none"  id="alertx" class="form-group col-xs-12  col-md-12 alert alert-warning" role="alert">
+          Email digitado é invalido
+      </div>
+    </div>
+    
+   <br>
+   <br>
+
+    
+` ,
+    
+  
+})
+
+
+obj_venda.nome = document.getElementById('nome').value 
+obj_venda.telefone = document.getElementById('telefone').value 
+obj_venda.email = document.getElementById('email').value 
+obj_venda.tiporetirada = tipo_retirada
+
+
+
+
+   let retirada = $('#retirada:checked').val()
+
+  // alert(retirada)
+
+   if(retirada){
+     
+   $.get('{{route('setretirada')}}/1',function(data){  //Seta como retirada
+     }).done(function(){
+        
+        tipo_retirada = 'Retirada'
+      })
+
+   }else{
+   
+   $.get('{{route('setretirada')}}/2',function(data){    //Seta como entrega
+
+    tipo_retirada = 'Entrega'
+     }).done(function(){
+    })
+
+   }
+
+
+  // alert('entrou')
+       if(document.getElementById('nome').value && document.getElementById('telefone').value){
+          
+        enviavenda()
       
 
-        $.ajax({
-            url: '{{route("add_produto")}}',
+       }else{
+        // alert('digite todos os campos')
+       }
+         
+
+ }
+
+ async function finaliza_tela_1(){
+ 
+const { value: formValues } = await temaapp.fire({
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
+  title: 'Produtos adicionados',
+  width:600,
+  confirmButtonText: 'Avançar',
+  html:
+    `<BR>
+	<table class="table table-dark">
+  <thead style="background-color:#FBB448;" class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Preço</th>
+	  
+     
+    </tr>
+  </thead>
+  <tbody>
+   
+      
+
+	  @isset($carrinho)
+                @foreach ($carrinho as $item)
+				<tr>
+					
+
+     @isset($item['idproduto'])
+				<td scope="row">{{$item['idproduto']}}</td>
+				<td scope="row">{{$item['nomeproduto']}} <a style="color:red"> {{$item['tags_adicionais']}}<a></td>
+        <td scope="row">{{$item['quantidade']}}</td>
+
+				<td scope="row"> {{ number_format($item['precoproduto']  , 2) }}</td>
+     @endisset
+        
+        
+				
+			</tr>
+
+      
+                    
+                @endforeach
+
+     <tr>
+        <td scope="row"></td>
+      	<td scope="row"> <a style="color:red"> Entrega delivery</a></td>
+        <td > <a style="color:red"> 
+        @if($valorentrega==0.00)
+         Gratis
+        @else
+        {{ number_format($valorentrega  , 2) }}
+        
+        @endif
+        
+      
+        
+        
+        </a></td>
+
+
+      </tr>
+               
+      @endisset
+
+     
+
+    
+  </tbody>
+</table>
+
+    <h1 style="color:#1fe073">Total {{ number_format($totalemprodutos + $valorentrega  , 2) }} </h1>
+` ,
+    
+  
+})
+
+finaliza_tela_endereco()
+
+ }
+
+
+ 
+   async function chama(){
+    try {
+      formas_pagamento()
+    }
+   catch (ex) {
+     alert(ex)
+    }
+
+
+     
+   }
+
+
+   
+
+
+var getx = ''
+async function formas_pagamento(){
+
+  $.get('{{route("getformasdepagamento")}}/' + '{{$lojacod}}'   ,function(data){
+     
+  }).done(function(data){
+
+    setTimeout(function(){
+         ///O comando verbatin escapa o blade para evitar erro na view
+         @verbatim
+            var example1 = new Vue({
+             el: '#formaspg',
+             data: {
+             items:data
+              }
+             })
+           $('#formaspg').show()
+
+
+     },500)
+   
+
+  })
+ 
+ const { value: formValues } = await temaapp.fire({
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
+   title: 'Formas de pagamento',
+   width:600,
+   confirmButtonText: 'Avançar',
+   showConfirmButton:true,
+
+   html:
+	 `
+   
+   <div  id="formaspg">
+     <form>
+
+      <div class="form-row">
+
+     <div class="form-group col-md-12 ">
+      <br>
+      <br>
+      
+    
+      <center>
+      <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Selecione a forma de pagamento</h3>
+      </center>
+     
+     
+      <select id="formapg" name="formapg" style="width:100%;height:30px" >
+
+      
+        <option  v-for="item in items" :key="item"  v-bind:value="item.CODIGO_SISTEMA + item.NOME_FRM">{{item.NOME_FRM}}</option> 
+     
+
+       
+      </select>
+        
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Precisa de troco ?</h3>
+     
+      <div class="form-group col-xs-6  col-md-6">
+      <label for="inputZip">Sim</label>
+	  <input onclick="trocoval()" type="radio" value="retirada" class="form-control"  id="retirada" name="tipodel" placeholder="">
+
+    </div>
+
+
+    <div class="form-group col-xs-6  col-md-6">
+      <label for="inputZip">Não</label>
+	  <input onclick="trocavalhide()" type="radio" class="form-control"  value="entrega" id="entrega" name="tipodel" placeholder="" checked>
+
+    </div>
+
+   <br>
+   <br>
+    <div id="trocoval" style="display:none" class="form-group col-xs-12  col-md-12">
+      <br>
+      <br>
+      <h3 class="swal2-title" id="swal2-title" style="font-size:15px">Troco pra quantos ?</h3>
+
+	  <input onfocus="masc(this)" type="text" class="form-control"  id="trocovalor" name="trocovalor" placeholder="">
+
+    </div>
+ 
+    <br>
+    <br>
+
+      </div>
+      </div>
+      </div>
+
+     </form>
+
+     @endverbatim
+
+
+     
+
+
+      ` ,
+	 
+      
+ }).then(function(){
+   //alert(document.getElementById('formapg').value)
+   let formapg = document.getElementById('formapg').value
+   obj_venda.forma =  formapg.replace(/[^\d]+/g,'')
+   cash_forma_pg = document.getElementById("formapg");
+   cash_forma_pg = cash_forma_pg.options[cash_forma_pg.selectedIndex].text;
+   cash_forma_pg = cash_forma_pg.toUpperCase() 
+   obj_venda.troco = document.getElementById('trocovalor').value
+   finaliza_tela_1()
+ })
+
+
+
+}
+
+
+
+function masc(val) {
+   $(val).maskMoney({
+      prefix: "",
+      decimal: ".",
+      thousands: ","
+   });
+   }
+
+
+function trocoval(){
+
+    $('#trocoval').show();
+
+}
+
+function trocavalhide(){
+
+    $('#trocoval').hide();
+
+}
+
+var obj_user = new Object
+
+
+
+
+function lembrar(){
+
+  setInterval(function(){
+
+     atualiza_obj_user()
+
+   },2000)
+
+  atualiza_obj_user()
+      
+  $.ajax({
+            url: '{{route("save_user")}}',
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				//alert(JSON.stringify(data))
+				    // alert(JSON.stringify(data))
+              
             },
 
-			error: function (data) {
-				//alert(JSON.stringify(data))
-            },
+		   	error: function (data) {
+				  
+         //alert(JSON.stringify(data))
+           
+          },
 
-            data: JSON.stringify(produto)
-        })
-		
+            data: JSON.stringify(obj_user)
 
-		arrayadd = []
-
-		$( '.mfp-close' ).click();
-		swalWithBootstrapButtons.close()
+            
+    })
+     
+}
 
 
-		
+
+ 
+
+
+
+  
+ async function finaliza_tela_endereco(){
+ 
+ const { value: formValues } = await temaapp.fire({
+  closeOnClickOutside: false,
+    allowOutsideClick: false,
+   title: 'Confirme seu endereço',
+   width:600,
+   confirmButtonText: 'Avançar',
+   showConfirmButton:false,
+
+   html:
+	 `<form>
+  <div class="form-row">
+  <div  id="hidpartini">
+    <div class="form-group col-md-6 ">
+      <label for="inputEmail4">Digite seu Cep</label>
+      <input type="text" value="
+      @isset($userapp['cep'])
+      {{$userapp['cep']}}
+      @endisset
+      " class="form-control" onblur="pesquisacep(this.value);" id="CEP" name="CEP" placeholder="Cep">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="ENDERECO">Endereço (Rua, avenida, praça, travessa)</label>
+      <input type="text" class="form-control" id="ENDERECO" name="ENDERECO" placeholder="ex: Rua portugal 5418, Vila Linda">
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress">Numero residencia</label>
+    <input maxlength="5" type="text" class="form-control" value="@isset($userapp['numero']){{$userapp['numero']}}
+      @endisset"  id="NUMERO" name="NUMERO" placeholder="Numero ">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="inputAddress2">Complemento</label>
+    <input type="text" class="form-control"  id="COMPLEMENTO" name="COMPLEMENTO" placeholder="Complemento">
+  </div>
+  </div>
+  <div style="display:none" id="hidpart">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Ponto de referencia ?</label>
+	  <input type="text" class="form-control"  id="REFERENCIA" name="REFERENCIA" placeholder="Ponto de referencia ?">
+
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Bairro</label>
+	  <input type="text" class="form-control"  id="BAIRRO" name="BAIRRO" placeholder="Digite seu bairro ">
+
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Cidade</label>
+	  <input type="text" class="form-control"  id="CIDADE" name="CIDADE" placeholder="Digite o nome da cidade">
+
+    </div>
+
+	<div class="form-group col-md-6">
+      <label for="inputZip">UF</label>
+	  <input type="text" class="form-control"  id="ESTADO" name="ESTADO" placeholder="Digite o estado ">
+
+    </div>
+    
+  </div>
+<br>
+ 
+
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input onchange="lembrar()" class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Lembrar do meu endereço
+      </label>
+    </div>
+  </div>
+</div>
+ 
+</form> <button id="next" onclick="aux_showpart()"  type="submit" class="btn btn-primary">Próximo</button>
+<button id="can" onclick="cancelar()"  type="submit" class="btn btn-error">Cancelar</button>
+<button id="finalx" style="display:none" onclick="tipodelv()"  type="submit" class="btn btn-primary">Próximo</button>
+
+` ,
+	 
+   
+ }).then(function(){
+
+
+
+ })
+
+
+ 
+ 
+ 
+  }
+
+  function aux_showpart(){
+   ///Funçao que axolia divisao finalizacao no cadastro de enderoc
+	
+	$('#hidpart').show();
+	$('#hidpartini').hide();
+ 
+	$('#next').hide();
+  $('#next').hide();
+  $('#finalx').show();
+  
+
+  }
+
+
+  function cancelar(){
+
+    swalWithBootstrapButtons.close()
+
+  }
+
+  
+  
+setTimeout(function(){ //Aguarda para criar a room 
+	socket_createroom()
+},4000)
+
+
+async function socket_createroom(){
+    socket.emit('createroom', lojacode)
+}
+
+
+var datax = null;
+
+async function savevenda(){
+  ///alert('save venda')
+           $.ajax({
+                url: '{{route("savevenda")}}',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function(data) {
+                  //   alert(data)
+                     cash_idvenda = data
+                    // alert('venda salva')
+                   
+                   
+                     emitvendapg()
+                    return true
+                },
+
+                error: function(data) {
+                    //alert(JSON.stringify(data))
+                  // alert('dfefes')
+                   console.log(data)
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Ocorreu um erro na finalização da venda, Verifique os dados inseridos e tente novamente',
+                      footer: '<a href>Se persistir entre em contato</a>'
+                    })
+                },
+
+                data: JSON.stringify(obj_venda)
+
+            }).then(function() {
+                lembrar()
+                return true
+            })
+}
+
+
+async function emitvendapg() {
+                //emit venda
+               /// alert('entro no emit venda pagamento')
+
+                
+                setTimeout(function() {
+
+                  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                         executapagamento()
+                   }else{
+                       
+                        socket.emit('canalcomunica', obj_venda);
+                        setTimeout(function(){
+                
+                          screen_concluida()
+
+                        },1000);
+                   }
+
+                    
+
+                }, 800)
+
+
+    }
+
+
+async function enviavenda() {
+
+  //alert('envia venda')
+  if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                        
+    }else{
+                        
+       obj_venda.statuspvenda_pg = true //Se nao for pago com cartao status ja vai como true 
+                         
+   }
+
+   // alert('entrou na venda')
+   obj_venda.jsonvenda = JSON.stringify(obj_venda)//Armazena o json da venda
+
+    $.get('{{route("verificacarrinho")}}', function(data) {
+        
+      ///  alert('Dfadwadawd')
+
+        if (data == '0') {
+            temaapp.fire({
+                icon: 'error',
+                title: 'O carrinho esta vazio',
+                text: '',
+            })
+
+            return
+        } else {
+
+         ///alert('carrinho aberto')
+
+         if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                         
+             savevenda()
+
+          }else{
+              let gett  = obj_venda.telefone
+              gett = gett.replace("(", "");
+              gett = gett.replace(")", "");
+              gett = gett.replace("-", "");
+              gett = gett.replace(" ", "");
+          
+               
+              loaddingtoken()
+              sendsms(gett)
+             
+              
+           
+          }
+
+       
+         
+            
+
+        }
+
+    })
+
+}
+
+ async function add_adicionais(){
+
+
+	const { value: formValues } = await temaapp.fire({
+    
+    closeOnClickOutside: false,
+    allowOutsideClick: false,
+   title: 'Selecione os adicionais',
+   width:600,
+   confirmButtonText: 'Avançar',
+   showConfirmButton:false,
+
+   html:
+	 `
+
+
+` ,
+	 
+   
+ })
+ 
+
+
+}
+
+async function loaddingtoken(){
+
+  
 let timerInterval
 await Swal.fire({
   closeOnClickOutside: false,
   allowOutsideClick: false,
   title: '',
-  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Adicionando produto ao seu carrinho...</h2>',
+  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Aguarde processando token...</h2>',
   timer: 2000,
   timerProgressBar: true,
   onBeforeOpen: function() {
     Swal.showLoading()
-    timerInterval = setInterval(function(){
+    timerInterval = setInterval(function() {
       const content = Swal.getContent()
       if (content) {
         const b = content.querySelector('b')
@@ -446,7 +1205,7 @@ await Swal.fire({
           b.textContent = Swal.getTimerLeft()
         }
       }
-    }, 100)
+    }, 500)
   },
   closeOnClickOutside: false,
   allowOutsideClick: false,
@@ -461,421 +1220,258 @@ await Swal.fire({
 })
 
 
+}
 
-Swal.fire(
-  'Adicionado ao carrinho !',
-  '',
-  'success'
-)
+function atualiza_obj_user(){
 
+   try {
+    obj_user.nome = document.getElementById('nome').value 
+   }
+    catch (e) {
+   }
 
-temaapp.fire({
-  closeOnClickOutside: false,
-  allowOutsideClick: false,
-  title: 'Adicionado ao carrinho !',
-  text: '',
-  icon: 'success',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  cancelButtonText: "Ir para o meu carrinho",
-  confirmButtonText: 'Continuar comprando'
-}).then((result) => {
-  if (result.value) {
-   
-  }else{
-	open_car()
-  }
-})
+   try {
+    obj_user.cep = document.getElementById('CEP').value 
+   }
+   catch (e) {
+   }
+   try {
+    obj_user.celular = document.getElementById('telefone').value  
+   }
+   catch (e) {
+   }
+   try {
+      obj_user.numero = document.getElementById('NUMERO').value
+   }
+   catch (e) {
+   }
+   try {
+    obj_user.email = document.getElementById('email').value 
+   }
+    catch (e) {
+   }
 
+}
 
-  //  alert(id)
-	//alert(nomeproduto)
-///	await $.get('{{route("add_produto")}}/' + id + '/' +nomeproduto,function(data){
-      //  alert(data)
- // }).done(function(){
-//	eval(cach_adicionais)
-//	Swal.fire(
-   // 'Muito bom!',
- //   '<h3 style="color:#595959;">Produto adicionado ao carrinho com sucesso</h3>',
- //   'success'
- //   )
-
-//	$( '.mfp-close' ).click();
-  //})
-  
-  cash_tags = null
-  cash_tags = new Map()
-
-  cash_obs = null
+     function masc(val) {
+        $(val).maskMoney({
+         prefix: "",
+         decimal: ".",
+         thousands: ","
+        });
+     }
 
 
-  gettotal()
- }
+    function masctel(){
+      $("#telefone").inputmask({
+        mask: ["(99) 99999-9999" ],
+        keepStatic: true
+      });
+    }
 
- var  global_idproduto = ''
- 
- async function add_adicionais(idproduto){
-     
-	/// $gettotalinclu = ''  // cria rota
-     ///$gettotalreais = '' // cria rota
+    async function processarcarrinho(){
 
-     global_idproduto = idproduto
-	 $.get(`{{route('addsearch')}}/${idproduto}`,function(data){
-      
-	 /// alert(JSON.stringify(data))
-
-	 }).done(function(data){
-		
-	setTimeout(function(){
-		///O comando verbatin escapa o blade para evitar erro na view
-	@verbatim
-
-		var example1 = new Vue({
-        el: '#listaadd',
-        data: {
-          items: data
-        }
-      })
-
-     $('#listaadd').show()
-	},1000)
+      let produtos = JSON.parse(obj_venda.produtosjson)  
+      produtos = produtos.produtos
+      for(let i of produtos){
+        let precoformatado = i.precoproduto
+        precoformatado =  precoformatado.toFixed(2);
+      //  alert(precoformatado)
+         add_produto_array(i.nomeproduto + i.tags_adicionais , i.nomeproduto , i.precoproduto  , i.quantidade , "Asset", "ABC001" , 100)
          
-        
-     @endverbatim
-		 
-	 })
+      }
+
+    }
+
+    processarcarrinho()
+
+    obj_venda.produtosjson 
+
+    async function add_produto_array(nomeproduto, descricao , unitpreco , qtd , type="Asset", Sku="ABC001" , weight=100){
+      obj_produtos = {
+         Name:nomeproduto ,
+         Description:descricao,
+         UnitPrice: unitpreco * 100 ,
+         Quantity:qtd,
+         Type:type,
+         Sku:"ABC001",
+         Weight:weight
+       }
+      array_produtos_venda.push(obj_produtos)
+    }
 
 
-const { value: formValues } = await temaapp.fire({
-	closeOnClickOutside: false,
-    allowOutsideClick: false,
-	onBeforeOpen () {
-    updateview_adicionais()
-  },
-title: 'Selecione os adicionais',
-width:600,
-confirmButtonText: 'Avançar',
-showConfirmButton:true,
-
-html:
- `
-
- @verbatim
- <center>
- <div onshow="updateview_adicionais()" class="container-fluid"/.
- <ul class="container-fluid"  style="display:none;width:20px" id="listaadd">
- 
-	<table  class="table table-dark">
-   <thead style="background-color:#FBB448;" class="thead-dark">
-	 <tr>
-	   <th scope="col">#</th>
-	   <th scope="col">Nome</th>
-	   <th scope="col">Preço</th>
-	   <th scope="col">Total em reais</th>
-	   <th scope="col"></th>
-	  
-	 </tr>
-   </thead>
-   <tbody>
-  <tr v-for="item in items" :key="item.message">
-   
-
-   
-	   <td > {{ item.ID_ADICIONAL }}</td>
-	   <td> {{ item.adicionais.ADICIONAL }}</td>
-	   <td> {{ item.adicionais.PRECO }}
-		
-	   </td>
-
-	   <td> <input style="width:25px" type="text" class="header-title" :id="'itemx' + item.ID_ADICIONAL" @input="() => {}">
-		
-	</td>
-	 
-
-	   <td>  
-
-		<button v-on:click="set_adicionais( global_idproduto ,item.ID_ADICIONAL,item.adicionais.ADICIONAL,  item.adicionais.PRECO )" type="button" class="btn-small btn-primary">  <i class="material-icons">add</i>
-			<button v-on:click="removeadicional( item.ID_ADICIONAL, item.adicionais.PRECO)" type="button" class="btn-small btn-danger">  <i class="material-icons">remove</i>
-
-	   
-	    </button>
-	  </td>
-
-
-
-
-	  
-	  
-	 </tr>
-	 
-   
-
-
+    async function executapagamento(apipg){
   
-   </tbody>
 
- </table>
-</ul>
-</div>
-</center>
-@endverbatim
-
-<h3 onshow="updateview_adicionais()" style="color:white" type="button" id="painelvalor" class="btn-small btn-success">Valor total ${cach_produto[2]}</h3>
-
-		
-		 
-
-
-` ,
- 
-}).then(function(){
-
-	open_product(...cach_produto)
-})
-
- }
-
-var cach_adicionais = ''
-var cach_produto = []
-var cach_inputs_adicionados_chave = new Map() // cach dos ids dos adicionados chave valor
-var status_loja = '{{$status_loja}}'
-
-var arrayadd = []
-
-async function set_adicionais(idproduto,idadicional,nomeproduto,preco,nomeadicional){
-	total_adicionais = parseFloat(total_adicionais) + parseFloat(preco)
-	total_adicionais = total_adicionais.toFixed(2)
-	update_tags()
-	cach_produto[2] = parseFloat(cach_produto[2])	+ parseFloat(preco)
-	cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-	
-	
-	document.getElementById('painelvalor').innerText  = 'Valor Total ' + cach_produto[2]
-	//alert(cach_produto[2])
-	arrayadd.push(idadicional)
-
-
-	let quantidadeemmemoria = null
-	let leng = arrayadd.length
-	for(let i = 0; i<leng ;i++){
-		if(idadicional == arrayadd[i]){
-			quantidadeemmemoria = quantidadeemmemoria + 1
-		}
-	
-	}
-    let geraid = 'itemx' + idadicional
-	document.getElementById(geraid).value = quantidadeemmemoria
-    cach_inputs_adicionados_chave.set(geraid, quantidadeemmemoria);
-      
-		  // $.get( `{{route("add_adicional")}}/${idproduto}/${idadicional}/`,function(data){
-           //   alert(JSON.stringify(data))
-		  //  })
-           let valx = ' +' + nomeproduto+ '  '
-		  cash_tags.push(valx)
-
-
-		
-	
-}
-
-
-function removeadicional(idadicional,preco){
-
-  total_adicionais = parseFloat(total_adicionais) - parseFloat(preco)
-  total_adicionais = total_adicionais.toFixed(2)
-	
-  let lgt = arrayadd.length
-  let geraid = 'itemx' + idadicional
-  let getvalue = document.getElementById(geraid).value
-  if(getvalue>0){
-	cach_produto[2] = parseFloat(cach_produto[2])	- parseFloat(preco)
-    cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
-  }
-
-  
-  if(cach_produto[2]<preco_old){
-	cach_produto[2] = preco_old
-  }
-
-  document.getElementById('painelvalor').innerText  = 'Valor total ' + cach_produto[2]
-
-  if( cach_produto[2] < preco){
-
-	cach_produto[2] =   preco_old
-
-  }
-
-  for(let i = 0 ; i < lgt ; i++ ){
-      if  (arrayadd[i] == idadicional){
-		arrayadd.splice(i, 1);
-           removeattscreen(idadicional)
-		return
-
-	  }
-
-  }
-
-
-  update_tags()
-
-}
-
- function removeattscreen(idadicional){
-	update_tags()
-	let quantidadeemmemoria = null
-	let leng = arrayadd.length
-	for(let i = 0; i<leng ;i++){
-		if(idadicional == arrayadd[i]){
-			quantidadeemmemoria = quantidadeemmemoria + 1
-		}
-	
-	}
-    let geraid = 'itemx' + idadicional
-	document.getElementById(geraid).value = quantidadeemmemoria
-
-	cach_inputs_adicionados_chave.set(geraid, quantidadeemmemoria);
-
- }
-
-
- function resulttotaltela(){
- 
-
- return "s"
-
-}
-
-
-function updateview_adicionais(){
-
- setTimeout(function(){
-
- for (var [key, value] of cach_inputs_adicionados_chave) {
-	 
-    document.getElementById(key).value = value
- }
-
- },1500)
-
-
-setTimeout(function(){
-
-for (var [key, value] of cach_inputs_adicionados_chave) {
-	
-   document.getElementById(key).value = value
-}
-
-},1500)
-
-
-}
-
-
-function abreloja(){
-  //Essa funcao recarrega com a mudança de status de loja aberta ou fechada
-
-
-
-}
-
-
-async function set_obs(id){
-
-	
-$( '.mfp-close' ).click();
-const { value: formValues } = await temaapp.fire({
-  title: 'Observações do produto',
-  confirmButtonText:'Salvar',
-  closeOnClickOutside: false,
-    allowOutsideClick: false,
-  html:` 
-      <textarea type="" class="form-control"  id="OBSIN" name="OBSIN" placeholder="Cep"> </textarea>
-  `,
-})
-
-let getobs = document.getElementById('OBSIN').value
-
-cash_obs = getobs
-
-open_product(...cach_produto)
-
-}
-
-
-
-function exec(){
-	set_obs(1)
-
-}
-
-
-function escreve(){
-
-	//alert()
-}
-
-
-async function gettotal(){
-   
-   $.get('{{route("gettotal")}}',function(data){
-      total = data
-	  document.getElementById('painelt').innerHTML = data
-   })
-
-}
-
-setTimeout(function(){ //Aguarda para criar a room 
-	socket_createroom()
-},3000)
-
-
-async function socket_createroom(){
-    socket.emit('createroom', lojacode)
-}
-
-
-function testeenvia(){
-    let ob = {
-		room:lojacode,
-		texto:'sdsss',
-		tipo:'novavenda'
-	}
-	socket.emit('canalcomunica', ob);
-}
-
-socket.on('receive',function(data){
-  
-  if (data.tipo == 'novavenda'){
-	 // alert('novavenda fechada')
-  }
-
-})
-
-async function update_tags(){
-
-	obj_tags = new Object();
-	obj_tags.tags = arrayadd;
-
-	$.ajax({
-            url: '{{route("updatetags")}}',
+      processandovenda()
+
+
+
+      array_produtos_json = JSON.stringify(array_produtos_venda)
+      obj_final.produtos =  array_produtos_json
+      obj_final.id_loja = obj_produtos
+      obj_final.cep = obj_venda.cep
+      obj_final.endreco = obj_venda.endereco
+      obj_final.bairro = obj_venda.bairro
+      obj_final.numero = obj_venda.numero
+      obj_final.complemento = obj_venda.complemento
+      obj_final.cidade = obj_venda.cidade
+      obj_final.estado = obj_venda.estado
+      obj_final.nomecompleto = obj_venda.nome
+      obj_final.telefone = obj_venda.telefone
+      obj_final.email = obj_venda.email
+      obj_final.numerovenda = cash_idvenda
+      obj_final.codeloja = lojacode
+     
+      obj_final.codigo_estabelecimento = lojacode
+    
+      obj_final.urlretorno = '{{env('APP_URL')}}'+'app/loja/' + lojacode + '?success=true'
+
+      //alert(obj_final.urlretorno)
+
+
+   //teter
+
+     // alert('numero' + obj_final.numero)
+    
+      $.ajax({
+            url: '{{route("cielopagamento")}}',
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-				new_cash_tags = data;
-                //alert(JSON.stringify(data))
+				    // alert(JSON.stringify(data))
+              location.href=data
             },
 
-			error: function (data) {
-				//alert(JSON.stringify(data))
+		      	error: function (data) {
+				      console.log(data)
+              Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Ocorreu um erro na finalização da venda, Verifique os dados inseridos e tente novamente',
+                      footer: '<a href>Se persistir entre em contato</a>'
+                   })
             },
 
-            data: JSON.stringify(obj_tags)
-        })
+            data: JSON.stringify(obj_final) 
 
-}
+            
+         }).then(function(){
 
+           
+         
+           
+
+         })
+    }
+
+
+     
+function IsEmail(email){
+    var exclude=/[^@-.w]|^[_@.-]|[._-]{2}|[@.]{2}|(@)[^@]*1/;
+    var check=/@[w-]+./;
+    var checkend=/.[a-zA-Z]{2,3}$/;
+    if(((email.search(exclude) != -1)||(email.search(check)) == -1)||(email.search(checkend) == -1)){return false;}
+    else {return true;}
+ }
+ 
+
+ async function screen_concluida(){
+  await  Swal.fire(
+    'Muito bom, A venda foi concluida, com sucesso, mande um Oi no nosso whats para qualquer duvida! ',
+    '<br> <a href="https://api.whatsapp.com/send?phone={{$whats_contato ?? ''}}&text=Ol%C3%A1%20estou%20aguardando%20o%20pedido.">Abrir Whats</a>',
+    'success'
+    )
+    
+    location.href = "{{ env('APP_URL') }}" + "app/loja/" + lojacode;
+
+ }
+
+
+async function processandovenda(){
+     
+		
+let timerInterval
+await Swal.fire({
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  title: '',
+  html: '<h2 class="swal2-title" id="swal2-title" style="display: flex;">Aguarde estamos processando sua venda...</h2>',
+  timer: 2000,
+  timerProgressBar: true,
+  onBeforeOpen: function() {
+    Swal.showLoading()
+    timerInterval = setInterval(function() {
+      const content = Swal.getContent()
+      if (content) {
+        const b = content.querySelector('b')
+        if (b) {
+          b.textContent = Swal.getTimerLeft()
+        }
+      }
+    }, 500)
+  },
+  closeOnClickOutside: false,
+  allowOutsideClick: false,
+  onClose: function() {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+
+ }
+
+
+ function realtimevalidation(){
+  //alert('dwadadaw')
+  
+   setInterval(function(){ 
+    
+      if(!document.getElementById('nome').value){
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = true
+        return
+      }else{
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = false
+      
+      }
+
+      if(!validateEmail(document.getElementById('email').value)){
+        if(digitando_email==true){
+        const button = document.querySelector('.swal2-confirm')
+        button.disabled = true
+        document.getElementById("alertx").style.display = "block";
+      }
+
+      }else{
+
+    
+          const button = document.querySelector('.swal2-confirm')
+          button.disabled = false
+          document.getElementById("alertx").style.display = "none";
+
+      }
+   
+    }, 1000);
+
+ }
+
+
+ function validateEmail(email){
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+
+  function digitouemail(){
+    digitando_email = true;
+  }
 
 	</script>
 
