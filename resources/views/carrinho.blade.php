@@ -776,11 +776,7 @@ async function open_product(nomeproduto,preco,descr,img,id){
 
 
  async function teste(){
-  Swal.fire(
-  'Good job!',
-  'You clicked the button!',
-  'success'
-)
+     alert('dwadwa')
    
  }
 
