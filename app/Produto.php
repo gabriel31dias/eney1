@@ -25,6 +25,7 @@ class Produto extends Model
         ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
         ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
         ->first();
+        var_dump($promoces);
   
         if(isset($promoces->id)){
 
