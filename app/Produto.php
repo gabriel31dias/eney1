@@ -28,7 +28,7 @@ class Produto extends Model
       //  var_dump($promoces);
   
         if(isset($promoces->id)){
-
+           echo "dwdadwad";
            return true;
 
          }else{
