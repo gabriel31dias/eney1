@@ -57,9 +57,9 @@ class CarrinhoController extends Controller
         $totaladc = Session::get('totaladicionais');
         $status_loja = true;
 
-       // $imagem_loja = $iduser->imagem_loja ;
+         $imagem_loja = $getusersloja->imagem_loja ;
 
-       var_dump($getusersloja->imagem_loja);
+       
 
         $totalemprodutos = Session::get('totalprodutos');
         $adicionaissalvos = Session::get('adicionais');
@@ -84,7 +84,7 @@ class CarrinhoController extends Controller
 
         $getgrupos = $this->grupos->where('ID_USER', $getidloja)->paginate(10);
 
-        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => '$imagem_loja' ]);
+        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => $imagem_loja ]);
     }
 
 
