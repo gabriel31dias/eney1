@@ -332,7 +332,7 @@
                 <div  class=" img-thumbnail col-xs-12 col-lg-6 col-md-6 col-sm-6">
                     <a class="">
                         
-                        <img  style="height:150px;width:100%" src="{{$item['img']}}" alt="Image" class="rounded-circle">
+                        <img  style="height:200px;width:100%" src="{{$item['img']}}" alt="Image" class="rounded-circle">
     
                       
                         
