@@ -227,14 +227,13 @@ class AppController extends Controller
        
         foreach ($produtos as $key => $value) {
           $getxx =  new Produto();
-          $getxx =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
-          if ($getxx==false){
-            $value->PROMOCAO = false ;
-            $result = $value->Save();
+          $switch =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
+          if ($switch==false){
+            $getxx->PROMOCAO = false;
+            $result = $getxx->Save();
             echo "salvo..";
           }else{
             echo "nao ..";
-
           }
           
         }
