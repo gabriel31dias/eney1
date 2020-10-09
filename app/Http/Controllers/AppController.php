@@ -237,9 +237,9 @@ class AppController extends Controller
           if ($switch==false){
               $getxx->PROMOCAO = false;
               $result = $getxx->Save();
-              echo "salvo..";
+             
           }else{
-              echo "nao ..";
+             
           }
           
         }
