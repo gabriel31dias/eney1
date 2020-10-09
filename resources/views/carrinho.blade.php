@@ -349,7 +349,10 @@
                           </div>
 
                           <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
-                              <h2 class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
+                            <center>
+
+                              <h2 style="color:#FBB448" class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
+                            </center>
                           </div>
                           
               
