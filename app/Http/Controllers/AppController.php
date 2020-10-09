@@ -224,10 +224,11 @@ class AppController extends Controller
         $getuser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
         $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->get();
        
+        var_dump( $getuser);
         foreach ($produtos as $key => $value) {
-           var_dump( $value);
+           
            $getxx =  (new Produto)::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
-           echo  $getxx;
+           echo  "executando..";
              
            
         }
