@@ -52,7 +52,7 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      //$this->update_promocoes();
+      
 
       $getsucesso = '';
     
@@ -73,6 +73,7 @@ class AppController extends Controller
       
       $status_loja = true;
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
+      $this->update_promocoes($codigo,  $getloja->id);
       $hora1 = strtotime($getloja->horarioinicio);
       $hora2 = strtotime($getloja->horariofinal);
       $horaAtual = strtotime(date('H:i:s'));
