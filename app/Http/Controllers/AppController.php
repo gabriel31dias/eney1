@@ -226,10 +226,10 @@ class AppController extends Controller
        
        
         foreach ($produtos as $key => $value) {
-           
-           $getxx =  (new Produto)::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
+          $getxx =  new Produto();
+          $getxx =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
            echo  "executando..";
-           var_dump( $value);
+          
            
         }
 
