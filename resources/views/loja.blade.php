@@ -1257,13 +1257,13 @@ async function update_tags(){
 }
 
 
-function nameFunction(name, body) {
-  return {[name](...args) {return body(...args)}}[name]
+function createfunction(){
+   
+   eval('this.function gg(){
+	    alert('dwadawdawd')
+   }')
+
 }
-
-
-
-const x = nameFunction("gabriel function", (p) => p*2)
 
 	</script>
 
