@@ -229,11 +229,11 @@ class AppController extends Controller
           $getxx =  new Produto();
           $switch =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
           if ($switch==false){
-            $getxx->PROMOCAO = false;
-            $result = $getxx->Save();
-            echo "salvo..";
+              $getxx->PROMOCAO = false;
+              $result = $getxx->Save();
+              echo "salvo..";
           }else{
-            echo "nao ..";
+              echo "nao ..";
           }
           
         }
