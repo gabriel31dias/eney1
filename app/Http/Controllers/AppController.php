@@ -225,6 +225,10 @@ class AppController extends Controller
         $getuser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
         $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->where('PROMOCAO', true)->get();
        
+        if($produtos[0]->id){
+          
+          return;
+        }
        
         foreach ($produtos as $key => $value) {
           $getxx =  new Produto();
@@ -240,8 +244,12 @@ class AppController extends Controller
           
         }
 
+        header("Refresh:0");
+
+
       
-       
+        
+
 
 
     }
