@@ -52,7 +52,7 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      $this->update_promocoes();
+      //$this->update_promocoes();
 
       $getsucesso = '';
     

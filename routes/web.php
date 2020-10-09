@@ -35,6 +35,8 @@ Route::get('/searchclisms/{cliname?}/', 'HomeController@searchclisms')->name('se
 
 Route::get('/listpromo/', 'ProdutosController@testelistprom')->name('testelistprom');
 
+Route::get('/updatepromo/{codeloja?}', 'AppController@update_promocoes')->name('updatepromocoes');
+
 
 
 Route::get('/sair', 'HomeController@sair')->name('sairapp');
