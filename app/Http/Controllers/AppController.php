@@ -225,8 +225,8 @@ class AppController extends Controller
         $getuser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
         $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->where('PROMOCAO', true)->get();
        
-        if($produtos[0]->id){
-          
+        if(!isset($produtos[0]->id)){
+
           return;
         }
        
