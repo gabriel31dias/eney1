@@ -338,7 +338,7 @@
                         
                         <div class="fh5co-text ">
                            
-                          <div class="col-xs-12 col-lg-12 col-md-6 col-sm-6">
+                          <div style="color:#FBB448" class="col-xs-12 col-lg-12 col-md-6 col-sm-6">
                             <h2>{{$item['nomeproduto']}} {{$item['tags_adicionais']}}   {{ number_format($item['precoproduto'], 2) }}</h2>
                           </div>
 
