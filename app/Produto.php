@@ -32,7 +32,7 @@ class Produto extends Model
            return true;
 
          }else{
-           
+            echo 'desativa';
             return false;
          }
        
