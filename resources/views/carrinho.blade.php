@@ -334,8 +334,7 @@
                         
                             <img  style="height:100%;width:100%" src="{{$item['img']}}" alt="Image" class="img-responsive">
     
-                        <br>
-                        <br>
+                      
                         
                         <div class="fh5co-text ">
                            
