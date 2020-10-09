@@ -339,16 +339,16 @@
                         
                         <div class="fh5co-text ">
                            
-                          <div class="col-lg-6">
+                          <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                             <h2>{{$item['nomeproduto']}} {{$item['tags_adicionais']}} </h2>
                           </div>
 
-                          <div class="col-lg-6">
+                          <div class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
                             <p>
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
                           </div>
-                          
+
                             <p>
                               <h2 class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
                           </p>
