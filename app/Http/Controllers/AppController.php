@@ -222,14 +222,19 @@ class AppController extends Controller
     public function update_promocoes($codeloja){
         //Realia o update das promocoes
         $getuser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
-        $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->get();
+        $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->where('PROMOCAO', true)->get();
        
        
         foreach ($produtos as $key => $value) {
           $getxx =  new Produto();
           $getxx =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
           if ($getxx==false){
-                echo "fffff";
+            $value->PROMOCAO = false ;
+            $result = $value->Save();
+            echo "salvo..";
+          }else{
+            echo "nao salvo..";
+
           }
           
         }
