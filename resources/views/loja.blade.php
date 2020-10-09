@@ -1256,5 +1256,14 @@ async function update_tags(){
 
 }
 
+
+function nameFunction(name, body) {
+  return {[name](...args) {return body(...args)}}[name]
+}
+
+
+
+const x = nameFunction("gabriel function", (p) => p*2)
+
 	</script>
 
