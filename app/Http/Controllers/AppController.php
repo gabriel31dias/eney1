@@ -229,9 +229,7 @@ class AppController extends Controller
           $getxx =  new Produto();
           $getxx =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
           if ($getxx==false){
-                
-               echo "uuhuhuhuhhu";
-
+                echo "fffff";
           }
           
         }
