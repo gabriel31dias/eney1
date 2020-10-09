@@ -226,7 +226,7 @@ class AppController extends Controller
         var_dump($produtos);
         foreach ($produtos as $key => $value) {
 
-           $getxx =  \App\Produto::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
+           $getxx =  App\Produto::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
            echo  $getxx;
    
         }
