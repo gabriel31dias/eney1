@@ -1257,13 +1257,7 @@ async function update_tags(){
 }
 
 
-function createfunction(){
-   
-   eval(`this.function gg(){
-	    alert('dwadawdawd')
-   }`)
 
-}
 
 	</script>
 
