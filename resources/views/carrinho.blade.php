@@ -337,18 +337,23 @@
                         <br>
                         <br>
                         
-                        <div class="fh5co-text">
+                        <div class="fh5co-text ">
+                           
+                          <div class="col-lg-6">
                             <h2>{{$item['nomeproduto']}} {{$item['tags_adicionais']}} </h2>
-                            
+                          </div>
+
+                          <div class="col-lg-6">
                             <p>
                                 <span class="price cursive-font"> {{ number_format($item['precoproduto'], 2) }} </span>
                             </p>
+                          </div>
+                          
                             <p>
                               <h2 class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
                           </p>
                           
-                            
-                           
+              
                             <button id="idtrigeremover" type="button" onclick="removerdocarrinho('{{$item['id']}}')" class="btn btn-danger">  <i style="margin-top:1px;"  class="large material-icons">close</i>remover</button>
                       
                         </div>

@@ -124,6 +124,9 @@ Route::get('/app','AppController@index')->name("lojas");//??
 Route::get('/app/loja/{codigo_estab?}/{grupo?}','AppController@getloja')->name("get_loja");//??
 Route::get('/app/produtos/{cod_estab?}','EstabelecimentosController@allproducts')->name("products_loja");
 Route::get('/app/carrinho/{lojacode?}','CarrinhoController@index')->name("carrinho");
+
+Route::get('/app/search/{iduserloja?}/{descripr?}','AppController@search_produto')->name("searchproduct");
+
 Route::post('/app/addproduto','CarrinhoController@add_produto')->name("add_produto");
 Route::get('/app/add_adicional/{idproduto?}/{idadicional?}/{qtdadicional?}','CarrinhoController@add_adicional')->name("add_adicional");
 //---teste

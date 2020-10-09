@@ -211,6 +211,15 @@ class AppController extends Controller
     }
 
     
+    public function search_produto($iduserloja,$descr_produto){
+
+
+      $getprodutos = $this->produtos->where('ID_USER',  $iduserloja)->where('NOME_PRODUTO', 'like', '%' . $descr_produto . '%')->paginate(10);
+
+     
+    }
+
+    
 
     
 
