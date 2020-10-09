@@ -359,6 +359,7 @@
                             <div>
 
                         </div>
+                      </div>
                     </a>
                 </div>
                 @endisset
