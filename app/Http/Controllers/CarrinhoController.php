@@ -50,8 +50,8 @@ class CarrinhoController extends Controller
         $getwhats_loja =  $this->getnumero_whats($codigo);
         $getuser_app = Session::get("user_web_app");
         $produtosjson = json_encode(['produtos'=>$this->removefotosall(Session::get('carrinho'))]);
-        $iduser = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
-        $iduser = $iduser->id;
+        $getusersloja = DB::table('users')->where('codigo_estabelecimento', $codigo)->first();
+        $iduser = $getusersloja->id;
         $teste = Session::get('idloja');
         $getvalorentrega = Session::get('entrega');
         $totaladc = Session::get('totaladicionais');
@@ -59,7 +59,7 @@ class CarrinhoController extends Controller
 
        // $imagem_loja = $iduser->imagem_loja ;
 
-       var_dump($iduser);
+       var_dump($getusersloja->imagem_loja);
 
         $totalemprodutos = Session::get('totalprodutos');
         $adicionaissalvos = Session::get('adicionais');
