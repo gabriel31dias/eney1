@@ -52,8 +52,8 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      
-     
+      $this->update_promocoes();
+
       $getsucesso = '';
     
       if(isset( $_GET['success'])){
@@ -218,6 +218,26 @@ class AppController extends Controller
 
      
     }
+
+    public function update_promocoes($codeloja){
+        //Realia o update das promocoes
+        $getuser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
+        $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->get();
+        
+        foreach ($produtos as $key => $value) {
+
+           $getxx =  \App\Produto::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
+           echo  $getxx;
+   
+        }
+
+      
+       
+
+
+    }
+
+   
 
     
 
