@@ -101,9 +101,8 @@
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo">
-						<a href="index.html">Saboroso
-							<em>!</em>
-						</a>
+            <img style="max-width:150px;max-height:40px"  src="{{$imagem_loja ?? ''}}" class="img-responsive">
+
 					</div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
@@ -348,7 +347,7 @@
                           <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
                             <center>
 
-                              <h2 style="color:#FBB448" class="fh5co-text"> Quantidade {{$item['quantidade']}} </h2>
+                              <h2 style="color:#FBB448"> Quantidade {{$item['quantidade']}} </h2>
                             </center>
                           </div>
                           

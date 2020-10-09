@@ -83,7 +83,7 @@
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo">
 						
-						<img style="max-width:150px;max-height:40px"  src="{{$imagem_loja}}" class="img-responsive">
+						<img style="max-width:150px;max-height:40px"  src="{{$imagem_loja ?? ''}}" class="img-responsive">
 
 					</div>
 				</div>
