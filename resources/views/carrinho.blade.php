@@ -355,9 +355,12 @@
                             </center>
                           </div>
                           
-              
+                          <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+                            <center>
                             <button id="idtrigeremover" type="button" onclick="removerdocarrinho('{{$item['id']}}')" class="btn btn-danger">  <i style="margin-top:1px;"  class="large material-icons">close</i>remover</button>
-                      
+                            <center>
+                            <div>
+
                         </div>
                     </a>
                 </div>
