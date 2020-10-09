@@ -329,7 +329,7 @@
                     
               
                 
-                <div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+                <div  class=" img-thumbnail col-xs-12 col-lg-6 col-md-6 col-sm-6">
                     <a class="">
                         
                             <img  style="height:100%;width:100%" src="{{$item['img']}}" alt="Image" class="img-responsive">
@@ -338,7 +338,7 @@
                         
                         <div class="fh5co-text ">
                            
-                          <div style="color:#FBB448" class="col-xs-12 col-lg-12 col-md-12 col-sm-12 img-thumbnail">
+                          <div style="color:#FBB448" class="col-xs-12 col-lg-12 col-md-12 col-sm-12 ">
                             <h2   style="color:#FBB448" >{{$item['nomeproduto']}} {{$item['tags_adicionais']}}   {{ number_format($item['precoproduto'], 2) }}</h2>
                           </div>
 
