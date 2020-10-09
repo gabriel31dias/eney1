@@ -228,9 +228,8 @@ class AppController extends Controller
         foreach ($produtos as $key => $value) {
           $getxx =  new Produto();
           $getxx =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
-          echo  $getxx ;
+          echo $getxx;
           
-           
         }
 
       
