@@ -202,7 +202,7 @@
 						</ul>
 					</div>
 					
-											<h3 style="color:#FBB448">Status 
+											<h3 style="color:{{$style['color2']}}">Status 
 												
 												@if($status_loja == true )
 

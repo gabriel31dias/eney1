@@ -170,7 +170,7 @@ class AppController extends Controller
       
        //padraoes
        $style = ['color1'=>'black',
-       'color2'=>''
+       'color2'=>'#FBB448'
        ];
  
        if($getiduserloja->COR1){
