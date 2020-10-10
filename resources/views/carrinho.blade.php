@@ -197,7 +197,7 @@
 						<ul class="gtco-social-icons">
 							<li>
 								<a href="https://twitter.com/hcodebr">
-                <i style="color:{{$style->color2}}" class="icon-twitter"></i>
+                <i style="color:{{$style['color2']}}" class="icon-twitter"></i>
 								</a>
 							</li>
 							<li>
