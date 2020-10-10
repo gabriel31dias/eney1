@@ -151,6 +151,7 @@ class AppController extends Controller
 
 
       $getgrupos = $this->grupos->where('ID_USER',$getidloja)->paginate(10);
+      
     
       return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces]);
     }
