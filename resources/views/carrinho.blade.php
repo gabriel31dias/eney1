@@ -187,7 +187,7 @@
 			<div class="row row-pb-md">
 
 
-        {{$style['color2']}}
+       
 	
 				<div class="col-md-12 text-center">
 					<br>
@@ -197,7 +197,7 @@
 						<ul class="gtco-social-icons">
 							<li>
 								<a href="https://twitter.com/hcodebr">
-                <i style="color:{{$style['color2']}}" class="icon-twitter"></i>
+                <i style="color:{{$style['color2']}}" class="icon-twitter">  {{$style['color2']}}</i>
 								</a>
 							</li>
 							<li>
