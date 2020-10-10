@@ -187,7 +187,7 @@
 			<div class="row row-pb-md">
 
 
-               
+        {{$style['color2']}
 	
 				<div class="col-md-12 text-center">
 					<br>
