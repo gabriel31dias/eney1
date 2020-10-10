@@ -177,7 +177,8 @@
 
                
 	
-				<div  style="   opacity:0.1;
+				<div  style="opacity: 0.5;
+				
 				background-image: url(https://i.pinimg.com/originals/29/49/6a/29496a65736eead0f407b9598e8cf234.jpg)" class="col-md-12 text-center">
 					<br>
 					<br>
