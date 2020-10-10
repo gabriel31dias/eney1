@@ -182,64 +182,66 @@
 				background-image: url(https://i.pinimg.com/originals/29/49/6a/29496a65736eead0f407b9598e8cf234.jpg)" class="col-md-12 text-center">
 					<br>
 					<br>
-				   <div style="opacity: 1.0;z-index:2000;">
-					<div class="gtco-widget">
-						<h3>Redes Sociais {{$style['color2']}} </h3>
-						<ul class="gtco-social-icons">
-							<li>
-								<a style="color:{{$style['color2']}} !important;opacity: 1.0"  href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
-									<i class="icon-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a  style="color:{{$style['color2']}} !important;" href="{{$url_facebook ?? ''}}">
-									<i class="icon-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a style="color:{{$style['color2']}} !important;" href="{{$url_instagram ?? ''}}">
-									<i class="icon-instagram"></i>
-								</a>
-							</li>
-							<li>
-								<a style="color:{{$style['color2']}} !important;" href="{{$url_youtube ?? ''}}">
-									<i class="icon-youtube"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-					
-											<h3 style="color:{{$style['color2']}}">Status 
-												
-												@if($status_loja == true )
-
-												<span style="color:green">Aberto</span>
-
-												@else
-
-												<span style="color:red">Fechado</span>
-
-												@endif
-												
-											
-											
-											</h3>
-
-
-											<h3 style="color:{{$style['color2']}}">Faça seu pedido </h3>
-
-											<h3 style="color:{{$style['color2']}}">Total</h3>
-
-											<label style="background-color: #FBB448 ; color:white; padding:5px" id="painelt">0.00</label>
-
-				   </div>
-				</div>
-			
+				   
 				
 			
 	
 				
 			</div>
+
+			<div style="opacity: 1.0;z-index:2000;">
+				<div class="gtco-widget">
+					<h3>Redes Sociais {{$style['color2']}} </h3>
+					<ul class="gtco-social-icons">
+						<li>
+							<a style="color:{{$style['color2']}} !important;opacity: 1.0"  href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
+								<i class="icon-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a  style="color:{{$style['color2']}} !important;" href="{{$url_facebook ?? ''}}">
+								<i class="icon-facebook"></i>
+							</a>
+						</li>
+						<li>
+							<a style="color:{{$style['color2']}} !important;" href="{{$url_instagram ?? ''}}">
+								<i class="icon-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a style="color:{{$style['color2']}} !important;" href="{{$url_youtube ?? ''}}">
+								<i class="icon-youtube"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+										<h3 style="color:{{$style['color2']}}">Status 
+											
+											@if($status_loja == true )
+
+											<span style="color:green">Aberto</span>
+
+											@else
+
+											<span style="color:red">Fechado</span>
+
+											@endif
+											
+										
+										
+										</h3>
+
+
+										<h3 style="color:{{$style['color2']}}">Faça seu pedido </h3>
+
+										<h3 style="color:{{$style['color2']}}">Total</h3>
+
+										<label style="background-color: #FBB448 ; color:white; padding:5px" id="painelt">0.00</label>
+
+			   </div>
+			</div>
+		
 		
 			<div class="dropdown">
             <div style="background-color: white" class="row">
