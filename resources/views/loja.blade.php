@@ -180,22 +180,22 @@
 						<h3>Redes Sociais {{$style['color2']}} </h3>
 						<ul class="gtco-social-icons">
 							<li>
-								<a style="color:{{$style['color2']}}"  href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
+								<a style="color:{{$style['color2']}} !important;"  href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
 									<i class="icon-twitter"></i>
 								</a>
 							</li>
 							<li>
-								<a href="{{$url_facebook ?? ''}}">
+								<a  style="color:{{$style['color2']}} !important;" href="{{$url_facebook ?? ''}}">
 									<i class="icon-facebook"></i>
 								</a>
 							</li>
 							<li>
-								<a href="{{$url_instagram ?? ''}}">
+								<a style="color:{{$style['color2']}} !important;" href="{{$url_instagram ?? ''}}">
 									<i class="icon-instagram"></i>
 								</a>
 							</li>
 							<li>
-								<a href="{{$url_youtube ?? ''}}">
+								<a style="color:{{$style['color2']}} !important;" href="{{$url_youtube ?? ''}}">
 									<i class="icon-youtube"></i>
 								</a>
 							</li>
