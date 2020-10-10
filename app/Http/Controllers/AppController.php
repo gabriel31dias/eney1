@@ -225,7 +225,7 @@ class AppController extends Controller
         $getuser =  DB::table('users')->where('codigo_estabelecimento',$codeloja)->first();
         $produtos = DB::table('produtos')->where('ID_USER',  $getuser->id)->where('PROMOCAO', true)->get();
        
-        if(!isset($produtos[0]->id)){
+        if(!isset($produtos[0]->id )){
 
           return;
         }
@@ -234,23 +234,18 @@ class AppController extends Controller
           $getxx =  new Produto();
           $switch =  $getxx::verifica_tempo_promocao($getuser->codigo_estabelecimento, $value->id);
           $getxx = $getxx->find($value->id);
+
           if ($switch==false){
               $getxx->PROMOCAO = false;
               $result = $getxx->Save();
              
           }else{
-             
+              return;
           }
           
         }
 
         header("Refresh:0");
-
-
-      
-        
-
-
 
     }
 
