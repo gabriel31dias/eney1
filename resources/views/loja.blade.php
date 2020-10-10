@@ -177,7 +177,7 @@
 					<br>
 					<br>
 					<div class="gtco-widget">
-						<h3>Redes Sociais {{$style['color2']}}</h3>
+						<h3>Redes Sociais {{$style['color1']}} </h3>
 						<ul class="gtco-social-icons">
 							<li>
 								<a style="color:{{$style['color2']}}"  href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
