@@ -178,6 +178,8 @@ class AppController extends Controller
          'color2'=>$getiduserloja->COR2
          ];
        }
+
+       var_dump( $style);
  
       $getiduserloja =    $getiduserloja->id ;
       $getprodutossearch = $this->produtos->where('ID_USER',  $getiduserloja)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->paginate(10);
