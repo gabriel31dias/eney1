@@ -380,7 +380,7 @@ visibility: hidden;
                                     <br>
                                     <div class="col-xs-12 col-lg-4 col-md-4 col-sm-6">
                                     <br>
-                                    <input style="padding: 500px" type='text' id="customhead" name="customhead" />
+                                    <input style="padding: 500px" value="{{$usercf->COR1 ?? ''}}" type='text' id="customhead" name="customhead" />
                                     <br>
                                     <h3 for='selecao-arquivo' id="kk">Cor cabeçalho</h3>
 
@@ -391,7 +391,7 @@ visibility: hidden;
 
                                   
                                     <br>
-                                    <input style="padding: 500px" type='text' id="custombody" name="custombody"/>
+                                    <input style="padding: 500px" type='text' value="{{$usercf->COR2 ?? ''}}" id="custombody" name="custombody"/>
                                     <br>
                                     <h3 for='selecao-arquivo' id="kk">Cor corpo</h3>
                                     <br>
