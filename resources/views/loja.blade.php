@@ -223,7 +223,7 @@
 
 											<h3 style="color:{{$style['color2']}}">Total</h3>
 
-											<label style="background-color:{{$style['color2']}} ; color:white; padding:5px" id="painelt">0.00</label>
+											<label style="background-color: #FBB448 ; color:white; padding:5px" id="painelt">0.00</label>
 
 
 				</div>
