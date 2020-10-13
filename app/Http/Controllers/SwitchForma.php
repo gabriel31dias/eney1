@@ -24,7 +24,8 @@ class SwitchForma extends Controller
     
       switch ($user->fpagamentoeletronico) {
         case 1:
-            return new PagseguroCheckout();
+           // return new CieloCheckoutlink();
+           return new PagseguroCheckout();
             break;
         case 2:
             return new PagseguroCheckout();

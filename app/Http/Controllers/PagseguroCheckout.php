@@ -147,10 +147,7 @@ class PagseguroCheckout extends Controller
     }
 
 
-    public function __call($name, array $args)
-    {
-        echo "";
-    }
+   
 
     
     
