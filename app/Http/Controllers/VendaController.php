@@ -28,7 +28,7 @@ use App\Http\Controllers\PagSeguroLibrary\PagSeguroLibrary ;
 
 
 
-require_once dirname(__FILE__).'/PagSeguroLibrary/PagSeguroLibrary.php';
+require_once "../PagSeguroLibrary/PagSeguroLibrary.php";
 
 
 class VendaController extends Controller
