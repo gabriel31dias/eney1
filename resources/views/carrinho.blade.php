@@ -188,45 +188,35 @@
 
 
        
-	
-				<div class="col-md-12 text-center">
+	     
+				<div  style="" class="col-md-12 text-center">
 					<br>
 					<br>
-					<div class="gtco-widget">
-						<h3>Redes Sociais {{$style['color2']}}</h3>
-						<ul class="gtco-social-icons">
-							<li>
-								<a href="https://twitter.com/hcodebr">
-                <i style="color:{{$style['color2']}}" class="icon-twitter">  </i>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.facebook.com/hcodebr">
-									<i class="icon-facebook"></i>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.linkedin.com/company/grupo-hcode/">
-									<i class="icon-instagram"></i>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.youtube.com/channel/UCjWENuSH2gX55-y7QSZiWxA">
-									<i class="icon-youtube"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
+					<h1 style="color:{{$style['color2']}}"> {{$nameloja ?? ''}} </h1>
+				   <div style="opacity: 1.0;z-index:2000;">
+				
 					
-											<h3 style="color:#FBB448">Status <span style="color:green">Aberto</span></h3>
-											<h3 style="color:#FBB448">Faça seu pedido </h3>
+											<h3 style="color:{{$style['color2']}}"> 
+												
+												@if($status_loja == true )
 
+												<span style="color:green">Aberto</span>
+
+												@else
+
+												<span style="color:red">Fechado</span>
+
+												@endif
+												
+											
+											
+											</h3>
+
+
+											
+
+				   </div>
 				</div>
-				
-			
-	
-				
-			</div>
 		
 			<div class="dropdown">
             <div style="background-color: white" class="row">
