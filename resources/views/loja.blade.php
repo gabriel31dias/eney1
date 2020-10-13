@@ -183,7 +183,7 @@
 					<br>
 				   <div style="opacity: 1.0;z-index:2000;">
 					<div class="gtco-widget">
-						<h3>Redes Sociais {{$style['color2']}} </h3>
+						<h3>Redes Sociais</h3>
 						<ul class="gtco-social-icons">
 							<li>
 								<a style="color:{{$style['color2']}} !important;opacity: 1.0"  href="{{$url_twitter ?? ''}}">
