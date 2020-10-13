@@ -24,12 +24,11 @@ use Rede\eRede;
 use Rede\Exception\RedeException;
 use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
-use App\Http\Controllers\PagSeguroLibrary\PagSeguroLibrary ;
+use \PagSeguroLibrary ;
 
 
 
 
-require_once('/app/Http/ControllersPagSeguroLibrary/PagSeguroLibrary.php');
 
 
 
