@@ -78,6 +78,7 @@ class AppController extends Controller
       $hora2 = strtotime($getloja->horariofinal);
       $horaAtual = strtotime(date('H:i:s'));
       $imagem_loja = $getloja->imagem_loja ;
+      $nameloja =  $getloja->nome_estabelecimento ;
   
       if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento 
         $status_loja = true;
@@ -153,7 +154,7 @@ class AppController extends Controller
       $getgrupos = $this->grupos->where('ID_USER',$getidloja)->paginate(10);
       
     
-      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces]);
+      return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,'url_instagran'=>$instagram,'url_twitter'=>$twitter,'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja]);
     }
 
 
