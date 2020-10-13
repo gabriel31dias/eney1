@@ -29,7 +29,7 @@ use App\Http\Controllers\PagSeguroLibrary\PagSeguroLibrary ;
 
 
 
-require_once(__DIR__ . '/PagSeguroLibrary/PagSeguroLibrary.php');
+require_once(__DIR__ . 'PagSeguroLibrary/PagSeguroLibrary.php');
 
 
 
