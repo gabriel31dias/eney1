@@ -712,6 +712,7 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
+var_dump($result);
    
 echo $result;
 
