@@ -50,7 +50,7 @@ class PagseguroCheckout extends Controller
 
         var_dump( $xml);
              
-        $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $result;
+        $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $xml[0];
         return  $checkoutUrl;
     }
 
