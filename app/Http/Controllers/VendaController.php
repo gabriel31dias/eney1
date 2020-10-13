@@ -26,7 +26,9 @@ use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
 use App\Http\Controllers\PagSeguroLibrary\PagSeguroLibrary ;
 
-include_once("PagSeguroLibrary/PagSeguroLibrary.php");
+
+
+require_once dirname(__FILE__).'/PagSeguroLibrary/PagSeguroLibrary.class.php';
 
 
 class VendaController extends Controller
