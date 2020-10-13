@@ -1,5 +1,5 @@
-<form method="POST" action="https://testportal.maxipago.net/hostpay/HostPay">
-    <input name="hp_merchant_id" value="q9zddzh9kmfzro0ho97zp4cq">
+<form method="POST" action="https://testsecure.maxipago.net/hostpay/HostPay">
+    <input name="hp_merchant_id" value="13291">
     <input name="hp_processor_id" value="1">
     <input name="hp_method" value="ccard">
     <input name="hp_txntype" value="sale">
