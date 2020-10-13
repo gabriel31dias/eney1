@@ -76,7 +76,8 @@
 	<div id="page">
 
 	
-	<nav class="gtco-nav" role="navigation">
+	<nav style="border:none;" class="gtco-nav" role="navigation">
+		
 		<div class="gtco-container">
 	
 			<div class="row">
