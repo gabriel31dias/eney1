@@ -505,7 +505,10 @@ class VendaController extends Controller
         $cielo = $cielo->setOrderNumber($req->codeloja .'-'. $req->numerovenda);
         $cielo = $cielo->setTelefone($this->soNumero($req->telefone));
         $cielo = $cielo->setUrlReturn($req->urlretorno);
+        $cielo = $cielo->set_valor_total($req->valor_total);
         $cielo = $cielo->executa();
+
+      
         return response()->json($cielo);
        // $cielo->AddProductList();
     }
@@ -697,8 +700,6 @@ class VendaController extends Controller
           $pag = new PagseguroCheckout();
           $pag = $pag->executa();
 
-           
-          
          return view('pagseguro',['pg'=>$pag]);
       }
 

@@ -143,8 +143,11 @@ class CieloCheckoutlink extends Controller
 
     }
 
-    
-    
+    public function __call($name, array $args)
+    {
+        return $this;
+    }
+
     
 
 }

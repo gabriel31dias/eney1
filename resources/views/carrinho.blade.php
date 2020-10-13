@@ -1640,7 +1640,7 @@ function atualiza_obj_user(){
       obj_final.email = obj_venda.email
       obj_final.numerovenda = cash_idvenda
       obj_final.codeloja = lojacode
-     
+      obj_final.valor_total = obj_venda.valortotalprodutos
       obj_final.codigo_estabelecimento = lojacode
     
       obj_final.urlretorno = '{{env('APP_URL')}}'+'app/loja/' + lojacode + '?success=true'
