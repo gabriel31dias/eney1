@@ -701,7 +701,60 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://ws.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c&currency=BRL&itemId1=001&itemDescription1=items loja%201&itemAmount1=169.90&itemQuantity1=1&reference=124665c23f7896adff508377925&senderName=Natalie%20Green&senderAreaCode=51&senderPhone=988888888&senderEmail=emaildocomprador@pagseguro.com.br&shippingAddressRequired=true&extraAmount=0.00");
+///curl_setopt($ch, CURLOPT_POSTFIELDS, "email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c&currency=BRL&itemId1=001&itemDescription1=items%201&itemAmount1=169.90&itemQuantity1=1&reference=124665c23f7896adff508377925&senderName=Natalie%20Green&senderAreaCode=51&senderPhone=988888888&senderEmail=emaildocomprador@pagseguro.com.br&shippingAddressRequired=true&extraAmount=0.00");
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, "<checkout>
+<sender>
+  <name>Jose Comprador</name>
+  <email>comprador@uol.com.br</email>
+  <phone>
+    <areaCode>99</areaCode>
+    <number>999999999</number>
+  </phone>
+  <documents>
+    <document>
+      <type>CPF</type>
+      <value>11475714734</value>
+    </document>
+  </documents>
+</sender>
+<currency>BRL</currency>
+<items>
+  <item>
+    <id>0001</id>
+    <description>Produto PagSeguroI</description>
+    <amount>99999.99</amount>
+    <quantity>1</quantity>
+    <weight>10</weight>
+    <shippingCost>1.00</shippingCost>
+  </item>
+</items>
+<redirectURL>http://lojamodelo.com.br/return.html</redirectURL>
+<extraAmount>10.00</extraAmount>
+<reference>REF1234</reference>
+<shipping>
+  <address>
+    <street>Av. PagSeguro</street>
+    <number>9999</number>
+    <complement>99o andar</complement>
+    <district>Jardim Internet</district>
+    <city>Cidade Exemplo</city>
+    <state>SP</state>
+    <country>BRA</country>
+    <postalCode>99999999</postalCode>
+  </address>
+  <type>1</type>
+  <cost>1.00</cost>
+  <addressRequired>true</addressRequired>
+</shipping>
+<timeout>25</timeout>
+<maxAge>999999999</maxAge>
+<maxUses>999</maxUses>
+<receiver>
+  <email>suporte@lojamodelo.com.br</email>
+</receiver>
+<enableRecover>false</enableRecover>
+</checkout>");
 
 $headers = array();
 $headers[] = 'Content-Type: application/x-www-form-urlencoded';
