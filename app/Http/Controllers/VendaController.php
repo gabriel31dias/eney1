@@ -24,7 +24,7 @@ use Rede\eRede;
 use Rede\Exception\RedeException;
 use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
-use App\Http\Controllers\PagSeguroLibrary\PagSeguroLibrary ;
+use App\Http\Controllers\PagSeguroLibrary ;
 
 
 
