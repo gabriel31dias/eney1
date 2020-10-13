@@ -25,7 +25,7 @@ use Rede\Exception\RedeException;
 use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
 
-include_once("/PagSeguroLibrary/PagSeguroLibrary.php");
+include_once("PagSeguroLibrary/PagSeguroLibrary.php");
 
 
 class VendaController extends Controller
