@@ -169,7 +169,7 @@
 	</div>
   </div>
 
-	<footer id="gtco-footer" role="contentinfo" style="background-image: url(https://i.pinimg.com/originals/29/49/6a/29496a65736eead0f407b9598e8cf234.jpg)" data-stellar-background-ratio="0.5">
+	<footer id="gtco-footer" role="contentinfo" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container">
 			<div class="row row-pb-md">
@@ -177,9 +177,7 @@
 
                
 	
-				<div  style="opacity: 0.8;
-				
-				background-image: url(https://i.pinimg.com/originals/29/49/6a/29496a65736eead0f407b9598e8cf234.jpg)" class="col-md-12 text-center">
+				<div  style="" class="col-md-12 text-center">
 					<br>
 					<br>
 				   <div style="opacity: 1.0;z-index:2000;">
@@ -187,7 +185,7 @@
 						<h3>Redes Sociais {{$style['color2']}} </h3>
 						<ul class="gtco-social-icons">
 							<li>
-								<a style="color:{{$style['color2']}} !important;opacity: 1.0"  href="{{$url_twitter ?? 'https://keep.google.com/#home'}}">
+								<a style="color:{{$style['color2']}} !important;opacity: 1.0"  href="{{$url_twitter ?? ''}}">
 									<i class="icon-twitter"></i>
 								</a>
 							</li>
