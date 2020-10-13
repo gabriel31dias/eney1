@@ -74,7 +74,7 @@
 	<div class="gtco-loader"></div>
 	
 	<div id="page">
-
+        
 	
 	<nav style="border:none;" class="gtco-nav" role="navigation">
 		
@@ -208,7 +208,7 @@
 						</ul>
 					</div>
 					
-											<h3 style="color:{{$style['color2']}}">Status 
+											<h3 style="color:{{$style['color2']}}"> 
 												
 												@if($status_loja == true )
 
