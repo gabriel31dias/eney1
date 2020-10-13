@@ -701,8 +701,8 @@ class VendaController extends Controller
 // URL DE SANDBOX
 $url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
 
-$data['email'] = 'email_vendedor@gmail.com';
-$data['token'] = 'TOKEN';
+$data['email'] = 'gabrieldias@keemail.me';
+$data['token'] = 'a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c';
 $data['currency'] = 'BRL';
 
 $data['itemId1'] = "1";
