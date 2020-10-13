@@ -567,7 +567,11 @@ class VendaController extends Controller
         $tt =  $tt->create(['value'=>  $getcodeloja ]);
         return  response()->json($tt);
     }
+    
+    public function testsmartpg(){
 
+        return view('testesmart',[]);
+    }
 
     public function TesteHttpSocket(){
            
