@@ -713,6 +713,7 @@ if (curl_errno($ch)) {
 }
 curl_close($ch);
 
+ var_dump($result);
          return view('pagseguro',[]);
       }
 
