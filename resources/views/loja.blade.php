@@ -181,6 +181,7 @@
 				<div  style="" class="col-md-12 text-center">
 					<br>
 					<br>
+					<h1 style="color:{{$style['color2']}}">Loja teste </h1>
 				   <div style="opacity: 1.0;z-index:2000;">
 					<div class="gtco-widget">
 						<h3>Redes Sociais</h3>
@@ -225,7 +226,7 @@
 											</h3>
 
 
-											<h3 style="color:{{$style['color2']}}">Faça seu pedido </h3>
+											
 
 											<h3 style="color:{{$style['color2']}}">Total</h3>
 
