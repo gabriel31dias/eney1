@@ -47,7 +47,7 @@ class PagseguroCheckout extends Controller
         curl_close($ch);
      
              
-        $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . var_dump($result);
+        $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $result;
         return  $checkoutUrl;
     }
 
