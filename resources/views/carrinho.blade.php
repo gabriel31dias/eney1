@@ -289,9 +289,9 @@
               
             <div style="max-height: 50px;"  class="row">
                 
-
+      <center>
 		  <h1 style="color:#FBB448">PRODUTOS EM SEU CARRINHO</h1>
-
+      </center>
 		  <center>
 			  <div class="row">
 			<div  class="col-xs-12">
