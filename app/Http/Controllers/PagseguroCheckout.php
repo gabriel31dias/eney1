@@ -45,11 +45,7 @@ class PagseguroCheckout extends Controller
             echo 'Error:' . curl_error($ch);
         }
         curl_close($ch);
-        
         $xml=simplexml_load_string( $result ) or die("Error: Cannot create object");
-
-        var_dump( $xml);
-             
         $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $xml->code;
         return  $checkoutUrl;
     }

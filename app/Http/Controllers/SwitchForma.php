@@ -27,11 +27,11 @@ class SwitchForma extends Controller
             return new CieloCheckoutlink();
             break;
         case 2:
-            return new RedeCheckoutlink();
+            return new PagseguroCheckout();
             break;
        }
 
-       return new CieloCheckoutlink();
+       return new PagseguroCheckout();
 
    }
 
