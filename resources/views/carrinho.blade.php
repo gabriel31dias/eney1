@@ -200,8 +200,8 @@
 												
 												@if($status_loja == true )
 
-												<span style="color:green">Aberto</span>
-
+											    <span style="color:green">Aberto</span>
+                          <script></script>
 												@else
 
 												<span style="color:red">Fechado</span>
