@@ -322,6 +322,11 @@ visibility: hidden;
                                     <h3>Código Skytef</h3>
                                     <input type="text" class="form-control" name="redecode" id="redecode"  value="{{$usercf->redecode ?? ''}}">
                                 </div>
+                                
+                                <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
+                                    <h3>Email Pagseguro</h3>
+                                    <input type="text" class="form-control" name="emailpagseguro" id="emailpagseguro"  value="{{$usercf->emailpagseguro ?? ''}}">
+                                </div>
 
                                 <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                     <h3>Código Pagseguro</h3>

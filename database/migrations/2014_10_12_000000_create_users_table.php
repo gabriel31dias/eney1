@@ -41,6 +41,7 @@ class CreateUsersTable extends Migration
             $table->string('cielocode')->nullable();
             $table->string('redecode')->nullable();
             $table->string('pagsegurocode')->nullable();
+            $table->string('emailpagseguro')->nullable();
             $table->decimal('MINIMOPRECOENTREGAGRATIS', 10, 2)->nullable();
             $table->decimal('PRECOENTREGA', 10, 2)->nullable();
             ///REDES SOCIAIS

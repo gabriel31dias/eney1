@@ -40,7 +40,9 @@ class ConfigController extends Controller
         'horarioinicio'=> $req->horarioinicio,
         'horariofinal'=> $req->horariofinal,
         'cielocode' => $req->cielocode,
-        'redecode' => $req->redecode
+        'redecode' => $req->redecode,
+        'emailpagseguro'=> $req->emailpagseguro,
+        'pagsegurocode'=> $req->pagsegurocode,
         ]);
 
         return redirect()->route('config');
