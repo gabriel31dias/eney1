@@ -40,15 +40,13 @@ class PagseguroCheckout extends Controller
         if($this->taxadlv){
             $text_payment = 'Total em produtos + entrega';
         }else{
-            $text_payment = 'Total em produtos';
+            $text_payment = 'Total em produtos + entrega';
         }
-
-        $total = 1.00;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://ws.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c&currency=BRL&itemId1=001&itemDescription1=".$text_payment."%201&itemAmount1=". $total."&itemQuantity1=10&reference=124665c23f7896adff508377925&senderName=gabriel dias%20Green&senderAreaCode=51&senderPhone=988888888&senderEmail=gabrieldias@pagseguro.com.br&shippingAddressRequired=true&extraAmount=0.00");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c&currency=BRL&itemId1=001&itemDescription1=Items teste%201&itemAmount1=".$this->valor_total."&itemQuantity1=10&reference=124665c23f7896adff508377925&senderName=gabriel dias%20Green&senderAreaCode=51&senderPhone=988888888&senderEmail=gabrieldias@pagseguro.com.br&shippingAddressRequired=true&extraAmount=0.00");
         $headers = array();
         $headers[] = 'Content-Type: application/x-www-form-urlencoded';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -153,8 +151,8 @@ class PagseguroCheckout extends Controller
 
     public function set_valor_total($value){
         $value = intval($value) * 10;   
-
-        $this->valor_total = $value;
+        $value = strval($value);
+        $this->valor_total = $value ;
         return $this;
     }
 
