@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use DB;
 
 class ConfigController extends Controller
 {
