@@ -161,6 +161,10 @@ class PagseguroCheckout extends Controller
         return $this;
     }
 
+    public function getIdentId(){
+        
+    }
+
 
 
 }

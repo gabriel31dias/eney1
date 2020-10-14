@@ -156,6 +156,10 @@ class CieloCheckoutlink extends Controller
         return $this;
     }
 
+    public function getIdentId(){
+        
+    }
+
 
     
 
