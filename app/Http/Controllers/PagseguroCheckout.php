@@ -152,6 +152,7 @@ class PagseguroCheckout extends Controller
     public function set_valor_total($value){
         $value = intval($value) * 10;   
         $value = strval($value);
+        $value = intval($value);
         $this->valor_total = $value;
         return $this;
     }
