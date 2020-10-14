@@ -61,7 +61,7 @@ class PagseguroCheckout extends Controller
     }
 
     public function soNumero($str) {
-        $data ="18996519810";
+        $data ="996519810";
         return preg_replace("/[^0-9]/", "",  $data);
     }
 
