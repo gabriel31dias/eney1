@@ -1643,7 +1643,7 @@ function atualiza_obj_user(){
       obj_final.valor_total = obj_venda.valortotalprodutos
       obj_final.codigo_estabelecimento = lojacode
       obj_final.dlv_taxa = valor_total_frete
-
+       //dwaddda
       
     
       obj_final.urlretorno = '{{env('APP_URL')}}'+'app/loja/' + lojacode + '?success=true'
