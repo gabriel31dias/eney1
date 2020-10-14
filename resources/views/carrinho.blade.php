@@ -1632,6 +1632,7 @@ function atualiza_obj_user(){
       let telefone = apenasNumeros(obj_venda.telefone) 
       telefone =  substr(telefone, 1)
       telefone =  substr(telefone, 2)
+      console.log(telefone)
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
       obj_final.id_loja = obj_produtos
