@@ -150,8 +150,10 @@ class PagseguroCheckout extends Controller
     }
 
     public function set_valor_total($value){
-      
+        
         $nombre_format_francais = number_format( $value, 2, '.', ' ');
+        $nombre_format_francais =   $nombre_format_francais /10;
+
         $this->valor_total =  $nombre_format_francais  ;
         return $this;
     }
