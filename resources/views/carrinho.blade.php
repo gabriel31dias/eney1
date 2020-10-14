@@ -1640,9 +1640,9 @@ function atualiza_obj_user(){
       obj_final.email = obj_venda.email
       obj_final.numerovenda = cash_idvenda
       obj_final.codeloja = lojacode
-      let totaladc = "{{ number_format($totalemprodutos + $totaladc, 2) }}"
+      
 
-      obj_final.valor_total = obj_venda.valortotalprodutos + totaladc
+      obj_final.valor_total = obj_venda.valortotalprodutos + "{{ number_format($totalemprodutos + $totaladc, 2) }}"
       obj_final.codigo_estabelecimento = lojacode
       obj_final.dlv_taxa = valor_total_frete
        //dwaddda
