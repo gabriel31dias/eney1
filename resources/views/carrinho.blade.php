@@ -1630,7 +1630,8 @@ function atualiza_obj_user(){
       processandovenda()
 
       let telefone = apenasNumeros(obj_venda.telefone) 
-      telefone = telefone.substring(0,10)
+      telefone =  substr(telefone, 1)
+      telefone =  substr(telefone, 2)
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
       obj_final.id_loja = obj_produtos
