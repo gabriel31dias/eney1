@@ -38,7 +38,7 @@ class PagseguroCheckout extends Controller
 
         $text_payment = '';
         if($this->taxadlv){
-            $text_payment = 'Total em produtos + entrega';
+            $text_payment = 'Total em produtos com entrega';
         }else{
             $text_payment = 'Total em produtos ';
         }
