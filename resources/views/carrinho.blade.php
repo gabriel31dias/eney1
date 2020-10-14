@@ -1539,6 +1539,12 @@ await Swal.fire({
 
 }
 
+function apenasNumeros(string) 
+{
+    var numsStr = string.replace(/[^0-9]/g,'');
+    return parseInt(numsStr);
+}
+
 function atualiza_obj_user(){
 
    try {
@@ -1623,8 +1629,8 @@ function atualiza_obj_user(){
 
       processandovenda()
 
-
-
+      let telefone = apenasNumeros(obj_venda.telefone) 
+      telefone = telefone.substring(0,10)
       array_produtos_json = JSON.stringify(array_produtos_venda)
       obj_final.produtos =  array_produtos_json
       obj_final.id_loja = obj_produtos
@@ -1636,7 +1642,7 @@ function atualiza_obj_user(){
       obj_final.cidade = obj_venda.cidade
       obj_final.estado = obj_venda.estado
       obj_final.nomecompleto = obj_venda.nome
-      obj_final.telefone = obj_venda.telefone
+      obj_final.telefone = telefone
       obj_final.email = obj_venda.email
       obj_final.numerovenda = cash_idvenda
       obj_final.codeloja = lojacode
