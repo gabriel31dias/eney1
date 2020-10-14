@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \PagSeguro;
+USE DB;
 
 class PagseguroCheckout extends Controller 
 {
@@ -31,7 +32,7 @@ class PagseguroCheckout extends Controller
 
 
     public function __construct($cod){
-        $user = $this->user->where('codigo_estabelecimento',$cod)->first();
+        $user = DB::table('users')->where('codigo_estabelecimento',$cod)->first();
         $this->getemailpagseguro =  $user->emailpagseguro;
         $this->getcodpagseguro =  $user->pagsegurocode;
     }
