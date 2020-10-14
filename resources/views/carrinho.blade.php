@@ -1671,7 +1671,7 @@ function atualiza_obj_user(){
             contentType: 'application/json',
             success: function (data) {
 				    // alert(JSON.stringify(data))
-              //location.href=data
+              location.href=data
             },
 
 		      	error: function (data) {
