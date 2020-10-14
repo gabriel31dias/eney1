@@ -87,7 +87,21 @@
 						<img style="max-width:150px;max-height:40px"  src="{{$imagem_loja ?? ''}}" class="img-responsive">
 
 						
+						<h3 style="color:{{$style['color2']}}"> 
+												
+							@if($status_loja == true )
+
+							<span style="color:green">Aberto</span>
+
+							@else
+
+							<span style="color:red">Fechado</span>
+
+							@endif
+							
 						
+						
+						</h3>
 
 					</div>
 				</div>
@@ -212,21 +226,7 @@
 						</ul>
 					</div>
 					
-											<h3 style="color:{{$style['color2']}}"> 
-												
-												@if($status_loja == true )
-
-												<span style="color:green">Aberto</span>
-
-												@else
-
-												<span style="color:red">Fechado</span>
-
-												@endif
-												
 											
-											
-											</h3>
 
 
 											
