@@ -485,7 +485,7 @@ class VendaController extends Controller
 
 
     public function cielopagamento(Request $req){
-        $selectf = new SwitchForma($req->codeloja );///Seleciona forma pagamento da loja
+        $selectf = new SwitchForma($req->codeloja);///Seleciona forma pagamento da loja
         $selectf = $selectf->getForma();
         $cielo = $selectf;
         $getmercantid = $this->users->where('codigo_estabelecimento', $req->codigo_estabelecimento )->first();

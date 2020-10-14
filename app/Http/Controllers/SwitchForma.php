@@ -12,10 +12,12 @@ class SwitchForma extends Controller
 
     private $user;
     private $iduser;
+    private $cod_estabelecimento;
 
     public function __construct($iduser){
         $this->user = new User;
         $this->user = $this->user->where('codigo_estabelecimento',$iduser)->first();
+        $this->cod_estabelecimento = $iduser;
     }
 
    public function getForma(){
@@ -24,11 +26,11 @@ class SwitchForma extends Controller
     
       switch ($user->fpagamentoeletronico) {
         case 1:
-           // return new CieloCheckoutlink();
-           return new PagseguroCheckout();
+           // return new CieloCheckoutlink($this->cod_estabelecimento);
+           return new PagseguroCheckout($this->cod_estabelecimento);
             break;
         case 2:
-            return new PagseguroCheckout();
+            return new PagseguroCheckout($this->cod_estabelecimento);
             break;
        }
 

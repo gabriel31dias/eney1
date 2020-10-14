@@ -27,6 +27,11 @@ class CieloCheckoutlink extends Controller
     
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
+
+    public function __construct($cod){
+   
+   
+    } 
   
     public function addMerchantId($mercantid){
       $this->Mercantid = $mercantid;

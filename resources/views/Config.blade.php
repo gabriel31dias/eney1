@@ -325,7 +325,7 @@ visibility: hidden;
 
                                 <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                     <h3>Código Pagseguro</h3>
-                                    <input type="text" class="form-control" name="pagseguro" id="pagseguro"  value="{{$usercf->pagseguro ?? ''}}">
+                                    <input type="text" class="form-control" name="pagsegurocode" id="pagsegurocode"  value="{{$usercf->pagseguro ?? ''}}">
                                 </div>
                         </div>
                         <br>

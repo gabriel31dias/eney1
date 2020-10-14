@@ -40,7 +40,7 @@ class CreateUsersTable extends Migration
             $table->time('horariofinal')->nullable();
             $table->string('cielocode')->nullable();
             $table->string('redecode')->nullable();
-            $table->string('pagseguro')->nullable();
+            $table->string('pagsegurocode')->nullable();
             $table->decimal('MINIMOPRECOENTREGAGRATIS', 10, 2)->nullable();
             $table->decimal('PRECOENTREGA', 10, 2)->nullable();
             ///REDES SOCIAIS
