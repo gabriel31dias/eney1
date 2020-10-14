@@ -32,7 +32,7 @@ class PagseguroCheckout extends Controller
 
     public function __construct($cod){
         $user = $this->user->where('codigo_estabelecimento',$cod)->first();
-        $this->getemailpagseguro =  $user->email;
+        $this->getemailpagseguro =  $user->emailpagseguro;
         $this->getcodpagseguro =  $user->pagsegurocode;
     }
   
