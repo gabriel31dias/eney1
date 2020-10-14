@@ -506,6 +506,7 @@ class VendaController extends Controller
         $cielo = $cielo->setTelefone($this->soNumero($req->telefone));
         $cielo = $cielo->setUrlReturn($req->urlretorno);
         $cielo = $cielo->set_valor_total($req->valor_total);
+        $cielo = $cielo->set_taxa_deliv($req->dlv_taxa);
         $cielo = $cielo->executa();
 
       

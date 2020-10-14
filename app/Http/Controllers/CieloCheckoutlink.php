@@ -21,6 +21,9 @@ class CieloCheckoutlink extends Controller
     private $Email;
     private $OrderNumber;
     private $UrlReturn;
+    private $valor_total;
+    private $taxadlv;
+
     
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
@@ -143,10 +146,16 @@ class CieloCheckoutlink extends Controller
 
     }
 
-    public function __call($name, array $args)
-    {
+    public function set_valor_total($value){
+        $this->valor_total = $value ;
         return $this;
     }
+
+    public function set_taxa_deliv($value){
+        $this->taxadlv = $value;
+        return $this;
+    }
+
 
     
 
