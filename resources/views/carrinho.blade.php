@@ -1642,7 +1642,7 @@ function atualiza_obj_user(){
       obj_final.codeloja = lojacode
       
 
-      obj_final.valor_total =  "{{ number_format($totalemprodutos + $totaladc, 2) }}"
+      obj_final.valor_total =  "{{ number_format($totalemprodutos , 2) }}"
       obj_final.codigo_estabelecimento = lojacode
       obj_final.dlv_taxa = valor_total_frete
        //dwaddda
