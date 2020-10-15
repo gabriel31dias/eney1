@@ -533,10 +533,10 @@ var openFile = function(file) {
             contentType: 'application/json',
             success: function (data) {
                alert(data)
-               console(data)
+               console.log(data)
             },
             error: function (request) {
-                console(request)
+                
                 
             },
             data: Obj_payment
