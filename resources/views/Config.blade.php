@@ -504,12 +504,8 @@ var openFile = function(file) {
    });
    }
 
+   
 
-   var items_payments = document.getElementsByClassName("payment_opt");
-     
-    for(let item of items_payments){
-        item.checked = false
-    }
 
    document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
 
@@ -533,7 +529,7 @@ var openFile = function(file) {
        }
 
         $.ajax({
-            url: "{{ route("configPaymentDefault") }}"",
+            url: '{{route("configPaymentDefault")}}',
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
@@ -545,7 +541,7 @@ var openFile = function(file) {
                 
                 
             },
-            data: JSON.stringify(Obj_payment)
+            data: Obj_payment
         });
        
    }
