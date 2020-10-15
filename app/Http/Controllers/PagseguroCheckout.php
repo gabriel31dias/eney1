@@ -34,10 +34,11 @@ class PagseguroCheckout extends Controller
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
 
 
-    public function __construct($cod ,Temp $temp){
+    public function __construct($cod){
         $user = DB::table('users')->where('codigo_estabelecimento',$cod)->first();
         $this->getemailpagseguro =  $user->emailpagseguro;
         $this->getcodpagseguro =  $user->pagsegurocode;
+        $temp = new Temp();
         $this->temp = $temp;
         $this->email_token = "?email=".$this->getemailpagseguro."&token=".$this->getcodpagseguro;
     }
