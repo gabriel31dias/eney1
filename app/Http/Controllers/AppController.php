@@ -174,7 +174,7 @@ class AppController extends Controller
       }
      }
 
-     
+      $nomeproduto = strtoupper($nomeproduto);
       $getiduserloja = $this->users->where('codigo_estabelecimento',$loja)->first();
 
       if($getiduserloja->status_at == 'true'){
