@@ -23,17 +23,17 @@
 				<legend><i class='fas fa-user icon-user'></i></legend>
                 <label for="nome">Nome:</label>
                 @csrf
-				<input type="text" name="name" id="name"  placeholder="Ex: Lucas Gomes">
+				<input type="text" name="name" id="name"  placeholder="Ex: Lucas Gomes" required>
 				<label for="email">E-mail:</label>
-				<input type="email" name="email" id="email" placeholder="Ex: lucas@gmail.com">
+				<input type="email" name="email" id="email" placeholder="Ex: lucas@gmail.com" required>
 				<label for="nomeEmpresa">Nome Da Empresa:</label>
-				<input type="text" id="nome_estabelecimento" name="nome_estabelecimento" placeholder="Ex: InovaTTius Solutions">
+				<input type="text" id="nome_estabelecimento" name="nome_estabelecimento" placeholder="Ex: InovaTTius Solutions" required>
 				<label for="cnpj">CNPJ Da Empresa:</label>
-				<input type="text" id="cnpj" name="cnpj" placeholder="Ex: 36.922.552/0001-02">
+				<input type="text" id="cnpj" name="cnpj" placeholder="Ex: 36.922.552/0001-02" required>
 				<label for="nome">Senha:</label>
-				<input type="password" name="password" placeholder="Informe uma senha">
+				<input type="password" name="password" placeholder="Informe uma senha" required>
 				<label for="nome">Confirme sua senha:</label>
-				<input type="password" name="password_confirmation" placeholder="Confirme sua senha">
+				<input type="password" name="password_confirmation" placeholder="Confirme sua senha" required>
 				<input type="submit" name="btnEnviar" value="Cadastrar">
 				<picture>
 					<a href="https://versatilsoftwares.com.br" target="_blank"><img src="assets/img/logoVersátil.png" alt="Logo Versátil Informática"><a>
