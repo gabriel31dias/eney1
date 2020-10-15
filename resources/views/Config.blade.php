@@ -508,8 +508,22 @@ var openFile = function(file) {
 
 
    async function UpdatePayment(valor) {
+    let get_id_user = document.getElementById('ID_USER').value
+       let Obj_payment = {
+         iduser: get_id_user,
+         idpayment:valor
+       }
 
-         alert(valor)
+        $.ajax({
+            url: '',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+               alert(data)
+            },
+            data: JSON.stringify(Obj_payment)
+        });
        
    }
 

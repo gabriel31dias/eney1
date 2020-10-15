@@ -158,6 +158,7 @@ Route::get('/carrinho/listusersave/','CarrinhoController@listusersave')->name("l
 Route::get('/config','ConfigController@index')->middleware('auth')->name("config");
 Route::get('config/save','ConfigController@save')->middleware('auth')->name("configsave");
 Route::post('config/update/image/','ConfigController@update_foto')->middleware('auth')->name("updateimage");
+Route::post('/configupdatepaymentpadrao','ConfigController@setPaymentDefault')->middleware('auth')->name("configPaymentDefault");
 
 
 //-------Rota Adicionais
