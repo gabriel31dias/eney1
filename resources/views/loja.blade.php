@@ -555,7 +555,7 @@ if (txt) {
 	$getlojacode = '{{$lojacod}}'
 	//$('html').html('');
    // $('body').load('{{route('searchproduto')}}'+$getlojacode + '/' + txt );
-	location.href = `{{route('searchproduto')}}'/${$getlojacode}/${txt}`
+	location.href = `{{route('searchproduto')}}/${$getlojacode}/${txt}`
  }
 }
 
