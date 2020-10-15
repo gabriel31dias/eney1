@@ -52,6 +52,13 @@
 
 		document.getElementById('formregister').onsubmit = function() {
 
+		    name = document.getElementById("name").value;
+            email = document.getElementById("email").value;
+		    nomeempresa = document.getElementById("nome_estabelecimento").value;
+		    cnpj = document.getElementById("cnpj").value;
+		    password =  document.getElementById("password").value;
+		    pass_vr = document.getElementById("password_confirmation").value;
+
               return isValidForm();
         };
 
