@@ -1,6 +1,8 @@
 @extends('layouts.base')
 @section('content')
 <script src="/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+<meta name="_token" content="{{ csrf_token() }}">
+
 <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js
 "></script>
 
@@ -521,6 +523,9 @@ var openFile = function(file) {
             contentType: 'application/json',
             success: function (data) {
                alert(data)
+            },
+            headers: {            
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')        
             },
             data: JSON.stringify(Obj_payment)
         });
