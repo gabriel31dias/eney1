@@ -211,7 +211,7 @@ class AppController extends Controller
 
 
       return view('loja',['produtos'=>  $getprodutossearch,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$loja,
-     'grupoitem'=>"pesquisa",'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
+     'grupoitem'=>"RESULTADOS DA PESQUISA "+$nomeproduto ,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
       'url_instagran'=>$instagram,'url_twitter'=>$twitter,
      'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja]);
       
