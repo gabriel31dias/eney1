@@ -535,11 +535,11 @@ var openFile = function(file) {
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-               alert("sucesso")
+             
                document.getElementById(`payment${valor}`).checked = true
             },
             error: function (request) {
-                alert("error")
+               
                 console.log(request)
                 
             },
