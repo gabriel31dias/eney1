@@ -516,7 +516,7 @@ var openFile = function(file) {
         item.checked = false
     }
     
-     document.getElementById(`${valor}`).checked = true
+   //  document.getElementById(`${valor}`).checked = true
 
       
 
