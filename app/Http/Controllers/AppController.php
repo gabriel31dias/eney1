@@ -198,7 +198,7 @@ class AppController extends Controller
  
      // $getiduserloja =    $getiduserloja->id ;
       $getprodutossearch = $this->produtos->where('ID_USER', $getiduserloja->id)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->paginate(10);
-      $getgrupos = $this->grupos->where('ID_USER', $getiduserloja)->paginate(10);
+      $getgrupos = $this->grupos->where('ID_USER', $getiduserloja->id)->paginate(10);
       $imagem_loja = isset($getiduserloja->imagem_loja) ? $getiduserloja->imagem_loja: '' ;
       $facebook =  isset($getiduserloja->FACEBOOK) ? $getiduserloja->FACEBOOK: ''  ;
       $instagram = isset($getiduserloja->INSTAGRAM) ? $getiduserloja->INSTAGRAM: ''  ;
