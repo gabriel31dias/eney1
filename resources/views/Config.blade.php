@@ -307,10 +307,10 @@ visibility: hidden;
                     <p>
                         <div class="demo-switch">
                             <div class="switch">
-                                 CieloCheckout<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(1)" id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
+                                 CieloCheckout<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(1)" id="1" type="checkbox" checked="true"><span class="lever"></span>ON</label>
                             </div>
                             <div class="switch">
-                                Pagseguro<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(2)" type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
+                                Pagseguro<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(2)" type="checkbox" id="2" name="pagseguro" checked=""><span class="lever"></span>ON</label>
                             </div>
                         </div>
                         <div class="row">
@@ -510,7 +510,15 @@ var openFile = function(file) {
 
 
    async function UpdatePayment(valor) {
-    var items_payments = document.getElementsByClassName("example");
+    var items_payments = document.getElementsByClassName("payment_opt");
+     
+    for(let item of items_payments){
+        item.checked = false
+    }
+    
+     document.getElementById("" + valor).checked = true
+
+
 
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
