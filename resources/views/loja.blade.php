@@ -117,7 +117,7 @@
 							<a href="https://www.facebook.com/www.versatilsoftware.com.br">Facebook versatil</a>
 						</li>
 						<li>
-							<a href="contact.html">Contato</a>
+							<a href="contact.html">Ajuda</a>
 						</li>
 						<li class="btn-cta">
 							<a href="reservation.html">
