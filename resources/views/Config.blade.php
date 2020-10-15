@@ -459,6 +459,15 @@ visibility: hidden;
 <script>
 
 
+var items_payments = document.getElementsByClassName("payment_opt");
+     
+     for(let item of items_payments){
+         item.checked = false
+     }
+ 
+document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
+
+
 var openFile = function(file) {
    document.getElementById('save').disabled = true;
     var input = file.target;
@@ -505,7 +514,7 @@ var openFile = function(file) {
    }
 
 
-   document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
+  
 
 
 
