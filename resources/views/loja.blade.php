@@ -117,7 +117,7 @@
 							<a href="https://www.facebook.com/www.versatilsoftware.com.br">Facebook versatil</a>
 						</li>
 						<li>
-							<a  href="https://api.whatsapp.com/send?phone={{$whats_loja}}&text=Ola!">Contato loja</a>
+							<a  href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola!">Contato loja</a>
 						</li>
 						<li class="btn-cta">
 							<a href="reservation.html">
