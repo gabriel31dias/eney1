@@ -305,22 +305,22 @@ visibility: hidden;
                     <p>
                         <div class="demo-switch">
                             <div class="switch">
-                                 CieloCheckout<br><label>OFF<input id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
+                                 CieloCheckout<br><label>OFF<input onclick="UpdatePayment(1)" id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
                             </div>
                             <div class="switch">
-                                SkyTef<br><label>OFF<input type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
+                                Pagseguro<br><label>OFF<input onclick="UpdatePayment(2)" type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
                             </div>
                         </div>
                         <div class="row">
             
                             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                 <h3>Código cielo</h3>
-                                <input type="text" class="form-control" name="cielocode" id="cielocode" value="{{$usercf->cielocode ?? ''}}">
+                                <input type="text"  class="form-control" name="cielocode" id="cielocode" value="{{$usercf->cielocode ?? ''}}">
                             </div>
             
                                 <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
                                     <h3>Código Skytef</h3>
-                                    <input type="text" class="form-control" name="redecode" id="redecode"  value="{{$usercf->redecode ?? ''}}">
+                                    <input type="text"  class="form-control" name="redecode" id="redecode"  value="{{$usercf->redecode ?? ''}}">
                                 </div>
 
                                 <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
@@ -504,6 +504,14 @@ var openFile = function(file) {
 
 
    document.getElementById("skytef").checked = false;
+
+
+
+   async function UpdatePayment(valor) {
+
+         alert(valor)
+       
+   }
 
 
 

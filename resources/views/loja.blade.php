@@ -120,7 +120,7 @@
 							<a  href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola!">Contato loja</a>
 						</li>
 						<li class="btn-cta">
-							<a href="reservation.html">
+							<a href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola!">
 								<span>Informar problema</span>
 							</a>
 						</li>

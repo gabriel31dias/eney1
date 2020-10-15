@@ -55,7 +55,6 @@
 
 		     	Swal.fire('Oops...', 'As senhas digitadas não são iguais', 'error')
 
-		     
 			  return false;
 		   }
 		
