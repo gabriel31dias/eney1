@@ -57,7 +57,28 @@
 
 		function isValidForm(){
 
-			return false
+			if(! name){
+			  return false
+			}
+
+			if(! email){
+			  return false
+	    	}
+
+			if(! nomeempresa){
+			  return false
+		    }
+
+			if(! cnpj){
+			   return false
+		    } 
+
+			if(! password){
+			   return false
+		    }  
+
+
+			return true
 		}
 
 
