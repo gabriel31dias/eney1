@@ -307,10 +307,10 @@ visibility: hidden;
                     <p>
                         <div class="demo-switch">
                             <div class="switch">
-                                 CieloCheckout<br><label>OFF<input onclick="UpdatePayment(1)" id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
+                                 CieloCheckout<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(1)" id="cielo" type="checkbox" checked="true"><span class="lever"></span>ON</label>
                             </div>
                             <div class="switch">
-                                Pagseguro<br><label>OFF<input onclick="UpdatePayment(2)" type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
+                                Pagseguro<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(2)" type="checkbox" id="skytef" checked=""><span class="lever"></span>ON</label>
                             </div>
                         </div>
                         <div class="row">
@@ -510,6 +510,8 @@ var openFile = function(file) {
 
 
    async function UpdatePayment(valor) {
+    var items_payments = document.getElementsByClassName("example");
+
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
          iduser: get_id_user,
@@ -528,9 +530,6 @@ var openFile = function(file) {
             error: function (request) {
                 console(request)
                 
-            },
-            headers: {            
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')        
             },
             data: Obj_payment
         });
