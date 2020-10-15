@@ -307,10 +307,10 @@ visibility: hidden;
                     <p>
                         <div class="demo-switch">
                             <div class="switch">
-                                 CieloCheckout<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(1)" id="1" type="checkbox" checked="true"><span class="lever"></span>ON</label>
+                                 CieloCheckout<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(1)" id="payment1" type="checkbox" checked="true"><span class="lever"></span>ON</label>
                             </div>
                             <div class="switch">
-                                Pagseguro<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(2)" type="checkbox" id="2" name="pagseguro" checked=""><span class="lever"></span>ON</label>
+                                Pagseguro<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(2)" type="checkbox" id="payment2" name="pagseguro" checked=""><span class="lever"></span>ON</label>
                             </div>
                         </div>
                         <div class="row">
@@ -516,7 +516,7 @@ var openFile = function(file) {
         item.checked = false
     }
     
-   //  document.getElementById(`${valor}`).checked = true
+     document.getElementById(`payment${valor}`).checked = true
 
       
 
