@@ -51,7 +51,7 @@
 		let pass_vr = document.getElementById("password_confirmation").value;
 
 		document.getElementById('formregister').onsubmit = function() {
-
+            console.log('emit')
 		    name = document.getElementById("name").value;
             email = document.getElementById("email").value;
 		    nomeempresa = document.getElementById("nome_estabelecimento").value;
@@ -65,22 +65,28 @@
 		function isValidForm(){
 
 			if(! name){
+				console.log('name')
 			  return false
+
 			}
 
 			if(! email){
+				console.log('email')
 			  return false
 	    	}
 
 			if(! nomeempresa){
+				console.log('empresa')
 			  return false
 		    }
 
 			if(! cnpj){
+				console.log('cnpj')
 			   return false
 		    } 
 
 			if(! password){
+				console.log('pass')
 			   return false
 		    }  
 
