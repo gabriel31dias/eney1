@@ -194,7 +194,6 @@ class AppController extends Controller
          ];
        }
 
-       var_dump( $style);
  
      // $getiduserloja =    $getiduserloja->id ;
       $getprodutossearch = $this->produtos->where('ID_USER', $getiduserloja->id)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->paginate(10);
