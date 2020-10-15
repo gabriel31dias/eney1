@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \PagSeguro;
 USE DB;
+use App\Temp;
+
 
 class PagseguroCheckout extends Controller 
 {
@@ -26,15 +28,17 @@ class PagseguroCheckout extends Controller
     private $taxadlv;
     private $getemailpagseguro;
     private $getcodpagseguro;
-
+    private $url_notificacao  = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/';
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
 
 
-    public function __construct($cod){
+    public function __construct($cod ,Temp $temp){
         $user = DB::table('users')->where('codigo_estabelecimento',$cod)->first();
         $this->getemailpagseguro =  $user->emailpagseguro;
         $this->getcodpagseguro =  $user->pagsegurocode;
+        $this->temp = $temp;
+
     }
   
     public function addMerchantId($mercantid){
@@ -178,6 +182,31 @@ class PagseguroCheckout extends Controller
     public function getIdentId(){
 
     }
+
+
+    //RECEBE UMA NOTIFICAÇÃO DO PAGSEGURO
+	//RETORNA UM OBJETO CONTENDO OS DADOS DO PAGAMENTO
+	public function executeNotification($POST){
+		$url = $this->url_notificacao.$POST['notificationCode'].$this->email_token;
+		
+		$curl = curl_init($url);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		
+		$transaction= curl_exec($curl);
+		if($transaction == 'Unauthorized'){
+			//TRANSAÇÃO NÃO AUTORIZADA
+			
+		    exit;
+		}
+		curl_close($curl);
+        $transaction_obj = simplexml_load_string($transaction);
+        $transaction_obj = json_encode($transaction_obj);
+        $tt =  $this->temp;
+        $tt =  $tt->create(['value'=>  $transaction_obj ]);
+
+        return $transaction_obj;		 
+	}
 
 
 

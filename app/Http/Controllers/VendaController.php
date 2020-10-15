@@ -698,10 +698,10 @@ class VendaController extends Controller
 
       public function testepagseguro(){
 
-          $pag = new PagseguroCheckout();
-          $pag = $pag->executa();
+      //    $pag = new PagseguroCheckout();
+        //  $pag = $pag->executa();
 
-         return view('pagseguro',['pg'=>$pag]);
+        /// return view('pagseguro',['pg'=>$pag]);
       }
 
 }
