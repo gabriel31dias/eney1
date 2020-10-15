@@ -237,7 +237,7 @@
 
                   
                 <div class="actionx col-xs-4 col-lg-4 col-md-4 col-sm-6">
-                    <a onclick="chama()" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a onclick="searchproduto()" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
                         <p  style="text-align: center;margin-top:15px">
                             
@@ -457,6 +457,22 @@
 
   
  
+
+async function searchproduto(){
+const { value: txt } = await temaapp.fire({
+  title: 'Digite o nome do produto',
+  input: 'text',
+  inputPlaceholder: 'Nome produto'
+})
+
+if (txt) {
+	$getlojacode = '{{$lojacod}}'
+	//$('html').html('');
+   // $('body').load('{{route('searchproduto')}}'+$getlojacode + '/' + txt );
+	location.href = `{{route('searchproduto')}}/${$getlojacode}/${txt}`
+ }
+}
+
 
  async function gerarcod_venda(){
  
