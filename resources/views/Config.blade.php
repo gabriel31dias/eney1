@@ -526,7 +526,7 @@ var openFile = function(file) {
                console(data)
             },
             error: function (request) {
-                console(data)
+                console(request)
                 
             },
             headers: {            

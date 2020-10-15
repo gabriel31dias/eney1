@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         "/vendas/cielo/",
         "/vendas/notificacao",
         "/vendas/mudastatus",
-        "/vendas/setvendarecebida/"
+        "/vendas/setvendarecebida/",
+        "/configupdatepaymentpadrao"
     ];
 }
