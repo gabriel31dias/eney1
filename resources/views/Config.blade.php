@@ -525,7 +525,6 @@ var openFile = function(file) {
         item.checked = false
     }
     
-     document.getElementById(`payment${valor}`).checked = true
 
       
 
@@ -543,6 +542,8 @@ var openFile = function(file) {
             success: function (data) {
                alert(data)
                console.log(data)
+               document.getElementById(`payment${valor}`).checked = true
+
             },
             error: function (request) {
                 
