@@ -523,10 +523,6 @@ var openFile = function(file) {
         item.checked = false
     }
     
-     document.getElementById(`payment${valor}`).checked = true
-
-      
-
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
          iduser: get_id_user,
@@ -540,7 +536,7 @@ var openFile = function(file) {
             contentType: 'application/json',
             success: function (data) {
                alert("sucesso")
-               console.log(data)
+               document.getElementById(`payment${valor}`).checked = true
             },
             error: function (request) {
                 alert("error")
