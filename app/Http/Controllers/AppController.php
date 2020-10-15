@@ -162,6 +162,17 @@ class AppController extends Controller
 
 
     public function searchproduto($loja,$nomeproduto){
+      
+      $getsucesso = '';
+    
+      if(isset( $_GET['success'])){
+        $getsucesso =  $_GET['success'];
+      if($getsucesso == true){
+        $getsucesso = 'true';
+      }else{
+        $getsucesso = 'false';
+      }
+     }
 
      
       $getiduserloja = $this->users->where('codigo_estabelecimento',$loja)->first();
@@ -186,15 +197,25 @@ class AppController extends Controller
        var_dump( $style);
  
       $getiduserloja =    $getiduserloja->id ;
-      $getprodutossearch = $this->produtos->where('ID_USER',  $getiduserloja)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->get();
+      $getprodutossearch = $this->produtos->where('ID_USER',  $getiduserloja)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->paginate(10);
       $getgrupos = $this->grupos->where('ID_USER', $getiduserloja)->paginate(10);
+      $imagem_loja = $getiduserloja->imagem_loja ;
+      $facebook =  $getiduserloja->FACEBOOK;
+      $instagram =  $getiduserloja->INSTAGRAM;
+      $twitter = $getiduserloja->TWITTER;
+      $youtube = $getiduserloja->YOUTUBE;
+      $promoces = FacadesDB::table('produtos')->where('ID_USER', $getiduserloja->id)->where('PROMOCAO',true)
+      ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
+      ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
+      ->get();
+      $nameloja =  $getiduserloja->nome_estabelecimento ;
 
 
-      //return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,
-    //  'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
-      //'url_instagran'=>$instagram,'url_twitter'=>$twitter,
-     // 'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja]);
-       return response()->json( $getprodutossearch);
+      return view('loja',['produtos'=>  $getprodutossearch,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$loja,
+     'grupoitem'=>"pesquisa",'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
+      'url_instagran'=>$instagram,'url_twitter'=>$twitter,
+     'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja]);
+      
     }
 
     public static function getlojacode($id){
