@@ -516,9 +516,9 @@ var openFile = function(file) {
         item.checked = false
     }
     
-     document.getElementById("" + valor).checked = true
+     document.getElementById(`${valor}`).checked = true
 
-
+      
 
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
