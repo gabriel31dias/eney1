@@ -97,7 +97,7 @@ class AppController extends Controller
       $instagram =  $getloja->INSTAGRAM;
       $twitter = $getloja->TWITTER;
       $youtube = $getloja->YOUTUBE;
-
+      $whats_loja = isset($getloja->telefone1) ? $getloja->telefone1 : '';
       $promoces = FacadesDB::table('produtos')->where('ID_USER', $getloja->id)->where('PROMOCAO',true)
       ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
@@ -157,7 +157,7 @@ class AppController extends Controller
       return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,
       'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
       'url_instagran'=>$instagram,'url_twitter'=>$twitter,
-      'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja]);
+      'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja,'whats_loja'=>$whats_loja]);
     }
 
 
@@ -173,9 +173,11 @@ class AppController extends Controller
         $getsucesso = 'false';
       }
      }
-
+    
+     
       $nomeproduto = strtoupper($nomeproduto);
       $getiduserloja = $this->users->where('codigo_estabelecimento',$loja)->first();
+      $whats_loja = isset($getiduserloja->telefone1) ? $getiduserloja->telefone1 : '';
 
       if($getiduserloja->status_at == 'true'){
         $status_loja = true;
@@ -213,7 +215,7 @@ class AppController extends Controller
       return view('loja',['produtos'=>  $getprodutossearch,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$loja,
      'grupoitem'=>"RESULTADOS DA PESQUISA ".$nomeproduto ,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
       'url_instagran'=>$instagram,'url_twitter'=>$twitter,
-     'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja]);
+     'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja, 'whats_loja'=>$whats_loja]);
       
     }
 
