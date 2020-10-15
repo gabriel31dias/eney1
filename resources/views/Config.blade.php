@@ -523,6 +523,7 @@ var openFile = function(file) {
             contentType: 'application/json',
             success: function (data) {
                alert(data)
+               console(data)
             },
             error: function (request) {
                 alert(request);
