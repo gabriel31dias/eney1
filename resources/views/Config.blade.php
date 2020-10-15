@@ -459,15 +459,6 @@ visibility: hidden;
 <script>
 
 
-var items_payments = document.getElementsByClassName("payment_opt");
-     
-     for(let item of items_payments){
-         item.checked = false
-     }
- 
-document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
-
-
 var openFile = function(file) {
    document.getElementById('save').disabled = true;
     var input = file.target;
@@ -514,7 +505,13 @@ var openFile = function(file) {
    }
 
 
-  
+   var items_payments = document.getElementsByClassName("payment_opt");
+     
+    for(let item of items_payments){
+        item.checked = false
+    }
+
+   document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
 
 
 
@@ -525,6 +522,9 @@ var openFile = function(file) {
         item.checked = false
     }
     
+     document.getElementById(`payment${valor}`).checked = true
+
+      
 
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
@@ -532,27 +532,22 @@ var openFile = function(file) {
          idpayment:valor
        }
 
-      
-
-
-  let  request = $.ajax({
-      url: "{{route('configPaymentDefault')}",
-      type: "post",
-      data: Obj_payment
-   });
-
-   request.done(function(response, textStatus, jqXHR) {
-      alert('sucess')
-
-   
-   });
-
-
-   request.fail(function(jqXHR, textStatus, errorThrown) {
-          alert("error")
-      
-   })
-
+        $.ajax({
+            url: "{{ route("configPaymentDefault") }}"",
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+               alert(data)
+               console.log(data)
+            },
+            error: function (request) {
+                
+                
+            },
+            data: Obj_payment
+        });
+       
    }
 
 
