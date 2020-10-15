@@ -200,10 +200,10 @@ class AppController extends Controller
       $getprodutossearch = $this->produtos->where('ID_USER',  $getiduserloja)->where('NOME_PRODUTO', 'like', '%' . $nomeproduto . '%')->paginate(10);
       $getgrupos = $this->grupos->where('ID_USER', $getiduserloja)->paginate(10);
       $imagem_loja = isset($getiduserloja->imagem_loja) ? $getiduserloja->imagem_loja: '' ;
-      $facebook =  $getiduserloja->FACEBOOK;
-      $instagram =  $getiduserloja->INSTAGRAM;
-      $twitter = $getiduserloja->TWITTER;
-      $youtube = $getiduserloja->YOUTUBE;
+      $facebook =  isset($getiduserloja->FACEBOOK) ? $getiduserloja->FACEBOOK: ''  ;
+      $instagram = isset($getiduserloja->INSTAGRAM) ? $getiduserloja->INSTAGRAM: ''  ;
+      $twitter =  isset($getiduserloja->TWITTER) ? $getiduserloja->TWITTER: '';
+      $youtube =  isset($getiduserloja->YOUTUBE) ? $getiduserloja->YOUTUBE: '';
       $promoces = FacadesDB::table('produtos')->where('ID_USER', $getiduserloja->id)->where('PROMOCAO',true)
       ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
