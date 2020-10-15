@@ -505,7 +505,11 @@ var openFile = function(file) {
    }
 
    
-
+   var items_payments = document.getElementsByClassName("payment_opt");
+     
+     for(let item of items_payments){
+         item.checked = false
+     }
 
    document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
 
@@ -534,10 +538,11 @@ var openFile = function(file) {
             dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
-               alert(data)
+               alert("sucesso")
                console.log(data)
             },
             error: function (request) {
+                alert("error")
                 console.log(request)
                 
             },
