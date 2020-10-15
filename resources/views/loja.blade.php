@@ -111,10 +111,10 @@
 							<a href="index.html">Home</a>
 						</li>
 						<li>
-							<a href="menu.html">Menu</a>
+							<a href="https://www.instagram.com/versatilinf/">Instagram versatil</a>
 						</li>
 						<li>
-							<a href="services.html">Serviços</a>
+							<a href="https://www.facebook.com/www.versatilsoftware.com.br">Facebook versatil</a>
 						</li>
 						<li>
 							<a href="contact.html">Contato</a>
