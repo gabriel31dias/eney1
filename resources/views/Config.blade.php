@@ -524,6 +524,9 @@ var openFile = function(file) {
             success: function (data) {
                alert(data)
             },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            },
             headers: {            
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')        
             },
