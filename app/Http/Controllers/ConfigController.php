@@ -73,17 +73,15 @@ class ConfigController extends Controller
 
     public function setPaymentDefault(Request $req){
    
-       
-        return response()->json($req->iduser);  
-        //  $user_conf = $this->configs->find($req->iduser)->first();
-     //   $user_conf->fpagamentoeletronico = null;
-      //  $user_conf = $user_conf->save();
+          $user_conf = $this->configs->find($req->iduser)->first();
+          $user_conf->fpagamentoeletronico = null;
+          $user_conf = $user_conf->save();
 
-      //  $user_conf = new User();
-      ///  $user_conf =  $user_conf->find($req->iduser)->first();
-     //   $user_conf->fpagamentoeletronico = $req->idpayment;
-      //  $user_conf = $user_conf->save();
-     //   return $user_conf;
+          $user_conf = new User();
+          $user_conf =  $user_conf->find($req->iduser)->first();
+          $user_conf->fpagamentoeletronico = $req->idpayment;
+          $user_conf = $user_conf->save();
+          return $user_conf;
     }
 
 
