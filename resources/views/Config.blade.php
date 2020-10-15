@@ -515,7 +515,7 @@ var openFile = function(file) {
        }
 
         $.ajax({
-            url: '',
+            url: '{{route("configPaymentDefault")}}',
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
