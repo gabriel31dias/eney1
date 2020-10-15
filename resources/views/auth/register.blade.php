@@ -59,11 +59,6 @@
 		    password =  document.getElementById("password").value;
 		    pass_vr = document.getElementById("password_confirmation").value;
 
-              return isValidForm();
-        };
-
-		function isValidForm(){
-
 			if(! name){
 				console.log(name)
 			  return false
@@ -92,7 +87,12 @@
 
 
 			return true
-		}
+		
+        };
+
+	
+
+			
 
 
 	</script>
