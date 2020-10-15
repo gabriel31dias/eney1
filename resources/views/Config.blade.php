@@ -524,13 +524,13 @@ var openFile = function(file) {
             success: function (data) {
                alert(data)
             },
-            error: function (request, status, error) {
-                alert(request.error);
+            error: function (request) {
+                alert(request);
             },
             headers: {            
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')        
             },
-            data: JSON.stringify(Obj_payment)
+            data: Obj_payment
         });
        
    }
