@@ -8,6 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="descreption" content="" />
 <meta name="keywords" content="" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- Title -->
 <title>Versátil Delivery - Sua refeição a um click</title>
 <!-- Links -->
@@ -48,10 +49,14 @@
 		document.getElementById('formregister').onsubmit = function() {
            
 		   if (document.getElementById('password_confirmation').value == document.getElementById('password').value ){
-               alert('ok')
+               
+			   return true;
 		   }else{
-		    	alert('false')
-     
+
+		     	Swal.fire('Oops...', 'As senhas digitadas não são iguais', 'error')
+
+		     
+			  return false;
 		   }
 		
         };
