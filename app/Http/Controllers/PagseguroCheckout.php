@@ -29,6 +29,7 @@ class PagseguroCheckout extends Controller
     private $getemailpagseguro;
     private $getcodpagseguro;
     private $url_notificacao  = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/';
+    private $email_token = "";//NÃO MODIFICAR
 
    ///https://www.youtube.com/watch?v=Emsh-hIadx0
 
@@ -38,7 +39,7 @@ class PagseguroCheckout extends Controller
         $this->getemailpagseguro =  $user->emailpagseguro;
         $this->getcodpagseguro =  $user->pagsegurocode;
         $this->temp = $temp;
-
+        $this->email_token = "?email=".$this->getemailpagseguro."&token=".$this->getcodpagseguro;
     }
   
     public function addMerchantId($mercantid){
@@ -156,8 +157,17 @@ class PagseguroCheckout extends Controller
     }
     
     public function VerifyPayment($req){
-        if($req->payment_status == '2'){
-            return true;
+        if(isset($req->notificationType) && $req->notificationType == 'transaction'){
+            $response = $this->executeNotification($_POST);
+            if( $response->status==3 || $response->status==4 ){
+                //PAGAMENTO CONFIRMADO
+                //ATUALIZAR O STATUS NO BANCO DE DADOS
+                return true;
+                
+            }else{
+                //PAGAMENTO PENDENTE
+                return false;
+            }
         }
     }
 
@@ -201,9 +211,9 @@ class PagseguroCheckout extends Controller
 		}
 		curl_close($curl);
         $transaction_obj = simplexml_load_string($transaction);
-        $transaction_obj = json_encode($transaction_obj);
+        $transaction_ob = json_encode($transaction_obj);
         $tt =  $this->temp;
-        $tt =  $tt->create(['value'=>  $transaction_obj ]);
+        $tt =  $tt->create(['value'=>  $transaction_ob ]);
 
         return $transaction_obj;		 
 	}
