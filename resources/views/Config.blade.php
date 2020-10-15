@@ -549,7 +549,7 @@ var openFile = function(file) {
                 
                 
             },
-            data: Obj_payment
+            data: JSON.stringify(Obj_payment) 
         });
        
    }
