@@ -509,6 +509,7 @@ var openFile = function(file) {
      
      for(let item of items_payments){
          item.checked = false
+         console.log('dis lect')
      }
 
    document.getElementById(`payment{{$usercf->fpagamentoeletronico ?? ''}}`).checked = true;
