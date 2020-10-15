@@ -117,11 +117,11 @@
 							<a href="https://www.facebook.com/www.versatilsoftware.com.br">Facebook versatil</a>
 						</li>
 						<li>
-							<a href="contact.html">Ajuda</a>
+							<a href="contact.html">Contato loja</a>
 						</li>
 						<li class="btn-cta">
 							<a href="reservation.html">
-								<span>Reserva</span>
+								<span>Informar problema</span>
 							</a>
 						</li>
 					</ul>
