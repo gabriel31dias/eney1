@@ -31,9 +31,9 @@
 				<label for="cnpj">CNPJ Da Empresa:</label>
 				<input type="text" id="cnpj" name="cnpj" placeholder="Ex: 36.922.552/0001-02" required>
 				<label for="nome">Senha:</label>
-				<input type="password" name="password" placeholder="Informe uma senha" required>
+				<input type="password" id="password" name="password" placeholder="Informe uma senha" required>
 				<label for="nome">Confirme sua senha:</label>
-				<input type="password" name="password_confirmation" placeholder="Confirme sua senha" required>
+				<input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirme sua senha" required>
 				<input type="submit" name="btnEnviar" value="Cadastrar">
 				<picture>
 					<a href="https://versatilsoftwares.com.br" target="_blank"><img src="assets/img/logoVersátil.png" alt="Logo Versátil Informática"><a>
@@ -43,50 +43,16 @@
 	</div>
 	<script>
 
-		var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-		var nomeempresa = document.getElementById("nome_estabelecimento").value;
-		var cnpj = document.getElementById("cnpj").value;
-		var password =  document.getElementById("password").value;
-		var pass_vr = document.getElementById("password_confirmation").value;
+		
 
 		document.getElementById('formregister').onsubmit = function() {
-            console.log('emit')
-		    name = document.getElementById("name").value;
-            email = document.getElementById("email").value;
-		    nomeempresa = document.getElementById("nome_estabelecimento").value;
-		    cnpj = document.getElementById("cnpj").value;
-		    password =  document.getElementById("password").value;
-		    pass_vr = document.getElementById("password_confirmation").value;
-
-			if(! name){
-				console.log(name)
-			  return false
-
-			}
-
-			if(! email){
-				console.log('email')
-			  return false
-	    	}
-
-			if(! nomeempresa){
-				console.log('empresa')
-			  return false
-		    }
-
-			if(! cnpj){
-				console.log('cnpj')
-			   return false
-		    } 
-
-			if(! password){
-				console.log('pass')
-			   return false
-		    }  
-
-
-			return true
+           
+		   if (document.getElementById('password_confirmation').value == document.getElementById('password').value ){
+               alert('ok')
+		   }else{
+		    	alert('false')
+     
+		   }
 		
         };
 
