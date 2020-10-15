@@ -211,10 +211,9 @@ class PagseguroCheckout extends Controller
 		    exit;
 		}
         curl_close($curl);
-        echo $transaction; exit;
+        
         $transaction_obj = simplexml_load_string($transaction);
        
-
         $transaction_ob = json_encode($transaction_obj);
         $tt =  $this->temp;
         $tt =  $tt->create(['value'=>  $transaction_ob ]);
