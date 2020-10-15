@@ -526,33 +526,32 @@ var openFile = function(file) {
     }
     
 
-      
-
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
          iduser: get_id_user,
          idpayment:valor
        }
 
-        $.ajax({
-            url: '{{route("configPaymentDefault")}}',
-            type: 'post',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {
-               alert(data)
-               console.log(data)
-               document.getElementById(`payment${valor}`).checked = true
+      
 
-            },
-            error: function (request) {
-                
-                
-            },
-            data: JSON.stringify(Obj_payment) 
-        });
-       
-   }
+
+  let  request = $.ajax({
+      url: "{{route('configPaymentDefault')}",
+      type: "post",
+      data: Obj_payment
+   });
+
+   request.done(function(response, textStatus, jqXHR) {
+      alert('sucess')
+
+   
+   });
+
+
+   request.fail(function(jqXHR, textStatus, errorThrown) {
+          alert("error")
+      
+   })
 
 
 
