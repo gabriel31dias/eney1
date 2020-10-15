@@ -43,12 +43,12 @@
 	</div>
 	<script>
 
-		let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-		let nomeempresa = document.getElementById("nome_estabelecimento").value;
-		let cnpj = document.getElementById("cnpj").value;
-		let password =  document.getElementById("password").value;
-		let pass_vr = document.getElementById("password_confirmation").value;
+		var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+		var nomeempresa = document.getElementById("nome_estabelecimento").value;
+		var cnpj = document.getElementById("cnpj").value;
+		var password =  document.getElementById("password").value;
+		var pass_vr = document.getElementById("password_confirmation").value;
 
 		document.getElementById('formregister').onsubmit = function() {
             console.log('emit')
