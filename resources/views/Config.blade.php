@@ -547,7 +547,7 @@ var openFile = function(file) {
                 console.log(request)
                 
             },
-            data: Obj_payment
+            data: JSON.stringify(Obj_payment) 
         });
        
    }
