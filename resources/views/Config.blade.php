@@ -538,7 +538,7 @@ var openFile = function(file) {
                console.log(data)
             },
             error: function (request) {
-                
+                console.log(request)
                 
             },
             data: Obj_payment
