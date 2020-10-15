@@ -65,7 +65,7 @@
 		function isValidForm(){
 
 			if(! name){
-				console.log('name')
+				console.log(name)
 			  return false
 
 			}
