@@ -9,7 +9,8 @@ use App\Http\Controllers\RedeCheckoutlink;
 
 class SwitchForma extends Controller
 {
-
+    
+    
     private $user;
     private $iduser;
     private $cod_estabelecimento;
@@ -38,10 +39,7 @@ class SwitchForma extends Controller
 
    }
 
-   public static function isJson($string) {
-    json_decode($string);
-    return (json_last_error() == JSON_ERROR_NONE);
-   }
+   
 
 
    public static function getcodeloja($req){
@@ -79,8 +77,29 @@ class SwitchForma extends Controller
    }
 
 
-   public static function requestVenda(){
+   public static function requestVenda($codevenda){
+       $getemail_token = SwitchForma::getemailtoken();
+       $url =  "".$codevenda.$getemail_token;
+		
+       $curl = curl_init($url);
+       curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    
+       $transaction= curl_exec($curl);
+       if($transaction == 'Unauthorized'){
+        //TRANSAÇÃO NÃO AUTORIZADA
+        
+          exit;
+       }
+      curl_close($curl);
+      $transaction_obj = simplexml_load_string($transaction);
+      return $transaction_obj;
+     
 
+   }
+
+   public static function getemailtoken(){
+       $getemail = DB::table('users')->where('',)->first();
 
    }
    

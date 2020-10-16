@@ -65,7 +65,7 @@ class PagseguroCheckout extends Controller
         curl_setopt($ch, CURLOPT_URL, 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=B401968342C944079D49933B107A188A');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "email=".$this->getemailpagseguro."&token=".$this->getcodpagseguro."&currency=BRL&itemId1=001&itemDescription1=".$text_payment."%201&itemAmount1=".$this->valor_total."&itemQuantity1=1&reference=124665c23f7896adff508377925&senderName=gabriel dias%20Green&senderAreaCode=51&senderPhone=".$this->soNumero($this->Telefone)."&senderEmail=".$this->Email."&shippingAddressRequired=true&extraAmount=0.00");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "email=".$this->getemailpagseguro."&token=".$this->getcodpagseguro."&currency=BRL&itemId1=001&itemDescription1=".$text_payment."%201&itemAmount1=".$this->valor_total."&itemQuantity1=1&reference=".$this->OrderNumber."&senderName=gabriel dias%20Green&senderAreaCode=51&senderPhone=".$this->soNumero($this->Telefone)."&senderEmail=".$this->Email."&shippingAddressRequired=true&extraAmount=0.00");
         $headers = array();
         $headers[] = 'Content-Type: application/x-www-form-urlencoded';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -77,9 +77,18 @@ class PagseguroCheckout extends Controller
         $xml=simplexml_load_string( $result ) or die("Error: Cannot create object");
       //  $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $xml->code;
       $checkoutUrl = "https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $xml->code;
+    
 
 
         return  $checkoutUrl;
+    }
+
+    public function getEmailPagseguro(){
+
+    }
+
+    public function getTokenPagseguro(){
+        
     }
 
     public function soNumero($str) {
