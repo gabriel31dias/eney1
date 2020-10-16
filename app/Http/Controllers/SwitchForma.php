@@ -54,11 +54,7 @@ class SwitchForma extends Controller
     }
 
 
-    if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
-         
-        return "rabisco";
-		
-	}
+   
     
 
 
