@@ -53,7 +53,7 @@ class SwitchForma extends Controller
         return  $auxvend[0];
     }
     
-    return $req->transaction;
+    return $req;
 
 
     if(isset($req->reference)){
