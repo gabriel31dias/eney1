@@ -561,7 +561,7 @@ class VendaController extends Controller
                       return $venda ;
                 }else{
                     //PAGAMENTO PENDENTE
-                    
+                    return "venda nao aprovada";
                     
                 }
              }
