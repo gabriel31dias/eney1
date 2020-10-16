@@ -85,14 +85,14 @@ class PagseguroCheckout extends Controller
 
     public function getEmailPagseguro(){
        $getcodeloja = explode("-", $this->OrderNumber);
-       $getemailpg = DB::table('users')->where('id',$getcodeloja[0])->first();
+       $getemailpg = DB::table('users')->where('codigo_estabelecimento',$getcodeloja[0])->first();
        $getemailpg = $getemailpg->emailpagseguro ;
        return   $getemailpg;
     }
 
     public function getTokenPagseguro(){
         $getcodeloja =  explode("-", $this->OrderNumber);
-        $gettokenpg = DB::table('users')->where('id',$getcodeloja[0])->first();
+        $gettokenpg = DB::table('users')->where('codigo_estabelecimento',$getcodeloja[0])->first();
         $gettokenpg =  $gettokenpg->pagsegurocode;
         return  $gettokenpg;
     }
