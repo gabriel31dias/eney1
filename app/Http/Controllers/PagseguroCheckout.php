@@ -77,6 +77,11 @@ class PagseguroCheckout extends Controller
         $xml=simplexml_load_string( $result ) or die("Error: Cannot create object");
       //  $checkoutUrl = "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $xml->code;
       $checkoutUrl = "https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" . $xml->code;
+       $getcodeloja = explode("-", $this->OrderNumber); 
+      
+        DB::table('calbackpagseguro')->insert(
+          ['code_loja' =>  $getcodeloja[0] , 'tokenvenda' => $xml->code ]
+        );
     
         return  $checkoutUrl;
     }
