@@ -55,8 +55,12 @@ class SwitchForma extends Controller
 
 
     if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
+        ///Se for pagseguro entra aqui
+
+       $venda = SwitchForma::requestVenda($_POST['notificationCode']);
+
          
-        return "rabisco";
+        return $venda;
         
     }
     
@@ -71,6 +75,12 @@ class SwitchForma extends Controller
 
  
     
+
+   }
+
+
+   public static function requestVenda(){
+
 
    }
    
