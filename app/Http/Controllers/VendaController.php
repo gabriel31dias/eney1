@@ -537,23 +537,38 @@ class VendaController extends Controller
 
         if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
             ///Se for pagseguro entra aqui
-    
-             $venda = SwitchForma::requestVenda($_POST['notificationCode']);
-             $auxvend = explode("-", $venda->reference);
-
+             $response = SwitchForma::requestVenda($_POST['notificationCode']);
+             $auxvend = explode("-", $response->reference);
              $venda = $this->vendas->find($auxvend[1]);
 
              if($venda){
                  return response()->json($venda);
+
+                 if( $response->status==3 || $response->status==4 ){
+                    //PAGAMENTO CONFIRMADO
+                    //ATUALIZAR O STATUS NO BANCO DE DADOS
+                     $venda->statuspvenda_pg = true;
+                     $venda = $venda->save();
+                     $client = new Client(new Version2X('https://servidorsocket3636.herokuapp.com/'));
+                     $getvenda =  $this->vendas->find($auxvend[1])->first();
+                     $client->initialize();
+                     // send for server (listen) the any array
+                     $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
+                     $client->close();
+                     $SendSms = new SmsController();
+                     $SendSms->SendSinglesms('0030015529','Uma venda foi realizada no aplicativo para o cliente ' +  $getvenda->nomecliente + 'no valor de ' +  $getvenda->valor_total , $getvenda->numerotelefone ) ;
+
+                    
+                }else{
+                    //PAGAMENTO PENDENTE
+                    
+                    
+                }
              }
             
             /// return  $auxvend[0] . "hahhahah";
             // pega a loja
             
-
-
-
-
         }
         
         

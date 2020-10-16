@@ -45,23 +45,9 @@ class SwitchForma extends Controller
    public static function getcodeloja($req){
     //  $tt =  $this->temp; 
 
-    if(isset($req->order_number)){
         $auxvend = explode("-", $req->order_number);
         return  $auxvend[0];
-    }
-
-    if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
-        ///Se for pagseguro entra aqui
-
-         $venda = SwitchForma::requestVenda($_POST['notificationCode']);
-         $auxvend = explode("-", $venda->reference);
-         return $auxvend[0];
-        // pega a loja
-        
-    }
     
-
-
    }
 
 
