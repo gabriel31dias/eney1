@@ -83,7 +83,7 @@ class SwitchForma extends Controller
 
         $email = 'gabrieldias@keemail.me';
         $token = 'B401968342C944079D49933B107A188A';
-        return "?email={$email}&token={$token}";
+        return "?email=gabrieldias@keemail.me&token=B401968342C944079D49933B107A188A";
      /// return response()->json($getcalback_pg);
    }
    
