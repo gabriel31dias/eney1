@@ -62,7 +62,7 @@ class PagseguroCheckout extends Controller
         $this->getcodpagseguro =  $this->getTokenPagseguro() ;
         $ch = curl_init();
        // curl_setopt($ch, CURLOPT_URL, 'https://ws.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c');
-        curl_setopt($ch, CURLOPT_URL, 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=B401968342C944079D49933B107A188A');
+        curl_setopt($ch, CURLOPT_URL, 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email='.$this->getemailpagseguro.'&token='.$this->getcodpagseguro.'');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "email=".$this->getemailpagseguro."&token=".$this->getcodpagseguro."&currency=BRL&itemId1=001&itemDescription1=".$text_payment."%201&itemAmount1=".$this->valor_total."&itemQuantity1=1&reference=".$this->OrderNumber."&senderName=gabriel dias%20Green&senderAreaCode=51&senderPhone=".$this->soNumero($this->Telefone)."&senderEmail=".$this->Email."&shippingAddressRequired=true&extraAmount=0.00");
