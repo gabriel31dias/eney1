@@ -542,7 +542,7 @@ class VendaController extends Controller
              $venda = $this->vendas->find($auxvend[1]);
 
              if($venda){
-                 return response()->json($venda);
+               
 
                  if( $response->status==3 || $response->status==4 ){
                     //PAGAMENTO CONFIRMADO
