@@ -54,11 +54,12 @@ class SwitchForma extends Controller
     }
 
 
-   // $xml = simplexml_load_string($req);
-    $json = json_encode($req);
-    $array = json_decode($json,TRUE);
+    if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
+         
+        return "rabisco"
+		
+	}
     
-    return  $array;
 
 
     if(isset($req->reference)){
