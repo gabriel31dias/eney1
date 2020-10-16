@@ -47,8 +47,8 @@ class SwitchForma extends Controller
    public static function getcodeloja($req){
     //  $tt =  $this->temp; 
 
-    $verifica = SwitchForma::isJson($req);
-   var_dump($verifica);
+    
+
     return  $verifica;
 
 
