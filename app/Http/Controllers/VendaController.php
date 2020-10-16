@@ -559,7 +559,7 @@ class VendaController extends Controller
                      $client->emit('canalcomunica', ['valuexx' =>  $getvenda->venda_json]);///Joga pra tabela de logs de mudança de status de venda
                      $client->close();
                      $SendSms = new SmsController();
-                     $SendSms->SendSinglesms('0030015529','Uma venda foi realizada no aplicativo para o cliente ' +  $getvenda->nomecliente + 'no valor de ' +  $getvenda->valor_total , $getvenda->numerotelefone ) ;
+                     $SendSms->SendSinglesms('0030015529','Uma venda foi realizada no aplicativo para o cliente ' .  $getvenda->nomecliente . 'no valor de ' .  $getvenda->valor_total , $getvenda->numerotelefone ) ;
 
                       return $venda ;
                 }else{
