@@ -58,8 +58,8 @@ class PagseguroCheckout extends Controller
         }else{
             $text_payment = 'Total em produtos ';
         }
-        $this->getemailpagseguro = "gabrieldias@keemail.me";
-        $this->getcodpagseguro = "B401968342C944079D49933B107A188A";
+        $this->getemailpagseguro =  $this->getEmailPagseguro();
+        $this->getcodpagseguro =  $this->getTokenPagseguro() ;
         $ch = curl_init();
        // curl_setopt($ch, CURLOPT_URL, 'https://ws.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=a6d998a5-b3a0-43c4-b1e2-84b69e347c52a97cd4b049dbb5325d003db5c6bc0bf7e77d-f4a8-4fa0-a4e2-1d1c3a890f0c');
         curl_setopt($ch, CURLOPT_URL, 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email=gabrieldias@keemail.me&token=B401968342C944079D49933B107A188A');
@@ -84,11 +84,17 @@ class PagseguroCheckout extends Controller
     }
 
     public function getEmailPagseguro(){
-
+       $getcodeloja = explode("-", $this->OrderNumber);
+       $getemailpg = DB::table('users')->where('id',$getcodeloja[0])->first();
+       $getemailpg = $getemailpg->emailpagseguro ;
+       return   $getemailpg;
     }
 
     public function getTokenPagseguro(){
-        
+        $getcodeloja =  explode("-", $this->OrderNumber);
+        $gettokenpg = DB::table('users')->where('id',$getcodeloja[0])->first();
+        $gettokenpg =  $gettokenpg->pagsegurocode;
+        return  $gettokenpg;
     }
 
     public function soNumero($str) {
