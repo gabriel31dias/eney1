@@ -58,6 +58,8 @@ class SwitchForma extends Controller
         $venda = SwitchForma::requestVenda($_POST['notificationCode']);
         $auxvend = explode("-", $venda->reference);
         return $auxvend[0];
+
+        return "gabriel"
         // pega a loja
         
     }
