@@ -52,8 +52,13 @@ class SwitchForma extends Controller
         $auxvend = explode("-", $req->order_number);
         return  $auxvend[0];
     }
+
+
+    $xml = simplexml_load_string($req);
+    $json = json_encode($xml);
+    $array = json_decode($json,TRUE);
     
-    return $req;
+    return  $array;
 
 
     if(isset($req->reference)){
