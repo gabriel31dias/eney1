@@ -535,12 +535,8 @@ class VendaController extends Controller
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
 
-        if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
-         
-            return "rabisco";
-            
-        }
-        
+      
+
         $getcodeloja = SwitchForma::getcodeloja($req);
         return $getcodeloja;
         $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
