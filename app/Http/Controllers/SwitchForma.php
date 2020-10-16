@@ -38,10 +38,18 @@ class SwitchForma extends Controller
 
    }
 
+   public static function isJson($string) {
+    json_decode($string);
+    return (json_last_error() == JSON_ERROR_NONE);
+   }
+
+
    public static function getcodeloja($req){
     //  $tt =  $this->temp; 
 
-   
+    $verifica = SwitchForma::isJson($req);
+
+    return  $verifica;
 
 
     if(isset($req->order_number)){
