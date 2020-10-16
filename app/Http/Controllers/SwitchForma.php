@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\CieloCheckoutlink;
 use App\Http\Controllers\RedeCheckoutlink;
-
+use App\Http\Controllers\PagseguroCheckout;
 class SwitchForma extends Controller
 {
     
@@ -71,10 +71,12 @@ class SwitchForma extends Controller
      
    }
 
-   public static function getemailtoken(){
+   public static function getemailtoken($codevenda){
         //pesquisa no calback de venda pagseguro e manda pra porra do sevidor pra obter de tablhes da venda
-        return "?email=gabrieldias@keemail.me&token=B401968342C944079D49933B107A188A";
-
+        $getcalback_pg = DB::table('calbackpagseguro')->where('tokenvenda', $codevenda)->first();
+        $email = DB::table('users')->where('codigo_estabelecimento', $codevenda)->first(['emailpagseguro']);
+        $token = DB::table('users')->where('codigo_estabelecimento', $codevenda)->first(['pagsegurocode']);
+        return "?email={$email}&token={$token}";
    }
    
   
