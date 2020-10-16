@@ -48,7 +48,7 @@ class SwitchForma extends Controller
     //  $tt =  $this->temp; 
 
     $verifica = SwitchForma::isJson($req);
-
+   var_dump($verifica);
     return  $verifica;
 
 
