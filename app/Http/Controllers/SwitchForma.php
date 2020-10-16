@@ -48,14 +48,12 @@ class SwitchForma extends Controller
     }
 
     if(isset($req->reference)){
-        $auxvend = explode("-", $req->reference);
-        return  $auxvend[0];
+       // $auxvend = explode("-", $req->reference);
+       // return  $auxvend[0];
+       return "abriel"
     }
 
  
-
-     return "hahahahahhahahhahahhah";
-
     
 
    }
