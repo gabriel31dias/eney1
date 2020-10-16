@@ -80,10 +80,7 @@ class SwitchForma extends Controller
         $email = DB::table('users')->where('codigo_estabelecimento', $codevenda)->first(['emailpagseguro']);
         $token = DB::table('users')->where('codigo_estabelecimento', $codevenda)->first(['pagsegurocode']);
 
-
-        $email = 'gabrieldias@keemail.me';
-        $token = 'B401968342C944079D49933B107A188A';
-        return "?email=gabrieldias@keemail.me&token=B401968342C944079D49933B107A188A";
+        return "?email={$email}&token={$token}";
      /// return response()->json($getcalback_pg);
    }
    
