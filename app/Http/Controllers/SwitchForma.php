@@ -60,7 +60,6 @@ class SwitchForma extends Controller
        $getemail_token = SwitchForma::getemailtoken($codevenda);//passa o token do pag seguro 
       
        $url =  "https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/".$codevenda.$getemail_token;
-       return $url;
        $curl = curl_init($url);
        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
