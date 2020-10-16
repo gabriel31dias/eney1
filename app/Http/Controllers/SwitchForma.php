@@ -41,6 +41,8 @@ class SwitchForma extends Controller
    public static function getcodeloja($req){
     //  $tt =  $this->temp; 
 
+   
+
 
     if(isset($req->order_number)){
         $auxvend = explode("-", $req->order_number);
@@ -52,6 +54,7 @@ class SwitchForma extends Controller
        // return  $auxvend[0];
        return "abriel";
     }
+    return $req;
 
  
     
