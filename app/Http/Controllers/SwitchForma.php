@@ -39,10 +39,26 @@ class SwitchForma extends Controller
    }
 
    public static function getcodeloja($req){
-    //  $tt =  $this->temp;
-      $auxvend = explode("-", $req->order_number);
+    //  $tt =  $this->temp; 
 
-      return  $auxvend[0];
+    $user =  $this->user;
+    
+    switch ($user->fpagamentoeletronico) {
+      case 1:
+         // return new CieloCheckoutlink();
+         $auxvend = explode("-", $req->order_number);
+         return  $auxvend[0];
+      break;
+      case 2:
+        $auxvend = explode("-", $req->reference);
+        return  $auxvend[0];
+      break;
+     }
+
+
+
+
+    
 
    }
    
