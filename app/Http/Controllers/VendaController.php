@@ -574,8 +574,10 @@ class VendaController extends Controller
             
         }
         
+        return response()->json($req->order_number);
         
         $getcodeloja = SwitchForma::getcodeloja($req);
+        
         $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
         $selectf = $selectf->getForma();
         $payment_vr =  $selectf;
