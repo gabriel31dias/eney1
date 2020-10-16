@@ -75,7 +75,7 @@ class SwitchForma extends Controller
 
    public static function getemailtoken($codevenda){
         //pesquisa no calback de venda pagseguro e manda pra porra do sevidor pra obter de tablhes da venda
-        $getcalback_pg = DB::table('calbackpagseguro')->where('tokenvenda', $codevenda)->first();
+        $getcalback_pg = DB::table('users')->where('codigo_estabelecimento', $_GET['loja'])->first();
       //  $email = DB::table('users')->where('codigo_estabelecimento', $codevenda)->first(['emailpagseguro']);
        // $token = DB::table('users')->where('codigo_estabelecimento', $codevenda)->first(['pagsegurocode']);
       ///  return "?email={$email}&token={$token}";
