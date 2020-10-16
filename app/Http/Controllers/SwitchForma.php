@@ -7,6 +7,8 @@ use App\User;
 use App\Http\Controllers\CieloCheckoutlink;
 use App\Http\Controllers\RedeCheckoutlink;
 use App\Http\Controllers\PagseguroCheckout;
+use DB;
+
 class SwitchForma extends Controller
 {
     
