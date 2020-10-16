@@ -540,8 +540,14 @@ class VendaController extends Controller
     
              $venda = SwitchForma::requestVenda($_POST['notificationCode']);
              $auxvend = explode("-", $venda->reference);
+
+             $venda = $this->vendas->find($auxvend[1]);
+
+             if($venda){
+                 return response()->json($venda);
+             }
             
-             return  $auxvend[0] . "hahhahah";
+            /// return  $auxvend[0] . "hahhahah";
             // pega a loja
             
 
