@@ -26,7 +26,7 @@ use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
 use PagSeguroLibrary\PagSeguroLibrary ;
 
-
+use DB;
 
 
 
