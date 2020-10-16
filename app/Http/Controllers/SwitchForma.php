@@ -57,7 +57,7 @@ class SwitchForma extends Controller
       //  $auxvend = explode("-", $venda->reference);
         ///return $auxvend[0];
 
-        return 'wdwadwa';
+        return 'toma trocha';
         // pega a loja
         
     }
