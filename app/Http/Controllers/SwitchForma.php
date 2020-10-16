@@ -54,7 +54,7 @@ class SwitchForma extends Controller
 
  
 
-
+     return "hahahahahhahahhahahhah";
 
     
 
