@@ -24,6 +24,7 @@ Route::get('/openloja', 'HomeController@openloja')->name('openloja');
 Route::get('/testesocket', 'VendaController@testesteservidorsocket')->name('testesteservidorsocket');
 Route::get('/testesmart', 'VendaController@testsmartpg')->name('testsmartpg');
 Route::get('/testpagseguro', 'VendaController@testepagseguro')->name('testepagseguro');
+Route::get('/listcalbackpg', 'VendaController@listcalbackpg')->name('listcalbackpg');
 
 
 Route::get('/testerede', 'VendaController@testerede')->name('testerede');

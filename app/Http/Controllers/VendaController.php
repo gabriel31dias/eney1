@@ -742,5 +742,13 @@ class VendaController extends Controller
         /// return view('pagseguro',['pg'=>$pag]);
       }
 
+
+      public function listcalbackpg(){
+          $getx = DB::table('calbackpagseguro')->get();
+          return response()->json($getx);
+
+
+      }
+
 }
 
