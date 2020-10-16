@@ -48,13 +48,13 @@ class SwitchForma extends Controller
     //  $tt =  $this->temp; 
 
 
-    return  $req;
-
-
     if(isset($req->order_number)){
         $auxvend = explode("-", $req->order_number);
         return  $auxvend[0];
     }
+    
+    return $req->transaction;
+
 
     if(isset($req->reference)){
        // $auxvend = explode("-", $req->reference);
