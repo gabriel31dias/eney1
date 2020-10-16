@@ -53,26 +53,14 @@ class SwitchForma extends Controller
     if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
         ///Se for pagseguro entra aqui
 
-       $venda = SwitchForma::requestVenda($_POST['notificationCode']);
-      $auxvend = explode("-", $venda->reference);
-      return $auxvend[0];
-
-        return 'toma trocha';
+         $venda = SwitchForma::requestVenda($_POST['notificationCode']);
+         $auxvend = explode("-", $venda->reference);
+         return $auxvend[0];
         // pega a loja
         
     }
     
 
-
-    if(isset($req->reference)){
-       // $auxvend = explode("-", $req->reference);
-       // return  $auxvend[0];
-       return "abriel";
-    }
-    return $req;
-
- 
-    
 
    }
 

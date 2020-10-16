@@ -536,7 +536,6 @@ class VendaController extends Controller
         //Função responsavel por mudar status da tranzação
         
         $getcodeloja = SwitchForma::getcodeloja($req);
-        return $getcodeloja;
         $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
         $selectf = $selectf->getForma();
         $payment_vr =  $selectf;
