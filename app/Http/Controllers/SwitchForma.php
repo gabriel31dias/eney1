@@ -47,7 +47,6 @@ class SwitchForma extends Controller
    public static function getcodeloja($req){
     //  $tt =  $this->temp; 
 
-     var_dump($req);
 
     return  $req;
 
