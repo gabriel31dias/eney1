@@ -535,6 +535,8 @@ class VendaController extends Controller
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
 
+        return $_GET['loja'];
+
         if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
             ///Se for pagseguro entra aqui
              $response = SwitchForma::requestVenda($_POST['notificationCode']);
