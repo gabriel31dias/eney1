@@ -535,8 +535,6 @@ class VendaController extends Controller
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
         
-
-    
         $getcodeloja = SwitchForma::getcodeloja($req);
         return $getcodeloja;
         $selectf = new SwitchForma($getcodeloja);///Seleciona forma pagamento da loja
