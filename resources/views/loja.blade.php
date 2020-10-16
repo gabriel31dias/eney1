@@ -108,7 +108,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="">Home</a>
 						</li>
 						<li>
 							<a href="https://www.instagram.com/versatilinf/">Instagram versatil</a>
