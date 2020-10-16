@@ -54,8 +54,8 @@ class SwitchForma extends Controller
     }
 
 
-    $xml = simplexml_load_string($req);
-    $json = json_encode($xml);
+   // $xml = simplexml_load_string($req);
+    $json = json_encode($req);
     $array = json_decode($json,TRUE);
     
     return  $array;
