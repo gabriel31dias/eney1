@@ -535,7 +535,7 @@ class VendaController extends Controller
     public function mudastatus( Request $req){
         //Função responsavel por mudar status da tranzação
     
-        return response()->json($req->order_number);
+        return response()->json($req->teste);
        
 
         if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
