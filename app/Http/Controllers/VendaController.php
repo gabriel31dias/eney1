@@ -547,7 +547,7 @@ class VendaController extends Controller
              if($venda){
                
 
-                 if( $response->status==1 || $response->status==4 ){
+                 if( $response->status==2 || $response->status==4 ){
                     //PAGAMENTO CONFIRMADO
                     //ATUALIZAR O STATUS NO BANCO DE DADOS
                      $venda->statuspvenda_pg = true;
