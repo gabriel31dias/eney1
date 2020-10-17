@@ -30,7 +30,7 @@ class AppController extends Controller
     } 
 
     public function index(){  ///Todas as lojas
-      $urlloja = $_SERVER['SCRIPT_URI'];
+     
       $status_loja = true;
       $user = Auth::user()->email;
       $username = Auth::user()->name;
@@ -47,7 +47,7 @@ class AppController extends Controller
         ];
       }
     
-      return view('appview',['user'=>$user , 'username' => $username,'iduser' => $iduser,'getlojas'=> $getlojas,'tipo_op'=> $tipo_op,'tipo_op'=>$tipo_op,'style'=>$style,'status_loja'=>$status_loja,'urlloja'=> $urlloja ]);
+      return view('appview',['user'=>$user , 'username' => $username,'iduser' => $iduser,'getlojas'=> $getlojas,'tipo_op'=> $tipo_op,'tipo_op'=>$tipo_op,'style'=>$style,'status_loja'=>$status_loja ]);
     }
 
 

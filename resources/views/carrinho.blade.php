@@ -108,20 +108,20 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li>
-							<a href="index.html">Home</a>
+							<a href="{{$urlloja}}">Home</a>
 						</li>
 						<li>
-							<a href="menu.html">Menu</a>
+							<a href="https://www.instagram.com/versatilinf/">Instagram versatil</a>
 						</li>
 						<li>
-							<a href="services.html">Serviços</a>
+							<a href="https://www.facebook.com/www.versatilsoftware.com.br">Facebook versatil</a>
 						</li>
 						<li>
-							<a href="contact.html">Contato</a>
+							<a  href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola!">Contato loja</a>
 						</li>
 						<li class="btn-cta">
-							<a href="reservation.html">
-								<span>Reserva</span>
+							<a href="https://api.whatsapp.com/send?phone=55{{env('APP_TELEFONE_VERSATIL')}}&text=Ola!">
+								<span>Informar problema</span>
 							</a>
 						</li>
 					</ul>

@@ -45,6 +45,7 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
+        $urlloja = $_SERVER['REQUEST_URI'];
         $this->set_total();
         $this->set_total_adicionais();
         $getwhats_loja =  $this->getnumero_whats($codigo);
@@ -98,7 +99,7 @@ class CarrinhoController extends Controller
 
         $getgrupos = $this->grupos->where('ID_USER', $getidloja)->paginate(10);
 
-        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => $imagem_loja , 'nameloja'=>$nameloja, 'status_loja'=> $status_loja ]);
+        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => $imagem_loja , 'nameloja'=>$nameloja, 'status_loja'=> $status_loja , 'urlloja'=>  $urlloja ]);
     }
 
 
