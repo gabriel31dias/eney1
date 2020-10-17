@@ -108,7 +108,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li>
-							<a href="$_SERVER['SCRIPT_URI']">Home</a>
+							<a href="{{$urlloja}}">Home</a>
 						</li>
 						<li>
 							<a href="https://www.instagram.com/versatilinf/">Instagram versatil</a>
