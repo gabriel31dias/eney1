@@ -49,8 +49,9 @@ class VendaController extends Controller
     }
 
     public function index(Request $req)
-    {
+    { 
         $user = Auth::user()->email;
+        $codeloja =  Auth::user()->codigo_estabelecimento;
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
