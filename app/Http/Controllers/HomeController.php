@@ -39,7 +39,7 @@ class HomeController extends Controller
 
       
 
-        $urlloja = $_SERVER['SCRIPT_URI'];
+        
 
         $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
@@ -58,7 +58,7 @@ class HomeController extends Controller
               
         }
 
-        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,'gg'=>$gg ,'urlloja'=> $urlloja ]);
+        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,'gg'=>$gg  ]);
     }
 
     public function openloja(){
