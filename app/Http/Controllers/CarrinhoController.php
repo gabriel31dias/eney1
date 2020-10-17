@@ -45,7 +45,7 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
-        $urlloja = $_SERVER['REQUEST_URI'];
+        $urlloja = $_SERVER['SERVER_NAME'] ;
        
         $this->set_total();
         $this->set_total_adicionais();
