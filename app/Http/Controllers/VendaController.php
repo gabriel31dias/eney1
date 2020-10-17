@@ -55,7 +55,7 @@ class VendaController extends Controller
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
         Session::put('ID_USER', $iduser);
-        return view('vendas', ['user' => $user, 'username' => $username, 'iduser' => $iduser, 'tipo_op' => $tipo_op]);
+        return view('vendas', ['user' => $user, 'username' => $username, 'iduser' => $iduser, 'tipo_op' => $tipo_op, "codeloja"=>$codeloja]);
     }
 
     public function listvendas()
