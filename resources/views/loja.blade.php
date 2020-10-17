@@ -108,7 +108,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li>
-							<a href="">Home</a>
+							<a href="$_SERVER['SCRIPT_URI']">Home</a>
 						</li>
 						<li>
 							<a href="https://www.instagram.com/versatilinf/">Instagram versatil</a>
@@ -120,7 +120,7 @@
 							<a  href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola!">Contato loja</a>
 						</li>
 						<li class="btn-cta">
-							<a href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola!">
+							<a href="https://api.whatsapp.com/send?phone=55{{env('APP_TELEFONE_VERSATIL')}}&text=Ola!">
 								<span>Informar problema</span>
 							</a>
 						</li>
