@@ -54,7 +54,7 @@ class AppController extends Controller
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
       
-      $urlloja = $_SERVER['SCRIPT_URI'];
+      $urlloja = $_SERVER['REQUEST_URI'];
       $getsucesso = '';
     
       if(isset( $_GET['success'])){
