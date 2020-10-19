@@ -817,7 +817,7 @@ async function adicionar_carrinho(id,nomeproduto){
 
 		$( '.mfp-close' ).click();
 		swalWithBootstrapButtons.close()
-		quantidade = 0
+		cont_quantidade = 1
 
 
 		
