@@ -204,6 +204,8 @@ class CarrinhoController extends Controller
         }
 
          // antes 
+
+         $getpreco_adicionais = $getpreco_adicionais * $quantidade;
         
          //Salva informações no array produtos savos que posteriormente sera salvo no cash do carrinho
         array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'valorcusto'=> $getvalorcusto, 'cod_grupo_sistema'=> $getcod_grupo_SISTEMA , 'cod_adc_sistema'=>$array_cod_adicionais_sistema  ,
