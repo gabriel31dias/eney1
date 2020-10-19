@@ -734,7 +734,8 @@ if (formValues) {
 	let totaladc = parseFloat(total_adicionais) * cont_quantidade 
      
 	 let gr = ( parseFloat(preco_old) +  totaladc  ) * cont_quantidade + 1
-	  
+	
+	alert(gr)
 
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
