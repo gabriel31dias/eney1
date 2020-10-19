@@ -821,6 +821,8 @@ async function adicionar_carrinho(id,nomeproduto){
 		swalWithBootstrapButtons.close()
 		cont_quantidade = 1
 
+		total_adicionais = 0
+
 
 		
 let timerInterval
