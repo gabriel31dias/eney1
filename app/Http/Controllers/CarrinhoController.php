@@ -279,7 +279,7 @@ class CarrinhoController extends Controller
 
         foreach ($produtos_salvos as $value)
         {
-            $contador_valor = (double)$value['precoproduto2'] + $contador_valor;
+            $contador_valor = (double)$value['precoproduto'] + $contador_valor;
             array_push($getadicionais, $value['adicionais']);
         }
 
