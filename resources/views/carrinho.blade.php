@@ -1616,7 +1616,7 @@ function atualiza_obj_user(){
         let precoformatado = i.precoproduto
         precoformatado =  precoformatado.toFixed(2);
       //  alert(precoformatado)
-         add_produto_array(i.nomeproduto + i.tags_adicionais , i.nomeproduto , i.valortotaladicionais  , i.quantidade , "Asset", "ABC001" , 100)
+         add_produto_array(i.nomeproduto + i.tags_adicionais , i.nomeproduto , i.valortotal_produto_adicionais  , i.quantidade , "Asset", "ABC001" , 100)
          
       }
 
