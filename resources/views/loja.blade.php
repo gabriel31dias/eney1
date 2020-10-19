@@ -730,12 +730,12 @@ if (formValues) {
 
 
  function addquantidade(){
-
-	let totaladc = parseFloat(total_adicionais)  
-     
-	 let gr = ( parseFloat(preco_old) +  totaladc  ) * cont_quantidade + 1
 	
-	alert(gr)
+	 let gr = ( parseFloat(preco_old) +  parseFloat(total_adicionais)  ) * cont_quantidade 
+	   
+
+	  
+
 
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
