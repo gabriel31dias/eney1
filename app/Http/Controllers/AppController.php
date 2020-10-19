@@ -163,7 +163,7 @@ class AppController extends Controller
 
 
     public function searchproduto($loja,$nomeproduto){
-      
+      $urlloja = $_SERVER['REQUEST_URI'];
       $getsucesso = '';
     
       if(isset( $_GET['success'])){
@@ -216,7 +216,7 @@ class AppController extends Controller
       return view('loja',['produtos'=>  $getprodutossearch,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$loja,
      'grupoitem'=>"RESULTADOS DA PESQUISA ".$nomeproduto ,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
       'url_instagran'=>$instagram,'url_twitter'=>$twitter,
-     'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja, 'whats_loja'=>$whats_loja]);
+     'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja, 'whats_loja'=>$whats_loja,'urlloja'=> $urlloja]);
       
     }
 
