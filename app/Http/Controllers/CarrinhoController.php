@@ -334,7 +334,7 @@ class CarrinhoController extends Controller
 
         foreach ($produtos_salvos as $value)
         {
-            array_push($getadicionais, $value['adicionais']);
+            array_push($getadicionais, $value['adicionais'] *  $value['quantidade']);
         }
 
         foreach ($getadicionais as $value)
