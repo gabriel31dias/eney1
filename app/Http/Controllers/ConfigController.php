@@ -44,6 +44,9 @@ class ConfigController extends Controller
         'emailpagseguro'=> $req->emailpagseguro,
         'pagsegurocode'=> $req->pagsegurocode,
         'FACEBOOK'=> $req->FACEBOOK,
+        'TWITTER'=> $req->TWITTER,
+        'YOUTUBE'=> $req->YOUTUBE,
+        'INSTAGRAM'=> $req->INSTAGRAM,
 
         ]);
 
