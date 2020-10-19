@@ -731,21 +731,20 @@ if (formValues) {
 
  function addquantidade(){
      
-	 alert(cach_produto[2])
+	
 	 
 	let totaladc = parseFloat(total_adicionais) * cont_quantidade 
 	 let gr = ( parseFloat(preco_old) +  totaladc  ) * cont_quantidade + 1
 	   alert(gr)
 
 	  
-      let gg = cach_produto[2]  * parseInt(document.getElementById('quantidade').value ) 
-	  alert(gg)
+
 
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
 	 cach_produto[2] = gr.toFixed(2)
-	 
+	 alert(cach_produto[2])
 	 cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
 	 //cach_produto[2] =  cach_produto[2] * cont_quantidade
 	 //cach_produto[2] = parseFloat(cach_produto[2]).toFixed(2)
