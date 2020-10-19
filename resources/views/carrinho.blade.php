@@ -1619,7 +1619,7 @@ function atualiza_obj_user(){
         precoformatado =  precoformatado.toFixed(2);
       //  alert(precoformatado)
          add_produto_array(i.nomeproduto + i.tags_adicionais , i.nomeproduto , i.valortotal_produto_adicionais  , i.quantidade , "Asset", "ABC001" , 100)
-         
+console.log(i.valortotal_produto_adicionais)
       }
 
     }
