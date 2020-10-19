@@ -726,6 +726,7 @@ if (formValues) {
 	cont_quantidade = 1
 	cash_obs  = null
 	preco_old = null
+	total_adicionais = 0
  }
 
 
@@ -821,7 +822,7 @@ async function adicionar_carrinho(id,nomeproduto){
 		$( '.mfp-close' ).click();
 		swalWithBootstrapButtons.close()
 		cont_quantidade = 1
-
+        total_adicionais = 0
 		total_adicionais = 0
 
 
