@@ -730,8 +730,8 @@ if (formValues) {
 
 
  function addquantidade(){
-	 alert(parseFloat(preco_old))
-	   alert(parseFloat(preco_old) + total_adicionais )
+	 alert(parseFloat(preco_old).toFixed(2))
+	   alert(parseFloat(preco_old).toFixed(2) + total_adicionais )
 	  
 	 
 
