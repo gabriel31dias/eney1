@@ -730,6 +730,7 @@ if (formValues) {
 
 
  function addquantidade(){
+	   alert(preco_old)
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
 	 document.getElementById('quantidade').value =   cont_quantidade
