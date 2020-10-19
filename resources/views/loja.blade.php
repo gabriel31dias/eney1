@@ -730,9 +730,8 @@ if (formValues) {
 
 
  function addquantidade(){
-	 alert( parseFloat(preco_old))
-	 alert( parseFloat(total_adicionais) + parseFloat(total_adicionais) )
-	 let gr = ( parseFloat(preco_old) +  parseFloat(total_adicionais)  ) * cont_quantidade + 1
+	let totaladc = parseFloat(total_adicionais) * cont_quantidade + 1
+	 let gr = ( parseFloat(preco_old) +  totaladc  ) * cont_quantidade + 1
 	   alert(gr)
 
 	  
