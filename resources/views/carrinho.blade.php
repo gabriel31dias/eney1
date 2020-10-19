@@ -300,7 +300,7 @@
         <br>
         <br>
         <h3 style="color:#1fe073;margin: 0 0 10px 0;"> 
-          Valor total produtos R${{ number_format($totalemprodutos - $totaladc, 2) }} 
+       
           Valor total produtos R${{ number_format($totalemprodutos , 2) }}
         </h3>
       
