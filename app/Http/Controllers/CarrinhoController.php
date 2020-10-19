@@ -334,7 +334,7 @@ class CarrinhoController extends Controller
 
         foreach ($produtos_salvos as $value)
         {
-            array_push($getadicionais, $value['adicionais'] *  $value['quantidade']);
+            array_push($getadicionais, $value['adicionais']);
         }
 
         foreach ($getadicionais as $value)
@@ -355,11 +355,11 @@ class CarrinhoController extends Controller
 
             $getprc = DB::table('adicionais')->where('id', $value)->first();
             $getprc = $getprc->PRECO;
-            $getpreco_adicionais = $getpreco_adicionais + $getprc;
+            $getpreco_adicionais = $getpreco_adicionais + $getprc ;
 
         }
         $aux = Session::get('totaladicionais');
-        Session::put('totaladicionais', $getpreco_adicionais + $aux);
+        Session::put('totaladicionais', $getpreco_adicionais +  $aux);
 
     }
 
