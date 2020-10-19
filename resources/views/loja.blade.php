@@ -731,10 +731,10 @@ if (formValues) {
 
  function addquantidade(){
 	 alert(parseFloat(preco_old).toFixed(2))
-	 let gr =  parseFloat(preco_old).toFixed(2) +  parseFloat(total_adicionais).toFixed(2) 
+	 let gr =  parseFloat(preco_old) +  parseFloat(total_adicionais)
 	   
 
-	   alert(gr)
+	   alert(gr.toFixed(2) )
 	 
 
 
