@@ -739,7 +739,7 @@ if (formValues) {
 
 	  
       let gg = cach_produto[2]  * document.getElementById('quantidade').valueAsNumber  
-	  
+	  alert(gg)
 
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
