@@ -730,9 +730,9 @@ if (formValues) {
 
 
  function addquantidade(){
-	   alert(preco_old)
-	   alert(total_adicionais)
-	   alert(cont_quantidade)
+	   alert(preco_old + total_adicionais )
+	  
+	 
 
 
 	 swalWithBootstrapButtons.close()
