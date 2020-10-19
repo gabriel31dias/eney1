@@ -537,8 +537,8 @@ class VendaController extends Controller
         //Função responsavel por mudar status da tranzação
 
         $tt =  $this->temp;
-         $req = json_encode($req->all()) ;
-        $tt =  $tt->create(['value'=>   $req ]);
+         $reqx = json_encode($req->all()) ;
+        $tt =  $tt->create(['value'=>   $reqx ]);
        
 
         if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
