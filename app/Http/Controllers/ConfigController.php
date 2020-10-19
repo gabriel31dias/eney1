@@ -42,7 +42,9 @@ class ConfigController extends Controller
         'cielocode' => $req->cielocode,
         'redecode' => $req->redecode,
         'emailpagseguro'=> $req->emailpagseguro,
-        'pagsegurocode'=> $req->pagsegurocode
+        'pagsegurocode'=> $req->pagsegurocode,
+        'FACEBOOK'=> $req->FACEBOOK,
+
         ]);
 
         return redirect()->route('config');
