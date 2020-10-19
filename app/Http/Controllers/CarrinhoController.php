@@ -45,7 +45,7 @@ class CarrinhoController extends Controller
 
     public function index($codigo = '')
     {
-        $urlloja = $_SERVER['SERVER_NAME'] ;
+        $urlloja = $_SERVER['REQUEST_URI'];
        
         $this->set_total();
         $this->set_total_adicionais();
@@ -210,6 +210,11 @@ class CarrinhoController extends Controller
 
       //  $aux1 =  $getpreco_adicionais * $quantidade ;
         $aux2 =  $getpreco * $quantidade ;
+
+        $gettotaladc =  Session::get('totaladicionais2');
+        Session::put('totaladicionais2',  $gettotaladc + $getpreco_adicionais );
+
+        
         
          //Salva informações no array produtos savos que posteriormente sera salvo no cash do carrinho
         array_push($produtos_salvos, ['id' => $idproduto_gerado, 'codigoproduto'=>$getcodigoproduto , 'valorcusto'=> $getvalorcusto, 'cod_grupo_sistema'=> $getcod_grupo_SISTEMA , 'cod_adc_sistema'=>$array_cod_adicionais_sistema  ,
