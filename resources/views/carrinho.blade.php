@@ -985,7 +985,7 @@ const { value: formValues } = await temaapp.fire({
 				<td scope="row">{{$item['nomeproduto']}} <a style="color:red"> {{$item['tags_adicionais']}}<a></td>
         <td scope="row">{{$item['quantidade']}}</td>
 
-				<td scope="row"> {{ number_format($item['precoproduto2']  , 2) }}</td>
+				<td scope="row"> {{ number_format($item['precoproduto']  , 2) }}</td>
      @endisset
         
         
