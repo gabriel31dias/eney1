@@ -738,7 +738,7 @@ if (formValues) {
 	   alert(gr)
 
 	  
-      let gg = cach_produto[2] * 3
+      let gg = cach_produto[2]  * cont_quantidade 
 
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
