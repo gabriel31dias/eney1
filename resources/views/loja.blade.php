@@ -732,6 +732,7 @@ if (formValues) {
  function addquantidade(){
 	 swalWithBootstrapButtons.close()
 	 cont_quantidade = cont_quantidade + 1
+	 alert(parseFloat(total_adicionais ))
 	 document.getElementById('quantidade').value =   cont_quantidade
 	 let  auxz =  (parseFloat(preco_old) +  parseFloat(total_adicionais )) * cont_quantidade
 	 alert(auxz)
