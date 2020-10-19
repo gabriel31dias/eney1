@@ -738,7 +738,7 @@ if (formValues) {
 	   alert(gr)
 
 	  
-      let gg = cach_produto[2]  * document.getElementById('quantidade').valueAsNumber  
+      let gg = cach_produto[2]  * parseInt(document.getElementById('quantidade').value ) 
 	  alert(gg)
 
 	 swalWithBootstrapButtons.close()
