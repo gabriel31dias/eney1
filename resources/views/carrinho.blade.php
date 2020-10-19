@@ -108,7 +108,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li>
-							<a href="{{$urlloja}}">Home</a>
+							<a href="{{ redirect()->getUrlGenerator()->previous() }}">Home</a>
 						</li>
 						<li>
 							<a href="https://www.instagram.com/versatilinf/">Instagram versatil</a>
