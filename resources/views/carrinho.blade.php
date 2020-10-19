@@ -303,7 +303,7 @@
           Valor total produtos R${{ number_format($totalemprodutos , 2) }}
         </h3>
       
-        <h3 style="color:#FBB448; margin: 0 0 10px 0;">  Valor total entrega  R$ '{{ number_format($valorentrega  , 2) }}' </h3>
+        <h3 style="color:#FBB448; margin: 0 0 10px 0;">  Valor total entrega  R$ {{ number_format($valorentrega  , 2) }} </h3>
 
         
         <img onclick="formas_pagamento()" calss>
