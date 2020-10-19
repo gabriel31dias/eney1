@@ -9,7 +9,6 @@ use App\Temp;
 
 class PagseguroCheckout extends Controller 
 {
-
     private $Mercantid;
     private $Products;
     private $Address;
@@ -43,7 +42,10 @@ class PagseguroCheckout extends Controller
         $this->temp = $temp;
         $this->email_token = "?email=".$this->getemailpagseguro."&token=".$this->getcodpagseguro;
     }
-  
+    
+ 
+
+
     public function addMerchantId($mercantid){
         $this->Mercantid = $mercantid;
        return $this;
