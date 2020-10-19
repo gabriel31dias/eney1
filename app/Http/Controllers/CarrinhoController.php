@@ -211,8 +211,8 @@ class CarrinhoController extends Controller
       //  $aux1 =  $getpreco_adicionais * $quantidade ;
         $aux2 =  $getpreco * $quantidade ;
 
-        $gettotaladc =  Session::get('totaladicionais2');
-        Session::put('totaladicionais2',  $gettotaladc + $getpreco_adicionais );
+      //  $gettotaladc =  Session::get('totaladicionais2');
+      ///  Session::put('totaladicionais2',  $gettotaladc + $getpreco_adicionais );
 
         
         
