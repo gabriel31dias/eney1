@@ -529,7 +529,8 @@ class VendaController extends Controller
     public function listteste(){
      ///Funcao para teste
         $list = $this->temp;
-        $list =  $list->where('value', 'like', '%' . '03E70351-A9A6-4E83-BF96-70B617994B33' . '%')->get(); 
+     //   $list =  $list->where('value', 'like', '%' . '03E70351-A9A6-4E83-BF96-70B617994B33' . '%')->get(); 
+     $list =   $list->all();
         return response()->json( $list);
     }
 
