@@ -68,6 +68,7 @@ class SwitchForma extends Controller
        }
        curl_close($curl);
        $transaction_obj = simplexml_load_string($transaction);
+       var_dump( $url);
        var_dump($transaction_obj);
        return $transaction_obj;
      
