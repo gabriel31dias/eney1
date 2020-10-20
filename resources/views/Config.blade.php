@@ -312,6 +312,11 @@ visibility: hidden;
                             <div class="switch">
                                 Pagseguro<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(2)" type="checkbox" id="payment2" name="pagseguro" checked=""><span class="lever"></span>ON</label>
                             </div>
+
+                            <div class="switch">
+                                Nenhuma operadora<br><label>OFF<input class="payment_opt" onclick="UpdatePayment(7)" type="checkbox" id="payment7" name="pagseguro" checked=""><span class="lever"></span>ON</label>
+                            </div>
+
                         </div>
                         <div class="row">
             
