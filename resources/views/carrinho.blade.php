@@ -528,6 +528,7 @@ if (txt) {
       // alert(data)
        console.log(data)
        showdialogtoken()
+       console.log(data)
      
     }).fail(function(data) {
       showdialogtoken()
