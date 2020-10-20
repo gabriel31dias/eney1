@@ -448,6 +448,7 @@
   var lojacode = '{{$lojacod}}'
   var cash_idvenda = ''
   var cash_token_true = false
+  var cod_payment = "{{$code_payment}}"
 
   obj_venda.produtosjson = '{{!! $produtosjson !!}}'
   obj_venda.produtosjson =  obj_venda.produtosjson.substr(1)

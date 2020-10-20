@@ -55,6 +55,7 @@ class CarrinhoController extends Controller
         $hora1 = strtotime($getusersloja->horarioinicio);
         $hora2 = strtotime($getusersloja->horariofinal);
         $horaAtual = strtotime(date('H:i:s'));
+        $code_payment =  $getusersloja->fpagamentoeletronico ;
       
         if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento 
           $status_loja = true;
@@ -101,7 +102,11 @@ class CarrinhoController extends Controller
 
         $getgrupos = $this->grupos->where('ID_USER', $getidloja)->paginate(10);
 
-        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja, 'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => $imagem_loja , 'nameloja'=>$nameloja, 'status_loja'=> $status_loja , 'urlloja'=>  $urlloja,'whats_loja'=>$whats_loja ]);
+        return view('carrinho', ['totalemprodutos' => $totalemprodutos, 'whats_contato'=> $getwhats_loja,
+         'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 
+         'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 
+         'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => $imagem_loja ,
+         'nameloja'=>$nameloja, 'status_loja'=> $status_loja , 'urlloja'=>  $urlloja,'whats_loja'=>$whats_loja , 'code_payment'=> $code_payment]);
     }
 
 
