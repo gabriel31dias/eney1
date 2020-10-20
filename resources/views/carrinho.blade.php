@@ -1486,7 +1486,7 @@ async function enviavenda() {
 
               return
 
-              }
+            }
            
              savevenda()
 
