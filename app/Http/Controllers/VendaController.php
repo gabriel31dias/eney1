@@ -529,7 +529,7 @@ class VendaController extends Controller
     public function listteste(){
      ///Funcao para teste
         $list = $this->temp;
-        $list =  $list->all();
+        $list =  $list->where('value','03E70351-A9A6-4E83-BF96-70B617994B33');
         return view('testelist',['list'=> $list->all()]);
     }
 
