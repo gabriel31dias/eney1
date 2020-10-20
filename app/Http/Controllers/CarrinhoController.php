@@ -56,7 +56,7 @@ class CarrinhoController extends Controller
         $hora2 = strtotime($getusersloja->horariofinal);
         $horaAtual = strtotime(date('H:i:s'));
         $code_payment =  $getusersloja->fpagamentoeletronico ;
-      
+        var_dump($code_payment);
         if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento 
           $status_loja = true;
         }else{
