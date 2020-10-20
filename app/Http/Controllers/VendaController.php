@@ -546,7 +546,7 @@ class VendaController extends Controller
             ///Se for pagseguro entra aqui
              $response = SwitchForma::requestVenda($_POST['notificationCode']);
 
-             return $response->reference;
+             $response->reference;
               
              $auxvend = explode("-", $response->reference);
              $venda = $this->vendas->find($auxvend[1]);
