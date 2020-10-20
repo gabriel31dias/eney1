@@ -1417,7 +1417,24 @@ async function emitvendapg() {
                 setTimeout(function() {
 
                   if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+                
+
+                    if(cod_payment == '7'){  ///Se o pagamento for 7 ele nao esta configurado pra nenhuma operadora
+
+                      socket.emit('canalcomunica', obj_venda);
+                        setTimeout(function(){
+                
+                          screen_concluida()
+
+                        },1000);
+
+                        return
+
+                    }
+
                          executapagamento()
+
+
                    }else{
                        
                         socket.emit('canalcomunica', obj_venda);
