@@ -1419,18 +1419,7 @@ async function emitvendapg() {
                   if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                 
 
-                    if(cod_payment == '7'){  ///Se o pagamento for 7 ele nao esta configurado pra nenhuma operadora
-
-                      socket.emit('canalcomunica', obj_venda);
-                        setTimeout(function(){
-                
-                          screen_concluida()
-
-                        },1000);
-
-                        return
-
-                    }
+                   
 
                          executapagamento()
 
@@ -1485,7 +1474,23 @@ async function enviavenda() {
 
          if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
                          
+          if(cod_payment == '7'){  ///Se o pagamento for 7 ele nao esta configurado pra nenhuma
+
+             let gett  = obj_venda.telefone
+             gett = gett.replace("(", "");
+             gett = gett.replace(")", "");
+             gett = gett.replace("-", "");
+             gett = gett.replace(" ", "");
+             loaddingtoken()
+             sendsms(gett)
+
+              return
+
+              }
+           
              savevenda()
+
+            
 
           }else{
               let gett  = obj_venda.telefone
