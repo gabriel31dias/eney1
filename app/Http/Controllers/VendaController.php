@@ -544,6 +544,8 @@ class VendaController extends Controller
         if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
             ///Se for pagseguro entra aqui
              $response = SwitchForma::requestVenda($_POST['notificationCode']);
+
+             return $response->reference;
               
              $auxvend = explode("-", $response->reference);
              $venda = $this->vendas->find($auxvend[1]);
