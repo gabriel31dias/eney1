@@ -657,7 +657,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 	</div>
 
 	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"    style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id}); this.disabled = false" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i><br>ADICIONAIS</button>
+		<button type="button"  id="addc"  style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id}); ducument.getElementById("addc").disabled = true" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i><br>ADICIONAIS</button>
 	</div>
 
 
