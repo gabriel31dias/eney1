@@ -226,6 +226,8 @@ visibility: hidden;
                         </tr>
                             
                         @endforeach
+
+                        {{ $vendasaguardando->links() }}
                     </tbody>
                 </table>
             </div>
@@ -302,6 +304,8 @@ visibility: hidden;
                         </tr>
                             
                         @endforeach
+
+                        {{ $vendasnaoaprovadas->links() }}
                     </tbody>
                 </table>
             </div>
@@ -385,6 +389,9 @@ visibility: hidden;
                         </tr>
                             
                         @endforeach
+
+                        
+                        {{ $vendasaprovadas->links() }}
                     </tbody>
                 </table>
             </div>
