@@ -1288,7 +1288,9 @@ async function update_tags(){
 
 setInterval(function(){
 
-  document.getElementById('addc').disable = false
+
+  var btn = document.getElementById("addc");
+  btn.disabled = 1
 
    
 },1000)
