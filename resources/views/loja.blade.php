@@ -647,7 +647,6 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
     `<h3 style="font-size:16px;"> ${descr}</h3>`+
 	` <img style="height:150px;width:80%" src="${img}" >
 	<br>
-	<a style="font-size:20px;" href=""><img style="width:40px;height:40px;" src="https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png" ></img>Pedido rapido</a>
 	</div>
 	<br>
 	<br>
@@ -700,8 +699,12 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 	<br>
 	<button type="button" onclick="closeswal()" class="btn btn-danger">  <i style="margin-top:1px;"  class="large material-icons">close</i>FECHAR</button>
 	<center>
-	<button type="button" style="width:180px" onclick="adicionar_carrinho('${id}','${nomeproduto}')"  class="animated infinite pulse btn btn-success">  <i style="margin-top:3px;"  class="large material-icons">shopping_cart</i>ADICIONAR</button></center>`,
+	<button type="button" style="width:180px" onclick="adicionar_carrinho('${id}','${nomeproduto}')"  class="animated infinite pulse btn btn-success">  <i style="margin-top:3px;"  class="large material-icons">shopping_cart</i>ADICIONAR</button></center>
+	<a style="font-size:20px;" href=""><img style="width:40px;height:40px;" src="https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png" ></img>PEDIDO RAPIDO</a>
 
+	`,
+   
+     
   focusConfirm: false,
   preConfirm: function() {
     return [
