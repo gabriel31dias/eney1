@@ -736,6 +736,7 @@ if (formValues) {
 	cash_obs  = null
 	preco_old = null
 	total_adicionais = 0
+	cash_addc = false 
  }
 
 
