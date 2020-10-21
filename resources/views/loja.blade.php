@@ -510,7 +510,7 @@
 <script>
 var cash_produto_adicionais = null
 var total_adicionais = 0
-
+var cash_addc = false
 var cont_quantidade = 1
 var socket = io('http://localhost:3000/')
 var lojacode = '{{$lojacod}}'
@@ -657,7 +657,8 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 	</div>
 
 	<div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-		<button type="button"  id="addc"  style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id}); ducument.getElementById("addc").disabled = true" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i><br>ADICIONAIS</button>
+	
+		<button type="button"  id="addc"  style="background-color:#FBB448;color:white;border:none;width:100px;" onclick="add_adicionais(${id});cash_addc = true" >  <i style="margin-top:3px;"  class="large material-icons">local_mall</i><br>ADICIONAIS</button>
 	</div>
 
 
@@ -1282,6 +1283,15 @@ async function update_tags(){
         })
 
 }
+
+
+
+setInterval(function(){
+
+  document.getElementById('addc').disable = false
+
+   
+},1000)
 
 
 
