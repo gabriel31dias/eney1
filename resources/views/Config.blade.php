@@ -302,7 +302,7 @@ visibility: hidden;
                 
                     <br>
                      <br>  <br>
-                    <h3>Selecione o meio de pagamento eletrônico padrão</h3>
+                    <h3>Selecione o meio de pagamento eletrônico padrão {{$usercf->fpagamentoeletronico ?? ''}}</h3>
                     <br>
                     <p>
                         <div class="demo-switch">
