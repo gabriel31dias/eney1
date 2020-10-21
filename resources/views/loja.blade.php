@@ -775,6 +775,8 @@ if (formValues) {
 
 
 async function adicionar_carrinho(id,nomeproduto){
+
+   cash_addc = false 
    cach_adicionais = ''
    cach_produto = ''
    preco_old = ''
@@ -833,6 +835,7 @@ async function adicionar_carrinho(id,nomeproduto){
 		cont_quantidade = 1
         total_adicionais = 0
 		total_adicionais = 0
+		cash_addc = false 
 
 
 		
