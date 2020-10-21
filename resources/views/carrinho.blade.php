@@ -441,9 +441,8 @@
   let array_produtos_venda = []
   var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
 
-  var socket = io('{{ config('APP_SERVIDOR_SOCKET') }}')
+  var socket = io('{{ env('APP_SERVIDOR_SOCKET') }}')
 
- ' {{ config('app.servidor_socket') }}'
 
   var obj_venda = {}
   var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
