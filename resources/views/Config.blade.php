@@ -542,10 +542,13 @@ var openFile = function(file) {
             success: function (data) {
              
                document.getElementById(`payment${valor}`).checked = true
+               console.log("sucesso !")
             },
             error: function (request) {
                
                 console.log(request)
+
+                console.log("Erro !")
                 
             },
             data: JSON.stringify(Obj_payment) 
