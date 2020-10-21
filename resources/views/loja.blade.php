@@ -647,7 +647,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
     `<h3 style="font-size:16px;"> ${descr}</h3>`+
 	` <img style="height:150px;width:80%" src="${img}" >
 	<br>
-	<a style="width:25px;25px" href="">Pedido rapido<img style="width:40px;height:40px;" src="https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png" ></img></a>
+	<a style="font-size:25px;" href="">Pedido rapido<img style="width:40px;height:40px;" src="https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png" ></img></a>
 	</div>
 	<br>
 	<br>
