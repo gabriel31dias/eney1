@@ -463,7 +463,7 @@ visibility: hidden;
 
 <script>
 
-
+var get_id_user = document.getElementById('ID_USER').value
 var openFile = function(file) {
    document.getElementById('save').disabled = true;
     var input = file.target;
@@ -528,7 +528,7 @@ var openFile = function(file) {
         item.checked = false
     }
     
-    let get_id_user = document.getElementById('ID_USER').value
+    
        let Obj_payment = {
          iduser: get_id_user,
          idpayment: valor
