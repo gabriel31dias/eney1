@@ -1288,9 +1288,21 @@ async function update_tags(){
 
 setInterval(function(){
 
+	try {
+      
 
-  var btn = document.getElementById("addc");
-  btn.disabled = 1
+	   if(cash_addc){
+	     	var btn = document.getElementById("addc");
+            btn.disabled = 1
+
+	   }
+	 
+
+    
+     }
+    catch (e) {
+ 
+     }
 
    
 },1000)
