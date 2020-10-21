@@ -442,6 +442,9 @@
   var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
 
   var socket = io('{{ config('SERVIDOR_SOCKET') }}')
+
+ ' {{ config('app.servidor_socket') }}'
+
   var obj_venda = {}
   var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
   var tipo_retirada = 'Entrega'
