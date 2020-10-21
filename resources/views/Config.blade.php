@@ -531,7 +531,7 @@ var openFile = function(file) {
     let get_id_user = document.getElementById('ID_USER').value
        let Obj_payment = {
          iduser: get_id_user,
-         idpayment:valor
+         idpayment: valor
        }
 
         $.ajax({
