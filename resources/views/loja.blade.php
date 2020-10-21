@@ -703,7 +703,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 	<br>
 	<br>
 
-	<a style="font-size:20px;" href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Mensagem Inicia%0ADNova linha"><img style="width:40px;height:40px;" src="https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png" ></img>PEDIDO RAPIDO</a>
+	<a style="font-size:20px;" href="https://api.whatsapp.com/send?phone=55{{$whats_loja}}&text=Ola eu quero esta produto {{$nomeproduto}}%0A , esta disponivel ?  "><img style="width:40px;height:40px;" src="https://i.pinimg.com/originals/91/9d/f0/919df067a8fbd22ce7b6f401b7688b35.png" ></img>PEDIDO RAPIDO</a>
 
 	`,
    
