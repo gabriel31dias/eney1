@@ -441,7 +441,9 @@
   let array_produtos_venda = []
   var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
 
-  var socket = io('https://servidorsocket3636.herokuapp.com/')
+  var socket =  '{{ env('SERVIDOR_SOCKET'), 'test' }}' efe
+  
+  
   var obj_venda = {}
   var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
   var tipo_retirada = 'Entrega'
