@@ -543,6 +543,7 @@ var openFile = function(file) {
              
                document.getElementById(`payment${valor}`).checked = true
                console.log("sucesso !")
+               console.log(data)
             },
             error: function (request) {
                
