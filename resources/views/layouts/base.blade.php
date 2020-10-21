@@ -845,7 +845,9 @@ Swal.fire({
 
              });
 
-var socket = io('https://servidorsocket3636.herokuapp.com/')
+
+var socket = io('{{ env('SERVIDOR_SOCKET') }}')
+
 
 ///var socket = io('http://localhost:3000')
 
