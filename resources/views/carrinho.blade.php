@@ -1577,7 +1577,7 @@ await Swal.fire({
           b.textContent = Swal.getTimerLeft()
         }
       }
-    }, 500)
+    }, 100000)
   },
   closeOnClickOutside: false,
   allowOutsideClick: false,
