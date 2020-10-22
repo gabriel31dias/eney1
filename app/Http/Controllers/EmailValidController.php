@@ -21,11 +21,11 @@ class EmailValidController extends Controller
    }
 
    public function verificatoken($token){
-      $sms = new Validatestoken();
-      $sms = $sms->where('token',$token)->first();
+      $valid = new Validatestoken();
+      $valid = $valid->where('token',$token)->first();
       
-      if(isset($sms->id)){
-        $sms->delete();
+      if(isset($valid->id)){
+          $valid->delete();
           return   response()->json(['su'=>true]) ;
       }else{
       ////  $sms->delete();

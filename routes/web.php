@@ -26,13 +26,11 @@ Route::get('/testesmart', 'VendaController@testsmartpg')->name('testsmartpg');
 Route::get('/testpagseguro', 'VendaController@testepagseguro')->name('testepagseguro');
 Route::get('/listcalbackpg', 'VendaController@listcalbackpg')->name('listcalbackpg');
 
-
-Route::get('/testerede', 'VendaController@testerede')->name('testerede');
-
-
 Route::get('/sendsingle/{password?}/{mensagem?}/{telefone?}', 'SmsController@SendSinglesms')->name('SendSinglesms');
 Route::get('/sendtoken/{telefone?}/{codeloja?}', 'SmsValidController@sendSmsToken')->name('sendtoken');
+Route::get('/sendtokenemail/{email?}/{codeloja?}', 'EmailValidController@sendEmail')->name('sendtokenemail');
 Route::get('/verificatoken/{token?}/', 'SmsValidController@verificatoken')->name('verificatoken');
+Route::get('/verificatokenemail/{token?}/', 'EmailValidController@verificatoken')->name('verificatokenemail');
 
 Route::get('/searchclisms/{cliname?}/', 'HomeController@searchclisms')->name('searchclisms');
 

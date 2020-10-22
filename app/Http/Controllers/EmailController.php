@@ -9,7 +9,7 @@ class EmailController extends Controller
     
     public function SendEmail($password,$message,$email){
 
-
+       
 
 
        // return response()->json($response);
