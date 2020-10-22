@@ -1501,7 +1501,7 @@ async function enviavenda() {
 
             if (verifi_validate){
             
-                savevenda
+                savevenda()
         
                return 
             }
