@@ -824,10 +824,12 @@ if (formValues) {
    // valortotalprodutos:valor_total_venda
 	//}
 
+  let  valorcep = document.getElementById('CEP').value
+  valorcep = valorcep.replace(/\D/g, '')
   obj_venda.room = lojacode
   obj_venda.ID_USER = '{{$iduser}}'
   obj_venda.tipo = 'novavenda'
-  obj_venda.cep =  document.getElementById('CEP').value
+  obj_venda.cep = valorcep    
   obj_venda.endereco =  document.getElementById('ENDERECO').value
   obj_venda.numero = document.getElementById('NUMERO').value
   obj_venda.complemento = document.getElementById('COMPLEMENTO').value
