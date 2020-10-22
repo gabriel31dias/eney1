@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SmsController;
 use App\Validatestoken;
 use App\Smsenviado;
-
+use Session;
 class SmsValidController extends Controller
 {
     
