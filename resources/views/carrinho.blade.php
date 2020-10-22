@@ -1501,8 +1501,10 @@ async function enviavenda() {
 
             if (verifi_validate){
             
-            alert("dwad")
+                alert("dwad")
             }
+
+            alert(verifi_validate)
               let gett  = obj_venda.telefone
               gett = gett.replace("(", "");
               gett = gett.replace(")", "");
