@@ -1499,14 +1499,14 @@ async function enviavenda() {
 
           }else{
 
-            if (verifi_validate){
+            if (verifi_validate == "true"){
             
                 savevenda()
         
                return 
             }
 
-              alert(verifi_validate)
+             
               let gett  = obj_venda.telefone
               gett = gett.replace("(", "");
               gett = gett.replace(")", "");
