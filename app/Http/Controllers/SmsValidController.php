@@ -28,8 +28,8 @@ class SmsValidController extends Controller
       
       if(isset($sms->id)){
         $sms->delete();
-          return   response()->json(['su'=>true]) ;
           Session::put('usertemp_vr', "0030015529");
+          return   response()->json(['su'=>true]) ;
       }else{
       ////  $sms->delete();
           return   response()->json(['su'=>false]) ;
