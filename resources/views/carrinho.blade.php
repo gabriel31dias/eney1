@@ -1477,7 +1477,8 @@ async function enviavenda() {
 
 
          if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) || verifi_validate ){ ///Verfica se é cartão
-                         
+                
+                alert(verifi_validate)
           if(cod_payment == '7'){  ///Se o pagamento for 7 ele nao esta configurado pra nenhuma
 
              let gett  = obj_venda.telefone
