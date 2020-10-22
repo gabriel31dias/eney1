@@ -47,7 +47,7 @@ class CarrinhoController extends Controller
     {
         $urlloja = $_SERVER['REQUEST_URI'];
         $verif_user_valid = Session::get('usertemp_vr');
-        if ($verif_user_valid){
+        if ($verif_user_valid == "0030015529"){
             $verif_user_valid = true;
         }else{
             $verif_user_valid = false;
