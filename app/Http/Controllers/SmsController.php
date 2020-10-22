@@ -38,7 +38,7 @@ class SmsController extends Controller
       $response = curl_exec($curl);
       curl_close($curl);
 
-      Session::put('usertemp_vr', "0030015529");
+   
 
   }
 
