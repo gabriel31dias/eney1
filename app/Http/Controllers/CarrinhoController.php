@@ -46,7 +46,12 @@ class CarrinhoController extends Controller
     public function index($codigo = '')
     {
         $urlloja = $_SERVER['REQUEST_URI'];
-       
+        $verif_user_valid = Session::get('usertemp_vr');
+        if ($verif_user_valid){
+            $verif_user_valid = true;
+        }else{
+            $verif_user_valid = false;
+        }
         $this->set_total();
         $this->set_total_adicionais();
         $getwhats_loja =  $this->getnumero_whats($codigo);
@@ -106,7 +111,7 @@ class CarrinhoController extends Controller
          'carrinho' => $getcarrinhoitems, 'style' => $style, 'grupos' => $getgrupos, 'lojacod' => $codigo, 
          'adicionais' => $adicionaissalvos, 'totaladc' => $totaladc, 'valorentrega' => $getvalorentrega, 
          'teste' => $teste, 'iduser' => $iduser,'produtosjson'=>$produtosjson  , 'userapp'=> $getuser_app, 'imagem_loja' => $imagem_loja ,
-         'nameloja'=>$nameloja, 'status_loja'=> $status_loja , 'urlloja'=>  $urlloja,'whats_loja'=>$whats_loja , 'code_payment'=> $code_payment]);
+         'nameloja'=>$nameloja, 'status_loja'=> $status_loja , 'urlloja'=>  $urlloja,'whats_loja'=>$whats_loja , 'code_payment'=> $code_payment,'verif_user_valid'=>$verif_user_valid]);
     }
 
 

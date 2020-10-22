@@ -440,10 +440,8 @@
   let obj_produtos = new Object()
   let array_produtos_venda = []
   var valor_total_frete = '{{ number_format($valorentrega  , 2) }}'
-
+  var verifi_validate = "{{ $verif_user_valid }}"
   var socket = io('{{ env('SERVIDOR_SOCKET') }}')
-
-
   var obj_venda = {}
   var valor_total_venda ="{{ number_format($totalemprodutos, 2) }}"
   var tipo_retirada = 'Entrega'
@@ -1476,7 +1474,9 @@ async function enviavenda() {
 
          ///alert('carrinho aberto')
 
-         if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) ){ ///Verfica se é cartão
+
+
+         if(cash_forma_pg.match(/CARTAO/) || cash_forma_pg.match(/CARTÃO/) || verifi_validate ){ ///Verfica se é cartão
                          
           if(cod_payment == '7'){  ///Se o pagamento for 7 ele nao esta configurado pra nenhuma
 
