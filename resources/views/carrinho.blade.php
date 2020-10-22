@@ -445,7 +445,7 @@
 
 
   var obj_venda = {}
-  var valor_total_venda ="{{ number_format($totalemprodutos - $totaladc, 2) }}"
+  var valor_total_venda ="{{ number_format($totalemprodutos, 2) }}"
   var tipo_retirada = 'Entrega'
   var lojacode = '{{$lojacod}}'
   var cash_idvenda = ''
