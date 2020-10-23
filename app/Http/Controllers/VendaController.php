@@ -27,7 +27,7 @@ use \PagSeguro ;
 use PagSeguroLibrary\PagSeguroLibrary ;
 use Illuminate\Support\Facades\Mail;
 use DB;
-use App\Mail\SendMail;
+use App\Mail\SendEmail;
 
 
 
@@ -750,7 +750,7 @@ class VendaController extends Controller
 
       public function testeemail(){
 
-          Mail::to("gabrieldias@keemail.me")->send(new  SendMail("gabriel"));
+          Mail::to("gabrieldias@keemail.me")->send(new SendEmail());
 
       }
 
