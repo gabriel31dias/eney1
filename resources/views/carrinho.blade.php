@@ -537,8 +537,7 @@ if (txt) {
      }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-         Swal.fire('<i class="material-icons">email</i>
-          Saved!', '', 'success')
+         Swal.fire('dwadw', 'success')
        } else if (result.isDenied) {
           Swal.fire('Changes are not saved', '', 'info')
         }
