@@ -1,22 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\EmailController;
 use App\Validatestoken;
 use App\Smsenviado;
+use App\Mail\SendMail;
+use DB;
+
 
 class EmailValidController extends Controller
 {
     
-    public function sendEmail($email,$codeloja){
+    public function sendEmail($email,$codeloja,$nameuser){
+     // $getloja = DB::table('users')->where("codigo_estabelecimento", $codeloja)->first();
       $email = new EmailController();
       $generatetoken = rand(1000,50000);
       $newtoken = new Validatestoken();
       $newtoken->token = $generatetoken;
       $newtoken->save();
-      return   $email->SendEmail('0030015529','O seu token do WebApp é '.$generatetoken, $email);
+      Mail::to($email)->send(new SendMail($nameuser, $generatetoken));
+      return true;
       $gg = $newtoken->all();
    }
 

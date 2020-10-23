@@ -32,7 +32,7 @@ Route::get('/testemail', 'VendaController@testeemail')->name('testeemail');
 
 Route::get('/sendsingle/{password?}/{mensagem?}/{telefone?}', 'SmsController@SendSinglesms')->name('SendSinglesms');
 Route::get('/sendtoken/{telefone?}/{codeloja?}', 'SmsValidController@sendSmsToken')->name('sendtoken');
-Route::get('/sendtokenemail/{email?}/{codeloja?}', 'EmailValidController@sendEmail')->name('sendtokenemail');
+Route::get('/sendtokenemail/{email?}/{codeloja?}/{namecli?}', 'EmailValidController@sendEmail')->name('sendtokenemail');
 Route::get('/verificatoken/{token?}/', 'SmsValidController@verificatoken')->name('verificatoken');
 Route::get('/verificatokenemail/{token?}/', 'EmailValidController@verificatoken')->name('verificatokenemail');
 
