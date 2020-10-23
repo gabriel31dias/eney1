@@ -1,5 +1,6 @@
 
-    <body>
+   <html style="background-color:#1e88e5">
+   <body>
        
         <div  style="background-color: rgb(71, 58, 143);color:white">
             <center>
@@ -13,3 +14,6 @@
         </div>
     
     </body>
+
+    
+   </html>
