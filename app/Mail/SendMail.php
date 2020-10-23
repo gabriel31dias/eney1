@@ -30,10 +30,11 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return  view('emails.test')
-        ->with([
-            'user' =>   $this->name,
-        ]);
+        return $this->from('to@email.com')
+                ->view('emails.test')
+                ->with([
+                    'user' => $this->name,
+                ]);
 
     }
 }
