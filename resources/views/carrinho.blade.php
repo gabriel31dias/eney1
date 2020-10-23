@@ -540,6 +540,7 @@ if (txt) {
 
            linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
            console.log('sms kkkkkkkkkkkkk')
+           
        } else {
 
            linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
