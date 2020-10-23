@@ -529,7 +529,7 @@ if (txt) {
       title: 'Como deseja receber seu token?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: `<i class="material-icons">sms</i><i style="padding:8px"> Sms</i>`,
+      confirmButtonText: `<i class="material-icons">sms</i><i style="padding:8px">Sms</i>`,
       cancelButtonText:' <i class="material-icons">email</i><i  style="padding:8px"> Email</i>',
       denyButtonText: `Don't save`,
       closeOnClickOutside: false,
@@ -539,7 +539,7 @@ if (txt) {
       if (result.isConfirmed) {
          Swal.fire('dwadw', 'success')
        } else if (result.isDenied) {
-          Swal.fire('Changes are not saved', '', 'info')
+          Swal.fire('Changes are not saved',  'info')
         }
      })
 
