@@ -523,7 +523,7 @@ if (txt) {
 
   }
 
-  async function sendsms(telefone){
+  async function sendsms(telefone,email,nome){
    let linksettoken = ''
    await swalWithBootstrapButtons.fire({
       title: 'Como deseja receber seu token?',
@@ -539,12 +539,11 @@ if (txt) {
       if (result.isConfirmed) {
 
            linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
-           console.log('sms kkkkkkkkkkkkk')
-           
+
        } else {
 
-           linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
-           console.log('email kkkkkkkkkk')
+           linksettoken = '{{route("sendtokenemail")}}/'+email+'/'+ lojacode + '/' +  nome
+          
       }
      })
 
@@ -1513,7 +1512,7 @@ async function enviavenda() {
              gett = gett.replace("-", "");
              gett = gett.replace(" ", "");
              loaddingtoken()
-             sendsms(gett)
+             sendsms(gett,obj_venda.email,obj_venda.nome)
 
               return
 
@@ -1541,7 +1540,7 @@ async function enviavenda() {
           
                
               loaddingtoken()
-              sendsms(gett)
+              sendsms(gett,obj_venda.email,obj_venda.nome)
              
               
            
