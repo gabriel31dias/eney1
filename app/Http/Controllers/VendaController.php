@@ -750,7 +750,7 @@ class VendaController extends Controller
 
       public function testeemail(){
 
-       return   Mail::to("gabrieldias@keemail.me")->send(new SendMail("gabriel"));
+          Mail::to("gabrieldias@keemail.me")->send(new SendMail("gabriel"));
 
       }
 
