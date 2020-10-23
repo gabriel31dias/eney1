@@ -524,7 +524,7 @@ if (txt) {
 
   async function sendsms(telefone){
 
-    Swal.fire({
+   await Swal.fire({
       title: 'Como deseja receber seu token?',
       showDenyButton: true,
       showCancelButton: true,
