@@ -1,5 +1,5 @@
 
-   <html style="background-color:#1e88e5">
+   <html style="background-color: rgb(71, 58, 143);color:white" >
    <body>
        
         <div  style="background-color: rgb(71, 58, 143);color:white">
