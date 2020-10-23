@@ -18,7 +18,6 @@ class EmailValidController extends Controller
      // $getloja = DB::table('users')->where("codigo_estabelecimento", $codeloja)->first();
     
   
-     $email = new EmailController();
       $generatetoken = rand(1000,50000);
       $newtoken = new Validatestoken();
       $newtoken->token = $generatetoken;
