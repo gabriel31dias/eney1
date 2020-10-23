@@ -17,10 +17,12 @@ class SendMail extends Mailable
      * @return void
      */
     private $name;
+    private $token;
 
-    public function __construct($name)
+    public function __construct($name,$token)
     {
         $this->name = $name;
+        $this->token = $token;
     }
 
     /**
