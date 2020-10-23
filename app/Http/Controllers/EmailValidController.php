@@ -17,7 +17,7 @@ class EmailValidController extends Controller
     public function sendEmail($email,$codeloja,$nameuser){
      // $getloja = DB::table('users')->where("codigo_estabelecimento", $codeloja)->first();
     
-    return $email;
+  
      $email = new EmailController();
       $generatetoken = rand(1000,50000);
       $newtoken = new Validatestoken();
