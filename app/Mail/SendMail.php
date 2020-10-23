@@ -34,6 +34,7 @@ class SendMail extends Mailable
                 ->view('emails.test')
                 ->with([
                     'user' => $this->name,
+                    'token' =>  $this->token
                 ]);
 
     }
