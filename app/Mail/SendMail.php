@@ -30,8 +30,11 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return view('emails.test');
-                
+        return $this->from('delivery@versatilsoftwares.com.br')
+                ->view('emails.test')
+                ->with([
+                    'user' => $this->name,
+                ]);
 
     }
 }
