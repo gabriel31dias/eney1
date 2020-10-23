@@ -1,6 +1,6 @@
 
     <body>
-        <p>Olá {{ $user }}, tudo bem !</p>
+        <h1>Olá {{ $user }}, tudo bem !</h2>
         <p>Este é um email do sistema de delivery da versatil</p>
         <p style="background-color: aqua">Seu token é <a style="color:red"> {{ $token }} </a></p>
         <p></p>

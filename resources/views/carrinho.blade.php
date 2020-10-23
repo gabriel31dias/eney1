@@ -523,6 +523,25 @@ if (txt) {
   }
 
   async function sendsms(telefone){
+
+    Swal.fire({
+      title: 'Como deseja receber seu token?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: `Sms`,
+      cancelButtonText:'Email'
+      denyButtonText: `Don't save`,
+     }).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+         Swal.fire('Saved!', '', 'success')
+       } else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')
+        }
+     })
+
+
+
     $.get('{{route("sendtoken")}}/'+telefone+'/'+lojacode ,function(data){
 
     }).then(function(data){
