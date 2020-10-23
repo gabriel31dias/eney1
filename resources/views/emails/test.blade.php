@@ -1,6 +1,6 @@
 <html>
     <body>
-        <p>Olá {{ $user->name }}!</p>
+        <p>Olá {{ $name }}!</p>
         <p></p>
         <p>Esse é apenas um e-mail de teste, para exemplificar o funcionamento do envio de e-mails no Laravel.</p>
         <p></p>
