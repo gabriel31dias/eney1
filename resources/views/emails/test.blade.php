@@ -5,5 +5,5 @@
         <p>Seu token é {{ $token }}</p>
         <p></p>
         <p>Att, <br>
-        Sistema versatil!</p>
+        Sistema versatil Delivery !</p>
     </body>
