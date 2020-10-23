@@ -36,10 +36,10 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => "versatilsoftwares.com.br",
+            'host' => "servidor.hostgator.com.br",
             'port' => 587,
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => "",
+            'username' => "delivery@versatilsoftwares.com.br",
             'password' => "D6fl#CRB5rgr",
             'timeout' => null,
             'auth_mode' => null,
