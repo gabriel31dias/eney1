@@ -529,8 +529,8 @@ if (txt) {
       title: 'Como deseja receber seu token?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: `<i class="material-icons">email</i> Sms`,
-      cancelButtonText:' <i class="material-icons">email</i> Email',
+      confirmButtonText: `<i class="material-icons">email</i><i style="padding:3px"> Sms</i>`,
+      cancelButtonText:' <i class="material-icons">email</i><i  style="padding:3px"> Email</i>',
       denyButtonText: `Don't save`,
       closeOnClickOutside: false,
       allowOutsideClick: false
