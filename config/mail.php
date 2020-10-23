@@ -37,7 +37,7 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'host' => "servidor.hostgator.com.br",
-            'port' => 587,
+            'port' => 465,
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => "delivery@versatilsoftwares.com.br",
             'password' => "D6fl#CRB5rgr",
