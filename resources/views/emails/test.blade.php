@@ -1,10 +1,10 @@
 
     <body>
-        <p>Olá {{ $user }} bem vindo !</p>
-        <p></p>
-        <p>Esse é apenas um e-mail de teste, para exemplificar o funcionamento do envio de e-mails no Laravel.</p>
+        <p>Olá {{ $user }}, tudo bem !</p>
+        <p>Este é um email do sistema de delivery da versatil</p>
+        <p>Seu token é {{ $token }}</p>
         <p></p>
         <p>Att, <br>
-        Carlos Ferreira!</p>
+          Sisteme versatil!</p>
 
     </body>
