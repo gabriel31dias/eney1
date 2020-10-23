@@ -529,7 +529,7 @@ if (txt) {
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: `Sms`,
-      cancelButtonText:'Email'
+      cancelButtonText:'Email',
       denyButtonText: `Don't save`,
      }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
