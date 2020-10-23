@@ -23,7 +23,7 @@ class EmailValidController extends Controller
       $newtoken->token = $generatetoken;
       $newtoken->save();
       Mail::to($email)->send(new SendMail($nameuser, $generatetoken));
-      return true;
+      return $generatetoken;
       $gg = $newtoken->all();
    }
 
