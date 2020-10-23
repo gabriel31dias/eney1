@@ -539,24 +539,23 @@ if (txt) {
       if (result.isConfirmed) {
 
            linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
-
+           console.log('sms kkkkkkkkkkkkk')
        } else {
 
            linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
-
+           console.log('email kkkkkkkkkk')
       }
      })
 
 
 
-    $.get( ,function(data){
+    $.get(linksettoken ,function(data){
 
     }).then(function(data){
       // alert(data)
        console.log(data)
        showdialogtoken()
        console.log(data)
-     
     }).fail(function(data) {
       showdialogtoken()
       console.log(data)
