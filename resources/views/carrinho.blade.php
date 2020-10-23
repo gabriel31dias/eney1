@@ -4,7 +4,8 @@
 	<head>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
        <!-- production version, optimized for size and speed -->
@@ -528,15 +529,16 @@ if (txt) {
       title: 'Como deseja receber seu token?',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: `Sms`,
-      cancelButtonText:'Email',
+      confirmButtonText: `<i class="material-icons">email</i> Sms`,
+      cancelButtonText:' <i class="material-icons">email</i> Email',
       denyButtonText: `Don't save`,
       closeOnClickOutside: false,
       allowOutsideClick: false
      }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-         Swal.fire('<i class="ti ti-arrow-up"></i> Saved!', '', 'success')
+         Swal.fire('<i class="material-icons">email</i>
+          Saved!', '', 'success')
        } else if (result.isDenied) {
           Swal.fire('Changes are not saved', '', 'info')
         }
