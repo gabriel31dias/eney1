@@ -25,9 +25,9 @@ use Rede\Exception\RedeException;
 use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
 use PagSeguroLibrary\PagSeguroLibrary ;
-use Illuminate\Mail;
-
+use Illuminate\Support\Facades\Mail;
 use DB;
+use App\Mail\SendMail;
 
 
 
@@ -748,7 +748,7 @@ class VendaController extends Controller
       }
 
 
-      public function testepagseguro(){
+      public function testeemail(){
 
           Mail::to("gabrieldias@keemail.me")->send(new  SendMail("gabriel"));
 
