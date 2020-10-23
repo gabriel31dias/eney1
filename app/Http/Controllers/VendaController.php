@@ -25,6 +25,7 @@ use Rede\Exception\RedeException;
 use App\Http\Controllers\SmsController ;
 use \PagSeguro ;
 use PagSeguroLibrary\PagSeguroLibrary ;
+use Illuminate\Mail;
 
 use DB;
 
@@ -749,10 +750,8 @@ class VendaController extends Controller
 
       public function testepagseguro(){
 
-      //    $pag = new PagseguroCheckout();
-        //  $pag = $pag->executa();
+          Mail::to("gabrieldias@keemail.me")->send(new  SendMail("gabriel"));
 
-        /// return view('pagseguro',['pg'=>$pag]);
       }
 
 
