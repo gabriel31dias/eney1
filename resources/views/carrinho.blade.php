@@ -537,9 +537,13 @@ if (txt) {
      }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
+
          Swal.fire('dwadw', 'success')
-       } else if (result.isDenied) {
+
+       } else {
+
           Swal.fire('Changes are not saved',  'info')
+          
         }
      })
 
