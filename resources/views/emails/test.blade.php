@@ -1,8 +1,8 @@
 
-   <html style="background-color: rgb(71, 58, 143);color:white" >
+   <html style="background-color: #f57f17;color:white" >
    <body>
        
-        <div  style="background-color: rgb(71, 58, 143);color:white">
+        <div  style="background-color:#f57f17;color:white">
             <center>
         <h1>Olá {{ $user }}, tudo bem !</h2>
         <p>Este é um email do sistema de delivery da versatil</p>
