@@ -524,7 +524,7 @@ if (txt) {
   }
 
   async function sendsms(telefone){
-
+   let linksettoken = ''
    await swalWithBootstrapButtons.fire({
       title: 'Como deseja receber seu token?',
       showDenyButton: true,
@@ -538,18 +538,18 @@ if (txt) {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
 
-         Swal.fire('dwadw', 'success')
+           linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
 
        } else {
 
-          Swal.fire('Changes are not saved',  'info')
-          
-        }
+           linksettoken = '{{route("sendtoken")}}/'+telefone+'/'+lojacode
+
+      }
      })
 
 
 
-    $.get('{{route("sendtoken")}}/'+telefone+'/'+lojacode ,function(data){
+    $.get( ,function(data){
 
     }).then(function(data){
       // alert(data)
