@@ -1,4 +1,4 @@
-<html>
+
     <body>
         <p>Olá {{ $user }}!</p>
         <p></p>
@@ -7,4 +7,3 @@
         <p>Att, <br>
         Carlos Ferreira!</p>
     </body>
-</html>
