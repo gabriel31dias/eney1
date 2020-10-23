@@ -16,9 +16,11 @@ class SendMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    private $name;
+
+    public function __construct($name)
     {
-        //
+        $this->name = $name;
     }
 
     /**
@@ -31,7 +33,7 @@ class SendMail extends Mailable
         return $this->from('gabrieldias@keemail.me')
         ->view('emails.test')
         ->with([
-            'user' => $this->user,
+            'user' =>   $this->name,
         ]);
 
     }
