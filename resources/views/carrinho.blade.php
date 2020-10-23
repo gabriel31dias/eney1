@@ -524,13 +524,15 @@ if (txt) {
 
   async function sendsms(telefone){
 
-   await Swal.fire({
+   await swalWithBootstrapButtons.fire({
       title: 'Como deseja receber seu token?',
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: `Sms`,
       cancelButtonText:'Email',
       denyButtonText: `Don't save`,
+      closeOnClickOutside: false,
+      allowOutsideClick: false
      }).then((result) => {
   /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
