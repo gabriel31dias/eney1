@@ -1298,9 +1298,9 @@ setInterval(function(){
 	   if(cash_addc){
 	     	var btn = document.getElementById("addc");
             btn.disabled = 1
-			var addxx = document.getElementById("addx").value
+			var addxx = document.getElementById("addx")
 			addxx.disabled = 1
-			var removexx = document.getElementById("removex").value
+			var removexx = document.getElementById("removex")
             removexx.disabled = 1
 	   }
 	 
