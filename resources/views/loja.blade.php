@@ -670,7 +670,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 		 <br>
 		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
 
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="addquantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
+		<button type="button" id="addx"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="addquantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">add</i><br></button>
       
 	    </div>
 		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
@@ -678,7 +678,7 @@ async function open_product(id,nomeproduto,preco,descr,img,promocao='',preco_pro
 	    </div>
 
 		<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4">
-		<button type="button"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="removequantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
+		<button type="button" id="removex"   style="background-color:#FBB448;color:white;border:none;width:50px;" onclick="removequantidade(${id})" >  <i style="margin-top:3px;"  class="large material-icons">remove</i><br></button>
 	    </div>
        
 		
@@ -1298,7 +1298,10 @@ setInterval(function(){
 	   if(cash_addc){
 	     	var btn = document.getElementById("addc");
             btn.disabled = 1
-
+			var addxx = document.getElementById("addx").value
+			addxx.disabled = 1
+			var removexx = document.getElementById("removex").value
+            removexx.disabled = 1
 	   }
 	 
 
