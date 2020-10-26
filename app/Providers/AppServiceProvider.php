@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 use App\Observers\VendaObserver;
 use App\Venda;
+use App\User;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -33,5 +35,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Venda::observe(VendaObserver::class);
+        User::observe(User::class);
     }
 }

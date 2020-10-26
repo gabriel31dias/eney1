@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\User;
+use Db;
 
 class UserObserver
 {
@@ -14,7 +15,9 @@ class UserObserver
      */
     public function created(User $user)
     {
-        //
+  
+        $createmetrics_to_user = DB::table('metrics')->insert( ['totalaccess' => 0, 'totallikes' => 0,'ID_USER' => $user->id]);
+
     }
 
     /**
