@@ -110,8 +110,8 @@ class AppController extends Controller
       }
 
       $facebook =  config('app.url').'redirectredesocial/facebook/'.$codigo;
-      $instagram =  $getloja->INSTAGRAM;
-      $twitter = $getloja->TWITTER;
+      $instagram = config('app.url').'redirectredesocial/instagram/'.$codigo;  
+      $twitter = config('app.url').'redirectredesocial/twitter/'.$codigo; 
       $youtube = $getloja->YOUTUBE;
       $whats_loja = isset($getloja->telefone1) ? $getloja->telefone1 : '';
       $promoces = FacadesDB::table('produtos')->where('ID_USER', $getloja->id)->where('PROMOCAO',true)
