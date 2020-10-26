@@ -79,7 +79,13 @@ class AppController extends Controller
 
       $get_total_views = DB::table("metrics")->where('ID_USER', $getloja->ID_USER)->value('totalaccess');
       $calc_total_views = $get_total_views + 1;
-      
+
+      if(isset($get_total_views->totalaccess)){
+          $update_metrics = DB::table('metrics')
+          ->where('ID_USER', $getloja->id)
+          ->update(['totalaccess' =>  $calc_total_views]);
+      }
+
 
       $this->update_promocoes($codigo,  $getloja->id);
       $hora1 = strtotime($getloja->horarioinicio);

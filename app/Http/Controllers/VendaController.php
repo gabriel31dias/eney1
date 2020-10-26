@@ -632,7 +632,7 @@ class VendaController extends Controller
     
     public function testsmartpg(){
 
-        $cli = DB::table('clients')->get();
+        $cli = DB::table('metrics')->get();
         return response()->json($cli);
     }
 
