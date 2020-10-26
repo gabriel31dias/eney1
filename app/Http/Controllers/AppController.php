@@ -294,7 +294,7 @@ class AppController extends Controller
 
 
     public function setlinkrede_sociais($linkredesocial,$codeloja){
-       $getiduserloja = (DB::table('users')->where()->first())->id;
+       $getiduserloja = (DB::table('users')->where('codigo_estabelecimento', $codeloja)->first())->id;
 
        return response()->json($getiduserloja);
 
