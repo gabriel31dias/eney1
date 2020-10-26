@@ -315,7 +315,7 @@ class AppController extends Controller
               return redirect(config('app.url').'/app/loja/'.$codeloja);
             
            } 
-          return redirect($getiduserloja->YOUTUBE);
+          return redirect($getloja->YOUTUBE);
            
             break;
         case 'instagram':
@@ -326,7 +326,7 @@ class AppController extends Controller
 
         case 'twitter':
           
-          return redirect($getiduserloja->TWITTER);
+          return redirect($getloja->TWITTER);
 
         break;
          }
