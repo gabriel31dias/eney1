@@ -29,10 +29,10 @@ Route::get('/listcalbackpg', 'VendaController@listcalbackpg')->name('listcalback
 
 Route::get('/clientes', function () {
   
-   $cli = DB::table('clients')->get();
+    $cli = DB::table('clients')->all();
     return response()->json( $cli);
 
-})->name('cli');
+})->name('clix');
 
 
 
