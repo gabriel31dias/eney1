@@ -306,16 +306,22 @@ class AppController extends Controller
             return redirect($getloja->FACEBOOK);
        
             break;
-        case 1:
+        case "youtube" :
            
-          return redirect($$getiduserloja->FACEBOOK);
+          return redirect($getiduserloja->YOUTUBE);
            
             break;
-        case 2:
+        case 'instagram':
           
-          return redirect($$getiduserloja->FACEBOOK);
+          return redirect($getiduserloja->INSTAGRAM);
 
-            break;
+        break;
+
+        case 'twitter':
+          
+          return redirect($getiduserloja->TWITTER);
+
+        break;
          }
 
     }
