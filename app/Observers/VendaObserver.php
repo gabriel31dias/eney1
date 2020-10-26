@@ -17,9 +17,11 @@ class VendaObserver
     public function created(Venda $venda)
     {
         $client = new Client();
-        $client =  $client->create(['ID_USER'=> $venda->ID_USER ,'NOMECLIENTE'=> $venda->nomecliente,'TELEFONE'=>  $venda->numerotelefone,'EMAIL'=> "teste"]);
+        $verifi_cli = DB::table('clients')->where('TELEFONE', $venda->numerotelefone)->first();
+        if(isset($verifi_cli->id)){
+            $client =  $client->create(['ID_USER'=> $venda->ID_USER ,'NOMECLIENTE'=> $venda->nomecliente,'TELEFONE'=>  $venda->numerotelefone,'EMAIL'=> "teste"]);
+        }
         $settemp = DB::table('temps')->insert( ['value' =>  "venda inserida"]);
-
         //criar envio de email----
  //$venda->email
     }
