@@ -18,10 +18,11 @@ class VendaObserver
     {
         $client = new Client();
         $verifi_cli = DB::table('clients')->where('TELEFONE', $venda->numerotelefone)->first();
-        if(isset($verifi_cli->id)){
+        if(!isset($verifi_cli->id)){
             $client =  $client->create(['ID_USER'=> $venda->ID_USER ,'NOMECLIENTE'=> $venda->nomecliente,'TELEFONE'=>  $venda->numerotelefone,'EMAIL'=> "teste"]);
         }
         $settemp = DB::table('temps')->insert( ['value' =>  "venda inserida"]);
+
         //criar envio de email----
  //$venda->email
     }
