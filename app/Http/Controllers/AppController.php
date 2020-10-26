@@ -78,9 +78,11 @@ class AppController extends Controller
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
 
       $get_total_views = DB::table("metrics")->where('ID_USER', $getloja->id)->value('totalaccess');
+      $get_total_views2 = DB::table("metrics")->where('ID_USER', $getloja->id)->first();
       $calc_total_views = $get_total_views + 1;
 
       var_dump($get_total_views);
+      var_dump($get_total_views2);
       if(isset($get_total_views->totalaccess)){
         var_dump("uhuhuuuhuhu");
           $update_metrics = DB::table('metrics')
