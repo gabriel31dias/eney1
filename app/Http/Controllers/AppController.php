@@ -295,10 +295,30 @@ class AppController extends Controller
 
     public function setlinkrede_sociais($linkredesocial,$codeloja){
        $getiduserloja = (DB::table('users')->where('codigo_estabelecimento', $codeloja)->first())->id;
-       $gettotal_likes = (DB::table('metrics')->where('ID_USER', $getiduserloja)->first())->totallikes;
+       $getloja = DB::table('metrics')->where('ID_USER', $getiduserloja)->first();
+       $gettotal_likes =  $getloja ->totallikes;
        $new_total_likes =  $gettotal_likes + 1 ;
        $createmetrics_to_user = DB::table('metrics')->where('ID_USER', $getiduserloja)->update(['totallikes'=> $new_total_likes]);
-       return redirect($linkredesocial);
+       
+       switch ($linkredesocial) {
+        case "facebook":
+          
+            return redirect($$getiduserloja->FACEBOOK);
+       
+            break;
+        case 1:
+           
+          return redirect($$getiduserloja->FACEBOOK);
+           
+            break;
+        case 2:
+          
+          return redirect($$getiduserloja->FACEBOOK);
+          
+            break;
+         }
+
+      
     }
 
    
