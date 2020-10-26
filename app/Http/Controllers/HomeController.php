@@ -43,6 +43,7 @@ class HomeController extends Controller
         $tipo_op = Auth::user()->tipo_op;
         $get_total_access = DB::table('metrics')->where('ID_USER',  $iduser)->first();
         $get_total_access =  $get_total_access->totalaccess;
+        $get_total_likes = $get_total_access->totallikes;
         $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count();
         $get_total_clients = DB::table('clients')->where('ID_USER', $iduser)->count();
         var_dump($get_total_vendas);
@@ -60,7 +61,7 @@ class HomeController extends Controller
 
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,
         'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,
-        'gg'=>$gg, 'get_total_vendas'=> $get_total_vendas, 'get_total_clients'=>$get_total_clients, 'get_total_access'=>$get_total_access  ]);
+        'gg'=>$gg, 'get_total_vendas'=> $get_total_vendas, 'get_total_clients'=>$get_total_clients, 'get_total_access'=>$get_total_access, 'get_total_likes'=> $get_total_likes  ]);
     }
 
     public function openloja(){
