@@ -82,7 +82,7 @@ class AppController extends Controller
       $calc_total_views = $get_total_views + 1;
 
       var_dump($get_total_views);
-      var_dump($get_total_views2);
+     
       if(isset($get_total_views->totalaccess)){
         var_dump("uhuhuuuhuhu");
           $update_metrics = DB::table('metrics')
