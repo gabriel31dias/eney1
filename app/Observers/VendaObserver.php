@@ -18,7 +18,7 @@ class VendaObserver
         //
 
         $getvalue = json_encode($venda);
-        $settemp = DB::table('temps')->insert(['value' =>  $getvalue], ['value' =>  "passou pelo observador"]);
+        $settemp = DB::table('temps')->insert( ['value' =>  "venda inserida"]);
 
 
 
