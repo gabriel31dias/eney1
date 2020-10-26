@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Venda;
 use DB;
+use App\Client;
 
 class VendaObserver
 {
@@ -17,11 +18,10 @@ class VendaObserver
     {
         //
 
-        $getvalue = json_encode($venda);
+        $client = new Client();
+        $client =  $client->create(['ID_USER'=> $venda->ID_USER ,'NOMECLIENTE'=> $venda->nomecliente,'TELEFONE'=>  $venda->numerotelefone,'EMAIL'=> "teste"]);
         $settemp = DB::table('temps')->insert( ['value' =>  "venda inserida"]);
-
-
-
+ //$venda->email
     }
 
     /**

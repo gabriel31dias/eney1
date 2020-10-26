@@ -26,6 +26,7 @@ class Vendas extends Migration
             $table->string('cod_venda_web')->unique();
             //--------Endereco e contatos
             $table->string('numerotelefone')->nullable(); 
+            $table->string('email')->nullable(); 
             $table->string('ID_USER')->nullable();
             $table->string('nomecliente')->nullable();
             $table->string('endereco')->nullable(); 
