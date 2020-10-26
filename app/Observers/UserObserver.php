@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\User;
-use Db;
+use DB;
 
 class UserObserver
 {
