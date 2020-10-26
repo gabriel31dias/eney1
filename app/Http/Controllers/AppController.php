@@ -310,7 +310,7 @@ class AppController extends Controller
             break;
         case "youtube" :
 
-          if (!isset($getloja->YOUTUBE)){
+          if ($getloja->YOUTUBE == ""){
               
               return redirect(config('app.url').'/app/loja/'.$codeloja);
             
