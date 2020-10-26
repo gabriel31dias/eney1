@@ -14,6 +14,7 @@ use Session;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB as FacadesDB;
+use App\Metric;
 
 class AppController extends Controller
 {
