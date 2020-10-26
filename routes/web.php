@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +27,7 @@ Route::get('/testpagseguro', 'VendaController@testepagseguro')->name('testepagse
 Route::get('/listcalbackpg', 'VendaController@listcalbackpg')->name('listcalbackpg');
 
 
-Route::get('/clientes', function ($user) {
+Route::get('/clientes', function () {
   
    $cli = DB::table('clients')->get();
     return response()->json( $cli);
