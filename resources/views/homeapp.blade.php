@@ -125,7 +125,7 @@ visibility: hidden;
                        </div>
                        <div class="content">
                            <div class="text">TOTAL CLIENTES</div>
-                           <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">{{  $get_total_vendas }}</div>
+                           <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20">{{  $get_total_clients }}</div>
                        </div>
                    </div>
                </div>
