@@ -59,7 +59,7 @@ class HomeController extends Controller
 
         return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,
         'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,
-        'gg'=>$gg, 'get_total_vendas'=> $get_total_vendas, 'get_total_clients'=>$get_total_clients,'get_total_access'=>$get_total_access  ]);
+        'gg'=>$gg, 'get_total_vendas'=> $get_total_vendas, 'get_total_clients'=>$get_total_clients, 'get_total_access'=>$get_total_access  ]);
     }
 
     public function openloja(){
