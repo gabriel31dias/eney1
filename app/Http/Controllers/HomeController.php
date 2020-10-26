@@ -42,6 +42,7 @@ class HomeController extends Controller
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
         $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count();
+        $get_total_clients = DB::table('clients')->where('ID_USER', $iduser)->count();
         var_dump($get_total_vendas);
         $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
@@ -55,7 +56,9 @@ class HomeController extends Controller
               
         }
 
-        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,'gg'=>$gg, 'get_total_vendas'=> $get_total_vendas  ]);
+        return view('homeapp',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op,'vendasaguardando'=> $vendasaguardando,'vendasnaoaprovadas'=>$vendasnaoaprovadas,
+        'vendasaprovadas'=>$vendasaprovadas,"codeloja"=>$codeloja, "roole"=>$roole,"clients_sms"=>$getclientes_sms,
+        'gg'=>$gg, 'get_total_vendas'=> $get_total_vendas, 'get_total_clients'=>$get_total_clients  ]);
     }
 
     public function openloja(){
