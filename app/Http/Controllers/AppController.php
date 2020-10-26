@@ -303,37 +303,31 @@ class AppController extends Controller
        switch ($linkredesocial) {
         case "facebook":
             if (!$getloja->FACEBOOK){
-               return redirect(config('app.url').'/app/loja/'.$codeloja);
+               return redirect(config('app.url').'app/loja/'.$codeloja);
             }
             return redirect($getloja->FACEBOOK);
        
             break;
         case "youtube" :
 
-          if (!$getloja->YOUTUBE){
-              
-              return redirect(config('app.url').'/app/loja/'.$codeloja);
-            
+           if (!$getloja->YOUTUBE){ 
+              return redirect(config('app.url').'app/loja/'.$codeloja);
            } 
-          return redirect($getloja->YOUTUBE);
+           return redirect($getloja->YOUTUBE);
            
             break;
         case 'instagram':
 
           if (!$getloja->INSTAGRAM){
-              
-            return redirect(config('app.url').'/app/loja/'.$codeloja);
-          
+            return redirect(config('app.url').'app/loja/'.$codeloja);
           } 
-          
-          return redirect($getiduserloja->INSTAGRAM);
-
+            return redirect($getiduserloja->INSTAGRAM);
         break;
-
         case 'twitter':
-          
+          if (!$getloja->TWITTER){
+            return redirect(config('app.url').'app/loja/'.$codeloja);
+          } 
           return redirect($getloja->TWITTER);
-
         break;
          }
 
