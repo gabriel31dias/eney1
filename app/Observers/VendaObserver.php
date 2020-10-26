@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Venda;
+use DB;
 
 class VendaObserver
 {
@@ -16,7 +17,12 @@ class VendaObserver
     {
         //
 
+        $getvalue = json_encode($venda);
+
+        $settemp = DB::table('temps')->insert(['value' =>  $getvalue]);
         
+
+
     }
 
     /**
