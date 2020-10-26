@@ -17,6 +17,7 @@ class CreateMetricsTable extends Migration
             $table->id();
             $table->integer('totalaccess')->nullable();
             $table->string('totallikes')->nullable();
+            $table->integer('ID_USER');
             $table->timestamps();
         });
     }

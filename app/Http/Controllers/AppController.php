@@ -54,7 +54,8 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-      
+     
+
       $urlloja = $_SERVER['REQUEST_URI'];
       $getsucesso = '';
     
@@ -75,6 +76,10 @@ class AppController extends Controller
       
       $status_loja = true;
       $getloja = $this->users->where('codigo_estabelecimento',$codigo)->first();
+
+      $get_total_views = DB::table("metrics")->where('ID_USER', $getloja->ID_USER)->value('totalaccess');
+      $calc_total_views = $get_total_views + 1;
+
       $this->update_promocoes($codigo,  $getloja->id);
       $hora1 = strtotime($getloja->horarioinicio);
       $hora2 = strtotime($getloja->horariofinal);
