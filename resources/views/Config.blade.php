@@ -290,12 +290,12 @@ visibility: hidden;
                     </div>
                     <div class="row">
                         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-                        <h3>Facebook link</h3>
+                        <h3>Youtube Link</h3>
                         <input   class="form-control" name="YOUTUBE" id="YOUTUBE" value="{{$usercf->YOUTUBE ?? ''}}"  type="text" />
                         </div>
     
                         <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6">
-                            <h3>Youtube Link</h3>
+                            <h3>Instagram Link</h3>
                             <input  class="form-control" name="INSTAGRAM" id="INSTAGRAM" value="{{$usercf->INSTAGRAM ?? ''}}" type="text" />
                         </div>
                     </div>
