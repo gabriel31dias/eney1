@@ -82,13 +82,12 @@ class AppController extends Controller
       $calc_total_views = isset($get_total_views->totalaccess) ?  $get_total_views->totalaccess + 1 : 0;
 
       var_dump($get_total_views);
-     
+    
       if(isset($get_total_views->totalaccess)){
           $update_metrics = DB::table('metrics')
           ->where('ID_USER', $getloja->id)
           ->update(['totalaccess' =>  $calc_total_views]);
       }
-
 
       $this->update_promocoes($codigo,  $getloja->id);
       $hora1 = strtotime($getloja->horarioinicio);
