@@ -41,14 +41,12 @@ class HomeController extends Controller
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        $get_total_access = DB::table('metrics')->where('ID_USER',  $iduser)->first();
-        var_dump( $get_total_access);
-        $get_total_access =  isset($get_total_access->totalaccess) ? $get_total_access->totalaccess : '';
-        
-        $get_total_likes = isset($get_total_access->totallikes) ? $get_total_access->totallikes : '';
+        $get_total = DB::table('metrics')->where('ID_USER',  $iduser)->first();
+        $get_total_access =  isset($get_total->totalaccess) ? $get_total->totalaccess : '';
+        $get_total_likes = isset($get_total->totallikes) ? $get_total->totallikes : '';
         $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count();
         $get_total_clients = DB::table('clients')->where('ID_USER', $iduser)->count();
-        var_dump($get_total_vendas);
+        var_dump($get_total_likes);
         $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
