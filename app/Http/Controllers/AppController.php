@@ -79,7 +79,7 @@ class AppController extends Controller
 
       $get_total_views = DB::table("metrics")->where('ID_USER', $getloja->id)->first();
       $get_total_views2 = DB::table("metrics")->where('ID_USER', $getloja->id)->first();
-      $calc_total_views = $get_total_views + 1;
+      $calc_total_views = $get_total_views->totalaccess + 1;
 
       var_dump($get_total_views);
      
