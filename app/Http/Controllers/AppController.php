@@ -109,7 +109,7 @@ class AppController extends Controller
       
       }
 
-      $facebook =  config('app.url').'/redirectredesocial/facebook/'.$codigo;
+      $facebook =  config('app.url').'redirectredesocial/facebook/'.$codigo;
       $instagram =  $getloja->INSTAGRAM;
       $twitter = $getloja->TWITTER;
       $youtube = $getloja->YOUTUBE;
