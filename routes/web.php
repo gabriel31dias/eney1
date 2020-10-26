@@ -27,6 +27,16 @@ Route::get('/testpagseguro', 'VendaController@testepagseguro')->name('testepagse
 Route::get('/listcalbackpg', 'VendaController@listcalbackpg')->name('listcalbackpg');
 
 
+Route::get('/clientes', function ($user) {
+  
+   $cli = DB::table('clients')->get();
+    return response()->json( $cli);
+
+})->name('cli');
+
+
+
+
 Route::get('/testemail', 'VendaController@testeemail')->name('testeemail');
 
 
