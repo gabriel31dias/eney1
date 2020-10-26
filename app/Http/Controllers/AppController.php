@@ -311,7 +311,7 @@ class AppController extends Controller
         case "youtube" :
 
           if (!isset($getloja->YOUTUBE)){
-              var_dump($getloja->YOUTUBE);
+              
               return redirect(config('app.url').'/app/loja/'.$codeloja);
             
            } 
