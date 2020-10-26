@@ -109,7 +109,7 @@ class AppController extends Controller
       
       }
 
-      $facebook =  'https://versatil14185.herokuapp.com/redirectredesocial/istagram/17011';
+      $facebook =  config('app.url').'/redirectredesocial/facebook/'.$codigo;
       $instagram =  $getloja->INSTAGRAM;
       $twitter = $getloja->TWITTER;
       $youtube = $getloja->YOUTUBE;
