@@ -35,5 +35,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Venda::observe(VendaObserver::class);
+
+        User::observe(UserObserver::class);
+
     }
 }
