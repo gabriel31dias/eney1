@@ -302,7 +302,7 @@ class AppController extends Controller
          
        switch ($linkredesocial) {
         case "facebook":
-            if (!isset($getloja->FACEBOOK)){
+            if (!$getloja->FACEBOOK){
                return redirect(config('app.url').'/app/loja/'.$codeloja);
             }
             return redirect($getloja->FACEBOOK);
@@ -310,7 +310,7 @@ class AppController extends Controller
             break;
         case "youtube" :
 
-          if (! $getloja->YOUTUBE){
+          if (!$getloja->YOUTUBE){
               
               return redirect(config('app.url').'/app/loja/'.$codeloja);
             
@@ -319,6 +319,12 @@ class AppController extends Controller
            
             break;
         case 'instagram':
+
+          if (!$getloja->INSTAGRAM){
+              
+            return redirect(config('app.url').'/app/loja/'.$codeloja);
+          
+          } 
           
           return redirect($getiduserloja->INSTAGRAM);
 
