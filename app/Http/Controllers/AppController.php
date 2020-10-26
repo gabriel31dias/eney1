@@ -303,7 +303,7 @@ class AppController extends Controller
        switch ($linkredesocial) {
         case "facebook":
             if (!isset($getloja->FACEBOOK)){
-               return redirect()->back();
+               return redirect::back();
             }
             return redirect($getloja->FACEBOOK);
        
