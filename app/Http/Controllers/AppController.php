@@ -303,7 +303,7 @@ class AppController extends Controller
        switch ($linkredesocial) {
         case "facebook":
           
-            return redirect($$getiduserloja->FACEBOOK);
+            return redirect($getiduserloja->FACEBOOK);
        
             break;
         case 1:
@@ -314,7 +314,7 @@ class AppController extends Controller
         case 2:
           
           return redirect($$getiduserloja->FACEBOOK);
-          
+
             break;
          }
 
