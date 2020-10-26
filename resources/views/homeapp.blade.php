@@ -136,7 +136,7 @@ visibility: hidden;
                        </div>
                        <div class="content">
                            <div class="text">TOTAL VISUALIZAÇÕES</div>
-                           <div class="number count-to" data-from="0" data-to="117" data-speed="1000" data-fresh-interval="20">117</div>
+                           <div class="number count-to" data-from="0" data-to="117" data-speed="1000" data-fresh-interval="20">{{$get_total_access}}</div>
                        </div>
                    </div>
                </div>
