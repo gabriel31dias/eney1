@@ -146,7 +146,7 @@ visibility: hidden;
                            <i class="material-icons">favorite</i>
                        </div>
                        <div class="content">
-                           <div class="text">LIKES</div>
+                           <div class="text">CLIKS REDE SOCIAL</div>
                            <div class="number count-to" data-from="0" data-to="1432" data-speed="1500" data-fresh-interval="20">1432</div>
                        </div>
                    </div>

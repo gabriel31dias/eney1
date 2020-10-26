@@ -25,6 +25,7 @@ Route::get('/testesmart', 'VendaController@testsmartpg')->name('testsmartpg');
 Route::get('/testpagseguro', 'VendaController@testepagseguro')->name('testepagseguro');
 Route::get('/listcalbackpg', 'VendaController@listcalbackpg')->name('listcalbackpg');
 
+Route::get('/redirectredesocial/{linksocial?}/{codeloja?}', 'AppController@setlinkrede_sociais')->name('redir_rede_sociais');
 
 
 

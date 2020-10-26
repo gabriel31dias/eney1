@@ -118,9 +118,6 @@ class AppController extends Controller
       ->where('DATA_INICIO_PROMOCAO', '<=' , Carbon::now())
       ->where('DATA_FINAL_PROMOCAO', '>' , Carbon::now() )
       ->get();
-
-
-        
       
 
       if(!isset($promoces[0]->id)){
@@ -236,14 +233,9 @@ class AppController extends Controller
     }
 
     public static function getlojacode($id){
-        
         $users = DB::table('users')->where('id',$id)->first();
-
         $getcode =  $users->codigo_estabelecimento;
-
         return $getcode;
-
-
     }
 
    
@@ -296,6 +288,18 @@ class AppController extends Controller
         }
 
         header("Refresh:0");
+
+    }
+
+
+
+    public function setlinkrede_sociais($linkredesocial,$codeloja){
+       $getiduserloja = (DB::table('users')->where()->first())->id;
+
+       return response()->json($getiduserloja);
+
+       //$createmetrics_to_user = DB::table('metrics')->insert( ['totallikes' => 0,'ID_USER' => $user->id]);
+       
 
     }
 
