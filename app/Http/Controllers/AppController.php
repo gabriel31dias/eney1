@@ -298,7 +298,7 @@ class AppController extends Controller
        $gettotal_likes = (DB::table('metrics')->where('ID_USER', $getiduserloja)->first())->totallikes;
        $new_total_likes =  $gettotal_likes + 1 ;
        $createmetrics_to_user = DB::table('metrics')->where('ID_USER', $getiduserloja)->update(['totallikes'=> $new_total_likes]);
-       return response()->json($createmetrics_to_user);
+       return response()->json($new_total_likes);
     }
 
    
