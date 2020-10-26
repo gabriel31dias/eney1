@@ -36,16 +36,13 @@ class HomeController extends Controller
     public function index()
     {
         $gg = Session::get('success');
-
-      
-
-        
-
         $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
+        $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count(10);
+        var_dump( $get_total_vendas);
         $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
         $vendasaprovadas = $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);

@@ -254,7 +254,7 @@
                             
                             <i  style="" class="material-icons">apps</i>
                             <br>
-                            Grupos
+                            Menu
                         </p>
                     </a>
                 </div>
