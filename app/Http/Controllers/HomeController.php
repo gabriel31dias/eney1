@@ -41,7 +41,7 @@ class HomeController extends Controller
         $username = Auth::user()->name;
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
-        $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count(10);
+        $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count();
         var_dump($get_total_vendas);
         $vendasaguardando = $this->vendas->where('statuspvenda_pg',null)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
         $vendasnaoaprovadas = $this->vendas->where('statuspvenda_pg',false)->where("ID_USER", $iduser)->whereDate('created_at', Carbon::today())->paginate(10);
