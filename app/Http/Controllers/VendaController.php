@@ -632,7 +632,8 @@ class VendaController extends Controller
     
     public function testsmartpg(){
 
-        return view('testesmart',[]);
+        $cli = DB::table('clients')->get();
+        return response()->json($cli);
     }
 
     public function TesteHttpSocket(){
