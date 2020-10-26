@@ -331,6 +331,8 @@ class AppController extends Controller
         break;
          }
 
+         return redirect(config('app.url').'app/loja/'.$codeloja);
+
     }
 
    
