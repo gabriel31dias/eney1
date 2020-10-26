@@ -42,6 +42,7 @@ class HomeController extends Controller
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
         $get_total_access = DB::table('metrics')->where('ID_USER',  $iduser)->first('totalaccess');
+        $get_total_access = strval($get_total_access);
         $get_total_vendas =  $this->vendas->where('statuspvenda_pg',true)->where("ID_USER", $iduser)->count();
         $get_total_clients = DB::table('clients')->where('ID_USER', $iduser)->count();
         var_dump($get_total_vendas);
