@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
 use App\Observers\VendaObserver;
+use App\Observers\UserObserver;
+
 use App\Venda;
 use App\User;
 
