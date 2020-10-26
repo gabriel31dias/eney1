@@ -81,6 +81,7 @@ class AppController extends Controller
       $calc_total_views = $get_total_views + 1;
 
       if(isset($get_total_views->totalaccess)){
+        var_dump("uhuhuuuhuhu");
           $update_metrics = DB::table('metrics')
           ->where('ID_USER', $getloja->id)
           ->update(['totalaccess' =>  $calc_total_views]);
