@@ -61,7 +61,7 @@ class CarrinhoController extends Controller
         $hora2 = strtotime($getusersloja->horariofinal);
         $horaAtual = strtotime(date('H:i:s'));
         $code_payment =  $getusersloja->fpagamentoeletronico ;
-        var_dump($code_payment);
+        
         if($horaAtual >= $hora1 && $horaAtual <= $hora2  ){ //Horario de funcionamento 
           $status_loja = true;
         }else{
@@ -137,7 +137,7 @@ class CarrinhoController extends Controller
 
     public function listusersave(){
      
-        var_dump(Session::get("user_web_app"));
+      //  var_dump(Session::get("user_web_app"));
 
     }
 
@@ -406,7 +406,7 @@ class CarrinhoController extends Controller
 
          Session::put('carrinho', $novocarrinho);
          $gg = Session::get('carrinho');
-         var_dump( $gg);
+        // var_dump( $gg);
 
        
 
