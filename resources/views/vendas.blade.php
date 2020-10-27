@@ -328,13 +328,16 @@ async function produtos(idproduto) {
     $.get( `{{route("getproductsjson")}}/${idproduto}`,function(data){
       getx = JSON.parse(data)
       console.log(getx)
-      let newdata =  getx.map(function(dta){
+    
+
+    }).done(function(data){
+
+
+      let newdata =  data.map(function(dta){
              dta.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
              return dta
       });
       console.log(newdata)
-
-    }).done(function(data){
 	
       setTimeout(function(){
          ///O comando verbatin escapa o blade para evitar erro na view
