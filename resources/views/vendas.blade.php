@@ -327,17 +327,12 @@ async function produtos(idproduto) {
   
     $.get( `{{route("getproductsjson")}}/${idproduto}`,function(data){
       getx = JSON.parse(data)
-      
       console.log(getx)
-
       let newdata =  getx.map(function(dta){
-           return  dta.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-
+             dta.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+             return dta
       });
-
       console.log(newdata)
-
-
 
     }).done(function(data){
 	
@@ -347,7 +342,7 @@ async function produtos(idproduto) {
             var example1 = new Vue({
              el: '#listaadd',
              data: {
-             items: JSON.parse(data)
+             items: JSON.parse(newdata)
               }
              })
            $('#listaadd').show()
