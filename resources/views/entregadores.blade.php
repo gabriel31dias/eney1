@@ -307,10 +307,20 @@ async function cad_grupo()
 
                                 <div class="form-group form-float">
                                      <div class="form-line">
-                                       <label class="">Codigo sistema</label>
-                                         <input id="ID_USER" style="display:none" value="" name="ID_USER" type="text" class="form-control">
+                                       <label class="">Nome Entregador</label>
+                                         <input id="ID_USER"  value="" name="ID_USER" type="text" class="form-control">
                                      </div>
                                 </div>
+
+                                <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Whatsapp</label>
+                                         <input id="ID_USER"  value="" name="ID_USER" type="text" class="form-control">
+                                     </div>
+                                </div>
+
+
+                                
                               
                  </div>
 
