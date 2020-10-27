@@ -337,9 +337,9 @@ async function produtos(idproduto) {
              dta.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
              return dta
       });
-      console.log(newdata)
+     
 	
-      setTimeout(function(){
+      setTimeout(function(newdata){
          ///O comando verbatin escapa o blade para evitar erro na view
          @verbatim
             var example1 = new Vue({
