@@ -85,7 +85,7 @@ class VendaController extends Controller
 
             $value['created_at'] = date('Y-m-d H:i:s', strtotime($value['created_at']));
 
-            $value['valor_total'] = "<a onclick='precos(" . number_format($value['preco_total_produto'], 2) . "," . number_format($value['preco_total_entrega'], 2) . "," . number_format($value['preco_total_adicionais'], 2) . ")'>" . $value['valor_total'] . " Ver mais..</a>";
+            $value['valor_total'] = "<a  class='waves-effect waves-light btn btn-large  bg-light-blue' onclick='precos(" . number_format($value['preco_total_produto'], 2) . "," . number_format($value['preco_total_entrega'], 2) . "," . number_format($value['preco_total_adicionais'], 2) . ")'>" . $value['valor_total'] . " Ver mais..</a>";
 
             if ($value['tiporetirada'] == "0")
             {
