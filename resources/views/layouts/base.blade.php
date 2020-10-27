@@ -538,12 +538,24 @@ select {
                         </li>
 
                         <li>
+
                            <a href="{{route("setpromocao")}}" class="menuit menu-toggle">
                            <i class="material-icons" >create_new_folder</i>
                            <span style="margin-top:10px;">Promoções</span>
                            </a>
             
                         </li>
+
+
+                        <li>
+                           
+                           <a href="{{route("entregadores")}}" class="menuit menu-toggle">
+                           <i class="material-icons" >create_new_folder</i>
+                           <span style="margin-top:10px;">Entregadores</span>
+                           </a>
+            
+                        </li>
+
 
                         
                      </ul>
