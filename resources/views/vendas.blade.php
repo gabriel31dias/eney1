@@ -330,6 +330,10 @@ async function produtos(idproduto) {
       
       console.log(getx)
 
+      getx.forEach(function(dta){
+         console.log(dta)
+      });
+
     }).done(function(data){
 	
       setTimeout(function(){
