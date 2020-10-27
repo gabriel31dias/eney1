@@ -385,7 +385,7 @@ select {
                   </li>
                   <!-- #END# Notifications -->
                   <!-- Tasks -->
-                  <li style="display: none" class="dropdown">
+                  <li style="display:none" class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                      <i class="material-icons">flag</i>
                      <span class="label-count">9</span>
@@ -462,7 +462,7 @@ select {
                      </ul>
                   </li>
                   <!-- #END# Tasks -->
-                  <li  class="pull-right"><a onclick="gerar_url_retorno()" ><i class="material-icons">remove_circle</i></a></li>
+                  <li  class=""><a onclick="gerar_url_retorno()" ><i class="material-icons">polymer</i></a></li>
 
                   <li  class="pull-right"><a href="{{route("sairapp")}}" ><i class="material-icons">remove_circle</i></a></li>
 
