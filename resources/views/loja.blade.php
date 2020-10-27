@@ -1232,6 +1232,7 @@ async function gettotal(){
    
    $.get('{{route("gettotal")}}',function(data){
       total = data
+	  console.log(typeof  total)
 	  document.getElementById('painelt').innerHTML = data
    })
 
