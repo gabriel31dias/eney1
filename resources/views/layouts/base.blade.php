@@ -385,7 +385,7 @@ select {
                   </li>
                   <!-- #END# Notifications -->
                   <!-- Tasks -->
-                  <li class="dropdown">
+                  <li style="display: none" class="dropdown">
                      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                      <i class="material-icons">flag</i>
                      <span class="label-count">9</span>
