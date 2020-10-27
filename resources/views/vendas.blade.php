@@ -339,13 +339,13 @@ async function produtos(idproduto) {
       });
      
 	
-      setTimeout(function(newdata){
+      setTimeout(function(){
          ///O comando verbatin escapa o blade para evitar erro na view
          @verbatim
             var example1 = new Vue({
              el: '#listaadd',
              data: {
-             items: JSON.parse(newdata)
+             items: newdata
               }
              })
            $('#listaadd').show()
