@@ -335,6 +335,7 @@ async function produtos(idproduto) {
       data = JSON.parse(data)
       let newdata =  data.map(function(dta){
          dta.valortotal_produto_adicionais =  dta.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+         dta.precoproduto =  dta.precoproduto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
              return dta
       });
      
