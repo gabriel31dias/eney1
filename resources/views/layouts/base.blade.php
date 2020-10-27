@@ -462,7 +462,9 @@ select {
                      </ul>
                   </li>
                   <!-- #END# Tasks -->
-                  <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                  <li style="display:none" class="pull-right"><a href="javascript:void(0);" ><i class="material-icons">remove_circle</i></a></li>
+
+                  <li style="display:none" class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
                </ul>
             </div>
          </div>
