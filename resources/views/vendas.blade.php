@@ -341,6 +341,7 @@ async function produtos(idproduto) {
 	
       setTimeout(function(){
          ///O comando verbatin escapa o blade para evitar erro na view
+         console.log(newdata)
          @verbatim
             var example1 = new Vue({
              el: '#listaadd',
