@@ -462,6 +462,8 @@ select {
                      </ul>
                   </li>
                   <!-- #END# Tasks -->
+                  <li  class="pull-right"><a onclick="gerar_url_retorno()" ><i class="material-icons">remove_circle</i></a></li>
+
                   <li  class="pull-right"><a href="{{route("sairapp")}}" ><i class="material-icons">remove_circle</i></a></li>
 
                   <li style="display:none" class="pull-right"><a href="{{route("sairapp")}}" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
@@ -770,6 +772,34 @@ select {
          </aside>
 
          <script>
+
+  async function gerar_url_retorno(){
+
+     
+const { value: fruit } = await Swal.fire({
+  title: 'Selecione a operadora de pagamento',
+  input: 'select',
+  inputOptions: ['Pagseguro','Cielo'],
+   
+  inputPlaceholder: 'Select a fruit',
+  showCancelButton: true,
+  inputValidator: (value) => {
+    return new Promise((resolve) => {
+      if (value === 'oranges') {
+        resolve()
+      } else {
+        resolve('You need to select oranges :)')
+      }
+    })
+  }
+})
+
+if (fruit) {
+  Swal.fire(`You selected: ${fruit}`)
+}
+
+
+   }
 
 let getdata = ""
 getcodloja()
