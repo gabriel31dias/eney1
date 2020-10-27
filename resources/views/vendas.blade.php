@@ -331,7 +331,7 @@ async function produtos(idproduto) {
       console.log(getx)
 
       let newdata =  getx.map(function(dta){
-           return  newdata.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+           return  dta.valortotal_produto_adicionais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
       });
 
