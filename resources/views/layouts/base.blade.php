@@ -456,7 +456,7 @@ select {
                               </li>
                            </ul>
                         </li>
-                        <li class="footer">
+                        <li style="display:none" class="footer">
                            <a href="javascript:void(0);">View All Tasks</a>
                         </li>
                      </ul>
