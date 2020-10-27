@@ -1233,7 +1233,11 @@ async function gettotal(){
    $.get('{{route("gettotal")}}',function(data){
       total = data
 	  console.log(typeof  total)
-	  document.getElementById('painelt').innerHTML = data
+	  //com R$
+       var f = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+
+	  document.getElementById('painelt').innerHTML = f
    })
 
 }
