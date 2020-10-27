@@ -781,7 +781,7 @@ const { value: fruit } = await Swal.fire({
   input: 'select',
   inputOptions: ['Pagseguro','Cielo'],
    
-  inputPlaceholder: 'Select a fruit',
+  inputPlaceholder: 'Selecione',
   showCancelButton: true,
   inputValidator: (value) => {
     return new Promise((resolve) => {
