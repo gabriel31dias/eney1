@@ -18,6 +18,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/entregadores', 'EntregadoresController@index')->name('entregadores');
+
+
 
 Route::get('/openloja', 'HomeController@openloja')->name('openloja');
 Route::get('/testesocket', 'VendaController@testesteservidorsocket')->name('testesteservidorsocket');

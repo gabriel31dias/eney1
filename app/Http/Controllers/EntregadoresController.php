@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Entregadores;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class EntregadoresController extends Controller
 {
@@ -14,7 +17,17 @@ class EntregadoresController extends Controller
      */
     public function index()
     {
-        //
+
+        $codeloja =  Auth::user()->codigo_estabelecimento;
+        $user = Auth::user()->email;
+        $username = Auth::user()->name;
+        $iduser = Auth::user()->id;
+        $tipo_op = Auth::user()->tipo_op;
+        $roole = Auth::user()->tipo_user ;//3 para admin
+
+
+        return view('entregadores',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op ]);
+        
     }
 
     /**
