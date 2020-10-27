@@ -24,9 +24,11 @@ class EntregadoresController extends Controller
         $iduser = Auth::user()->id;
         $tipo_op = Auth::user()->tipo_op;
         $roole = Auth::user()->tipo_user ;//3 para admin
+        $codeloja =  Auth::user()->codigo_estabelecimento;
 
 
-        return view('entregadores',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op ]);
+
+        return view('entregadores',['user'=>$user , 'username' => $username,'iduser' => $iduser, 'tipo_op'=> $tipo_op, 'codeloja'=>$codeloja ]);
         
     }
 
