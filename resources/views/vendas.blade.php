@@ -369,7 +369,7 @@ async function produtos(idproduto) {
    
 	   <td> {{ item.idproduto }}</td>
 	   <td> {{ item.nomeproduto }} <a style="color:red">{{ item.tags_adicionais }}</a></td>
-	   <td> {{ item.precoproduto }}</td>
+	   <td> {{ item.precoproduto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'} }}</td>
       <td> {{ item.quantidade }}</td>
       <td> {{ item.obs }}</td>
 
