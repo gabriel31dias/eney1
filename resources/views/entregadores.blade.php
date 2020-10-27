@@ -298,10 +298,17 @@ async function cad_grupo()
 		html: `<div class="col-sm-12">
                               
                               <div class="form-group form-float">
+                                     <div style="display:none;"  class="form-line">
+                                       <label style="display:none;" class="">Codigo sistema</label>
+                                         <input id="ID_USER" style="display:none" value="" name="ID_USER" type="text" class="form-control">
+                            
+                                     </div>
+                                </div>
+
+                                <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Codigo sistema</label>
-                                         <input id="ID_USER"  value="" name="ID_USER" type="text" class="form-control">
-                            
+                                         <input id="ID_USER" style="display:none" value="" name="ID_USER" type="text" class="form-control">
                                      </div>
                                 </div>
                               
