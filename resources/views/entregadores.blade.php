@@ -334,7 +334,7 @@ async function cad_grupo()
 	{
 
       if (params.isDismissed) {
-           location.href = "/grupos"
+           location.href = "/entregadores"
 
            return
         }
