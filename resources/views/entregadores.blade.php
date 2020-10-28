@@ -460,77 +460,38 @@ const frm = await Swal.fire({
     width: 800,
     closeOnClickOutside: false,
     allowOutsideClick: false,
-    title: 'Cadastro de Grupo de produto'+`  <div style="display:none" id="carregandoimg">    
-                       <h1>Aguarder carregando imagem....</h1>
-               </div>
-                 `,
+    title: 'Cadastro de Grupo de produto',
     html:
         `
-        <br>
-   <form action="/" id="foto" id="f2" class="dropzone dz-clickable" method="post" enctype="multipart/form-data">
-                              <div class="dz-message">
-                                 <div class="align-center drag-icon-cph">
-                                       
-                                    <center>
-                                       <img id="myimage" src="${data_dom.IMG}" height="200">
-
-                                    <br>
-                                    <br>
-                                    <br>
-                                       <input class="" onchange="onFileSelected(event)" type="file" name="fileToUpload" id="fileToUpload" size="1" />
-                                       </center>
-                                 </div>
-                                 <h3>Selecione a foto do grupo</h3>
-                                 <em></em>
-                              </div>
-                              
-                           </form>
-                        <br>
-                            <br>
-                                  
-<form id="f1" action="{{route('grupoupdate')}}" method="POST">
-
-@csrf
-
-<div class="col-sm-12">
-                              
+        <div class="col-sm-12">
+                              <form id="f1"> 
                               <div class="form-group form-float">
-                                     <div class="form-line">
-                                       <label class="">Codigo sistema</label>
-                                         <input id="CODIGO_SISTEMA"   value="${data_dom.CODIGO_SISTEMA}"  name="CODIGO_SISTEMA" type="text" class="form-control">
-                                        
+                                     <div style="display:none;"  class="form-line">
+                                       <label style="display:none;" class="">Codigo sistema</label>
+                                         <input id="ID_USER" style="display:none" value="" name="ID_USER" type="text" class="form-control">
+                            
                                      </div>
-                                 </div>
-                              
-                             </div>
-
-                             <input style="display:none" type="text" name="id" id="id" value="${data_dom.id}">
-
-
-
-<div class="r"ow clearfix">
-<input style="display:none"  type="text" name="ID_USER" id="ID_USER" value="{{$iduser}}">
-                            <div class="col-sm-12">
-                              <input style="display:none" type="text" id="IMG" name="IMG" value='${data_dom.IMG}'>
-                             <div class="form-group form-float">
-                                    <div class="form-line">
-                                      <label class="">Nome do grupo</label>
-                                        <input id="NOME_GRUPO"  value="${data_dom.NOME_GRUPO}"  name="NOME_GRUPO" type="text" class="form-control">
-                                       
-                                    </div>
                                 </div>
-                             
-                            </div>
 
-                          
+                                <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Nome Entregador</label>
+                                         <input id="NOME_ENTREGADOR"  value="" name="NOME_ENTREGADOR" type="text" class="form-control">
+                                     </div>
+                                </div>
 
-                            <input  style="display:none"  type="text" id="IMGedit" name="IMG">
-                       
-                        
-                        <input type="submit"></input>
-            </form>
+                                <div class="form-group form-float">
+                                     <div class="form-line">
+                                       <label class="">Whatsapp</label>
+                                         <input id="WHATS" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);"  value="" name="WHATS" type="text" class="form-control">
+                                     </div>
+                                </div>
 
-            
+                         </form>
+                                
+                              
+                 </div>
+
                         `,
 
     confirmButtonText: 'SALVAR PRODUTO',

@@ -74,8 +74,15 @@ class EntregadoresController extends Controller
     public function show(Entregadores $entregadores)
     {
         
-        
+
     }
+
+    public function item($id)
+    {
+        $item = $this->entregadores->find($id);
+        return response()->json($item);
+    }
+
 
     /**
      * Show the form for editing the specified resource.

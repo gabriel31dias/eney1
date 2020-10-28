@@ -22,6 +22,7 @@ Route::get('/entregadores', 'EntregadoresController@index')->name('entregadores'
 Route::post('/entregadores/save' ,'EntregadoresController@create')->name('createentregadores');
 Route::get('/entregadores/destroy/{id?}' ,'EntregadoresController@destroy')->name('destroyentregadores');
 Route::get('/entregadores/list', 'EntregadoresController@list')->name('listentregadores');
+Route::get('/entregadores/item/{id?}', 'EntregadoresController@item')->name('itementregadores');
 
 
 
