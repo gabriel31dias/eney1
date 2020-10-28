@@ -527,7 +527,7 @@ var $form = $('#f1');
 var serializedData = $form.serialize();
 //alert(serializedData)
 request = $.ajax({
-    url: "{{route('itementregadores')}}",
+    url: "{{route('updateentregadores')}}",
     type: "post",
     data: serializedData
 });
