@@ -56,7 +56,10 @@ class AppController extends Controller
 
      
       $gettypelist = $_GET['list'];
+     
+      $gettypelist = $gettypelist  == 'litext' ? true : false ;
       var_dump( $gettypelist);
+
       $urlloja = $_SERVER['REQUEST_URI'];
       $getsucesso = '';
     
