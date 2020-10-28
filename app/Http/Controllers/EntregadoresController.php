@@ -109,6 +109,8 @@ class EntregadoresController extends Controller
      */
     public function destroy(Entregadores $entregadores)
     {
-        return   $entregadores->delete();
+
+        return response()->json($entregadores);
+       // return   $entregadores->delete();
     }
 }
