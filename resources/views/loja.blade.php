@@ -497,16 +497,22 @@
 							
 							@if($item->PROMOCAO && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 
-							  
+							<div onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}', false ,{{$item->PRECO_PROMOCAO}}); 	 preco_old =  {{$item->PRECO_UNIT}} 
+								"   style="height:100%;width:100%" src="{{$item->IMG}}">
+							 <div class="text-center" style="max-height: 20px"  style="padding:30px" >
+							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
+							 <span style="font-size:35px">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
+                                   
+
+							 </div>
+							 </div>
 									  
 									
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
-									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
-                                   
+									
 								 
 
-                                    
-
+            
 									
 								</p>
 							</div>
