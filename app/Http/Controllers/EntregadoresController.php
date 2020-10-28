@@ -107,10 +107,12 @@ class EntregadoresController extends Controller
      * @param  \App\Entregadores  $entregadores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Entregadores $entregadores)
+    public function destroy($id)
     {
 
-        return response()->json($entregadores);
-       // return   $entregadores->delete();
+       $getitem =  $this->entregadores->find($id);
+        return   $getitem->delete();
+        
+       
     }
 }
