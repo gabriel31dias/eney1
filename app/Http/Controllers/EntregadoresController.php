@@ -80,7 +80,8 @@ class EntregadoresController extends Controller
 
     public function item($id)
     {
-        $item = $this->entregadores->find($id);
+        $iduser = Auth::user()->id;
+        $item = $this->entregadores->where('ID_USER', $iduser)->where('id',$id);
         return response()->json($item);
     }
 
