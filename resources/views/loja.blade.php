@@ -381,7 +381,7 @@
               
 			<div style="max-height: 50px; "  class="row">
 				
-	          <div  class="col-md-12 padding:20px text-center">
+	          <div style="padding:20px"  class="col-md-12  text-center">
 				<div class="btn-group btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary active">
 					  <input type="radio" name="options" id="option1" checked>
