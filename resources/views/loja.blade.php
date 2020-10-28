@@ -385,12 +385,12 @@
 				<div  style="padding:10px"  class="btn-group btn-group-toggle" data-toggle="buttons">
 				
 					@if( $gettypelist== "false" )
-                        <a href="?list=litext">
-				    	<label class="btn btn-primary active">
+                        
+				    	<label onclick="location.href='{{'/75776?list=litext'}}'" class="btn btn-primary active">
 						<input type="radio" name="options" id="option1"  checked>
 						<i class="material-icons">apps</i>
 						</label>
-					     </a>
+					    
 						
 					@else
 
