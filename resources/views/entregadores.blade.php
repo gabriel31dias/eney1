@@ -358,7 +358,7 @@ async function cad_grupo()
 		
 
 
-		save_entregor()
+		save_entregador()
 
 
 	})
@@ -368,7 +368,7 @@ async function cad_grupo()
 
 
 
-function save_entregor()
+function save_entregador()
 {
 
 	var request;
