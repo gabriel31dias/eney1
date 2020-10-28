@@ -386,7 +386,7 @@
 				
 					@if( $gettypelist== "false" )
                         
-				    	<label onclick="location.href='/app/loja/{{$lojacode}}?list=litext'" class="btn btn-primary active">
+				    	<label class="btn btn-primary active">
 						<input type="radio" name="options" id="option1"  checked>
 						<i class="material-icons">apps</i>
 						</label>
@@ -394,7 +394,7 @@
 						
 					@else
 
-				    	<label class="btn btn-primary ">
+				    	<label  class="btn btn-primary active">
 						<input type="radio" name="options" id="option1"  >
 						<i class="material-icons">apps</i>
 						</label>
@@ -407,7 +407,7 @@
 					
 					@if( $gettypelist== "true" )
 
-					    <label class="btn btn-primary active">
+					    <label  onclick="location.href='/app/loja/{{$lojacode}}?list=litext'"  class="btn btn-primary active">
 						<input type="radio" name="options" id="option2"  checked> 
 						<i class="material-icons">chrome_reader_mode</i>
 					    </label>
