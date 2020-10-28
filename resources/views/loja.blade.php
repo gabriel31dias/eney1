@@ -492,7 +492,7 @@
 				@foreach ($produtos as $item)
 				
 				
-					<div style="max-height: 20px"  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
 						<a href="{{$item->IMG ?? 'https://radio93fm.com.br/wp-content/uploads/2019/02/produto.png'}}" class="fh5co-card-item image-popup">
 							
 							@if($item->PROMOCAO && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
@@ -512,7 +512,7 @@
 							</div>
 
 							 @else
-							 <div style="padding:30px" >
+							 <div style="max-height: 20px"  style="padding:30px" >
 							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
 							 <span style="font-size:30px," class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 
