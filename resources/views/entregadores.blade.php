@@ -441,6 +441,8 @@ await $.get("{{route('itementregadores')}}/"+id, function(data, status){ ///Busc
   
    
        data_dom = data
+
+       console.log(data_dom)
           
        }).then(function (params) {
         
