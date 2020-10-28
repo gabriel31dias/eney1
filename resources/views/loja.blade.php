@@ -381,8 +381,8 @@
               
 			<div style="max-height: 50px; "  class="row">
 				
-	          <div style="padding:20px"  class="col-md-12  text-center">
-				<div  style="padding:20px"  class="btn-group btn-group-toggle" data-toggle="buttons">
+	          <div style="padding:10px"  class="col-md-12  text-center">
+				<div  style="padding:10px"  class="btn-group btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary active">
 					  <input type="radio" name="options" id="option1" checked>
 					  <i class="material-icons">apps</i>
