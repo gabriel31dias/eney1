@@ -208,31 +208,7 @@
                 </a>
             </div>
           </center>
-					<h1 style="color:{{$style['color2']}}"> {{$nameloja ?? ''}} </h1>
-				   <div style="opacity: 1.0;z-index:2000;">
-				
 					
-											<h3 style="color:{{$style['color2']}}"> 
-												
-												@if($status_loja == true )
-
-											    <span style="color:green">Aberto</span>
-                          <script></script>
-												@else
-
-												<span style="color:red">Fechado</span>
-
-												@endif
-												
-											
-											
-											</h3>
-
-
-											
-
-				   </div>
-				</div>
 		
 			<div class="dropdown">
             <div style="background-color: white" class="row">
