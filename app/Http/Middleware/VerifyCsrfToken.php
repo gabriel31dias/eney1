@@ -27,7 +27,7 @@ class VerifyCsrfToken extends Middleware
         "/entregadores/save",
         "/entregadores/update"
 
-        
+        //dwad
 
     ];
 }
