@@ -61,7 +61,8 @@ class EntregadoresController extends Controller
 
     public function list()
     {
-       $entregadores =  $this->entregadores->all();
+       $iduser = Auth::user()->id;
+       $entregadores =  $this->entregadores->where('ID_USER', $iduser)->get();
        return response()->json( $entregadores);
     }
 
