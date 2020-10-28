@@ -514,7 +514,7 @@
 							 @else
 							 <div class="text-center" style="max-height: 20px"  style="padding:30px" >
 							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
-							 <span style="font-size:20px,">{{$item->PRECO_UNIT}}</span>
+							 <span style="font-size:40px,">{{$item->PRECO_UNIT}}</span>
 
 							 </div>
 							 
