@@ -498,19 +498,12 @@
 							@if($item->PROMOCAO && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 
 							  
-
-							<div class="fh5co-text">
-								<h2>{{$item->NOME_PRODUTO}}</h2>
-								
-								<p>@if($item->PROMOCAO == true && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 									  
 									
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
                                    
-								   @else
-								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
-								  @endif
+								 
 
                                     
 
@@ -518,7 +511,10 @@
 								</p>
 							</div>
 
-		                     @else
+							 @else
+							 
+							 <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
+
                             
 							 
 	                      	@endif 
