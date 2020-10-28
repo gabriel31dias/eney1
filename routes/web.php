@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/entregadores', 'EntregadoresController@index')->name('entregadores');
 Route::post('/entregadores/save' ,'EntregadoresController@create')->name('createentregadores');
+Route::post('/entregadores/destroy' ,'EntregadoresController@destroy')->name('destroyentregadores');
 
 
 
