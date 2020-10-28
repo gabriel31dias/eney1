@@ -59,6 +59,14 @@ class EntregadoresController extends Controller
         
     }
 
+    public function list()
+    {
+       $entregadores =  $this->entregadores->all();
+
+       return response()->json( $entregadores);
+
+    }
+
     /**
      * Display the specified resource.
      *
