@@ -384,7 +384,7 @@
 	          <div style="padding:10px"  class="col-md-12  text-center">
 				<div  style="padding:10px"  class="btn-group btn-group-toggle" data-toggle="buttons">
 				
-					@if( $gettypelist==false )
+					@if( $gettypelist== "false" )
 
 				    	<label class="btn btn-primary active">
 						<input type="radio" name="options" id="option1"  checked>
@@ -402,7 +402,7 @@
 
 
 					
-					@if( $gettypelist==true )
+					@if( $gettypelist== "true" )
 
 					    <label class="btn btn-primary">
 						<input type="radio" name="options" id="option2"  checked> 
