@@ -441,11 +441,11 @@ function mphone(v) {
 
 
  
-async function  updateX(idgrupos) {
+async function  updateX(id) {
 //alert(idproduto)
 
 
-await $.get("{{route('grupoitem')}}/"+idgrupos, function(data, status){ ///Busca o registro no servidor para editar
+await $.get("{{route('itementregadores')}}/"+id, function(data, status){ ///Busca o registro no servidor para editar
   
    
        data_dom = data
@@ -468,7 +468,7 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                      <div style="display:none;"  class="form-line">
                                        <label style="display:none;" class="">Codigo sistema</label>
-                                         <input id="ID_USER" style="display:none" value="" name="ID_USER" type="text" class="form-control">
+                                         <input id="ID_USER" style="display:none" value="${data_dom.ID_USER}" name="ID_USER" type="text" class="form-control">
                             
                                      </div>
                                 </div>
@@ -476,14 +476,14 @@ const frm = await Swal.fire({
                                 <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Nome Entregador</label>
-                                         <input id="NOME_ENTREGADOR"  value="" name="NOME_ENTREGADOR" type="text" class="form-control">
+                                         <input id="NOME_ENTREGADOR"   value="${data_dom.NOME_ENTREGADOR}" name="NOME_ENTREGADOR" type="text" class="form-control">
                                      </div>
                                 </div>
 
                                 <div class="form-group form-float">
                                      <div class="form-line">
                                        <label class="">Whatsapp</label>
-                                         <input id="WHATS" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);"  value="" name="WHATS" type="text" class="form-control">
+                                         <input id="WHATS" value="${data_dom.WHATS}"  onkeypress="mask(this, mphone);" onblur="mask(this, mphone);"  value="" name="WHATS" type="text" class="form-control">
                                      </div>
                                 </div>
 
