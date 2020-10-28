@@ -15,6 +15,16 @@ class EntregadoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $entregadores;
+    
+
+    public function __construct(Entregadores $entregadores){
+        $this->entregadores = $entregadores;
+
+
+    }
+
+
     public function index()
     {
 
@@ -31,14 +41,11 @@ class EntregadoresController extends Controller
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+    public function create(Request $req)
     {
-        //
+       $savepro =  $this->entregadores->create($req);
+       return $savepro;
     }
 
     /**
@@ -49,7 +56,7 @@ class EntregadoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
