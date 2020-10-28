@@ -418,13 +418,7 @@
 						
 					@endif
 				
-				
-				
-					<label class="btn btn-primary">
-					  <input type="radio" name="options" id="option2" checked> 
-					  <i class="material-icons">chrome_reader_mode</i>
-
-					</label>
+			
 					
 				</div>
 			</div>
