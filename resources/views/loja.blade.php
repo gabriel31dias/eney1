@@ -431,7 +431,6 @@
 		  @if($gettypelist == 'false')
             @isset($produtos)
 				@foreach ($produtos as $item)
-				 false
 				
 				
 					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
@@ -488,10 +487,9 @@
 
 			@if($gettypelist == 'true')
 
-			dwadwaddwad
+			
             @isset($produtos)
 				@foreach ($produtos as $item)
-				
 				
 				
 					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
@@ -501,13 +499,9 @@
 
 							  
 
-								<img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}}); 	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_PROMOCAO}} : {{$item->PRECO_UNIT}};
-								"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
-
 		                     @else
                             
-							 <img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}', false ,{{$item->PRECO_PROMOCAO}}); 	 preco_old =  {{$item->PRECO_UNIT}} 
-			"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
+							 
 	                      	@endif 
 							<br>
 							<br>
