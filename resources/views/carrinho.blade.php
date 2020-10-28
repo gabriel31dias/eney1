@@ -196,7 +196,7 @@
           <center>
           <div  style="background-color: white" class="row">
 
-          <div onclick="location.href='{{config('app.url')}}/app/loja/{{$lojacod}}'" class="actionx col-xs-12 col-lg-12 col-md-12 col-sm-12">
+          <div onclick="location.href='{{config('app.url')}}app/loja/{{$lojacod}}'" class="actionx col-xs-12 col-lg-12 col-md-12 col-sm-12">
                 <a  href="{{ redirect()->getUrlGenerator()->previous() }}" type="button"   role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             
                     <p  style="text-align: center;margin-top:15px">
