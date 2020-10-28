@@ -512,10 +512,11 @@
 							</div>
 
 							 @else
-							 <h3  style="padding:0;"> {{$item->NOME_PRODUTO}} </h3>
+							 <div style="padding:50px" >
+							 <h3  style="padding:0px;"> {{$item->NOME_PRODUTO}} </h3>
 							 <span style="font-size:30px," class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 
-                            
+							 </div>
 							 
 	                      	@endif 
 							<br>
