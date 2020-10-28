@@ -377,13 +377,14 @@ function save_entregor()
 
 	request = $.ajax(
 	{
-		url: "{{route('grupossave')}}",
+		url: "{{route('createentregadores')}}",
 		type: "post",
 		data: serializedData
 	});
 
 	request.done(function (response, textStatus, jqXHR)
 	{
+      alert(JSON.stringify(response))
 		Swal.fire(
 			'',
 			'<h3>Grupo cadastrado com sucesso !</h3>',
@@ -394,6 +395,7 @@ function save_entregor()
 
 	request.fail(function (jqXHR, textStatus, errorThrown)
 	{
+      alert(jqXHR)
 		Swal.fire(
 			'',
 			'<h3>O sistema encontrou um erro, verifique e tente novamente.</h3>',
