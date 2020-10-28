@@ -54,12 +54,8 @@ class AppController extends Controller
 
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
-     
       $gettypelist = $_GET['list'];
-     
       $gettypelist = $gettypelist  == 'litext' ? true : false ;
-      var_dump( $gettypelist);
-
       $urlloja = $_SERVER['REQUEST_URI'];
       $getsucesso = '';
     
@@ -174,7 +170,8 @@ class AppController extends Controller
       return view('loja',['produtos'=>$getproducts,'style'=>$style,'grupos'=> $getgrupos,'lojacod'=>$codigo,
       'grupoitem'=>$grupoitem,'status_loja'=>$status_loja,'imagem_loja'=>$imagem_loja,'url_facebook'=>$facebook,
       'url_instagran'=>$instagram,'url_twitter'=>$twitter,
-      'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,'gr'=>$promoces,'nameloja'=>$nameloja,'whats_loja'=>$whats_loja,'urlloja'=> $urlloja]);
+      'url_youtube'=>$youtube,'getsucesso'=>$getsucesso,'promoces'=>$promoces,
+      'gr'=>$promoces,'nameloja'=>$nameloja,'whats_loja'=>$whats_loja,'urlloja'=> $urlloja,'gettypelist'=>$gettypelist ]);
     }
 
 

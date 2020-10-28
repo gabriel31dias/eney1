@@ -383,11 +383,43 @@
 				
 	          <div style="padding:10px"  class="col-md-12  text-center">
 				<div  style="padding:10px"  class="btn-group btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-primary active">
-					  <input type="radio" name="options" id="option1" checked>
-					  <i class="material-icons">apps</i>
+				
+					@if( $gettypelist==true )
 
-					</label>
+				    	<label class="btn btn-primary active">
+						<input type="radio" name="options" id="option1" checked>
+						<i class="material-icons">apps</i>
+					    </label>
+						
+					@else
+
+				    	<label class="btn btn-primary active">
+						<input type="radio" name="options" id="option1" >
+						<i class="material-icons">apps</i>
+					    </label>
+						
+					@endif
+
+
+					
+					@if( $gettypelist==false )
+
+					    <label class="btn btn-primary">
+						<input type="radio" name="options" id="option2" > 
+						<i class="material-icons">chrome_reader_mode</i>
+					    </label>
+						
+					@else
+
+					    <label class="btn btn-primary">
+						<input type="radio" name="options" id="option2" checked> 
+						<i class="material-icons">chrome_reader_mode</i>
+					    </label>
+						
+					@endif
+				
+				
+				
 					<label class="btn btn-primary">
 					  <input type="radio" name="options" id="option2" checked> 
 					  <i class="material-icons">chrome_reader_mode</i>
