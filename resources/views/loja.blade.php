@@ -394,7 +394,7 @@
 						
 					@else
 
-				    	<label  class="btn btn-primary active">
+				    	<label  class="btn btn-primary ">
 						<input type="radio" name="options" id="option1"  >
 						<i class="material-icons">apps</i>
 						</label>
