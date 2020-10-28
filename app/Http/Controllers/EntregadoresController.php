@@ -44,7 +44,7 @@ class EntregadoresController extends Controller
     
     public function create(Request $req)
     {
-       $savepro =  $this->entregadores->create($req);
+       $savepro =  $this->entregadores->create($req->all());
        return $savepro;
     }
 
