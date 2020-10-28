@@ -212,7 +212,7 @@ function consulta(params)
 {
 	$.ajax(
 	{
-		url: `{{ route('gruposlist') }}`,
+		url: `{{ route('listentregadores') }}`,
 		type: 'GET',
 		success: function (data)
 		{
@@ -243,14 +243,12 @@ function consulta(params)
 
 				columns: [
 					{
-						"data": "CODIGO_SISTEMA"
+						"data": "NOME_ENTREGADOR"
 					},
 
 
 					{
-						"data": "NOME_GRUPO"
-
-
+						"data": "WHATS"
 					},
 
 

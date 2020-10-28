@@ -73,7 +73,8 @@ class EntregadoresController extends Controller
      */
     public function show(Entregadores $entregadores)
     {
-        //
+        
+        
     }
 
     /**
