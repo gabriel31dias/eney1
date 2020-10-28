@@ -512,7 +512,7 @@
 							</div>
 
 							 @else
-							 <div style="max-height: 20px"  style="padding:30px" >
+							 <div class="text-center" style="max-height: 20px"  style="padding:30px" >
 							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
 							 <span style="font-size:30px," class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 
