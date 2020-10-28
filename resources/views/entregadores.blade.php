@@ -296,7 +296,7 @@ async function cad_grupo()
 		width: 800,
 		title: 'Cadastro de Entregadores', 
 		html: `<div class="col-sm-12">
-                              
+                              <form id="f1"> 
                               <div class="form-group form-float">
                                      <div style="display:none;"  class="form-line">
                                        <label style="display:none;" class="">Codigo sistema</label>
@@ -319,7 +319,7 @@ async function cad_grupo()
                                      </div>
                                 </div>
 
-
+                         </form>
                                 
                               
                  </div>
@@ -358,7 +358,7 @@ async function cad_grupo()
 		
 
 
-		save_grupo()
+		save_entregor()
 
 
 	})
@@ -368,7 +368,7 @@ async function cad_grupo()
 
 
 
-function save_grupo()
+function save_entregor()
 {
 
 	var request;
