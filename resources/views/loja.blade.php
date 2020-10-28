@@ -418,7 +418,7 @@
 						<input type="radio" name="options" id="option2" > 
 						<i class="material-icons">chrome_reader_mode</i>
 					    </label>
-						
+						/
 					@endif
 				
 			
