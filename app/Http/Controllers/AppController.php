@@ -55,11 +55,8 @@ class AppController extends Controller
     public function getloja($codigo,$grupoitem=''){ ///A loja apenas
 
       $gettypelist = isset($_GET['list'])? $_GET['list'] : '' ;
-
       $gettypelist = $gettypelist  == 'litext' ? "true" : "false" ;
-
       $urlloja = $_SERVER['REQUEST_URI'];
-      var_dump( $gettypelist);
       $getsucesso = '';
     
       if(isset( $_GET['success'])){
