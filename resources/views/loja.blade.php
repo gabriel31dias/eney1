@@ -390,13 +390,15 @@
 						<input type="radio" name="options" id="option1"  checked>
 						<i class="material-icons">apps</i>
 					    </label>
-						
+						dwadwad
 					@else
 
 				    	<label class="btn btn-primary active">
 						<input type="radio" name="options" id="option1"  >
 						<i class="material-icons">apps</i>
-					    </label>
+						</label>
+						
+						
 						
 					@endif
 
