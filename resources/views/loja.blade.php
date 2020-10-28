@@ -380,7 +380,7 @@
               
 			<div style="max-height: 50px;"  class="row">
 				
-	       
+	          <center>
 				<div class="btn-group btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary active">
 					  <input type="radio" name="options" id="option1" checked> Active
@@ -392,6 +392,7 @@
 					  <input type="radio" name="options" id="option3" checked> Radio
 					</label>
 				</div>
+			 </center>
 
           <h1 style="color:#FBB448"> {{ $grupoitem }}</h1>
 
