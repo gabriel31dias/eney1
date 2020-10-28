@@ -497,15 +497,6 @@
 							
 							@if($item->PROMOCAO && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 
-							  
-
-		                     @else
-                            
-							 
-	                      	@endif 
-							<br>
-							<br>
-							
 							<div class="fh5co-text">
 								<h2>{{$item->NOME_PRODUTO}}</h2>
 								
@@ -526,6 +517,16 @@
 							</div>
 						</a>
                     </div>
+         
+
+		                     @else
+                            
+							 
+	                      	@endif 
+							<br>
+							<br>
+							
+							
                     
                 @endforeach
                 <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
