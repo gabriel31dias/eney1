@@ -414,11 +414,11 @@
 						
 					@else
 
-					    <label  onclick="location.href='/app/loja/{{$lojacode}}?list=litext'" class="btn btn-primary">
+					    <label  onclick="location.href='/app/loja/{{$lojacod}}?list=litext'" class="btn btn-primary">
 						<input type="radio" name="options" id="option2" > 
 						<i class="material-icons">chrome_reader_mode</i>
 					    </label>
-						/
+						
 					@endif
 				
 			
