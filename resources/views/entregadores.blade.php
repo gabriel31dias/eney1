@@ -179,7 +179,7 @@ $.ajax({
 							if (oData.id)
 							{
 
-								$(nTd).html("<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue'onclick=updateX("+oData.id+")><i class='material-icons'>edit</i></a>" + "<a style='margin:10px' class='waves-effect waves-light  btn bg-red waves-effect' href='{{route('deletegrupo')}}/" + oData.id + "'><i class='material-icons'>delete_forever</i></a>");
+								$(nTd).html("<a style='margin:10px' class='waves-effect waves-light btn btn-large  bg-light-blue'onclick=updateX("+oData.id+")><i class='material-icons'>edit</i></a>" + "<a style='margin:10px' class='waves-effect waves-light  btn bg-red waves-effect' href='{{route('itementregadores')}}/" + oData.id + "'><i class='material-icons'>delete_forever</i></a>");
 							}
 							//] image
 
