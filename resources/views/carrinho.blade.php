@@ -195,8 +195,8 @@
           <br>
           <center>
           <div  style="background-color: white" class="row">
-            <a href="href="{{ redirect()->getUrlGenerator()->previous() }}">
-            <div href="{{ redirect()->getUrlGenerator()->previous() }}" class="actionx col-xs-12 col-lg-12 col-md-12 col-sm-12">
+
+            <div onclick="alert('fefesf')" class="actionx col-xs-12 col-lg-12 col-md-12 col-sm-12">
                 <a  href="{{ redirect()->getUrlGenerator()->previous() }}" type="button"   role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             
                     <p  style="text-align: center;margin-top:15px">
@@ -207,7 +207,6 @@
                     </p>
                 </a>
             </div>
-          </a>
           </center>
 					
 		
