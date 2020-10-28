@@ -104,9 +104,14 @@ class EntregadoresController extends Controller
      * @param  \App\Entregadores  $entregadores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Entregadores $entregadores)
-    {
-        //
+    public function update(Request $req)
+    { 
+        $iduser = Auth::user()->id;
+        $item = $this->entregadores->where('ID_USER', $iduser)->where('id', $req->id);
+
+
+        
+        
     }
 
     /**
