@@ -384,14 +384,16 @@
 	          <div  class="col-md-12 text-center">
 				<div class="btn-group btn-group-toggle" data-toggle="buttons">
 					<label class="btn btn-primary active">
-					  <input type="radio" name="options" id="option1" checked> Active
+					  <input type="radio" name="options" id="option1" checked>
+					  <i class="material-icons">add</i>
+
 					</label>
 					<label class="btn btn-primary">
 					  <input type="radio" name="options" id="option2" checked> Radio
+					  <i class="material-icons">add</i>
+
 					</label>
-					<label class="btn btn-primary">
-					  <input type="radio" name="options" id="option3" checked> Radio
-					</label>
+					
 				</div>
 			</div>
 
