@@ -197,7 +197,7 @@
           <div  style="background-color: white" class="row">
 
             <div class="actionx col-xs-12 col-lg-12 col-md-12 col-sm-12">
-                <a  href="{{ redirect()->getUrlGenerator()->previous() }}" type="button"  data-toggle="modal" data-target="#exampleModal" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a  href="{{ redirect()->getUrlGenerator()->previous() }}" type="button"   role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             
                     <p  style="text-align: center;margin-top:15px">
                         
