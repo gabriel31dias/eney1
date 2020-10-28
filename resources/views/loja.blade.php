@@ -502,13 +502,13 @@
 							 <div class="text-center" style="max-height: 20px"  style="padding:30px" >
 							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
 							 <span style="font-size:35px">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
-                                   
+							 <i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 
 							 </div>
 							 </div>
 									  
 									
-									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
+								
 									
 								 
 
