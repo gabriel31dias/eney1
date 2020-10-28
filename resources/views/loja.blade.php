@@ -386,10 +386,10 @@
 					  <input type="radio" name="options" id="option1" checked> Active
 					</label>
 					<label class="btn btn-primary">
-					  <input type="radio" name="options" id="option2"> Radio
+					  <input type="radio" name="options" id="option2" checked> Radio
 					</label>
 					<label class="btn btn-primary">
-					  <input type="radio" name="options" id="option3"> Radio
+					  <input type="radio" name="options" id="option3" checked> Radio
 					</label>
 				</div>
 
