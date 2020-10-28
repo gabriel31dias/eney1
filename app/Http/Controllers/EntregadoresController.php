@@ -109,7 +109,7 @@ class EntregadoresController extends Controller
         $iduser = Auth::user()->id;
         $item = $this->entregadores->where('ID_USER', $iduser)->where('id', $req->id);
 
-
+         return response()->json($item);
         
         
     }
