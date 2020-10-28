@@ -113,6 +113,5 @@ class EntregadoresController extends Controller
        $getitem =  $this->entregadores->find($id);
         return   $getitem->delete();
         
-       
     }
 }
