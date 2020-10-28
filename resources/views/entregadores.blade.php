@@ -504,7 +504,7 @@ const frm = await Swal.fire({
 }).then(function (params) {
 
    if (params.isDismissed) {
-         location.href = "/grupos"
+         location.href = "/entregadores"
        
        return
       }
