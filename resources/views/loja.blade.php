@@ -513,7 +513,7 @@
 
 							 @else
 							 
-							 <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
+							 <span style="font-size:15px" class="price cursive-font">{{$item->PRECO_UNIT}}</span>
 
                             
 							 
