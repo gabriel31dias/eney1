@@ -387,7 +387,7 @@ function save_entregador()
       alert(JSON.stringify(response))
 		Swal.fire(
 			'',
-			'<h3>Grupo cadastrado com sucesso !</h3>',
+			'<h3>Entregador cadastrado com sucesso !</h3>',
 			'success'
 		)
 		consulta()
