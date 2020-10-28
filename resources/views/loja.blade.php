@@ -379,7 +379,7 @@
          
 			 
               
-			<div style="max-height: 50px;"  class="row">
+			<div style="max-height: 50px; padding:20px"  class="row">
 				
 	          <div  class="col-md-12 text-center">
 				<div class="btn-group btn-group-toggle" data-toggle="buttons">
