@@ -340,7 +340,7 @@ async function cad_grupo()
         }
 
 
-		if (!document.getElementById('NOME_GRUPO').value)
+		if (!document.getElementById('NOME_ENTREGADOR').value)
 		{
 			//dom_values_estate.descr_grupo = document.getElementById('DESCR_GRUPO').value
 
