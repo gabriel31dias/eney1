@@ -510,7 +510,7 @@
 							 </div>
 									  
 									
-									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
+									
 									
 								 
 
