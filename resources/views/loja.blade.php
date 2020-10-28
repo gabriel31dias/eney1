@@ -427,7 +427,68 @@
 			</div>
 
           <h1 style="color:#FBB448"> {{ $grupoitem }}</h1>
+  
+		  @if($gettypelist == 'false')
+            @isset($produtos)
+				@foreach ($produtos as $item)
+				 false
+				
+				
+					<div  class="col-xs-12 col-lg-6 col-md-6 col-sm-6">
+						<a href="{{$item->IMG ?? 'https://radio93fm.com.br/wp-content/uploads/2019/02/produto.png'}}" class="fh5co-card-item image-popup">
+							
+							@if($item->PROMOCAO && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 
+							  
+
+								<img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}}); 	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_PROMOCAO}} : {{$item->PRECO_UNIT}};
+								"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
+
+		                     @else
+                            
+							 <img onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}', false ,{{$item->PRECO_PROMOCAO}}); 	 preco_old =  {{$item->PRECO_UNIT}} 
+			"   style="height:100%;width:100%" src="{{$item->IMG}}" alt="Image" class="img-responsive">
+	                      	@endif 
+							<br>
+							<br>
+							
+							<div class="fh5co-text">
+								<h2>{{$item->NOME_PRODUTO}}</h2>
+								
+								<p>@if($item->PROMOCAO == true && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
+									  
+									
+									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
+									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
+                                   
+								   @else
+								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
+								  @endif
+
+                                    
+
+									
+								</p>
+							</div>
+						</a>
+                    </div>
+                    
+                @endforeach
+                <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                <center>
+                {{ $produtos->links() }}
+                </center>
+                </div>
+                </div>
+			@endisset
+		 @endif
+
+
+
+			@if($gettypelist == 'true')
+
+			dwadwaddwad
             @isset($produtos)
 				@foreach ($produtos as $item)
 				
@@ -481,6 +542,8 @@
                 </div>
                 </div>
             @endisset
+
+			@endif
 
 
             @isset($style)
