@@ -81,7 +81,7 @@ class EntregadoresController extends Controller
     public function item($id)
     {
         $iduser = Auth::user()->id;
-        $item = $this->entregadores->where('ID_USER', $iduser)->where('id',$id);
+        $item = $this->entregadores->where('ID_USER', $iduser)->where('id',$id)->first();
         return response()->json($item);
     }
 
