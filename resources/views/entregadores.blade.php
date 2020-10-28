@@ -168,6 +168,7 @@ $.ajax({
 						"data": "NOME_GRUPO"
 
 
+
 					},
 
 
@@ -462,6 +463,8 @@ const frm = await Swal.fire({
                               <div class="form-group form-float">
                                      <div style="display:none;"  class="form-line">
                                        <label style="display:none;" class="">Codigo sistema</label>
+                                       <input id="id"  value="${data_dom.ID_USER}" name="id" type="text" class="form-control">
+
                                          <input id="ID_USER"  value="${data_dom.ID_USER}" name="ID_USER" type="text" class="form-control">
                             
                                      </div>
@@ -503,18 +506,18 @@ const frm = await Swal.fire({
        return
       }
 
-   if (!document.getElementById('NOME_GRUPO').value) {
+   if (!document.getElementById('NOME_ENTREGADOR').value) {
       
         Swal.fire({
              icon: 'error',
              title: '',
-             html: '<h3>Digite o nome do GRUPO.</h3>',
+             html: '<h3>Digite o nome do Entregador.</h3>',
             footer: ''
           })
    
    return 
    }
-
+alert("passou")
 
 
 ///--------------------------------------------Salva
@@ -524,7 +527,7 @@ var $form = $('#f1');
 var serializedData = $form.serialize();
 //alert(serializedData)
 request = $.ajax({
-    url: "{{route('grupoupdate')}}",
+    url: "{{route('itementregadores')}}",
     type: "post",
     data: serializedData
 });
@@ -532,7 +535,7 @@ request = $.ajax({
 request.done(function(response, textStatus, jqXHR) {
    Swal.fire(
     '',
-    '<h3>Grupo atualizado com sucesso !</h3>',
+    '<h3>Entragador atualizado com sucesso !</h3>',
     'success'
      )
    consulta()
