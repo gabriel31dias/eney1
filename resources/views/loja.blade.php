@@ -386,7 +386,7 @@
 				
 					@if( $gettypelist== "false" )
                         
-				    	<label class="btn btn-primary active">
+				    	<label onclick="location.href='/app/loja/{{$lojacod}}'" class="btn btn-primary active">
 						<input type="radio" name="options" id="option1"  checked>
 						<i class="material-icons">apps</i>
 						</label>
@@ -394,7 +394,7 @@
 						
 					@else
 
-				    	<label  class="btn btn-primary ">
+				    	<label onclick="location.href='/app/loja/{{$lojacod}}'"  class="btn btn-primary ">
 						<input type="radio" name="options" id="option1"  >
 						<i class="material-icons">apps</i>
 						</label>
@@ -407,7 +407,7 @@
 					
 					@if( $gettypelist== "true" )
 
-					    <label    class="btn btn-primary active">
+					    <label  onclick="location.href='/app/loja/{{$lojacod}}?list=litext'"  class="btn btn-primary active">
 						<input type="radio" name="options" id="option2"  checked> 
 						<i class="material-icons">chrome_reader_mode</i>
 					    </label>
@@ -502,10 +502,8 @@
 							 <div class="text-center" style="max-height: 20px"  style="padding:30px" >
 							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
 							
-
 							 <span style="font-size:35px">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
                                    
-            
 							</div>
 							</div>
 
