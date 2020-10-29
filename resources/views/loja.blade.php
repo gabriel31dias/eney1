@@ -497,8 +497,8 @@
 							
 							@if($item->PROMOCAO && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 
-							<div onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}', false ,{{$item->PRECO_PROMOCAO}}); 	 preco_old =  {{$item->PRECO_UNIT}} 
-								"   style="height:100%;width:100%" src="{{$item->IMG}}">
+							<div onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}}); 	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_PROMOCAO}} : {{$item->PRECO_UNIT}};
+								"    style="height:100%;width:100%" src="{{$item->IMG}}">
 							 <div class="text-center" style="max-height: 20px"  style="padding:30px" >
 							 <h3  style="padding:0px;margin:0"> {{$item->NOME_PRODUTO}} </h3>
 							
