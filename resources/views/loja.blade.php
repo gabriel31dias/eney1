@@ -505,10 +505,8 @@
 
 							 <span style="font-size:35px">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
                                    
-
             
 							</div>
-								</p>
 							</div>
 
 							 @else
