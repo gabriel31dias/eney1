@@ -244,7 +244,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <a href="https://versatilsoftwares.com.br"><img src="imagens/logo.png" width="142"></a>
+            <a href="https://versatilsoftwares.com.br"><img src="/site/imagens/logo.png" width="142"></a>
           </div>
           <div class="col-md-2">
             <h4>A Empresa</h4>
@@ -273,13 +273,13 @@
           <div class="col-md-4">
             <ul>
               <li>
-                <a href=""><img src="imagens/facebook.png"></a>
+                <a href=""><img src="/site/imagens/facebook.png"></a>
               </li>
               <li>
-                <a href=""><img src="imagens/twitter.png"></a>
+                <a href=""><img src="/site/imagens/twitter.png"></a>
               </li>
               <li>
-                <a href=""><img src="imagens/instagram.png"></a>
+                <a href=""><img src="/site/imagens/instagram.png"></a>
               </li>
             </ul>
           </div>
