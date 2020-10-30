@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/site', 'HomeController@site')->name('site');
+Route::get('/sitex', 'HomeController@site')->name('sitex');
 
 Route::get('/entregadores', 'EntregadoresController@index')->name('entregadores');
 Route::post('/entregadores/save' ,'EntregadoresController@create')->name('createentregadores');

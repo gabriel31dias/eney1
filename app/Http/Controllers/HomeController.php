@@ -45,7 +45,7 @@ class HomeController extends Controller
         {
           
         } else{
-            return redirect('/site');
+            return redirect()->route('sitex');
         }
        
         $gg = Session::get('success');
