@@ -19,6 +19,16 @@
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="/site/css/estilo.css">
 
+    <style>
+
+@media only screen and (max-device-width : 640px) {
+   image{
+       min-width: 100%;
+   }
+}
+
+    </style>
+
     <title>Versátil Delivery</title>
     <link rel="icon" href="/site/imagens/favicon.png">
   </head>
@@ -116,7 +126,7 @@
                 <img src="/site/imagens/food.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
               <div  class="col-md-6">
-                <img style=" min-width: 500px;" src="/site/imagens/espeto.jpg" style="margin-bottom: 5px;" class="img-fluid">
+                <img src="/site/imagens/espeto.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
             </div>
             <div class="row albuns">
