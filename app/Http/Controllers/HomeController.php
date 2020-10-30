@@ -26,7 +26,7 @@ class HomeController extends Controller
         $this->clisms = $sms;///Pega clientes e seus sms enviados
         $this->clisms = $this->clisms->where('tipo_user', 1);
       
-       // $this->middleware('auth');
+       
 
       
 
@@ -44,9 +44,8 @@ class HomeController extends Controller
         if (Auth::check())
         {
           
- 
         } else{
-         return redirect()->route('site');
+            return redirect()->route('site');
         }
        
         $gg = Session::get('success');
