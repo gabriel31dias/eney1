@@ -25,12 +25,8 @@ class HomeController extends Controller
         $this->vendas =  $venda;
         $this->clisms = $sms;///Pega clientes e seus sms enviados
         $this->clisms = $this->clisms->where('tipo_user', 1);
-        if (Auth::check())
-        {
-            return redirect()->route('site');
-
-        } 
-        $this->middleware('auth');
+      
+       // $this->middleware('auth');
 
        
     }
@@ -42,6 +38,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (Auth::check())
+        {
+            return redirect()->route('site');
+
+        } 
         $gg = Session::get('success');
         $codeloja =  Auth::user()->codigo_estabelecimento;
         $user = Auth::user()->email;
