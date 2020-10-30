@@ -184,7 +184,7 @@
           <div class="col-md-5">
             <div class="row rotacionar">
               <div class="col-md-6">
-               -
+               
                 <img style="padding:50px;" src="/site/imagens/iphone1.png" class="img-fluid">
               </div>
             </div>
