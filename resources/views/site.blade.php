@@ -247,7 +247,7 @@
            
           </div>
           <div class="col-md-2">
-            <h4 style="padding:10px">A Empresa</h4>
+            <h4 >A Empresa</h4>
             <ul class="navbar-nav">
               <li><a href="https://versatilsoftwares.com.br/empresa/">Sobre</a></li>
               <li><a href="https://versatilsoftwares.com.br/noticias/">Novidades</a></li>
