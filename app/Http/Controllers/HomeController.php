@@ -28,13 +28,7 @@ class HomeController extends Controller
       
        // $this->middleware('auth');
 
-       if (Auth::check())
-       {
-         
-
-       } else{
-        return redirect()->route('site');
-       }
+      
 
        
     }
@@ -46,6 +40,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        if (Auth::check())
+        {
+          
+ 
+        } else{
+         return redirect()->route('site');
+        }
        
         $gg = Session::get('success');
         $codeloja =  Auth::user()->codigo_estabelecimento;
