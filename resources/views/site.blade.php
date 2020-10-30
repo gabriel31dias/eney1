@@ -132,10 +132,10 @@
             <br>
             <div class="row albuns">
               <div class="col-md-6">
-                <img style="min-height:158px;" src="https://images6.alphacoders.com/987/987034.jpg" style="margin-bottom: 5px;" class="img-fluid">
+                <img style="min-height:158px;margin-bottom: 5px;" src="https://images6.alphacoders.com/987/987034.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
               <div class="col-md-6">
-                <img src="/site/imagens/churras.jpg" style="margin-bottom: 5px;" class="img-fluid">
+                <img  style="min-height:158px;margin-bottom: 5px;" src="/site/imagens/churras.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
             </div>
           </div>
