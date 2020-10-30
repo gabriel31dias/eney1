@@ -25,7 +25,14 @@ class HomeController extends Controller
         $this->vendas =  $venda;
         $this->clisms = $sms;///Pega clientes e seus sms enviados
         $this->clisms = $this->clisms->where('tipo_user', 1);
+        if (Auth::check())
+        {
+            return redirect()->route('site');
+
+        } 
         $this->middleware('auth');
+
+       
     }
 
     /**
@@ -78,5 +85,10 @@ class HomeController extends Controller
         
         
         return redirect()->back()->with('success', 'Resultado de '.$cliname);   
+    }
+
+    public function site(){
+        
+        return view('site',[]);
     }
 }
