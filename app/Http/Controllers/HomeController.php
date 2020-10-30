@@ -30,9 +30,11 @@ class HomeController extends Controller
 
        if (Auth::check())
        {
-           return redirect()->route('site');
+         
 
-       } 
+       } else{
+        return redirect()->route('site');
+       }
 
        
     }
