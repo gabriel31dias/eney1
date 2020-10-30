@@ -82,7 +82,7 @@
               <div class="carousel-inner"><!--Inner -->
                 
                 <div class="carousel-item active">
-                  <h1 style="color:#FF8000 ;border-color:white;  ;">Versátil Delivery</h1>
+                  <h1 style="color:#FF8000 ;border-color:white;border-size:5px;  ;">Versátil Delivery</h1>
                   <a href="" class="btn btn-lg btn-custom btn-roxo">
                     Saiba mais
                   </a>
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="carousel-item">
-                  <h1 style="color:#FF8000 ;border-color:white;">Seu pedido a um click</h1>
+                  <h1 style="color:#FF8000 ;border-color:white;border-size:5px">Seu pedido a um click</h1>
                   <a href="" class="btn btn-lg btn-custom btn-branco">
                     Começe Agora
                   </a>
