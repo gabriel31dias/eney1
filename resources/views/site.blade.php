@@ -244,7 +244,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <a href="https://versatilsoftwares.com.br"><img src="/site/imagens/logo.png" width="142"></a>
+           
           </div>
           <div class="col-md-2">
             <h4 style="padding:10px">A Empresa</h4>
