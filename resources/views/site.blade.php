@@ -115,12 +115,12 @@
               <div class="col-md-6">
                 <img src="/site/imagens/food.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
-              <div style="width: 100p%" class="col-md-6">
+              <div  class="col-md-12">
                 <img src="/site/imagens/espeto.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
             </div>
             <div class="row albuns">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <img src="/site/imagens/sushi.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
               <div class="col-md-6">
