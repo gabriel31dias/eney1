@@ -247,7 +247,7 @@
             <a href="https://versatilsoftwares.com.br"><img src="/site/imagens/logo.png" width="142"></a>
           </div>
           <div class="col-md-2">
-            <h4>A Empresa</h4>
+            <h4 style="padding:10px">A Empresa</h4>
             <ul class="navbar-nav">
               <li><a href="https://versatilsoftwares.com.br/empresa/">Sobre</a></li>
               <li><a href="https://versatilsoftwares.com.br/noticias/">Novidades</a></li>
@@ -273,13 +273,13 @@
           <div class="col-md-4">
             <ul>
               <li>
-                <a href=""><img src="/site/imagens/facebook.png"></a>
+                <a href="https://www.facebook.com/www.versatilsoftware.com.br"><img src="/site/imagens/facebook.png"></a>
               </li>
               <li>
-                <a href=""><img src="/site/imagens/twitter.png"></a>
+                <a href="https://www.instagram.com/versatilinf/"><img src="/site/imagens/twitter.png"></a>
               </li>
               <li>
-                <a href=""><img src="/site/imagens/instagram.png"></a>
+                <a href="https://www.instagram.com/versatilinf/"><img src="/site/imagens/instagram.png"></a>
               </li>
             </ul>
           </div>
