@@ -126,7 +126,7 @@
                 <img src="/site/imagens/food.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
               <div  class="col-md-6">
-                <img src="/site/imagens/espeto.jpg" style="margin-bottom: 5px;" class="img-fluid">
+                <img src="https://static.tonolucro.com/images/anuncio/A5ecd272443cd2.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
             </div>
             <div class="row albuns">
