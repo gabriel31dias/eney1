@@ -172,7 +172,7 @@
           <div class="col-md-5">
             <div class="row rotacionar">
               <div class="col-md-6">
-                <img src="/site/imagens/app.jpeg" class="img-fluid">
+                <img src="" class="img-fluid">
               </div>
             </div>
           </div>
