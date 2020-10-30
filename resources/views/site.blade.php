@@ -198,10 +198,10 @@
 			 As vendas vão cair no meu sistema ?
 		  </a>
 		</div>
-		<div id="collapseOne" class="collapse show" data-parent="#accordion">
+		<div id="collapseOne" class="collapse" data-parent="#accordion">
 		  <div class="card-body">
             Sim assim que a transação for aprovada, o sistema vai receber as informações, salvando e processando todos os dados,
-            tanto de faturamento quanto de cadastros vão ser inseridos sem que você precise se preucupar com isso.
+            tanto de faturamento quanto de cadastros vão ser inseridos sem que você precise se preucupar com isso. 
 		  </div>
 		</div>
 	  </div>
