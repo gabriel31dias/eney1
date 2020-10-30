@@ -157,7 +157,7 @@
             <h2>Fácil</h2>
             <h3>Buscar</h3>
             <p>
-              Busque produtos, grupos formas de pagamento do seu Erp de forma rapida e descomplicada, com apenas algums clicks tenha uma app de Delivery completo.
+              Busque produtos, grupos do seu Erp de forma rapida e descomplicada, com apenas algums clicks tenha uma app de Delivery completo.
             </p>
             <h3>Entre em qualquer lugar</h3>
             <p>
