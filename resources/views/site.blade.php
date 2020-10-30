@@ -52,10 +52,10 @@
                 <a href="https://api.whatsapp.com/send?phone=5518981290276&text=Ola%20!" style="margin-left: 10px" class="nav-link left-text">Contato</a>
               </li>
               <li class="nav-item">
-                <a href="#" style="margin-left: 10px" class="nav-link">Ajuda</a>
+                <a href="https://api.whatsapp.com/send?phone=5518981290451" style="margin-left: 10px" class="nav-link">Ajuda</a>
               </li>
               <li class="nav-item">
-                <a href="#" style="margin-left: 10px" class="nav-link">Baixar</a>
+                <a href="https://versatilsoftwares.com.br/" style="margin-left: 10px" class="nav-link">Site</a>
               </li>
 
               <li class="nav-item divisor"></li>
