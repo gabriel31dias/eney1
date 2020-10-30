@@ -115,18 +115,14 @@
               <div class="col-md-6">
                 <img src="/site/imagens/food.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
-
-            <div class="row">
               <div class="col-md-6">
                 <img src="/site/imagens/espeto.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
+            </div>
+            <div class="row albuns">
               <div class="col-md-6">
                 <img src="/site/imagens/sushi.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
-           
-            </div>
-            <div class="row albuns">
-              
               <div class="col-md-6">
                 <img src="/site/imagens/churras.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
