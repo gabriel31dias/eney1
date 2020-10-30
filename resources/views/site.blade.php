@@ -156,11 +156,12 @@
 
             <h2>Fácil</h2>
             <h3>Buscar</h3>
-            <p>Já sabe o que quer escutar? É só procurar e apertar o play.
+            <p>
+              Busque produtos, grupos formas de pagamento do seu erp de forma rapida e descomplicada, com apenas algums clicks tenha uma app de Delivery completa.
             </p>
 
             <h3>Navegar</h3>
-            <p>Veja os novos lançamentos, o que está bombando nas paradas e as melhores playlists para o seu momento.
+            <p>
             </p>
 
             <h3>Descobrir</h3>
