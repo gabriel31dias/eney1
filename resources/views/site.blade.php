@@ -209,7 +209,7 @@
 	  <div class="card">
 		<div class="card-header">
 		  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-            Posse definir horario de funcionamento  ?
+            Pósso definir horario de funcionamento  ?
 		  </a>
 		</div>
 		<div id="collapseTwo" class="collapse" data-parent="#accordion">
@@ -222,12 +222,12 @@
 	  <div class="card">
 		<div class="card-header">
 		  <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-			Collapsible Group Item #3
+			 É possivel utlizar o app em qualquer dispostivo ?
 		  </a>
 		</div>
 		<div id="collapseThree" class="collapse" data-parent="#accordion">
 		  <div class="card-body">
-			Lorem ipsum..
+			 Sim nosso sistema foi desenvolvido utilizando as melhores tecnologias e praticas do mercado, nos possibilitando ter uma ampla gama de recursos para um boa usabilidade em todos os dispositivos com compõe o mercado.
 		  </div>
 		</div>
 	  </div>
