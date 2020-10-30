@@ -157,15 +157,16 @@
             <h2>Fácil</h2>
             <h3>Buscar</h3>
             <p>
-              Busque produtos, grupos formas de pagamento do seu erp de forma rapida e descomplicada, com apenas algums clicks tenha uma app de Delivery completa.
+              Busque produtos, grupos formas de pagamento do seu Erp de forma rapida e descomplicada, com apenas algums clicks tenha uma app de Delivery completo.
             </p>
-
-            <h3>Navegar</h3>
+            <h3>Entre em qualquer lugar</h3>
             <p>
+                Navegação rapida e otimizada, em qualquer dispositivo.
             </p>
 
-            <h3>Descobrir</h3>
-            <p>Curta músicas novas toda segunda-feira com uma playlist personalizada pra você. Ou relaxe e curta uma das rádios.
+            <h3>Sua cara</h3>
+            <p>
+                Mude, personalize como desejar.
             </p>
 
           </div>
