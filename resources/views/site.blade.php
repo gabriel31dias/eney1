@@ -129,7 +129,7 @@
                 <img style="min-height:158px;" src="https://static.tonolucro.com/images/anuncio/A5ecd272443cd2.jpg" style="margin-bottom: 5px;" class="img-fluid">
               </div>
             </div>
-            <br>
+            
             <div class="row albuns">
               <div class="col-md-6">
                 <img style="min-height:158px;margin-bottom: 5px;" src="https://images6.alphacoders.com/987/987034.jpg" style="margin-bottom: 5px;" class="img-fluid">
