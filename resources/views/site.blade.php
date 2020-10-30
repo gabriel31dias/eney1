@@ -94,14 +94,17 @@
 
                 <div class="carousel-item">
                   <h1 style="color:#FF8000 ;border-color:white;background-color:white; border-radius: 50px 20px;">Seu pedido a um click</h1>
-                  <br>
+                 
                   <a href="" class="btn btn-lg btn-custom btn-branco">
                     Começe Agora
                   </a>
                 </div>
 
               </div><!--/Inner -->
-
+              <br>
+              <br>
+              <br>
+              <br>
               <!-- Controles -->
               <a href="#carousel-spotify" class="carousel-control-prev" data-slide="prev">
                 <i class="fas fa-angle-left fa-3x"></i>
