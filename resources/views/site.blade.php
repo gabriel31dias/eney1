@@ -172,8 +172,8 @@
           <div class="col-md-5">
             <div class="row rotacionar">
               <div class="col-md-6">
-                  sddaawdwad
-                <img src="" class="img-fluid">
+               
+                <img src="/site/imagens/iphone.jpg" class="img-fluid">
               </div>
             </div>
           </div>
