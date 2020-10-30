@@ -61,10 +61,10 @@
               <li class="nav-item divisor"></li>
 
               <li class="nav-item">
-                <a href="login.php" style="margin-left: 10px" class="nav-link">Inscrever-se</a>
+                <a href="/register" style="margin-left: 10px" class="nav-link">Inscrever-se</a>
               </li>
               <li class="nav-item">
-                <a href="#" style="margin-left: 10px" class="nav-link">Entrar</a>
+                <a href="/login" style="margin-left: 10px" class="nav-link">Entrar</a>
               </li>
             </ul>
           </div>
