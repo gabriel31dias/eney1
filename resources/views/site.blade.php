@@ -49,7 +49,7 @@
           <div class="collapse navbar-collapse" id="nav-principal">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a href="#" style="margin-left: 10px" class="nav-link left-text">Premium</a>
+                <a href="https://api.whatsapp.com/send?phone=5518981290276&text=Ola%20!" style="margin-left: 10px" class="nav-link left-text">Contato</a>
               </li>
               <li class="nav-item">
                 <a href="#" style="margin-left: 10px" class="nav-link">Ajuda</a>
