@@ -44,8 +44,8 @@ class ProdutosController extends Controller
     }
 
     public function save(Request $req){
-    
-        $getgrupo = $this->grupos->where('CODIGO_SISTEMA', $req->CODIGO_SISTEMA_GRUPO)->first();
+        $iduser = Auth::user()->id;
+        $getgrupo = $this->grupos->where('ID_USER',$iduser )->where('CODIGO_SISTEMA', $req->CODIGO_SISTEMA_GRUPO)->first();
 
         if(!Isset($getgrupo->id)){
             $grupo = $this->grupos->create(['NOME_GRUPO'=>$req->NOME_GRUPO, 'CODIGO_SISTEMA'=>$req->CODIGO_SISTEMA_GRUPO,'ID_USER'=>$req->ID_USER]);
