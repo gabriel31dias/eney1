@@ -214,7 +214,7 @@
 		</div>
 		<div id="collapseTwo" class="collapse" data-parent="#accordion">
 		  <div class="card-body">
-			Dentro das configurações pode ser parametrizado varias coisas, dentre estas o horario de funcionamento do estabelecimento
+			Dentro das configurações pode ser parametrizado varias coisas, dentre estas o horário de funcionamento do estabelecimento
 		  </div>
 		</div>
 	  </div>
