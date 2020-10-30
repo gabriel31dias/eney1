@@ -195,12 +195,13 @@
 	  <div class="card">
 		<div class="card-header">
 		  <a class="card-link" data-toggle="collapse" href="#collapseOne">
-			Collapsible Group Item #1
+			 As vendas vão cair no meu sistema ?
 		  </a>
 		</div>
 		<div id="collapseOne" class="collapse show" data-parent="#accordion">
 		  <div class="card-body">
-			Lorem ipsum..
+            Sim assim que a transação for aprovada, o sistema via receber as informações, salvando e processando todos os dados,
+            tanto de faturamento quanto de cadastros vão ser inseridos sem que você precise se preucupar com isso.
 		  </div>
 		</div>
 	  </div>
@@ -208,12 +209,12 @@
 	  <div class="card">
 		<div class="card-header">
 		  <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-			Collapsible Group Item #2
+            Posse definir horario de funcionamento  ?
 		  </a>
 		</div>
 		<div id="collapseTwo" class="collapse" data-parent="#accordion">
 		  <div class="card-body">
-			Lorem ipsum..
+			Dentro das configurações pode ser parametrizado varias coisas, dentre estas o horario de funcionamento do estabelecimento
 		  </div>
 		</div>
 	  </div>
