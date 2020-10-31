@@ -87,21 +87,7 @@
 						<img style="max-width:150px;max-height:40px"  src="{{$imagem_loja ?? ''}}" class="img-responsive">
 
 						
-						<h3 style="color:{{$style['color2']}}"> 
-												
-							@if($status_loja == true )
-
-							<span style="color:#02d46e">Aberto</span>
-
-							@else
-
-							<span style="color:red">Fechado</span>
-
-							@endif
-							
-						
-						
-						</h3>
+					
 
 					</div>
 				</div>
@@ -426,7 +412,23 @@
 				</div>
 			</div>
 
-          <h1 style="color:#FBB448"> {{ $grupoitem }}</h1>
+		  <h1 style="color:#FBB448"> {{ $grupoitem }}</h1>
+		  <br>
+		  <h3 style="color:{{$style['color2']}}"> 
+												
+			@if($status_loja == true )
+
+			<span style="color:#02d46e">Aberto</span>
+
+			@else
+
+			<span style="color:red">Fechado</span>
+
+			@endif
+			
+		
+		
+		</h3>
   
 		  @if($gettypelist == 'false')
             @isset($produtos)
