@@ -414,6 +414,8 @@
 
 		  <h1 style="color:#FBB448"> {{ $grupoitem }}</h1>
 		  <br>
+	  
+		  <center>
 		  <h3 style="color:{{$style['color2']}}"> 
 												
 			@if($status_loja == true )
@@ -426,9 +428,8 @@
 
 			@endif
 			
-		
-		
 		</h3>
+	</center>
   
 		  @if($gettypelist == 'false')
             @isset($produtos)
