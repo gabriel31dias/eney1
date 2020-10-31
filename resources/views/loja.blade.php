@@ -429,7 +429,7 @@
 			@endif
 			
 		</h3>
-	</center>
+    	</center>
   
 		  @if($gettypelist == 'false')
             @isset($produtos)
