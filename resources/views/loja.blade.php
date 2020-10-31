@@ -451,17 +451,22 @@
 							<br>
 							<br>
 							
-							<div class="fh5co-text">
+							<div  class="fh5co-text">
 								<h2>{{$item->NOME_PRODUTO}}</h2>
 								
 								<p>@if($item->PROMOCAO == true && App\Produto::verifica_tempo_promocao( $lojacod , $item->id))
 									  
-									
+                                    <div>
 									<i style="margin-top:1px;color:greenyellow"  class="large material-icons">local_offer</i>
 									<span class="price cursive-font">{{$item->PRECO_PROMOCAO}}  </span> -  <strike style="color:gray;font-size:25px;" class="price cursive-font">{{$item->PRECO_UNIT}} </strike>
-                                   
+                                    </div>
 								   @else
-								     <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
+
+								   <div  onclick="open_product('{{$item->id}}','{{$item->NOME_PRODUTO}}','{{$item->PRECO_UNIT}}','{{$item->DESCR}}','{{$item->IMG}}','{{$item->PROMOCAO}}',{{$item->PRECO_PROMOCAO}}); 	 preco_old = {{$item->PROMOCAO}} ? {{$item->PRECO_PROMOCAO}} : {{$item->PRECO_UNIT}};
+									" >
+									 <span class="price cursive-font">{{$item->PRECO_UNIT}}</span>
+								   </div>
+
 								  @endif
 
                                     
